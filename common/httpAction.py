@@ -81,12 +81,17 @@ class HttpAction:
 
 
 class BianquePlat(HttpAction):
+    # 类变量：记录已切换过的环境，避免重复切换
+    _switched_envs = set()
+
     def __init__(self, env='stable'):
         self.env = env
         super().__init__(self._set_cookie())
         # 如果默认环境是预发布及以上，需要切换一次环境
-        if env in ('pre', 'gray', 'pro','prod'):
+        # 只在该环境第一次初始化时切换，避免重复调用
+        if env in ('pre', 'gray', 'pro','prod') and env not in BianquePlat._switched_envs:
             self._switch_env_to(env=env)
+            BianquePlat._switched_envs.add(env)
 
     def _set_cookie(self):
         if self.env == 'stable':
