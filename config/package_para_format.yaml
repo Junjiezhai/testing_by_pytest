@@ -1,0 +1,145 @@
+online_exec_rcflow_decision:
+  # desc: "在线决策 -- 米霍克流程决策"
+  - rcFlowId: "3103"
+    seq: ""
+    invoker: "12"
+    uid: "3064471"
+    orderId: "O20210901833021700471"
+    fieldSet: {}
+    needFieldSet: true
+
+online_exec_make_decision:
+  # desc: "在线决策 -- 米霍克节点决策"
+  - rcFlowId: 3103
+    decisionNodeId: 74319
+    seq: ""
+    invoker: "1"
+    uid: "3064471"
+    packageSceneType: "trade"
+    orderId: "O2021090183302170041"
+    fieldSet: {}
+    maxFieldNum: 1
+    needFieldSet: true
+
+online_exec_package_decision:
+  # desc: "在线决策 -- 米霍克乐包决策"
+  - rcFlowId: "SP00000403"
+    packageId: 10087059
+    seq: ""
+    invoker: "-1"
+    uid: "3107525"
+    orderId: "O20230908045436700525"
+    fieldSet: {}
+    needFieldSet: true
+    needHitRules: true
+
+
+ec_online_exec_rcflow_decision:
+  # desc: "电商在线决策 -- 米霍克流程决策"
+  - rcFlowId: "3103"
+    seq: ""
+    invoker: "12"
+    uid: "3064471"
+    orderId: "O20210901833021700471"
+    fieldSet: {}
+    needFieldSet: true
+
+ec_online_exec_make_decision:
+  # desc: "电商在线决策 -- 米霍克节点决策"
+  - rcFlowId: 3103
+    decisionNodeId: 74319
+    seq: ""
+    invoker: "1"
+    uid: "3064471"
+    packageSceneType: "trade"
+    orderId: "O2021090183302170041"
+    fieldSet: {}
+    maxFieldNum: 1
+    needFieldSet: true
+
+ec_online_exec_package_decision:
+  # desc: "电商在线决策 -- 米霍克乐包决策"
+  - rcFlowId: "SP00000403"
+    packageId: 10087059
+    seq: ""
+    invoker: "-1"
+    uid: "3107525"
+    orderId: "O20230908045436700525"
+    fieldSet: {}
+    needFieldSet: true
+    needHitRules: true
+
+
+batch_exec_rcflow_decision:
+  # desc: "批跑决策 -- 米霍克流程决策"
+  - rcFlowId: "3103"
+    seq: ""
+    invoker: "12"
+    uid: "3064471"
+    orderId: "O20210901833021700471"
+    fieldSet: {}
+    needFieldSet: true
+
+batch_exec_make_decision:
+  # desc: "批跑决策 -- 米霍克节点决策"
+  - rcFlowId: "3103"
+    decisionNodeId: 74319
+    seq: ""
+    invoker: "1"
+    uid: "3064471"
+    packageSceneType: "trade"
+    orderId: "O2021090183302170041"
+    fieldSet: {}
+    maxFieldNum: 1
+    needFieldSet: true
+
+
+batch_exec_package_decision:
+  # desc: "批跑决策 -- 米霍克乐包决策"
+  - rcFlowId: "SP00000403"
+    packageId: 10087059
+    seq: ""
+    invoker: "-1"
+    uid: "3107525"
+    orderId: "O20230908045436700525"
+    fieldSet: {}
+    needFieldSet: true
+    needHitRules: true
+
+simulate_exec_rcflow_decision:
+  # desc: "仿真决策 -- 米霍克流程决策"
+  - rcFlowId: "3103"
+    seq: ""
+    invoker: "12"
+    uid: "3064471"
+    offlineTaskId: 12345
+    orderId: "O20210901833021700471"
+    fieldSet: {}
+    needFieldSet: true
+
+simulate_exec_make_decision:
+  # desc: "仿真决策 -- 米霍克节点决策"
+  - rcFlowId: "3103"
+    decisionNodeId: 74319
+    seq: ""
+    invoker: "1"
+    uid: "3064471"
+    offlineTaskId: 12345
+    packageSceneType: "trade"
+    orderId: "O2021090183302170041"
+    fieldSet: {}
+    maxFieldNum: 1
+    needFieldSet: true
+
+simulate_exec_package_decision:
+  # desc: "仿真决策 -- 米霍克乐包决策"
+  - rcFlowId: "SP00000403"
+    packageId: 10087059
+    seq: ""
+    invoker: "-1"
+    uid: "3107525"
+    offlineTaskId: 12345
+    orderId: "O20230908045436700525"
+    fieldSet: {}
+    needFieldSet: true
+    needHitRules: true

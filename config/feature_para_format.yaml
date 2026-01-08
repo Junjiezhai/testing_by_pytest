@@ -1,0 +1,49 @@
+execute_field_batch_compute:
+  # desc: "授信代理层-字段获取接口入参格式"
+  - uid: ""
+    orderId: ""
+    macCode: "R2"
+    creditId: ""
+    fieldNameList: ""
+    invoker: "1218"
+    appSecret: "ZR7wwC0vPgs4Lstn"
+
+execute_ruleengine_proxy_compute:
+  # desc: "交易代理层-字段获取接口入参格式"
+  - uid: ""
+    orderId: ""
+    macCode: "R2"
+    creditId: ""
+    fieldNameList: ""
+    invoker: "1218"
+    appSecret: "ZR7wwC0vPgs4Lstn"
+
+execute_simulate_proxy_compute:
+  # desc: "仿真代理层-字段获取接口入参格式"
+  - uid: ""
+    orderId: ""
+    macCode: "R2"
+    creditId: ""
+    fieldNameList: ""
+    invoker: "1218"
+    appSecret: "ZR7wwC0vPgs4Lstn"
+
+execute_business_proxy_compute:
+  # desc: "业务代理层-字段获取接口入参格式"
+  - uid: ""
+    orderId: ""
+    macCode: "R2"
+    creditId: ""
+    fieldNameList: ""
+    invoker: "1218"
+    appSecret: "ZR7wwC0vPgs4Lstn"
+
+execute_offline_proxy_compute:
+  # desc: "离线代理层-字段获取接口入参格式"
+  - uid: ""
+    orderId: ""
+    macCode: "R2"
+    creditId: ""
+    fieldNameList: ""
+    invoker: "1218"
+    appSecret: "ZR7wwC0vPgs4Lstn"

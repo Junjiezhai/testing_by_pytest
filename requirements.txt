@@ -1,0 +1,34 @@
+# 测试框架
+pytest==7.4.3
+allure-pytest==2.13.2
+
+# 数据验证
+jsonschema==4.20.0
+
+# 数据处理
+pandas==2.0.3
+openpyxl==3.1.2
+
+# 数据库连接
+pymysql==1.1.0
+sqlalchemy==2.0.23
+
+# 分布式协调
+kazoo==2.9.0
+
+# HTTP请求
+requests==2.31.0
+urllib3==2.1.0
+
+# 日志处理
+loguru==0.7.2
+
+# 配置文件处理
+pyyaml==6.0.1
+
+# 工具库
+prettytable==3.9.0
+jsonpath==0.82
+
+# 其他依赖
+typing-extensions==4.9.0

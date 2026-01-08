@@ -1,0 +1,280 @@
+# 流程决策
+ProcessEngine:
+  # 在线实时决策
+  execute_online:
+    type: object
+    properties:
+      code:
+        type: string
+      data:
+        type: object
+      msg:
+        type: string
+      status:
+        type: integer
+    required: [code, data, msg, status]
+    additionalProperties: true
+
+  # 电商集群在线实时决策
+  execute_ec_online:
+    type: object
+    properties:
+      code:
+        type: string
+      data:
+        type: object
+      msg:
+        type: string
+      status:
+        type: integer
+    required: [code, data, msg, status]
+    additionalProperties: true
+
+  # 离线批跑决策
+  execute_batch:
+    type: object
+    properties:
+      code:
+        type: string
+      data:
+        type: object
+      msg:
+        type: string
+      status:
+        type: integer
+    required: [code, data, msg, status]
+    additionalProperties: true
+
+  # 仿真测试决策
+  execute_simulate:
+    type: object
+    properties:
+      code:
+        type: string
+      data:
+        type: object
+      msg:
+        type: string
+      status:
+        type: integer
+    required: [code, data, msg, status]
+    additionalProperties: true
+
+# 米霍克决策
+MihawkEngine:
+  # 【米霍克决策-在线】--流程决策
+  online_exec_rcflow_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-在线】--节点决策
+  online_exec_make_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      decisionNodeId:
+        type: integer
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, decisionNodeId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-在线】--乐包决策
+  online_exec_package_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+      packageId:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult, packageId]
+    additionalProperties: true
+
+  # 【米霍克决策-电商在线】--流程决策
+  ec_online_exec_rcflow_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-电商在线】--节点决策
+  ec_online_exec_make_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      decisionNodeId:
+        type: integer
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, decisionNodeId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-电商在线】--乐包决策
+  ec_online_exec_package_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+      packageId:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult, packageId]
+    additionalProperties: true
+
+  # 【米霍克决策-批跑】--流程决策
+  batch_exec_rcflow_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-批跑】--节点决策
+  batch_exec_make_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      decisionNodeId:
+        type: integer
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, decisionNodeId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-批跑】--乐包决策
+  batch_exec_package_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+      packageId:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult, packageId]
+    additionalProperties: true
+
+  # 【米霍克决策-仿真】--流程决策
+  simulate_exec_rcflow_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-仿真】--节点决策
+  simulate_exec_make_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      decisionNodeId:
+        type: integer
+      decisionResult:
+        type: integer
+    required: [decisionStatus, output, decisionNodeId, decisionResult]
+    additionalProperties: true
+
+  # 【米霍克决策-仿真】--乐包决策
+  simulate_exec_package_decision:
+    type: object
+    properties:
+      decisionStatus:
+        type: string
+      output:
+        type: object
+      rcFlowId:
+        type: string
+      decisionResult:
+        type: integer
+      packageId:
+        type: integer
+    required: [decisionStatus, output, rcFlowId, decisionResult, packageId]
+    additionalProperties: true
+
+# 特征平台
+FeaturePlatform:
+  # 授信代理层-字段获取接口
+  execute_field_batch_compute:
+    type: object
+    additionalProperties: true
+
+  # 交易代理层-字段获取接口
+  execute_ruleengine_proxy_compute:
+    type: object
+    additionalProperties: true
+
+  # 仿真代理层-字段获取接口
+  execute_simulate_proxy_compute:
+    type: object
+    additionalProperties: true
+
+  # 业务代理层-字段获取接口
+  execute_business_proxy_compute:
+    type: object
+    additionalProperties: true
+
+  # 离线代理层-字段获取接口
+  execute_offline_proxy_compute:
+    type: object
+    additionalProperties: true
+
+

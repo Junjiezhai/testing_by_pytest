@@ -1,0 +1,60 @@
+execute_online:
+  # desc: "在线实时决策接口入参格式"
+  - uid: "online"
+    async: false
+    instanceId: ""
+    processId: ""
+    version: ""
+    inputs:
+      orderId: ""
+      processSceneType: ""
+      fieldSet: {}
+      creditCardType: ""
+      quotaType: ""
+    invoker: 1
+
+execute_ec_online:
+  # desc: "电商集群在线实时决策接口入参格式"
+  - uid: "online"
+    async: false
+    instanceId: ""
+    processId: ""
+    version: ""
+    inputs:
+      orderId: ""
+      processSceneType: ""
+      fieldSet: {}
+      creditCardType: ""
+      quotaType: ""
+    invoker: 1
+
+execute_batch:
+  # desc: "离线批跑决策接口入参格式"
+  - uid: "batch"
+    async: false
+    instanceId: ""
+    processId: ""
+    version: ""
+    inputs:
+      orderId: ""
+      processSceneType: ""
+      fieldSet: {}
+      creditCardType: ""
+      quotaType: ""
+      batchId: ""
+    invoker: 1
+
+execute_simulate:
+  # desc: "仿真测试决策接口入参格式"
+  - uid: "simulate"
+    async: false
+    instanceId: ""
+    processId: ""
+    version: ""
+    inputs:
+      orderId: ""
+      processSceneType: ""
+      fieldSet: {}
+      creditCardType: ""
+      quotaType: ""
+    invoker: 1

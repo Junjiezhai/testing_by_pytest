@@ -1,0 +1,362 @@
+# 流程决策
+ProcessEngine:
+  # 在线实时决策
+  execute_online:
+    instance_name: processenginedb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "process_instance_##_db.t_process_instance_result_#"
+      condition: "finstance_id = '{}'"
+      key_indicator: "finstance_id"
+      order_by: False
+      ret_col:
+        - Fcode
+        - Fstatus
+        - Fdata
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_element_decision_log"
+      condition: "finstance_id = '{0}'"
+      ret_col:
+        - felement_id
+        - fpackage_id
+
+    # 电商在线实时决策
+    execute_ec_online:
+      instance_name: processengineecdb
+      db_info:
+        sql_type: "select"
+        target_column: "*"
+        target_table: "process_instance_##_db.t_process_instance_result_#"
+        condition: "finstance_id = '{}'"
+        key_indicator: "finstance_id"
+        order_by: False
+        ret_col:
+          - Fcode
+          - Fstatus
+          - Fdata
+      ck_info:
+        sql_type: "select"
+        target_column: "*"
+        target_table: "risk_control_base_db.t_element_decision_log"
+        condition: "finstance_id = '{0}'"
+        ret_col:
+          - felement_id
+          - fpackage_id
+
+  # 离线批跑决策
+  execute_batch:
+    instance_name: processenginebdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "process_instance_##_db.t_process_instance_result_#"
+      condition: "finstance_id = '{}'"
+      key_indicator: "finstance_id"
+      order_by: False
+      ret_col:
+        - Fcode
+        - Fstatus
+        - Fdata
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_element_decision_log"
+      condition: "finstance_id = '{0}'"
+      ret_col:
+        - felement_id
+        - fpackage_id
+
+  # 仿真测试决策
+  execute_simulate:
+    instance_name: processenginesdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "process_instance_##_db.t_process_instance_result_#"
+      condition: "finstance_id = '{}'"
+      key_indicator: "finstance_id"
+      order_by: False
+      ret_col:
+        - Fcode
+        - Fstatus
+        - Fdata
+      ck_info:
+        sql_type: "select"
+        target_column: "*"
+        target_table: "risk_control_base_db.t_element_decision_log"
+        condition: "finstance_id = '{0}'"
+        ret_col:
+          - felement_id
+          - fpackage_id
+
+# 米霍克决策
+MihawkEngine:
+  # 【米霍克决策-在线】--流程决策
+  online_exec_rcflow_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-在线】--节点决策
+  online_exec_make_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-在线】--乐包决策
+  online_exec_package_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='-1'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='-1'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-电商在线】--流程决策
+  ec_online_exec_rcflow_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-电商在线】--节点决策
+  ec_online_exec_make_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-电商在线】--乐包决策
+  ec_online_exec_package_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='-1'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='-1'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-批跑】--流程决策
+  batch_exec_rcflow_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-批跑】--节点决策
+  batch_exec_make_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-批跑】--乐包决策
+  batch_exec_package_decision:
+    instance_name: hawkdecisionallwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_record_####_db.t_strategy_node_with_param_decision_####"
+      condition: "fseq = '{}' and fnode_id='-1'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_water"
+      condition: "Fseq = '{0}' and Fnode_id='-1'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-仿真】--流程决策
+  simulate_exec_rcflow_decision:
+    instance_name: hawktestwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_test_record_####_db.t_strategy_node_test_decision_####"
+      condition: "fseq = '{0}' and fnode_id='{1}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_test_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-仿真】--节点决策
+  simulate_exec_make_decision:
+    instance_name: hawktestwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_test_record_####_db.t_strategy_node_test_decision_####"
+      condition: "fseq = '{}' and fnode_id='{}'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_test_water"
+      condition: "Fseq = '{0}' and Fnode_id='{1}'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+  # 【米霍克决策-仿真】--乐包决策
+  simulate_exec_package_decision:
+    instance_name: hawktestwaterdb
+    db_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "hawkeye_decision_engine_test_record_####_db.t_strategy_node_test_decision_####"
+      condition: "fseq = '{}' and fnode_id='-1'"
+      key_indicator: "fseq"
+      order_by: False
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+    ck_info:
+      sql_type: "select"
+      target_column: "*"
+      target_table: "risk_control_base_db.t_strategy_node_decision_test_water"
+      condition: "Fseq = '{0}' and Fnode_id='-1'"
+      ret_col:
+        - Fapproval_result
+        - Fdecision_status
+
+
+
