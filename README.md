@@ -34,7 +34,8 @@ making_decison_test/
 │   ├── handle_log.py       # 日志处理工具（基于loguru）
 │   ├── handle_path.py      # 路径处理工具
 │   ├── handle_cases.py     # 测试用例处理工具
-│   └── handle_instanceid.py # 实例ID处理工具
+│   ├── handle_instanceid.py # 实例ID处理工具
+│   └── handle_allure_report.py # Allure报告统计与企微通知工具
 │
 ├── assert_code/             # 断言模块目录
 │   ├── assertAction.py     # 断言操作类
@@ -232,7 +233,9 @@ python exec_pytest.py
 - 读取配置并更新 `config/env_group_config.yaml`
 - 执行测试用例
 - 生成 Allure 测试报告
-- 自动打开浏览器查看报告
+- 启动 Allure 本地报告服务
+- 统计通过/失败用例数、执行日期、env、group 和自动化用例通过率
+- 通过企业微信 webhook 发送报告摘要和 Allure 报告地址到对应群聊
 
 #### 方式二: 使用pytest命令
 ```bash
@@ -258,8 +261,20 @@ allure generate ./report/tmp -o ./report/report --clean
 
 #### 启动Allure服务查看报告
 ```bash
-allure serve ./report/tmp
+allure open ./report/report
 ```
+
+#### 执行完成后的自动通知
+运行 `python exec_pytest.py` 后，框架会自动读取 Allure 汇总信息，并通过 `utils/handle_allure_report.py` 将以下内容发送到对应企微群：
+- 执行日期
+- 当前执行环境 `env`
+- 当前执行分组 `group`
+- 通过用例数
+- 失败用例数
+- 自动化用例通过率
+- Allure 报告访问地址
+
+说明：Allure 报告地址为当前执行机器启动的本地服务地址，需确保接收人可以访问该机器对应 IP 和端口。
 
 ### 4. 运行效果示例
 
@@ -355,6 +370,11 @@ allure serve ./report/tmp
   - 接收 env 和 group 参数
   - 自动更新 `config/env_group_config.yaml` 文件
   - 返回当前生效的配置字典
+
+### 8. Allure报告通知工具 (utils/handle_allure_report.py)
+- `get_case_count(summary_path)` - 从 Allure 的 `summary.json` 统计通过数和失败数
+- `open_allure_report(report_dir)` - 启动 Allure 报告服务并返回访问地址
+- `report_summary(num_successd, num_failed, allure_report_url, env, group)` - 将执行日期、env、group、通过数、失败数、通过率和报告地址通过企微 webhook 发送到群聊
 
 ## 注意事项
 

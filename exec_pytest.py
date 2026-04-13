@@ -28,6 +28,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.handle_yaml import update_test_config, get_test_config
 from utils.handle_log import log
+from utils.handle_allure_report import get_case_count, open_allure_report, report_summary
 
 
 def set_test_config(env='pro', group='default'):
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     # 设置为 None 表示使用配置文件中的值
     # ========================================================================
 
-    env = 'pro'  # 可选: 'stable', 'yn_stable', 'mxg_stable', 'yn_pro', 'mxg_pro', 'pro'
+    env = 'pre'  # 可选: 'stable', 'yn_stable', 'mxg_stable', 'yn_pro', 'mxg_pro', 'pro'
     group = 'default'  # 可选: 'stable', 'project_109111228', 'project_10963208', 'default'
 
     # 示例1: 印尼稳定环境
@@ -102,8 +103,13 @@ if __name__ == '__main__':
     ])
 
     # ========================================================================
-    # 生成和打开Allure报告
+    # 生成、打开Allure报告并发送企微通知
     # ========================================================================
 
     os.system('allure generate ./report/tmp -o ./report/report --clean')
-    os.system('allure serve ./report/tmp')
+    # os.system('allure serve ./report/tmp')
+
+    # 发送企微报告信息
+    allure_report_url = open_allure_report('./report/report')
+    num_successd, num_failed = get_case_count('./report/report/widgets/summary.json')
+    report_summary(num_successd, num_failed, allure_report_url, config['env'], config['group'])
