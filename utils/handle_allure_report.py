@@ -64,14 +64,25 @@ def open_allure_report(report_dir='./report/report'):
     return allure_report_url
 
 
-def report_summary(num_successd, num_failed, allure_report_url, env=None, group=None, wehook_url=WEHOOK_URL):
+def report_summary(num_successd, num_failed, allure_report_url, env=None, group=None, wehook_url=WEHOOK_URL, extra_content='', elapsed_minutes=None):
     execute_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     total_count = num_successd + num_failed
     pass_rate = f'{num_successd / total_count * 100:.2f}%' if total_count else '0.00%'
+    extra_text = f'\n{extra_content}' if extra_content else ''
+    elapsed_text = f'执行耗时：{elapsed_minutes:.2f}分钟\n' if elapsed_minutes is not None else ''
+    content_text = (
+        f"自动化测试执行完成\n"
+        f"时间：{execute_date}\n"
+        f"{elapsed_text}"
+        f"环境：{env} / {group}\n"
+        f"总览：通过 {num_successd}，失败 {num_failed}，通过率 {pass_rate}"
+        f"{extra_text}\n"
+        f"Allure：{allure_report_url}"
+    )
     content = {
         "msgtype": "text",
         "text": {
-            "content": f"自动化测试执行完成\n执行日期：{execute_date}\n当前执行环境：{env}\n当前执行分组：{group}\n通过用例数：{num_successd}\n失败用例数：{num_failed}\n自动化用例通过率：{pass_rate}\nAllure报告地址：{allure_report_url}",
+            "content": content_text,
         }
     }
     response = requests.post(wehook_url, json=content, timeout=10)
