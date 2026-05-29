@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291156117104558",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291156117104554",
+          "sessionId": "chat_pre_202605291156117104558"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我拒绝任何利益交换，也无力操作删除逾期记录。逾期信息会由系统自动上报征信，请您知悉。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225249651496",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225249651496",
+          "sessionId": "chat_pre_20260528225249651496"
+        },
+        "type": "TEXT",
+        "value": "我是分期乐信贷顾问，主要帮您解答提额、降息和材料相关问题。请问您有这方面想了解的吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

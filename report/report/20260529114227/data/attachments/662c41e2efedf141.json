@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291152484674148",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291152484674149",
+          "sessionId": "chat_pre_202605291152484674148"
+        },
+        "type": "TEXT",
+        "value": "建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

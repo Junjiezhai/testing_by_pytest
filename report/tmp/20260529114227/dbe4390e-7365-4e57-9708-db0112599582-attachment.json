@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0126",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-材料审核不通过怎么办",
+  "intent": "提额降息咨询类",
+  "question": "材料审核不通过怎么办",
+  "expected_answer": "如材料审核不通过，您可选择其他提额方式进行提额。为您推荐借钱APP截图提额",
+  "questions": [
+    "材料审核不通过怎么办"
+  ],
+  "expected_answers": [
+    "如材料审核不通过，您可选择其他提额方式进行提额。为您推荐借钱APP截图提额"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。如材料审核不通过，您可选择其他提额方式进行提额。为您推荐借钱APP截图提额",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

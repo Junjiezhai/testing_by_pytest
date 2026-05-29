@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223745581418",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223745581418",
+          "sessionId": "chat_pre_20260528223745581418"
+        },
+        "type": "TEXT",
+        "value": "暂不支持电话查询审核进度，您可以在本页面输入“查询进度”，我来帮您查看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

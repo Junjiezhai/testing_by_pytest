@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0106",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我可以委托他人帮我操作提额吗",
+  "intent": "提额降息咨询类",
+  "question": "我可以委托他人帮我操作提额吗",
+  "expected_answer": "为了保障您的账户安全，提额操作建议由本人亲自完成，请勿将账户密码告知他人或委托他人操作。",
+  "questions": [
+    "我可以委托他人帮我操作提额吗"
+  ],
+  "expected_answers": [
+    "为了保障您的账户安全，提额操作建议由本人亲自完成，请勿将账户密码告知他人或委托他人操作。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。为了保障您的账户安全，提额操作建议由本人亲自完成，请勿将账户密码告知他人或委托他人操作。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

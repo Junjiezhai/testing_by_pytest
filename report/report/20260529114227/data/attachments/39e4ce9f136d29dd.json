@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291205591284333",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291205591284337",
+          "sessionId": "chat_pre_202605291205591284333"
+        },
+        "type": "TEXT",
+        "value": "现在的具体时间建议您查看手机或 APP 页面展示哦。如果您有提额、降息或材料上传等问题，随时告诉我，我来帮您看看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

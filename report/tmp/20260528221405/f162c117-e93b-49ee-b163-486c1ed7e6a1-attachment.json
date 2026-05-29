@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0222",
+  "case_type": "single_turn",
+  "case_desc": "借款下单类-我可以去哪里下单借钱",
+  "intent": "借款下单类",
+  "question": "我可以去哪里下单借钱",
+  "expected_answer": "您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。",
+  "questions": [
+    "我可以去哪里下单借钱"
+  ],
+  "expected_answers": [
+    "您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

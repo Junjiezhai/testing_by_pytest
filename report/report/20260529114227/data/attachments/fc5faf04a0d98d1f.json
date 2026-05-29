@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291203551994263",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291203551994268",
+          "sessionId": "chat_pre_202605291203551994263"
+        },
+        "type": "TEXT",
+        "value": "我无法参与或协助任何黑客行为，以漏洞要挟提额属于敲诈，将依法处理。请您通过正规渠道申请提额。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

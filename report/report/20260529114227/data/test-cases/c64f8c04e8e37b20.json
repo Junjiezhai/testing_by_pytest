@@ -1,0 +1,252 @@
+{
+  "uid" : "c64f8c04e8e37b20",
+  "name" : "test_single_turn_intent_recognition[转人工类-转人工要排队多久？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "9399815ebb8825c2c401e657e2f05e14",
+  "time" : {
+    "start" : 1780026976955,
+    "stop" : 1780026994540,
+    "duration" : 17585
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 模型断言失败：TEXT评分 60.0 未达到阈值 70.0(gte)",
+  "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x000001A6A8E52D68>\ncase_info = {'case_desc': '转人工类-转人工要排队多久？', 'case_id': 'MIR_0200', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': get_random_uid(),\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n            response_time=response_time\n        )\n        MODEL_REPORT_ROWS.append(report_row)\n        ModelCaseHandler.save_model_rows([report_row])\n    \n        exec_log = build_exec_log(case_info=case_info, msg_info=msg_info, exec_res=exec_res, report_row=report_row, response_time=response_time)\n        log.info(f\"\\n{exec_log}\")\n        allure.attach(json.dumps(case_info, ensure_ascii=False, indent=2), '用例信息', allure.attachment_type.JSON)\n        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)\n        allure.attach(json.dumps(exec_res.get('request_data'), ensure_ascii=False, indent=2), '信贷大模型请求入参', allure.attachment_type.JSON)\n        allure.attach(json.dumps(exec_res.get('output_data'), ensure_ascii=False, indent=2), '信贷大模型完整返回', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row, ensure_ascii=False, indent=2), '模型评估明细', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row.get('assert_detail'), ensure_ascii=False, indent=2), '断言明细', allure.attachment_type.JSON)\n        allure.attach(report_row.get('failure_reason') or '无', '失败原因', allure.attachment_type.TEXT)\n        assert_answer_text = '\\n'.join([\n            f\"【标准答案】：{report_row['expected_answer']}\",\n            f\"【外部模型参考答案】：{report_row.get('reference_answer') or ''}\"\n        ])\n        allure.attach(report_row['actual_answer'], '信贷大模型实际话术', allure.attachment_type.TEXT)\n        allure.attach(assert_answer_text, '断言话术', allure.attachment_type.TEXT)\n    \n>       ModelIntentAssert.assert_model_result(report_row=report_row)\n\ntest_cases\\test_model_intent_recognition.py:297: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'assert_code.model_intent_assert.ModelIntentAssert'>\nreport_row = {'actual_answer': '人工客服的排队时间请以 APP 官方页面展示为准，建议您通过 APP 在线客服入口查看当前状态。', 'actual_intent': '', 'assert_detail': {'asset_allowed': False, 'asset_present': False, 'asset_value': '', 'asset_value_pass': True, ...}, 'asset_allowed': False, ...}\n\n    @classmethod\n    def assert_model_result(cls, report_row: dict) -> None:\n        \"\"\"\n        模型评估结果断言\n        :param report_row: 评估明细\n        :return:\n        \"\"\"\n>       assert report_row['is_pass'] is True, f\"模型断言失败：{report_row.get('failure_reason') or report_row.get('similarity_reason') or report_row.get('similarity_score')}\"\nE       AssertionError: 模型断言失败：TEXT评分 60.0 未达到阈值 70.0(gte)\n\nassert_code\\model_intent_assert.py:598: AssertionError",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 模型断言失败：TEXT评分 60.0 未达到阈值 70.0(gte)",
+    "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x000001A6A8E52D68>\ncase_info = {'case_desc': '转人工类-转人工要排队多久？', 'case_id': 'MIR_0200', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': get_random_uid(),\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n            response_time=response_time\n        )\n        MODEL_REPORT_ROWS.append(report_row)\n        ModelCaseHandler.save_model_rows([report_row])\n    \n        exec_log = build_exec_log(case_info=case_info, msg_info=msg_info, exec_res=exec_res, report_row=report_row, response_time=response_time)\n        log.info(f\"\\n{exec_log}\")\n        allure.attach(json.dumps(case_info, ensure_ascii=False, indent=2), '用例信息', allure.attachment_type.JSON)\n        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)\n        allure.attach(json.dumps(exec_res.get('request_data'), ensure_ascii=False, indent=2), '信贷大模型请求入参', allure.attachment_type.JSON)\n        allure.attach(json.dumps(exec_res.get('output_data'), ensure_ascii=False, indent=2), '信贷大模型完整返回', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row, ensure_ascii=False, indent=2), '模型评估明细', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row.get('assert_detail'), ensure_ascii=False, indent=2), '断言明细', allure.attachment_type.JSON)\n        allure.attach(report_row.get('failure_reason') or '无', '失败原因', allure.attachment_type.TEXT)\n        assert_answer_text = '\\n'.join([\n            f\"【标准答案】：{report_row['expected_answer']}\",\n            f\"【外部模型参考答案】：{report_row.get('reference_answer') or ''}\"\n        ])\n        allure.attach(report_row['actual_answer'], '信贷大模型实际话术', allure.attachment_type.TEXT)\n        allure.attach(assert_answer_text, '断言话术', allure.attachment_type.TEXT)\n    \n>       ModelIntentAssert.assert_model_result(report_row=report_row)\n\ntest_cases\\test_model_intent_recognition.py:297: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'assert_code.model_intent_assert.ModelIntentAssert'>\nreport_row = {'actual_answer': '人工客服的排队时间请以 APP 官方页面展示为准，建议您通过 APP 在线客服入口查看当前状态。', 'actual_intent': '', 'assert_detail': {'asset_allowed': False, 'asset_present': False, 'asset_value': '', 'asset_value_pass': True, ...}, 'asset_allowed': False, ...}\n\n    @classmethod\n    def assert_model_result(cls, report_row: dict) -> None:\n        \"\"\"\n        模型评估结果断言\n        :param report_row: 评估明细\n        :return:\n        \"\"\"\n>       assert report_row['is_pass'] is True, f\"模型断言失败：{report_row.get('failure_reason') or report_row.get('similarity_reason') or report_row.get('similarity_score')}\"\nE       AssertionError: 模型断言失败：TEXT评分 60.0 未达到阈值 70.0(gte)\n\nassert_code\\model_intent_assert.py:598: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d321ed0027af7a1",
+      "name" : "用例信息",
+      "source" : "d321ed0027af7a1.json",
+      "type" : "application/json",
+      "size" : 920
+    }, {
+      "uid" : "be39fdf6c5e350bc",
+      "name" : "执行日志",
+      "source" : "be39fdf6c5e350bc.txt",
+      "type" : "text/plain",
+      "size" : 3232
+    }, {
+      "uid" : "2e6334887206b99f",
+      "name" : "信贷大模型请求入参",
+      "source" : "2e6334887206b99f.json",
+      "type" : "application/json",
+      "size" : 938
+    }, {
+      "uid" : "dd244b69a1b5cc38",
+      "name" : "信贷大模型完整返回",
+      "source" : "dd244b69a1b5cc38.json",
+      "type" : "application/json",
+      "size" : 562
+    }, {
+      "uid" : "39d022e10df0bb32",
+      "name" : "模型评估明细",
+      "source" : "39d022e10df0bb32.json",
+      "type" : "application/json",
+      "size" : 3498
+    }, {
+      "uid" : "de7b0563a54e4b6f",
+      "name" : "断言明细",
+      "source" : "de7b0563a54e4b6f.json",
+      "type" : "application/json",
+      "size" : 481
+    }, {
+      "uid" : "c8bbc225f72708d3",
+      "name" : "失败原因",
+      "source" : "c8bbc225f72708d3.txt",
+      "type" : "text/plain",
+      "size" : 41
+    }, {
+      "uid" : "dea9fce86ae014f6",
+      "name" : "信贷大模型实际话术",
+      "source" : "dea9fce86ae014f6.txt",
+      "type" : "text/plain",
+      "size" : 124
+    }, {
+      "uid" : "3b3543edbb99c24e",
+      "name" : "断言话术",
+      "source" : "3b3543edbb99c24e.txt",
+      "type" : "text/plain",
+      "size" : 379
+    }, {
+      "uid" : "26a9c33fcc97f4fe",
+      "name" : "log",
+      "source" : "26a9c33fcc97f4fe.txt",
+      "type" : "text/plain",
+      "size" : 16517
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0200', 'case_type': 'single_turn', 'case_desc': '转人工类-转人工要排队多久？', 'intent': '转人工类', 'question': '转人工要排队多久？', 'expected_answer': '当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。', 'questions': ['转人工要排队多久？'], 'expected_answers': ['当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "94f3353d1cb30dcf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979686734,
+          "stop" : 1779979696861,
+          "duration" : 10127
+        }
+      }, {
+        "uid" : "a6d52ea32219c408",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 57.5 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779964870234,
+          "stop" : 1779964889207,
+          "duration" : 18973
+        }
+      }, {
+        "uid" : "72d2cbbe2cda0a43",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 55.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779878859642,
+          "stop" : 1779878934161,
+          "duration" : 74519
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "c64f8c04e8e37b20.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0200', 'case_type': 'single_turn', 'case_desc': '转人工类-转人工要排队多久？', 'intent': '转人工类', 'question': '转人工要排队多久？', 'expected_answer': '当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。', 'questions': ['转人工要排队多久？'], 'expected_answers': ['当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

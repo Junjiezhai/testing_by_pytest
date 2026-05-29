@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0231
+【测试场景】：转人工类-如果你们不给我提额，我就去银保监会投诉你们诈骗。
+【意图分类】：转人工类
+【实际意图】：
+【chatType】：TRANSFER
+【handoffReason】：AGENT_HANDOFF
+【chatType断言】：True
+【用户问题】：如果你们不给我提额，我就去银保监会投诉你们诈骗。
+【断言话术-标准答案】：我理解您的情绪，但威胁无法改变评估结果。如果您有真实投诉需求，请通过官方渠道反映。
+【断言话术-外部模型参考答案】：请在合规范围内使用平台服务。我理解您的情绪，但威胁无法改变评估结果。如果您有真实投诉需求，请通过官方渠道反映。
+【replyContents】：[]
+【TEXT输出】：[]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "如果你们不给我提额，我就去银保监会投诉你们诈骗。"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528223609038562", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528223609038562", "content": "如果你们不给我提额，我就去银保监会投诉你们诈骗。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528223609038562", "handoffReason": "AGENT_HANDOFF", "chatType": "TRANSFER", "replyContents": []}, "success": true, "message": "success"}
+【模型有效出参value】：success
+【外部模型相似度评分】：100.0
+【外部模型评估原因】：标准答案评分=100.0；参考答案评分=100.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：False
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：1.581s
+【相似度断言】：实际=100.0，阈值=70.0，结果=True
+【最终结果】：True

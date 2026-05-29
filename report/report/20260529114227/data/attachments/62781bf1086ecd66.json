@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0319",
+  "case_type": "single_turn",
+  "case_desc": "非业务相关意图-帮我写首诗",
+  "intent": "非业务相关意图",
+  "question": "帮我写首诗",
+  "expected_answer": "抱歉，我是信贷助手，主要处理借款、提额、降息等相关问题，文学创作不在我的服务范围内。",
+  "questions": [
+    "帮我写首诗"
+  ],
+  "expected_answers": [
+    "抱歉，我是信贷助手，主要处理借款、提额、降息等相关问题，文学创作不在我的服务范围内。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "抱歉，我是信贷助手，主要处理借款、提额、降息等问题，无法提供文学创作服务。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225724023928",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225724024925",
+          "sessionId": "chat_pre_20260528225724023928"
+        },
+        "type": "TEXT",
+        "value": "我更擅长帮您看分期乐提额或降息相关的问题，您想咨询哪一块？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0085",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额降息有次数限制吗",
+  "intent": "提额降息咨询类",
+  "question": "提额降息有次数限制吗",
+  "expected_answer": "同一时间段内，系统对提额操作次数有限制。如页面显示可操作，您即可继续提交材料；如暂无入口，请等待系统更新评估结果。",
+  "questions": [
+    "提额降息有次数限制吗"
+  ],
+  "expected_answers": [
+    "同一时间段内，系统对提额操作次数有限制。如页面显示可操作，您即可继续提交材料；如暂无入口，请等待系统更新评估结果。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。同一时间段内，系统对提额操作次数有限制。如页面显示可操作，您即可继续提交材料；如暂无入口，请等待系统更新评估结果。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

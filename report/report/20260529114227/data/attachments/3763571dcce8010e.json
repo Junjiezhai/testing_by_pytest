@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "系统暂未查询到您提交过的提额降息记录。您可查看下方增信提额项，继续尝试提升额度。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191421518676",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "189"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,232 @@
+{
+  "uid" : "30e6813447bca5",
+  "name" : "test_multi_turn_dialog_consistency[咨询到操作递进-19]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "d03ccfc086c0c92a1a81b95fe39998de",
+  "time" : {
+    "start" : 1780029494639,
+    "stop" : 1780029602360,
+    "duration" : 107721
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "852c6ce2cb6a60fb",
+      "name" : "信贷大模型实际话术",
+      "source" : "852c6ce2cb6a60fb.txt",
+      "type" : "text/plain",
+      "size" : 817
+    }, {
+      "uid" : "c89009515e51b491",
+      "name" : "断言话术",
+      "source" : "c89009515e51b491.txt",
+      "type" : "text/plain",
+      "size" : 1432
+    }, {
+      "uid" : "23502afe3e285635",
+      "name" : "多轮失败定位摘要",
+      "source" : "23502afe3e285635.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "726016289a5c834f",
+      "name" : "执行日志",
+      "source" : "726016289a5c834f.txt",
+      "type" : "text/plain",
+      "size" : 8971
+    }, {
+      "uid" : "34a618611f2470b2",
+      "name" : "模型评估明细CSV",
+      "source" : "34a618611f2470b2.csv",
+      "type" : "text/csv",
+      "size" : 2514
+    }, {
+      "uid" : "953fbdae7e1da8f1",
+      "name" : "多轮逐轮评估明细",
+      "source" : "953fbdae7e1da8f1.json",
+      "type" : "application/json",
+      "size" : 26101
+    }, {
+      "uid" : "e1178faed4988d86",
+      "name" : "log",
+      "source" : "e1178faed4988d86.txt",
+      "type" : "text/plain",
+      "size" : 58100
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "what到how递进"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "what到how递进"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0059', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-19', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'questions': ['提额会让我每月的还款压力变大吗？', '同时上传多种材料，额度会更高吗', '审核结果可以发到我的邮箱吗？'], 'expected_answers': ['提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', '多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额会让我每月的还款压力变大吗？', 'expected_answer': '提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '同时上传多种材料，额度会更高吗', 'expected_answer': '多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "5db31584a6a26aad",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：当前轮意图不正确：当前用户问题为咨询‘会不会更高’，属于咨询意图；但期望意图为提额降息操作类，且上下文断言类型为跨意图切换至操作。模型回复仅做解释，未引导用户进行上传材料等操作，不符合操作类意图。",
+        "time" : {
+          "start" : 1779983233727,
+          "stop" : 1779983328689,
+          "duration" : 94962
+        }
+      }, {
+        "uid" : "6f78cbdcee02cdb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779966017616,
+          "stop" : 1779966111368,
+          "duration" : 93752
+        }
+      }, {
+        "uid" : "9ffb37a1dc12d302",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 67.5 低于阈值 70.0",
+        "time" : {
+          "start" : 1779883126702,
+          "stop" : 1779883319929,
+          "duration" : 193227
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "30e6813447bca5.json",
+  "parameterValues" : [ "{'case_id': 'MD_0059', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-19', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'questions': ['提额会让我每月的还款压力变大吗？', '同时上传多种材料，额度会更高吗', '审核结果可以发到我的邮箱吗？'], 'expected_answers': ['提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', '多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额会让我每月的还款压力变大吗？', 'expected_answer': '提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '同时上传多种材料，额度会更高吗', 'expected_answer': '多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

@@ -1,0 +1,234 @@
+{
+  "uid" : "db8663e6a90db507",
+  "name" : "test_single_turn_intent_recognition[转人工类-你们有没有在线人工客服？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "99d2e1fb3ecf2042fed0c22089e2a243",
+  "time" : {
+    "start" : 1779979522314,
+    "stop" : 1779979523134,
+    "duration" : 820
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "befdb5a6d07f7a4d",
+      "name" : "用例信息",
+      "source" : "befdb5a6d07f7a4d.json",
+      "type" : "application/json",
+      "size" : 833
+    }, {
+      "uid" : "f42c85e40b0cdc1f",
+      "name" : "执行日志",
+      "source" : "f42c85e40b0cdc1f.txt",
+      "type" : "text/plain",
+      "size" : 2370
+    }, {
+      "uid" : "188e5d54d762f15",
+      "name" : "信贷大模型请求入参",
+      "source" : "188e5d54d762f15.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "c9944dadea3feba9",
+      "name" : "信贷大模型完整返回",
+      "source" : "c9944dadea3feba9.json",
+      "type" : "application/json",
+      "size" : 214
+    }, {
+      "uid" : "43fe70a475de2ef",
+      "name" : "模型评估明细",
+      "source" : "43fe70a475de2ef.json",
+      "type" : "application/json",
+      "size" : 2227
+    }, {
+      "uid" : "364f7aa5b6d1ae57",
+      "name" : "断言明细",
+      "source" : "364f7aa5b6d1ae57.json",
+      "type" : "application/json",
+      "size" : 447
+    }, {
+      "uid" : "a691f122bb6a88e6",
+      "name" : "失败原因",
+      "source" : "a691f122bb6a88e6.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "f987939b0b727991",
+      "name" : "信贷大模型实际话术",
+      "source" : "f987939b0b727991.txt",
+      "type" : "text/plain",
+      "size" : 7
+    }, {
+      "uid" : "190e495dbb9ec92f",
+      "name" : "断言话术",
+      "source" : "190e495dbb9ec92f.txt",
+      "type" : "text/plain",
+      "size" : 303
+    }, {
+      "uid" : "4838a358327c4b24",
+      "name" : "log",
+      "source" : "4838a358327c4b24.txt",
+      "type" : "text/plain",
+      "size" : 10094
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0177', 'case_type': 'single_turn', 'case_desc': '转人工类-你们有没有在线人工客服？', 'intent': '转人工类', 'question': '你们有没有在线人工客服？', 'expected_answer': '有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。', 'questions': ['你们有没有在线人工客服？'], 'expected_answers': ['有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "66e2cf101789a1be",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965002986,
+          "stop" : 1779965003838,
+          "duration" : 852
+        }
+      }, {
+        "uid" : "78dae3c3b71c3163",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878560292,
+          "stop" : 1779878561958,
+          "duration" : 1666
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "db8663e6a90db507.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0177', 'case_type': 'single_turn', 'case_desc': '转人工类-你们有没有在线人工客服？', 'intent': '转人工类', 'question': '你们有没有在线人工客服？', 'expected_answer': '有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。', 'questions': ['你们有没有在线人工客服？'], 'expected_answers': ['有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。有的。我这就帮您转接到在线人工客服，预计等待1分钟左右。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

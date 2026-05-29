@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291202141538967",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291202141538968",
+          "sessionId": "chat_pre_202605291202141538967"
+        },
+        "type": "TEXT",
+        "value": "抱歉，出于隐私保护，我无法查询任何他人的借款或额度信息。如需了解您本人的提额或借款规则，我可以继续帮您解答。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

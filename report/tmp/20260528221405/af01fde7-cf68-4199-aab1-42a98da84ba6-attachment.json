@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224134978989",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224134978989",
+          "sessionId": "chat_pre_20260528224134978989"
+        },
+        "type": "TEXT",
+        "value": "是的，系统会等待所有材料审核完毕后综合评估给出最终结果。您可留意 APP 页面或消息通知查看进度。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

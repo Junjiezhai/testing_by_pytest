@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291151514973905",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291151514973906",
+          "sessionId": "chat_pre_202605291151514973905"
+        },
+        "type": "TEXT",
+        "value": "个税认证没有固定的最低收入要求，只要您有正常的纳税记录就可以尝试认证，系统会综合评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

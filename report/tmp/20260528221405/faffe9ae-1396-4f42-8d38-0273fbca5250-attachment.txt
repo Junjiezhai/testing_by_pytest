@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0221
+【测试场景】：提额降息咨询类-我怀疑我的账户被盗用了额度
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我怀疑我的账户被盗用了额度
+【断言话术-标准答案】：请立即联系客服冻结账户，并修改登录密码，我们会协助您核查记录。若非本人操作，您可以致电95730/0755-23741400联系人工客服协助
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。请立即联系客服冻结账户，并修改登录密码，我们会协助您核查记录。若非本人操作，您可以致电95730/0755-23741400联系人工客服协助
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528223302100985", "sessionId": "chat_pre_20260528223302100017"}, "type": "TEXT", "value": "建议您立即修改登录密码并联系客服冻结账户，我们会协助核查记录；您可致电95730或0755-23741400联系人工客服协助处理。", "bizVariableMap": {}}]
+【TEXT输出】：["建议您立即修改登录密码并联系客服冻结账户，我们会协助核查记录；您可致电95730或0755-23741400联系人工客服协助处理。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "我怀疑我的账户被盗用了额度"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528223302100017", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528223302100985", "content": "我怀疑我的账户被盗用了额度", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528223302100017", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528223302100985", "sessionId": "chat_pre_20260528223302100017"}, "type": "TEXT", "value": "建议您立即修改登录密码并联系客服冻结账户，我们会协助核查记录；您可致电95730或0755-23741400联系人工客服协助处理。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：建议您立即修改登录密码并联系客服冻结账户，我们会协助核查记录；您可致电95730或0755-23741400联系人工客服协助处理。
+【外部模型相似度评分】：82.5
+【外部模型评估原因】：标准答案评分=85.0；参考答案评分=80.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.353s
+【相似度断言】：实际=82.5，阈值=70.0，结果=True
+【最终结果】：True

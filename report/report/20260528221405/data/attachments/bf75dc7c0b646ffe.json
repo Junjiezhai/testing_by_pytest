@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222802994461",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222802994461",
+          "sessionId": "chat_pre_20260528222802994461"
+        },
+        "type": "TEXT",
+        "value": "不可以哦，提额材料必须与申请账户的实名信息一致，一个自然人只能对应一个账户进行提额操作。建议您先专注于当前账户的申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

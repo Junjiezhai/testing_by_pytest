@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0067
+【测试场景】：提额降息咨询类-为什么我朋友降息了，我没有？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：为什么我朋友降息了，我没有？
+【断言话术-标准答案】：每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。
+【断言话术-外部模型参考答案】：出现这种情况通常与系统综合评估结果有关。每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291147468665776", "sessionId": "chat_pre_202605291147468665778"}, "type": "TEXT", "value": "因为每个用户的信用评估结果不同，系统会综合您的还款记录、负债等资质定期评估，建议您保持良好记录等待开放机会。", "bizVariableMap": {}}]
+【TEXT输出】：["因为每个用户的信用评估结果不同，系统会综合您的还款记录、负债等资质定期评估，建议您保持良好记录等待开放机会。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "为什么我朋友降息了，我没有？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291147468665778", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291147468665776", "content": "为什么我朋友降息了，我没有？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291147468665778", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291147468665776", "sessionId": "chat_pre_202605291147468665778"}, "type": "TEXT", "value": "因为每个用户的信用评估结果不同，系统会综合您的还款记录、负债等资质定期评估，建议您保持良好记录等待开放机会。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：因为每个用户的信用评估结果不同，系统会综合您的还款记录、负债等资质定期评估，建议您保持良好记录等待开放机会。
+【外部模型相似度评分】：88.0
+【外部模型评估原因】：标准答案评分=88.0；参考答案评分=88.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.238s
+【相似度断言】：实际=88.0，阈值=70.0，结果=True
+【最终结果】：True

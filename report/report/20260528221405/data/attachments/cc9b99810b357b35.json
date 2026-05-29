@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224234044880",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224234044880",
+          "sessionId": "chat_pre_20260528224234044880"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法接受任何利益交换或好处，也不具备人工调额权限。提额需按系统综合评估，请勿尝试违规操作。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

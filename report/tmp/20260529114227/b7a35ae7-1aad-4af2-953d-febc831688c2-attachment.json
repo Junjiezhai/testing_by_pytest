@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291203277018022",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291203277018029",
+          "sessionId": "chat_pre_202605291203277018022"
+        },
+        "type": "TEXT",
+        "value": "提额结果是基于系统对您信用风险的客观综合评估，不存在人为操纵或为了多赚利息的情况。建议您关注账户资质变化，保持良好记录。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

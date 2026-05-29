@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "正常的亲。部分复杂申请需要人工复核，最长可能延迟到24小时，请您耐心等待。未查得您有提交过的提额降息记录，您可接着操作以下增信提额降息项，继续提额降息。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "151"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

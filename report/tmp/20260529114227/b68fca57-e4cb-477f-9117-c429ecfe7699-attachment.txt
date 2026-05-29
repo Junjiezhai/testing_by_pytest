@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0060
+【测试场景】：提额降息操作类-我在其他平台有更高的额度，可以用来向你们申请降息吗？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我在其他平台有更高的额度，可以用来向你们申请降息吗？
+【断言话术-标准答案】：您可以上传其他借款APP的额度及利率截图作为辅助材料，部分降息项目支持此种方式，系统会参考评估。
+【断言话术-外部模型参考答案】：您可以根据页面提示完成操作。您可以上传其他借款APP的额度及利率截图作为辅助材料，部分降息项目支持此种方式，系统会参考评估。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291147568731989", "sessionId": "chat_pre_202605291147568731981"}, "type": "TEXT", "value": "可以上传其他借款APP的额度及利率截图作为辅助材料，系统会参考评估。如果您想继续办理，可以直接说“我要降息”。", "bizVariableMap": {}}]
+【TEXT输出】：["可以上传其他借款APP的额度及利率截图作为辅助材料，系统会参考评估。如果您想继续办理，可以直接说“我要降息”。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "我在其他平台有更高的额度，可以用来向你们申请降息吗？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291147568731981", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291147568731989", "content": "我在其他平台有更高的额度，可以用来向你们申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291147568731981", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291147568731989", "sessionId": "chat_pre_202605291147568731981"}, "type": "TEXT", "value": "可以上传其他借款APP的额度及利率截图作为辅助材料，系统会参考评估。如果您想继续办理，可以直接说“我要降息”。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：可以上传其他借款APP的额度及利率截图作为辅助材料，系统会参考评估。如果您想继续办理，可以直接说“我要降息”。
+【外部模型相似度评分】：70.0
+【外部模型评估原因】：标准答案评分=70.0；参考答案评分=70.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.45s
+【相似度断言】：实际=70.0，阈值=70.0，结果=True
+【最终结果】：True

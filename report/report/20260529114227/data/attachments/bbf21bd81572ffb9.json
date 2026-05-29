@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291147232446197",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291147232446194",
+          "sessionId": "chat_pre_202605291147232446197"
+        },
+        "type": "TEXT",
+        "value": "不会重签，原有借款合同不变，降息只影响您未来的新借款。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,779 @@
+[
+  {
+    "round": 1,
+    "question": "提额需要收费吗",
+    "expected_answer": "提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。",
+    "reference_answer": "正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。",
+    "actual_answer": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+    "round_intent": "提额降息咨询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "cross_intent_switch",
+    "expect_refuse": false,
+    "standard_similarity_score": 92.0,
+    "reference_similarity_score": 95.0,
+    "similarity_score": 93.5,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=92.0；参考答案评分=95.0",
+    "intent_pass": true,
+    "intent_reason": "当前回复明确围绕'提额是否收费'进行解答，属于提额降息咨询子类，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=提额降息咨询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=93.5，阈值=70.0；标准答案分=92.0；参考答案分=95.0",
+        "reason": "核心语义一致，均说明提额申请本身免费，增信材料验证可能涉及购买第三方产品，以页面提示为准。实际回复增加了反诈提醒，且未明确'购买第三方产品后提额'的因果关系，但不影响整体理解，扣分在于细节表述的差异。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=提额降息咨询类，实际意图=提额收费咨询",
+        "reason": "当前回复明确围绕'提额是否收费'进行解答，属于提额降息咨询子类，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=cross_intent_switch，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "无历史对话，当前为独立提问，模型直接回答用户问题，不存在上下文省略或污染；非改口场景，未触发拒答，也不涉及回归业务，所有断言均为通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "无历史对话，当前为独立提问，模型直接回答用户问题，不存在上下文省略或污染；非改口场景，未触发拒答，也不涉及回归业务，所有断言均为通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.928,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0062_1779983037927848",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234357927848_0",
+              "content": "提额需要收费吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234433153067_1",
+              "content": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234433154067_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234514631867_3",
+              "content": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234514632869_4",
+              "content": "提额审核中，我可以取消申请吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234548911795_5",
+              "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234548912796_6",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234622796980_7",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0062_1779983037927848",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528234357927848_0",
+              "sessionId": "chat_pre_MD_0062_1779983037927848"
+            },
+            "type": "TEXT",
+            "value": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "怎么申请降息",
+    "expected_answer": "1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+    "reference_answer": "您可以先进入对应功能入口，再按照页面提示逐步提交申请。1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+    "actual_answer": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？",
+    "round_intent": "提额降息操作类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "提额降息咨询类",
+    "context_assert_type": "cross_intent_switch",
+    "expect_refuse": false,
+    "standard_similarity_score": 60.0,
+    "reference_similarity_score": 60.0,
+    "similarity_score": 60.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=60.0；参考答案评分=60.0",
+    "intent_pass": true,
+    "intent_reason": "用户询问'怎么申请降息'，模型回复聚焦在确认目标利率以启动降息流程，属于降息操作步骤，与期望意图一致。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=提额降息操作类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=60.0，阈值=70.0；标准答案分=60.0；参考答案分=60.0",
+        "reason": "标准答案包含'静默降息准入'和'静默降息不准入'两种处理分支，模型仅实现了询问目标利率的准入分支，完全遗漏了不准入时的推荐路径，核心语义覆盖不全。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=提额降息操作类，实际意图=降息操作咨询",
+        "reason": "用户询问'怎么申请降息'，模型回复聚焦在确认目标利率以启动降息流程，属于降息操作步骤，与期望意图一致。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=cross_intent_switch，上一轮意图=提额降息咨询类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "从上一轮提额收费咨询切换到本轮降息操作，模型正确响应新意图并询问利率，未被上一轮意图污染；无改口、无拒答、无回归业务场景，所有断言均为通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "从上一轮提额收费咨询切换到本轮降息操作，模型正确响应新意图并询问利率，未被上一轮意图污染；无改口、无拒答、无回归业务场景，所有断言均为通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=60.0，阈值=70.0；标准答案分=60.0；参考答案分=60.0",
+        "reason": "标准答案包含'静默降息准入'和'静默降息不准入'两种处理分支，模型仅实现了询问目标利率的准入分支，完全遗漏了不准入时的推荐路径，核心语义覆盖不全。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 60.0 低于阈值 70.0",
+    "should_assert": true,
+    "response_time": 7.133,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0062_1779983037927848",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234357927848_0",
+              "content": "提额需要收费吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234433153067_1",
+              "content": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234433154067_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234514631867_3",
+              "content": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234514632869_4",
+              "content": "提额审核中，我可以取消申请吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234548911795_5",
+              "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234548912796_6",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234622796980_7",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？"
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "提额审核中，我可以取消申请吗？",
+    "expected_answer": "审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。",
+    "actual_answer": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "提额降息操作类",
+    "context_assert_type": "cross_intent_switch",
+    "expect_refuse": false,
+    "standard_similarity_score": 95.0,
+    "reference_similarity_score": 80.0,
+    "similarity_score": 87.5,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=95.0；参考答案评分=80.0",
+    "intent_pass": true,
+    "intent_reason": "用户询问取消提额申请，模型给出状态说明和客服指引，属于信息查询，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=87.5，阈值=70.0；标准答案分=95.0；参考答案分=80.0",
+        "reason": "核心语义一致，均表示审核中申请一般无法取消，可联系客服尝试但不保证成功；微小差异为“紧急取消”与“紧急处理”、“处理”与“协助”，不影响理解。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类-提额取消咨询",
+        "reason": "用户询问取消提额申请，模型给出状态说明和客服指引，属于信息查询，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=cross_intent_switch，上一轮意图=提额降息操作类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮为降息操作，本轮切换到取消申请，模型正确响应新意图；未受上一轮污染，无改口、无拒答、无回归业务场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上一轮为降息操作，本轮切换到取消申请，模型正确响应新意图；未受上一轮污染，无改口、无拒答、无回归业务场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 7.411,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0062_1779983037927848",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234357927848_0",
+              "content": "提额需要收费吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234433153067_1",
+              "content": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234433154067_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234514631867_3",
+              "content": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234514632869_4",
+              "content": "提额审核中，我可以取消申请吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234548911795_5",
+              "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234548912796_6",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234622796980_7",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。"
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 4,
+    "question": "降息审核中，我能正常借款吗？",
+    "expected_answer": "可以。降息审核不影响您现有额度的正常使用和借款。",
+    "reference_answer": "只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。",
+    "actual_answer": "可以。降息审核不影响您现有额度的正常使用和借款。",
+    "round_intent": "借款下单类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "cross_intent_switch",
+    "expect_refuse": false,
+    "standard_similarity_score": 100.0,
+    "reference_similarity_score": 92.0,
+    "similarity_score": 96.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=100.0；参考答案评分=92.0",
+    "intent_pass": true,
+    "intent_reason": "用户询问降息审核期间能否借款，模型明确告知可以并解释不影响，属于借款资格咨询，可归入借款下单类意图，符合期望。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=借款下单类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=96.0，阈值=70.0；标准答案分=100.0；参考答案分=92.0",
+        "reason": "实际话术与标准答案完全相同，逐字一致，核心语义完全匹配。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=借款下单类，实际意图=借款咨询",
+        "reason": "用户询问降息审核期间能否借款，模型明确告知可以并解释不影响，属于借款资格咨询，可归入借款下单类意图，符合期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=cross_intent_switch，上一轮意图=信息查询类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "本论为跨意图切换，从上一轮信息查询类平滑过渡到借款咨询，模型直接回答新问题，未被上一轮意图污染，且不涉及改口、风险拒答或回归业务场景，所有上下文断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "本论为跨意图切换，从上一轮信息查询类平滑过渡到借款咨询，模型直接回答新问题，未被上一轮意图污染，且不涉及改口、风险拒答或回归业务场景，所有上下文断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.748,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0062_1779983037927848",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234357927848_0",
+              "content": "提额需要收费吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234433153067_1",
+              "content": "提额申请本身不收取任何费用，但部分增信材料验证可能涉及购买第三方产品，具体以页面提示为准。请警惕任何“付费包过”的诈骗说法。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234433154067_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234514631867_3",
+              "content": "您好，申请降息需先确认目标利率。请问您希望将利率降至多少？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234514632869_4",
+              "content": "提额审核中，我可以取消申请吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234548911795_5",
+              "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528234548912796_6",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528234622796980_7",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0062_1779983037927848",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528234548912796_6",
+              "sessionId": "chat_pre_MD_0062_1779983037927848"
+            },
+            "type": "TEXT",
+            "value": "可以。降息审核不影响您现有额度的正常使用和借款。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

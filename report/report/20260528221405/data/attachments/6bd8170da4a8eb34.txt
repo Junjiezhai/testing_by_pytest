@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0159
+【测试场景】：信息查询类-我上个月提额成功了，这个月的提额申请进度怎么查？
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我上个月提额成功了，这个月的提额申请进度怎么查？
+【断言话术-标准答案】：每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。
+【断言话术-外部模型参考答案】：您可以在页面查看当前处理状态，或通过客服入口查询进度。每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。
+【replyContents】：[{"type": "TEXT", "value": "未查得您有提交过的提额降息记录。每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。您也可以接着操作以下增信提额降息项，继续提额降息。"}, {"type": "ASSET", "value": "AS2605191421518676", "bizParamInfo": {"biz_ref_id": ["189"]}}]
+【TEXT输出】：["未查得您有提交过的提额降息记录。每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。您也可以接着操作以下增信提额降息项，继续提额降息。"]
+【ASSET输出】：["AS2605191421518676"]
+【biz_ref_id】：["189"]
+【模型请求msg_info】：{"uid": "4130948", "content": "我上个月提额成功了，这个月的提额申请进度怎么查？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528224211460434", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528224211460434", "content": "我上个月提额成功了，这个月的提额申请进度怎么查？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "未查得您有提交过的提额降息记录。每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。您也可以接着操作以下增信提额降息项，继续提额降息。"}, {"type": "ASSET", "value": "AS2605191421518676", "bizParamInfo": {"biz_ref_id": ["189"]}}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：未查得您有提交过的提额降息记录。每次申请都是独立的，您可以在“首页-额度-成长”中查看最近的提额降息记录。您也可以接着操作以下增信提额降息项，继续提额降息。
+【外部模型相似度评分】：93.5
+【外部模型评估原因】：标准答案评分=95.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：False (AS2605191421518676)
+【biz_ref_id断言】：True (189)
+【失败原因】：ASSET.value=AS2605191421518676 不在允许范围内
+【响应耗时】：12.8s
+【相似度断言】：实际=93.5，阈值=70.0，结果=True
+【最终结果】：False

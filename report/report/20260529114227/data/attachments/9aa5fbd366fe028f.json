@@ -1,0 +1,539 @@
+[
+  {
+    "round": 1,
+    "question": "降息审核中，我能正常借款吗？",
+    "expected_answer": "可以。降息审核不影响您现有额度的正常使用和借款。",
+    "reference_answer": "只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。",
+    "actual_answer": "可以。降息审核不影响您现有额度的正常使用和借款，您可以继续操作。",
+    "round_intent": "借款下单类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 100.0,
+    "reference_similarity_score": 95.0,
+    "similarity_score": 100.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=100.0；参考答案评分=95.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复直接回答了借款可行性，属于借款下单类场景的确认，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=借款下单类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=100.0，阈值=70.0；标准答案分=100.0；参考答案分=95.0",
+        "reason": "核心语义完全一致：均确认降息审核不影响借款，允许正常操作。实际话术比标准答案多了“您可以继续操作”，但未增加关键限制或改变语义。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=借款下单类，实际意图=借款下单类",
+        "reason": "实际回复直接回答了借款可行性，属于借款下单类场景的确认，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮意图为空，不存在上下文承接问题；当前为普通借款确认，无上一轮意图污染；无用户改口；非风险问题且未要求拒答；非拒答后回归场景。所有检查项均无冲突，默认通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上一轮意图为空，不存在上下文承接问题；当前为普通借款确认，无上一轮意图污染；无用户改口；非风险问题且未要求拒答；非拒答后回归场景。所有检查项均无冲突，默认通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.802,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0020_1780029023692621",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123023692621_0",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123036463514_1",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款，您可以继续操作。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123036463514_2",
+              "content": "借款APP截图有什么要求",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123103819359_3",
+              "content": "请上传其他借款APP的额度页或利率页等页面截图，请勿涂抹或裁减图片，以免影响审批结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123103819359_4",
+              "content": "借款APP截图支持哪些平台",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123118036948_5",
+              "content": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等，具体以页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0020_1780029023692621",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529123023692621_0",
+              "sessionId": "chat_pre_MD_0020_1780029023692621"
+            },
+            "type": "TEXT",
+            "value": "可以。降息审核不影响您现有额度的正常使用和借款，您可以继续操作。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "借款APP截图有什么要求",
+    "expected_answer": "请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。",
+    "reference_answer": "借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。",
+    "actual_answer": "请上传其他借款APP的额度页或利率页等页面截图，请勿涂抹或裁减图片，以免影响审批结果。",
+    "round_intent": "借款下单类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "借款下单类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 100.0,
+    "reference_similarity_score": 95.0,
+    "similarity_score": 100.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=100.0；参考答案评分=95.0",
+    "intent_pass": true,
+    "intent_reason": "实际回答指导用户上传借款APP截图，属于借款下单类场景中的操作指引，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=借款下单类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=100.0，阈值=70.0；标准答案分=100.0；参考答案分=95.0",
+        "reason": "实际话术与标准答案核心语义完全一致：均要求上传其他借款APP的额度页/利率页截图，并提示勿涂抹裁减以免影响审批。仅表述顺序略有不同，无遗漏关键信息。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=借款下单类，实际意图=借款下单类",
+        "reason": "实际回答指导用户上传借款APP截图，属于借款下单类场景中的操作指引，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=借款下单类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮意图为借款下单类，当前轮仍为借款下单类，属于同一意图连续追问，上下文承接顺畅。无意图污染、无用户改口、非风险问题且未要求拒答、非拒答后回归场景，所有检查项均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上一轮意图为借款下单类，当前轮仍为借款下单类，属于同一意图连续追问，上下文承接顺畅。无意图污染、无用户改口、非风险问题且未要求拒答、非拒答后回归场景，所有检查项均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 3.15,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0020_1780029023692621",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123023692621_0",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123036463514_1",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款，您可以继续操作。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123036463514_2",
+              "content": "借款APP截图有什么要求",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123103819359_3",
+              "content": "请上传其他借款APP的额度页或利率页等页面截图，请勿涂抹或裁减图片，以免影响审批结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123103819359_4",
+              "content": "借款APP截图支持哪些平台",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123118036948_5",
+              "content": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等，具体以页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0020_1780029023692621",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529123036463514_2",
+              "sessionId": "chat_pre_MD_0020_1780029023692621"
+            },
+            "type": "TEXT",
+            "value": "请上传其他借款APP的额度页或利率页等页面截图，请勿涂抹或裁减图片，以免影响审批结果。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "借款APP截图支持哪些平台",
+    "expected_answer": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等借款APP，具体请以页面展示为准。",
+    "reference_answer": "借款下单请以页面可操作入口和审核结果为准。目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等借款APP，具体请以页面展示为准。",
+    "actual_answer": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等，具体以页面展示为准。",
+    "round_intent": "借款下单类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "借款下单类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 95.0,
+    "reference_similarity_score": 92.0,
+    "similarity_score": 95.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=95.0；参考答案评分=92.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复回答了借款APP截图支持的平台，属于借款下单类场景内的操作指引，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=借款下单类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=95.0，阈值=70.0；标准答案分=95.0；参考答案分=92.0",
+        "reason": "核心语义一致，均列举支持的借款平台并提示以页面展示为准，实际话术与标准答案仅表述顺序略有差异，无关键信息遗漏。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=借款下单类，实际意图=借款下单类",
+        "reason": "实际回复回答了借款APP截图支持的平台，属于借款下单类场景内的操作指引，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=借款下单类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮意图为借款下单类，当前轮继续追问截图平台，属于同一意图连续追问，上下文承接顺畅；无意图污染、无用户改口、非风险问题且未要求拒答、非拒答后回归场景，所有断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上一轮意图为借款下单类，当前轮继续追问截图平台，属于同一意图连续追问，上下文承接顺畅；无意图污染、无用户改口、非风险问题且未要求拒答、非拒答后回归场景，所有断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.934,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0020_1780029023692621",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123023692621_0",
+              "content": "降息审核中，我能正常借款吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123036463514_1",
+              "content": "可以。降息审核不影响您现有额度的正常使用和借款，您可以继续操作。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123036463514_2",
+              "content": "借款APP截图有什么要求",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123103819359_3",
+              "content": "请上传其他借款APP的额度页或利率页等页面截图，请勿涂抹或裁减图片，以免影响审批结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123103819359_4",
+              "content": "借款APP截图支持哪些平台",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123118036948_5",
+              "content": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等，具体以页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0020_1780029023692621",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529123103819359_4",
+              "sessionId": "chat_pre_MD_0020_1780029023692621"
+            },
+            "type": "TEXT",
+            "value": "目前支持借呗、花呗、京东金条、美团借钱、抖音放心借等，具体以页面展示为准。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

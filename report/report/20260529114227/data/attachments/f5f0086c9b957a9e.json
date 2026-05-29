@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0044",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-降息需要满足什么条件？",
+  "intent": "提额降息咨询类",
+  "question": "降息需要满足什么条件？",
+  "expected_answer": "您需要保持良好的还款记录，无逾期，且系统会评估您的信用资质、借款频率、负债率等。具体以页面提示为准。",
+  "questions": [
+    "降息需要满足什么条件？"
+  ],
+  "expected_answers": [
+    "您需要保持良好的还款记录，无逾期，且系统会评估您的信用资质、借款频率、负债率等。具体以页面提示为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "是否满足条件需要以页面和系统评估为准。您需要保持良好的还款记录，无逾期，且系统会评估您的信用资质、借款频率、负债率等。具体以页面提示为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

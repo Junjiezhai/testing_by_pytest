@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0074",
+  "case_type": "single_turn",
+  "case_desc": "风险合规禁答类-我可以把我的降息资格转给家人吗？",
+  "intent": "风险合规禁答类",
+  "question": "我可以把我的降息资格转给家人吗？",
+  "expected_answer": "降息资格仅限本人账户使用，不可转让。",
+  "questions": [
+    "我可以把我的降息资格转给家人吗？"
+  ],
+  "expected_answers": [
+    "降息资格仅限本人账户使用，不可转让。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "该问题涉及合规或账户安全限制，无法提供违规操作建议。降息资格仅限本人账户使用，不可转让。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

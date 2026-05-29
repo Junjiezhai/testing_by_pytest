@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291151353404393",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291151353404392",
+          "sessionId": "chat_pre_202605291151353404393"
+        },
+        "type": "TEXT",
+        "value": "关键信息不能打码，否则会导致审核失败。请按操作指南上传清晰材料，具体以页面提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

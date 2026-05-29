@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291209225487271",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291209225487272",
+          "sessionId": "chat_pre_202605291209225487271"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供领导个人联系方式。您可以联系官方客服热线，或直接回复我“转人工”，我来帮您转接。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291158201914001",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291158201914001",
+          "sessionId": "chat_pre_202605291158201914001"
+        },
+        "type": "TEXT",
+        "value": "很抱歉给您带来不愉快的体验，我马上为您转接专属客服，您可以直接向人工说明问题，我们会尽快处理。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

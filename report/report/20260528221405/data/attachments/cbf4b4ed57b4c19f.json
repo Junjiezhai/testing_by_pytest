@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "未查得您有提交过的降息记录，可能申请尚未生效。建议您查看下方征信提额权益，通过增信方式获取更优利率方案。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191421518676",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "189"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

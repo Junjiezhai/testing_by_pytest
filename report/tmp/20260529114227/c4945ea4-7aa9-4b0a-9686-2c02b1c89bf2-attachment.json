@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291208494655464",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291208494655469",
+          "sessionId": "chat_pre_202605291208494655464"
+        },
+        "type": "TEXT",
+        "value": "一般情况下不会主动致电，如有进展会通过APP消息通知您，建议您留意页面提示。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

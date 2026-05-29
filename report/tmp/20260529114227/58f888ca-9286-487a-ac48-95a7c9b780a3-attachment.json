@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291144202166493",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291144202166497",
+          "sessionId": "chat_pre_202605291144202166493"
+        },
+        "type": "TEXT",
+        "value": "不会受影响。提额只增加可用借款上限，已借订单的还款金额、期限和利率均不变。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

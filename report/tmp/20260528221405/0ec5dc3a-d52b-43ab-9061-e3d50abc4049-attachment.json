@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0109",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我换了新设备，还能提额吗",
+  "intent": "提额降息咨询类",
+  "question": "我换了新设备，还能提额吗",
+  "expected_answer": "可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。",
+  "questions": [
+    "我换了新设备，还能提额吗"
+  ],
+  "expected_answers": [
+    "可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

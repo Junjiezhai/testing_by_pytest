@@ -28,7 +28,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.handle_yaml import update_test_config, get_test_config
 from utils.handle_log import log
-from utils.handle_allure_report import get_case_count, open_allure_report, report_summary
+from utils.handle_allure_report import build_allure_run_dirs, generate_allure_report, get_case_count, open_allure_report, report_summary
 
 
 def set_test_config(env='pro', group='default'):
@@ -95,21 +95,27 @@ if __name__ == '__main__':
     # 执行pytest测试
     # ========================================================================
 
-    pytest.main([
+    result_dir, report_dir = build_allure_run_dirs()
+    pytest_args = [
         './test_cases/test_feature_platform.py',
         '-s',
-        '--alluredir', './report/tmp',
-        '--clean-alluredir'
-    ])
+        '--alluredir', result_dir
+    ]
+    # 清理模式：如需每次覆盖历史报告，解除下面两行注释，并配合下方 allure generate --clean 命令使用
+    # pytest_args = ['./test_cases/test_feature_platform.py', '-s', '--alluredir', './report/tmp']
+    # pytest_args.append('--clean-alluredir')
+    pytest.main(pytest_args)
 
     # ========================================================================
     # 生成、打开Allure报告并发送企微通知
     # ========================================================================
 
-    os.system('allure generate ./report/tmp -o ./report/report --clean')
-    # os.system('allure serve ./report/tmp')
+    generate_allure_report(result_dir, report_dir)
+    # 清理模式：如需每次覆盖历史报告，解除下面一行注释，并注释上面的 generate_allure_report
+    # os.system('allure generate ./report/tmp -o ./report/report --clean')
+    # os.system(f'allure serve {result_dir}')
 
     # 发送企微报告信息
-    allure_report_url = open_allure_report('./report/report')
-    num_successd, num_failed = get_case_count('./report/report/widgets/summary.json')
+    allure_report_url = open_allure_report(report_dir)
+    num_successd, num_failed = get_case_count(os.path.join(report_dir, 'widgets', 'summary.json'))
     report_summary(num_successd, num_failed, allure_report_url, config['env'], config['group'])

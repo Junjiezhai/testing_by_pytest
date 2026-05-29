@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291152151502142",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291152151502146",
+          "sessionId": "chat_pre_202605291152151502142"
+        },
+        "type": "TEXT",
+        "value": "为了保障账户安全，提额操作需由您本人完成，不能委托他人代办或代操作。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

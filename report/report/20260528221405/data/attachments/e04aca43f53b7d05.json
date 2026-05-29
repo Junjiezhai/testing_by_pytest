@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222819743252",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222819743252",
+          "sessionId": "chat_pre_20260528222819743252"
+        },
+        "type": "TEXT",
+        "value": "不可以。借款及提额服务仅面向年满18周岁的用户，未成年人无法申请。请您成年后再尝试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

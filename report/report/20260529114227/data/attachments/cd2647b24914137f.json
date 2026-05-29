@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291158068492969",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291158068492967",
+          "sessionId": "chat_pre_202605291158068492969"
+        },
+        "type": "TEXT",
+        "value": "提额成功后新额度长期有效，除非信用状况发生重大变化（如逾期），否则不会主动降低。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

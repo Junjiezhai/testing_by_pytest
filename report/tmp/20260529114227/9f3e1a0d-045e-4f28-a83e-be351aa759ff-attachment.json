@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291145005147901",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291145005147902",
+          "sessionId": "chat_pre_202605291145005147901"
+        },
+        "type": "TEXT",
+        "value": "额度仅限本人使用，不可转让或借给别人，违规使用可能导致额度冻结。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

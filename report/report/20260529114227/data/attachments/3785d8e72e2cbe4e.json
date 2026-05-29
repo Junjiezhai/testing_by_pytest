@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0189",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我已经等了好久了，还没转过去",
+  "intent": "提额降息咨询类",
+  "question": "我已经等了好久了，还没转过去",
+  "expected_answer": "非常抱歉让您久等，我正在为您重新发起转接，请您再耐心等待片刻。如果长时间无响应，可尝试刷新页面。",
+  "questions": [
+    "我已经等了好久了，还没转过去"
+  ],
+  "expected_answers": [
+    "非常抱歉让您久等，我正在为您重新发起转接，请您再耐心等待片刻。如果长时间无响应，可尝试刷新页面。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。非常抱歉让您久等，我正在为您重新发起转接，请您再耐心等待片刻。如果长时间无响应，可尝试刷新页面。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

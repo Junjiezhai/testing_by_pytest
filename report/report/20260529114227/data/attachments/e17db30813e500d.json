@@ -1,0 +1,18 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "请问您希望提额到多少？请直接说一个具体金额，例如“提到5万”。"
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

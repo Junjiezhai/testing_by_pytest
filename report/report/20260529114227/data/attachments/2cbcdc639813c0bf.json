@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0116",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-海外银行卡的流水可以支持吗？",
+  "intent": "提额降息咨询类",
+  "question": "海外银行卡的流水可以支持吗？",
+  "expected_answer": "目前仅支持中国大陆境内发行的储蓄卡，海外银行卡暂不支持流水取数，您可使用本人名下的国内储蓄卡进行提额申请。",
+  "questions": [
+    "海外银行卡的流水可以支持吗？"
+  ],
+  "expected_answers": [
+    "目前仅支持中国大陆境内发行的储蓄卡，海外银行卡暂不支持流水取数，您可使用本人名下的国内储蓄卡进行提额申请。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。目前仅支持中国大陆境内发行的储蓄卡，海外银行卡暂不支持流水取数，您可使用本人名下的国内储蓄卡进行提额申请。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

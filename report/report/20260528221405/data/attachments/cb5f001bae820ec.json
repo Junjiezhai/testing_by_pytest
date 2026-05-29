@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221434041987",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221434041987",
+          "sessionId": "chat_pre_20260528221434041987"
+        },
+        "type": "TEXT",
+        "value": "提额成功后额度会实时更新，您可以到借款页面查看最新额度；如有延迟可尝试重新登录或清理缓存。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

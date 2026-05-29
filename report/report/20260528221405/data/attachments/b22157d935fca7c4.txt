@@ -1,0 +1,125 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0049
+【测试场景】：咨询到操作递进-9
+【意图分类】：提额降息咨询类+提额降息操作类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额结果会保存多久
+【断言话术-标准答案】：提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "提额结果会保存多久", "chatId": "chat_pre_MD_0049_1779982232668231", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233032668231_0", "content": "刚注册的新用户能提额吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233102214518_1", "content": "刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233102215522_2", "content": "我没有工作，可以申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233135744902_3", "content": "没有工作也可以尝试申请降息。建议您提交微信/支付宝账单或银行流水来展示消费和资金情况，有助于综合评估。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233135744902_4", "content": "提额结果会保存多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233205192642_5", "content": "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0049_1779982232668231", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233032668231_0", "content": "刚注册的新用户能提额吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233102214518_1", "content": "刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233102215522_2", "content": "我没有工作，可以申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233135744902_3", "content": "没有工作也可以尝试申请降息。建议您提交微信/支付宝账单或银行流水来展示消费和资金情况，有助于综合评估。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233135744902_4", "content": "提额结果会保存多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233205192642_5", "content": "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0049_1779982232668231", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528233135744902_4", "sessionId": "chat_pre_MD_0049_1779982232668231"}, "type": "TEXT", "value": "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+【外部模型相似度评分】：96.0
+【外部模型评估原因】：多轮逐轮平均相似度：96.0
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：
+【响应耗时】：4.439s
+【相似度断言】：实际=96.0，阈值=70.0，结果=True
+【最终结果】：True
+【多轮失败定位摘要】：
+无失败轮次
+【多轮平均响应耗时】：4.439s
+【多轮总响应耗时】：13.317s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：刚注册的新用户能提额吗？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。
+参考答案：这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。
+模型回复：刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。
+标准答案评分：98.0
+参考答案评分：90.0
+平均相似度：94.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.587s
+是否通过：True
+------ 第2轮 ------
+用户问题：我没有工作，可以申请降息吗？
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。
+参考答案：您可以根据页面提示完成操作。可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。
+模型回复：没有工作也可以尝试申请降息。建议您提交微信/支付宝账单或银行流水来展示消费和资金情况，有助于综合评估。
+标准答案评分：98.0
+参考答案评分：95.0
+平均相似度：96.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.909s
+是否通过：True
+------ 第3轮 ------
+用户问题：提额结果会保存多久
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+参考答案：相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+模型回复：提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+标准答案评分：100.0
+参考答案评分：95.0
+平均相似度：97.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：7.822s
+是否通过：True

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0202",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-我遇到紧急情况，马上转人工",
+  "intent": "转人工类",
+  "question": "我遇到紧急情况，马上转人工",
+  "expected_answer": "明白您的情况紧急。正在为您优先转接人工，请保持在线，人工会加快处理。",
+  "questions": [
+    "我遇到紧急情况，马上转人工"
+  ],
+  "expected_answers": [
+    "明白您的情况紧急。正在为您优先转接人工，请保持在线，人工会加快处理。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如果自助说明无法解决您的问题，建议联系在线客服继续处理。明白您的情况紧急。正在为您优先转接人工，请保持在线，人工会加快处理。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

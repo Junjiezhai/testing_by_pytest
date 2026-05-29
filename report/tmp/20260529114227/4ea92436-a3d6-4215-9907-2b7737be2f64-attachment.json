@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155105859125",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155105859122",
+          "sessionId": "chat_pre_202605291155105859125"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我们严禁任何形式的人为干预或利益输送。提额完全由系统自动评估，请勿相信或尝试“找关系”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291215282573279",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291215282573278",
+          "sessionId": "chat_pre_202605291215282573279"
+        },
+        "type": "TEXT",
+        "value": "不能承诺固定利率，5000元的实际利息会结合您的资质和页面规则综合评估，请以 APP 借款页展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

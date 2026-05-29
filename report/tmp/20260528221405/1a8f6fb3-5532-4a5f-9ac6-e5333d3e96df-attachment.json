@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0113",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额成功后，能随时调整回原额度吗？",
+  "intent": "提额降息咨询类",
+  "question": "提额成功后，能随时调整回原额度吗？",
+  "expected_answer": "不支持主动调低额度，提额后的额度为长期有效，系统仅会根据您的后续使用情况评估是否进一步提升，不会主动降低。",
+  "questions": [
+    "提额成功后，能随时调整回原额度吗？"
+  ],
+  "expected_answers": [
+    "不支持主动调低额度，提额后的额度为长期有效，系统仅会根据您的后续使用情况评估是否进一步提升，不会主动降低。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。不支持主动调低额度，提额后的额度为长期有效，系统仅会根据您的后续使用情况评估是否进一步提升，不会主动降低。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

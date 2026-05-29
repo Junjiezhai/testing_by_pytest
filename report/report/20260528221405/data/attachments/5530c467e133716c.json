@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222018197099",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222018197099",
+          "sessionId": "chat_pre_20260528222018197099"
+        },
+        "type": "TEXT",
+        "value": "降息后新申请的借款会按新利率执行，但已借订单的利率不受影响，具体以APP展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

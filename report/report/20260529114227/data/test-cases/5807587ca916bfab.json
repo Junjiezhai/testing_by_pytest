@@ -1,0 +1,231 @@
+{
+  "uid" : "5807587ca916bfab",
+  "name" : "test_multi_turn_dialog_consistency[咨询到操作递进-9]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "fcf8567a559702962e364aeff86958ed",
+  "time" : {
+    "start" : 1780028986108,
+    "stop" : 1780029068682,
+    "duration" : 82574
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c32153df8f4022bc",
+      "name" : "信贷大模型实际话术",
+      "source" : "c32153df8f4022bc.txt",
+      "type" : "text/plain",
+      "size" : 750
+    }, {
+      "uid" : "440f294b68a2731",
+      "name" : "断言话术",
+      "source" : "440f294b68a2731.txt",
+      "type" : "text/plain",
+      "size" : 1473
+    }, {
+      "uid" : "ae277874c21cb9af",
+      "name" : "多轮失败定位摘要",
+      "source" : "ae277874c21cb9af.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "84a6a4f32d4955d9",
+      "name" : "执行日志",
+      "source" : "84a6a4f32d4955d9.txt",
+      "type" : "text/plain",
+      "size" : 8817
+    }, {
+      "uid" : "27f9055d4d07445c",
+      "name" : "模型评估明细CSV",
+      "source" : "27f9055d4d07445c.csv",
+      "type" : "text/csv",
+      "size" : 2512
+    }, {
+      "uid" : "f21bef6659b6cc32",
+      "name" : "多轮逐轮评估明细",
+      "source" : "f21bef6659b6cc32.json",
+      "type" : "application/json",
+      "size" : 24575
+    }, {
+      "uid" : "aa22c76e1639a11d",
+      "name" : "log",
+      "source" : "aa22c76e1639a11d.txt",
+      "type" : "text/plain",
+      "size" : 51166
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "what到how递进"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "what到how递进"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0049', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-9', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '提额结果会保存多久', 'expected_answer': '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'reference_answer': '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'questions': ['刚注册的新用户能提额吗？', '我没有工作，可以申请降息吗？', '提额结果会保存多久'], 'expected_answers': ['新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', '可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', '您可以根据页面提示完成操作。可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '刚注册的新用户能提额吗？', 'expected_answer': '新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我没有工作，可以申请降息吗？', 'expected_answer': '可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', 'reference_answer': '您可以根据页面提示完成操作。可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '提额结果会保存多久', 'expected_answer': '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'reference_answer': '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "ebbdfda7f8be3ea0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779982232668,
+          "stop" : 1779982325223,
+          "duration" : 92555
+        }
+      }, {
+        "uid" : "ac9ccf929d760d78",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户明确咨询提额结果保存时间，属于信息查询类；模型回复为兜底式引导，未体现信息查询意图，意图不匹配。；上下文断言失败：跨意图切换场景，模型未正确承接前文提额话题，而是要求用户补充信息，属于上下文承接失败；上一轮降息操作意图未产生污染；非用户改口、非风险拒答、非返业场景，相关断言自动通过。",
+        "time" : {
+          "start" : 1779966098595,
+          "stop" : 1779966177248,
+          "duration" : 78653
+        }
+      }, {
+        "uid" : "698a4471c24e5bff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779882561026,
+          "stop" : 1779882772782,
+          "duration" : 211756
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "5807587ca916bfab.json",
+  "parameterValues" : [ "{'case_id': 'MD_0049', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-9', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '提额结果会保存多久', 'expected_answer': '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'reference_answer': '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'questions': ['刚注册的新用户能提额吗？', '我没有工作，可以申请降息吗？', '提额结果会保存多久'], 'expected_answers': ['新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', '可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', '您可以根据页面提示完成操作。可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '刚注册的新用户能提额吗？', 'expected_answer': '新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我没有工作，可以申请降息吗？', 'expected_answer': '可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', 'reference_answer': '您可以根据页面提示完成操作。可以尝试通过微信/支付宝账单、银行流水等方式展示您的消费能力和资金情况，同样可能获得降息。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '提额结果会保存多久', 'expected_answer': '提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'reference_answer': '相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

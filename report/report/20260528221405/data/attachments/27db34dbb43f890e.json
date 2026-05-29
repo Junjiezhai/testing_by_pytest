@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0308",
+  "case_type": "single_turn",
+  "case_desc": "非业务相关意图-怎么买火车票",
+  "intent": "非业务相关意图",
+  "question": "怎么买火车票",
+  "expected_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，购票问题不在我的服务范围内。",
+  "questions": [
+    "怎么买火车票"
+  ],
+  "expected_answers": [
+    "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，购票问题不在我的服务范围内。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "不好意思，我是信贷助手，仅提供借款、提额、降息等业务咨询，不处理购票问题。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223932649235",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223932649235",
+          "sessionId": "chat_pre_20260528223932649235"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供规避风控或逃废债的方法。请您理性借贷，按时还款。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0084",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-同时上传多种材料，额度会更高吗",
+  "intent": "提额降息操作类",
+  "question": "同时上传多种材料，额度会更高吗",
+  "expected_answer": "多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。",
+  "questions": [
+    "同时上传多种材料，额度会更高吗"
+  ],
+  "expected_answers": [
+    "多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

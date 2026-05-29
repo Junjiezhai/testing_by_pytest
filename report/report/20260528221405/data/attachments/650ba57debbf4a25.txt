@@ -1,0 +1,132 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0106
+【测试场景】：跨意图切换-包含非业务相关意图-2
+【意图分类】：提额降息咨询类+非业务相关意图
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息后会查征信吗
+【断言话术-标准答案】：降息申请会查询您的征信报告，这是正常的信用审核流程，查询记录会按规定上报征信系统。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "降息后会查征信吗", "chatId": "chat_pre_MD_0106_1779985572199433", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002612199433_0", "content": "提额最高能到多少", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002644083735_1", "content": "提额结果由系统根据您的信用状况综合评定，无法承诺具体额度或指定到多少，请以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002644084737_2", "content": "今天股市怎么样", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002717299483_3", "content": "股市行情我不太了解呢，这边主要是帮您处理分期乐的提额和降息相关事务。您是想继续了解提额方面的内容吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002717299483_4", "content": "降息后会查征信吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002739513289_5", "content": "大部分降息方式不额外查询征信，具体以页面提示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0106_1779985572199433", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002612199433_0", "content": "提额最高能到多少", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002644083735_1", "content": "提额结果由系统根据您的信用状况综合评定，无法承诺具体额度或指定到多少，请以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002644084737_2", "content": "今天股市怎么样", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002717299483_3", "content": "股市行情我不太了解呢，这边主要是帮您处理分期乐的提额和降息相关事务。您是想继续了解提额方面的内容吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529002717299483_4", "content": "降息后会查征信吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529002739513289_5", "content": "大部分降息方式不额外查询征信，具体以页面提示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0106_1779985572199433", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260529002717299483_4", "sessionId": "chat_pre_MD_0106_1779985572199433"}, "type": "TEXT", "value": "大部分降息方式不额外查询征信，具体以页面提示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：大部分降息方式不额外查询征信，具体以页面提示为准。
+【外部模型相似度评分】：54.83
+【外部模型评估原因】：多轮逐轮平均相似度：54.83
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 62.5 低于阈值 70.0；话术平均评分 10.0 低于阈值 70.0
+【响应耗时】：2.91s
+【相似度断言】：实际=54.83，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度 | 原因：话术平均评分 62.5 低于阈值 70.0
+问题：提额最高能到多少
+模型回复：提额结果由系统根据您的信用状况综合评定，无法承诺具体额度或指定到多少，请以APP页面展示为准。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+第3轮 | 失败维度：话术相似度 | 原因：话术平均评分 10.0 低于阈值 70.0
+问题：降息后会查征信吗
+模型回复：大部分降息方式不额外查询征信，具体以页面提示为准。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：2.91s
+【多轮总响应耗时】：8.731s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额最高能到多少
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：
+标准答案：提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万
+参考答案：这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万
+模型回复：提额结果由系统根据您的信用状况综合评定，无法承诺具体额度或指定到多少，请以APP页面展示为准。
+标准答案评分：55.0
+参考答案评分：70.0
+平均相似度：62.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 62.5 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：2.879s
+是否通过：False
+------ 第2轮 ------
+用户问题：今天股市怎么样
+期望意图：非业务相关意图
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：抱歉，我是信贷助手，主要处理借款、提额、降息等相关问题，股市行情不在我的服务范围内。
+参考答案：抱歉，我是信贷助手，主要处理借款、提额、降息等相关问题，股市行情不在我的服务范围内。
+模型回复：股市行情我不太了解呢，这边主要是帮您处理分期乐的提额和降息相关事务。您是想继续了解提额方面的内容吗？
+标准答案评分：92.0
+参考答案评分：92.0
+平均相似度：92.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：False
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.782s
+是否通过：True
+------ 第3轮 ------
+用户问题：降息后会查征信吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：非业务相关意图
+标准答案：降息申请会查询您的征信报告，这是正常的信用审核流程，查询记录会按规定上报征信系统。
+参考答案：降息申请会查询您的征信报告，这是正常的信用审核流程，查询记录会按规定上报征信系统。
+模型回复：大部分降息方式不额外查询征信，具体以页面提示为准。
+标准答案评分：10.0
+参考答案评分：10.0
+平均相似度：10.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 10.0 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：3.07s
+是否通过：False

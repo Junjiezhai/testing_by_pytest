@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291201109361818",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291201109361817",
+          "sessionId": "chat_pre_202605291201109361818"
+        },
+        "type": "TEXT",
+        "value": "审核结果会通过APP内消息和APP Push通知您。建议您保持手机畅通并留意通知，也可主动进入提额页面查看最终结果。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155328940043",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155328940041",
+          "sessionId": "chat_pre_202605291155328940043"
+        },
+        "type": "TEXT",
+        "value": "您可以拨打官方客服热线95730，按语音提示转人工。或者直接在对话框回复“转人工”，我帮您转接在线客服。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

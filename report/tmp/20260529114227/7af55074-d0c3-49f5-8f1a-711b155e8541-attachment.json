@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0096",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-信用卡账单能用来提额吗？",
+  "intent": "提额降息咨询类",
+  "question": "信用卡账单能用来提额吗？",
+  "expected_answer": "目前暂不支持信用卡流水提额，仅支持储蓄卡交易流水。您可以尝试使用储蓄卡流水、公积金、个税认证等其他方式提额。",
+  "questions": [
+    "信用卡账单能用来提额吗？"
+  ],
+  "expected_answers": [
+    "目前暂不支持信用卡流水提额，仅支持储蓄卡交易流水。您可以尝试使用储蓄卡流水、公积金、个税认证等其他方式提额。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。目前暂不支持信用卡流水提额，仅支持储蓄卡交易流水。您可以尝试使用储蓄卡流水、公积金、个税认证等其他方式提额。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

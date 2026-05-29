@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225538900715",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225538900715",
+          "sessionId": "chat_pre_20260528225538900715"
+        },
+        "type": "TEXT",
+        "value": "我主要帮您处理分期乐提额和降息相关的咨询。您今天主要是想看看额度提升空间吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

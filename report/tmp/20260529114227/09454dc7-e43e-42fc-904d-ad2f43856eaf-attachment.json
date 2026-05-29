@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0162",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-为什么我的申请一直在“自动审核中”超过10分钟？",
+  "intent": "信息查询类",
+  "question": "为什么我的申请一直在“自动审核中”超过10分钟？",
+  "expected_answer": "可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服。",
+  "questions": [
+    "为什么我的申请一直在“自动审核中”超过10分钟？"
+  ],
+  "expected_answers": [
+    "可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

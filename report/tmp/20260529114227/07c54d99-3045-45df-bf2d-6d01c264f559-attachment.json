@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291156455334272",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291156455334276",
+          "sessionId": "chat_pre_202605291156455334272"
+        },
+        "type": "TEXT",
+        "value": "抱歉，出于隐私保护，我无法查询任何他人的账户或借款信息。如需了解您本人的额度或借款情况，请本人登录APP查看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

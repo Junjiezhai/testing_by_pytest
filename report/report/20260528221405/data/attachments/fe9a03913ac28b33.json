@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224651916541",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224651916541",
+          "sessionId": "chat_pre_20260528224651916541"
+        },
+        "type": "TEXT",
+        "value": "您可以在 APP 帮助中心或客服入口查找在线客服/人工客服入口，也可以直接对我说“转人工”，我来帮您转接。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

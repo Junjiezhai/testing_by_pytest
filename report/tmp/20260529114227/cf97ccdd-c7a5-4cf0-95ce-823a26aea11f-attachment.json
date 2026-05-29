@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0225",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我要修改手机号",
+  "intent": "提额降息咨询类",
+  "question": "我要修改手机号",
+  "expected_answer": "您可点此【链接3】更改个人设置",
+  "questions": [
+    "我要修改手机号"
+  ],
+  "expected_answers": [
+    "您可点此【链接3】更改个人设置"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。您可点此【链接3】更改个人设置",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

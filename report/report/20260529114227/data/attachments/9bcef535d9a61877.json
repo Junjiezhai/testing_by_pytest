@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0279",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-没有提额按钮或涨额度入口怎么办",
+  "intent": "提额降息咨询类",
+  "question": "没有提额按钮或涨额度入口怎么办",
+  "expected_answer": "当前是否有提额入口以 APP 页面展示为准；请保持良好使用和还款记录并后续关注页面。",
+  "questions": [
+    "没有提额按钮或涨额度入口怎么办"
+  ],
+  "expected_answers": [
+    "当前是否有提额入口以 APP 页面展示为准；请保持良好使用和还款记录并后续关注页面。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。当前是否有提额入口以 APP 页面展示为准；请保持良好使用和还款记录并后续关注页面。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

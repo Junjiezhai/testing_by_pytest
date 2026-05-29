@@ -1,0 +1,609 @@
+[
+  {
+    "round": 1,
+    "question": "降息审核超时了怎么办？",
+    "expected_answer": "正常审核不会超过1小时，您可以点击下方查询进度。我也可以帮您查询进度，请问您需要吗？",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。正常审核不会超过1小时，您可以点击下方查询进度。我也可以帮您查询进度，请问您需要吗？",
+    "actual_answer": "未查得您有提交过的降息记录。建议您点击下方卡片补充借款APP截图等资料，继续尝试申请降息。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 20.0,
+    "reference_similarity_score": 20.0,
+    "similarity_score": 20.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=20.0；参考答案评分=20.0",
+    "intent_pass": false,
+    "intent_reason": "期望意图是提供信息查询与进度解答，实际回复转向否认记录并给出补充资料的操作指引，未满足信息查询需求。",
+    "context_carry_pass": false,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": true,
+    "asset_allowed": true,
+    "asset_value": "AS2605191424571850",
+    "asset_value_pass": true,
+    "biz_ref_id": "180",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=20.0，阈值=70.0；标准答案分=20.0；参考答案分=20.0",
+        "reason": "标准答案强调审核不超过1小时、提供进度查询及人工协助，而实际话术否认存在降息记录并引导重新提交申请，核心语义完全不同，遗漏了对超时原因的说明和查询支持。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=否认记录并引导操作申请",
+        "reason": "期望意图是提供信息查询与进度解答，实际回复转向否认记录并给出补充资料的操作指引，未满足信息查询需求。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "用户询问审核超时处理，模型未承接该问题，直接否认存在记录并给出不相关的建议，未能正确延续对话。无上一轮意图污染、用户改口、风险拒答或回归业务场景，相关断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "用户询问审核超时处理，模型未承接该问题，直接否认存在记录并给出不相关的建议，未能正确延续对话。无上一轮意图污染、用户改口、风险拒答或回归业务场景，相关断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191424571850，biz_ref_id=180",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=20.0，阈值=70.0；标准答案分=20.0；参考答案分=20.0",
+        "reason": "标准答案强调审核不超过1小时、提供进度查询及人工协助，而实际话术否认存在降息记录并引导重新提交申请，核心语义完全不同，遗漏了对超时原因的说明和查询支持。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=否认记录并引导操作申请",
+        "reason": "期望意图是提供信息查询与进度解答，实际回复转向否认记录并给出补充资料的操作指引，未满足信息查询需求。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "用户询问审核超时处理，模型未承接该问题，直接否认存在记录并给出不相关的建议，未能正确延续对话。无上一轮意图污染、用户改口、风险拒答或回归业务场景，相关断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 20.0 低于阈值 70.0；当前轮意图不正确：期望意图是提供信息查询与进度解答，实际回复转向否认记录并给出补充资料的操作指引，未满足信息查询需求。；上下文断言失败：用户询问审核超时处理，模型未承接该问题，直接否认存在记录并给出不相关的建议，未能正确延续对话。无上一轮意图污染、用户改口、风险拒答或回归业务场景，相关断言均通过。",
+    "should_assert": true,
+    "response_time": 12.685,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0007_1780028004254940",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121324254940_0",
+              "content": "降息审核超时了怎么办？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121348430163_1",
+              "content": "未查得您有提交过的降息记录。建议您点击下方卡片补充借款APP截图等资料，继续尝试申请降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121348430163_2",
+              "content": "提额申请提交后，怎么查看进度",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121412890580_3",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121412891553_4",
+              "content": "提额结果会保存多久",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121444375133_5",
+              "content": "提额成功后新额度通常长期有效，除非信用状况发生重大变化。具体保留情况请以 APP 页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "未查得您有提交过的降息记录。建议您点击下方卡片补充借款APP截图等资料，继续尝试申请降息。"
+          },
+          {
+            "type": "ASSET",
+            "value": "AS2605191424571850",
+            "bizParamInfo": {
+              "biz_ref_id": [
+                "180"
+              ]
+            }
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "提额申请提交后，怎么查看进度",
+    "expected_answer": "正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：",
+    "actual_answer": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 10.0,
+    "reference_similarity_score": 10.0,
+    "similarity_score": 10.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=10.0；参考答案评分=10.0",
+    "intent_pass": false,
+    "intent_reason": "期望意图是信息查询，实际回复转向否定记录和操作引导，未满足查询需求",
+    "context_carry_pass": false,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": true,
+    "asset_allowed": true,
+    "asset_value": "AS2605191424571850",
+    "asset_value_pass": true,
+    "biz_ref_id": "190",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=10.0，阈值=70.0；标准答案分=10.0；参考答案分=10.0",
+        "reason": "标准答案提供了进度查询结果与通知方式，实际话术否定了提额降息记录并引导操作，核心语义完全不同",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=否认记录并引导操作",
+        "reason": "期望意图是信息查询，实际回复转向否定记录和操作引导，未满足查询需求",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "用户连续追问如何查看提额进度，模型未承接问题，直接否认记录并给出无关建议，未正确延续对话；无意图污染、改口、风险拒答或回归业务场景",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "用户连续追问如何查看提额进度，模型未承接问题，直接否认记录并给出无关建议，未正确延续对话；无意图污染、改口、风险拒答或回归业务场景",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191424571850，biz_ref_id=190",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=10.0，阈值=70.0；标准答案分=10.0；参考答案分=10.0",
+        "reason": "标准答案提供了进度查询结果与通知方式，实际话术否定了提额降息记录并引导操作，核心语义完全不同",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=否认记录并引导操作",
+        "reason": "期望意图是信息查询，实际回复转向否定记录和操作引导，未满足查询需求",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "用户连续追问如何查看提额进度，模型未承接问题，直接否认记录并给出无关建议，未正确延续对话；无意图污染、改口、风险拒答或回归业务场景",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 10.0 低于阈值 70.0；当前轮意图不正确：期望意图是信息查询，实际回复转向否定记录和操作引导，未满足查询需求；上下文断言失败：用户连续追问如何查看提额进度，模型未承接问题，直接否认记录并给出无关建议，未正确延续对话；无意图污染、改口、风险拒答或回归业务场景",
+    "should_assert": true,
+    "response_time": 12.626,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0007_1780028004254940",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121324254940_0",
+              "content": "降息审核超时了怎么办？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121348430163_1",
+              "content": "未查得您有提交过的降息记录。建议您点击下方卡片补充借款APP截图等资料，继续尝试申请降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121348430163_2",
+              "content": "提额申请提交后，怎么查看进度",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121412890580_3",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121412891553_4",
+              "content": "提额结果会保存多久",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121444375133_5",
+              "content": "提额成功后新额度通常长期有效，除非信用状况发生重大变化。具体保留情况请以 APP 页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。"
+          },
+          {
+            "type": "ASSET",
+            "value": "AS2605191424571850",
+            "bizParamInfo": {
+              "biz_ref_id": [
+                "190"
+              ]
+            }
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "提额结果会保存多久",
+    "expected_answer": "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。",
+    "reference_answer": "相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。",
+    "actual_answer": "提额成功后新额度通常长期有效，除非信用状况发生重大变化。具体保留情况请以 APP 页面展示为准。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 90.0,
+    "reference_similarity_score": 95.0,
+    "similarity_score": 95.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=90.0；参考答案评分=95.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复回答了提额结果的保留期限，属于信息查询，与期望意图一致。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=95.0，阈值=70.0；标准答案分=90.0；参考答案分=95.0",
+        "reason": "实际话术表达了额度长期有效且信用变化可能影响额度的核心语义，但标准答案明确强调“额度不会主动降低”，实际话术仅用“通常长期有效”暗示，并未直接给出不会主动降低的肯定承诺，因此扣减少量分数。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类",
+        "reason": "实际回复回答了提额结果的保留期限，属于信息查询，与期望意图一致。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "当前问题为同一意图连续追问，问题独立，无需依赖前文未查得记录的信息，模型直接给出额度有效期说明，正确承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前问题为同一意图连续追问，问题独立，无需依赖前文未查得记录的信息，模型直接给出额度有效期说明，正确承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 3.031,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0007_1780028004254940",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121324254940_0",
+              "content": "降息审核超时了怎么办？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121348430163_1",
+              "content": "未查得您有提交过的降息记录。建议您点击下方卡片补充借款APP截图等资料，继续尝试申请降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121348430163_2",
+              "content": "提额申请提交后，怎么查看进度",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121412890580_3",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529121412891553_4",
+              "content": "提额结果会保存多久",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529121444375133_5",
+              "content": "提额成功后新额度通常长期有效，除非信用状况发生重大变化。具体保留情况请以 APP 页面展示为准。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0007_1780028004254940",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529121412891553_4",
+              "sessionId": "chat_pre_MD_0007_1780028004254940"
+            },
+            "type": "TEXT",
+            "value": "提额成功后新额度通常长期有效，除非信用状况发生重大变化。具体保留情况请以 APP 页面展示为准。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

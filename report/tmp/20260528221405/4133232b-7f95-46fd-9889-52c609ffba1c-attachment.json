@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223933299579",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223933299579",
+          "sessionId": "chat_pre_20260528223933299579"
+        },
+        "type": "TEXT",
+        "value": "失败原因在结果出来后立即显示在页面上，您可以直接查看或截图保存。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

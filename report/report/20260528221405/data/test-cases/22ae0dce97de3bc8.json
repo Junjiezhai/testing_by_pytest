@@ -1,0 +1,234 @@
+{
+  "uid" : "22ae0dce97de3bc8",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额成功后额度会下降吗？0]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "1890b53a72d50c23cdd797b9e8a73d5e",
+  "time" : {
+    "start" : 1779977726249,
+    "stop" : 1779977745951,
+    "duration" : 19702
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "4134cce7dbcb9a44",
+      "name" : "用例信息",
+      "source" : "4134cce7dbcb9a44.json",
+      "type" : "application/json",
+      "size" : 1112
+    }, {
+      "uid" : "486701a932c06a87",
+      "name" : "执行日志",
+      "source" : "486701a932c06a87.txt",
+      "type" : "text/plain",
+      "size" : 3413
+    }, {
+      "uid" : "b63f395e86662cd9",
+      "name" : "信贷大模型请求入参",
+      "source" : "b63f395e86662cd9.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "6cea2f3f45445171",
+      "name" : "信贷大模型完整返回",
+      "source" : "6cea2f3f45445171.json",
+      "type" : "application/json",
+      "size" : 581
+    }, {
+      "uid" : "4ec2d075e5c777da",
+      "name" : "模型评估明细",
+      "source" : "4ec2d075e5c777da.json",
+      "type" : "application/json",
+      "size" : 3573
+    }, {
+      "uid" : "3a18b625dfb01b86",
+      "name" : "断言明细",
+      "source" : "3a18b625dfb01b86.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "7bd6d254e14f389a",
+      "name" : "失败原因",
+      "source" : "7bd6d254e14f389a.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "5499c64c7ca0a66b",
+      "name" : "信贷大模型实际话术",
+      "source" : "5499c64c7ca0a66b.txt",
+      "type" : "text/plain",
+      "size" : 146
+    }, {
+      "uid" : "c5af63f0d4610742",
+      "name" : "断言话术",
+      "source" : "c5af63f0d4610742.txt",
+      "type" : "text/plain",
+      "size" : 470
+    }, {
+      "uid" : "32e8132cb049445a",
+      "name" : "log",
+      "source" : "32e8132cb049445a.txt",
+      "type" : "text/plain",
+      "size" : 17716
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0015', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额成功后额度会下降吗？', 'intent': '提额降息咨询类', 'question': '提额成功后额度会下降吗？', 'expected_answer': '额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。', 'questions': ['提额成功后额度会下降吗？'], 'expected_answers': ['额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "4ab4bcb1d5080083",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964440648,
+          "stop" : 1779964462101,
+          "duration" : 21453
+        }
+      }, {
+        "uid" : "ff01b3680e39da97",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877488457,
+          "stop" : 1779877535192,
+          "duration" : 46735
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "22ae0dce97de3bc8.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0015', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额成功后额度会下降吗？', 'intent': '提额降息咨询类', 'question': '提额成功后额度会下降吗？', 'expected_answer': '额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。', 'questions': ['提额成功后额度会下降吗？'], 'expected_answers': ['额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

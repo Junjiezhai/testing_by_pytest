@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291204487096428",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291204487096428",
+          "sessionId": "chat_pre_202605291204487096428"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我不了解加密货币行情。如果您有分期乐额度、利率或还款相关的问题，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

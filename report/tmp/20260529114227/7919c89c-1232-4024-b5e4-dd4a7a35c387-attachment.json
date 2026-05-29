@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291208372452742",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291208372452741",
+          "sessionId": "chat_pre_202605291208372452742"
+        },
+        "type": "TEXT",
+        "value": "抱歉，出于隐私保护，我无法查询或透露任何其他用户的账户信息。请让您的朋友本人登录账户查看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291154376926574",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291154376926579",
+          "sessionId": "chat_pre_202605291154376926574"
+        },
+        "type": "TEXT",
+        "value": "您可以直接对我说“转人工”，我来帮您转接。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

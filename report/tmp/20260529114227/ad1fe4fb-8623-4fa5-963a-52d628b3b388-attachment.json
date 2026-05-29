@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291200439768517",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291200439778518",
+          "sessionId": "chat_pre_202605291200439768517"
+        },
+        "type": "TEXT",
+        "value": "借款下单属于平台功能，这边暂不能直接为您办理。请您登录分期乐 APP 查看可用的借款入口和额度。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225213161420",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225213161420",
+          "sessionId": "chat_pre_20260528225213161420"
+        },
+        "type": "TEXT",
+        "value": "提额成功后额度会根据您的账户状态和还款表现动态评估；若出现逾期或异常等情况可能下调，具体以APP页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

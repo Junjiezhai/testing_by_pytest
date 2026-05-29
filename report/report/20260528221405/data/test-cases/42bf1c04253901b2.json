@@ -1,0 +1,223 @@
+{
+  "uid" : "42bf1c04253901b2",
+  "name" : "test_multi_turn_dialog_consistency[跨意图切换-1]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "0ba9d0391de014e6acc67e45140f3d88",
+  "time" : {
+    "start" : 1779983420946,
+    "stop" : 1779983550290,
+    "duration" : 129344
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c83b00b15e9f5f25",
+      "name" : "信贷大模型实际话术",
+      "source" : "c83b00b15e9f5f25.txt",
+      "type" : "text/plain",
+      "size" : 926
+    }, {
+      "uid" : "d6ab1f657334e9fe",
+      "name" : "断言话术",
+      "source" : "d6ab1f657334e9fe.txt",
+      "type" : "text/plain",
+      "size" : 1914
+    }, {
+      "uid" : "1a1bb70c30adde67",
+      "name" : "多轮失败定位摘要",
+      "source" : "1a1bb70c30adde67.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "b8b0b29a76c7bfb3",
+      "name" : "执行日志",
+      "source" : "b8b0b29a76c7bfb3.txt",
+      "type" : "text/plain",
+      "size" : 10543
+    }, {
+      "uid" : "f3f0a25dca202347",
+      "name" : "模型评估明细CSV",
+      "source" : "f3f0a25dca202347.csv",
+      "type" : "text/csv",
+      "size" : 3251
+    }, {
+      "uid" : "23e084bb305877e6",
+      "name" : "多轮逐轮评估明细",
+      "source" : "23e084bb305877e6.json",
+      "type" : "application/json",
+      "size" : 35301
+    }, {
+      "uid" : "5949712747eb65c4",
+      "name" : "log",
+      "source" : "5949712747eb65c4.txt",
+      "type" : "text/plain",
+      "size" : 81128
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "跨意图切换，验证不被上轮污染"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类+提额降息操作类+信息查询类+借款下单类"
+  }, {
+    "name" : "remark",
+    "value" : "跨意图切换，验证不被上轮污染"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类+提额降息操作类+信息查询类+借款下单类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0061', 'case_type': 'multi_turn', 'case_desc': '跨意图切换-1', 'remark': '跨意图切换，验证不被上轮污染', 'intent': '提额降息咨询类+提额降息操作类+信息查询类+借款下单类', 'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'questions': ['什么是提额', '提额时需要人脸识别吗？', '提额短信通知说通过了，但APP没变化怎么办？', '降息成功后，原来的借款合同会重签吗？'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', '部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '不会。原有借款合同不变，降息只影响您未来的新借款。'], 'reference_answers': ['提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', '您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。'], 'round_assert_flags': [True, True, True, True], 'round_intents': ['提额降息咨询类', '提额降息操作类', '信息查询类', '借款下单类'], 'context_assert_types': ['cross_intent_switch', 'cross_intent_switch', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类', '信息查询类'], 'expect_refuses': [False, False, False, False], 'expect_assets': [False, False, False, False], 'enriched_rounds': [{'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额时需要人脸识别吗？', 'expected_answer': '部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'reference_answer': '您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'round_intent': '提额降息操作类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '提额短信通知说通过了，但APP没变化怎么办？', 'expected_answer': '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'reference_answer': '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'round_intent': '借款下单类', 'previous_intent': '信息查询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "add92f72e9cf92e1",
+        "status" : "broken",
+        "statusDetails" : "json.decoder.JSONDecodeError: Expecting ',' delimiter: line 5 column 74 (char 148)",
+        "time" : {
+          "start" : 1779966194094,
+          "stop" : 1779966252583,
+          "duration" : 58489
+        }
+      }, {
+        "uid" : "ae88ee14bcb1dbe0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779883044733,
+          "stop" : 1779883319999,
+          "duration" : 275266
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "42bf1c04253901b2.json",
+  "parameterValues" : [ "{'case_id': 'MD_0061', 'case_type': 'multi_turn', 'case_desc': '跨意图切换-1', 'remark': '跨意图切换，验证不被上轮污染', 'intent': '提额降息咨询类+提额降息操作类+信息查询类+借款下单类', 'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'questions': ['什么是提额', '提额时需要人脸识别吗？', '提额短信通知说通过了，但APP没变化怎么办？', '降息成功后，原来的借款合同会重签吗？'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', '部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '不会。原有借款合同不变，降息只影响您未来的新借款。'], 'reference_answers': ['提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', '您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。'], 'round_assert_flags': [True, True, True, True], 'round_intents': ['提额降息咨询类', '提额降息操作类', '信息查询类', '借款下单类'], 'context_assert_types': ['cross_intent_switch', 'cross_intent_switch', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类', '信息查询类'], 'expect_refuses': [False, False, False, False], 'expect_assets': [False, False, False, False], 'enriched_rounds': [{'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额时需要人脸识别吗？', 'expected_answer': '部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'reference_answer': '您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'round_intent': '提额降息操作类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '提额短信通知说通过了，但APP没变化怎么办？', 'expected_answer': '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'reference_answer': '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'round_intent': '借款下单类', 'previous_intent': '信息查询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

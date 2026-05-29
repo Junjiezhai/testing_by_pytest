@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291204122502309",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291204122502309",
+          "sessionId": "chat_pre_202605291204122502309"
+        },
+        "type": "TEXT",
+        "value": "不能保证。提额由系统综合评估，我们完全免费，任何“付费包过”或给红包的说法都是诈骗，请勿轻信。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

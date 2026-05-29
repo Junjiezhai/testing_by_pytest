@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0144",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-审核结果会以什么方式通知我？",
+  "intent": "信息查询类",
+  "question": "审核结果会以什么方式通知我？",
+  "expected_answer": "我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。",
+  "questions": [
+    "审核结果会以什么方式通知我？"
+  ],
+  "expected_answers": [
+    "我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

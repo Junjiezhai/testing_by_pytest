@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291201398036158",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291201398036153",
+          "sessionId": "chat_pre_202605291201398036158"
+        },
+        "type": "TEXT",
+        "value": "抱歉，利息是根据合同约定和监管要求设定的，无法因为信仰而免除。如有其他疑问可随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

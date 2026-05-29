@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224117919023",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224117919023",
+          "sessionId": "chat_pre_20260528224117919023"
+        },
+        "type": "TEXT",
+        "value": "审核结果默认通过 APP 推送和消息通知，暂不支持发送到邮箱。建议您留意 APP 内通知或主动查看页面结果。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

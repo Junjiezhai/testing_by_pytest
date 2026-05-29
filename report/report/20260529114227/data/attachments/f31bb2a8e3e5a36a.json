@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0223",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我的额度是多少",
+  "intent": "提额降息咨询类",
+  "question": "我的额度是多少",
+  "expected_answer": "您当前的总额度是XXXX，可用额度XXX。请问您需要再提高额度吗？我可以为您推荐最适合的提额项哦~",
+  "questions": [
+    "我的额度是多少"
+  ],
+  "expected_answers": [
+    "您当前的总额度是XXXX，可用额度XXX。请问您需要再提高额度吗？我可以为您推荐最适合的提额项哦~"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。您当前的总额度是XXXX，可用额度XXX。请问您需要再提高额度吗？我可以为您推荐最适合的提额项哦~",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,234 @@
+{
+  "uid" : "a782051036ec7743",
+  "name" : "test_single_turn_intent_recognition[转人工类-机器人太死板了，我要真人]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "89c3f2e8c9d5c2ccf44186416c55b7ae",
+  "time" : {
+    "start" : 1780027728042,
+    "stop" : 1780027729456,
+    "duration" : 1414
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "827143a017670d03",
+      "name" : "用例信息",
+      "source" : "827143a017670d03.json",
+      "type" : "application/json",
+      "size" : 809
+    }, {
+      "uid" : "2df187066be134ef",
+      "name" : "执行日志",
+      "source" : "2df187066be134ef.txt",
+      "type" : "text/plain",
+      "size" : 2350
+    }, {
+      "uid" : "3c25d133740603",
+      "name" : "信贷大模型请求入参",
+      "source" : "3c25d133740603.json",
+      "type" : "application/json",
+      "size" : 947
+    }, {
+      "uid" : "9dd329206a1a228f",
+      "name" : "信贷大模型完整返回",
+      "source" : "9dd329206a1a228f.json",
+      "type" : "application/json",
+      "size" : 215
+    }, {
+      "uid" : "96d4ba238d94f99",
+      "name" : "模型评估明细",
+      "source" : "96d4ba238d94f99.json",
+      "type" : "application/json",
+      "size" : 2205
+    }, {
+      "uid" : "e5bc216b7d894e87",
+      "name" : "断言明细",
+      "source" : "e5bc216b7d894e87.json",
+      "type" : "application/json",
+      "size" : 447
+    }, {
+      "uid" : "d4528773e7de9b18",
+      "name" : "失败原因",
+      "source" : "d4528773e7de9b18.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "10c1290b2f4d777d",
+      "name" : "信贷大模型实际话术",
+      "source" : "10c1290b2f4d777d.txt",
+      "type" : "text/plain",
+      "size" : 7
+    }, {
+      "uid" : "ce29c3cbdcdfa8b0",
+      "name" : "断言话术",
+      "source" : "ce29c3cbdcdfa8b0.txt",
+      "type" : "text/plain",
+      "size" : 280
+    }, {
+      "uid" : "bd15c670f0d20516",
+      "name" : "log",
+      "source" : "bd15c670f0d20516.txt",
+      "type" : "text/plain",
+      "size" : 10062
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0169', 'case_type': 'single_turn', 'case_desc': '转人工类-机器人太死板了，我要真人', 'intent': '转人工类', 'question': '机器人太死板了，我要真人', 'expected_answer': '非常理解您的心情，我这就为您转接人工客服，请保持在线。', 'questions': ['机器人太死板了，我要真人'], 'expected_answers': ['非常理解您的心情，我这就为您转接人工客服，请保持在线。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。非常理解您的心情，我这就为您转接人工客服，请保持在线。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "8255d5b1eb6f4df5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979491764,
+          "stop" : 1779979493341,
+          "duration" : 1577
+        }
+      }, {
+        "uid" : "3a37126efa16c932",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964972280,
+          "stop" : 1779964973848,
+          "duration" : 1568
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "a782051036ec7743.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0169', 'case_type': 'single_turn', 'case_desc': '转人工类-机器人太死板了，我要真人', 'intent': '转人工类', 'question': '机器人太死板了，我要真人', 'expected_answer': '非常理解您的心情，我这就为您转接人工客服，请保持在线。', 'questions': ['机器人太死板了，我要真人'], 'expected_answers': ['非常理解您的心情，我这就为您转接人工客服，请保持在线。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。非常理解您的心情，我这就为您转接人工客服，请保持在线。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

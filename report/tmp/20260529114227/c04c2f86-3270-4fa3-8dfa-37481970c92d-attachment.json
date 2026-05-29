@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291205567727126",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291205567727124",
+          "sessionId": "chat_pre_202605291205567727126"
+        },
+        "type": "TEXT",
+        "value": "人工客服可以协助解答或引导查看进度，但不等于加急或保证通过，审核结果以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

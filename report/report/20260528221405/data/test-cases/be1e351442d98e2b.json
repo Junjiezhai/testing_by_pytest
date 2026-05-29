@@ -1,0 +1,234 @@
+{
+  "uid" : "be1e351442d98e2b",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-降息成功后，我还款总额会减少吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "e18dd2b53fd7f11be2d09daaf6ed6c90",
+  "time" : {
+    "start" : 1779978230744,
+    "stop" : 1779978243835,
+    "duration" : 13091
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8022ba2bf8b14f16",
+      "name" : "用例信息",
+      "source" : "8022ba2bf8b14f16.json",
+      "type" : "application/json",
+      "size" : 944
+    }, {
+      "uid" : "259dfc1e65617743",
+      "name" : "执行日志",
+      "source" : "259dfc1e65617743.txt",
+      "type" : "text/plain",
+      "size" : 3317
+    }, {
+      "uid" : "ad5015f6fec11487",
+      "name" : "信贷大模型请求入参",
+      "source" : "ad5015f6fec11487.json",
+      "type" : "application/json",
+      "size" : 957
+    }, {
+      "uid" : "8d4c952b9ad4a2b0",
+      "name" : "信贷大模型完整返回",
+      "source" : "8d4c952b9ad4a2b0.json",
+      "type" : "application/json",
+      "size" : 579
+    }, {
+      "uid" : "24cd93b0bc142e04",
+      "name" : "模型评估明细",
+      "source" : "24cd93b0bc142e04.json",
+      "type" : "application/json",
+      "size" : 3381
+    }, {
+      "uid" : "634ce5342e14d8ae",
+      "name" : "断言明细",
+      "source" : "634ce5342e14d8ae.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "f091546da2991474",
+      "name" : "失败原因",
+      "source" : "f091546da2991474.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "57e8ca2239e92af8",
+      "name" : "信贷大模型实际话术",
+      "source" : "57e8ca2239e92af8.txt",
+      "type" : "text/plain",
+      "size" : 144
+    }, {
+      "uid" : "5e024d1585826ae2",
+      "name" : "断言话术",
+      "source" : "5e024d1585826ae2.txt",
+      "type" : "text/plain",
+      "size" : 334
+    }, {
+      "uid" : "5d4ae0f2b13f5608",
+      "name" : "log",
+      "source" : "5d4ae0f2b13f5608.txt",
+      "type" : "text/plain",
+      "size" : 16024
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0073', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-降息成功后，我还款总额会减少吗？', 'intent': '提额降息咨询类', 'question': '降息成功后，我还款总额会减少吗？', 'expected_answer': '对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。', 'questions': ['降息成功后，我还款总额会减少吗？'], 'expected_answers': ['对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "7e0fd603e93f15ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964671768,
+          "stop" : 1779964689820,
+          "duration" : 18052
+        }
+      }, {
+        "uid" : "4279db86d9ada847",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878068839,
+          "stop" : 1779878124713,
+          "duration" : 55874
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "be1e351442d98e2b.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0073', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-降息成功后，我还款总额会减少吗？', 'intent': '提额降息咨询类', 'question': '降息成功后，我还款总额会减少吗？', 'expected_answer': '对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。', 'questions': ['降息成功后，我还款总额会减少吗？'], 'expected_answers': ['对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

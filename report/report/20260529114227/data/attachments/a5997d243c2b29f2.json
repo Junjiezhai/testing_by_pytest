@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0349",
+  "case_type": "single_turn",
+  "case_desc": "借款下单类-我想借5000元急用",
+  "intent": "借款下单类",
+  "question": "我想借5000元急用",
+  "expected_answer": "您可以进入借款页面申请5000元借款，系统会根据您的可用额度和信用状况进行审核。审核通过后，款项将尽快到账。",
+  "questions": [
+    "我想借5000元急用"
+  ],
+  "expected_answers": [
+    "您可以进入借款页面申请5000元借款，系统会根据您的可用额度和信用状况进行审核。审核通过后，款项将尽快到账。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在借款页面提交5000元的借款申请，系统将根据您的可用额度和信用状况进行审核，审核通过后资金会尽快到账。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

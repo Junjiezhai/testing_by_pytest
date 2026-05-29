@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0138",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-降息申请提交了2小时还没结果正常吗？",
+  "intent": "信息查询类",
+  "question": "降息申请提交了2小时还没结果正常吗？",
+  "expected_answer": "正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。",
+  "questions": [
+    "降息申请提交了2小时还没结果正常吗？"
+  ],
+  "expected_answers": [
+    "正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "相关信息建议以 APP 页面展示为准。正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

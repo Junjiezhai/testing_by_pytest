@@ -24,9 +24,11 @@ MODEL_SINGLE_TURN_CASE_FILE = os.path.join(Base_Path, r'case_data\model_intent_r
 MODEL_DIALOG_CASE_FILE = os.path.join(Base_Path, r'case_data\model_dialog_cases.xlsx')
 MODEL_DIALOG_CASE_COLUMNS = [
     'case_id', 'case_type', 'is_run', 'case_desc', 'round_no', 'user_question', 'expected_answer',
-    'intent', 'round_intent', 'should_assert', 'similarity_threshold', 'response_time_threshold', 'remark'
+    'reference_answer', 'intent', 'round_intent', 'context_assert_type', 'previous_intent', 'expect_refuse',
+    'expect_asset', 'should_assert', 'similarity_threshold', 'response_time_threshold', 'remark'
 ]
 MODEL_REPORT_DIR = os.path.join(Base_Path, r'report\model_intent_recognition')
+MODEL_RUN_DIR = os.path.join(MODEL_REPORT_DIR, 'runs')
 MODEL_SINGLE_TURN_LIMIT_ENV = 'MODEL_SINGLE_TURN_LIMIT'
 MODEL_MULTI_TURN_LIMIT_ENV = 'MODEL_MULTI_TURN_LIMIT'
 
@@ -54,6 +56,17 @@ class ModelCaseHandler:
         if not text:
             return default
         return text in ['是', 'Y', 'y', 'yes', 'Yes', 'TRUE', 'True', 'true', '1']
+
+    @classmethod
+    def infer_context_assert_type(cls, case_type: str, round_intent: str, previous_intent: str, last_round_intent: str) -> str:
+        case_type = cls.clean_cell(case_type)
+        if round_intent == '风险合规禁答类':
+            return 'risk_compliance_insert'
+        if last_round_intent == '风险合规禁答类' and round_intent != '风险合规禁答类':
+            return 'return_to_business'
+        if previous_intent and round_intent and previous_intent != round_intent:
+            return 'cross_intent_switch'
+        return case_type or 'normal'
 
     @classmethod
     def to_float(cls, value, default) -> float:
@@ -105,7 +118,7 @@ class ModelCaseHandler:
                 'intent': intent,
                 'round_intent': intent,
                 'should_assert': 'Y',
-                'similarity_threshold': 80,
+                'similarity_threshold': 70,
                 'response_time_threshold': 5,
                 'remark': ''
             })
@@ -173,7 +186,7 @@ class ModelCaseHandler:
                     'intent': cls.clean_cell(case.get('intent')),
                     'round_intent': cls.clean_cell(round_intents[round_index]) if round_index < len(round_intents) else cls.clean_cell(case.get('intent')),
                     'should_assert': should_asserts[round_index] if round_index < len(should_asserts) else 'Y',
-                    'similarity_threshold': case.get('similarity_threshold', 80),
+                    'similarity_threshold': case.get('similarity_threshold', 70),
                     'response_time_threshold': case.get('response_time_threshold', 5),
                     'remark': cls.clean_cell(case.get('remark')) or '外部模型生成多轮用例'
                 })
@@ -288,8 +301,9 @@ class ModelCaseHandler:
                 'questions': [question],
                 'expected_answers': [expected_answer],
                 'round_assert_flags': [True],
-                'similarity_threshold': cls.to_float(row.iloc[8] if len(row) > 8 else '', 80),
-                'response_time_threshold': cls.to_float(row.iloc[9] if len(row) > 9 else '', 5),
+                'reference_answer': cls.clean_cell(row.iloc[6] if len(row) > 6 else ''),
+                'similarity_threshold': cls.to_float(row.iloc[9] if len(row) > 9 else '', 70),
+                'response_time_threshold': cls.to_float(row.iloc[10] if len(row) > 10 else '', 5),
                 'env': config['env'],
                 'group': config['group']
             })
@@ -332,7 +346,13 @@ class ModelCaseHandler:
             eval_rows = assert_rows if assert_rows else rows
             questions = [cls.clean_cell(row.get('user_question')) for row in rows if cls.clean_cell(row.get('user_question'))]
             expected_answers = [cls.clean_cell(row.get('expected_answer')) for row in rows if cls.clean_cell(row.get('user_question'))]
+            reference_answers = [cls.clean_cell(row.get('reference_answer')) or cls.clean_cell(row.get('expected_answer')) for row in rows if cls.clean_cell(row.get('user_question'))]
             round_assert_flags = [cls.yes_enabled(row.get('should_assert')) for row in rows if cls.clean_cell(row.get('user_question'))]
+            round_intents = [cls.clean_cell(row.get('round_intent')) or cls.clean_cell(row.get('intent')) for row in rows if cls.clean_cell(row.get('user_question'))]
+            context_assert_types = [cls.clean_cell(row.get('context_assert_type')) for row in rows if cls.clean_cell(row.get('user_question'))]
+            previous_intents = [cls.clean_cell(row.get('previous_intent')) for row in rows if cls.clean_cell(row.get('user_question'))]
+            expect_refuses = [cls.yes_enabled(row.get('expect_refuse'), default=False) for row in rows if cls.clean_cell(row.get('user_question'))]
+            expect_assets = [cls.yes_enabled(row.get('expect_asset'), default=False) for row in rows if cls.clean_cell(row.get('user_question'))]
             if not questions:
                 continue
 
@@ -343,17 +363,51 @@ class ModelCaseHandler:
             if case_type and normalized_case_type != case_type:
                 continue
 
+            enriched_rounds = []
+            for index, question in enumerate(questions):
+                round_intent = round_intents[index] if index < len(round_intents) else cls.clean_cell(first_row.get('intent'))
+                previous_intent = previous_intents[index] if index < len(previous_intents) else (round_intents[index - 1] if index > 0 and index - 1 < len(round_intents) else '')
+                context_assert_type = context_assert_types[index] if index < len(context_assert_types) and context_assert_types[index] else cls.infer_context_assert_type(normalized_case_type, round_intent, previous_intent, round_intents[index - 1] if index > 0 and index - 1 < len(round_intents) else '')
+                expect_refuse = expect_refuses[index] if index < len(expect_refuses) else False
+                expect_asset = expect_assets[index] if index < len(expect_assets) else False
+                if not context_assert_type:
+                    context_assert_type = cls.infer_context_assert_type(normalized_case_type, round_intent, previous_intent, round_intents[index - 1] if index > 0 and index - 1 < len(round_intents) else '')
+                if expect_refuse is False and round_intent == '风险合规禁答类':
+                    expect_refuse = True
+                if expect_asset is False and round_intent in ['提额降息咨询类', '借款下单类']:
+                    expect_asset = True
+                enriched_rounds.append({
+                    'question': question,
+                    'expected_answer': expected_answers[index],
+                    'reference_answer': reference_answers[index],
+                    'round_intent': round_intent,
+                    'previous_intent': previous_intent,
+                    'context_assert_type': context_assert_type,
+                    'should_assert': round_assert_flags[index] if index < len(round_assert_flags) else True,
+                    'expect_refuse': expect_refuse,
+                    'expect_asset': expect_asset,
+                })
+
             case_list.append({
                 'case_id': cls.clean_cell(case_id),
                 'case_type': normalized_case_type,
                 'case_desc': cls.clean_cell(first_row.get('case_desc')),
+                'remark': cls.clean_cell(first_row.get('remark')),
                 'intent': cls.clean_cell(first_row.get('intent')),
                 'question': cls.clean_cell(last_eval_row.get('user_question')),
                 'expected_answer': cls.clean_cell(last_eval_row.get('expected_answer')),
+                'reference_answer': cls.clean_cell(last_eval_row.get('reference_answer')) or cls.clean_cell(last_eval_row.get('expected_answer')),
                 'questions': questions,
                 'expected_answers': expected_answers,
+                'reference_answers': reference_answers,
                 'round_assert_flags': round_assert_flags,
-                'similarity_threshold': cls.to_float(last_eval_row.get('similarity_threshold'), 80),
+                'round_intents': round_intents,
+                'context_assert_types': context_assert_types,
+                'previous_intents': previous_intents,
+                'expect_refuses': expect_refuses,
+                'expect_assets': expect_assets,
+                'enriched_rounds': enriched_rounds,
+                'similarity_threshold': cls.to_float(last_eval_row.get('similarity_threshold'), 70),
                 'response_time_threshold': cls.to_float(last_eval_row.get('response_time_threshold'), 5),
                 'env': config['env'],
                 'group': config['group']
@@ -407,6 +461,83 @@ class ModelCaseHandler:
         }
 
     @classmethod
+    def get_current_run_id(cls) -> str:
+        run_id = os.getenv('MODEL_REPORT_RUN_ID', '')
+        return run_id or datetime.now().strftime('%Y%m%d%H%M%S')
+
+    @classmethod
+    def get_current_run_dir(cls) -> str:
+        run_dir = os.path.join(MODEL_RUN_DIR, cls.get_current_run_id())
+        os.makedirs(run_dir, exist_ok=True)
+        return run_dir
+
+    @classmethod
+    def get_latest_model_run_dir(cls) -> str:
+        if not os.path.exists(MODEL_RUN_DIR):
+            return ''
+        run_dirs = [os.path.join(MODEL_RUN_DIR, name) for name in os.listdir(MODEL_RUN_DIR)]
+        run_dirs = [path for path in run_dirs if os.path.isdir(path)]
+        if not run_dirs:
+            return ''
+        return max(run_dirs, key=lambda path: os.path.getmtime(path))
+
+    @classmethod
+    def save_model_rows(cls, report_rows: list, file_prefix='model_intent_recognition_rows') -> str:
+        """
+        保存模型测试明细结果（当前运行）
+        :param report_rows: 明细结果
+        :param file_prefix: 文件前缀
+        :return:
+        """
+        run_dir = cls.get_current_run_dir()
+        rows_dir = os.path.join(run_dir, 'rows')
+        os.makedirs(rows_dir, exist_ok=True)
+        file_path = os.path.join(rows_dir, f'{file_prefix}_{os.getpid()}_{datetime.now().strftime("%Y%m%d%H%M%S%f")}.json')
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(report_rows, f, ensure_ascii=False, indent=2)
+        return file_path
+
+    @classmethod
+    def load_model_rows_from_run(cls, run_dir: str = '') -> list:
+        run_dir = run_dir or cls.get_current_run_dir()
+        rows_dir = os.path.join(run_dir, 'rows')
+        if not os.path.exists(rows_dir):
+            return []
+        report_rows = []
+        for file_name in sorted(os.listdir(rows_dir)):
+            if not file_name.endswith('.json'):
+                continue
+            file_path = os.path.join(rows_dir, file_name)
+            with open(file_path, encoding='utf-8') as f:
+                rows = json.load(f)
+            if isinstance(rows, list):
+                report_rows.extend(rows)
+            elif isinstance(rows, dict):
+                report_rows.append(rows)
+        unique_rows = {}
+        for row in report_rows:
+            if not isinstance(row, dict):
+                continue
+            row_key = f"{row.get('case_type')}::{row.get('case_id')}"
+            unique_rows[row_key] = row
+        return list(unique_rows.values())
+
+    @classmethod
+    def save_model_run_reports(cls, report_rows: list, run_dir: str = '') -> dict:
+        run_dir = run_dir or cls.get_current_run_dir()
+        os.makedirs(run_dir, exist_ok=True)
+        report_file = cls.save_model_report(report_rows=report_rows)
+        failed_report_csv_file = cls.save_model_failed_report_csv(report_rows=report_rows)
+        summary_file = cls.save_model_summary(report_rows=report_rows)
+        with open(os.path.join(run_dir, 'latest_summary_path.txt'), 'w', encoding='utf-8') as f:
+            f.write(summary_file)
+        return {
+            'report_file': report_file,
+            'failed_report_csv_file': failed_report_csv_file,
+            'summary_file': summary_file,
+        }
+
+    @classmethod
     def save_model_report(cls, report_rows: list, file_prefix='model_intent_recognition_report') -> str:
         """
         保存模型测试明细结果
@@ -431,10 +562,13 @@ class ModelCaseHandler:
         for row in rows:
             if not isinstance(row, dict):
                 continue
+            failed_dimensions = '、'.join([item.get('dimension', '') for item in row.get('failed_assert_items') or []]) or '无'
+            suggestions = '；'.join(row.get('failure_suggestions') or []) or '无'
             compact_rows.append(
                 f"第{row.get('round')}轮 | 问题：{row.get('question')} | 预期：{row.get('expected_answer')} | "
                 f"实际：{row.get('actual_answer')} | 耗时：{row.get('response_time')}s | "
-                f"评分：{row.get('similarity_score')} | 结果：{row.get('similarity_pass')}"
+                f"评分：{row.get('similarity_score')} | 失败维度：{failed_dimensions} | "
+                f"失败原因：{row.get('failure_reason') or '无'} | 修复建议：{suggestions} | 结果：{row.get('round_pass')}"
             )
         return ' || '.join(compact_rows)
 
@@ -464,9 +598,12 @@ class ModelCaseHandler:
         file_path = os.path.join(MODEL_REPORT_DIR, f'{file_prefix}_{datetime.now().strftime("%Y%m%d%H%M%S%f")}.csv')
         failed_rows = [row for row in report_rows if row.get('is_pass') is False]
         columns = [
-            'case_id', 'case_type', 'case_desc', 'intent', 'question', 'expected_answer',
-            'actual_answer', 'similarity_score', 'similarity_threshold', 'similarity_reason',
-            'response_time', 'is_pass', 'round_detail'
+            'case_id', 'case_type', 'case_desc', 'intent', 'actual_intent', 'question', 'expected_answer',
+            'reference_answer', 'actual_answer', 'text_values', 'standard_similarity_score',
+            'reference_similarity_score', 'similarity_score', 'similarity_threshold', 'text_threshold',
+            'text_comparator', 'similarity_reason', 'text_pass', 'asset_present', 'asset_allowed',
+            'asset_values', 'asset_value', 'asset_value_pass', 'biz_ref_ids', 'biz_ref_id',
+            'biz_ref_id_pass', 'failure_reason', 'fail_reasons', 'response_time', 'is_pass', 'round_detail'
         ]
         df = pd.DataFrame(failed_rows)
         if df.empty:
@@ -486,6 +623,30 @@ class ModelCaseHandler:
         response_time_list = sorted([float(row.get('response_time', 0)) for row in report_rows])
         single_rows = [row for row in report_rows if row.get('case_type') == 'single_turn']
         multi_rows = [row for row in report_rows if row.get('case_type') != 'single_turn']
+        multi_failure_dimensions = {}
+        multi_failed_cases = []
+        for row in multi_rows:
+            round_detail = row.get('round_detail')
+            if not round_detail:
+                continue
+            rows = json.loads(round_detail) if isinstance(round_detail, str) else round_detail
+            if not isinstance(rows, list):
+                continue
+            for round_row in rows:
+                if not isinstance(round_row, dict) or round_row.get('round_pass') is True:
+                    continue
+                failed_dimensions = [item.get('dimension', '') for item in round_row.get('failed_assert_items') or []]
+                for dimension in failed_dimensions:
+                    multi_failure_dimensions[dimension] = multi_failure_dimensions.get(dimension, 0) + 1
+                multi_failed_cases.append({
+                    'case_id': row.get('case_id'),
+                    'case_desc': row.get('case_desc'),
+                    'round': round_row.get('round'),
+                    'question': round_row.get('question'),
+                    'failed_dimensions': failed_dimensions,
+                    'failure_reason': round_row.get('failure_reason'),
+                    'suggestions': round_row.get('failure_suggestions') or []
+                })
 
         def pass_rate(rows):
             return round(len([row for row in rows if row.get('is_pass') is True]) / len(rows) * 100, 2) if rows else 0
@@ -496,9 +657,15 @@ class ModelCaseHandler:
             'failed_count': len(failed_rows),
             'pass_rate': pass_rate(report_rows),
             'single_total': len(single_rows),
+            'single_pass_count': len([row for row in single_rows if row.get('is_pass') is True]),
+            'single_failed_count': len([row for row in single_rows if row.get('is_pass') is False]),
             'single_pass_rate': pass_rate(single_rows),
             'multi_total': len(multi_rows),
+            'multi_pass_count': len([row for row in multi_rows if row.get('is_pass') is True]),
+            'multi_failed_count': len([row for row in multi_rows if row.get('is_pass') is False]),
             'multi_pass_rate': pass_rate(multi_rows),
+            'multi_failure_dimensions': multi_failure_dimensions,
+            'multi_failed_cases': multi_failed_cases[:20],
             'avg_response_time': round(sum(response_time_list) / total, 2) if total else 0,
             'p90_response_time': response_time_list[int(total * 0.9) - 1] if total else 0,
             'p95_response_time': response_time_list[int(total * 0.95) - 1] if total else 0,
@@ -525,16 +692,22 @@ class ModelCaseHandler:
             '失败数': model_summary['failed_count'],
             '通过率': model_summary['pass_rate'],
             '单轮用例数': model_summary['single_total'],
+            '单轮通过数': model_summary['single_pass_count'],
+            '单轮失败数': model_summary['single_failed_count'],
             '单轮通过率': model_summary['single_pass_rate'],
             '多轮用例数': model_summary['multi_total'],
+            '多轮通过数': model_summary['multi_pass_count'],
+            '多轮失败数': model_summary['multi_failed_count'],
             '多轮通过率': model_summary['multi_pass_rate'],
             '平均相似度': avg_similarity,
-            '相似度低于80数量': len([row for row in report_rows if float(row.get('similarity_score', 0)) < 80]),
+            '相似度低于70数量': len([row for row in report_rows if float(row.get('similarity_score', 0)) < 70]),
             '平均响应耗时': model_summary['avg_response_time'],
             'P90响应耗时': model_summary['p90_response_time'],
             'P95响应耗时': model_summary['p95_response_time'],
             '最大响应耗时': model_summary['max_response_time'],
-            '最小响应耗时': model_summary['min_response_time']
+            '最小响应耗时': model_summary['min_response_time'],
+            '多轮失败维度统计': model_summary['multi_failure_dimensions'],
+            '多轮失败场景Top20': model_summary['multi_failed_cases']
         }]
         file_path = os.path.join(MODEL_REPORT_DIR, f'{file_prefix}_{datetime.now().strftime("%Y%m%d%H%M%S%f")}.json')
         with open(file_path, 'w', encoding='utf-8') as f:

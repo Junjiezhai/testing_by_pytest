@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0132",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-提额申请提交后，怎么查看进度",
+  "intent": "信息查询类",
+  "question": "提额申请提交后，怎么查看进度",
+  "expected_answer": "正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：",
+  "questions": [
+    "提额申请提交后，怎么查看进度"
+  ],
+  "expected_answers": [
+    "正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下："
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

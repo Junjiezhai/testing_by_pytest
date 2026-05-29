@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224846698793",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224846698793",
+          "sessionId": "chat_pre_20260528224846698793"
+        },
+        "type": "TEXT",
+        "value": "分期乐提额完全免费，任何“付费包过”或给红包的说法都是诈骗，请勿相信。建议您通过APP官方页面正常提交申请即可。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

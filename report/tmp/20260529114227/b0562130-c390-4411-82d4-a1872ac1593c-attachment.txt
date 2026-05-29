@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0073
+【测试场景】：提额降息咨询类-降息成功后，我还款总额会减少吗？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：降息成功后，我还款总额会减少吗？
+【断言话术-标准答案】：对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。对于未来的新借款，由于利率降低，总利息会减少。对于已存在的借款没有影响。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291148229585404", "sessionId": "chat_pre_202605291148229585402"}, "type": "TEXT", "value": "降息后新借款的总利息会减少，但已存在的借款不受影响。具体请以 APP 页面展示为准。", "bizVariableMap": {}}]
+【TEXT输出】：["降息后新借款的总利息会减少，但已存在的借款不受影响。具体请以 APP 页面展示为准。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "降息成功后，我还款总额会减少吗？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291148229585402", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291148229585404", "content": "降息成功后，我还款总额会减少吗？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291148229585402", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291148229585404", "sessionId": "chat_pre_202605291148229585402"}, "type": "TEXT", "value": "降息后新借款的总利息会减少，但已存在的借款不受影响。具体请以 APP 页面展示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：降息后新借款的总利息会减少，但已存在的借款不受影响。具体请以 APP 页面展示为准。
+【外部模型相似度评分】：100.0
+【外部模型评估原因】：标准答案评分=100.0；参考答案评分=100.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.415s
+【相似度断言】：实际=100.0，阈值=70.0，结果=True
+【最终结果】：True

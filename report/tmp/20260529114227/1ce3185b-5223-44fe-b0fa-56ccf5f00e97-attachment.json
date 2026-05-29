@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291158088924734",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291158088924738",
+          "sessionId": "chat_pre_202605291158088924734"
+        },
+        "type": "TEXT",
+        "value": "大部分提额方式不查征信，仅基于您提交的材料评估；部分合作机构可能会查询，具体以页面授权提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

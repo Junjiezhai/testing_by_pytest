@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291152564945281",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291152564945281",
+          "sessionId": "chat_pre_202605291152564945281"
+        },
+        "type": "TEXT",
+        "value": "网络不好仅影响材料上传成功率，不会改变审核结果。建议切换 Wi-Fi 或 5G 重试，确保材料完整上传即可。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

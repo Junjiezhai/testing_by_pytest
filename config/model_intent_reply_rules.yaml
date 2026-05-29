@@ -1,0 +1,122 @@
+defaults:
+  text:
+    threshold: 70
+    comparator: gte
+  asset:
+    allowed: false
+    value_allowlist: []
+    biz_ref_id_allowlist: []
+
+intents:
+  提额降息咨询类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2605191424571850
+        - AS2605191421518676
+      biz_ref_id_allowlist_by_value:
+        AS2605191424571850:
+          - '180'
+          - '190'
+          - '191'
+          - '135'
+          - '155'
+          - '189'
+          - '140'
+          - '223'
+          - '252'
+          - '235'
+          - '255'
+          - '224'
+          - '290'
+          - '291'
+          - '286'
+          - '153'
+          - '150'
+          - '151'
+          - '152'
+          - '157'
+          - '210'
+          - '122'
+        AS2605191421518676:
+          - supermarket_card_coupon
+          - supermarket_card_purchase
+          - member_plus_coupon
+          - member_plus_purchase
+          - insurance
+          - credit_report
+
+  信息查询类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2605191424571850
+      biz_ref_id_allowlist:
+        - '180'
+        - '190'
+        - '191'
+        - '135'
+        - '155'
+        - '189'
+        - '140'
+        - '223'
+        - '252'
+        - '235'
+        - '255'
+        - '224'
+        - '290'
+        - '291'
+        - '286'
+        - '153'
+        - '150'
+        - '151'
+        - '152'
+        - '157'
+        - '210'
+        - '122'
+
+  转人工类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  借款下单类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2605191420142236
+      biz_ref_id_allowlist: []
+
+  风险合规禁答类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  非业务相关意图:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+biz_types:
+  AS2605261028460912: {}

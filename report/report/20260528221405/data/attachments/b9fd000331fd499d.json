@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "已为您更换补充资料入口，您可以点击下方卡片查看其他提额方案。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "155"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

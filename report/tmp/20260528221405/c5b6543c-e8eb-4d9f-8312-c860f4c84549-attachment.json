@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225657851577",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225657851577",
+          "sessionId": "chat_pre_20260528225657851577"
+        },
+        "type": "TEXT",
+        "value": "我这边主要提供分期乐提额、降息等服务，请问您想咨询哪方面的业务？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

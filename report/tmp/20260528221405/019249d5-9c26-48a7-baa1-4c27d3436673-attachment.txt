@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0160
+【测试场景】：信息查询类-显示“审核通过，额度更新中”要多久？
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：显示“审核通过，额度更新中”要多久？
+【断言话术-标准答案】：通常实时更新，最长不超过5分钟。请刷新页面或重登APP。
+【断言话术-外部模型参考答案】：您可以在页面查看当前处理状态，或通过客服入口查询进度。通常实时更新，最长不超过5分钟。请刷新页面或重登APP。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528224235854421", "sessionId": "chat_pre_20260528224235854421"}, "type": "TEXT", "value": "额度更新通常较快，请以 APP 页面展示为准。若长时间未变化，可尝试退出重登或下拉刷新查看。", "bizVariableMap": {}}]
+【TEXT输出】：["额度更新通常较快，请以 APP 页面展示为准。若长时间未变化，可尝试退出重登或下拉刷新查看。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "显示“审核通过，额度更新中”要多久？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528224235854421", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528224235854421", "content": "显示“审核通过，额度更新中”要多久？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528224235854421", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528224235854421", "sessionId": "chat_pre_20260528224235854421"}, "type": "TEXT", "value": "额度更新通常较快，请以 APP 页面展示为准。若长时间未变化，可尝试退出重登或下拉刷新查看。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：额度更新通常较快，请以 APP 页面展示为准。若长时间未变化，可尝试退出重登或下拉刷新查看。
+【外部模型相似度评分】：65.0
+【外部模型评估原因】：标准答案评分=65.0；参考答案评分=65.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 65.0 未达到阈值 70.0(gte)
+【响应耗时】：3.064s
+【相似度断言】：实际=65.0，阈值=70.0，结果=False
+【最终结果】：False

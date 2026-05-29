@@ -1,0 +1,579 @@
+[
+  {
+    "round": 1,
+    "question": "我想把利率降到年化10%",
+    "expected_answer": "利率调整需要系统综合评估，能否降到年化10%取决于您的信用状况、还款记录等因素。具体利率以系统评估后页面展示为准。",
+    "reference_answer": "您好，利率的调整需要经过系统的综合评估，能否降到年化10%主要看您的信用状况、还款记录等因素。最终利率以系统评估后页面展示的为准。",
+    "actual_answer": "好的，已确认您的目标利率为年化10%。系统正在为您评估降息方案，请您耐心等待审核结果。",
+    "round_intent": "提额降息咨询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "what_to_how",
+    "expect_refuse": false,
+    "standard_similarity_score": 70.0,
+    "reference_similarity_score": 70.0,
+    "similarity_score": 70.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=70.0；参考答案评分=70.0",
+    "intent_pass": true,
+    "intent_reason": "用户要求降息至10%，模型回应为确认需求并告知系统评估中，符合降息咨询意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=提额降息咨询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=70.0，阈值=70.0；标准答案分=70.0；参考答案分=70.0",
+        "reason": "实际回答确认了目标利率并告知评估中，但未体现利率调整结果取决于信用状况等因素的不确定性，遗漏了关键风险提示。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=提额降息咨询类，实际意图=降息咨询操作指引",
+        "reason": "用户要求降息至10%，模型回应为确认需求并告知系统评估中，符合降息咨询意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=what_to_how，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "历史对话为空，无上下文依赖；上一轮意图为空，无污染风险；非改口、非风险、非拒答回归场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "历史对话为空，无上下文依赖；上一轮意图为空，无污染风险；非改口、非风险、非拒答回归场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 7.416,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0126_1780031267109486",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130747109486_0",
+              "content": "我想把利率降到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130820289032_1",
+              "content": "好的，已确认您的目标利率为年化10%。系统正在为您评估降息方案，请您耐心等待审核结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130820289032_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130841874183_3",
+              "content": "1、好的，请问您要降息到多少？-静默降息准入\n2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130841875414_4",
+              "content": "帮我操作降息到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130903695984_5",
+              "content": "??????????????????????????8.8%?",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "好的，已确认您的目标利率为年化10%。系统正在为您评估降息方案，请您耐心等待审核结果。"
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "怎么申请降息",
+    "expected_answer": "您可以进入降息申请页面提交申请，系统会综合评估您的信用状况。请按页面提示操作。",
+    "reference_answer": "您可以通过降息申请页面提交申请，系统会综合评估您的信用状况，请按照页面提示操作即可。",
+    "actual_answer": "1、好的，请问您要降息到多少？-静默降息准入\n2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+    "round_intent": "提额降息咨询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "提额降息咨询类",
+    "context_assert_type": "what_to_how",
+    "expect_refuse": false,
+    "standard_similarity_score": 20.0,
+    "reference_similarity_score": 20.0,
+    "similarity_score": 20.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=20.0；参考答案评分=20.0",
+    "intent_pass": true,
+    "intent_reason": "用户询问‘怎么申请降息’，属于降息操作指引，仍属于提额降息咨询范畴，意图大致匹配。",
+    "context_carry_pass": false,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=提额降息咨询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=20.0，阈值=70.0；标准答案分=20.0；参考答案分=20.0",
+        "reason": "标准答案指导用户进入降息申请页面并按提示操作，而实际话术是询问降息目标或推荐其他借款app，核心操作路径完全缺失，且遗漏了信用评估等关键限制条件，语义严重偏离。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=提额降息咨询类，实际意图=降息咨询操作指引",
+        "reason": "用户询问‘怎么申请降息’，属于降息操作指引，仍属于提额降息咨询范畴，意图大致匹配。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=what_to_how，上一轮意图=提额降息咨询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮用户已明确降息至10%，模型确认后当前轮又问‘请问您要降息到多少？’，未承接已确认的目标利率，且未提供具体申请路径，导致上下文断裂。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上一轮用户已明确降息至10%，模型确认后当前轮又问‘请问您要降息到多少？’，未承接已确认的目标利率，且未提供具体申请路径，导致上下文断裂。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=20.0，阈值=70.0；标准答案分=20.0；参考答案分=20.0",
+        "reason": "标准答案指导用户进入降息申请页面并按提示操作，而实际话术是询问降息目标或推荐其他借款app，核心操作路径完全缺失，且遗漏了信用评估等关键限制条件，语义严重偏离。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=what_to_how，上一轮意图=提额降息咨询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "上一轮用户已明确降息至10%，模型确认后当前轮又问‘请问您要降息到多少？’，未承接已确认的目标利率，且未提供具体申请路径，导致上下文断裂。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 20.0 低于阈值 70.0；上下文断言失败：上一轮用户已明确降息至10%，模型确认后当前轮又问‘请问您要降息到多少？’，未承接已确认的目标利率，且未提供具体申请路径，导致上下文断裂。",
+    "should_assert": true,
+    "response_time": 7.667,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0126_1780031267109486",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130747109486_0",
+              "content": "我想把利率降到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130820289032_1",
+              "content": "好的，已确认您的目标利率为年化10%。系统正在为您评估降息方案，请您耐心等待审核结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130820289032_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130841874183_3",
+              "content": "1、好的，请问您要降息到多少？-静默降息准入\n2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130841875414_4",
+              "content": "帮我操作降息到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130903695984_5",
+              "content": "??????????????????????????8.8%?",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "1、好的，请问您要降息到多少？-静默降息准入\n2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入"
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "帮我操作降息到年化10%",
+    "expected_answer": "您可以进入降息申请页面提交申请，系统会综合评估您的信用状况。能否降到年化10%以评估结果为准，请按页面提示操作。",
+    "reference_answer": "您好，降息需要您自行登录降息申请页面提交申请，系统会综合评估您的信用情况。最终能否调整到年化10%需以评估结果为准，请您按照页面提示操作。",
+    "actual_answer": "??????????????????????????8.8%?",
+    "round_intent": "提额降息咨询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "提额降息操作类",
+    "context_assert_type": "what_to_how",
+    "expect_refuse": false,
+    "standard_similarity_score": 0.0,
+    "reference_similarity_score": 0.0,
+    "similarity_score": 0.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=0.0；参考答案评分=0.0",
+    "intent_pass": false,
+    "intent_reason": "用户要求代为操作降息至10%，属于操作指引请求，期望意图为提额降息咨询类，但模型回复为无效乱码，未提供任何有效信息，未满足意图要求。",
+    "context_carry_pass": false,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=提额降息咨询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=0.0，阈值=70.0；标准答案分=0.0；参考答案分=0.0",
+        "reason": "实际话术为乱码字符，无法表达任何与标准答案相关的语义，完全未提及降息申请入口、系统评估或按提示操作等核心内容。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=提额降息咨询类，实际意图=无效回复",
+        "reason": "用户要求代为操作降息至10%，属于操作指引请求，期望意图为提额降息咨询类，但模型回复为无效乱码，未提供任何有效信息，未满足意图要求。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=what_to_how，上一轮意图=提额降息操作类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "当前轮用户请求‘帮我操作降息到年化10%’依赖上一轮对话中已明确的降息目标，模型应承接该目标并提供具体操作指引，但回复为无效乱码，未完成上下文承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前轮用户请求‘帮我操作降息到年化10%’依赖上一轮对话中已明确的降息目标，模型应承接该目标并提供具体操作指引，但回复为无效乱码，未完成上下文承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=0.0，阈值=70.0；标准答案分=0.0；参考答案分=0.0",
+        "reason": "实际话术为乱码字符，无法表达任何与标准答案相关的语义，完全未提及降息申请入口、系统评估或按提示操作等核心内容。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=提额降息咨询类，实际意图=无效回复",
+        "reason": "用户要求代为操作降息至10%，属于操作指引请求，期望意图为提额降息咨询类，但模型回复为无效乱码，未提供任何有效信息，未满足意图要求。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=what_to_how，上一轮意图=提额降息操作类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "当前轮用户请求‘帮我操作降息到年化10%’依赖上一轮对话中已明确的降息目标，模型应承接该目标并提供具体操作指引，但回复为无效乱码，未完成上下文承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户要求代为操作降息至10%，属于操作指引请求，期望意图为提额降息咨询类，但模型回复为无效乱码，未提供任何有效信息，未满足意图要求。；上下文断言失败：当前轮用户请求‘帮我操作降息到年化10%’依赖上一轮对话中已明确的降息目标，模型应承接该目标并提供具体操作指引，但回复为无效乱码，未完成上下文承接；无意图污染、用户改口、风险拒答或回归业务场景。",
+    "should_assert": true,
+    "response_time": 7.702,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0126_1780031267109486",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130747109486_0",
+              "content": "我想把利率降到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130820289032_1",
+              "content": "好的，已确认您的目标利率为年化10%。系统正在为您评估降息方案，请您耐心等待审核结果。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130820289032_2",
+              "content": "怎么申请降息",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130841874183_3",
+              "content": "1、好的，请问您要降息到多少？-静默降息准入\n2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529130841875414_4",
+              "content": "帮我操作降息到年化10%",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529130903695984_5",
+              "content": "??????????????????????????8.8%?",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "??????????????????????????8.8%?"
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  }
+]

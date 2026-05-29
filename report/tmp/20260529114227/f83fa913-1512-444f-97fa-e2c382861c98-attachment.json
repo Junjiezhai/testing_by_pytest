@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291207289584502",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291207289594792",
+          "sessionId": "chat_pre_202605291207289584502"
+        },
+        "type": "TEXT",
+        "value": "我理解您想了解下单流程，但这边暂不能直接帮您处理。建议您先到 APP 对应业务入口查看具体流程或联系官方客服咨询。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

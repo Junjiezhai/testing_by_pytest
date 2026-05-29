@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223219391834",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223219391834",
+          "sessionId": "chat_pre_20260528223219391834"
+        },
+        "type": "TEXT",
+        "value": "不能保证100%成功，提额结果由系统结合您的资质和账户情况综合评估，具体以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

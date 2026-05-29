@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0139",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我忘了自己有没有提额申请在审核，怎么查？",
+  "intent": "提额降息咨询类",
+  "question": "我忘了自己有没有提额申请在审核，怎么查？",
+  "expected_answer": "您也可以在本页面输入“查询进度”获取实时状态，我也可以为您查询进度，您看需要吗？",
+  "questions": [
+    "我忘了自己有没有提额申请在审核，怎么查？"
+  ],
+  "expected_answers": [
+    "您也可以在本页面输入“查询进度”获取实时状态，我也可以为您查询进度，您看需要吗？"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。您也可以在本页面输入“查询进度”获取实时状态，我也可以为您查询进度，您看需要吗？",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

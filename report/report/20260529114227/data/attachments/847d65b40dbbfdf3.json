@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "通常实时更新，最长不超过5分钟。建议您刷新页面或重登APP查看。另外，系统暂未查到您的提额记录，您可以参考下方卡片补充银行流水等材料继续尝试提额。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "155"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

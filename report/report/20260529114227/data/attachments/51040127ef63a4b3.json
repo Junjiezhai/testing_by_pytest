@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "您的提额申请正在审核中，审核完成后会通知您。您也可以通过下方入口补充资料，争取后续提额机会。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "155"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

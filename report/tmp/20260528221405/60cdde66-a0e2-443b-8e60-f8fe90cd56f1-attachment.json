@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225144587160",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225144587160",
+          "sessionId": "chat_pre_20260528225144587160"
+        },
+        "type": "TEXT",
+        "value": "问题太模糊时，请补充您想咨询的是提额、降息、材料、还款还是人工客服，我再帮您看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

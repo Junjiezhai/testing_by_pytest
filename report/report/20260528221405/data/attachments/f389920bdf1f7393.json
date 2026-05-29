@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224937718303",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224937718303",
+          "sessionId": "chat_pre_20260528224937718303"
+        },
+        "type": "TEXT",
+        "value": "您指的是哪项业务或哪件事？请补充一下具体事项，我再帮您详细说明。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

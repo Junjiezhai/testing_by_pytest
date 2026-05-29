@@ -1,0 +1,18 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "降息结果仅对申请通过后的新借款生效，请确认当前借款是否为成功后发起。若已借出则无法更改，建议您退出重登APP查看最新利率或联系客服。"
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

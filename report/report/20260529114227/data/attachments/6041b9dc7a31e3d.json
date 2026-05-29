@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291159456378178",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291159456378173",
+          "sessionId": "chat_pre_202605291159456378178"
+        },
+        "type": "TEXT",
+        "value": "请警惕任何声称“付费包提额”的第三方，这极有可能是诈骗。我们的提额服务完全免费，请以APP页面为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

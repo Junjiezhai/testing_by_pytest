@@ -1,0 +1,252 @@
+{
+  "uid" : "626ad9b0aa0245ec",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额失败后还能再申请吗]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "0e777db29b2503e20cb1327143c464f1",
+  "time" : {
+    "start" : 1779977661079,
+    "stop" : 1779977677301,
+    "duration" : 16222
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "428869d6be1945ad",
+      "name" : "用例信息",
+      "source" : "428869d6be1945ad.json",
+      "type" : "application/json",
+      "size" : 989
+    }, {
+      "uid" : "14e260580e5e8c85",
+      "name" : "执行日志",
+      "source" : "14e260580e5e8c85.txt",
+      "type" : "text/plain",
+      "size" : 3305
+    }, {
+      "uid" : "d6143cccbe4780df",
+      "name" : "信贷大模型请求入参",
+      "source" : "d6143cccbe4780df.json",
+      "type" : "application/json",
+      "size" : 942
+    }, {
+      "uid" : "57a26fb9b1e02a32",
+      "name" : "信贷大模型完整返回",
+      "source" : "57a26fb9b1e02a32.json",
+      "type" : "application/json",
+      "size" : 576
+    }, {
+      "uid" : "38efd8f520b80e10",
+      "name" : "模型评估明细",
+      "source" : "38efd8f520b80e10.json",
+      "type" : "application/json",
+      "size" : 3396
+    }, {
+      "uid" : "9aa07ce95272e302",
+      "name" : "断言明细",
+      "source" : "9aa07ce95272e302.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "bb81cc51f510daed",
+      "name" : "失败原因",
+      "source" : "bb81cc51f510daed.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "fea075692985e120",
+      "name" : "信贷大模型实际话术",
+      "source" : "fea075692985e120.txt",
+      "type" : "text/plain",
+      "size" : 141
+    }, {
+      "uid" : "e2179ce60ebebcb9",
+      "name" : "断言话术",
+      "source" : "e2179ce60ebebcb9.txt",
+      "type" : "text/plain",
+      "size" : 394
+    }, {
+      "uid" : "fa41d153a595bfab",
+      "name" : "log",
+      "source" : "fa41d153a595bfab.txt",
+      "type" : "text/plain",
+      "size" : 16417
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0004', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额失败后还能再申请吗', 'intent': '提额降息咨询类', 'question': '提额失败后还能再申请吗', 'expected_answer': '提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'questions': ['提额失败后还能再申请吗'], 'expected_answers': ['提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "87ffa858fb2a606a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964403829,
+          "stop" : 1779964416992,
+          "duration" : 13163
+        }
+      }, {
+        "uid" : "5bdb030fab92ed7c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779960651736,
+          "stop" : 1779960705110,
+          "duration" : 53374
+        }
+      }, {
+        "uid" : "7615e8ec9254e915",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 5.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779877295808,
+          "stop" : 1779877318890,
+          "duration" : 23082
+        }
+      }, {
+        "uid" : "d7bb127e2dd54bcb",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 10.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779871156221,
+          "stop" : 1779871185830,
+          "duration" : 29609
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "626ad9b0aa0245ec.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0004', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额失败后还能再申请吗', 'intent': '提额降息咨询类', 'question': '提额失败后还能再申请吗', 'expected_answer': '提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'questions': ['提额失败后还能再申请吗'], 'expected_answers': ['提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

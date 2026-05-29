@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291159129841321",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291159129841327",
+          "sessionId": "chat_pre_202605291159129841321"
+        },
+        "type": "TEXT",
+        "value": "注销账户后所有数据会被清除，之前的提额记录将无法恢复。如果未来重新注册，需要重新进行信用评估和提额申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291143431508351",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291143431508359",
+          "sessionId": "chat_pre_202605291143431508351"
+        },
+        "type": "TEXT",
+        "value": "额度会根据您的账户状态、还款表现等综合评估动态调整，如出现逾期等情况可能下降，具体以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

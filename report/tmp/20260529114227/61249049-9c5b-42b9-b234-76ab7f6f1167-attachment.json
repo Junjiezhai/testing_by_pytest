@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291146053026908",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291146053026905",
+          "sessionId": "chat_pre_202605291146053026908"
+        },
+        "type": "TEXT",
+        "value": "每个人的利率是根据信用记录、还款行为和借款情况综合评定的，存在差异属于正常现象。保持良好的信用习惯有助于未来获得更优利率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,242 @@
+{
+  "uid" : "8d9baf3550365620",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-为什么我朋友的提额项比我的多？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "1e645a03b909ee542f0d7fa2507c251c",
+  "time" : {
+    "start" : 1780026346988,
+    "stop" : 1780026362618,
+    "duration" : 15630
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "433a6cbf868381c9",
+      "name" : "用例信息",
+      "source" : "433a6cbf868381c9.json",
+      "type" : "application/json",
+      "size" : 1130
+    }, {
+      "uid" : "85ef968bb48dde41",
+      "name" : "执行日志",
+      "source" : "85ef968bb48dde41.txt",
+      "type" : "text/plain",
+      "size" : 3776
+    }, {
+      "uid" : "c601cabd6731817f",
+      "name" : "信贷大模型请求入参",
+      "source" : "c601cabd6731817f.json",
+      "type" : "application/json",
+      "size" : 956
+    }, {
+      "uid" : "c2f9f369e3c675de",
+      "name" : "信贷大模型完整返回",
+      "source" : "c2f9f369e3c675de.json",
+      "type" : "application/json",
+      "size" : 666
+    }, {
+      "uid" : "815ae6516635353c",
+      "name" : "模型评估明细",
+      "source" : "815ae6516635353c.json",
+      "type" : "application/json",
+      "size" : 4096
+    }, {
+      "uid" : "236a822b2f3eb59a",
+      "name" : "断言明细",
+      "source" : "236a822b2f3eb59a.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "fd8cc646d900e50d",
+      "name" : "失败原因",
+      "source" : "fd8cc646d900e50d.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "636fbed62884f5ed",
+      "name" : "信贷大模型实际话术",
+      "source" : "636fbed62884f5ed.txt",
+      "type" : "text/plain",
+      "size" : 228
+    }, {
+      "uid" : "6696979f811b947f",
+      "name" : "断言话术",
+      "source" : "6696979f811b947f.txt",
+      "type" : "text/plain",
+      "size" : 463
+    }, {
+      "uid" : "994531e105b8a288",
+      "name" : "log",
+      "source" : "994531e105b8a288.txt",
+      "type" : "text/plain",
+      "size" : 18145
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0037', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-为什么我朋友的提额项比我的多？', 'intent': '提额降息咨询类', 'question': '为什么我朋友的提额项比我的多？', 'expected_answer': '提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。', 'questions': ['为什么我朋友的提额项比我的多？'], 'expected_answers': ['提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。'], 'round_assert_flags': [True], 'reference_answer': '出现这种情况通常与系统综合评估结果有关。提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "89e69bd06d5b303e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779977939418,
+          "stop" : 1779977950211,
+          "duration" : 10793
+        }
+      }, {
+        "uid" : "2d4ba5ea64dfd836",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964519597,
+          "stop" : 1779964535308,
+          "duration" : 15711
+        }
+      }, {
+        "uid" : "fd9c3d6e5cf43538",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877801448,
+          "stop" : 1779877919490,
+          "duration" : 118042
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "8d9baf3550365620.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0037', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-为什么我朋友的提额项比我的多？', 'intent': '提额降息咨询类', 'question': '为什么我朋友的提额项比我的多？', 'expected_answer': '提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。', 'questions': ['为什么我朋友的提额项比我的多？'], 'expected_answers': ['提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。'], 'round_assert_flags': [True], 'reference_answer': '出现这种情况通常与系统综合评估结果有关。提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

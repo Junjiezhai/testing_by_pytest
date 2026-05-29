@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291150392633531",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291150392633535",
+          "sessionId": "chat_pre_202605291150392633531"
+        },
+        "type": "TEXT",
+        "value": "目前支持支付宝芝麻信用分和微信支付分，您可在对应APP中截图上传即可。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

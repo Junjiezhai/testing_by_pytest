@@ -1,0 +1,242 @@
+{
+  "uid" : "bd1c83803c373f89",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-降息后如果我再申请提额，利率会变吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "1c9402e21052494d3a486a553009947c",
+  "time" : {
+    "start" : 1780026500844,
+    "stop" : 1780026524286,
+    "duration" : 23442
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154743,
+      "stop" : 1780026154743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "90ec43d23ee42d7a",
+      "name" : "用例信息",
+      "source" : "90ec43d23ee42d7a.json",
+      "type" : "application/json",
+      "size" : 1040
+    }, {
+      "uid" : "fa72f5f6b00a9a02",
+      "name" : "执行日志",
+      "source" : "fa72f5f6b00a9a02.txt",
+      "type" : "text/plain",
+      "size" : 3401
+    }, {
+      "uid" : "b51fbc26b44cdbc3",
+      "name" : "信贷大模型请求入参",
+      "source" : "b51fbc26b44cdbc3.json",
+      "type" : "application/json",
+      "size" : 965
+    }, {
+      "uid" : "1168aa3a34f0d2ab",
+      "name" : "信贷大模型完整返回",
+      "source" : "1168aa3a34f0d2ab.json",
+      "type" : "application/json",
+      "size" : 584
+    }, {
+      "uid" : "5984d627a2bfa9cc",
+      "name" : "模型评估明细",
+      "source" : "5984d627a2bfa9cc.json",
+      "type" : "application/json",
+      "size" : 3592
+    }, {
+      "uid" : "caa15d8ca2698456",
+      "name" : "断言明细",
+      "source" : "caa15d8ca2698456.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "61d5bdeda074d5f6",
+      "name" : "失败原因",
+      "source" : "61d5bdeda074d5f6.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "fa1193fee8129dac",
+      "name" : "信贷大模型实际话术",
+      "source" : "fa1193fee8129dac.txt",
+      "type" : "text/plain",
+      "size" : 146
+    }, {
+      "uid" : "cbe6cc11221ec978",
+      "name" : "断言话术",
+      "source" : "cbe6cc11221ec978.txt",
+      "type" : "text/plain",
+      "size" : 379
+    }, {
+      "uid" : "a3f5f1a94e3c8445",
+      "name" : "log",
+      "source" : "a3f5f1a94e3c8445.txt",
+      "type" : "text/plain",
+      "size" : 18167
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031471025,
+      "stop" : 1780031472034,
+      "duration" : 1009
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c285deab36569ad0",
+      "name" : "模型测试汇总",
+      "source" : "c285deab36569ad0.txt",
+      "type" : "text/plain",
+      "size" : 53387
+    }, {
+      "uid" : "f9de4c3766b8208a",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "f9de4c3766b8208a.csv",
+      "type" : "text/csv",
+      "size" : 344858
+    }, {
+      "uid" : "e77f81e76ad090e6",
+      "name" : "模型测试明细Excel路径",
+      "source" : "e77f81e76ad090e6.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "cd8493ce67c0383f",
+      "name" : "模型测试汇总JSON",
+      "source" : "cd8493ce67c0383f.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0062', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-降息后如果我再申请提额，利率会变吗？', 'intent': '提额降息咨询类', 'question': '降息后如果我再申请提额，利率会变吗？', 'expected_answer': '提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。', 'questions': ['降息后如果我再申请提额，利率会变吗？'], 'expected_answers': ['提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "5269bbe5d5db597e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779978161880,
+          "stop" : 1779978181706,
+          "duration" : 19826
+        }
+      }, {
+        "uid" : "2f86d0145aed5a85",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964600926,
+          "stop" : 1779964619482,
+          "duration" : 18556
+        }
+      }, {
+        "uid" : "62438a5a49163b15",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878186662,
+          "stop" : 1779878234040,
+          "duration" : 47378
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "bd1c83803c373f89.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0062', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-降息后如果我再申请提额，利率会变吗？', 'intent': '提额降息咨询类', 'question': '降息后如果我再申请提额，利率会变吗？', 'expected_answer': '提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。', 'questions': ['降息后如果我再申请提额，利率会变吗？'], 'expected_answers': ['提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

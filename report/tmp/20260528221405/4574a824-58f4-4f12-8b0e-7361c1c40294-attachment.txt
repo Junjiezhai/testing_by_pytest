@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0350
+【测试场景】：借款下单类-借款20000元需要多久到账
+【意图分类】：借款下单类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：借款20000元需要多久到账
+【断言话术-标准答案】：借款2万元审核通过后，款项通常会在1-3个工作日内到账，具体到账时间以银行处理速度为准。
+【断言话术-外部模型参考答案】：若您申请借款20000元并通过审核，款项一般会在1至3个工作日内到账，实际到账时间以银行处理进度为准。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528225527755466", "sessionId": "chat_pre_20260528225527755466"}, "type": "TEXT", "value": "借款放款时效请以 APP 借款页展示为准，这边暂不能直接代办或承诺具体时间，建议您留意页面提示。", "bizVariableMap": {}}]
+【TEXT输出】：["借款放款时效请以 APP 借款页展示为准，这边暂不能直接代办或承诺具体时间，建议您留意页面提示。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "借款20000元需要多久到账"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528225527755466", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528225527755466", "content": "借款20000元需要多久到账", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528225527755466", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528225527755466", "sessionId": "chat_pre_20260528225527755466"}, "type": "TEXT", "value": "借款放款时效请以 APP 借款页展示为准，这边暂不能直接代办或承诺具体时间，建议您留意页面提示。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：借款放款时效请以 APP 借款页展示为准，这边暂不能直接代办或承诺具体时间，建议您留意页面提示。
+【外部模型相似度评分】：60.0
+【外部模型评估原因】：标准答案评分=60.0；参考答案评分=60.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 60.0 未达到阈值 70.0(gte)
+【响应耗时】：3.389s
+【相似度断言】：实际=60.0，阈值=70.0，结果=False
+【最终结果】：False

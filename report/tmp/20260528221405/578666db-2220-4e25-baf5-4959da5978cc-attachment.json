@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223054398167",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223054398167",
+          "sessionId": "chat_pre_20260528223054398167"
+        },
+        "type": "TEXT",
+        "value": "目前支持的提额方式包括借钱APP截图、微信/支付宝账单、银行流水、公积金和个税认证等，具体以您页面显示为准。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

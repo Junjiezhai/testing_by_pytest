@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291203143991431",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291203143991431",
+          "sessionId": "chat_pre_202605291203143991431"
+        },
+        "type": "TEXT",
+        "value": "抱歉，借款资金严禁用于赌博等非法活动，这是违法行为且会严重影响您的征信。我无法支持此类请求，请您理性借贷、合规使用。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

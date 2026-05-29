@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0013",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-提额失败后，显示的失败原因准确吗？",
+  "intent": "信息查询类",
+  "question": "提额失败后，显示的失败原因准确吗？",
+  "expected_answer": "失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。",
+  "questions": [
+    "提额失败后，显示的失败原因准确吗？"
+  ],
+  "expected_answers": [
+    "失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "建议先刷新页面或重新登录确认展示是否同步。失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

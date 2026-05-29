@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225000996242",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225000996242",
+          "sessionId": "chat_pre_20260528225000996242"
+        },
+        "type": "TEXT",
+        "value": "支持的银行范围请以 APP 页面展示为准；请使用本人名下真实储蓄卡流水，具体支持情况以页面提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

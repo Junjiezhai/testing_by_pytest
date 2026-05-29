@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0045",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-降息后利率会永久降低吗？",
+  "intent": "提额降息咨询类",
+  "question": "降息后利率会永久降低吗？",
+  "expected_answer": "降息后，您未来新申请的借款将按照新利率执行。已有借款的利率不受影响。",
+  "questions": [
+    "降息后利率会永久降低吗？"
+  ],
+  "expected_answers": [
+    "降息后，您未来新申请的借款将按照新利率执行。已有借款的利率不受影响。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。降息后，您未来新申请的借款将按照新利率执行。已有借款的利率不受影响。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221613013794",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221613013794",
+          "sessionId": "chat_pre_20260528221613013794"
+        },
+        "type": "TEXT",
+        "value": "部分提额活动可能有期限或名额限制，具体以页面实时展示为准，建议您看到合适的项目尽快操作。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

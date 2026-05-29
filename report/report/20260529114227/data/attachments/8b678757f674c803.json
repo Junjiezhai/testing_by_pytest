@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0179",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-你再重复一遍我就投诉你，转人工",
+  "intent": "转人工类",
+  "question": "你再重复一遍我就投诉你，转人工",
+  "expected_answer": "抱歉让您感到不耐烦了。我马上为您转接人工客服，人工会优先为您服务。",
+  "questions": [
+    "你再重复一遍我就投诉你，转人工"
+  ],
+  "expected_answers": [
+    "抱歉让您感到不耐烦了。我马上为您转接人工客服，人工会优先为您服务。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如需进一步核实，您可以联系在线客服反馈问题。抱歉让您感到不耐烦了。我马上为您转接人工客服，人工会优先为您服务。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

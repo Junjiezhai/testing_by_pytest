@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225008245295",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225008245295",
+          "sessionId": "chat_pre_20260528225008245295"
+        },
+        "type": "TEXT",
+        "value": "信用评分无法手动修改，系统会结合分数、历史信用行为等综合评估。建议您保持良好的信用记录，等待系统定期评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

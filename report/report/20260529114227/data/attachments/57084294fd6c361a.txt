@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0044
+【测试场景】：提额降息咨询类-降息需要满足什么条件？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：降息需要满足什么条件？
+【断言话术-标准答案】：您需要保持良好的还款记录，无逾期，且系统会评估您的信用资质、借款频率、负债率等。具体以页面提示为准。
+【断言话术-外部模型参考答案】：是否满足条件需要以页面和系统评估为准。您需要保持良好的还款记录，无逾期，且系统会评估您的信用资质、借款频率、负债率等。具体以页面提示为准。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291146194369816", "sessionId": "chat_pre_202605291146194369814"}, "type": "TEXT", "value": "降息主要看您的还款记录、信用资质、负债率等综合情况；具体以页面提示为准。如果您想继续办理，可以直接说“我要降息”。", "bizVariableMap": {}}]
+【TEXT输出】：["降息主要看您的还款记录、信用资质、负债率等综合情况；具体以页面提示为准。如果您想继续办理，可以直接说“我要降息”。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "降息需要满足什么条件？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291146194369814", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291146194369816", "content": "降息需要满足什么条件？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291146194369814", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291146194369816", "sessionId": "chat_pre_202605291146194369814"}, "type": "TEXT", "value": "降息主要看您的还款记录、信用资质、负债率等综合情况；具体以页面提示为准。如果您想继续办理，可以直接说“我要降息”。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：降息主要看您的还款记录、信用资质、负债率等综合情况；具体以页面提示为准。如果您想继续办理，可以直接说“我要降息”。
+【外部模型相似度评分】：87.0
+【外部模型评估原因】：标准答案评分=85.0；参考答案评分=87.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.08s
+【相似度断言】：实际=87.0，阈值=70.0，结果=True
+【最终结果】：True

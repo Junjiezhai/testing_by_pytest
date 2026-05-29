@@ -1,0 +1,243 @@
+{
+  "uid" : "a8cf688a2aa2ad66",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-支付宝账单怎么上传]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "3211ce964563f6db461a567444cb9a66",
+  "time" : {
+    "start" : 1780026550445,
+    "stop" : 1780026573134,
+    "duration" : 22689
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f9a7474e6732bb0e",
+      "name" : "用例信息",
+      "source" : "f9a7474e6732bb0e.json",
+      "type" : "application/json",
+      "size" : 1712
+    }, {
+      "uid" : "63863832f2fd370e",
+      "name" : "执行日志",
+      "source" : "63863832f2fd370e.txt",
+      "type" : "text/plain",
+      "size" : 3917
+    }, {
+      "uid" : "fd86a414f583fca5",
+      "name" : "信贷大模型请求入参",
+      "source" : "fd86a414f583fca5.json",
+      "type" : "application/json",
+      "size" : 938
+    }, {
+      "uid" : "aa6965c5755d230e",
+      "name" : "信贷大模型完整返回",
+      "source" : "aa6965c5755d230e.json",
+      "type" : "application/json",
+      "size" : 631
+    }, {
+      "uid" : "2a50b46336397661",
+      "name" : "模型评估明细",
+      "source" : "2a50b46336397661.json",
+      "type" : "application/json",
+      "size" : 4104
+    }, {
+      "uid" : "ff40bdf413746d41",
+      "name" : "断言明细",
+      "source" : "ff40bdf413746d41.json",
+      "type" : "application/json",
+      "size" : 448
+    }, {
+      "uid" : "ca1b23de01d6e907",
+      "name" : "失败原因",
+      "source" : "ca1b23de01d6e907.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "5736ebaf4c6121f0",
+      "name" : "信贷大模型实际话术",
+      "source" : "5736ebaf4c6121f0.txt",
+      "type" : "text/plain",
+      "size" : 179
+    }, {
+      "uid" : "bb4cec6364b77db8",
+      "name" : "断言话术",
+      "source" : "bb4cec6364b77db8.txt",
+      "type" : "text/plain",
+      "size" : 896
+    }, {
+      "uid" : "1d6e0aa54474db52",
+      "name" : "log",
+      "source" : "1d6e0aa54474db52.txt",
+      "type" : "text/plain",
+      "size" : 38986
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0079', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-支付宝账单怎么上传', 'intent': '提额降息咨询类', 'question': '支付宝账单怎么上传', 'expected_answer': '您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。', 'questions': ['支付宝账单怎么上传'], 'expected_answers': ['您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "b1af4bd89c38735a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779978300402,
+          "stop" : 1779978317756,
+          "duration" : 17354
+        }
+      }, {
+        "uid" : "fb8a0dbf0b9a5183",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内；TEXT评分 10.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779964665692,
+          "stop" : 1779964683795,
+          "duration" : 18103
+        }
+      }, {
+        "uid" : "8a88b6fa27d6adf1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878078230,
+          "stop" : 1779878135244,
+          "duration" : 57014
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "a8cf688a2aa2ad66.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0079', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-支付宝账单怎么上传', 'intent': '提额降息咨询类', 'question': '支付宝账单怎么上传', 'expected_answer': '您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。', 'questions': ['支付宝账单怎么上传'], 'expected_answers': ['您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。您需要按指引将支付宝账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开支付宝，进入“我的”页点击“账单” → 点击右上角“...”选择“开具交易流水证明” → 按提示操作并粘贴邮箱地址发送即可。邮件发送后预计15分钟左右完成认证，我们会严格保密您的信息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

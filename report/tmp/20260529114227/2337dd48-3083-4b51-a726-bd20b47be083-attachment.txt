@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0008
+【测试场景】：同一意图连续追问-借款下单类-8
+【意图分类】：借款下单类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：我可以去哪里下单借钱
+【断言话术-标准答案】：您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "我可以去哪里下单借钱", "chatId": "chat_pre_MD_0008_1780028084445140", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121444445140_0", "content": "提额认证会影响我已有的借款吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121459336381_1", "content": "不会影响的。提额认证只评估您的可用额度上限，已成功借款的订单还款金额、期限和利率均不受影响，两者互不干扰。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121459337385_2", "content": "降息申请显示“已成功”，但借款时利率没变？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121529321367_3", "content": "降息成功后的新利率仅对申请通过后发起的新借款生效。请您确认是否已重新发起借款，并检查是否有使用其他优惠券覆盖。如有疑问可联系客服协助核查。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121529322367_4", "content": "我可以去哪里下单借钱", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121602090888_5", "content": "借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0008_1780028084445140", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121444445140_0", "content": "提额认证会影响我已有的借款吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121459336381_1", "content": "不会影响的。提额认证只评估您的可用额度上限，已成功借款的订单还款金额、期限和利率均不受影响，两者互不干扰。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121459337385_2", "content": "降息申请显示“已成功”，但借款时利率没变？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121529321367_3", "content": "降息成功后的新利率仅对申请通过后发起的新借款生效。请您确认是否已重新发起借款，并检查是否有使用其他优惠券覆盖。如有疑问可联系客服协助核查。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121529322367_4", "content": "我可以去哪里下单借钱", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121602090888_5", "content": "借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0008_1780028084445140", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260529121529322367_4", "sessionId": "chat_pre_MD_0008_1780028084445140"}, "type": "TEXT", "value": "借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。
+【外部模型相似度评分】：82.67
+【外部模型评估原因】：多轮逐轮平均相似度：82.67
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 58.0 低于阈值 70.0；上下文断言失败：连续追问借款下单渠道，预期应直接提供操作入口或链接。实际话术只让客户去APP内查看且拒绝直接办理，未给出标准答案要求的具体额度与链接，未正确承接客户对明确下单路径的诉求，上下文承接不通过。未受上一轮意图污染，非改口、拒答或回归场景，其余断言默认通过。
+【响应耗时】：4.534s
+【相似度断言】：实际=82.67，阈值=70.0，结果=True
+【最终结果】：False
+【多轮失败定位摘要】：
+第3轮 | 失败维度：话术相似度、上下文承接 | 原因：话术平均评分 58.0 低于阈值 70.0；上下文断言失败：连续追问借款下单渠道，预期应直接提供操作入口或链接。实际话术只让客户去APP内查看且拒绝直接办理，未给出标准答案要求的具体额度与链接，未正确承接客户对明确下单路径的诉求，上下文承接不通过。未受上一轮意图污染，非改口、拒答或回归场景，其余断言默认通过。
+问题：我可以去哪里下单借钱
+模型回复：借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+【多轮平均响应耗时】：4.534s
+【多轮总响应耗时】：13.603s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额认证会影响我已有的借款吗
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：不会。提额认证不会影响您当前已成功借款的订单，您可以正常还款，两者互不干扰。
+参考答案：借款下单请以页面可操作入口和审核结果为准。不会。提额认证不会影响您当前已成功借款的订单，您可以正常还款，两者互不干扰。
+模型回复：不会影响的。提额认证只评估您的可用额度上限，已成功借款的订单还款金额、期限和利率均不受影响，两者互不干扰。
+标准答案评分：95.0
+参考答案评分：93.0
+平均相似度：95.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.929s
+是否通过：True
+------ 第2轮 ------
+用户问题：降息申请显示“已成功”，但借款时利率没变？
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：借款下单类
+标准答案：请确认您是申请通过后发起的新借款，且新借款利率是否使用了其他优惠券。如有疑问可联系客服。
+参考答案：借款下单请以页面可操作入口和审核结果为准。请确认您是申请通过后发起的新借款，且新借款利率是否使用了其他优惠券。如有疑问可联系客服。
+模型回复：降息成功后的新利率仅对申请通过后发起的新借款生效。请您确认是否已重新发起借款，并检查是否有使用其他优惠券覆盖。如有疑问可联系客服协助核查。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：95.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：7.465s
+是否通过：True
+------ 第3轮 ------
+用户问题：我可以去哪里下单借钱
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：借款下单类
+标准答案：您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+参考答案：只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+模型回复：借款下单入口请在分期乐 APP 内查看，这边暂不能直接为您办理。
+标准答案评分：55.0
+参考答案评分：58.0
+平均相似度：58.0
+意图断言：True
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、上下文承接
+失败原因：话术平均评分 58.0 低于阈值 70.0；上下文断言失败：连续追问借款下单渠道，预期应直接提供操作入口或链接。实际话术只让客户去APP内查看且拒绝直接办理，未给出标准答案要求的具体额度与链接，未正确承接客户对明确下单路径的诉求，上下文承接不通过。未受上一轮意图污染，非改口、拒答或回归场景，其余断言默认通过。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：3.209s
+是否通过：False

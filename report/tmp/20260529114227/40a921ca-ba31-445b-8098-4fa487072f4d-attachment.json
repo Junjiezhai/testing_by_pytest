@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291158480504786",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291158480504783",
+          "sessionId": "chat_pre_202605291158480504786"
+        },
+        "type": "TEXT",
+        "value": "材料提交后系统会按顺序处理，审核进度和结果请以 APP 页面提示为准，建议您留意页面或消息通知。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

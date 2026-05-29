@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221631323032",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221631323032",
+          "sessionId": "chat_pre_20260528221631323032"
+        },
+        "type": "TEXT",
+        "value": "提额失败可联系在线客服查看具体原因，但结果由系统自动判定，人工无法干预修改。建议您参考原因改善资质后再次尝试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

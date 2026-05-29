@@ -1,0 +1,242 @@
+{
+  "uid" : "f2adae3c978d85f9",
+  "name" : "test_single_turn_intent_recognition[转人工类-人工入口在哪里或怎么找人工客服]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "552459435e72f42a27b7528af6b0fc39",
+  "time" : {
+    "start" : 1780027616106,
+    "stop" : 1780027636563,
+    "duration" : 20457
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3a24004e4e1f435e",
+      "name" : "用例信息",
+      "source" : "3a24004e4e1f435e.json",
+      "type" : "application/json",
+      "size" : 953
+    }, {
+      "uid" : "a7390bb67d4d7fca",
+      "name" : "执行日志",
+      "source" : "a7390bb67d4d7fca.txt",
+      "type" : "text/plain",
+      "size" : 3238
+    }, {
+      "uid" : "2421598316469aed",
+      "name" : "信贷大模型请求入参",
+      "source" : "2421598316469aed.json",
+      "type" : "application/json",
+      "size" : 956
+    }, {
+      "uid" : "346bf658e9ec1d85",
+      "name" : "信贷大模型完整返回",
+      "source" : "346bf658e9ec1d85.json",
+      "type" : "application/json",
+      "size" : 560
+    }, {
+      "uid" : "b6664ce19fb16323",
+      "name" : "模型评估明细",
+      "source" : "b6664ce19fb16323.json",
+      "type" : "application/json",
+      "size" : 3598
+    }, {
+      "uid" : "4ac81045c9e2d1eb",
+      "name" : "断言明细",
+      "source" : "4ac81045c9e2d1eb.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "e2ab70097497c7c3",
+      "name" : "失败原因",
+      "source" : "e2ab70097497c7c3.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "4b9c5caef60a269",
+      "name" : "信贷大模型实际话术",
+      "source" : "4b9c5caef60a269.txt",
+      "type" : "text/plain",
+      "size" : 122
+    }, {
+      "uid" : "ffbceffde2c71192",
+      "name" : "断言话术",
+      "source" : "ffbceffde2c71192.txt",
+      "type" : "text/plain",
+      "size" : 365
+    }, {
+      "uid" : "d210189bd692f265",
+      "name" : "log",
+      "source" : "d210189bd692f265.txt",
+      "type" : "text/plain",
+      "size" : 17524
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0289', 'case_type': 'single_turn', 'case_desc': '转人工类-人工入口在哪里或怎么找人工客服', 'intent': '转人工类', 'question': '人工入口在哪里或怎么找人工客服', 'expected_answer': '您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接', 'questions': ['人工入口在哪里或怎么找人工客服'], 'expected_answers': ['您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "1f49255dc65e3859",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979923007,
+          "stop" : 1779979933155,
+          "duration" : 10148
+        }
+      }, {
+        "uid" : "ae4c11c27095c98c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965082771,
+          "stop" : 1779965100725,
+          "duration" : 17954
+        }
+      }, {
+        "uid" : "432bf3b947c7d21d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880545259,
+          "stop" : 1779880589514,
+          "duration" : 44255
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "f2adae3c978d85f9.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0289', 'case_type': 'single_turn', 'case_desc': '转人工类-人工入口在哪里或怎么找人工客服', 'intent': '转人工类', 'question': '人工入口在哪里或怎么找人工客服', 'expected_answer': '您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接', 'questions': ['人工入口在哪里或怎么找人工客服'], 'expected_answers': ['您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。您可以在 APP 的帮助中心或客服入口查找在线人工，也可以直接说“转人工”发起转接', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

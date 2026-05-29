@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0039",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-怎么申请降息",
+  "intent": "提额降息咨询类",
+  "question": "怎么申请降息",
+  "expected_answer": "1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+  "questions": [
+    "怎么申请降息"
+  ],
+  "expected_answers": [
+    "1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以先进入对应功能入口，再按照页面提示逐步提交申请。1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

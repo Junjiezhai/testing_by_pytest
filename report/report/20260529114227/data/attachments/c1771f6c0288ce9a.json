@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155238278643",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155238278643",
+          "sessionId": "chat_pre_202605291155238278643"
+        },
+        "type": "TEXT",
+        "value": "材料审核不通过时，您可以选择其他提额方式尝试，例如借钱APP截图提额。如果是材料问题，失败原因通常会具体说明，您可据此重新上传。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,242 @@
+{
+  "uid" : "431eed312bf433a",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-银行流水支持哪些银行或银行卡流水范围]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "928a3a480393b6747eba9a5b35b89915",
+  "time" : {
+    "start" : 1780027507575,
+    "stop" : 1780027529580,
+    "duration" : 22005
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "630418474f9c64e9",
+      "name" : "用例信息",
+      "source" : "630418474f9c64e9.json",
+      "type" : "application/json",
+      "size" : 1130
+    }, {
+      "uid" : "f9fe94cdaa34791",
+      "name" : "执行日志",
+      "source" : "f9fe94cdaa34791.txt",
+      "type" : "text/plain",
+      "size" : 3468
+    }, {
+      "uid" : "34ec3587eb401d68",
+      "name" : "信贷大模型请求入参",
+      "source" : "34ec3587eb401d68.json",
+      "type" : "application/json",
+      "size" : 965
+    }, {
+      "uid" : "da18bf0f9e68e7ae",
+      "name" : "信贷大模型完整返回",
+      "source" : "da18bf0f9e68e7ae.json",
+      "type" : "application/json",
+      "size" : 584
+    }, {
+      "uid" : "528d9ff69a5dd3e8",
+      "name" : "模型评估明细",
+      "source" : "528d9ff69a5dd3e8.json",
+      "type" : "application/json",
+      "size" : 3707
+    }, {
+      "uid" : "1ca65257a085fa9b",
+      "name" : "断言明细",
+      "source" : "1ca65257a085fa9b.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "dad03e94f9c64f77",
+      "name" : "失败原因",
+      "source" : "dad03e94f9c64f77.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "4b8e87b3ec5ae1d",
+      "name" : "信贷大模型实际话术",
+      "source" : "4b8e87b3ec5ae1d.txt",
+      "type" : "text/plain",
+      "size" : 146
+    }, {
+      "uid" : "84a9a60d0f7d06f9",
+      "name" : "断言话术",
+      "source" : "84a9a60d0f7d06f9.txt",
+      "type" : "text/plain",
+      "size" : 446
+    }, {
+      "uid" : "8d63b2df671a2a52",
+      "name" : "log",
+      "source" : "8d63b2df671a2a52.txt",
+      "type" : "text/plain",
+      "size" : 18390
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0281', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-银行流水支持哪些银行或银行卡流水范围', 'intent': '提额降息咨询类', 'question': '银行流水支持哪些银行或银行卡流水范围', 'expected_answer': '支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。', 'questions': ['银行流水支持哪些银行或银行卡流水范围'], 'expected_answers': ['支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "2c9a5bc6b847edff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979800995,
+          "stop" : 1779979835081,
+          "duration" : 34086
+        }
+      }, {
+        "uid" : "bb89e029e40f10af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965246202,
+          "stop" : 1779965258011,
+          "duration" : 11809
+        }
+      }, {
+        "uid" : "b7c30ecec4162413",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880087461,
+          "stop" : 1779880134657,
+          "duration" : 47196
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "431eed312bf433a.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0281', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-银行流水支持哪些银行或银行卡流水范围', 'intent': '提额降息咨询类', 'question': '银行流水支持哪些银行或银行卡流水范围', 'expected_answer': '支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。', 'questions': ['银行流水支持哪些银行或银行卡流水范围'], 'expected_answers': ['支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。支持的银行流水范围请以 APP 页面展示为准，一般需提交本人真实银行流水材料；不同银行支持情况和入口以页面提示为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

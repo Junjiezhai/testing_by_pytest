@@ -1,0 +1,136 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0123
+【测试场景】：从咨询到操作-提额明确金额-3
+【意图分类】：提额降息咨询类+提额降息操作类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：申请提额到50000元需要多久
+【断言话术-标准答案】：提额审核通常需要1-3个工作日，具体以系统评估时间为准。您可以在APP中查看审核进度。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "申请提额到50000元需要多久", "chatId": "chat_pre_MD_0123_1779986415847790", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004015847790_0", "content": "我想把额度提到5万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004045168427_1", "content": "您的提额申请正在审核中，请您耐心等待。同时为您推荐了征信提额方案，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004045168427_2", "content": "那我要怎么操作", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004125738900_3", "content": "您可以在提额页面选择“个人所得税认证”，按提示授权税务数据查询并提交纳税明细即可。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004125739901_4", "content": "申请提额到50000元需要多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004201555595_5", "content": "提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0123_1779986415847790", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004015847790_0", "content": "我想把额度提到5万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004045168427_1", "content": "您的提额申请正在审核中，请您耐心等待。同时为您推荐了征信提额方案，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004045168427_2", "content": "那我要怎么操作", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004125738900_3", "content": "您可以在提额页面选择“个人所得税认证”，按提示授权税务数据查询并提交纳税明细即可。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529004125739901_4", "content": "申请提额到50000元需要多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529004201555595_5", "content": "提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0123_1779986415847790", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260529004125739901_4", "sessionId": "chat_pre_MD_0123_1779986415847790"}, "type": "TEXT", "value": "提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。
+【外部模型相似度评分】：53.33
+【外部模型评估原因】：多轮逐轮平均相似度：53.33
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 40.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；话术平均评分 65.0 低于阈值 70.0；上下文断言失败：上一轮推荐了征信提额方案并展示卡片，用户追问如何操作，模型实际回答转向个人所得税认证操作，未明确关联征信提额方案，上下文承接不足。无意图污染、无改口、无风险拒答、无拒答后回归场景。；话术平均评分 55.0 低于阈值 70.0
+【响应耗时】：7.786s
+【相似度断言】：实际=53.33，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度、ASSET卡片 | 原因：话术平均评分 40.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内
+问题：我想把额度提到5万元
+模型回复：您的提额申请正在审核中，请您耐心等待。同时为您推荐了征信提额方案，可通过下方卡片查看。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+第2轮 | 失败维度：话术相似度、上下文承接 | 原因：话术平均评分 65.0 低于阈值 70.0；上下文断言失败：上一轮推荐了征信提额方案并展示卡片，用户追问如何操作，模型实际回答转向个人所得税认证操作，未明确关联征信提额方案，上下文承接不足。无意图污染、无改口、无风险拒答、无拒答后回归场景。
+问题：那我要怎么操作
+模型回复：您可以在提额页面选择“个人所得税认证”，按提示授权税务数据查询并提交纳税明细即可。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+第3轮 | 失败维度：话术相似度 | 原因：话术平均评分 55.0 低于阈值 70.0
+问题：申请提额到50000元需要多久
+模型回复：提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：7.786s
+【多轮总响应耗时】：23.359s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：我想把额度提到5万元
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：提额后的具体额度由系统根据您的信用状况综合评估，目前无法承诺一定能提升到5万元。建议您保持良好的还款记录。
+参考答案：您好，提额的具体额度是由系统根据您的信用状况综合评估的，目前无法承诺一定能提升到5万元。建议您保持良好的还款记录。
+模型回复：您的提额申请正在审核中，请您耐心等待。同时为您推荐了征信提额方案，可通过下方卡片查看。
+标准答案评分：40.0
+参考答案评分：40.0
+平均相似度：40.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、ASSET卡片
+失败原因：话术平均评分 40.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：12.66s
+是否通过：False
+------ 第2轮 ------
+用户问题：那我要怎么操作
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：提额降息咨询类
+标准答案：您可以进入提额页面提交申请，系统会根据您的信用状况进行评估。请按页面提示操作。
+参考答案：您可前往提额页面提交申请，系统会基于您的信用状况进行评估，请按页面提示完成操作即可。
+模型回复：您可以在提额页面选择“个人所得税认证”，按提示授权税务数据查询并提交纳税明细即可。
+标准答案评分：65.0
+参考答案评分：65.0
+平均相似度：65.0
+意图断言：True
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、上下文承接
+失败原因：话术平均评分 65.0 低于阈值 70.0；上下文断言失败：上一轮推荐了征信提额方案并展示卡片，用户追问如何操作，模型实际回答转向个人所得税认证操作，未明确关联征信提额方案，上下文承接不足。无意图污染、无改口、无风险拒答、无拒答后回归场景。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：7.603s
+是否通过：False
+------ 第3轮 ------
+用户问题：申请提额到50000元需要多久
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：提额降息操作类
+标准答案：提额审核通常需要1-3个工作日，具体以系统评估时间为准。您可以在APP中查看审核进度。
+参考答案：额度提升审核通常会在1至3个工作日内完成，具体时长由系统评估确定。您可以登录APP查看审核进度。
+模型回复：提额审核结果请以 APP 页面提示为准，这边无法承诺具体时长，建议您留意页面或消息通知。
+标准答案评分：55.0
+参考答案评分：55.0
+平均相似度：55.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 55.0 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：3.095s
+是否通过：False

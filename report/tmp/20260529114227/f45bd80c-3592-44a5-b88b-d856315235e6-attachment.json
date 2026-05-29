@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0121",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-有哪些提额方式",
+  "intent": "提额降息咨询类",
+  "question": "有哪些提额方式",
+  "expected_answer": "目前支持的提额降息方式包括：借钱APP截图、微信/支付宝账单、银行流水、公积金、个税认证、，具体以您页面显示为准。其他借钱APP截图、信用分认证、公积金认证、微信账单等方式，详情可点击链接lexfi.cn/XJc0查看。",
+  "questions": [
+    "有哪些提额方式"
+  ],
+  "expected_answers": [
+    "目前支持的提额降息方式包括：借钱APP截图、微信/支付宝账单、银行流水、公积金、个税认证、，具体以您页面显示为准。其他借钱APP截图、信用分认证、公积金认证、微信账单等方式，详情可点击链接lexfi.cn/XJc0查看。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。目前支持的提额降息方式包括：借钱APP截图、微信/支付宝账单、银行流水、公积金、个税认证、，具体以您页面显示为准。其他借钱APP截图、信用分认证、公积金认证、微信账单等方式，详情可点击链接lexfi.cn/XJc0查看。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

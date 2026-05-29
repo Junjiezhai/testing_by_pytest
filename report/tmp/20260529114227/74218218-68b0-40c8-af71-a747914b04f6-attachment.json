@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0351",
+  "case_type": "single_turn",
+  "case_desc": "借款下单类-我打算借30000元",
+  "intent": "借款下单类",
+  "question": "我打算借30000元",
+  "expected_answer": "您可以进入借款页面申请3万元借款，系统会根据您的可用额度和信用状况进行审核。请按页面提示操作。",
+  "questions": [
+    "我打算借30000元"
+  ],
+  "expected_answers": [
+    "您可以进入借款页面申请3万元借款，系统会根据您的可用额度和信用状况进行审核。请按页面提示操作。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如果您需要借款3万元，可以进入借款页面提交申请。系统会根据您当前的可用额度和信用情况进行审核，请按照页面提示逐步操作即可。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

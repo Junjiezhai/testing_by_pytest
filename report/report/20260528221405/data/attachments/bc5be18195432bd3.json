@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225628184419",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225628184419",
+          "sessionId": "chat_pre_20260528225628184419"
+        },
+        "type": "TEXT",
+        "value": "我这边主要提供分期乐提额、降息等服务，暂时无法查询周边医院信息。如果您有信贷方面的疑问，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

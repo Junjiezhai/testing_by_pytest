@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0340
+【测试场景】：提额降息咨询类-我想把利率降到年化10%
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我想把利率降到年化10%
+【断言话术-标准答案】：利率调整需要系统综合评估，能否降到年化10%取决于您的信用状况、还款记录等因素。具体利率以系统评估后页面展示为准。
+【断言话术-外部模型参考答案】：您好，关于您申请将利率调整至年化10%的需求，需要由系统进行综合评估。能否调整到该利率取决于您的信用状况、还款记录等多方面因素，具体请以系统评估后页面展示的利率为准。
+【replyContents】：[{"type": "TEXT", "value": "好的，已为您记录目标利率为年化10%。由于当前降息结果暂未出，建议您先查看下方合适的补件或增信卡片，提交后系统会重新综合评估您的资质。"}]
+【TEXT输出】：["好的，已为您记录目标利率为年化10%。由于当前降息结果暂未出，建议您先查看下方合适的补件或增信卡片，提交后系统会重新综合评估您的资质。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "我想把利率降到年化10%"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528225238367882", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528225238367882", "content": "我想把利率降到年化10%", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "好的，已为您记录目标利率为年化10%。由于当前降息结果暂未出，建议您先查看下方合适的补件或增信卡片，提交后系统会重新综合评估您的资质。"}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：好的，已为您记录目标利率为年化10%。由于当前降息结果暂未出，建议您先查看下方合适的补件或增信卡片，提交后系统会重新综合评估您的资质。
+【外部模型相似度评分】：65.0
+【外部模型评估原因】：标准答案评分=65.0；参考答案评分=65.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 65.0 未达到阈值 70.0(gte)
+【响应耗时】：7.422s
+【相似度断言】：实际=65.0，阈值=70.0，结果=False
+【最终结果】：False

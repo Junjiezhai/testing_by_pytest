@@ -1,0 +1,242 @@
+{
+  "uid" : "9d1850430fcca358",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额失败后，多久能再查看到失败原因的详细说明？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "932afeb26fc3b3395a0af24b0ee5781d",
+  "time" : {
+    "start" : 1780027414012,
+    "stop" : 1780027431202,
+    "duration" : 17190
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9a8b6b8b6177889e",
+      "name" : "用例信息",
+      "source" : "9a8b6b8b6177889e.json",
+      "type" : "application/json",
+      "size" : 986
+    }, {
+      "uid" : "770cce1acd96898e",
+      "name" : "执行日志",
+      "source" : "770cce1acd96898e.txt",
+      "type" : "text/plain",
+      "size" : 3318
+    }, {
+      "uid" : "b44f3b71971e2ec6",
+      "name" : "信贷大模型请求入参",
+      "source" : "b44f3b71971e2ec6.json",
+      "type" : "application/json",
+      "size" : 980
+    }, {
+      "uid" : "7b8666ef9ecb9145",
+      "name" : "信贷大模型完整返回",
+      "source" : "7b8666ef9ecb9145.json",
+      "type" : "application/json",
+      "size" : 564
+    }, {
+      "uid" : "dfdd499abcdfe9a0",
+      "name" : "模型评估明细",
+      "source" : "dfdd499abcdfe9a0.json",
+      "type" : "application/json",
+      "size" : 3485
+    }, {
+      "uid" : "d8fe6b23219eefb9",
+      "name" : "断言明细",
+      "source" : "d8fe6b23219eefb9.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "86ef8992dfd87cec",
+      "name" : "失败原因",
+      "source" : "86ef8992dfd87cec.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "a0b1440de830c7be",
+      "name" : "信贷大模型实际话术",
+      "source" : "a0b1440de830c7be.txt",
+      "type" : "text/plain",
+      "size" : 126
+    }, {
+      "uid" : "9a1852cb5c734fb1",
+      "name" : "断言话术",
+      "source" : "9a1852cb5c734fb1.txt",
+      "type" : "text/plain",
+      "size" : 316
+    }, {
+      "uid" : "2c32c2f849a346d2",
+      "name" : "log",
+      "source" : "2c32c2f849a346d2.txt",
+      "type" : "text/plain",
+      "size" : 16707
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0151', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额失败后，多久能再查看到失败原因的详细说明？', 'intent': '提额降息咨询类', 'question': '提额失败后，多久能再查看到失败原因的详细说明？', 'expected_answer': '失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。', 'questions': ['提额失败后，多久能再查看到失败原因的详细说明？'], 'expected_answers': ['失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。'], 'round_assert_flags': [True], 'reference_answer': '时间以系统实际处理为准。一般来说，失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "5e1f7791a09c1493",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979173300,
+          "stop" : 1779979192780,
+          "duration" : 19480
+        }
+      }, {
+        "uid" : "7cd905ffb6f63642",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965265554,
+          "stop" : 1779965284101,
+          "duration" : 18547
+        }
+      }, {
+        "uid" : "6ba7d172c583d512",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878474469,
+          "stop" : 1779878534831,
+          "duration" : 60362
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "9d1850430fcca358.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0151', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额失败后，多久能再查看到失败原因的详细说明？', 'intent': '提额降息咨询类', 'question': '提额失败后，多久能再查看到失败原因的详细说明？', 'expected_answer': '失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。', 'questions': ['提额失败后，多久能再查看到失败原因的详细说明？'], 'expected_answers': ['失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。'], 'round_assert_flags': [True], 'reference_answer': '时间以系统实际处理为准。一般来说，失败原因在结果出来后立即显示在页面上。您也可以截图保存，方便后续改善。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

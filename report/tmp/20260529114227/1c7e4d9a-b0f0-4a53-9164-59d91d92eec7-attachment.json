@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291147075107134",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291147075107135",
+          "sessionId": "chat_pre_202605291147075107134"
+        },
+        "type": "TEXT",
+        "value": "不同用户因信用和还款行为等综合评估存在差异属正常现象，我们不支持人工直接调低。若您想尝试降低利率，可以直接说“我要降息”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

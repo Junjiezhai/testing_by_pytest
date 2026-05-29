@@ -1,0 +1,242 @@
+{
+  "uid" : "ef9e16e286a22b74",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-刚注册的新用户能提额吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "8d00e32fb1296932b0ecf87620c1656e",
+  "time" : {
+    "start" : 1780026200139,
+    "stop" : 1780026230341,
+    "duration" : 30202
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154743,
+      "stop" : 1780026154743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "204b5e831b5a14fd",
+      "name" : "用例信息",
+      "source" : "204b5e831b5a14fd.json",
+      "type" : "application/json",
+      "size" : 989
+    }, {
+      "uid" : "c920a27b751a891d",
+      "name" : "执行日志",
+      "source" : "c920a27b751a891d.txt",
+      "type" : "text/plain",
+      "size" : 3345
+    }, {
+      "uid" : "cc852f5d1a50d960",
+      "name" : "信贷大模型请求入参",
+      "source" : "cc852f5d1a50d960.json",
+      "type" : "application/json",
+      "size" : 947
+    }, {
+      "uid" : "917910aabbd24bd2",
+      "name" : "信贷大模型完整返回",
+      "source" : "917910aabbd24bd2.json",
+      "type" : "application/json",
+      "size" : 585
+    }, {
+      "uid" : "338cba973c10bc16",
+      "name" : "模型评估明细",
+      "source" : "338cba973c10bc16.json",
+      "type" : "application/json",
+      "size" : 3622
+    }, {
+      "uid" : "48367c42d0cc2cf3",
+      "name" : "断言明细",
+      "source" : "48367c42d0cc2cf3.json",
+      "type" : "application/json",
+      "size" : 430
+    }, {
+      "uid" : "927385b389f05807",
+      "name" : "失败原因",
+      "source" : "927385b389f05807.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "666593f04f5b3321",
+      "name" : "信贷大模型实际话术",
+      "source" : "666593f04f5b3321.txt",
+      "type" : "text/plain",
+      "size" : 147
+    }, {
+      "uid" : "caaa34ddc4247d84",
+      "name" : "断言话术",
+      "source" : "caaa34ddc4247d84.txt",
+      "type" : "text/plain",
+      "size" : 388
+    }, {
+      "uid" : "3f3e34949e0f57e4",
+      "name" : "log",
+      "source" : "3f3e34949e0f57e4.txt",
+      "type" : "text/plain",
+      "size" : 18984
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031471025,
+      "stop" : 1780031472034,
+      "duration" : 1009
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c285deab36569ad0",
+      "name" : "模型测试汇总",
+      "source" : "c285deab36569ad0.txt",
+      "type" : "text/plain",
+      "size" : 53387
+    }, {
+      "uid" : "f9de4c3766b8208a",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "f9de4c3766b8208a.csv",
+      "type" : "text/csv",
+      "size" : 344858
+    }, {
+      "uid" : "e77f81e76ad090e6",
+      "name" : "模型测试明细Excel路径",
+      "source" : "e77f81e76ad090e6.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "cd8493ce67c0383f",
+      "name" : "模型测试汇总JSON",
+      "source" : "cd8493ce67c0383f.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0011', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-刚注册的新用户能提额吗？', 'intent': '提额降息咨询类', 'question': '刚注册的新用户能提额吗？', 'expected_answer': '新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'questions': ['刚注册的新用户能提额吗？'], 'expected_answers': ['新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "898f6ac5e697bfb6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779977695828,
+          "stop" : 1779977705722,
+          "duration" : 9894
+        }
+      }, {
+        "uid" : "94a2873a05d321c3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964429971,
+          "stop" : 1779964460594,
+          "duration" : 30623
+        }
+      }, {
+        "uid" : "736ea8812f015ffa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877389665,
+          "stop" : 1779877456969,
+          "duration" : 67304
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "ef9e16e286a22b74.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0011', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-刚注册的新用户能提额吗？', 'intent': '提额降息咨询类', 'question': '刚注册的新用户能提额吗？', 'expected_answer': '新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'questions': ['刚注册的新用户能提额吗？'], 'expected_answers': ['新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

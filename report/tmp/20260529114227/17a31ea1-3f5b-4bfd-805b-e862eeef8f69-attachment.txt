@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0308
+【测试场景】：非业务相关意图-怎么买火车票
+【意图分类】：非业务相关意图
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：怎么买火车票
+【断言话术-标准答案】：抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，购票问题不在我的服务范围内。
+【断言话术-外部模型参考答案】：不好意思，我是信贷助手，仅提供借款、提额、降息等业务咨询，不处理购票问题。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291203520449264", "sessionId": "chat_pre_202605291203520449263"}, "type": "TEXT", "value": "抱歉，我是分期乐信贷顾问，主要帮您处理提额、降息和材料相关的问题。", "bizVariableMap": {}}]
+【TEXT输出】：["抱歉，我是分期乐信贷顾问，主要帮您处理提额、降息和材料相关的问题。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "怎么买火车票"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291203520449263", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291203520449264", "content": "怎么买火车票", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291203520449263", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291203520449264", "sessionId": "chat_pre_202605291203520449263"}, "type": "TEXT", "value": "抱歉，我是分期乐信贷顾问，主要帮您处理提额、降息和材料相关的问题。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：抱歉，我是分期乐信贷顾问，主要帮您处理提额、降息和材料相关的问题。
+【外部模型相似度评分】：80.0
+【外部模型评估原因】：标准答案评分=80.0；参考答案评分=80.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：False
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：2.629s
+【相似度断言】：实际=80.0，阈值=70.0，结果=True
+【最终结果】：True

@@ -1,0 +1,232 @@
+{
+  "uid" : "61e54339adc13534",
+  "name" : "test_multi_turn_dialog_consistency[风险合规插入-10]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "5224ae682fcb7df11421f7a0089632ce",
+  "time" : {
+    "start" : 1780030486418,
+    "stop" : 1780030538469,
+    "duration" : 52051
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6b28de3e60319953",
+      "name" : "信贷大模型实际话术",
+      "source" : "6b28de3e60319953.txt",
+      "type" : "text/plain",
+      "size" : 597
+    }, {
+      "uid" : "4a7d29994a3a1484",
+      "name" : "断言话术",
+      "source" : "4a7d29994a3a1484.txt",
+      "type" : "text/plain",
+      "size" : 1453
+    }, {
+      "uid" : "65d16995da7c16dc",
+      "name" : "多轮失败定位摘要",
+      "source" : "65d16995da7c16dc.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "b838daa088236622",
+      "name" : "执行日志",
+      "source" : "b838daa088236622.txt",
+      "type" : "text/plain",
+      "size" : 8362
+    }, {
+      "uid" : "848ab7ca72c4e2fb",
+      "name" : "模型评估明细CSV",
+      "source" : "848ab7ca72c4e2fb.csv",
+      "type" : "text/csv",
+      "size" : 2355
+    }, {
+      "uid" : "1ae7b67b89574eaf",
+      "name" : "多轮逐轮评估明细",
+      "source" : "1ae7b67b89574eaf.json",
+      "type" : "application/json",
+      "size" : 23460
+    }, {
+      "uid" : "327d0b1e30998a30",
+      "name" : "log",
+      "source" : "327d0b1e30998a30.txt",
+      "type" : "text/plain",
+      "size" : 43140
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "正常业务中插入风险合规问题"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类+转人工类"
+  }, {
+    "name" : "remark",
+    "value" : "正常业务中插入风险合规问题"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类+转人工类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0095', 'case_type': 'multi_turn', 'case_desc': '风险合规插入-10', 'remark': '正常业务中插入风险合规问题', 'intent': '提额降息咨询类+转人工类', 'question': '降息成功后，我可以随时恢复原利率吗？', 'expected_answer': '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'questions': ['我已经逾期了，还能申请降息吗？', '我怀疑你们诈骗，我要和真人谈', '降息成功后，我可以随时恢复原利率吗？'], 'expected_answers': ['有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', '我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。'], 'reference_answers': ['您可以根据页面提示完成操作。有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', '请在合规范围内使用平台服务。我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '转人工类', '提额降息咨询类'], 'context_assert_types': ['risk_compliance_insert', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息操作类', '风险合规禁答类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '我已经逾期了，还能申请降息吗？', 'expected_answer': '有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', 'reference_answer': '您可以根据页面提示完成操作。有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'risk_compliance_insert', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我怀疑你们诈骗，我要和真人谈', 'expected_answer': '我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', 'reference_answer': '请在合规范围内使用平台服务。我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', 'round_intent': '转人工类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '降息成功后，我可以随时恢复原利率吗？', 'expected_answer': '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'round_intent': '提额降息咨询类', 'previous_intent': '风险合规禁答类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "8a2cf728e5a35132",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：当前轮意图不正确：用户询问逾期后能否降息，模型仅解释规则和给出建议，未引导任何操作步骤或入口，不符合期望的“操作类”意图。",
+        "time" : {
+          "start" : 1779985219957,
+          "stop" : 1779985312993,
+          "duration" : 93036
+        }
+      }, {
+        "uid" : "8aedf36fd6be01c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779966975962,
+          "stop" : 1779967048874,
+          "duration" : 72912
+        }
+      }, {
+        "uid" : "d09d819b73c2896f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：当前意图[风险合规禁答类]不允许转人工，但chatType=TRANSFER；话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：chatType=TRANSFER，仅允许转人工类意图；话术平均评分 65.0 低于阈值 70.0；上下文断言失败：用户已从风险合规话题跨意图切换回正常业务问题，但模型回复前半段仍纠缠于上一轮转人工事宜，被上一轮意图污染；虽后半段尝试回答利率问题，但未能干净回归正常信贷业务，且遗漏关键利率限制条件",
+        "time" : {
+          "start" : 1779884591927,
+          "stop" : 1779884758986,
+          "duration" : 167059
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "61e54339adc13534.json",
+  "parameterValues" : [ "{'case_id': 'MD_0095', 'case_type': 'multi_turn', 'case_desc': '风险合规插入-10', 'remark': '正常业务中插入风险合规问题', 'intent': '提额降息咨询类+转人工类', 'question': '降息成功后，我可以随时恢复原利率吗？', 'expected_answer': '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'questions': ['我已经逾期了，还能申请降息吗？', '我怀疑你们诈骗，我要和真人谈', '降息成功后，我可以随时恢复原利率吗？'], 'expected_answers': ['有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', '我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。'], 'reference_answers': ['您可以根据页面提示完成操作。有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', '请在合规范围内使用平台服务。我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '转人工类', '提额降息咨询类'], 'context_assert_types': ['risk_compliance_insert', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息操作类', '风险合规禁答类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '我已经逾期了，还能申请降息吗？', 'expected_answer': '有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', 'reference_answer': '您可以根据页面提示完成操作。有逾期记录的用户暂时无法申请降息，建议您先结清欠款，保持连续6个月良好记录后再尝试。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'risk_compliance_insert', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我怀疑你们诈骗，我要和真人谈', 'expected_answer': '我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', 'reference_answer': '请在合规范围内使用平台服务。我们是一家合法持牌机构，请您放心。为了消除您的疑虑，我立即转接人工客服，人工会为您详细解释。', 'round_intent': '转人工类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '降息成功后，我可以随时恢复原利率吗？', 'expected_answer': '不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不支持主动恢复。降息后的利率长期有效，除非您的信用状况大幅恶化，系统才会上调。', 'round_intent': '提额降息咨询类', 'previous_intent': '风险合规禁答类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291146296448845",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291146296448844",
+          "sessionId": "chat_pre_202605291146296448845"
+        },
+        "type": "TEXT",
+        "value": "降息后新借款按新利率执行，长期有效；若出现逾期或信用恶化，系统可能重新评估并上调利率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

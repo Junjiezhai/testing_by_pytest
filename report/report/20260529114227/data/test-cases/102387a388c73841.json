@@ -1,0 +1,242 @@
+{
+  "uid" : "102387a388c73841",
+  "name" : "test_single_turn_intent_recognition[信息查询类-提额短信通知说通过了，但APP没变化怎么办？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "858661d73ef4798a3aff82466f3a23a3",
+  "time" : {
+    "start" : 1780026272683,
+    "stop" : 1780026291793,
+    "duration" : 19110
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "eb3aaa26c8716dac",
+      "name" : "用例信息",
+      "source" : "eb3aaa26c8716dac.json",
+      "type" : "application/json",
+      "size" : 1076
+    }, {
+      "uid" : "f1f2223e250e368d",
+      "name" : "执行日志",
+      "source" : "f1f2223e250e368d.txt",
+      "type" : "text/plain",
+      "size" : 3181
+    }, {
+      "uid" : "b6e04b050ef20b0d",
+      "name" : "信贷大模型请求入参",
+      "source" : "b6e04b050ef20b0d.json",
+      "type" : "application/json",
+      "size" : 971
+    }, {
+      "uid" : "f934515b672d4927",
+      "name" : "信贷大模型完整返回",
+      "source" : "f934515b672d4927.json",
+      "type" : "application/json",
+      "size" : 423
+    }, {
+      "uid" : "837fbe9e7881db35",
+      "name" : "模型评估明细",
+      "source" : "837fbe9e7881db35.json",
+      "type" : "application/json",
+      "size" : 3223
+    }, {
+      "uid" : "5650baf95b439e3a",
+      "name" : "断言明细",
+      "source" : "5650baf95b439e3a.json",
+      "type" : "application/json",
+      "size" : 430
+    }, {
+      "uid" : "4a950d45af09186a",
+      "name" : "失败原因",
+      "source" : "4a950d45af09186a.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "4eec77a84d01f645",
+      "name" : "信贷大模型实际话术",
+      "source" : "4eec77a84d01f645.txt",
+      "type" : "text/plain",
+      "size" : 144
+    }, {
+      "uid" : "2bb89503a6665419",
+      "name" : "断言话术",
+      "source" : "2bb89503a6665419.txt",
+      "type" : "text/plain",
+      "size" : 406
+    }, {
+      "uid" : "949ba7c159b3e4d9",
+      "name" : "log",
+      "source" : "949ba7c159b3e4d9.txt",
+      "type" : "text/plain",
+      "size" : 26491
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "信息查询类"
+  }, {
+    "name" : "intent",
+    "value" : "信息查询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0027', 'case_type': 'single_turn', 'case_desc': '信息查询类-提额短信通知说通过了，但APP没变化怎么办？', 'intent': '信息查询类', 'question': '提额短信通知说通过了，但APP没变化怎么办？', 'expected_answer': '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'questions': ['提额短信通知说通过了，但APP没变化怎么办？'], 'expected_answers': ['可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。'], 'round_assert_flags': [True], 'reference_answer': '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "cd6fe3f98a424f7c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779977831513,
+          "stop" : 1779977854487,
+          "duration" : 22974
+        }
+      }, {
+        "uid" : "10c1927336239200",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964493677,
+          "stop" : 1779964508990,
+          "duration" : 15313
+        }
+      }, {
+        "uid" : "dd5e23ca952f7c7a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877660718,
+          "stop" : 1779877719842,
+          "duration" : 59124
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "102387a388c73841.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0027', 'case_type': 'single_turn', 'case_desc': '信息查询类-提额短信通知说通过了，但APP没变化怎么办？', 'intent': '信息查询类', 'question': '提额短信通知说通过了，但APP没变化怎么办？', 'expected_answer': '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'questions': ['提额短信通知说通过了，但APP没变化怎么办？'], 'expected_answers': ['可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。'], 'round_assert_flags': [True], 'reference_answer': '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

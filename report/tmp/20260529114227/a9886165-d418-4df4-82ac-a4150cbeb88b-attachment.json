@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291205064281447",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291205064281448",
+          "sessionId": "chat_pre_202605291205064281447"
+        },
+        "type": "TEXT",
+        "value": "提额申请提交后暂不支持直接更新或替换；审核中无法撤销。建议您提交前仔细核对材料内容，具体以页面提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

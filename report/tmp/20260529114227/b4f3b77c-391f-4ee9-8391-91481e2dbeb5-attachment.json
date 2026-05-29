@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291206111269674",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291206111269672",
+          "sessionId": "chat_pre_202605291206111269674"
+        },
+        "type": "TEXT",
+        "value": "这个请求涉及他人隐私或账户信息，我不能协助查询或处理。请账户本人通过官方入口操作。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

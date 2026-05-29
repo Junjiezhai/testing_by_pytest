@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0290",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额成功后额度会下降吗？",
+  "intent": "提额降息咨询类",
+  "question": "提额成功后额度会下降吗？",
+  "expected_answer": "提额成功后额度长期有效，系统不会主动降低，只有当您出现逾期、账户异常等重大信用恶化时，额度可能被动态调整。",
+  "questions": [
+    "提额成功后额度会下降吗？"
+  ],
+  "expected_answers": [
+    "提额成功后额度长期有效，系统不会主动降低，只有当您出现逾期、账户异常等重大信用恶化时，额度可能被动态调整。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。提额成功后额度长期有效，系统不会主动降低，只有当您出现逾期、账户异常等重大信用恶化时，额度可能被动态调整。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

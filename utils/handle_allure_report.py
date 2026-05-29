@@ -7,10 +7,12 @@
 """
 
 import json
+import os
 import shutil
 import socket
 import subprocess
 from datetime import datetime
+from pathlib import Path
 
 import requests
 
@@ -55,13 +57,52 @@ def get_allure_command():
 
 def open_allure_report(report_dir='./report/report'):
     port = get_available_port()
-    allure_report_url = f'http://{get_local_ip()}:{port}/'
+    host = get_local_ip()
+    allure_report_url = f'http://{host}:{port}/'
     allure_command = get_allure_command()
     subprocess.Popen(
-        ['cmd', '/c', allure_command, 'open', report_dir, '--host', '0.0.0.0', '--port', str(port)],
+        ['cmd', '/c', allure_command, 'open', report_dir, '--host', host, '--port', str(port)],
         creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)
     )
     return allure_report_url
+
+
+def build_allure_run_dirs(base_dir='./report'):
+    run_id = datetime.now().strftime('%Y%m%d%H%M%S')
+    result_dir = os.path.join(base_dir, 'tmp', run_id)
+    report_dir = os.path.join(base_dir, 'report', run_id)
+    latest_report_dir = get_latest_allure_report_dir(os.path.join(base_dir, 'report'))
+    os.makedirs(result_dir, exist_ok=True)
+    os.makedirs(report_dir, exist_ok=True)
+    copy_allure_history(latest_report_dir, result_dir)
+    return result_dir, report_dir
+
+
+def get_latest_allure_report_dir(report_root='./report/report'):
+    report_root_path = Path(report_root)
+    if not report_root_path.exists():
+        return None
+    report_dirs = [path for path in report_root_path.iterdir() if path.is_dir() and (path / 'history').exists()]
+    if not report_dirs:
+        return None
+    return str(max(report_dirs, key=lambda path: path.stat().st_mtime))
+
+
+def copy_allure_history(previous_report_dir, result_dir):
+    if not previous_report_dir:
+        return
+    history_dir = os.path.join(previous_report_dir, 'history')
+    if not os.path.exists(history_dir):
+        return
+    target_history_dir = os.path.join(result_dir, 'history')
+    if os.path.exists(target_history_dir):
+        shutil.rmtree(target_history_dir)
+    shutil.copytree(history_dir, target_history_dir)
+
+
+def generate_allure_report(result_dir, report_dir):
+    allure_command = get_allure_command()
+    subprocess.run([allure_command, 'generate', result_dir, '-o', report_dir], check=True)
 
 
 def report_summary(num_successd, num_failed, allure_report_url, env=None, group=None, wehook_url=WEHOOK_URL, extra_content='', elapsed_minutes=None):

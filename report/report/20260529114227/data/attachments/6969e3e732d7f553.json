@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291212122351471",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291212122351474",
+          "sessionId": "chat_pre_202605291212122351471"
+        },
+        "type": "TEXT",
+        "value": "不能承诺降到指定年化8%，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

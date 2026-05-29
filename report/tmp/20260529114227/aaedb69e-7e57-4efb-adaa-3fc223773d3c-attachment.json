@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291153480946032",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291153480946037",
+          "sessionId": "chat_pre_202605291153480946032"
+        },
+        "type": "TEXT",
+        "value": "审核进度和结果请以 APP 页面提示为准，这边不能承诺固定时长。建议您留意页面或消息通知。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

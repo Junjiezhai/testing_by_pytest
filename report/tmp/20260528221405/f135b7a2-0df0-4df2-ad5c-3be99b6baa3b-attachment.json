@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222749175743",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222749175743",
+          "sessionId": "chat_pre_20260528222749175743"
+        },
+        "type": "TEXT",
+        "value": "您的材料仅用于本次提额评估，审核完成后会按照隐私保护政策定期删除。具体保存时长可在APP我的设置里查看《隐私保护政策》了解。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

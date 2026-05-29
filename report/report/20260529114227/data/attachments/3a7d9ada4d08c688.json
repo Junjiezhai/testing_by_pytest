@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155342243988",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155342254276",
+          "sessionId": "chat_pre_202605291155342243988"
+        },
+        "type": "TEXT",
+        "value": "我无法协助任何伪造或篡改材料的行为，这属于违规操作且可能导致账户受限。建议您使用本人真实的银行流水或其他合规材料提交评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

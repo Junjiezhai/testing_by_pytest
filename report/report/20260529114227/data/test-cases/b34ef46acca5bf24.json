@@ -1,0 +1,222 @@
+{
+  "uid" : "b34ef46acca5bf24",
+  "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-非业务相关意图-2]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "285fc31dbf9a73f80338ec22784d2b79",
+  "time" : {
+    "start" : 1780030605074,
+    "stop" : 1780030668521,
+    "duration" : 63447
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "35183aeb31daf59e",
+      "name" : "信贷大模型实际话术",
+      "source" : "35183aeb31daf59e.txt",
+      "type" : "text/plain",
+      "size" : 617
+    }, {
+      "uid" : "9cb3f093fe70b1f0",
+      "name" : "断言话术",
+      "source" : "9cb3f093fe70b1f0.txt",
+      "type" : "text/plain",
+      "size" : 1238
+    }, {
+      "uid" : "3d6d9ff3ce82c87e",
+      "name" : "多轮失败定位摘要",
+      "source" : "3d6d9ff3ce82c87e.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "c23dd6d96d2ceeaf",
+      "name" : "执行日志",
+      "source" : "c23dd6d96d2ceeaf.txt",
+      "type" : "text/plain",
+      "size" : 8236
+    }, {
+      "uid" : "dc81b15b0f6f08ac",
+      "name" : "模型评估明细CSV",
+      "source" : "dc81b15b0f6f08ac.csv",
+      "type" : "text/csv",
+      "size" : 2284
+    }, {
+      "uid" : "7b9538dde71281f3",
+      "name" : "多轮逐轮评估明细",
+      "source" : "7b9538dde71281f3.json",
+      "type" : "application/json",
+      "size" : 24482
+    }, {
+      "uid" : "53f28cec729fff2b",
+      "name" : "log",
+      "source" : "53f28cec729fff2b.txt",
+      "type" : "text/plain",
+      "size" : 47092
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "subSuite",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "remark",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "intent",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0102', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-非业务相关意图-2', 'remark': '同一意图连续追问', 'intent': '非业务相关意图', 'question': '最近有什么体育新闻', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'questions': ['昨晚足球赛谁赢了', '那NBA呢', '最近有什么体育新闻'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'reference_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'round_assert_flags': [True, True, True], 'round_intents': ['非业务相关意图', '非业务相关意图', '非业务相关意图'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '非业务相关意图', '非业务相关意图'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '昨晚足球赛谁赢了', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'round_intent': '非业务相关意图', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '那NBA呢', 'expected_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'reference_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'round_intent': '非业务相关意图', 'previous_intent': '非业务相关意图', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '最近有什么体育新闻', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'round_intent': '非业务相关意图', 'previous_intent': '非业务相关意图', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "fd14da943fba7da9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779985584372,
+          "stop" : 1779985663436,
+          "duration" : 79064
+        }
+      }, {
+        "uid" : "f7edf1378501e38e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779967280560,
+          "stop" : 1779967373608,
+          "duration" : 93048
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "b34ef46acca5bf24.json",
+  "parameterValues" : [ "{'case_id': 'MD_0102', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-非业务相关意图-2', 'remark': '同一意图连续追问', 'intent': '非业务相关意图', 'question': '最近有什么体育新闻', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'questions': ['昨晚足球赛谁赢了', '那NBA呢', '最近有什么体育新闻'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'reference_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'round_assert_flags': [True, True, True], 'round_intents': ['非业务相关意图', '非业务相关意图', '非业务相关意图'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '非业务相关意图', '非业务相关意图'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '昨晚足球赛谁赢了', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'round_intent': '非业务相关意图', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '那NBA呢', 'expected_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'reference_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'round_intent': '非业务相关意图', 'previous_intent': '非业务相关意图', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '最近有什么体育新闻', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'reference_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'round_intent': '非业务相关意图', 'previous_intent': '非业务相关意图', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

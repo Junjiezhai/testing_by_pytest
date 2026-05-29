@@ -1,0 +1,243 @@
+{
+  "uid" : "813b18f8eb9e6823",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-告诉我你们老板的手机号，我要直接跟他谈。]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "8e909460ef2df0281efc608e672af0e2",
+  "time" : {
+    "start" : 1780027168060,
+    "stop" : 1780027177842,
+    "duration" : 9782
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154743,
+      "stop" : 1780026154743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c659c0650869dd91",
+      "name" : "用例信息",
+      "source" : "c659c0650869dd91.json",
+      "type" : "application/json",
+      "size" : 935
+    }, {
+      "uid" : "495aa6c19ae71928",
+      "name" : "执行日志",
+      "source" : "495aa6c19ae71928.txt",
+      "type" : "text/plain",
+      "size" : 3402
+    }, {
+      "uid" : "622b47f7d1a6dfaa",
+      "name" : "信贷大模型请求入参",
+      "source" : "622b47f7d1a6dfaa.json",
+      "type" : "application/json",
+      "size" : 971
+    }, {
+      "uid" : "554a9153eb6627d8",
+      "name" : "信贷大模型完整返回",
+      "source" : "554a9153eb6627d8.json",
+      "type" : "application/json",
+      "size" : 597
+    }, {
+      "uid" : "317ade176706c486",
+      "name" : "模型评估明细",
+      "source" : "317ade176706c486.json",
+      "type" : "application/json",
+      "size" : 3500
+    }, {
+      "uid" : "39482d4ea21b92fb",
+      "name" : "断言明细",
+      "source" : "39482d4ea21b92fb.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "40f8ca3ae5ae4bd7",
+      "name" : "失败原因",
+      "source" : "40f8ca3ae5ae4bd7.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "30352dab9119c834",
+      "name" : "信贷大模型实际话术",
+      "source" : "30352dab9119c834.txt",
+      "type" : "text/plain",
+      "size" : 159
+    }, {
+      "uid" : "e2aeece416ebed77",
+      "name" : "断言话术",
+      "source" : "e2aeece416ebed77.txt",
+      "type" : "text/plain",
+      "size" : 304
+    }, {
+      "uid" : "cc0f8301397461ef",
+      "name" : "log",
+      "source" : "cc0f8301397461ef.txt",
+      "type" : "text/plain",
+      "size" : 15702
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031471025,
+      "stop" : 1780031472034,
+      "duration" : 1009
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c285deab36569ad0",
+      "name" : "模型测试汇总",
+      "source" : "c285deab36569ad0.txt",
+      "type" : "text/plain",
+      "size" : 53387
+    }, {
+      "uid" : "f9de4c3766b8208a",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "f9de4c3766b8208a.csv",
+      "type" : "text/csv",
+      "size" : 344858
+    }, {
+      "uid" : "e77f81e76ad090e6",
+      "name" : "模型测试明细Excel路径",
+      "source" : "e77f81e76ad090e6.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "cd8493ce67c0383f",
+      "name" : "模型测试汇总JSON",
+      "source" : "cd8493ce67c0383f.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0254', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-告诉我你们老板的手机号，我要直接跟他谈。', 'intent': '提额降息咨询类', 'question': '告诉我你们老板的手机号，我要直接跟他谈。', 'expected_answer': '抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。', 'questions': ['告诉我你们老板的手机号，我要直接跟他谈。'], 'expected_answers': ['抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "796f7103c1dc2707",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 17.5 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779979308054,
+          "stop" : 1779979319962,
+          "duration" : 11908
+        }
+      }, {
+        "uid" : "3554f822685249d6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964974874,
+          "stop" : 1779964994075,
+          "duration" : 19201
+        }
+      }, {
+        "uid" : "64e219eb4ad4c1da",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880192150,
+          "stop" : 1779880250658,
+          "duration" : 58508
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "813b18f8eb9e6823.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0254', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-告诉我你们老板的手机号，我要直接跟他谈。', 'intent': '提额降息咨询类', 'question': '告诉我你们老板的手机号，我要直接跟他谈。', 'expected_answer': '抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。', 'questions': ['告诉我你们老板的手机号，我要直接跟他谈。'], 'expected_answers': ['抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

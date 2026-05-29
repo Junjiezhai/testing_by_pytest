@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291157008463431",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291157008463433",
+          "sessionId": "chat_pre_202605291157008463431"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供任何规避风控或逃废债的方法。逃废债是违法行为，会严重影响您的征信甚至面临法律诉讼。请您理性借贷，按时还款。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0009
+【测试场景】：同一意图连续追问-提额降息咨询类-9
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额失败后多久能再次申请？
+【断言话术-标准答案】：建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "提额失败后多久能再次申请？", "chatId": "chat_pre_MD_0009_1779981082635854", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231122635854_0", "content": "刚注册的新用户能提额吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231142476011_1", "content": "刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231142477043_2", "content": "提额审核需要多长时间？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231208985909_3", "content": "提额审核进度和结果请以 APP 页面提示为准，这边不能承诺固定时长，建议您留意页面或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231208985909_4", "content": "提额失败后多久能再次申请？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231226674356_5", "content": "建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0009_1779981082635854", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231122635854_0", "content": "刚注册的新用户能提额吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231142476011_1", "content": "刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231142477043_2", "content": "提额审核需要多长时间？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231208985909_3", "content": "提额审核进度和结果请以 APP 页面提示为准，这边不能承诺固定时长，建议您留意页面或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528231208985909_4", "content": "提额失败后多久能再次申请？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528231226674356_5", "content": "建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0009_1779981082635854", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528231208985909_4", "sessionId": "chat_pre_MD_0009_1779981082635854"}, "type": "TEXT", "value": "建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+【外部模型相似度评分】：70.33
+【外部模型评估原因】：多轮逐轮平均相似度：70.33
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 20.0 低于阈值 70.0
+【响应耗时】：2.652s
+【相似度断言】：实际=70.33，阈值=70.0，结果=True
+【最终结果】：False
+【多轮失败定位摘要】：
+第2轮 | 失败维度：话术相似度 | 原因：话术平均评分 20.0 低于阈值 70.0
+问题：提额审核需要多长时间？
+模型回复：提额审核进度和结果请以 APP 页面提示为准，这边不能承诺固定时长，建议您留意页面或消息通知。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：2.652s
+【多轮总响应耗时】：7.955s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：刚注册的新用户能提额吗？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。
+参考答案：这个问题主要以页面展示和系统评估结果为准。新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体已系统审批结论为准。
+模型回复：刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.718s
+是否通过：True
+------ 第2轮 ------
+用户问题：提额审核需要多长时间？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：自动审核一般1-2分钟内出结果，部分复杂材料可能需要人工复核，最长不超过1小时，请您耐心等待。
+参考答案：时间以系统实际处理为准。一般来说，自动审核一般1-2分钟内出结果，部分复杂材料可能需要人工复核，最长不超过1小时，请您耐心等待。
+模型回复：提额审核进度和结果请以 APP 页面提示为准，这边不能承诺固定时长，建议您留意页面或消息通知。
+标准答案评分：20.0
+参考答案评分：20.0
+平均相似度：20.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 20.0 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：2.681s
+是否通过：False
+------ 第3轮 ------
+用户问题：提额失败后多久能再次申请？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+参考答案：时间以系统实际处理为准。一般来说，建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+模型回复：建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+标准答案评分：100.0
+参考答案评分：95.0
+平均相似度：97.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.556s
+是否通过：True

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0283",
+  "case_type": "single_turn",
+  "case_desc": "借款下单类-提额成功是不是马上就能借款",
+  "intent": "提额降息咨询类",
+  "question": "提额成功是不是马上就能借款",
+  "expected_answer": "提额成功只代表可用额度可能更新，不等于借款一定成功；实际能否借款仍以借款页审核结果为准。",
+  "questions": [
+    "提额成功是不是马上就能借款"
+  ],
+  "expected_answers": [
+    "提额成功只代表可用额度可能更新，不等于借款一定成功；实际能否借款仍以借款页审核结果为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "借款下单请以页面可操作入口和审核结果为准。提额成功只代表可用额度可能更新，不等于借款一定成功；实际能否借款仍以借款页审核结果为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

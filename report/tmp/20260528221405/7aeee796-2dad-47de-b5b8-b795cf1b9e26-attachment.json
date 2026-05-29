@@ -1,0 +1,20 @@
+{
+  "chat_type": "NORMAL",
+  "handoff_reason": "",
+  "chat_type_pass": true,
+  "text_pass": false,
+  "text_threshold": 70.0,
+  "text_comparator": "gte",
+  "standard_similarity_score": 65.0,
+  "reference_similarity_score": 60.0,
+  "avg_similarity_score": 62.5,
+  "asset_present": false,
+  "asset_allowed": false,
+  "asset_value": "",
+  "asset_value_pass": true,
+  "biz_ref_id": "",
+  "biz_ref_id_pass": true,
+  "fail_reasons": [
+    "TEXT评分 62.5 未达到阈值 70.0(gte)"
+  ]
+}

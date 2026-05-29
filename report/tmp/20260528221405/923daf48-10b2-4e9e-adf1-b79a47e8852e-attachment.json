@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0120",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-这个操作太复杂了，我不会",
+  "intent": "提额降息咨询类",
+  "question": "这个操作太复杂了，我不会",
+  "expected_answer": "1、好的，马上为您推荐操作更简单的xxx提额项。2、很抱歉，暂无其他适合的提额项。",
+  "questions": [
+    "这个操作太复杂了，我不会"
+  ],
+  "expected_answers": [
+    "1、好的，马上为您推荐操作更简单的xxx提额项。2、很抱歉，暂无其他适合的提额项。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。1、好的，马上为您推荐操作更简单的xxx提额项。2、很抱歉，暂无其他适合的提额项。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

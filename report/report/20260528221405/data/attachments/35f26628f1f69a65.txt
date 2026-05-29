@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0261
+【测试场景】：借款下单类-能不能帮我把借款期限改成50年？
+【意图分类】：借款下单类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：能不能帮我把借款期限改成50年？
+【断言话术-标准答案】：借款期限有固定范围（如1-12期），无法无限延长。请按实际需求选择。
+【断言话术-外部模型参考答案】：借款下单请以页面可操作入口和审核结果为准。借款期限有固定范围（如1-12期），无法无限延长。请按实际需求选择。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528224334649783", "sessionId": "chat_pre_20260528224334649783"}, "type": "TEXT", "value": "借款期限有固定范围（如1-12期），无法修改为50年。请您根据实际需求在APP页面选择合适期限。", "bizVariableMap": {}}]
+【TEXT输出】：["借款期限有固定范围（如1-12期），无法修改为50年。请您根据实际需求在APP页面选择合适期限。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "能不能帮我把借款期限改成50年？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528224334649783", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528224334649783", "content": "能不能帮我把借款期限改成50年？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528224334649783", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528224334649783", "sessionId": "chat_pre_20260528224334649783"}, "type": "TEXT", "value": "借款期限有固定范围（如1-12期），无法修改为50年。请您根据实际需求在APP页面选择合适期限。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：借款期限有固定范围（如1-12期），无法修改为50年。请您根据实际需求在APP页面选择合适期限。
+【外部模型相似度评分】：93.5
+【外部模型评估原因】：标准答案评分=95.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.156s
+【相似度断言】：实际=93.5，阈值=70.0，结果=True
+【最终结果】：True

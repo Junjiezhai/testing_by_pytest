@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291209364248681",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291209364248688",
+          "sessionId": "chat_pre_202605291209364248681"
+        },
+        "type": "TEXT",
+        "value": "不能保证任何方法一定通过或成功率最高，提额结果会结合您的资质综合评估，具体以 APP 展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

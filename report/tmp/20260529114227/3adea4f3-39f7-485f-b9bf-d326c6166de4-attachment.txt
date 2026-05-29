@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0207
+【测试场景】：转人工类-能不能给我一个人工的微信号？
+【意图分类】：转人工类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：能不能给我一个人工的微信号？
+【断言话术-标准答案】：抱歉，我们不通过微信提供客服。您可以通过APP在线客服或官方热线联系我们。需要我转接在线人工吗？
+【断言话术-外部模型参考答案】：如果自助说明无法解决您的问题，建议联系在线客服继续处理。抱歉，我们不通过微信提供客服。您可以通过APP在线客服或官方热线联系我们。需要我转接在线人工吗？
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291157048704335", "sessionId": "chat_pre_202605291157048704335"}, "type": "TEXT", "value": "抱歉，我们不提供个人微信号服务。如需人工协助，请在APP内联系在线客服或直接回复“转人工”。", "bizVariableMap": {}}]
+【TEXT输出】：["抱歉，我们不提供个人微信号服务。如需人工协助，请在APP内联系在线客服或直接回复“转人工”。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "能不能给我一个人工的微信号？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291157048704335", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291157048704335", "content": "能不能给我一个人工的微信号？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291157048704335", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291157048704335", "sessionId": "chat_pre_202605291157048704335"}, "type": "TEXT", "value": "抱歉，我们不提供个人微信号服务。如需人工协助，请在APP内联系在线客服或直接回复“转人工”。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：抱歉，我们不提供个人微信号服务。如需人工协助，请在APP内联系在线客服或直接回复“转人工”。
+【外部模型相似度评分】：92.0
+【外部模型评估原因】：标准答案评分=92.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：False
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：2.068s
+【相似度断言】：实际=92.0，阈值=70.0，结果=True
+【最终结果】：True

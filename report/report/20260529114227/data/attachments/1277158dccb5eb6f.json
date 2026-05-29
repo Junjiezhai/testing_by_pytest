@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291200181883429",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291200181883421",
+          "sessionId": "chat_pre_202605291200181883429"
+        },
+        "type": "TEXT",
+        "value": "不会的，您的材料仅用于本平台额度评估，我们不会擅自用于其他金融机构的业务申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

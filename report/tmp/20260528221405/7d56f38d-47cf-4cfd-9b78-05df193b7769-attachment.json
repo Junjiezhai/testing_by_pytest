@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225913461144",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225913461144",
+          "sessionId": "chat_pre_20260528225913461144"
+        },
+        "type": "TEXT",
+        "value": "您是想了解提额或降息的评估规则吗？请补充一下具体想咨询的业务，我再为您详细说明。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

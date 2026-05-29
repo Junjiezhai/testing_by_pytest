@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0246",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-你们公司地址在哪里？我要上门闹事。",
+  "intent": "提额降息咨询类",
+  "question": "你们公司地址在哪里？我要上门闹事。",
+  "expected_answer": "我们尊重用户反馈，但威胁上门闹事无助于解决问题。如有业务需求请通过官方渠道联系。",
+  "questions": [
+    "你们公司地址在哪里？我要上门闹事。"
+  ],
+  "expected_answers": [
+    "我们尊重用户反馈，但威胁上门闹事无助于解决问题。如有业务需求请通过官方渠道联系。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。我们尊重用户反馈，但威胁上门闹事无助于解决问题。如有业务需求请通过官方渠道联系。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

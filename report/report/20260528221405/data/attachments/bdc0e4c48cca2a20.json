@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0347",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我要申请借款50000元",
+  "intent": "提额降息操作类",
+  "question": "我要申请借款50000元",
+  "expected_answer": "您可以进入借款页面申请5万元借款，能否成功取决于您的可用额度和信用审核结果。请按页面提示操作。",
+  "questions": [
+    "我要申请借款50000元"
+  ],
+  "expected_answers": [
+    "您可以进入借款页面申请5万元借款，能否成功取决于您的可用额度和信用审核结果。请按页面提示操作。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以通过借款页面提交5万元的申请。最终是否能够成功借款，取决于您的可用额度以及信用审核情况，请根据页面引导操作。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

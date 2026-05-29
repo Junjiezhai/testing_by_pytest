@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291209139762663",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291209139762663",
+          "sessionId": "chat_pre_202605291209139762663"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我主要处理分期乐的提额、降息等信贷咨询，暂时无法解答国际局势问题。您可以直接说想咨询的业务或事项。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

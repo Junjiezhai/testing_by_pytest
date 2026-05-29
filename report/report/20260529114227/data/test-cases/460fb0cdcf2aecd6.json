@@ -1,0 +1,242 @@
+{
+  "uid" : "460fb0cdcf2aecd6",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-经常使用提额功能会有负面影响吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "637564a29dbb5a464bac26fe30db8b00",
+  "time" : {
+    "start" : 1780026321151,
+    "stop" : 1780026333249,
+    "duration" : 12098
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154743,
+      "stop" : 1780026154743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "fbbaf273214cad3a",
+      "name" : "用例信息",
+      "source" : "fbbaf273214cad3a.json",
+      "type" : "application/json",
+      "size" : 1061
+    }, {
+      "uid" : "e3277b7acc22033f",
+      "name" : "执行日志",
+      "source" : "e3277b7acc22033f.txt",
+      "type" : "text/plain",
+      "size" : 3450
+    }, {
+      "uid" : "47e41e8938526c6b",
+      "name" : "信贷大模型请求入参",
+      "source" : "47e41e8938526c6b.json",
+      "type" : "application/json",
+      "size" : 959
+    }, {
+      "uid" : "5a2f0eaa5ed3f07d",
+      "name" : "信贷大模型完整返回",
+      "source" : "5a2f0eaa5ed3f07d.json",
+      "type" : "application/json",
+      "size" : 594
+    }, {
+      "uid" : "ddcf026f652e4e9c",
+      "name" : "模型评估明细",
+      "source" : "ddcf026f652e4e9c.json",
+      "type" : "application/json",
+      "size" : 3476
+    }, {
+      "uid" : "d8177742d684210",
+      "name" : "断言明细",
+      "source" : "d8177742d684210.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "665ae4dc45ded084",
+      "name" : "失败原因",
+      "source" : "665ae4dc45ded084.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "2446655ec805dd15",
+      "name" : "信贷大模型实际话术",
+      "source" : "2446655ec805dd15.txt",
+      "type" : "text/plain",
+      "size" : 156
+    }, {
+      "uid" : "2050ea0147fa0601",
+      "name" : "断言话术",
+      "source" : "2050ea0147fa0601.txt",
+      "type" : "text/plain",
+      "size" : 412
+    }, {
+      "uid" : "4ccef424c13fd17d",
+      "name" : "log",
+      "source" : "4ccef424c13fd17d.txt",
+      "type" : "text/plain",
+      "size" : 16424
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031471025,
+      "stop" : 1780031472034,
+      "duration" : 1009
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c285deab36569ad0",
+      "name" : "模型测试汇总",
+      "source" : "c285deab36569ad0.txt",
+      "type" : "text/plain",
+      "size" : 53387
+    }, {
+      "uid" : "f9de4c3766b8208a",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "f9de4c3766b8208a.csv",
+      "type" : "text/csv",
+      "size" : 344858
+    }, {
+      "uid" : "e77f81e76ad090e6",
+      "name" : "模型测试明细Excel路径",
+      "source" : "e77f81e76ad090e6.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "cd8493ce67c0383f",
+      "name" : "模型测试汇总JSON",
+      "source" : "cd8493ce67c0383f.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0032', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-经常使用提额功能会有负面影响吗？', 'intent': '提额降息咨询类', 'question': '经常使用提额功能会有负面影响吗？', 'expected_answer': '频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'questions': ['经常使用提额功能会有负面影响吗？'], 'expected_answers': ['频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "7a7831cfaf47e9fd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779977881401,
+          "stop" : 1779977904163,
+          "duration" : 22762
+        }
+      }, {
+        "uid" : "3aaa09aeea687de5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964509031,
+          "stop" : 1779964519591,
+          "duration" : 10560
+        }
+      }, {
+        "uid" : "f72a6a4d92a31933",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877719849,
+          "stop" : 1779877801440,
+          "duration" : 81591
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "460fb0cdcf2aecd6.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0032', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-经常使用提额功能会有负面影响吗？', 'intent': '提额降息咨询类', 'question': '经常使用提额功能会有负面影响吗？', 'expected_answer': '频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'questions': ['经常使用提额功能会有负面影响吗？'], 'expected_answers': ['频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

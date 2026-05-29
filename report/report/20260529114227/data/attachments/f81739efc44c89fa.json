@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0291",
+  "case_type": "single_turn",
+  "case_desc": "非业务相关意图-今天天气怎么样",
+  "intent": "非业务相关意图",
+  "question": "今天天气怎么样",
+  "expected_answer": "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，天气问题不在我的服务范围内。",
+  "questions": [
+    "今天天气怎么样"
+  ],
+  "expected_answers": [
+    "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，天气问题不在我的服务范围内。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "抱歉，我是信贷助手，主要提供借款、提额、降息等咨询，天气问题不在我的服务范围内。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

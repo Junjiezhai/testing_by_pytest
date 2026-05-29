@@ -1,0 +1,235 @@
+{
+  "uid" : "b851f92c267cfdb2",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-可以只提交存款资产证明来申请提额吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "d9671c9e5457e4859dc6643ca3b1dfcf",
+  "time" : {
+    "start" : 1779978615725,
+    "stop" : 1779978626401,
+    "duration" : 10676
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7b2645c5dfe80c49",
+      "name" : "用例信息",
+      "source" : "7b2645c5dfe80c49.json",
+      "type" : "application/json",
+      "size" : 1220
+    }, {
+      "uid" : "f4dcbe75ddafb380",
+      "name" : "执行日志",
+      "source" : "f4dcbe75ddafb380.txt",
+      "type" : "text/plain",
+      "size" : 3518
+    }, {
+      "uid" : "a3d6a8d29e89fc33",
+      "name" : "信贷大模型请求入参",
+      "source" : "a3d6a8d29e89fc33.json",
+      "type" : "application/json",
+      "size" : 963
+    }, {
+      "uid" : "b94e8f9b914259cb",
+      "name" : "信贷大模型完整返回",
+      "source" : "b94e8f9b914259cb.json",
+      "type" : "application/json",
+      "size" : 582
+    }, {
+      "uid" : "394ca07c358110c6",
+      "name" : "模型评估明细",
+      "source" : "394ca07c358110c6.json",
+      "type" : "application/json",
+      "size" : 3924
+    }, {
+      "uid" : "fcaf1b014f272644",
+      "name" : "断言明细",
+      "source" : "fcaf1b014f272644.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "a6feb07a631f2398",
+      "name" : "失败原因",
+      "source" : "a6feb07a631f2398.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "2ed41e15680ca017",
+      "name" : "信贷大模型实际话术",
+      "source" : "2ed41e15680ca017.txt",
+      "type" : "text/plain",
+      "size" : 147
+    }, {
+      "uid" : "aa3d5f4d3b0a75d6",
+      "name" : "断言话术",
+      "source" : "aa3d5f4d3b0a75d6.txt",
+      "type" : "text/plain",
+      "size" : 499
+    }, {
+      "uid" : "9660a0d1e8ed7cc0",
+      "name" : "log",
+      "source" : "9660a0d1e8ed7cc0.txt",
+      "type" : "text/plain",
+      "size" : 16394
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0118', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-可以只提交存款资产证明来申请提额吗？', 'intent': '提额降息操作类', 'question': '可以只提交存款资产证明来申请提额吗？', 'expected_answer': '目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~', 'questions': ['可以只提交存款资产证明来申请提额吗？'], 'expected_answers': ['目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "fea2f389b35c9026",
+        "status" : "broken",
+        "statusDetails" : "Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:41:36 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}",
+        "time" : {
+          "start" : 1779964833442,
+          "stop" : 1779964836972,
+          "duration" : 3530
+        }
+      }, {
+        "uid" : "beb6081bff142a6e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879599292,
+          "stop" : 1779879638599,
+          "duration" : 39307
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "b851f92c267cfdb2.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0118', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-可以只提交存款资产证明来申请提额吗？', 'intent': '提额降息操作类', 'question': '可以只提交存款资产证明来申请提额吗？', 'expected_answer': '目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~', 'questions': ['可以只提交存款资产证明来申请提额吗？'], 'expected_answers': ['目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。目前暂不支持单独上传存款资产证明，优先选择页面开放的银行流水、公积金、个税等提额方式，评估更高效。为您推荐XXX提额项目，最快1s审核通过哦~', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

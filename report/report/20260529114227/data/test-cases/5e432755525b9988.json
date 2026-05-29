@@ -1,0 +1,242 @@
+{
+  "uid" : "5e432755525b9988",
+  "name" : "test_single_turn_intent_recognition[信息查询类-提额审核中，我可以取消申请吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "9f013d4317f00c87f46022b0d300fc66",
+  "time" : {
+    "start" : 1780026300789,
+    "stop" : 1780026330343,
+    "duration" : 29554
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8b9cf6c2ab7fa0fb",
+      "name" : "用例信息",
+      "source" : "8b9cf6c2ab7fa0fb.json",
+      "type" : "application/json",
+      "size" : 986
+    }, {
+      "uid" : "2c7f930e2a54780c",
+      "name" : "执行日志",
+      "source" : "2c7f930e2a54780c.txt",
+      "type" : "text/plain",
+      "size" : 3094
+    }, {
+      "uid" : "f94addc41ad4f9ec",
+      "name" : "信贷大模型请求入参",
+      "source" : "f94addc41ad4f9ec.json",
+      "type" : "application/json",
+      "size" : 956
+    }, {
+      "uid" : "4f17b826f4136c4b",
+      "name" : "信贷大模型完整返回",
+      "source" : "4f17b826f4136c4b.json",
+      "type" : "application/json",
+      "size" : 423
+    }, {
+      "uid" : "c09e42a643565f8d",
+      "name" : "模型评估明细",
+      "source" : "c09e42a643565f8d.json",
+      "type" : "application/json",
+      "size" : 3258
+    }, {
+      "uid" : "7013c099d55a3e8d",
+      "name" : "断言明细",
+      "source" : "7013c099d55a3e8d.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "7d3332824094d1a0",
+      "name" : "失败原因",
+      "source" : "7d3332824094d1a0.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "a525ade878574036",
+      "name" : "信贷大模型实际话术",
+      "source" : "a525ade878574036.txt",
+      "type" : "text/plain",
+      "size" : 144
+    }, {
+      "uid" : "893c643afc452f05",
+      "name" : "断言话术",
+      "source" : "893c643afc452f05.txt",
+      "type" : "text/plain",
+      "size" : 382
+    }, {
+      "uid" : "d7463a22f769b361",
+      "name" : "log",
+      "source" : "d7463a22f769b361.txt",
+      "type" : "text/plain",
+      "size" : 28435
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "信息查询类"
+  }, {
+    "name" : "intent",
+    "value" : "信息查询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0033', 'case_type': 'single_turn', 'case_desc': '信息查询类-提额审核中，我可以取消申请吗？', 'intent': '信息查询类', 'question': '提额审核中，我可以取消申请吗？', 'expected_answer': '审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'questions': ['提额审核中，我可以取消申请吗？'], 'expected_answers': ['审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "6e47bae8d532fc32",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779977892927,
+          "stop" : 1779977920272,
+          "duration" : 27345
+        }
+      }, {
+        "uid" : "e4094dec7b449e3a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964504458,
+          "stop" : 1779964526668,
+          "duration" : 22210
+        }
+      }, {
+        "uid" : "9415cab78fec4990",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877602591,
+          "stop" : 1779877679865,
+          "duration" : 77274
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "5e432755525b9988.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0033', 'case_type': 'single_turn', 'case_desc': '信息查询类-提额审核中，我可以取消申请吗？', 'intent': '信息查询类', 'question': '提额审核中，我可以取消申请吗？', 'expected_answer': '审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'questions': ['提额审核中，我可以取消申请吗？'], 'expected_answers': ['审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

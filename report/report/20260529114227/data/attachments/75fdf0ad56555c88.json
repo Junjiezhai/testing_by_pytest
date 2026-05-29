@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291148067299631",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291148067299631",
+          "sessionId": "chat_pre_202605291148067299631"
+        },
+        "type": "TEXT",
+        "value": "不是一回事。降息是降低借款利率，延期还款是推迟还款日期，两者功能不同。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

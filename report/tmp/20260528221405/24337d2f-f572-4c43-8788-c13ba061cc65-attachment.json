@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225314269486",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225314269486",
+          "sessionId": "chat_pre_20260528225314269486"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我主要协助解答分期乐提额、降息及相关材料问题。如果您有这方面的疑问，欢迎随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

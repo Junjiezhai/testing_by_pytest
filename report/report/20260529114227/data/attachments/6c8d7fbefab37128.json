@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291143066712344",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291143066712348",
+          "sessionId": "chat_pre_202605291143066712344"
+        },
+        "type": "TEXT",
+        "value": "您可以告诉我希望提高到多少额度，我来帮您筛选最适合您的提额项。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

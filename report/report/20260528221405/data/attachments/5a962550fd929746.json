@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222648100986",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222648100986",
+          "sessionId": "chat_pre_20260528222648100986"
+        },
+        "type": "TEXT",
+        "value": "不可以的，提额材料必须为本人名下账户的流水，使用他人材料属于违规行为，可能导致审核失败或账户受限。建议您使用本人的真实材料申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

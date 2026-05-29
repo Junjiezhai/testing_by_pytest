@@ -1,0 +1,253 @@
+{
+  "uid" : "a03e5ba19a71fbe3",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-为什么总是提示材料上传失败]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "b536516a2cc59f77b8de1a49f67d8f12",
+  "time" : {
+    "start" : 1780026967219,
+    "stop" : 1780026984951,
+    "duration" : 17732
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 模型断言失败：TEXT评分 30.0 未达到阈值 70.0(gte)",
+  "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x0000015127770CF8>\ncase_info = {'case_desc': '提额降息操作类-为什么总是提示材料上传失败', 'case_id': 'MIR_0129', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': get_random_uid(),\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n            response_time=response_time\n        )\n        MODEL_REPORT_ROWS.append(report_row)\n        ModelCaseHandler.save_model_rows([report_row])\n    \n        exec_log = build_exec_log(case_info=case_info, msg_info=msg_info, exec_res=exec_res, report_row=report_row, response_time=response_time)\n        log.info(f\"\\n{exec_log}\")\n        allure.attach(json.dumps(case_info, ensure_ascii=False, indent=2), '用例信息', allure.attachment_type.JSON)\n        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)\n        allure.attach(json.dumps(exec_res.get('request_data'), ensure_ascii=False, indent=2), '信贷大模型请求入参', allure.attachment_type.JSON)\n        allure.attach(json.dumps(exec_res.get('output_data'), ensure_ascii=False, indent=2), '信贷大模型完整返回', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row, ensure_ascii=False, indent=2), '模型评估明细', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row.get('assert_detail'), ensure_ascii=False, indent=2), '断言明细', allure.attachment_type.JSON)\n        allure.attach(report_row.get('failure_reason') or '无', '失败原因', allure.attachment_type.TEXT)\n        assert_answer_text = '\\n'.join([\n            f\"【标准答案】：{report_row['expected_answer']}\",\n            f\"【外部模型参考答案】：{report_row.get('reference_answer') or ''}\"\n        ])\n        allure.attach(report_row['actual_answer'], '信贷大模型实际话术', allure.attachment_type.TEXT)\n        allure.attach(assert_answer_text, '断言话术', allure.attachment_type.TEXT)\n    \n>       ModelIntentAssert.assert_model_result(report_row=report_row)\n\ntest_cases\\test_model_intent_recognition.py:297: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'assert_code.model_intent_assert.ModelIntentAssert'>\nreport_row = {'actual_answer': '已为您更换了补充资料入口，您可以点击下方卡片继续查看其他提额方案。', 'actual_intent': '', 'assert_detail': {'asset_allowed': True, 'asset_present': True, 'asset_value': 'AS2605191424571850', 'asset_value_pass': True, ...}, 'asset_allowed': True, ...}\n\n    @classmethod\n    def assert_model_result(cls, report_row: dict) -> None:\n        \"\"\"\n        模型评估结果断言\n        :param report_row: 评估明细\n        :return:\n        \"\"\"\n>       assert report_row['is_pass'] is True, f\"模型断言失败：{report_row.get('failure_reason') or report_row.get('similarity_reason') or report_row.get('similarity_score')}\"\nE       AssertionError: 模型断言失败：TEXT评分 30.0 未达到阈值 70.0(gte)\n\nassert_code\\model_intent_assert.py:598: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 模型断言失败：TEXT评分 30.0 未达到阈值 70.0(gte)",
+    "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x0000015127770CF8>\ncase_info = {'case_desc': '提额降息操作类-为什么总是提示材料上传失败', 'case_id': 'MIR_0129', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': get_random_uid(),\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n            response_time=response_time\n        )\n        MODEL_REPORT_ROWS.append(report_row)\n        ModelCaseHandler.save_model_rows([report_row])\n    \n        exec_log = build_exec_log(case_info=case_info, msg_info=msg_info, exec_res=exec_res, report_row=report_row, response_time=response_time)\n        log.info(f\"\\n{exec_log}\")\n        allure.attach(json.dumps(case_info, ensure_ascii=False, indent=2), '用例信息', allure.attachment_type.JSON)\n        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)\n        allure.attach(json.dumps(exec_res.get('request_data'), ensure_ascii=False, indent=2), '信贷大模型请求入参', allure.attachment_type.JSON)\n        allure.attach(json.dumps(exec_res.get('output_data'), ensure_ascii=False, indent=2), '信贷大模型完整返回', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row, ensure_ascii=False, indent=2), '模型评估明细', allure.attachment_type.JSON)\n        allure.attach(json.dumps(report_row.get('assert_detail'), ensure_ascii=False, indent=2), '断言明细', allure.attachment_type.JSON)\n        allure.attach(report_row.get('failure_reason') or '无', '失败原因', allure.attachment_type.TEXT)\n        assert_answer_text = '\\n'.join([\n            f\"【标准答案】：{report_row['expected_answer']}\",\n            f\"【外部模型参考答案】：{report_row.get('reference_answer') or ''}\"\n        ])\n        allure.attach(report_row['actual_answer'], '信贷大模型实际话术', allure.attachment_type.TEXT)\n        allure.attach(assert_answer_text, '断言话术', allure.attachment_type.TEXT)\n    \n>       ModelIntentAssert.assert_model_result(report_row=report_row)\n\ntest_cases\\test_model_intent_recognition.py:297: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'assert_code.model_intent_assert.ModelIntentAssert'>\nreport_row = {'actual_answer': '已为您更换了补充资料入口，您可以点击下方卡片继续查看其他提额方案。', 'actual_intent': '', 'assert_detail': {'asset_allowed': True, 'asset_present': True, 'asset_value': 'AS2605191424571850', 'asset_value_pass': True, ...}, 'asset_allowed': True, ...}\n\n    @classmethod\n    def assert_model_result(cls, report_row: dict) -> None:\n        \"\"\"\n        模型评估结果断言\n        :param report_row: 评估明细\n        :return:\n        \"\"\"\n>       assert report_row['is_pass'] is True, f\"模型断言失败：{report_row.get('failure_reason') or report_row.get('similarity_reason') or report_row.get('similarity_score')}\"\nE       AssertionError: 模型断言失败：TEXT评分 30.0 未达到阈值 70.0(gte)\n\nassert_code\\model_intent_assert.py:598: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "cda64ed7faa69ecd",
+      "name" : "用例信息",
+      "source" : "cda64ed7faa69ecd.json",
+      "type" : "application/json",
+      "size" : 914
+    }, {
+      "uid" : "76aca0dcea5e5e4",
+      "name" : "执行日志",
+      "source" : "76aca0dcea5e5e4.txt",
+      "type" : "text/plain",
+      "size" : 3131
+    }, {
+      "uid" : "a61f3a8227139b73",
+      "name" : "信贷大模型请求入参",
+      "source" : "a61f3a8227139b73.json",
+      "type" : "application/json",
+      "size" : 950
+    }, {
+      "uid" : "c9f7bbf5d2829bdf",
+      "name" : "信贷大模型完整返回",
+      "source" : "c9f7bbf5d2829bdf.json",
+      "type" : "application/json",
+      "size" : 551
+    }, {
+      "uid" : "ddf72a660335eab4",
+      "name" : "模型评估明细",
+      "source" : "ddf72a660335eab4.json",
+      "type" : "application/json",
+      "size" : 3393
+    }, {
+      "uid" : "bccb2ff36161f306",
+      "name" : "断言明细",
+      "source" : "bccb2ff36161f306.json",
+      "type" : "application/json",
+      "size" : 500
+    }, {
+      "uid" : "a67563276e96a0c4",
+      "name" : "失败原因",
+      "source" : "a67563276e96a0c4.txt",
+      "type" : "text/plain",
+      "size" : 41
+    }, {
+      "uid" : "b05a5d1df88341dc",
+      "name" : "信贷大模型实际话术",
+      "source" : "b05a5d1df88341dc.txt",
+      "type" : "text/plain",
+      "size" : 99
+    }, {
+      "uid" : "d1d2e0d2cc4d702",
+      "name" : "断言话术",
+      "source" : "d1d2e0d2cc4d702.txt",
+      "type" : "text/plain",
+      "size" : 340
+    }, {
+      "uid" : "64e533835d7301ac",
+      "name" : "log",
+      "source" : "64e533835d7301ac.txt",
+      "type" : "text/plain",
+      "size" : 36431
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0129', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-为什么总是提示材料上传失败', 'intent': '提额降息咨询类', 'question': '为什么总是提示材料上传失败', 'expected_answer': '请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。', 'questions': ['为什么总是提示材料上传失败'], 'expected_answers': ['请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "1409f304927532a4",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：TEXT评分 20.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779978741280,
+          "stop" : 1779978764572,
+          "duration" : 23292
+        }
+      }, {
+        "uid" : "df7bc80931bf3672",
+        "status" : "broken",
+        "statusDetails" : "Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:42:47 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}",
+        "time" : {
+          "start" : 1779964894700,
+          "stop" : 1779964907817,
+          "duration" : 13117
+        }
+      }, {
+        "uid" : "52d60577e3a09718",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))",
+        "time" : {
+          "start" : 1779878530853,
+          "stop" : 1779878638944,
+          "duration" : 108091
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "a03e5ba19a71fbe3.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0129', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-为什么总是提示材料上传失败', 'intent': '提额降息咨询类', 'question': '为什么总是提示材料上传失败', 'expected_answer': '请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。', 'questions': ['为什么总是提示材料上传失败'], 'expected_answers': ['请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。请点击操作指引，按照指引上传材料。如多次失败，可联系在线专属客服。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

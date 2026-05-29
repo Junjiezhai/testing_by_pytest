@@ -1,0 +1,234 @@
+{
+  "uid" : "b20cf87a6cf4cbab",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-同时上传微信和支付宝账单，会重复计算吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "fa0d1dcb5ceb75ce03b90202f8a1bce8",
+  "time" : {
+    "start" : 1779978603093,
+    "stop" : 1779978626215,
+    "duration" : 23122
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ed6c7ad46d3472ff",
+      "name" : "用例信息",
+      "source" : "ed6c7ad46d3472ff.json",
+      "type" : "application/json",
+      "size" : 1148
+    }, {
+      "uid" : "801f3a991dec3c96",
+      "name" : "执行日志",
+      "source" : "801f3a991dec3c96.txt",
+      "type" : "text/plain",
+      "size" : 3425
+    }, {
+      "uid" : "73e892583ced81a0",
+      "name" : "信贷大模型请求入参",
+      "source" : "73e892583ced81a0.json",
+      "type" : "application/json",
+      "size" : 969
+    }, {
+      "uid" : "e1fd640934a4f76d",
+      "name" : "信贷大模型完整返回",
+      "source" : "e1fd640934a4f76d.json",
+      "type" : "application/json",
+      "size" : 564
+    }, {
+      "uid" : "da009e2e61c7c75f",
+      "name" : "模型评估明细",
+      "source" : "da009e2e61c7c75f.json",
+      "type" : "application/json",
+      "size" : 3442
+    }, {
+      "uid" : "3bf2e10b9e61d64",
+      "name" : "断言明细",
+      "source" : "3bf2e10b9e61d64.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "3a8383acf0aa97c7",
+      "name" : "失败原因",
+      "source" : "3a8383acf0aa97c7.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "9f2ed85d46ad759a",
+      "name" : "信贷大模型实际话术",
+      "source" : "9f2ed85d46ad759a.txt",
+      "type" : "text/plain",
+      "size" : 129
+    }, {
+      "uid" : "613b8065fc8fca63",
+      "name" : "断言话术",
+      "source" : "613b8065fc8fca63.txt",
+      "type" : "text/plain",
+      "size" : 454
+    }, {
+      "uid" : "3238e09b21556a25",
+      "name" : "log",
+      "source" : "3238e09b21556a25.txt",
+      "type" : "text/plain",
+      "size" : 18432
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0115', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-同时上传微信和支付宝账单，会重复计算吗？', 'intent': '提额降息操作类', 'question': '同时上传微信和支付宝账单，会重复计算吗？', 'expected_answer': '不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。', 'questions': ['同时上传微信和支付宝账单，会重复计算吗？'], 'expected_answers': ['不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "812158936860a609",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964732450,
+          "stop" : 1779964744609,
+          "duration" : 12159
+        }
+      }, {
+        "uid" : "18686bdd81562db6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879383794,
+          "stop" : 1779879468602,
+          "duration" : 84808
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "b20cf87a6cf4cbab.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0115', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-同时上传微信和支付宝账单，会重复计算吗？', 'intent': '提额降息操作类', 'question': '同时上传微信和支付宝账单，会重复计算吗？', 'expected_answer': '不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。', 'questions': ['同时上传微信和支付宝账单，会重复计算吗？'], 'expected_answers': ['不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。不会重复计算。系统会整合两个平台的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多，评估越全面。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

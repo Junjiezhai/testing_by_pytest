@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155388874328",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155388874323",
+          "sessionId": "chat_pre_202605291155388874328"
+        },
+        "type": "TEXT",
+        "value": "没有公积金也可以提额，您可以尝试银行流水、微信账单等其他方式辅助评估；如果想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

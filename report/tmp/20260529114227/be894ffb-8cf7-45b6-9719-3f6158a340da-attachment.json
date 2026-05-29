@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291157048704335",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291157048704335",
+          "sessionId": "chat_pre_202605291157048704335"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我们不提供个人微信号服务。如需人工协助，请在APP内联系在线客服或直接回复“转人工”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

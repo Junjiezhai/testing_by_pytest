@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222931608659",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222931608659",
+          "sessionId": "chat_pre_20260528222931608659"
+        },
+        "type": "TEXT",
+        "value": "建议优先上传收入入账频率高、余额稳定的储蓄卡流水。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

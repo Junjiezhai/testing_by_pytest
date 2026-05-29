@@ -1,0 +1,222 @@
+{
+  "uid" : "6ba9f1559ba8fcc3",
+  "name" : "test_multi_turn_dialog_consistency[转人工情绪升级-1]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "24d772f40c81019211d05dac9d87dec7",
+  "time" : {
+    "start" : 1779985313034,
+    "stop" : 1779985391091,
+    "duration" : 78057
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d8f2931216b9bcad",
+      "name" : "信贷大模型实际话术",
+      "source" : "d8f2931216b9bcad.txt",
+      "type" : "text/plain",
+      "size" : 834
+    }, {
+      "uid" : "1251ac3cc59daa5a",
+      "name" : "断言话术",
+      "source" : "1251ac3cc59daa5a.txt",
+      "type" : "text/plain",
+      "size" : 1528
+    }, {
+      "uid" : "f939dc3fd7a2e4cb",
+      "name" : "多轮失败定位摘要",
+      "source" : "f939dc3fd7a2e4cb.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "84849b2780455078",
+      "name" : "执行日志",
+      "source" : "84849b2780455078.txt",
+      "type" : "text/plain",
+      "size" : 9277
+    }, {
+      "uid" : "723b9c1b50e246eb",
+      "name" : "模型评估明细CSV",
+      "source" : "723b9c1b50e246eb.csv",
+      "type" : "text/csv",
+      "size" : 2681
+    }, {
+      "uid" : "f95d50feea6fa63a",
+      "name" : "多轮逐轮评估明细",
+      "source" : "f95d50feea6fa63a.json",
+      "type" : "application/json",
+      "size" : 25254
+    }, {
+      "uid" : "5ba0ac106c7a3aeb",
+      "name" : "log",
+      "source" : "5ba0ac106c7a3aeb.txt",
+      "type" : "text/plain",
+      "size" : 49045
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "反复沟通后转人工"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类+转人工类"
+  }, {
+    "name" : "remark",
+    "value" : "反复沟通后转人工"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类+转人工类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0096', 'case_type': 'multi_turn', 'case_desc': '转人工情绪升级-1', 'remark': '反复沟通后转人工', 'intent': '提额降息咨询类+转人工类', 'question': '提额失败了，我可以找客服申诉吗？', 'expected_answer': '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'questions': ['为什么我朋友降息了，我没有？', '审核结果会以什么方式通知我？', '提额失败了，我可以找客服申诉吗？'], 'expected_answers': ['每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', '我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。'], 'reference_answers': ['出现这种情况通常与系统综合评估结果有关。每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '信息查询类', '转人工类'], 'context_assert_types': ['manual_transfer_escalation', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '信息查询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '为什么我朋友降息了，我没有？', 'expected_answer': '每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', 'reference_answer': '出现这种情况通常与系统综合评估结果有关。每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'manual_transfer_escalation', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '审核结果会以什么方式通知我？', 'expected_answer': '我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', 'round_intent': '信息查询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额失败了，我可以找客服申诉吗？', 'expected_answer': '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'round_intent': '转人工类', 'previous_intent': '信息查询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "dc36e55f7507bc66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779967048927,
+          "stop" : 1779967184827,
+          "duration" : 135900
+        }
+      }, {
+        "uid" : "48a32c3e3e19944c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779884656155,
+          "stop" : 1779884881951,
+          "duration" : 225796
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "6ba9f1559ba8fcc3.json",
+  "parameterValues" : [ "{'case_id': 'MD_0096', 'case_type': 'multi_turn', 'case_desc': '转人工情绪升级-1', 'remark': '反复沟通后转人工', 'intent': '提额降息咨询类+转人工类', 'question': '提额失败了，我可以找客服申诉吗？', 'expected_answer': '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'questions': ['为什么我朋友降息了，我没有？', '审核结果会以什么方式通知我？', '提额失败了，我可以找客服申诉吗？'], 'expected_answers': ['每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', '我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。'], 'reference_answers': ['出现这种情况通常与系统综合评估结果有关。每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '信息查询类', '转人工类'], 'context_assert_types': ['manual_transfer_escalation', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '信息查询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '为什么我朋友降息了，我没有？', 'expected_answer': '每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', 'reference_answer': '出现这种情况通常与系统综合评估结果有关。每个用户的信用评估结果不同。建议您保持良好记录，系统会定期评估，符合条件的用户会开放降息入口。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'manual_transfer_escalation', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '审核结果会以什么方式通知我？', 'expected_answer': '我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。', 'round_intent': '信息查询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额失败了，我可以找客服申诉吗？', 'expected_answer': '您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您可以联系在线客服查询失败原因，但结果由系统自动判定，人工无法干预修改。建议您改善资质后重新申请。', 'round_intent': '转人工类', 'previous_intent': '信息查询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

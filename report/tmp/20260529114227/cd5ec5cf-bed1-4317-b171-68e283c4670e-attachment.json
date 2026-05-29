@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0014",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额失败后多久能再次申请？",
+  "intent": "提额降息咨询类",
+  "question": "提额失败后多久能再次申请？",
+  "expected_answer": "建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。",
+  "questions": [
+    "提额失败后多久能再次申请？"
+  ],
+  "expected_answers": [
+    "建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "时间以系统实际处理为准。一般来说，建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

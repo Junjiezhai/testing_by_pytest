@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "查得您未查得提交过的提额降息记录。审核中显示“人工复核中”无需额外操作，系统会尽快完成处理。您可查看下方增信提额降息项，继续尝试提升额度。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191421518676",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "189"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

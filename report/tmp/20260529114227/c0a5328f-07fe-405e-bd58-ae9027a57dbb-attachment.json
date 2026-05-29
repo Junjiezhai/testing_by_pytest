@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0226",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-标准问题",
+  "intent": "提额降息咨询类",
+  "question": "标准问题",
+  "expected_answer": "标准话术",
+  "questions": [
+    "标准问题"
+  ],
+  "expected_answers": [
+    "标准话术"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。标准话术",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

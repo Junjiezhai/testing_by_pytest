@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291143201397123",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291143201397128",
+          "sessionId": "chat_pre_202605291143201397123"
+        },
+        "type": "TEXT",
+        "value": "刚注册的新用户建议先完成首次借款并按时还款，积累良好信用记录后再尝试提额，具体以系统审批结论为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

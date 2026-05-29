@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0051",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-我的利率比别人高，可以投诉吗？",
+  "intent": "转人工类",
+  "question": "我的利率比别人高，可以投诉吗？",
+  "expected_answer": "利率是根据您的个人信用记录、借款行为、资金成本等综合评定的，不同用户存在差异属于正常现象。我们无法人工调低。",
+  "questions": [
+    "我的利率比别人高，可以投诉吗？"
+  ],
+  "expected_answers": [
+    "利率是根据您的个人信用记录、借款行为、资金成本等综合评定的，不同用户存在差异属于正常现象。我们无法人工调低。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如需进一步核实，您可以联系在线客服反馈问题。利率是根据您的个人信用记录、借款行为、资金成本等综合评定的，不同用户存在差异属于正常现象。我们无法人工调低。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,594 @@
+[
+  {
+    "round": 1,
+    "question": "显示“审核通过，额度更新中”要多久？",
+    "expected_answer": "通常实时更新，最长不超过5分钟。请刷新页面或重登APP。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。通常实时更新，最长不超过5分钟。请刷新页面或重登APP。",
+    "actual_answer": "额度更新中请以 APP 页面展示为准，建议您稍后刷新或重登查看；若长时间未变动，可回复“查询进度”帮您确认。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 40.0,
+    "reference_similarity_score": 45.0,
+    "similarity_score": 42.5,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=40.0；参考答案评分=45.0",
+    "intent_pass": true,
+    "intent_reason": "话术针对用户对更新时长的询问进行了回复，虽然未给出具体时间，但仍属于信息查询范畴，未偏离期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=42.5，阈值=70.0；标准答案分=40.0；参考答案分=45.0",
+        "reason": "实际话术未提供‘通常实时更新，最长不超过5分钟’这一关键时长信息，仅建议刷新以APP为准和查询进度，遗漏了用户询问的核心时间要求。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类",
+        "reason": "话术针对用户对更新时长的询问进行了回复，虽然未给出具体时间，但仍属于信息查询范畴，未偏离期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "历史对话为空，无前文需承接，无上一轮意图污染可能，无用户改口、风险问题或拒答后回归场景，所有上下文断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "历史对话为空，无前文需承接，无上一轮意图污染可能，无用户改口、风险问题或拒答后回归场景，所有上下文断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=42.5，阈值=70.0；标准答案分=40.0；参考答案分=45.0",
+        "reason": "实际话术未提供‘通常实时更新，最长不超过5分钟’这一关键时长信息，仅建议刷新以APP为准和查询进度，遗漏了用户询问的核心时间要求。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 42.5 低于阈值 70.0",
+    "should_assert": true,
+    "response_time": 2.872,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0023_1779981389626611",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231629626611_0",
+              "content": "显示“审核通过，额度更新中”要多久？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231656322869_1",
+              "content": "额度更新中请以 APP 页面展示为准，建议您稍后刷新或重登查看；若长时间未变动，可回复“查询进度”帮您确认。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231656323868_2",
+              "content": "我可以委托家人帮我查询进度吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231721038516_3",
+              "content": "出于账户安全考虑，查询进度必须由本人操作或致电客服并提供身份验证，不可委托家人代办。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231721038516_4",
+              "content": "为什么我的申请一直在“自动审核中”超过10分钟？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231809512830_5",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0023_1779981389626611",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528231629626611_0",
+              "sessionId": "chat_pre_MD_0023_1779981389626611"
+            },
+            "type": "TEXT",
+            "value": "额度更新中请以 APP 页面展示为准，建议您稍后刷新或重登查看；若长时间未变动，可回复“查询进度”帮您确认。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "我可以委托家人帮我查询进度吗？",
+    "expected_answer": "为了您的账户安全，查询进度必须由本人操作或致电客服并提供身份验证，不可委托他人。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。为了您的账户安全，查询进度必须由本人操作或致电客服并提供身份验证，不可委托他人。",
+    "actual_answer": "出于账户安全考虑，查询进度必须由本人操作或致电客服并提供身份验证，不可委托家人代办。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 95.0,
+    "reference_similarity_score": 92.0,
+    "similarity_score": 93.5,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=95.0；参考答案评分=92.0",
+    "intent_pass": true,
+    "intent_reason": "当前回复直接回应用户关于能否委托查询的询问，属于信息提供，未偏离期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=93.5，阈值=70.0；标准答案分=95.0；参考答案分=92.0",
+        "reason": "核心语义一致：均表达查询进度须本人操作，可致电客服验证身份，不可委托他人。用词差异微小（‘出于...考虑’vs‘为了...’，‘家人代办’vs‘他人’），不影响含义。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类",
+        "reason": "当前回复直接回应用户关于能否委托查询的询问，属于信息提供，未偏离期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "历史对话为同一意图的连续追问，当前回复正确承接前文查询进度话题，无意图污染、无改口、无风险问题、无拒答后回归场景，所有上下文断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "历史对话为同一意图的连续追问，当前回复正确承接前文查询进度话题，无意图污染、无改口、无风险问题、无拒答后回归场景，所有上下文断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 3.33,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0023_1779981389626611",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231629626611_0",
+              "content": "显示“审核通过，额度更新中”要多久？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231656322869_1",
+              "content": "额度更新中请以 APP 页面展示为准，建议您稍后刷新或重登查看；若长时间未变动，可回复“查询进度”帮您确认。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231656323868_2",
+              "content": "我可以委托家人帮我查询进度吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231721038516_3",
+              "content": "出于账户安全考虑，查询进度必须由本人操作或致电客服并提供身份验证，不可委托家人代办。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231721038516_4",
+              "content": "为什么我的申请一直在“自动审核中”超过10分钟？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231809512830_5",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0023_1779981389626611",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528231656323868_2",
+              "sessionId": "chat_pre_MD_0023_1779981389626611"
+            },
+            "type": "TEXT",
+            "value": "出于账户安全考虑，查询进度必须由本人操作或致电客服并提供身份验证，不可委托家人代办。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "为什么我的申请一直在“自动审核中”超过10分钟？",
+    "expected_answer": "可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服。",
+    "actual_answer": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 0.0,
+    "reference_similarity_score": 0.0,
+    "similarity_score": 0.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=0.0；参考答案评分=0.0",
+    "intent_pass": false,
+    "intent_reason": "用户询问申请一直在‘自动审核中’的原因，期望信息查询类回复；实际话术却回复未查得提额降息记录并引导提额降息操作，意图完全偏离期望。",
+    "context_carry_pass": false,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": true,
+    "asset_allowed": true,
+    "asset_value": "AS2605191421518676",
+    "asset_value_pass": false,
+    "biz_ref_id": "189",
+    "biz_ref_id_pass": true,
+    "asset_pass": false,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=0.0，阈值=70.0；标准答案分=0.0；参考答案分=0.0",
+        "reason": "实际话术回复的是未查得提额降息记录并引导继续提额降息，与标准答案‘可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服’的核心语义完全不相关，无任何共同点。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=提额降息操作引导",
+        "reason": "用户询问申请一直在‘自动审核中’的原因，期望信息查询类回复；实际话术却回复未查得提额降息记录并引导提额降息操作，意图完全偏离期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "上下文承接失败：当前轮用户继续询问审核状态，前文讨论的是审核通过后的进度，模型应围绕审核状态解释原因，但实际回复完全没有承接，转而讨论提额降息。未被上一轮意图污染，因为回复的意图（提额降息）与上一轮意图（信息查询）不一致。无用户改口、风险拒答或拒答后回归场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上下文承接失败：当前轮用户继续询问审核状态，前文讨论的是审核通过后的进度，模型应围绕审核状态解释原因，但实际回复完全没有承接，转而讨论提额降息。未被上一轮意图污染，因为回复的意图（提额降息）与上一轮意图（信息查询）不一致。无用户改口、风险拒答或拒答后回归场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": false,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191421518676，biz_ref_id=189",
+        "reason": "ASSET.value=AS2605191421518676 不在允许范围内",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=0.0，阈值=70.0；标准答案分=0.0；参考答案分=0.0",
+        "reason": "实际话术回复的是未查得提额降息记录并引导继续提额降息，与标准答案‘可能是系统排队繁忙，请再等待片刻。若超过30分钟，请联系客服’的核心语义完全不相关，无任何共同点。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=提额降息操作引导",
+        "reason": "用户询问申请一直在‘自动审核中’的原因，期望信息查询类回复；实际话术却回复未查得提额降息记录并引导提额降息操作，意图完全偏离期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=True，改口=True，回归业务=True",
+        "reason": "上下文承接失败：当前轮用户继续询问审核状态，前文讨论的是审核通过后的进度，模型应围绕审核状态解释原因，但实际回复完全没有承接，转而讨论提额降息。未被上一轮意图污染，因为回复的意图（提额降息）与上一轮意图（信息查询）不一致。无用户改口、风险拒答或拒答后回归场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": false,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191421518676，biz_ref_id=189",
+        "reason": "ASSET.value=AS2605191421518676 不在允许范围内",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。",
+      "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户询问申请一直在‘自动审核中’的原因，期望信息查询类回复；实际话术却回复未查得提额降息记录并引导提额降息操作，意图完全偏离期望。；上下文断言失败：上下文承接失败：当前轮用户继续询问审核状态，前文讨论的是审核通过后的进度，模型应围绕审核状态解释原因，但实际回复完全没有承接，转而讨论提额降息。未被上一轮意图污染，因为回复的意图（提额降息）与上一轮意图（信息查询）不一致。无用户改口、风险拒答或拒答后回归场景。；ASSET.value=AS2605191421518676 不在允许范围内",
+    "should_assert": true,
+    "response_time": 12.934,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0023_1779981389626611",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231629626611_0",
+              "content": "显示“审核通过，额度更新中”要多久？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231656322869_1",
+              "content": "额度更新中请以 APP 页面展示为准，建议您稍后刷新或重登查看；若长时间未变动，可回复“查询进度”帮您确认。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231656323868_2",
+              "content": "我可以委托家人帮我查询进度吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231721038516_3",
+              "content": "出于账户安全考虑，查询进度必须由本人操作或致电客服并提供身份验证，不可委托家人代办。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528231721038516_4",
+              "content": "为什么我的申请一直在“自动审核中”超过10分钟？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528231809512830_5",
+              "content": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "未查得您有提交过的提额降息记录。您可接着操作以下增信提额降息项，继续提额降息。"
+          },
+          {
+            "type": "ASSET",
+            "value": "AS2605191421518676",
+            "bizParamInfo": {
+              "biz_ref_id": [
+                "189"
+              ]
+            }
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  }
+]

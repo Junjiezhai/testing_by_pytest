@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0136",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我提交的提额申请现在到哪一步了？",
+  "intent": "提额降息操作类",
+  "question": "我提交的提额申请现在到哪一步了？",
+  "expected_answer": "好的，马上为您查询最近提交的提额申请情况。",
+  "questions": [
+    "我提交的提额申请现在到哪一步了？"
+  ],
+  "expected_answers": [
+    "好的，马上为您查询最近提交的提额申请情况。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。好的，马上为您查询最近提交的提额申请情况。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291148193857857",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291148193857852",
+          "sessionId": "chat_pre_202605291148193857857"
+        },
+        "type": "TEXT",
+        "value": "没有工作也可以尝试申请，您可以上传微信/支付宝账单或银行流水来展示消费和资金情况，系统会综合参考评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

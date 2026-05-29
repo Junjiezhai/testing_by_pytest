@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222718529246",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222718529246",
+          "sessionId": "chat_pre_20260528222718529246"
+        },
+        "type": "TEXT",
+        "value": "目前社保相关信息可通过公积金认证或个税认证同步评估，建议您优先选择这两项。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

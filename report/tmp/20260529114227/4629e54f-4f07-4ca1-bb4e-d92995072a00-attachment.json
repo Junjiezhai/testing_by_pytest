@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0124",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-上传的材料会泄露吗",
+  "intent": "提额降息咨询类",
+  "question": "上传的材料会泄露吗",
+  "expected_answer": "您的材料仅用于本次提额审核，采用加密传输和存储，不会被用于其他用途或泄露给第三方，具体可查看《隐私政策》。",
+  "questions": [
+    "上传的材料会泄露吗"
+  ],
+  "expected_answers": [
+    "您的材料仅用于本次提额审核，采用加密传输和存储，不会被用于其他用途或泄露给第三方，具体可查看《隐私政策》。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。您的材料仅用于本次提额审核，采用加密传输和存储，不会被用于其他用途或泄露给第三方，具体可查看《隐私政策》。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

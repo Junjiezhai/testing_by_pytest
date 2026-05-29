@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225804758365",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225804759364",
+          "sessionId": "chat_pre_20260528225804758365"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我这边主要提供分期乐提额、降息及材料相关服务，暂时无法为您翻译文本。您可以直接说想咨询的业务或事项。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

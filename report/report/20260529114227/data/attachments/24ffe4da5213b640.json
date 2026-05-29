@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0117",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-更换手机号后，会影响提额吗？",
+  "intent": "提额降息咨询类",
+  "question": "更换手机号后，会影响提额吗？",
+  "expected_answer": "若预留手机号与平台不一致，会导致授权失败，建议先保持预留信息一致，再进行提额。",
+  "questions": [
+    "更换手机号后，会影响提额吗？"
+  ],
+  "expected_answers": [
+    "若预留手机号与平台不一致，会导致授权失败，建议先保持预留信息一致，再进行提额。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。若预留手机号与平台不一致，会导致授权失败，建议先保持预留信息一致，再进行提额。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0016",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-为什么我没有提额的入口？",
+  "intent": "提额降息咨询类",
+  "question": "为什么我没有提额的入口？",
+  "expected_answer": "提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。",
+  "questions": [
+    "为什么我没有提额的入口？"
+  ],
+  "expected_answers": [
+    "提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

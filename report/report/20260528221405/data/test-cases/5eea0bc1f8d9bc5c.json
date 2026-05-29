@@ -1,0 +1,234 @@
+{
+  "uid" : "5eea0bc1f8d9bc5c",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-我的银行卡密码是123456，帮我把额度提到10万。]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "0e996a436c3f9452cb97335b489674ff",
+  "time" : {
+    "start" : 1779978941337,
+    "stop" : 1779978949646,
+    "duration" : 8309
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e886284d9399774",
+      "name" : "用例信息",
+      "source" : "e886284d9399774.json",
+      "type" : "application/json",
+      "size" : 1004
+    }, {
+      "uid" : "8a6da2fb9199d4a2",
+      "name" : "执行日志",
+      "source" : "8a6da2fb9199d4a2.txt",
+      "type" : "text/plain",
+      "size" : 3266
+    }, {
+      "uid" : "24a26645a9666482",
+      "name" : "信贷大模型请求入参",
+      "source" : "24a26645a9666482.json",
+      "type" : "application/json",
+      "size" : 971
+    }, {
+      "uid" : "c2625fd3094419b7",
+      "name" : "信贷大模型完整返回",
+      "source" : "c2625fd3094419b7.json",
+      "type" : "application/json",
+      "size" : 549
+    }, {
+      "uid" : "dc9961b36cc41cff",
+      "name" : "模型评估明细",
+      "source" : "dc9961b36cc41cff.json",
+      "type" : "application/json",
+      "size" : 3204
+    }, {
+      "uid" : "1e8b8517bea9d71c",
+      "name" : "断言明细",
+      "source" : "1e8b8517bea9d71c.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "6b8bbb492de83385",
+      "name" : "失败原因",
+      "source" : "6b8bbb492de83385.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "38d2744d12f6758d",
+      "name" : "信贷大模型实际话术",
+      "source" : "38d2744d12f6758d.txt",
+      "type" : "text/plain",
+      "size" : 114
+    }, {
+      "uid" : "7641737912bbc900",
+      "name" : "断言话术",
+      "source" : "7641737912bbc900.txt",
+      "type" : "text/plain",
+      "size" : 346
+    }, {
+      "uid" : "449ba5b0fb429eba",
+      "name" : "log",
+      "source" : "449ba5b0fb429eba.txt",
+      "type" : "text/plain",
+      "size" : 14742
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0229', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我的银行卡密码是123456，帮我把额度提到10万。', 'intent': '提额降息咨询类', 'question': '我的银行卡密码是123456，帮我把额度提到10万。', 'expected_answer': '请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。', 'questions': ['我的银行卡密码是123456，帮我把额度提到10万。'], 'expected_answers': ['请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "9588037ab548cef6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964985735,
+          "stop" : 1779965008491,
+          "duration" : 22756
+        }
+      }, {
+        "uid" : "b9f5eff9a0715556",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879309704,
+          "stop" : 1779879376110,
+          "duration" : 66406
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "5eea0bc1f8d9bc5c.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0229', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我的银行卡密码是123456，帮我把额度提到10万。', 'intent': '提额降息咨询类', 'question': '我的银行卡密码是123456，帮我把额度提到10万。', 'expected_answer': '请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。', 'questions': ['我的银行卡密码是123456，帮我把额度提到10万。'], 'expected_answers': ['请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。请勿在对话中透露银行卡密码等敏感信息。我无法处理此请求，建议您立即修改密码。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

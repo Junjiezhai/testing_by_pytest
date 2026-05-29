@@ -1,0 +1,591 @@
+[
+  {
+    "round": 1,
+    "question": "降息申请提交了2小时还没结果正常吗？",
+    "expected_answer": "正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。",
+    "reference_answer": "相关信息建议以 APP 页面展示为准。正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。",
+    "actual_answer": "您好，系统暂未查询到您的降息申请记录。建议您通过下方卡片补充资料或重新发起申请，我们将尽快为您审核。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 10.0,
+    "reference_similarity_score": 10.0,
+    "similarity_score": 10.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=10.0；参考答案评分=10.0",
+    "intent_pass": false,
+    "intent_reason": "实际回复意图为让用户重新提交申请，而非提供查询结果或解释状态",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": true,
+    "asset_allowed": true,
+    "asset_value": "AS2605191424571850",
+    "asset_value_pass": true,
+    "biz_ref_id": "151",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=10.0，阈值=70.0；标准答案分=10.0；参考答案分=10.0",
+        "reason": "标准答案告知正常、等待无需重复提交；模型话术未查到记录并建议重新发起申请，含义完全相反",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=操作引导类",
+        "reason": "实际回复意图为让用户重新提交申请，而非提供查询结果或解释状态",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "历史对话为空，无上下文承接、污染、改口、风险或回归业务场景，所有断言默认通过",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "历史对话为空，无上下文承接、污染、改口、风险或回归业务场景，所有断言默认通过",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191424571850，biz_ref_id=151",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=10.0，阈值=70.0；标准答案分=10.0；参考答案分=10.0",
+        "reason": "标准答案告知正常、等待无需重复提交；模型话术未查到记录并建议重新发起申请，含义完全相反",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": false,
+        "evidence": "期望意图=信息查询类，实际意图=操作引导类",
+        "reason": "实际回复意图为让用户重新提交申请，而非提供查询结果或解释状态",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 10.0 低于阈值 70.0；当前轮意图不正确：实际回复意图为让用户重新提交申请，而非提供查询结果或解释状态",
+    "should_assert": true,
+    "response_time": 12.791,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0039_1780028900337271",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122820337271_0",
+              "content": "降息申请提交了2小时还没结果正常吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529122850406284_1",
+              "content": "您好，系统暂未查询到您的降息申请记录。建议您通过下方卡片补充资料或重新发起申请，我们将尽快为您审核。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122850407287_2",
+              "content": "为什么我收不到提额审核结果的通知？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123009187907_3",
+              "content": "未查得您有提交过的提额降息记录。请检查APP消息通知设置，也可查看下方增信提额项继续尝试。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123009187907_4",
+              "content": "审核结果会以什么方式通知我？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123037039896_5",
+              "content": "审核结果会通过APP内消息和推送通知您，请留意相关提醒或主动查看页面进度。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "您好，系统暂未查询到您的降息申请记录。建议您通过下方卡片补充资料或重新发起申请，我们将尽快为您审核。"
+          },
+          {
+            "type": "ASSET",
+            "value": "AS2605191424571850",
+            "bizParamInfo": {
+              "biz_ref_id": [
+                "151"
+              ]
+            }
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "为什么我收不到提额审核结果的通知？",
+    "expected_answer": "请检查APP内的消息通知设置是否开启，以及手机是否拦截了平台短信。您也可以主动进入提额页面查看结果。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。请检查APP内的消息通知设置是否开启，以及手机是否拦截了平台短信。您也可以主动进入提额页面查看结果。",
+    "actual_answer": "未查得您有提交过的提额降息记录。请检查APP消息通知设置，也可查看下方增信提额项继续尝试。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 45.0,
+    "reference_similarity_score": 50.0,
+    "similarity_score": 50.0,
+    "similarity_pass": false,
+    "similarity_reason": "标准答案评分=45.0；参考答案评分=50.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复先给出未查到记录的查询结果，再给出操作建议，核心仍属信息查询，符合期望意图。",
+    "context_carry_pass": false,
+    "intent_pollution_pass": false,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": true,
+    "asset_allowed": true,
+    "asset_value": "AS2605191424571850",
+    "asset_value_pass": true,
+    "biz_ref_id": "140",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=50.0，阈值=70.0；标准答案分=45.0；参考答案分=50.0",
+        "reason": "模型回复先告知未查得提额降息记录，与标准答案直接给出操作指引不符；且遗漏了手机拦截短信的检查项，仅包含检查APP通知设置，语义偏离较大。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类",
+        "reason": "实际回复先给出未查到记录的查询结果，再给出操作建议，核心仍属信息查询，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=False，改口=True，回归业务=True",
+        "reason": "当前问题仅涉及提额，模型回复却出现‘降息’字眼，受上一轮降息申请污染；同时错误引入历史话题，未正确隔离上下文。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前问题仅涉及提额，模型回复却出现‘降息’字眼，受上一轮降息申请污染；同时错误引入历史话题，未正确隔离上下文。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=True，允许=True，value=AS2605191424571850，biz_ref_id=140",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": false,
+        "evidence": "平均分=50.0，阈值=70.0；标准答案分=45.0；参考答案分=50.0",
+        "reason": "模型回复先告知未查得提额降息记录，与标准答案直接给出操作指引不符；且遗漏了手机拦截短信的检查项，仅包含检查APP通知设置，语义偏离较大。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": false,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=False，污染=False，改口=True，回归业务=True",
+        "reason": "当前问题仅涉及提额，模型回复却出现‘降息’字眼，受上一轮降息申请污染；同时错误引入历史话题，未正确隔离上下文。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      }
+    ],
+    "failure_suggestions": [
+      "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。",
+      "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+    ],
+    "round_pass": false,
+    "failure_reason": "话术平均评分 50.0 低于阈值 70.0；上下文断言失败：当前问题仅涉及提额，模型回复却出现‘降息’字眼，受上一轮降息申请污染；同时错误引入历史话题，未正确隔离上下文。",
+    "should_assert": true,
+    "response_time": 13.197,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0039_1780028900337271",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122820337271_0",
+              "content": "降息申请提交了2小时还没结果正常吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529122850406284_1",
+              "content": "您好，系统暂未查询到您的降息申请记录。建议您通过下方卡片补充资料或重新发起申请，我们将尽快为您审核。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122850407287_2",
+              "content": "为什么我收不到提额审核结果的通知？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123009187907_3",
+              "content": "未查得您有提交过的提额降息记录。请检查APP消息通知设置，也可查看下方增信提额项继续尝试。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123009187907_4",
+              "content": "审核结果会以什么方式通知我？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123037039896_5",
+              "content": "审核结果会通过APP内消息和推送通知您，请留意相关提醒或主动查看页面进度。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "data": {
+        "chatType": "NORMAL",
+        "handoffReason": "",
+        "replyContents": [
+          {
+            "type": "TEXT",
+            "value": "未查得您有提交过的提额降息记录。请检查APP消息通知设置，也可查看下方增信提额项继续尝试。"
+          },
+          {
+            "type": "ASSET",
+            "value": "AS2605191424571850",
+            "bizParamInfo": {
+              "biz_ref_id": [
+                "140"
+              ]
+            }
+          }
+        ],
+        "intent": "",
+        "intentCode": "",
+        "intentName": ""
+      },
+      "code": "0",
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "审核结果会以什么方式通知我？",
+    "expected_answer": "我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。",
+    "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。我们会通过APP内消息、appPush两种方式通知您结果。请保持手机畅通，留意通知。",
+    "actual_answer": "审核结果会通过APP内消息和推送通知您，请留意相关提醒或主动查看页面进度。",
+    "round_intent": "信息查询类",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "信息查询类",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 92.0,
+    "reference_similarity_score": 90.0,
+    "similarity_score": 92.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=92.0；参考答案评分=90.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复直接回答了审核结果的通知方式，属于信息查询类，无操作引导倾向，符合期望意图。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": true,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=信息查询类",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=92.0，阈值=70.0；标准答案分=92.0；参考答案分=90.0",
+        "reason": "实际话术准确描述了通过APP内消息和推送通知的方式，并提醒用户留意，与标准答案核心语义一致；未逐字提及'保持手机畅通'，但'留意相关提醒'功能等价，语义不矛盾。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=信息查询类，实际意图=信息查询类",
+        "reason": "实际回复直接回答了审核结果的通知方式，属于信息查询类，无操作引导倾向，符合期望意图。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=信息查询类，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "当前问题完整独立，无需依赖前文省略；回复未提及前文的降息或提额记录，未出现意图污染；无改口、风险拒答或回归业务场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前问题完整独立，无需依赖前文省略；回复未提及前文的降息或提额记录，未出现意图污染；无改口、风险拒答或回归业务场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=True，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 3.162,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0039_1780028900337271",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122820337271_0",
+              "content": "降息申请提交了2小时还没结果正常吗？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529122850406284_1",
+              "content": "您好，系统暂未查询到您的降息申请记录。建议您通过下方卡片补充资料或重新发起申请，我们将尽快为您审核。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529122850407287_2",
+              "content": "为什么我收不到提额审核结果的通知？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123009187907_3",
+              "content": "未查得您有提交过的提额降息记录。请检查APP消息通知设置，也可查看下方增信提额项继续尝试。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529123009187907_4",
+              "content": "审核结果会以什么方式通知我？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529123037039896_5",
+              "content": "审核结果会通过APP内消息和推送通知您，请留意相关提醒或主动查看页面进度。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0039_1780028900337271",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529123009187907_4",
+              "sessionId": "chat_pre_MD_0039_1780028900337271"
+            },
+            "type": "TEXT",
+            "value": "审核结果会通过APP内消息和推送通知您，请留意相关提醒或主动查看页面进度。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

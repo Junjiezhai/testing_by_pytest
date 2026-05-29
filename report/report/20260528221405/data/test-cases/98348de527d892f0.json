@@ -1,0 +1,226 @@
+{
+  "uid" : "98348de527d892f0",
+  "name" : "test_single_turn_intent_recognition[非业务相关意图-怎么做蛋糕]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "089bf8d2204b2d3b21de36f93e7febc6",
+  "time" : {
+    "start" : 1779980098535,
+    "stop" : 1779980112199,
+    "duration" : 13664
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "50bcee8367ab3ac0",
+      "name" : "用例信息",
+      "source" : "50bcee8367ab3ac0.json",
+      "type" : "application/json",
+      "size" : 824
+    }, {
+      "uid" : "1698097b0adf748c",
+      "name" : "执行日志",
+      "source" : "1698097b0adf748c.txt",
+      "type" : "text/plain",
+      "size" : 3018
+    }, {
+      "uid" : "3d559a474bd3c655",
+      "name" : "信贷大模型请求入参",
+      "source" : "3d559a474bd3c655.json",
+      "type" : "application/json",
+      "size" : 924
+    }, {
+      "uid" : "3e0adc25872a05db",
+      "name" : "信贷大模型完整返回",
+      "source" : "3e0adc25872a05db.json",
+      "type" : "application/json",
+      "size" : 546
+    }, {
+      "uid" : "ea736646b89c8378",
+      "name" : "模型评估明细",
+      "source" : "ea736646b89c8378.json",
+      "type" : "application/json",
+      "size" : 3302
+    }, {
+      "uid" : "12c910e454667a29",
+      "name" : "断言明细",
+      "source" : "12c910e454667a29.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "d11d0d18eafc3fc4",
+      "name" : "失败原因",
+      "source" : "d11d0d18eafc3fc4.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "619d24098d95b171",
+      "name" : "信贷大模型实际话术",
+      "source" : "619d24098d95b171.txt",
+      "type" : "text/plain",
+      "size" : 111
+    }, {
+      "uid" : "bed014ed671d0b7a",
+      "name" : "断言话术",
+      "source" : "bed014ed671d0b7a.txt",
+      "type" : "text/plain",
+      "size" : 298
+    }, {
+      "uid" : "fd8c5158780f988e",
+      "name" : "log",
+      "source" : "fd8c5158780f988e.txt",
+      "type" : "text/plain",
+      "size" : 15367
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "intent",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0302', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-怎么做蛋糕', 'intent': '非业务相关意图', 'question': '怎么做蛋糕', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，烹饪方法不在我的服务范围内。', 'questions': ['怎么做蛋糕'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，烹饪方法不在我的服务范围内。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，我专注于借款、提额、降息等信贷业务咨询，烹饪方面的问题不在我的服务范围内。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "e1406ad502527f6b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965311294,
+          "stop" : 1779965326788,
+          "duration" : 15494
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "98348de527d892f0.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0302', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-怎么做蛋糕', 'intent': '非业务相关意图', 'question': '怎么做蛋糕', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，烹饪方法不在我的服务范围内。', 'questions': ['怎么做蛋糕'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，烹饪方法不在我的服务范围内。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，我专注于借款、提额、降息等信贷业务咨询，烹饪方面的问题不在我的服务范围内。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

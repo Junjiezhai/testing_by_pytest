@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224859530042",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224859530042",
+          "sessionId": "chat_pre_20260528224859530042"
+        },
+        "type": "TEXT",
+        "value": "高峰期咨询量较大，请您耐心等待。您也可以留下电话，我们稍后回拨。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

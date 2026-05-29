@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225845453173",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225845453173",
+          "sessionId": "chat_pre_20260528225845453173"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我主要提供分期乐提额和降息的咨询服务，暂时无法为您推荐书籍。如果您有关于额度或利率的问题，欢迎随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,18 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "可能是系统延迟导致额度未实时更新，建议您尝试退出账号重新登录，或在“首页-额度”页面下拉刷新查看。如仍未更新，可联系客服提供成功截图为您核对。"
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

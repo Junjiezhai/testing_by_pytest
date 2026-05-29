@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223006348035",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223006348035",
+          "sessionId": "chat_pre_20260528223006348035"
+        },
+        "type": "TEXT",
+        "value": "目前仅支持中国大陆境内发行的储蓄卡，海外银行卡暂不支持流水取数，您可以使用本人名下的国内储蓄卡进行提额申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0220",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-你们会用我的材料去办信用卡吗",
+  "intent": "提额降息咨询类",
+  "question": "你们会用我的材料去办信用卡吗",
+  "expected_answer": "绝对不会。您的材料仅用于本平台的额度评估，我们不会擅自用于其他金融机构的业务申请。",
+  "questions": [
+    "你们会用我的材料去办信用卡吗"
+  ],
+  "expected_answers": [
+    "绝对不会。您的材料仅用于本平台的额度评估，我们不会擅自用于其他金融机构的业务申请。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。绝对不会。您的材料仅用于本平台的额度评估，我们不会擅自用于其他金融机构的业务申请。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

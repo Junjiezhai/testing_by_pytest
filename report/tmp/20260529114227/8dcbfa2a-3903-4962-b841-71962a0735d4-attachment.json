@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291153153329657",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291153153329654",
+          "sessionId": "chat_pre_202605291153153329657"
+        },
+        "type": "TEXT",
+        "value": "不支持主动调低额度，提额后一般为长期有效。系统会综合您的后续使用情况和信用表现动态评估，具体以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

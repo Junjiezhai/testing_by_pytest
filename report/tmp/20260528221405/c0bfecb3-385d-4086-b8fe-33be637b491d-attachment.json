@@ -1,0 +1,18 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "提额入口是否显示以APP页面为准。同一时间段内系统对操作次数有限制，如暂无入口，建议您保持良好还款记录，等待后续评估结果。"
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

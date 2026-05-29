@@ -1,0 +1,21 @@
+{
+  "chat_type": "TRANSFER",
+  "handoff_reason": "AGENT_HANDOFF",
+  "chat_type_pass": false,
+  "text_pass": false,
+  "text_threshold": 70.0,
+  "text_comparator": "gte",
+  "standard_similarity_score": 0.0,
+  "reference_similarity_score": 0.0,
+  "avg_similarity_score": 0.0,
+  "asset_present": false,
+  "asset_allowed": true,
+  "asset_value": "",
+  "asset_value_pass": true,
+  "biz_ref_id": "",
+  "biz_ref_id_pass": true,
+  "fail_reasons": [
+    "当前意图[提额降息咨询类]不允许转人工，但chatType=TRANSFER",
+    "TEXT评分 0.0 未达到阈值 70.0(gte)"
+  ]
+}

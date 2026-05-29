@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224526500907",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224526500907",
+          "sessionId": "chat_pre_20260528224526500907"
+        },
+        "type": "TEXT",
+        "value": "人工客服在线时间为每天9:00-21:00。当前时段可为您转接；若已下班可按页面提示留言，具体以APP展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

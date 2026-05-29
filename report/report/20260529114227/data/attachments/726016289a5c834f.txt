@@ -1,0 +1,125 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0059
+【测试场景】：咨询到操作递进-19
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：审核结果可以发到我的邮箱吗？
+【断言话术-标准答案】：默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "审核结果可以发到我的邮箱吗？", "chatId": "chat_pre_MD_0059_1780029494639263", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123814639262_0", "content": "提额会让我每月的还款压力变大吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529123844583032_1", "content": "不会。提额只增加您的可用借款上限，不强制您多借，也不会改变已借订单的还款金额和期限，请根据自身能力合理借贷。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123844584034_2", "content": "同时上传多种材料，额度会更高吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529123929415246_3", "content": "多传材料可帮助系统更全面评估，但不保证额度一定更高。提额结果会综合您的资质和页面规则确定，请以 APP 展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123929415246_4", "content": "审核结果可以发到我的邮箱吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529124002345463_5", "content": "默认通过APP消息和Push通知审核结果，暂不支持发到邮箱。建议您留意APP内通知或主动查看提额页面。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0059_1780029494639263", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123814639262_0", "content": "提额会让我每月的还款压力变大吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529123844583032_1", "content": "不会。提额只增加您的可用借款上限，不强制您多借，也不会改变已借订单的还款金额和期限，请根据自身能力合理借贷。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123844584034_2", "content": "同时上传多种材料，额度会更高吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529123929415246_3", "content": "多传材料可帮助系统更全面评估，但不保证额度一定更高。提额结果会综合您的资质和页面规则确定，请以 APP 展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529123929415246_4", "content": "审核结果可以发到我的邮箱吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529124002345463_5", "content": "默认通过APP消息和Push通知审核结果，暂不支持发到邮箱。建议您留意APP内通知或主动查看提额页面。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0059_1780029494639263", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260529123929415246_4", "sessionId": "chat_pre_MD_0059_1780029494639263"}, "type": "TEXT", "value": "默认通过APP消息和Push通知审核结果，暂不支持发到邮箱。建议您留意APP内通知或主动查看提额页面。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：默认通过APP消息和Push通知审核结果，暂不支持发到邮箱。建议您留意APP内通知或主动查看提额页面。
+【外部模型相似度评分】：93.33
+【外部模型评估原因】：多轮逐轮平均相似度：93.33
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：
+【响应耗时】：2.789s
+【相似度断言】：实际=93.33，阈值=70.0，结果=True
+【最终结果】：True
+【多轮失败定位摘要】：
+无失败轮次
+【多轮平均响应耗时】：2.789s
+【多轮总响应耗时】：8.368s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额会让我每月的还款压力变大吗？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。
+参考答案：这个问题主要以页面展示和系统评估结果为准。提额只增加您的可用借款上限，不会强制您多借。请根据自身还款能力合理借贷，避免过度负债。
+模型回复：不会。提额只增加您的可用借款上限，不强制您多借，也不会改变已借订单的还款金额和期限，请根据自身能力合理借贷。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：95.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.565s
+是否通过：True
+------ 第2轮 ------
+用户问题：同时上传多种材料，额度会更高吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。
+参考答案：请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。多维度材料有助于更全面评估您的信用和还款能力，可能获得更高提额幅度。
+模型回复：多传材料可帮助系统更全面评估，但不保证额度一定更高。提额结果会综合您的资质和页面规则确定，请以 APP 展示为准。
+标准答案评分：90.0
+参考答案评分：65.0
+平均相似度：90.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.94s
+是否通过：True
+------ 第3轮 ------
+用户问题：审核结果可以发到我的邮箱吗？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。
+参考答案：您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。
+模型回复：默认通过APP消息和Push通知审核结果，暂不支持发到邮箱。建议您留意APP内通知或主动查看提额页面。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：95.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.863s
+是否通过：True

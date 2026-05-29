@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225433272237",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225433272237",
+          "sessionId": "chat_pre_20260528225433272237"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我主要提供分期乐提额、降息及材料相关的咨询服务，暂时无法提供影视剧信息。请问您是想了解提额或降息方面的规则吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

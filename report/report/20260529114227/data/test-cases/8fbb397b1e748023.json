@@ -1,0 +1,242 @@
+{
+  "uid" : "8fbb397b1e748023",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-名下有多张储蓄卡，上传哪张流水效果更好？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "6743d790e17db6ca644820a97ece0e44",
+  "time" : {
+    "start" : 1780026768466,
+    "stop" : 1780026776487,
+    "duration" : 8021
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "13df8327d4265307",
+      "name" : "用例信息",
+      "source" : "13df8327d4265307.json",
+      "type" : "application/json",
+      "size" : 1211
+    }, {
+      "uid" : "4b1374004270c1af",
+      "name" : "执行日志",
+      "source" : "4b1374004270c1af.txt",
+      "type" : "text/plain",
+      "size" : 3738
+    }, {
+      "uid" : "96f449b3420cb5ce",
+      "name" : "信贷大模型请求入参",
+      "source" : "96f449b3420cb5ce.json",
+      "type" : "application/json",
+      "size" : 971
+    }, {
+      "uid" : "662c41e2efedf141",
+      "name" : "信贷大模型完整返回",
+      "source" : "662c41e2efedf141.json",
+      "type" : "application/json",
+      "size" : 633
+    }, {
+      "uid" : "26e97a6d4c21d138",
+      "name" : "模型评估明细",
+      "source" : "26e97a6d4c21d138.json",
+      "type" : "application/json",
+      "size" : 3708
+    }, {
+      "uid" : "74090ac2092f2471",
+      "name" : "断言明细",
+      "source" : "74090ac2092f2471.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "14c0a05f2379f058",
+      "name" : "失败原因",
+      "source" : "14c0a05f2379f058.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "8e24016a82f33735",
+      "name" : "信贷大模型实际话术",
+      "source" : "8e24016a82f33735.txt",
+      "type" : "text/plain",
+      "size" : 195
+    }, {
+      "uid" : "edd7a99773d99c53",
+      "name" : "断言话术",
+      "source" : "edd7a99773d99c53.txt",
+      "type" : "text/plain",
+      "size" : 496
+    }, {
+      "uid" : "2ee0bbcbc645b9fe",
+      "name" : "log",
+      "source" : "2ee0bbcbc645b9fe.txt",
+      "type" : "text/plain",
+      "size" : 16160
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031416501,
+      "stop" : 1780031417509,
+      "duration" : 1008
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2b977dad273613e",
+      "name" : "模型测试汇总",
+      "source" : "2b977dad273613e.txt",
+      "type" : "text/plain",
+      "size" : 50654
+    }, {
+      "uid" : "beb81649d00cd90e",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "beb81649d00cd90e.csv",
+      "type" : "text/csv",
+      "size" : 333834
+    }, {
+      "uid" : "ae8ab1b2c0ff5af0",
+      "name" : "模型测试明细Excel路径",
+      "source" : "ae8ab1b2c0ff5af0.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "93facdc6697ea05e",
+      "name" : "模型测试汇总JSON",
+      "source" : "93facdc6697ea05e.json",
+      "type" : "application/json",
+      "size" : 16502
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "21008-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0111', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-名下有多张储蓄卡，上传哪张流水效果更好？', 'intent': '提额降息咨询类', 'question': '名下有多张储蓄卡，上传哪张流水效果更好？', 'expected_answer': '建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。', 'questions': ['名下有多张储蓄卡，上传哪张流水效果更好？'], 'expected_answers': ['建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "31989e219cf1938d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779978571609,
+          "stop" : 1779978581384,
+          "duration" : 9775
+        }
+      }, {
+        "uid" : "8972d2557e451a09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964793995,
+          "stop" : 1779964818733,
+          "duration" : 24738
+        }
+      }, {
+        "uid" : "b1a84b05edfd766e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879156133,
+          "stop" : 1779879212496,
+          "duration" : 56363
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "8fbb397b1e748023.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0111', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-名下有多张储蓄卡，上传哪张流水效果更好？', 'intent': '提额降息咨询类', 'question': '名下有多张储蓄卡，上传哪张流水效果更好？', 'expected_answer': '建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。', 'questions': ['名下有多张储蓄卡，上传哪张流水效果更好？'], 'expected_answers': ['建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。建议上传收入入账频率高、余额稳定的储蓄卡流水，比仅金额高但流水杂乱的卡片更能提升评估分，具体以页面支持的银行列表为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

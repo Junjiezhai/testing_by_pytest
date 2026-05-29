@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224006456406",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224006456406",
+          "sessionId": "chat_pre_20260528224006456406"
+        },
+        "type": "TEXT",
+        "value": "审核顺序可能因材料类型不同而有差异，且每个人的信用状况、历史行为和补充材料不同，系统评估结果也会不同。建议您再耐心等待，关注自己的账户进度。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

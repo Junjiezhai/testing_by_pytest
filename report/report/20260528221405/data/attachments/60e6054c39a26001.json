@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224620701270",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224620701270",
+          "sessionId": "chat_pre_20260528224620701270"
+        },
+        "type": "TEXT",
+        "value": "您可以直接在对话框输入“转人工”，我来帮您转接在线客服。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

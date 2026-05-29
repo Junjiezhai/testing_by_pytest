@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224638002376",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224638002376",
+          "sessionId": "chat_pre_20260528224638002376"
+        },
+        "type": "TEXT",
+        "value": "非常遗憾听到您的状况。借款需按合同约定偿还，建议您携带相关证明联系官方客服协商处理，具体以客服评估为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

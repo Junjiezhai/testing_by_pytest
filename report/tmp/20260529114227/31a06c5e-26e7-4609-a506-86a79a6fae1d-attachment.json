@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0024",
+  "case_type": "single_turn",
+  "case_desc": "风险合规禁答类-提额成功后额度能用来还旧账吗？",
+  "intent": "风险合规禁答类",
+  "question": "提额成功后额度能用来还旧账吗？",
+  "expected_answer": "额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。",
+  "questions": [
+    "提额成功后额度能用来还旧账吗？"
+  ],
+  "expected_answers": [
+    "额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请在合规范围内使用平台服务。额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

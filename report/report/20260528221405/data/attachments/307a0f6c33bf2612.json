@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222111804362",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222111804362",
+          "sessionId": "chat_pre_20260528222111804362"
+        },
+        "type": "TEXT",
+        "value": "利率是根据您的个人信用记录、借款行为等综合评定的，不同用户存在差异属于正常现象，我们无法人工调低。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

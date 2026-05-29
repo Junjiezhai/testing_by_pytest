@@ -1,0 +1,125 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0028
+【测试场景】：同一意图连续追问-借款下单类-28
+【意图分类】：借款下单类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额成功后借款还是失败是为什么
+【断言话术-标准答案】：提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "提额成功后借款还是失败是为什么", "chatId": "chat_pre_MD_0028_1779981811590233", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232331590233_0", "content": "能不能帮我把借款期限改成50年？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232347920420_1", "content": "这边暂不能直接帮您修改订单期限。建议您到 APP 对应业务入口查看具体规则，以页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232347921423_2", "content": "提额成功是不是马上就能借款", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232408678212_3", "content": "提额成功不代表马上就能借款，每笔借款仍会单独审核，结果以 APP 页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232408679212_4", "content": "提额成功后借款还是失败是为什么", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232441602285_5", "content": "提额成功不代表借款一定通过，每笔借款仍会单独审核，具体原因和结果请以 APP 页面提示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0028_1779981811590233", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232331590233_0", "content": "能不能帮我把借款期限改成50年？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232347920420_1", "content": "这边暂不能直接帮您修改订单期限。建议您到 APP 对应业务入口查看具体规则，以页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232347921423_2", "content": "提额成功是不是马上就能借款", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232408678212_3", "content": "提额成功不代表马上就能借款，每笔借款仍会单独审核，结果以 APP 页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232408679212_4", "content": "提额成功后借款还是失败是为什么", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232441602285_5", "content": "提额成功不代表借款一定通过，每笔借款仍会单独审核，具体原因和结果请以 APP 页面提示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0028_1779981811590233", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528232408679212_4", "sessionId": "chat_pre_MD_0028_1779981811590233"}, "type": "TEXT", "value": "提额成功不代表借款一定通过，每笔借款仍会单独审核，具体原因和结果请以 APP 页面提示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：提额成功不代表借款一定通过，每笔借款仍会单独审核，具体原因和结果请以 APP 页面提示为准。
+【外部模型相似度评分】：86.67
+【外部模型评估原因】：多轮逐轮平均相似度：86.67
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：
+【响应耗时】：2.973s
+【相似度断言】：实际=86.67，阈值=70.0，结果=True
+【最终结果】：True
+【多轮失败定位摘要】：
+无失败轮次
+【多轮平均响应耗时】：2.973s
+【多轮总响应耗时】：8.919s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：能不能帮我把借款期限改成50年？
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：借款期限有固定范围（如1-12期），无法无限延长。请按实际需求选择。
+参考答案：借款下单请以页面可操作入口和审核结果为准。借款期限有固定范围（如1-12期），无法无限延长。请按实际需求选择。
+模型回复：这边暂不能直接帮您修改订单期限。建议您到 APP 对应业务入口查看具体规则，以页面展示为准。
+标准答案评分：85.0
+参考答案评分：90.0
+平均相似度：87.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.9s
+是否通过：True
+------ 第2轮 ------
+用户问题：提额成功是不是马上就能借款
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：借款下单类
+标准答案：提额成功只代表可用额度可能更新，不等于借款一定成功；实际能否借款仍以借款页审核结果为准。
+参考答案：借款下单请以页面可操作入口和审核结果为准。提额成功只代表可用额度可能更新，不等于借款一定成功；实际能否借款仍以借款页审核结果为准。
+模型回复：提额成功不代表马上就能借款，每笔借款仍会单独审核，结果以 APP 页面展示为准。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.753s
+是否通过：True
+------ 第3轮 ------
+用户问题：提额成功后借款还是失败是为什么
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：借款下单类
+标准答案：提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。
+参考答案：借款是否成功需要经过单笔订单审核。提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。
+模型回复：提额成功不代表借款一定通过，每笔借款仍会单独审核，具体原因和结果请以 APP 页面提示为准。
+标准答案评分：78.0
+参考答案评分：80.0
+平均相似度：79.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.267s
+是否通过：True

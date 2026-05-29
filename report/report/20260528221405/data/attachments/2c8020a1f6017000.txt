@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0051
+【测试场景】：咨询到操作递进-11
+【意图分类】：提额降息咨询类+提额降息操作类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息申请提交了2小时还没结果正常吗？
+【断言话术-标准答案】：正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "降息申请提交了2小时还没结果正常吗？", "chatId": "chat_pre_MD_0051_1779982441883304", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233401883304_0", "content": "提额失败后多久能再次申请？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233427130767_1", "content": "提额失败后建议间隔1到3个月再申请，期间保持良好还款和信用行为有助于提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233427130767_2", "content": "我在境外能申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233510139559_3", "content": "部分降息项目可能受网络区域限制，建议您返回境内稳定网络下操作。如有异常可联系客服，具体以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233510140590_4", "content": "降息申请提交了2小时还没结果正常吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233550822408_5", "content": "查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0051_1779982441883304", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233401883304_0", "content": "提额失败后多久能再次申请？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233427130767_1", "content": "提额失败后建议间隔1到3个月再申请，期间保持良好还款和信用行为有助于提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233427130767_2", "content": "我在境外能申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233510139559_3", "content": "部分降息项目可能受网络区域限制，建议您返回境内稳定网络下操作。如有异常可联系客服，具体以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528233510140590_4", "content": "降息申请提交了2小时还没结果正常吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233550822408_5", "content": "查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。"}, {"type": "ASSET", "value": "AS2605191421518676", "bizParamInfo": {"biz_ref_id": ["189"]}}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。
+【外部模型相似度评分】：69.17
+【外部模型评估原因】：多轮逐轮平均相似度：69.17
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 22.5 低于阈值 70.0；上下文断言失败：上下文类型为跨意图切换，但实际话术错误承接了上一轮降息操作的槽位（将‘降息申请提交’理解为查询降息记录且无记录），并且受到上一轮意图污染——不仅未正确处理降息相关问询，还主动引入与当前问题无关的‘征信提额权益’，回复未正确响应当前信息查询需求，属于上下文断裂和意图污染。用户未改口，非风险合规，非拒答后回归，对应项均通过。；ASSET.value=AS2605191421518676 不在允许范围内
+【响应耗时】：7.015s
+【相似度断言】：实际=69.17，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第3轮 | 失败维度：话术相似度、上下文承接、ASSET卡片 | 原因：话术平均评分 22.5 低于阈值 70.0；上下文断言失败：上下文类型为跨意图切换，但实际话术错误承接了上一轮降息操作的槽位（将‘降息申请提交’理解为查询降息记录且无记录），并且受到上一轮意图污染——不仅未正确处理降息相关问询，还主动引入与当前问题无关的‘征信提额权益’，回复未正确响应当前信息查询需求，属于上下文断裂和意图污染。用户未改口，非风险合规，非拒答后回归，对应项均通过。；ASSET.value=AS2605191421518676 不在允许范围内
+问题：降息申请提交了2小时还没结果正常吗？
+模型回复：查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+【多轮平均响应耗时】：7.015s
+【多轮总响应耗时】：21.044s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额失败后多久能再次申请？
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+参考答案：时间以系统实际处理为准。一般来说，建议间隔1-3个月再申请，期间保持良好的借款还款记录和信用行为，有助于提高下次通过率。
+模型回复：提额失败后建议间隔1到3个月再申请，期间保持良好还款和信用行为有助于提高下次通过率。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.971s
+是否通过：True
+------ 第2轮 ------
+用户问题：我在境外能申请降息吗？
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：部分降息项目可能受网络区域限制，建议返回境内稳定网络下操作。如有异常可联系客服。
+参考答案：您可以根据页面提示完成操作。部分降息项目可能受网络区域限制，建议返回境内稳定网络下操作。如有异常可联系客服。
+模型回复：部分降息项目可能受网络区域限制，建议您返回境内稳定网络下操作。如有异常可联系客服，具体以APP页面展示为准。
+标准答案评分：95.0
+参考答案评分：88.0
+平均相似度：91.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：5.446s
+是否通过：True
+------ 第3轮 ------
+用户问题：降息申请提交了2小时还没结果正常吗？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。
+参考答案：相关信息建议以 APP 页面展示为准。正常的亲。部分降息申请需要人工复核，请您耐心等待，无需重复提交。
+模型回复：查得您未提交过降息记录，可能是系统未同步。您可查看下方征信提额权益继续尝试。
+标准答案评分：20.0
+参考答案评分：25.0
+平均相似度：22.5
+意图断言：True
+上下文承接：False
+意图污染：False
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、上下文承接、ASSET卡片
+失败原因：话术平均评分 22.5 低于阈值 70.0；上下文断言失败：上下文类型为跨意图切换，但实际话术错误承接了上一轮降息操作的槽位（将‘降息申请提交’理解为查询降息记录且无记录），并且受到上一轮意图污染——不仅未正确处理降息相关问询，还主动引入与当前问题无关的‘征信提额权益’，回复未正确响应当前信息查询需求，属于上下文断裂和意图污染。用户未改口，非风险合规，非拒答后回归，对应项均通过。；ASSET.value=AS2605191421518676 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：12.628s
+是否通过：False

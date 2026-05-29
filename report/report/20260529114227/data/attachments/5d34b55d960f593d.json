@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0344",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我要申请提额到50000元",
+  "intent": "提额降息咨询类",
+  "question": "我要申请提额到50000元",
+  "expected_answer": "您可以进入提额页面提交申请，系统会根据您的信用状况进行评估。能否达到5万元以系统评估结果为准，请按页面提示操作。",
+  "questions": [
+    "我要申请提额到50000元"
+  ],
+  "expected_answers": [
+    "您可以进入提额页面提交申请，系统会根据您的信用状况进行评估。能否达到5万元以系统评估结果为准，请按页面提示操作。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以前往提额页面提交申请，系统将综合评估您的信用状况。具体能否提升至5万元以系统审核结果为准，请按照页面提示操作即可。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

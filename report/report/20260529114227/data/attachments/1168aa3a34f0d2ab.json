@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291148208439959",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291148208439957",
+          "sessionId": "chat_pre_202605291148208439959"
+        },
+        "type": "TEXT",
+        "value": "提额一般不直接改变利率，但如果补充了优质材料，系统可能会重新评估利率。最终结果以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

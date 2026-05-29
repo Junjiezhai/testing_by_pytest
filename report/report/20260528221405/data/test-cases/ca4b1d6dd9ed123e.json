@@ -1,0 +1,234 @@
+{
+  "uid" : "ca4b1d6dd9ed123e",
+  "name" : "test_single_turn_intent_recognition[信息查询类-审核结果可以发到我的邮箱吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "33ac0438a7a54edf37102ed79e49cbf2",
+  "time" : {
+    "start" : 1779979277919,
+    "stop" : 1779979294973,
+    "duration" : 17054
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3b6d6dde298b0a87",
+      "name" : "用例信息",
+      "source" : "3b6d6dde298b0a87.json",
+      "type" : "application/json",
+      "size" : 899
+    }, {
+      "uid" : "df3c90648fdecb09",
+      "name" : "执行日志",
+      "source" : "df3c90648fdecb09.txt",
+      "type" : "text/plain",
+      "size" : 3269
+    }, {
+      "uid" : "3b530ad33495870e",
+      "name" : "信贷大模型请求入参",
+      "source" : "3b530ad33495870e.json",
+      "type" : "application/json",
+      "size" : 951
+    }, {
+      "uid" : "b70b623502b0f7e1",
+      "name" : "信贷大模型完整返回",
+      "source" : "b70b623502b0f7e1.json",
+      "type" : "application/json",
+      "size" : 577
+    }, {
+      "uid" : "adf1353a5fe516b3",
+      "name" : "模型评估明细",
+      "source" : "adf1353a5fe516b3.json",
+      "type" : "application/json",
+      "size" : 3588
+    }, {
+      "uid" : "95cae21be4e93737",
+      "name" : "断言明细",
+      "source" : "95cae21be4e93737.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "1022bde98965daab",
+      "name" : "失败原因",
+      "source" : "1022bde98965daab.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "6a0ec3b28f875685",
+      "name" : "信贷大模型实际话术",
+      "source" : "6a0ec3b28f875685.txt",
+      "type" : "text/plain",
+      "size" : 142
+    }, {
+      "uid" : "b5a5b1747765ab9b",
+      "name" : "断言话术",
+      "source" : "b5a5b1747765ab9b.txt",
+      "type" : "text/plain",
+      "size" : 330
+    }, {
+      "uid" : "281ef349ad03ca7",
+      "name" : "log",
+      "source" : "281ef349ad03ca7.txt",
+      "type" : "text/plain",
+      "size" : 17107
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "信息查询类"
+  }, {
+    "name" : "intent",
+    "value" : "信息查询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0156', 'case_type': 'single_turn', 'case_desc': '信息查询类-审核结果可以发到我的邮箱吗？', 'intent': '信息查询类', 'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'questions': ['审核结果可以发到我的邮箱吗？'], 'expected_answers': ['默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "3830bf900762baf0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965360339,
+          "stop" : 1779965386897,
+          "duration" : 26558
+        }
+      }, {
+        "uid" : "baefc2f4714b1ac5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878787091,
+          "stop" : 1779878866951,
+          "duration" : 79860
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "ca4b1d6dd9ed123e.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0156', 'case_type': 'single_turn', 'case_desc': '信息查询类-审核结果可以发到我的邮箱吗？', 'intent': '信息查询类', 'question': '审核结果可以发到我的邮箱吗？', 'expected_answer': '默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'questions': ['审核结果可以发到我的邮箱吗？'], 'expected_answers': ['默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。默认通过APPpush和APP消息通知，暂不支持邮箱发送。您可以截图保存结果。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

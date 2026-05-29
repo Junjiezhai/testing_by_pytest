@@ -1,0 +1,239 @@
+{
+  "uid" : "bc985fcfc50f7dc5",
+  "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-借款下单类-4]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "7ed50fdd9ee00281ecbade9ca4533877",
+  "time" : {
+    "start" : 1779980514852,
+    "stop" : 1779980605880,
+    "duration" : 91028
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1da1098942ae9bcf",
+      "name" : "信贷大模型实际话术",
+      "source" : "1da1098942ae9bcf.txt",
+      "type" : "text/plain",
+      "size" : 646
+    }, {
+      "uid" : "a7072d3d786ccf94",
+      "name" : "断言话术",
+      "source" : "a7072d3d786ccf94.txt",
+      "type" : "text/plain",
+      "size" : 1310
+    }, {
+      "uid" : "a8e16348c7924c74",
+      "name" : "多轮失败定位摘要",
+      "source" : "a8e16348c7924c74.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "c38e3dd92ff47ae2",
+      "name" : "执行日志",
+      "source" : "c38e3dd92ff47ae2.txt",
+      "type" : "text/plain",
+      "size" : 8303
+    }, {
+      "uid" : "132c3d89b73ef23d",
+      "name" : "模型评估明细CSV",
+      "source" : "132c3d89b73ef23d.csv",
+      "type" : "text/csv",
+      "size" : 2283
+    }, {
+      "uid" : "cc76530f46e39523",
+      "name" : "多轮逐轮评估明细",
+      "source" : "cc76530f46e39523.json",
+      "type" : "application/json",
+      "size" : 23735
+    }, {
+      "uid" : "3e3ffaba254c5ee0",
+      "name" : "log",
+      "source" : "3e3ffaba254c5ee0.txt",
+      "type" : "text/plain",
+      "size" : 48980
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "subSuite",
+    "value" : "借款下单类"
+  }, {
+    "name" : "remark",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "intent",
+    "value" : "借款下单类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0004', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-借款下单类-4', 'remark': '同一意图连续追问', 'intent': '借款下单类', 'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'questions': ['降息成功后，原来的借款合同会重签吗？', '降息审核中，我能正常借款吗？', '借款APP截图有什么要求'], 'expected_answers': ['不会。原有借款合同不变，降息只影响您未来的新借款。', '可以。降息审核不影响您现有额度的正常使用和借款。', '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'reference_answers': ['借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'round_assert_flags': [True, True, True], 'round_intents': ['借款下单类', '借款下单类', '借款下单类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '借款下单类', '借款下单类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'round_intent': '借款下单类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '降息审核中，我能正常借款吗？', 'expected_answer': '可以。降息审核不影响您现有额度的正常使用和借款。', 'reference_answer': '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "46fa6adadb116c8a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户询问借款APP截图要求，属于借款下单场景下的操作咨询，但模型未识别意图并有效回答，实际回复意图偏离期望。；上下文断言失败：当前轮为同一意图连续追问，但模型未能承接上下文正确回答截图要求，而是要求用户补充信息，导致上下文承接失败。无意图污染、用户改口、风险插入或拒答回归情况。",
+        "time" : {
+          "start" : 1779965682673,
+          "stop" : 1779965761513,
+          "duration" : 78840
+        }
+      }, {
+        "uid" : "dd618d64002e7a05",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779960705117,
+          "stop" : 1779960879963,
+          "duration" : 174846
+        }
+      }, {
+        "uid" : "84c2cb566e717060",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880819063,
+          "stop" : 1779881009542,
+          "duration" : 190479
+        }
+      }, {
+        "uid" : "c4ffaaf731c5f0e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779871186122,
+          "stop" : 1779871358958,
+          "duration" : 172836
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "bc985fcfc50f7dc5.json",
+  "parameterValues" : [ "{'case_id': 'MD_0004', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-借款下单类-4', 'remark': '同一意图连续追问', 'intent': '借款下单类', 'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'questions': ['降息成功后，原来的借款合同会重签吗？', '降息审核中，我能正常借款吗？', '借款APP截图有什么要求'], 'expected_answers': ['不会。原有借款合同不变，降息只影响您未来的新借款。', '可以。降息审核不影响您现有额度的正常使用和借款。', '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'reference_answers': ['借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'round_assert_flags': [True, True, True], 'round_intents': ['借款下单类', '借款下单类', '借款下单类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '借款下单类', '借款下单类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'round_intent': '借款下单类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '降息审核中，我能正常借款吗？', 'expected_answer': '可以。降息审核不影响您现有额度的正常使用和借款。', 'reference_answer': '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

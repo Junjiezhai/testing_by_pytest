@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224806734396",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224806734396",
+          "sessionId": "chat_pre_20260528224806734396"
+        },
+        "type": "TEXT",
+        "value": "当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

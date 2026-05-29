@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291147066417052",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291147066417059",
+          "sessionId": "chat_pre_202605291147066417052"
+        },
+        "type": "TEXT",
+        "value": "降息和提额是两个独立维度，降息成功不一定同步提升额度。具体结果以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

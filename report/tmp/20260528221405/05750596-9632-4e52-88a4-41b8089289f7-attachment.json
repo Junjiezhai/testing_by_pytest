@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225611424669",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225611424669",
+          "sessionId": "chat_pre_20260528225611424669"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我是分期乐信贷顾问，暂无法协助购买火车票。您可以直接告诉我您想咨询的信贷业务或事项，比如提额、降息或材料提交。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

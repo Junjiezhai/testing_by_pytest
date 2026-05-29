@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0112",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-信用分认证，需要多少分以上才能提额？",
+  "intent": "提额降息咨询类",
+  "question": "信用分认证，需要多少分以上才能提额？",
+  "expected_answer": "信用分无固定门槛，系统会结合分数、历史信用行为综合评估。",
+  "questions": [
+    "信用分认证，需要多少分以上才能提额？"
+  ],
+  "expected_answers": [
+    "信用分无固定门槛，系统会结合分数、历史信用行为综合评估。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。信用分无固定门槛，系统会结合分数、历史信用行为综合评估。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

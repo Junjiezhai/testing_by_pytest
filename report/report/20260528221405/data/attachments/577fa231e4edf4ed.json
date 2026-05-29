@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221425537857",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221425537857",
+          "sessionId": "chat_pre_20260528221425537857"
+        },
+        "type": "TEXT",
+        "value": "系统会综合评估您的信用状况，最高可提到20万，但不能承诺具体额度，最终结果以APP页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

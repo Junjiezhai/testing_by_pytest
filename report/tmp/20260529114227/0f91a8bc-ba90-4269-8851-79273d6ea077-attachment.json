@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291152230875705",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291152230875702",
+          "sessionId": "chat_pre_202605291152230875705"
+        },
+        "type": "TEXT",
+        "value": "可以。但新设备登录可能需要短信验证码或人脸识别等身份验证，验证通过后即可正常提额。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

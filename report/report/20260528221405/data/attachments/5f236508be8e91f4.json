@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224758927579",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224758927579",
+          "sessionId": "chat_pre_20260528224758927579"
+        },
+        "type": "TEXT",
+        "value": "使用暴力威胁是违法行为，我们会报警处理，并且不会因此改变评估结果。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

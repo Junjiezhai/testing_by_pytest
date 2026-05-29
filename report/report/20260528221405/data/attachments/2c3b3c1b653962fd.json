@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223952786175",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223952786175",
+          "sessionId": "chat_pre_20260528223952786175"
+        },
+        "type": "TEXT",
+        "value": "提示“无最近申请记录”说明您近期没有有效的提额或降息申请，您可以尝试重新发起申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

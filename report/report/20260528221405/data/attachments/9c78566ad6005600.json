@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0130",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我上次上传过材料，这次还要重新传吗",
+  "intent": "提额降息操作类",
+  "question": "我上次上传过材料，这次还要重新传吗",
+  "expected_answer": "如您已上传过材料并且提交过提额，在一定时间内不可再重新操作。具体以页面提示为准。",
+  "questions": [
+    "我上次上传过材料，这次还要重新传吗"
+  ],
+  "expected_answers": [
+    "如您已上传过材料并且提交过提额，在一定时间内不可再重新操作。具体以页面提示为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。如您已上传过材料并且提交过提额，在一定时间内不可再重新操作。具体以页面提示为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

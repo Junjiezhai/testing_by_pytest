@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291142347498278",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291142347498275",
+          "sessionId": "chat_pre_202605291142347498278"
+        },
+        "type": "TEXT",
+        "value": "提额最高能到多少由系统根据您的信用状况综合评定，无法承诺固定额度，请以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0342
+【测试场景】：提额降息咨询类-我可以申请降息到年化8%吗
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我可以申请降息到年化8%吗
+【断言话术-标准答案】：降息申请需要系统综合评估，能否降到年化8%取决于您的信用状况。建议您保持良好的还款记录，系统会定期评估并可能为您调整利率。
+【断言话术-外部模型参考答案】：系统会对您的降息申请进行综合评估，能否降至年化8%主要取决于您的信用状况。建议您保持良好的还款记录，系统会定期评估并可能为您调整利率。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528225317865185", "sessionId": "chat_pre_20260528225317865185"}, "type": "TEXT", "value": "不能承诺降到指定年化利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。", "bizVariableMap": {}}]
+【TEXT输出】：["不能承诺降到指定年化利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "我可以申请降息到年化8%吗"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528225317865185", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528225317865185", "content": "我可以申请降息到年化8%吗", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528225317865185", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528225317865185", "sessionId": "chat_pre_20260528225317865185"}, "type": "TEXT", "value": "不能承诺降到指定年化利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：不能承诺降到指定年化利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。
+【外部模型相似度评分】：92.0
+【外部模型评估原因】：标准答案评分=92.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.441s
+【相似度断言】：实际=92.0，阈值=70.0，结果=True
+【最终结果】：True

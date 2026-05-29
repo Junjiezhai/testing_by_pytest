@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225744155012",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225744155012",
+          "sessionId": "chat_pre_20260528225744155012"
+        },
+        "type": "TEXT",
+        "value": "唱歌可能不太行，但我能帮您处理分期乐的提额和降息问题。您有这方面的需求吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

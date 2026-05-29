@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291152589428269",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291152589428266",
+          "sessionId": "chat_pre_202605291152589428269"
+        },
+        "type": "TEXT",
+        "value": "不会重复计算。系统会整合微信和支付宝的账单数据，综合评估您的整体消费能力和收入稳定性，数据越多评估越全面。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

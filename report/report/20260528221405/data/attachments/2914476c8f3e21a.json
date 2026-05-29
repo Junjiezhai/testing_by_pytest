@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221706128572",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221706128572",
+          "sessionId": "chat_pre_20260528221706128572"
+        },
+        "type": "TEXT",
+        "value": "部分提额项目为了账户安全可能会要求人脸识别验证，按页面提示操作即可。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

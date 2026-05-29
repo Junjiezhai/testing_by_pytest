@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0031
+【测试场景】：同一意图连续追问-信息查询类-31
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息申请多久能出结果？
+【断言话术-标准答案】：自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "降息申请多久能出结果？", "chatId": "chat_pre_MD_0031_1779982119127209", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232839127209_0", "content": "提额短信通知说通过了，但APP没变化怎么办？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232908759604_1", "content": "可能是系统延迟导致额度未实时同步，建议您尝试退出账号重新登录或清理APP缓存后查看。若仍未更新，可联系在线客服提供短信截图协助核对。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232908759604_2", "content": "提额审核中，我可以取消申请吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232926702134_3", "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232926703135_4", "content": "降息申请多久能出结果？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233006576813_5", "content": "降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0031_1779982119127209", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232839127209_0", "content": "提额短信通知说通过了，但APP没变化怎么办？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232908759604_1", "content": "可能是系统延迟导致额度未实时同步，建议您尝试退出账号重新登录或清理APP缓存后查看。若仍未更新，可联系在线客服提供短信截图协助核对。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232908759604_2", "content": "提额审核中，我可以取消申请吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528232926702134_3", "content": "审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528232926703135_4", "content": "降息申请多久能出结果？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528233006576813_5", "content": "降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0031_1779982119127209", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528232926703135_4", "sessionId": "chat_pre_MD_0031_1779982119127209"}, "type": "TEXT", "value": "降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。
+【外部模型相似度评分】：75.5
+【外部模型评估原因】：多轮逐轮平均相似度：75.5
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 37.5 低于阈值 70.0
+【响应耗时】：6.155s
+【相似度断言】：实际=75.5，阈值=70.0，结果=True
+【最终结果】：False
+【多轮失败定位摘要】：
+第3轮 | 失败维度：话术相似度 | 原因：话术平均评分 37.5 低于阈值 70.0
+问题：降息申请多久能出结果？
+模型回复：降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：6.155s
+【多轮总响应耗时】：18.464s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额短信通知说通过了，但APP没变化怎么办？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。
+参考答案：建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。
+模型回复：可能是系统延迟导致额度未实时同步，建议您尝试退出账号重新登录或清理APP缓存后查看。若仍未更新，可联系在线客服提供短信截图协助核对。
+标准答案评分：95.0
+参考答案评分：90.0
+平均相似度：92.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：7.764s
+是否通过：True
+------ 第2轮 ------
+用户问题：提额审核中，我可以取消申请吗？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：信息查询类
+标准答案：审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。
+参考答案：您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。
+模型回复：审核中的申请一般无法手动取消。如需紧急处理，请联系在线客服尝试协助，但不保证成功。
+标准答案评分：98.0
+参考答案评分：95.0
+平均相似度：96.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：7.736s
+是否通过：True
+------ 第3轮 ------
+用户问题：降息申请多久能出结果？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：信息查询类
+标准答案：自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+参考答案：相关信息建议以 APP 页面展示为准。自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+模型回复：降息审核结果请以APP页面展示为准，这边无法承诺具体时长。建议您留意页面进度或消息通知。
+标准答案评分：30.0
+参考答案评分：45.0
+平均相似度：37.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 37.5 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：2.963s
+是否通过：False

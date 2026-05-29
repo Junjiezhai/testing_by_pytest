@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0180",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-这破机器人，我要投诉，转人工",
+  "intent": "转人工类",
+  "question": "这破机器人，我要投诉，转人工",
+  "expected_answer": "非常抱歉给您带来不好的体验。我立刻帮您转接人工客服，您可以向人工反馈投诉事宜。",
+  "questions": [
+    "这破机器人，我要投诉，转人工"
+  ],
+  "expected_answers": [
+    "非常抱歉给您带来不好的体验。我立刻帮您转接人工客服，您可以向人工反馈投诉事宜。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如需进一步核实，您可以联系在线客服反馈问题。非常抱歉给您带来不好的体验。我立刻帮您转接人工客服，您可以向人工反馈投诉事宜。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

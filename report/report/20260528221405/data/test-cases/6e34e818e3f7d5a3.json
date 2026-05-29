@@ -1,0 +1,234 @@
+{
+  "uid" : "6e34e818e3f7d5a3",
+  "name" : "test_single_turn_intent_recognition[信息查询类-我朋友和我同时提交，他出结果了我还没有，为什么？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "3ca3ea0a943ff18fc838794650f9b956",
+  "time" : {
+    "start" : 1779979206455,
+    "stop" : 1779979229990,
+    "duration" : 23535
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "dca5dbd6a1db64c7",
+      "name" : "用例信息",
+      "source" : "dca5dbd6a1db64c7.json",
+      "type" : "application/json",
+      "size" : 1006
+    }, {
+      "uid" : "5d86cbadb410971d",
+      "name" : "执行日志",
+      "source" : "5d86cbadb410971d.txt",
+      "type" : "text/plain",
+      "size" : 3661
+    }, {
+      "uid" : "15ae6652f0e8f98a",
+      "name" : "信贷大模型请求入参",
+      "source" : "15ae6652f0e8f98a.json",
+      "type" : "application/json",
+      "size" : 981
+    }, {
+      "uid" : "2475aa7df5479e99",
+      "name" : "信贷大模型完整返回",
+      "source" : "2475aa7df5479e99.json",
+      "type" : "application/json",
+      "size" : 645
+    }, {
+      "uid" : "c8ce029c7fa5ec2f",
+      "name" : "模型评估明细",
+      "source" : "c8ce029c7fa5ec2f.json",
+      "type" : "application/json",
+      "size" : 3912
+    }, {
+      "uid" : "ebfe0100aa38acda",
+      "name" : "断言明细",
+      "source" : "ebfe0100aa38acda.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "a33eed99aaf9bcfb",
+      "name" : "失败原因",
+      "source" : "a33eed99aaf9bcfb.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "962437ec4a11cd08",
+      "name" : "信贷大模型实际话术",
+      "source" : "962437ec4a11cd08.txt",
+      "type" : "text/plain",
+      "size" : 210
+    }, {
+      "uid" : "5d2289223ab499af",
+      "name" : "断言话术",
+      "source" : "5d2289223ab499af.txt",
+      "type" : "text/plain",
+      "size" : 330
+    }, {
+      "uid" : "ad03b0ab786c3f15",
+      "name" : "log",
+      "source" : "ad03b0ab786c3f15.txt",
+      "type" : "text/plain",
+      "size" : 18559
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986826901,
+      "stop" : 1779986828099,
+      "duration" : 1198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d0ec2ea0754494dc",
+      "name" : "模型测试汇总",
+      "source" : "d0ec2ea0754494dc.txt",
+      "type" : "text/plain",
+      "size" : 46238
+    }, {
+      "uid" : "bf56b074c178975b",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "bf56b074c178975b.csv",
+      "type" : "text/csv",
+      "size" : 323065
+    }, {
+      "uid" : "7d2773df468c3b49",
+      "name" : "模型测试明细Excel路径",
+      "source" : "7d2773df468c3b49.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "ec2a077d78b6ad85",
+      "name" : "模型测试汇总JSON",
+      "source" : "ec2a077d78b6ad85.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "信息查询类"
+  }, {
+    "name" : "intent",
+    "value" : "信息查询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "24808-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0153', 'case_type': 'single_turn', 'case_desc': '信息查询类-我朋友和我同时提交，他出结果了我还没有，为什么？', 'intent': '信息查询类', 'question': '我朋友和我同时提交，他出结果了我还没有，为什么？', 'expected_answer': '审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。', 'questions': ['我朋友和我同时提交，他出结果了我还没有，为什么？'], 'expected_answers': ['审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。'], 'round_assert_flags': [True], 'reference_answer': '相关信息建议以 APP 页面展示为准。审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "ead8087a64d0395e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965311120,
+          "stop" : 1779965332403,
+          "duration" : 21283
+        }
+      }, {
+        "uid" : "2954fcf069bc49c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878612867,
+          "stop" : 1779878661978,
+          "duration" : 49111
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "6e34e818e3f7d5a3.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0153', 'case_type': 'single_turn', 'case_desc': '信息查询类-我朋友和我同时提交，他出结果了我还没有，为什么？', 'intent': '信息查询类', 'question': '我朋友和我同时提交，他出结果了我还没有，为什么？', 'expected_answer': '审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。', 'questions': ['我朋友和我同时提交，他出结果了我还没有，为什么？'], 'expected_answers': ['审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。'], 'round_assert_flags': [True], 'reference_answer': '相关信息建议以 APP 页面展示为准。审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

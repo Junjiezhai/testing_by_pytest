@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "您可以在下方卡片中选择“二代个税提额”，按提示授权税务数据查询并提交纳税明细即可。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "210"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

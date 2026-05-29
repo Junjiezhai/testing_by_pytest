@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0094",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额成功后，还能再提额吗？",
+  "intent": "提额降息咨询类",
+  "question": "提额成功后，还能再提额吗？",
+  "expected_answer": "可以的，系统会定期重新评估您的账号情况，后续您可以关注 APP 内的提额入口，补充新的材料也有助于再次提升额度。",
+  "questions": [
+    "提额成功后，还能再提额吗？"
+  ],
+  "expected_answers": [
+    "可以的，系统会定期重新评估您的账号情况，后续您可以关注 APP 内的提额入口，补充新的材料也有助于再次提升额度。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。可以的，系统会定期重新评估您的账号情况，后续您可以关注 APP 内的提额入口，补充新的材料也有助于再次提升额度。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

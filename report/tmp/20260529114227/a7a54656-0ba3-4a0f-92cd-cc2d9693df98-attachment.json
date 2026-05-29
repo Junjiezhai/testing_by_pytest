@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291201209790056",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291201209790057",
+          "sessionId": "chat_pre_202605291201209790056"
+        },
+        "type": "TEXT",
+        "value": "修改手机号属于账户设置，这边暂不能直接代办。请您登录分期乐 APP，在个人设置或安全中心中自行更新预留手机号。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

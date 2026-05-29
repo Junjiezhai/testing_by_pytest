@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528224829967061",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528224829967061",
+          "sessionId": "chat_pre_20260528224829967061"
+        },
+        "type": "TEXT",
+        "value": "我无法协助任何非法或违规行为。以系统漏洞要挟提额属于敲诈，将依法处理；请通过正规渠道申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

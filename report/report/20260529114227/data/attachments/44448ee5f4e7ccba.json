@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291206239265275",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291206239265277",
+          "sessionId": "chat_pre_202605291206239265275"
+        },
+        "type": "TEXT",
+        "value": "提额成功不代表借款一定通过，每笔借款仍会单独审核。具体原因和结果请以借款页提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

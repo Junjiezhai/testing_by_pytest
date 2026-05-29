@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0160
+【测试场景】：信息查询类-显示“审核通过，额度更新中”要多久？
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：显示“审核通过，额度更新中”要多久？
+【断言话术-标准答案】：通常实时更新，最长不超过5分钟。请刷新页面或重登APP。
+【断言话术-外部模型参考答案】：您可以在页面查看当前处理状态，或通过客服入口查询进度。通常实时更新，最长不超过5分钟。请刷新页面或重登APP。
+【replyContents】：[{"type": "TEXT", "value": "通常实时更新，最长不超过5分钟。建议您刷新页面或重登APP查看。另外，系统暂未查到您的提额记录，您可以参考下方卡片补充银行流水等材料继续尝试提额。"}, {"type": "ASSET", "value": "AS2605191424571850", "bizParamInfo": {"biz_ref_id": ["155"]}}]
+【TEXT输出】：["通常实时更新，最长不超过5分钟。建议您刷新页面或重登APP查看。另外，系统暂未查到您的提额记录，您可以参考下方卡片补充银行流水等材料继续尝试提额。"]
+【ASSET输出】：["AS2605191424571850"]
+【biz_ref_id】：["155"]
+【模型请求msg_info】：{"uid": "4130948", "content": "显示“审核通过，额度更新中”要多久？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291206251421112", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291206251421115", "content": "显示“审核通过，额度更新中”要多久？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "通常实时更新，最长不超过5分钟。建议您刷新页面或重登APP查看。另外，系统暂未查到您的提额记录，您可以参考下方卡片补充银行流水等材料继续尝试提额。"}, {"type": "ASSET", "value": "AS2605191424571850", "bizParamInfo": {"biz_ref_id": ["155"]}}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：通常实时更新，最长不超过5分钟。建议您刷新页面或重登APP查看。另外，系统暂未查到您的提额记录，您可以参考下方卡片补充银行流水等材料继续尝试提额。
+【外部模型相似度评分】：90.0
+【外部模型评估原因】：标准答案评分=90.0；参考答案评分=65.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True (AS2605191424571850)
+【biz_ref_id断言】：True (155)
+【失败原因】：
+【响应耗时】：12.489s
+【相似度断言】：实际=90.0，阈值=70.0，结果=True
+【最终结果】：True

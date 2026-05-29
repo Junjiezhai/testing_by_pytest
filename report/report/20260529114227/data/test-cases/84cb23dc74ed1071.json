@@ -1,0 +1,231 @@
+{
+  "uid" : "84cb23dc74ed1071",
+  "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息咨询类-33]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "27d8614449d55de877b06e07aa2c63ae",
+  "time" : {
+    "start" : 1780028404385,
+    "stop" : 1780028466039,
+    "duration" : 61654
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8dd74555e455a822",
+      "name" : "信贷大模型实际话术",
+      "source" : "8dd74555e455a822.txt",
+      "type" : "text/plain",
+      "size" : 752
+    }, {
+      "uid" : "a5373fbca3d87af0",
+      "name" : "断言话术",
+      "source" : "a5373fbca3d87af0.txt",
+      "type" : "text/plain",
+      "size" : 1523
+    }, {
+      "uid" : "c045f9b9fb755986",
+      "name" : "多轮失败定位摘要",
+      "source" : "c045f9b9fb755986.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "b3386fe0d9aa1463",
+      "name" : "执行日志",
+      "source" : "b3386fe0d9aa1463.txt",
+      "type" : "text/plain",
+      "size" : 8977
+    }, {
+      "uid" : "ec424bffc3adf2fc",
+      "name" : "模型评估明细CSV",
+      "source" : "ec424bffc3adf2fc.csv",
+      "type" : "text/csv",
+      "size" : 2638
+    }, {
+      "uid" : "efc950ee8c5fc0f1",
+      "name" : "多轮逐轮评估明细",
+      "source" : "efc950ee8c5fc0f1.json",
+      "type" : "application/json",
+      "size" : 24882
+    }, {
+      "uid" : "2a694f2aa2436fa1",
+      "name" : "log",
+      "source" : "2a694f2aa2436fa1.txt",
+      "type" : "text/plain",
+      "size" : 46640
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0033', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-33', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '降息后如果逾期了，利率会恢复吗？', 'expected_answer': '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'questions': ['降息成功后，额度会同步提升吗？', '有没有免息券可以降息？', '降息后如果逾期了，利率会恢复吗？'], 'expected_answers': ['降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', '平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', '这个问题主要以页面展示和系统评估结果为准。平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '降息成功后，额度会同步提升吗？', 'expected_answer': '降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '有没有免息券可以降息？', 'expected_answer': '平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '降息后如果逾期了，利率会恢复吗？', 'expected_answer': '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "940795f80687d161",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779982289291,
+          "stop" : 1779982353269,
+          "duration" : 63978
+        }
+      }, {
+        "uid" : "2360784da7dd188b",
+        "status" : "broken",
+        "statusDetails" : "Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:52:51 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}",
+        "time" : {
+          "start" : 1779965508190,
+          "stop" : 1779965511200,
+          "duration" : 3010
+        }
+      }, {
+        "uid" : "bc2f7e0c6cecea24",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779881392996,
+          "stop" : 1779881564969,
+          "duration" : 171973
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "84cb23dc74ed1071.json",
+  "parameterValues" : [ "{'case_id': 'MD_0033', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-33', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '降息后如果逾期了，利率会恢复吗？', 'expected_answer': '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'questions': ['降息成功后，额度会同步提升吗？', '有没有免息券可以降息？', '降息后如果逾期了，利率会恢复吗？'], 'expected_answers': ['降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', '平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', '这个问题主要以页面展示和系统评估结果为准。平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '降息成功后，额度会同步提升吗？', 'expected_answer': '降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。降息和提额是两个独立维度。部分降息项目可能会同时评估额度，但并非一定。以最终提额降息结果为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '有没有免息券可以降息？', 'expected_answer': '平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '降息后如果逾期了，利率会恢复吗？', 'expected_answer': '如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。如果您出现逾期，系统可能会重新评估您的信用等级，届时利率可能上调，且降息优惠可能失效。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

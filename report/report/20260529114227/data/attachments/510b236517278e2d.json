@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291208150504503",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291208150504508",
+          "sessionId": "chat_pre_202605291208150504503"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我不提供体育赛事信息。如果您有提额、降息或材料方面的疑问，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

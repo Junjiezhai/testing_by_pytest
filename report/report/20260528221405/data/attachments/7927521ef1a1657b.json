@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223319853235",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223319853235",
+          "sessionId": "chat_pre_20260528223319853235"
+        },
+        "type": "TEXT",
+        "value": "借款下单功能建议您直接登录分期乐 APP，在首页或我的页面查看借款入口并按提示操作。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

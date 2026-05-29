@@ -1,0 +1,242 @@
+{
+  "uid" : "9da2ef6357d7169e",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-我刚借了一笔款，还能申请降息吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "4d4513ad826e39bccbadf24d3c98cfca",
+  "time" : {
+    "start" : 1780026386822,
+    "stop" : 1780026394533,
+    "duration" : 7711
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7c0a0de576003b1f",
+      "name" : "用例信息",
+      "source" : "7c0a0de576003b1f.json",
+      "type" : "application/json",
+      "size" : 995
+    }, {
+      "uid" : "1e3c5925fba807d8",
+      "name" : "执行日志",
+      "source" : "1e3c5925fba807d8.txt",
+      "type" : "text/plain",
+      "size" : 3306
+    }, {
+      "uid" : "b4ddcb5728973556",
+      "name" : "信贷大模型请求入参",
+      "source" : "b4ddcb5728973556.json",
+      "type" : "application/json",
+      "size" : 959
+    }, {
+      "uid" : "69c719f9f3a532a8",
+      "name" : "信贷大模型完整返回",
+      "source" : "69c719f9f3a532a8.json",
+      "type" : "application/json",
+      "size" : 570
+    }, {
+      "uid" : "abe9a626bcac4d33",
+      "name" : "模型评估明细",
+      "source" : "abe9a626bcac4d33.json",
+      "type" : "application/json",
+      "size" : 3253
+    }, {
+      "uid" : "3ea4047e6b79dd72",
+      "name" : "断言明细",
+      "source" : "3ea4047e6b79dd72.json",
+      "type" : "application/json",
+      "size" : 430
+    }, {
+      "uid" : "7c39767ea70a5f3b",
+      "name" : "失败原因",
+      "source" : "7c39767ea70a5f3b.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "5b4bb76e9755135c",
+      "name" : "信贷大模型实际话术",
+      "source" : "5b4bb76e9755135c.txt",
+      "type" : "text/plain",
+      "size" : 132
+    }, {
+      "uid" : "cae9c0c46e255d75",
+      "name" : "断言话术",
+      "source" : "cae9c0c46e255d75.txt",
+      "type" : "text/plain",
+      "size" : 361
+    }, {
+      "uid" : "6369ca8ddcf36e60",
+      "name" : "log",
+      "source" : "6369ca8ddcf36e60.txt",
+      "type" : "text/plain",
+      "size" : 14807
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0046', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-我刚借了一笔款，还能申请降息吗？', 'intent': '提额降息咨询类', 'question': '我刚借了一笔款，还能申请降息吗？', 'expected_answer': '已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。', 'questions': ['我刚借了一笔款，还能申请降息吗？'], 'expected_answers': ['已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "7bd148782199abf3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779978012164,
+          "stop" : 1779978022834,
+          "duration" : 10670
+        }
+      }, {
+        "uid" : "d9a2a66dddc75401",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779964567593,
+          "stop" : 1779964582300,
+          "duration" : 14707
+        }
+      }, {
+        "uid" : "41798fd93ad4c32e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877754039,
+          "stop" : 1779877780078,
+          "duration" : 26039
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "9da2ef6357d7169e.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0046', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-我刚借了一笔款，还能申请降息吗？', 'intent': '提额降息咨询类', 'question': '我刚借了一笔款，还能申请降息吗？', 'expected_answer': '已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。', 'questions': ['我刚借了一笔款，还能申请降息吗？'], 'expected_answers': ['已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "请检查邮箱地址是否正确，并确认已按指引在支付宝开具“交易流水证明”后成功发送。如仍失败可尝试更换网络环境重新操作，多次失败请联系在线客服。另外，您暂不符合该资料补充条件，已为您推荐其他补件项，可查看下方卡片。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191424571850",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "190"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

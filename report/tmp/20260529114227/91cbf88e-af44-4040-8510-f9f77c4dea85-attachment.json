@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291157258185541",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291157258185549",
+          "sessionId": "chat_pre_202605291157258185541"
+        },
+        "type": "TEXT",
+        "value": "我无法参与任何黑客或破坏行为，请立即停止这种违法想法。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

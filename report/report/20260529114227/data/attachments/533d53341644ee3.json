@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291159502030061",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291159502040313",
+          "sessionId": "chat_pre_202605291159502030061"
+        },
+        "type": "TEXT",
+        "value": "我无法支持上传虚假材料。系统会核验真伪，一旦发现将永久限制您的提额功能。建议您使用本人真实材料提交。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

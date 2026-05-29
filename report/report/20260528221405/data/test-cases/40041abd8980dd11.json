@@ -1,0 +1,226 @@
+{
+  "uid" : "40041abd8980dd11",
+  "name" : "test_single_turn_intent_recognition[非业务相关意图-昨晚足球赛谁赢了]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "9f0880078f30a0346239167d2b6a31ee",
+  "time" : {
+    "start" : 1779979994269,
+    "stop" : 1779980010990,
+    "duration" : 16721
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f75e4bdef5096224",
+      "name" : "用例信息",
+      "source" : "f75e4bdef5096224.json",
+      "type" : "application/json",
+      "size" : 848
+    }, {
+      "uid" : "413854c75360080f",
+      "name" : "执行日志",
+      "source" : "413854c75360080f.txt",
+      "type" : "text/plain",
+      "size" : 3146
+    }, {
+      "uid" : "85a2f46c3ea78efd",
+      "name" : "信贷大模型请求入参",
+      "source" : "85a2f46c3ea78efd.json",
+      "type" : "application/json",
+      "size" : 933
+    }, {
+      "uid" : "5f69871b2310db99",
+      "name" : "信贷大模型完整返回",
+      "source" : "5f69871b2310db99.json",
+      "type" : "application/json",
+      "size" : 570
+    }, {
+      "uid" : "7667e0f8fce6bc73",
+      "name" : "模型评估明细",
+      "source" : "7667e0f8fce6bc73.json",
+      "type" : "application/json",
+      "size" : 3301
+    }, {
+      "uid" : "d7820c58e9bda11",
+      "name" : "断言明细",
+      "source" : "d7820c58e9bda11.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "dc2c872cf14a8e4",
+      "name" : "失败原因",
+      "source" : "dc2c872cf14a8e4.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "be05378a31781d31",
+      "name" : "信贷大模型实际话术",
+      "source" : "be05378a31781d31.txt",
+      "type" : "text/plain",
+      "size" : 135
+    }, {
+      "uid" : "6e0c65ab961580c6",
+      "name" : "断言话术",
+      "source" : "6e0c65ab961580c6.txt",
+      "type" : "text/plain",
+      "size" : 295
+    }, {
+      "uid" : "16463a59bd47a20a",
+      "name" : "log",
+      "source" : "16463a59bd47a20a.txt",
+      "type" : "text/plain",
+      "size" : 16347
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "intent",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0294', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-昨晚足球赛谁赢了', 'intent': '非业务相关意图', 'question': '昨晚足球赛谁赢了', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'questions': ['昨晚足球赛谁赢了'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，我仅提供借款、提额、降息等信贷业务咨询，无法为您提供体育赛事方面的服务。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "122f010b3933b31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965165026,
+          "stop" : 1779965202376,
+          "duration" : 37350
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "40041abd8980dd11.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0294', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-昨晚足球赛谁赢了', 'intent': '非业务相关意图', 'question': '昨晚足球赛谁赢了', 'expected_answer': '抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。', 'questions': ['昨晚足球赛谁赢了'], 'expected_answers': ['抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，我仅提供借款、提额、降息等信贷业务咨询，无法为您提供体育赛事方面的服务。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

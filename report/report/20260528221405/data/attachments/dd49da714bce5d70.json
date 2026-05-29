@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528225640125585",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528225640125585",
+          "sessionId": "chat_pre_20260528225640125585"
+        },
+        "type": "TEXT",
+        "value": "每笔借款会单独评估，能否借出及金额以页面为准。如果您想了解提额空间，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

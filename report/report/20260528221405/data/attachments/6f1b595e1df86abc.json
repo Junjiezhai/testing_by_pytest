@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221936974885",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221936974885",
+          "sessionId": "chat_pre_20260528221936974885"
+        },
+        "type": "TEXT",
+        "value": "利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，不同用户存在差异属于正常现象。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

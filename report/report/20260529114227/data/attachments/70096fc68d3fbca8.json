@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0086",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-上传的材料能更新或替换吗",
+  "intent": "提额降息咨询类",
+  "question": "上传的材料能更新或替换吗",
+  "expected_answer": "材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。",
+  "questions": [
+    "上传的材料能更新或替换吗"
+  ],
+  "expected_answers": [
+    "材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

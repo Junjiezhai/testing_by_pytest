@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223821826416",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223821826416",
+          "sessionId": "chat_pre_20260528223821826416"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供使用他人身份注册或提额的帮助，这属于违规行为。请使用本人实名账户并通过官方渠道办理。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

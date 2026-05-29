@@ -1,0 +1,230 @@
+{
+  "uid" : "473960e5c78bfa53",
+  "name" : "test_multi_turn_dialog_consistency[咨询到操作递进-20]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "8c94d75fdb5f12fcc02dc79bf8897979",
+  "time" : {
+    "start" : 1780029602367,
+    "stop" : 1780029671228,
+    "duration" : 68861
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154742,
+      "stop" : 1780026154743,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "186314974a3efaee",
+      "name" : "信贷大模型实际话术",
+      "source" : "186314974a3efaee.txt",
+      "type" : "text/plain",
+      "size" : 820
+    }, {
+      "uid" : "4372b1f6e3049eaa",
+      "name" : "断言话术",
+      "source" : "4372b1f6e3049eaa.txt",
+      "type" : "text/plain",
+      "size" : 1628
+    }, {
+      "uid" : "b46de4c4448921a3",
+      "name" : "多轮失败定位摘要",
+      "source" : "b46de4c4448921a3.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "f70972863974302b",
+      "name" : "执行日志",
+      "source" : "f70972863974302b.txt",
+      "type" : "text/plain",
+      "size" : 9196
+    }, {
+      "uid" : "2dd5c9fee423cd9f",
+      "name" : "模型评估明细CSV",
+      "source" : "2dd5c9fee423cd9f.csv",
+      "type" : "text/csv",
+      "size" : 2701
+    }, {
+      "uid" : "d52627585084920f",
+      "name" : "多轮逐轮评估明细",
+      "source" : "d52627585084920f.json",
+      "type" : "application/json",
+      "size" : 25624
+    }, {
+      "uid" : "2647f2b73aaa4029",
+      "name" : "log",
+      "source" : "2647f2b73aaa4029.txt",
+      "type" : "text/plain",
+      "size" : 50353
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031524848,
+      "stop" : 1780031525852,
+      "duration" : 1004
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c510cab333f1856",
+      "name" : "模型测试汇总",
+      "source" : "c510cab333f1856.txt",
+      "type" : "text/plain",
+      "size" : 54201
+    }, {
+      "uid" : "8cecd45c5718a706",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "8cecd45c5718a706.csv",
+      "type" : "text/csv",
+      "size" : 349269
+    }, {
+      "uid" : "11211fbaecb2768",
+      "name" : "模型测试明细Excel路径",
+      "source" : "11211fbaecb2768.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "c834f38516b317b5",
+      "name" : "模型测试汇总JSON",
+      "source" : "c834f38516b317b5.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "what到how递进"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "what到how递进"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "34324-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0060', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-20', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '我提交了多种材料，是全部审核完才出结果吗？', 'expected_answer': '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'questions': ['经常使用提额功能会有负面影响吗？', '上传的材料能更新或替换吗', '我提交了多种材料，是全部审核完才出结果吗？'], 'expected_answers': ['频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', '材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '经常使用提额功能会有负面影响吗？', 'expected_answer': '频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '上传的材料能更新或替换吗', 'expected_answer': '材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我提交了多种材料，是全部审核完才出结果吗？', 'expected_answer': '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "87274a9d9bcc9db9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779983328728,
+          "stop" : 1779983420939,
+          "duration" : 92211
+        }
+      }, {
+        "uid" : "f8a8209a71307b49",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779966111376,
+          "stop" : 1779966194088,
+          "duration" : 82712
+        }
+      }, {
+        "uid" : "a9a042ea30229daa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779882844265,
+          "stop" : 1779883044725,
+          "duration" : 200460
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "473960e5c78bfa53.json",
+  "parameterValues" : [ "{'case_id': 'MD_0060', 'case_type': 'multi_turn', 'case_desc': '咨询到操作递进-20', 'remark': 'what到how递进', 'intent': '提额降息咨询类', 'question': '我提交了多种材料，是全部审核完才出结果吗？', 'expected_answer': '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'questions': ['经常使用提额功能会有负面影响吗？', '上传的材料能更新或替换吗', '我提交了多种材料，是全部审核完才出结果吗？'], 'expected_answers': ['频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', '材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '信息查询类'], 'context_assert_types': ['what_to_how', 'cross_intent_switch', 'cross_intent_switch'], 'previous_intents': ['', '提额降息咨询类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '经常使用提额功能会有负面影响吗？', 'expected_answer': '频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。频繁申请提额不会直接扣分，但短期内多次失败会浪费您的精力。建议间隔1-3个月，有实质资质改善后再申请。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'what_to_how', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '上传的材料能更新或替换吗', 'expected_answer': '材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料提交后暂不支持更新或替换，请您在提交前仔细核对材料内容，确保准确无误。若已审核完成，可等待下次提额开放机会再提交新材料。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我提交了多种材料，是全部审核完才出结果吗？', 'expected_answer': '是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。是的，系统会等待所有材料审核完毕后，综合评估给出最终结果。', 'round_intent': '信息查询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'cross_intent_switch', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

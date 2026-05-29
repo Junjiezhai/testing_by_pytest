@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0341",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-降息到月息0.5%有可能吗",
+  "intent": "提额降息咨询类",
+  "question": "降息到月息0.5%有可能吗",
+  "expected_answer": "月息0.5%即年化约6%，属于较低利率水平，能否达到取决于您的综合信用评估。具体利率以系统评估结果为准。",
+  "questions": [
+    "降息到月息0.5%有可能吗"
+  ],
+  "expected_answers": [
+    "月息0.5%即年化约6%，属于较低利率水平，能否达到取决于您的综合信用评估。具体利率以系统评估结果为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "月息0.5%折算年化利率大约为6%，这是一个相对较低的利率水平。能否享受该利率主要取决于您的综合信用情况，最终以系统评估结果为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

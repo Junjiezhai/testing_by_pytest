@@ -1,0 +1,539 @@
+[
+  {
+    "round": 1,
+    "question": "你好",
+    "expected_answer": "您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？",
+    "reference_answer": "您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？",
+    "actual_answer": "您好！我是分期乐智能信贷顾问，主要帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "context_ellipsis",
+    "expect_refuse": false,
+    "standard_similarity_score": 90.0,
+    "reference_similarity_score": 90.0,
+    "similarity_score": 90.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=90.0；参考答案评分=90.0",
+    "intent_pass": true,
+    "intent_reason": "实际话术完成了问候并引导用户说明需求，符合非业务意图的期望。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=90.0，阈值=70.0；标准答案分=90.0；参考答案分=90.0",
+        "reason": "核心均为问候并询问需求，缺少品牌介绍符合场景，语义一致。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=问候并询问业务",
+        "reason": "实际话术完成了问候并引导用户说明需求，符合非业务意图的期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=context_ellipsis，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "历史对话为空，不存在上下文污染、用户改口或风险问题，所有上下文断言默认通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "历史对话为空，不存在上下文污染、用户改口或风险问题，所有上下文断言默认通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 3.019,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0109_1779985848126930",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003048126930_0",
+              "content": "你好",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003103136556_1",
+              "content": "您好！我是分期乐智能信贷顾问，主要帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003103136556_2",
+              "content": "在吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003117633514_3",
+              "content": "您好！我是分期乐智能信贷顾问，可以帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003117633514_4",
+              "content": "今天星期几",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003144934596_5",
+              "content": "我主要帮您解答分期乐提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0109_1779985848126930",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529003048126930_0",
+              "sessionId": "chat_pre_MD_0109_1779985848126930"
+            },
+            "type": "TEXT",
+            "value": "您好！我是分期乐智能信贷顾问，主要帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "在吗",
+    "expected_answer": "在的，我是信贷助手，请问有什么可以帮您？",
+    "reference_answer": "在的，我是信贷助手，请问有什么可以帮您？",
+    "actual_answer": "您好！我是分期乐智能信贷顾问，可以帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "非业务相关意图",
+    "context_assert_type": "context_ellipsis",
+    "expect_refuse": false,
+    "standard_similarity_score": 85.0,
+    "reference_similarity_score": 85.0,
+    "similarity_score": 85.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=85.0；参考答案评分=85.0",
+    "intent_pass": true,
+    "intent_reason": "实际话术保持问候并引导业务，符合非业务相关意图的期望。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=85.0，阈值=70.0；标准答案分=85.0；参考答案分=85.0",
+        "reason": "核心语义是对用户'在吗'的回应并询问需求，但标准答案明确回复'在的'，而实际话术未直接确认'在的'，而是直接重复问候和业务引导，缺失了直接回应'在吗'这一关键确认。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=非业务相关意图",
+        "reason": "实际话术保持问候并引导业务，符合非业务相关意图的期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=context_ellipsis，上一轮意图=非业务相关意图，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上下文类型为context_ellipsis，上一轮意图为非业务相关，当前轮用户'在吗'属于同一意图的延续，模型回复正确承接了对话，继续提供问候和业务引导，无意图污染、改口、风险或回归业务场景，所有断言通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上下文类型为context_ellipsis，上一轮意图为非业务相关，当前轮用户'在吗'属于同一意图的延续，模型回复正确承接了对话，继续提供问候和业务引导，无意图污染、改口、风险或回归业务场景，所有断言通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.681,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0109_1779985848126930",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003048126930_0",
+              "content": "你好",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003103136556_1",
+              "content": "您好！我是分期乐智能信贷顾问，主要帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003103136556_2",
+              "content": "在吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003117633514_3",
+              "content": "您好！我是分期乐智能信贷顾问，可以帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003117633514_4",
+              "content": "今天星期几",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003144934596_5",
+              "content": "我主要帮您解答分期乐提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0109_1779985848126930",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529003103136556_2",
+              "sessionId": "chat_pre_MD_0109_1779985848126930"
+            },
+            "type": "TEXT",
+            "value": "您好！我是分期乐智能信贷顾问，可以帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "今天星期几",
+    "expected_answer": "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，日期问题不在我的服务范围内。",
+    "reference_answer": "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，日期问题不在我的服务范围内。",
+    "actual_answer": "我主要帮您解答分期乐提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "非业务相关意图",
+    "context_assert_type": "context_ellipsis",
+    "expect_refuse": false,
+    "standard_similarity_score": 85.0,
+    "reference_similarity_score": 85.0,
+    "similarity_score": 85.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=85.0；参考答案评分=85.0",
+    "intent_pass": true,
+    "intent_reason": "用户询问日期属于闲聊，模型以业务范围限定回应并引导业务，符合非业务意图应对的期望。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=85.0，阈值=70.0；标准答案分=85.0；参考答案分=85.0",
+        "reason": "实际回复虽未明确说出'日期问题不在服务范围内'，但通过限定业务范围并引导至贷言相关问题，实现了拒绝回答日期并回归业务引导的核心语义，与标准答案隐含的拒绝逻辑一致。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=非业务相关意图",
+        "reason": "用户询问日期属于闲聊，模型以业务范围限定回应并引导业务，符合非业务意图应对的期望。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=context_ellipsis，上一轮意图=非业务相关意图，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "上下文类型为context_ellipsis，上一轮为非业务意图，当前轮用户换到日期问题，模型未直接回答但延续业务引导，合理承接且未受前轮意图污染；无改口、无风险拒答场景，也无拒答后回归场景。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "上下文类型为context_ellipsis，上一轮为非业务意图，当前轮用户换到日期问题，模型未直接回答但延续业务引导，合理承接且未受前轮意图污染；无改口、无风险拒答场景，也无拒答后回归场景。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.545,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0109_1779985848126930",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130948",
+          "externalUserId": "4130948",
+          "userId": "4130948",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003048126930_0",
+              "content": "你好",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003103136556_1",
+              "content": "您好！我是分期乐智能信贷顾问，主要帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003103136556_2",
+              "content": "在吗",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003117633514_3",
+              "content": "您好！我是分期乐智能信贷顾问，可以帮您解答提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260529003117633514_4",
+              "content": "今天星期几",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260529003144934596_5",
+              "content": "我主要帮您解答分期乐提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0109_1779985848126930",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260529003117633514_4",
+              "sessionId": "chat_pre_MD_0109_1779985848126930"
+            },
+            "type": "TEXT",
+            "value": "我主要帮您解答分期乐提额、降息和材料相关的疑问。请问您今天想咨询哪项业务？",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

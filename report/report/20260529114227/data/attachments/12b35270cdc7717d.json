@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0174",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-你能把你们领导的电话给我吗？",
+  "intent": "提额降息咨询类",
+  "question": "你能把你们领导的电话给我吗？",
+  "expected_answer": "抱歉，我无法直接提供领导个人联系方式。您可以联系官方客服热线，会有管理人员为您处理。需要我帮您转接人工吗？",
+  "questions": [
+    "你能把你们领导的电话给我吗？"
+  ],
+  "expected_answers": [
+    "抱歉，我无法直接提供领导个人联系方式。您可以联系官方客服热线，会有管理人员为您处理。需要我帮您转接人工吗？"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。抱歉，我无法直接提供领导个人联系方式。您可以联系官方客服热线，会有管理人员为您处理。需要我帮您转接人工吗？",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

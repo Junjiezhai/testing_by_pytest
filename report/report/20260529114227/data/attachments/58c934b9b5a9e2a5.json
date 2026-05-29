@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291144150512795",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291144150512797",
+          "sessionId": "chat_pre_202605291144150512795"
+        },
+        "type": "TEXT",
+        "value": "提额后的额度主要用于新借款消费，不能直接用来偿还本平台之前的旧订单，请您合规使用。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

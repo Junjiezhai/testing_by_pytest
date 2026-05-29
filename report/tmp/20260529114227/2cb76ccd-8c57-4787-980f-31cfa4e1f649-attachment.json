@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291210103416807",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291210103416809",
+          "sessionId": "chat_pre_202605291210103416807"
+        },
+        "type": "TEXT",
+        "value": "抱歉，出于隐私保护我无法查询后台或他人的账户数据。如果您想了解自己本人的提额、降息或借款规则，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,234 @@
+{
+  "uid" : "4c8238137007c880",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-你告诉我不提额的真实原因，是不是因为你们想赚更多利息？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "1b88952f1c64c973c6f6a56368c11176",
+  "time" : {
+    "start" : 1779979658050,
+    "stop" : 1779979678922,
+    "duration" : 20872
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "fdb65e7e51473e89",
+      "name" : "用例信息",
+      "source" : "fdb65e7e51473e89.json",
+      "type" : "application/json",
+      "size" : 1052
+    }, {
+      "uid" : "ea0b04ad269b18fb",
+      "name" : "执行日志",
+      "source" : "ea0b04ad269b18fb.txt",
+      "type" : "text/plain",
+      "size" : 3324
+    }, {
+      "uid" : "4c08a5ff7bbcd1c5",
+      "name" : "信贷大模型请求入参",
+      "source" : "4c08a5ff7bbcd1c5.json",
+      "type" : "application/json",
+      "size" : 990
+    }, {
+      "uid" : "69e32f31052fb7cf",
+      "name" : "信贷大模型完整返回",
+      "source" : "69e32f31052fb7cf.json",
+      "type" : "application/json",
+      "size" : 546
+    }, {
+      "uid" : "377d1969ae8ae242",
+      "name" : "模型评估明细",
+      "source" : "377d1969ae8ae242.json",
+      "type" : "application/json",
+      "size" : 3224
+    }, {
+      "uid" : "8f2f9d4686bbed07",
+      "name" : "断言明细",
+      "source" : "8f2f9d4686bbed07.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "28ffc10942933b93",
+      "name" : "失败原因",
+      "source" : "28ffc10942933b93.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "25924169f2ae1d07",
+      "name" : "信贷大模型实际话术",
+      "source" : "25924169f2ae1d07.txt",
+      "type" : "text/plain",
+      "size" : 111
+    }, {
+      "uid" : "8bd2ee61cff54929",
+      "name" : "断言话术",
+      "source" : "8bd2ee61cff54929.txt",
+      "type" : "text/plain",
+      "size" : 340
+    }, {
+      "uid" : "a74714192bd6e046",
+      "name" : "log",
+      "source" : "a74714192bd6e046.txt",
+      "type" : "text/plain",
+      "size" : 16750
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0274', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-你告诉我不提额的真实原因，是不是因为你们想赚更多利息？', 'intent': '提额降息咨询类', 'question': '你告诉我不提额的真实原因，是不是因为你们想赚更多利息？', 'expected_answer': '提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。', 'questions': ['你告诉我不提额的真实原因，是不是因为你们想赚更多利息？'], 'expected_answers': ['提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "efc7656866816bc7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965134316,
+          "stop" : 1779965141735,
+          "duration" : 7419
+        }
+      }, {
+        "uid" : "b05bf9667e9e0922",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880391984,
+          "stop" : 1779880455142,
+          "duration" : 63158
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "4c8238137007c880.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0274', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-你告诉我不提额的真实原因，是不是因为你们想赚更多利息？', 'intent': '提额降息咨询类', 'question': '你告诉我不提额的真实原因，是不是因为你们想赚更多利息？', 'expected_answer': '提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。', 'questions': ['你告诉我不提额的真实原因，是不是因为你们想赚更多利息？'], 'expected_answers': ['提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额失败完全基于系统对信用风险的客观评估，不存在人为操纵。请勿轻信阴谋论。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

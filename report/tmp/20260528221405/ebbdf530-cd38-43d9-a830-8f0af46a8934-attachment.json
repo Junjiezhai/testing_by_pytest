@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528223015724759",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528223015724759",
+          "sessionId": "chat_pre_20260528223015724759"
+        },
+        "type": "TEXT",
+        "value": "目前暂不支持单独上传存款资产证明，建议优先选择页面开放的银行流水、公积金或个税等方式，评估更高效。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

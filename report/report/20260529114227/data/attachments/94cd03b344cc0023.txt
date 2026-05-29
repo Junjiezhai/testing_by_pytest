@@ -1,0 +1,343 @@
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:318 2026-05-29 at 12:12:24 | 
+==============【当前环境：env=pre, group=default】信贷大模型多轮测试 =============
+
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:12:24 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:12:24 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-29 at 12:12:24 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:12:24 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0006_1780027944095234", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121224095234_0", "content": "\\u6211\\u53ef\\u4ee5\\u4e3b\\u52a8\\u8981\\u6c42\\u964d\\u5230\\u5e74\\u531610%\\u4ee5\\u4e0b\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:12:27 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661780027944404153404056","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0006_1780027944095234","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"lastMsgId":"msg_model_customer_20260529121224095234_0","sessionId":"chat_pre_MD_0006_1780027944095234"},"type":"TEXT","value":"不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"2737ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-29 at 12:12:27 | 【模型意图识别】接口返回traceId: 0A0A28661780027944404153404056, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121224095234_0', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-29 at 12:12:27 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121224095234_0', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-29 at 12:12:27 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '我可以主动要求降到年化10%以下吗？', 'expected_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-29 at 12:12:49 | 【模型多轮逐轮多维度评估】响应结果为：200, 出参为: {"content":[{"signature":"","thinking":"我们被要求做评估。历史对话摘要为空。当前轮用户问题：我可以主动要求降到年化10%以下吗？当前轮模型实际话术：不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。标准答案：可以的，我们会为您匹配最优的提额降息项，以满足您的诉求。请问确定要降息到10%吗？外部模型参考答案：可以先确认您的目标额度或利率，再由系统匹配可用项目。可以的，我们会为您匹配最优的提额降息项，以满足您的诉求。请问确定要降息到10%吗？期望意图：提额降息咨询类，上一轮意图空，上下文断言类型：single_intent_followup，不期望拒答。\n\n注意：上下文断言类型是single_intent_followup，表示同一意图连续追问，但历史对话空，可能没有上一轮。需要评估。实际话术说不能承诺降到指定利率，暗示不能主动要求降到10%以下，而标准答案和参考都说可以的，会匹配最优。所以语义完全相反。实际话术属于否定回答，而标准答案是肯定回答。因此语义相似度低。同时意图：用户问能否主动要求降到10%以下，属于降息咨询。实际话术表达了不能承诺降到指定利率，但依然在回答降息相关，意图是提额降息咨询类，符合。上下文：因为没有历史，但断言类型是single_intent_followup，可能还需要看是否承接。历史空，上下文承接可能为true，因为没有上文。上一轮意图空，不存在污染。用户没有改口，没有风险拒答，没有返回业务。所以context部分，context_carry_pass应为true，intent_pollution_pass true， user_correction_pass true但这不是改口场景所以通过，risk_refusal_pass true因为没有风险，return_to_business_pass true因为没有拒答。但需要注意，single_intent_followup表示连续追问，但如果没有前文，这是第一轮？可能历史对话为空，那么实际上没有追问，也可以视为普通。context断言类型影响判断吗？要求判断当前回复是否正确承接前文上下文。如果前文为空，那么当前回复可以自己形成回答，应该承接没问题。intent_pollution: 上一轮意图为空，不存在污染。所以都通过。最终给出相似度分数。标准答案和实际话术语义相反，相似度低，比如20分。参考模型答案和实际话术也相反，相似度也低。但注意参考模型答案前半句“可以先确认您的目标额度或利率，再由系统匹配可用项目。可以的，...” 实际上也是肯定可以，与实际话术的否定相反。所以也低。但相似度评分需合理。给出理由。然后intent: actual_intent提取，预期意图是提额降息咨询类，话术是关于降息能否指定的，符合。所以pass。给出JSON。","type":"thinking"},{"text":"{\n  \"standard\": {\n    \"is_same_meaning\": false,\n    \"similarity_score\": 15,\n    \"reason\": \"标准答案肯定可以主动要求降息到指定利率，并询问是否确定；实际话术否定这种做法，强调不能承诺、以系统为准，核心语义相反，遗漏了‘可以匹配最优项目’的积极回应和确认问询。\"\n  },\n  \"reference\": {\n    \"is_same_meaning\": false,\n    \"similarity_score\": 15,\n    \"reason\": \"外部参考答案同样肯定可以，并提出先确认目标再匹配项目；实际话术完全否定，未采纳参考中的任何肯定性表述，核心语义冲突。\"\n  },\n  \"intent\": {\n    \"actual_intent\": \"提额降息咨询类\",\n    \"expected_intent\": \"提额降息咨询类\",\n    \"intent_pass\": true,\n    \"reason\": \"实际话术围绕降息能否指定利率展开，属于提额降息咨询范畴，与期望意图一致。\"\n  },\n  \"context\": {\n    \"context_carry_pass\": true,\n    \"intent_pollution_pass\": true,\n    \"user_correction_pass\": true,\n    \"risk_refusal_pass\": true,\n    \"return_to_business_pass\": true,\n    \"reason\": \"历史对话为空，无前文依赖，故上下文承接无问题；上一轮意图为空，不存在意图污染；非用户改口、非风险拒答、非拒答后回归业务，相关断言均默认通过。\"\n  }\n}","type":"text"}],"id":"msg_f243a05b-f6f3-46fd-9daa-90d3b05cdbce","model":"deepseek-v4-pro","role":"assistant","stop_reason":"end_turn","type":"message","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":638,"output_tokens":956,"total_tokens":1594}}
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:470 2026-05-29 at 12:12:49 | 【多轮第1轮】用户问题：我可以主动要求降到年化10%以下吗？，模型回复：不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。，相似度：15.0，意图：提额降息咨询类，耗时：3.065s
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:12:49 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:12:49 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-29 at 12:12:49 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:12:49 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0006_1780027944095234", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121224095234_0", "content": "\\u6211\\u53ef\\u4ee5\\u4e3b\\u52a8\\u8981\\u6c42\\u964d\\u5230\\u5e74\\u531610%\\u4ee5\\u4e0b\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121249058381_1", "content": "\\u4e0d\\u80fd\\u627f\\u8bfa\\u964d\\u5230\\u6307\\u5b9a\\u5229\\u7387\\uff0c\\u964d\\u606f\\u7ed3\\u679c\\u4f1a\\u7ed3\\u5408\\u60a8\\u7684\\u8d44\\u8d28\\u548c\\u9875\\u9762\\u89c4\\u5219\\u7efc\\u5408\\u8bc4\\u4f30\\uff0c\\u5177\\u4f53\\u4ee5 APP \\u5c55\\u793a\\u4e3a\\u51c6\\u3002", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121249058381_2", "content": "\\u6211\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u6709\\u66f4\\u9ad8\\u7684\\u989d\\u5ea6\\uff0c\\u53ef\\u4ee5\\u7528\\u6765\\u5411\\u4f60\\u4eec\\u7533\\u8bf7\\u964d\\u606f\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:12:52 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661780027969337154104056","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0006_1780027944095234","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"lastMsgId":"msg_model_customer_20260529121249058381_2","sessionId":"chat_pre_MD_0006_1780027944095234"},"type":"TEXT","value":"可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"3046ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-29 at 12:12:52 | 【模型意图识别】接口返回traceId: 0A0A28661780027969337154104056, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121249058381_2', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-29 at 12:12:52 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121249058381_1', 'content': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121249058381_2', 'content': '我在其他平台有更高的额度，可以用来向你们申请降息吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121249058381_1', 'content': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121249058381_2', 'content': '我在其他平台有更高的额度，可以用来向你们申请降息吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121249058381_2', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-29 at 12:12:52 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '我在其他平台有更高的额度，可以用来向你们申请降息吗？', 'expected_intent': '提额降息咨询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-29 at 12:13:21 | 【模型多轮逐轮多维度评估】响应结果为：200, 出参为: {"content":[{"signature":"","thinking":"我们被要求只返回JSON。根据输入，整理评估。\n\n当前轮：用户问题“我在其他平台有更高的额度，可以用来向你们申请降息吗？”，模型实际话术“可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。”\n\n标准答案：“您可以上传其他借款APP的额度及利率截图作为辅助材料，部分降息项目支持此种方式，系统会参考评估。”\n\n外部模型参考答案：“您可以根据页面提示完成操作。您可以上传其他借款APP的额度及利率截图作为辅助材料，部分降息项目支持此种方式，系统会参考评估。”\n\n期望意图：提额降息咨询类。上一轮意图：提额降息操作类（注意历史对话摘要中，第一轮意图是提额降息咨询类，但这里上一轮意图给的是提额降息操作类，有点矛盾，但按照输入来）。上下文断言类型：single_intent_followup。不期望拒答。\n\n评估：\n\n1. 标准答案与实际话术语义相似度：实际话术说“可以上传...作为辅助材料供系统参考评估。但不能保证一定降到10%以下...” 标准答案没有提到不能保证，只是说部分项目支持。但核心语义是“可以上传作为辅助材料，系统参考评估”。实际话术也包含这层意思，但加上了“不能保证一定降到10%以下”的限制。这算是增加了一个风险提示，但标准答案没有要求这个。相似度是否扣分？相似度评分规则：只判断核心语义，不要求逐字一致。遗漏关键限制、条件、风险提示、否定、操作路径时需要扣分。这里实际话术比标准答案多了个“不能保证一定降到10%以下”，但这并不是标准答案要求的关键限制，而是额外添加的。因为问题背景是用户希望降息到10%以下，模型回应不能保证，这可能与上下文承接有关。但仅对比标准答案，标准答案没有这个否定，实际话术多说了，是否算不一致？核心语义：上传截图作为辅助材料供参考。这已经说到了。相似度应该较高，可能扣一点分是因为标准答案没有提到“不能保证”，但这不是遗漏关键信息，而是额外信息，相似度可以不扣。不过，标准答案明确“部分降息项目支持此种方式”，实际话术没有提“部分”，只说“供系统参考评估”，暗示可能有效，但仍相似。给个分数，如90。\n\n2. 外部模型参考答案：“您可以根据页面提示完成操作。您可以上传其他借款APP的额度及利率截图作为辅助材料，部分降息项目支持此种方式，系统会参考评估。” 实际话术缺少“您可以根据页面提示完成操作”，但多了“但不能保证一定降到10%以下”。核心语义有上传截图作为辅助材料，系统参考评估。所以相似度也高。给90。\n\n3. intent：实际话术意图是提额降息咨询类，期望意图是提额降息咨询类，一致。intent_pass: true。\n\n4. context_carry_pass：上下文类型为single_intent_followup，前一轮是“我可以主动要求降到年化10%以下吗？”模型回答“不能承诺...”，当前轮用户接着问“我在其他平台有更高的额度，可以用来向你们申请降息吗？” 这是同意图的连续追问，正确承接前文关于降息的讨论。实际话术提到“但不能保证一定降到10%以下”，呼应了前轮降息到10%的要求，承接正确。所以context_carry_pass: true。\n\n5. intent_pollution_pass：上一轮意图是提额降息操作类（输入中给的），当前轮是提额降息咨询类，算是同一大类，不会污染。如果是上一轮意图为其他不相关，才可能污染。但这里都是降息相关。所以污染通过。true。\n\n6. user_correction_pass：没有改口，只是追问。true。\n\n7. risk_refusal_pass：不期望拒答，正常回答，true。\n\n8. return_to_business_pass：无拒答后场景，true。\n\n综合，将结果填入JSON。","type":"thinking"},{"text":"{\n  \"standard\": {\"is_same_meaning\": true, \"similarity_score\": 90, \"reason\": \"核心语义均为允许上传其他平台额度截图作为辅助材料供系统参考评估，实际话术补充了不能保证降到10%以下的风险提示，未遗漏标准答案中的关键信息。\"},\n  \"reference\": {\"is_same_meaning\": true, \"similarity_score\": 90, \"reason\": \"与参考答案核心语义一致，均表示可上传截图作为辅助材料供系统参考，实际话术未包含页面提示操作，但主要意图达成。\"},\n  \"intent\": {\"actual_intent\": \"提额降息咨询类\", \"expected_intent\": \"提额降息咨询类\", \"intent_pass\": true, \"reason\": \"实际话术围绕能否用其他平台额度申请降息展开，属于提额降息咨询范畴，与期望意图一致。\"},\n  \"context\": {\n    \"context_carry_pass\": true,\n    \"intent_pollution_pass\": true,\n    \"user_correction_pass\": true,\n    \"risk_refusal_pass\": true,\n    \"return_to_business_pass\": true,\n    \"reason\": \"当前轮问题为同意图连续追问，实际话术承接前文降息话题并关联到降息至10%的要求；上一轮意图为同属降息相关，不存在跨意图污染；无改口、风险拒答或回归业务场景，相关断言默认通过。\"\n  }\n}","type":"text"}],"id":"msg_9e3c4390-da70-4abe-97fc-7d773c123f04","model":"deepseek-v4-pro","role":"assistant","stop_reason":"end_turn","type":"message","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":2541,"output_tokens":1204,"total_tokens":3745}}
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:470 2026-05-29 at 12:13:21 | 【多轮第2轮】用户问题：我在其他平台有更高的额度，可以用来向你们申请降息吗？，模型回复：可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。，相似度：90.0，意图：提额降息咨询类，耗时：3.342s
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:13:21 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:13:21 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-29 at 12:13:21 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-29 at 12:13:21 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0006_1780027944095234", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121224095234_0", "content": "\\u6211\\u53ef\\u4ee5\\u4e3b\\u52a8\\u8981\\u6c42\\u964d\\u5230\\u5e74\\u531610%\\u4ee5\\u4e0b\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121249058381_1", "content": "\\u4e0d\\u80fd\\u627f\\u8bfa\\u964d\\u5230\\u6307\\u5b9a\\u5229\\u7387\\uff0c\\u964d\\u606f\\u7ed3\\u679c\\u4f1a\\u7ed3\\u5408\\u60a8\\u7684\\u8d44\\u8d28\\u548c\\u9875\\u9762\\u89c4\\u5219\\u7efc\\u5408\\u8bc4\\u4f30\\uff0c\\u5177\\u4f53\\u4ee5 APP \\u5c55\\u793a\\u4e3a\\u51c6\\u3002", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121249058381_2", "content": "\\u6211\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u6709\\u66f4\\u9ad8\\u7684\\u989d\\u5ea6\\uff0c\\u53ef\\u4ee5\\u7528\\u6765\\u5411\\u4f60\\u4eec\\u7533\\u8bf7\\u964d\\u606f\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529121321358937_3", "content": "\\u53ef\\u4ee5\\u4e0a\\u4f20\\u5176\\u4ed6\\u501f\\u6b3eAPP\\u7684\\u989d\\u5ea6\\u53ca\\u5229\\u7387\\u622a\\u56fe\\u4f5c\\u4e3a\\u8f85\\u52a9\\u6750\\u6599\\u4f9b\\u7cfb\\u7edf\\u53c2\\u8003\\u8bc4\\u4f30\\u3002\\u4f46\\u4e0d\\u80fd\\u4fdd\\u8bc1\\u4e00\\u5b9a\\u964d\\u523010%\\u4ee5\\u4e0b\\uff0c\\u5177\\u4f53\\u7ed3\\u679c\\u4ee5\\u9875\\u9762\\u5c55\\u793a\\u4e3a\\u51c6\\u3002", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529121321359939_4", "content": "\\u964d\\u606f\\u540e\\u5982\\u679c\\u6211\\u518d\\u7533\\u8bf7\\u63d0\\u989d\\uff0c\\u5229\\u7387\\u4f1a\\u53d8\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-29 at 12:13:24 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9178002800165965710056B","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0006_1780027944095234","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"lastMsgId":"msg_model_customer_20260529121321359939_4","sessionId":"chat_pre_MD_0006_1780027944095234"},"type":"TEXT","value":"提额一般不直接影响利率，但如果补充了优质材料，系统可能会重新评估并给您更低的利率。","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"2409ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-29 at 12:13:24 | 【模型意图识别】接口返回traceId: 0A0A2BC9178002800165965710056B, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121321359939_4', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '提额一般不直接影响利率，但如果补充了优质材料，系统可能会重新评估并给您更低的利率。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-29 at 12:13:24 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121249058381_1', 'content': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121249058381_2', 'content': '我在其他平台有更高的额度，可以用来向你们申请降息吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121321358937_3', 'content': '可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121321359939_4', 'content': '降息后如果我再申请提额，利率会变吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0006_1780027944095234', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130948', 'externalUserId': '4130948', 'userId': '4130948', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121224095234_0', 'content': '我可以主动要求降到年化10%以下吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121249058381_1', 'content': '不能承诺降到指定利率，降息结果会结合您的资质和页面规则综合评估，具体以 APP 展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121249058381_2', 'content': '我在其他平台有更高的额度，可以用来向你们申请降息吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260529121321358937_3', 'content': '可以上传其他借款APP的额度及利率截图作为辅助材料供系统参考评估。但不能保证一定降到10%以下，具体结果以页面展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260529121321359939_4', 'content': '降息后如果我再申请提额，利率会变吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'code': '0', 'data': {'chatId': 'chat_pre_MD_0006_1780027944095234', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260529121321359939_4', 'sessionId': 'chat_pre_MD_0006_1780027944095234'}, 'type': 'TEXT', 'value': '提额一般不直接影响利率，但如果补充了优质材料，系统可能会重新评估并给您更低的利率。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-29 at 12:13:24 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '降息后如果我再申请提额，利率会变吗？', 'expected_intent': '提额降息咨询类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-29 at 12:13:24 | 【模型多轮逐轮多维度评估】响应结果为：429, 出参为: {"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-29 04:14:24 UTC","type":"None","param":"None","code":"429"}}
+[1m[31mERROR   [0m common.modelHttpAction:modelHttpAction.py:597 2026-05-29 at 12:13:24 | 发生的错误为：Traceback (most recent call last):
+  File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-29 04:14:24 UTC","type":"None","param":"None","code":"429"}}
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "<string>", line 8, in <module>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1554, in serve
+    WorkerGateway(io=io, id=id, _startcount=2).serve()
+    |                |      -> 'gw1-worker'
+    |                -> <execnet.gateway_base.Popen2IO object at 0x0000020E52915160>
+    -> <class 'execnet.gateway_base.WorkerGateway'>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1060, in serve
+    self._execpool.integrate_as_primary_thread()
+    |    |         -> <function WorkerPool.integrate_as_primary_thread at 0x0000020E529B6EA0>
+    |    -> <execnet.gateway_base.WorkerPool object at 0x0000020E52A57630>
+    -> <execnet.gateway_base.WorkerGateway object at 0x0000020E52915588>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 267, in integrate_as_primary_thread
+    self._perform_spawn(reply)
+    |    |              -> <execnet.gateway_base.Reply object at 0x0000020E52A57940>
+    |    -> <function WorkerPool._perform_spawn at 0x0000020E529BA0D0>
+    -> <execnet.gateway_base.WorkerPool object at 0x0000020E52A57630>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 285, in _perform_spawn
+    reply.run()
+    |     -> <function Reply.run at 0x0000020E529B6D08>
+    -> <execnet.gateway_base.Reply object at 0x0000020E52A57940>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 220, in run
+    self._result = func(*args, **kwargs)
+    |              |     |       -> {}
+    |              |     -> ((<Channel id=1 open>, ('"""\n    This module is executed in remote subprocesses and helps to\n    control a remote testing s...
+    |              -> <bound method WorkerGateway.executetask of <execnet.gateway_base.WorkerGateway object at 0x0000020E52915588>>
+    -> <execnet.gateway_base.Reply object at 0x0000020E52A57940>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1084, in executetask
+    do_exec(co, loc)  # noqa
+    |       |   -> {'channel': <Channel id=1 open>, '__name__': '__channelexec__', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in...
+    |       -> <code object <module> at 0x0000020E52A89540, file "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\re...
+    -> <built-in function exec>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 291, in <module>
+    config.hook.pytest_cmdline_main(config=config)
+    |      |    |                          -> <_pytest.config.Config object at 0x0000020E5373AA20>
+    |      |    -> <_HookCaller 'pytest_cmdline_main'>
+    |      -> <pluggy.hooks._HookRelay object at 0x0000020E52A9F8D0>
+    -> <_pytest.config.Config object at 0x0000020E5373AA20>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'config': <_pytest.config.Config object at 0x0000020E5373AA20>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x0000020E52FAFBF8>
+           |    |         |     -> <_HookCaller 'pytest_cmdline_main'>
+           |    |         -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>>
+           -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'config': <_pytest.config.Config object at 0x0000020E5373AA20>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000020E53730BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000020E5372F3C8>
+                |    |    |    |                     -> <_HookCaller 'pytest_cmdline_main'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000020E5372F3C8>
+                -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<_pytest.config.Config object at 0x0000020E5373AA20>]
+          |         -> <function pytest_cmdline_main at 0x0000020E53564F28>
+          -> <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\Py...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 316, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           |            |       -> <function _main at 0x0000020E53540048>
+           |            -> <_pytest.config.Config object at 0x0000020E5373AA20>
+           -> <function wrap_session at 0x0000020E53564EA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 269, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    |       |            |    |       -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+    |       |            |    -> <_pytest.config.Config object at 0x0000020E5373AA20>
+    |       |            -> <function _main at 0x0000020E53540048>
+    |       -> <ExitCode.OK: 0>
+    -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 323, in _main
+    config.hook.pytest_runtestloop(session=session)
+    |      |    |                          -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+    |      |    -> <_HookCaller 'pytest_runtestloop'>
+    |      -> <pluggy.hooks._HookRelay object at 0x0000020E52A9F8D0>
+    -> <_pytest.config.Config object at 0x0000020E5373AA20>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x0000020E52FAFBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtestloop'>
+           |    |         -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>>
+           -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000020E53730BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A668>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtestloop'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A668>
+                -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>]
+          |         -> <bound method WorkerInteractor.pytest_runtestloop of <__channelexec__.WorkerInteractor object at 0x0000020E5373AB00>>
+          -> <HookImpl plugin_name='2260552887040', plugin=<__channelexec__.WorkerInteractor object at 0x0000020E5373AB00>>
+
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 91, in pytest_runtestloop
+    self.run_one_test(torun)
+    |    |            -> [361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377]
+    |    -> <function WorkerInteractor.run_one_test at 0x0000020E53730620>
+    -> <__channelexec__.WorkerInteractor object at 0x0000020E5373AB00>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 110, in run_one_test
+    self.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    |    |      |    |                            |              -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    |    |      |    |                            -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+    |    |      |    -> <_HookCaller 'pytest_runtest_protocol'>
+    |    |      -> <pluggy.hooks._HookRelay object at 0x0000020E52A9F8D0>
+    |    -> <_pytest.config.Config object at 0x0000020E5373AA20>
+    -> <__channelexec__.WorkerInteractor object at 0x0000020E5373AB00>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x0000020E52FAFBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_protocol'>
+           |    |         -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>>
+           -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000020E53730BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A518>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_protocol'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A518>
+                -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8...
+          |         -> <function pytest_runtest_protocol at 0x0000020E53560B70>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 109, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    |               |              -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+    -> <function runtestprotocol at 0x0000020E53560BF8>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 126, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    |       |      |               |             -> True
+    |       |      |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+    |       |      -> <function call_and_report at 0x0000020E53564048>
+    |       -> <method 'append' of 'list' objects>
+    -> [<TestReport 'test_cases/test_model_intent_recognition.py::TestModelIntentRecognition::test_multi_turn_dialog_consistency[\\u...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 215, in call_and_report
+    call = call_runtest_hook(item, when, **kwds)
+           |                 |     |       -> {}
+           |                 |     -> 'call'
+           |                 -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+           -> <function call_runtest_hook at 0x0000020E53564158>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in call_runtest_hook
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       |           |             -> (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+            |          |       |           -> 'call'
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 311, in from_call
+    result: Optional[TResult] = func()
+            |        |          -> <function call_runtest_hook.<locals>.<lambda> at 0x0000020E5DD886A8>
+            |        -> +TResult
+            -> typing.Optional
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x0000020E52FAFBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_call'>
+           |    |         -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>>
+           -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000020E53730BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A2E8>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': False, 'historic': False}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A2E8>
+                -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8...
+          |         -> <function pytest_runtest_call at 0x0000020E53560D90>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 162, in pytest_runtest_call
+    item.runtest()
+    |    -> <function Function.runtest at 0x0000020E53607730>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 1641, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |    |                                   -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+    |    -> <property object at 0x0000020E534C19F8>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8\...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u96...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x0000020E52FAFBF8>
+           |    |         |     -> <_HookCaller 'pytest_pyfunc_call'>
+           |    |         -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>>
+           -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u96...
+           |    |               |     -> [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000020E53730BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x0000020E52A7CD68>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A048>
+                |    |    |    |                     -> <_HookCaller 'pytest_pyfunc_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000020E5373A048>
+                -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u54a8...
+          |         -> <function pytest_pyfunc_call at 0x0000020E535D3F28>
+          -> <HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 183, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             |              -> {'case_info': {'case_id': 'MD_0006', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-6', 'remark': '同一意图连续追问', 'int...
+             -> <bound method TestModelIntentRecognition.test_multi_turn_dialog_consistency of <test_model_intent_recognition.TestModelIntent...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\test_cases\test_model_intent_recognition.py", line 381, in test_multi_turn_dialog_consistency
+    similarity_threshold=case_info['similarity_threshold']
+                         -> {'case_id': 'MD_0006', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-6', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\assert_code\model_intent_assert.py", line 434, in evaluate_multi_turn_round
+    expect_refuse=bool(round_info.get('expect_refuse'))
+                       |          -> <method 'get' of 'dict' objects>
+                       -> {'round': 3, 'question': '降息后如果我再申请提额，利率会变吗？', 'expected_answer': '提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。', 'referen...
+
+> File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-29 04:14:24 UTC","type":"None","param":"None","code":"429"}}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222835906160",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222835906160",
+          "sessionId": "chat_pre_20260528222835906160"
+        },
+        "type": "TEXT",
+        "value": "账户处于冻结或异常状态时暂不支持提额，建议您先联系在线客服解决账户问题后再尝试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

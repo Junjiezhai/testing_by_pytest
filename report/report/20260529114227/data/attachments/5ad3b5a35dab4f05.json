@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291209100830969",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291209100830966",
+          "sessionId": "chat_pre_202605291209100830969"
+        },
+        "type": "TEXT",
+        "value": "我理解您的心情，我这就为您转接人工客服，请稍等。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

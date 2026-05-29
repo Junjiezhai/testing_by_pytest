@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528230054500881",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528230054500881",
+          "sessionId": "chat_pre_20260528230054500881"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供内部员工作息信息。我主要为您提供分期乐提额、降息及材料相关的咨询服务，您可以直接告诉我您想咨询的业务。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

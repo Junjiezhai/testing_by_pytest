@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291155058717698",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291155058717698",
+          "sessionId": "chat_pre_202605291155058717698"
+        },
+        "type": "TEXT",
+        "value": "您是指转账一直未到账吗？这边暂不处理转账进度，建议您到 APP 查看账单详情或回复‘转人工’咨询官方客服。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

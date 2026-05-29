@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0075",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我能继续降息吗？",
+  "intent": "提额降息咨询类",
+  "question": "我能继续降息吗？",
+  "expected_answer": "1、可以的亲，请问你要继续降息到多少呢？2、很抱歉，暂无匹配的增信降息项目。请继续提高您的信用记录，之后会为您开放更多降息项哦~",
+  "questions": [
+    "我能继续降息吗？"
+  ],
+  "expected_answers": [
+    "1、可以的亲，请问你要继续降息到多少呢？2、很抱歉，暂无匹配的增信降息项目。请继续提高您的信用记录，之后会为您开放更多降息项哦~"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "可以先确认您的目标额度或利率，再由系统匹配可用项目。1、可以的亲，请问你要继续降息到多少呢？2、很抱歉，暂无匹配的增信降息项目。请继续提高您的信用记录，之后会为您开放更多降息项哦~",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291209342855552",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291209342855551",
+          "sessionId": "chat_pre_202605291209342855552"
+        },
+        "type": "TEXT",
+        "value": "抱歉，内部培训资料无法提供。如需咨询提额、降息或材料规则，您可以直接告诉我具体事项。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

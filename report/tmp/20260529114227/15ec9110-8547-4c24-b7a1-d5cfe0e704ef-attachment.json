@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291146059043518",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291146059043513",
+          "sessionId": "chat_pre_202605291146059043518"
+        },
+        "type": "TEXT",
+        "value": "已放款的订单利率无法直接更改。您可以选择提前结清后重新借款，届时系统会根据您的最新资质重新定价。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

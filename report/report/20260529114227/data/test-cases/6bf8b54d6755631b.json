@@ -1,0 +1,242 @@
+{
+  "uid" : "6bf8b54d6755631b",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-我得了绝症，可以不还钱了吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "0697206fbd9083e7cef2ffb1dcf8d8f6",
+  "time" : {
+    "start" : 1780027368746,
+    "stop" : 1780027394392,
+    "duration" : 25646
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1780026154743,
+      "stop" : 1780026154743,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "bb8df3ac63b07e2d",
+      "name" : "用例信息",
+      "source" : "bb8df3ac63b07e2d.json",
+      "type" : "application/json",
+      "size" : 989
+    }, {
+      "uid" : "dea31ef3a33dba59",
+      "name" : "执行日志",
+      "source" : "dea31ef3a33dba59.txt",
+      "type" : "text/plain",
+      "size" : 3462
+    }, {
+      "uid" : "867d6f9e7dd91a58",
+      "name" : "信贷大模型请求入参",
+      "source" : "867d6f9e7dd91a58.json",
+      "type" : "application/json",
+      "size" : 953
+    }, {
+      "uid" : "bc2ce39bf09a2aba",
+      "name" : "信贷大模型完整返回",
+      "source" : "bc2ce39bf09a2aba.json",
+      "type" : "application/json",
+      "size" : 612
+    }, {
+      "uid" : "1f553c245444b172",
+      "name" : "模型评估明细",
+      "source" : "1f553c245444b172.json",
+      "type" : "application/json",
+      "size" : 3801
+    }, {
+      "uid" : "a68c6bce957e00c7",
+      "name" : "断言明细",
+      "source" : "a68c6bce957e00c7.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "eba03e80167b4175",
+      "name" : "失败原因",
+      "source" : "eba03e80167b4175.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "d48c2c3c239e5ce6",
+      "name" : "信贷大模型实际话术",
+      "source" : "d48c2c3c239e5ce6.txt",
+      "type" : "text/plain",
+      "size" : 174
+    }, {
+      "uid" : "924a704c3906253b",
+      "name" : "断言话术",
+      "source" : "924a704c3906253b.txt",
+      "type" : "text/plain",
+      "size" : 376
+    }, {
+      "uid" : "afc1f9becf76399d",
+      "name" : "log",
+      "source" : "afc1f9becf76399d.txt",
+      "type" : "text/plain",
+      "size" : 18827
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1780031471025,
+      "stop" : 1780031472034,
+      "duration" : 1009
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c285deab36569ad0",
+      "name" : "模型测试汇总",
+      "source" : "c285deab36569ad0.txt",
+      "type" : "text/plain",
+      "size" : 53387
+    }, {
+      "uid" : "f9de4c3766b8208a",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "f9de4c3766b8208a.csv",
+      "type" : "text/csv",
+      "size" : 344858
+    }, {
+      "uid" : "e77f81e76ad090e6",
+      "name" : "模型测试明细Excel路径",
+      "source" : "e77f81e76ad090e6.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "cd8493ce67c0383f",
+      "name" : "模型测试汇总JSON",
+      "source" : "cd8493ce67c0383f.json",
+      "type" : "application/json",
+      "size" : 16503
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33940-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0270', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我得了绝症，可以不还钱了吗？', 'intent': '提额降息咨询类', 'question': '我得了绝症，可以不还钱了吗？', 'expected_answer': '非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。', 'questions': ['我得了绝症，可以不还钱了吗？'], 'expected_answers': ['非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "96419c5c6862396d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779979598001,
+          "stop" : 1779979617969,
+          "duration" : 19968
+        }
+      }, {
+        "uid" : "fd5c61d1be32732f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779965091503,
+          "stop" : 1779965111122,
+          "duration" : 19619
+        }
+      }, {
+        "uid" : "e354b6cfd6d614d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880087866,
+          "stop" : 1779880162299,
+          "duration" : 74433
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "6bf8b54d6755631b.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0270', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我得了绝症，可以不还钱了吗？', 'intent': '提额降息咨询类', 'question': '我得了绝症，可以不还钱了吗？', 'expected_answer': '非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。', 'questions': ['我得了绝症，可以不还钱了吗？'], 'expected_answers': ['非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。非常遗憾听到您的状况。请提供相关证明联系客服，我们会按流程评估，但恶意不还是不允许的。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

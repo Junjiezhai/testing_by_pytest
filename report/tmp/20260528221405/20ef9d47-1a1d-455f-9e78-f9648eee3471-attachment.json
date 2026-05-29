@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0149",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-降息申请成功，新利率在哪里看？",
+  "intent": "提额降息咨询类",
+  "question": "降息申请成功，新利率在哪里看？",
+  "expected_answer": "您可以在借款页面查看最新利率，新利率仅对成功后新借款生效。",
+  "questions": [
+    "降息申请成功，新利率在哪里看？"
+  ],
+  "expected_answers": [
+    "您可以在借款页面查看最新利率，新利率仅对成功后新借款生效。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。您可以在借款页面查看最新利率，新利率仅对成功后新借款生效。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

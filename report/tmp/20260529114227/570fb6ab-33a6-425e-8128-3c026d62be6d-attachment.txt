@@ -1,0 +1,136 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0109
+【测试场景】：上下文省略追问-包含非业务相关意图-1
+【意图分类】：非业务相关意图
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：今天星期几
+【断言话术-标准答案】：抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，日期问题不在我的服务范围内。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130948", "content": "今天星期几", "chatId": "chat_pre_MD_0109_1780030864815943", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130104815943_0", "content": "你好", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130131166595_1", "content": "您好，我是分期乐智能信贷顾问，可以帮您了解提额或降息的规则与材料要求。您可以直接告诉我您想咨询的具体业务或事项。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130131166595_2", "content": "在吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130158343149_3", "content": "您好，我是分期乐智能信贷顾问。请问您是想咨询提额、降息还是材料相关的问题？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130158344119_4", "content": "今天星期几", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130227280922_5", "content": "我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0109_1780030864815943", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130104815943_0", "content": "你好", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130131166595_1", "content": "您好，我是分期乐智能信贷顾问，可以帮您了解提额或降息的规则与材料要求。您可以直接告诉我您想咨询的具体业务或事项。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130131166595_2", "content": "在吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130158343149_3", "content": "您好，我是分期乐智能信贷顾问。请问您是想咨询提额、降息还是材料相关的问题？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260529130158344119_4", "content": "今天星期几", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260529130227280922_5", "content": "我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0109_1780030864815943", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260529130158344119_4", "sessionId": "chat_pre_MD_0109_1780030864815943"}, "type": "TEXT", "value": "我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？
+【外部模型相似度评分】：61.67
+【外部模型评估原因】：多轮逐轮平均相似度：61.67
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：当前轮意图不正确：用户仅为打招呼，期望模型以非业务问候回应，不应直接切入业务引导，实际回复违背了期望意图。；当前轮意图不正确：用户问'在吗'属于非业务寒暄，期望模型以简单问候回应，实际回复再次切入业务引导，未满足期望意图。；话术平均评分 45.0 低于阈值 70.0；当前轮意图不正确：用户问‘今天星期几’属于非业务相关意图，期望模型以非业务方式回应（如声明无法回答并保持助手身份），实际回复再次引导业务咨询，未满足期望意图。；上下文断言失败：历史对话连续出现寒暄后模型主动引导业务，当前用户提问非业务问题，模型应明确拒绝并保持客服边界，实际回复未拒绝仍强行引导业务，未能正确承接上下文；意图无污染、无改口、无风险拒答、无回归业务场景。
+【响应耗时】：2.633s
+【相似度断言】：实际=61.67，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：意图识别 | 原因：当前轮意图不正确：用户仅为打招呼，期望模型以非业务问候回应，不应直接切入业务引导，实际回复违背了期望意图。
+问题：你好
+模型回复：您好，我是分期乐智能信贷顾问，可以帮您了解提额或降息的规则与材料要求。您可以直接告诉我您想咨询的具体业务或事项。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+第2轮 | 失败维度：意图识别 | 原因：当前轮意图不正确：用户问'在吗'属于非业务寒暄，期望模型以简单问候回应，实际回复再次切入业务引导，未满足期望意图。
+问题：在吗
+模型回复：您好，我是分期乐智能信贷顾问。请问您是想咨询提额、降息还是材料相关的问题？
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+第3轮 | 失败维度：话术相似度、意图识别、上下文承接 | 原因：话术平均评分 45.0 低于阈值 70.0；当前轮意图不正确：用户问‘今天星期几’属于非业务相关意图，期望模型以非业务方式回应（如声明无法回答并保持助手身份），实际回复再次引导业务咨询，未满足期望意图。；上下文断言失败：历史对话连续出现寒暄后模型主动引导业务，当前用户提问非业务问题，模型应明确拒绝并保持客服边界，实际回复未拒绝仍强行引导业务，未能正确承接上下文；意图无污染、无改口、无风险拒答、无回归业务场景。
+问题：今天星期几
+模型回复：我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+【多轮平均响应耗时】：2.633s
+【多轮总响应耗时】：7.899s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：你好
+期望意图：非业务相关意图
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：context_ellipsis
+上一轮意图：
+标准答案：您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？
+参考答案：您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？
+模型回复：您好，我是分期乐智能信贷顾问，可以帮您了解提额或降息的规则与材料要求。您可以直接告诉我您想咨询的具体业务或事项。
+标准答案评分：70.0
+参考答案评分：70.0
+平均相似度：70.0
+意图断言：False
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：False
+ASSET校验：True
+失败维度：意图识别
+失败原因：当前轮意图不正确：用户仅为打招呼，期望模型以非业务问候回应，不应直接切入业务引导，实际回复违背了期望意图。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+是否断言：True
+响应耗时：2.628s
+是否通过：False
+------ 第2轮 ------
+用户问题：在吗
+期望意图：非业务相关意图
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：context_ellipsis
+上一轮意图：非业务相关意图
+标准答案：在的，我是信贷助手，请问有什么可以帮您？
+参考答案：在的，我是信贷助手，请问有什么可以帮您？
+模型回复：您好，我是分期乐智能信贷顾问。请问您是想咨询提额、降息还是材料相关的问题？
+标准答案评分：70.0
+参考答案评分：70.0
+平均相似度：70.0
+意图断言：False
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：False
+ASSET校验：True
+失败维度：意图识别
+失败原因：当前轮意图不正确：用户问'在吗'属于非业务寒暄，期望模型以简单问候回应，实际回复再次切入业务引导，未满足期望意图。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+是否断言：True
+响应耗时：2.553s
+是否通过：False
+------ 第3轮 ------
+用户问题：今天星期几
+期望意图：非业务相关意图
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：context_ellipsis
+上一轮意图：非业务相关意图
+标准答案：抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，日期问题不在我的服务范围内。
+参考答案：抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，日期问题不在我的服务范围内。
+模型回复：我是分期乐智能信贷顾问，主要帮您咨询提额、降息和材料相关的问题。您有具体想了解的方面吗？
+标准答案评分：45.0
+参考答案评分：45.0
+平均相似度：45.0
+意图断言：False
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：False
+ASSET校验：True
+失败维度：话术相似度、意图识别、上下文承接
+失败原因：话术平均评分 45.0 低于阈值 70.0；当前轮意图不正确：用户问‘今天星期几’属于非业务相关意图，期望模型以非业务方式回应（如声明无法回答并保持助手身份），实际回复再次引导业务咨询，未满足期望意图。；上下文断言失败：历史对话连续出现寒暄后模型主动引导业务，当前用户提问非业务问题，模型应明确拒绝并保持客服边界，实际回复未拒绝仍强行引导业务，未能正确承接上下文；意图无污染、无改口、无风险拒答、无回归业务场景。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：2.718s
+是否通过：False
