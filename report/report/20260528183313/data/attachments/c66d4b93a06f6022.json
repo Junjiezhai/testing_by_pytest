@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184053749204",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184053749204",
+          "sessionId": "chat_pre_20260528184053749204"
+        },
+        "type": "TEXT",
+        "value": "借款资金严禁用于股票、基金等投资用途，请合规使用，否则可能提前收回贷款并影响征信。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0336",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我想把额度提到5万元",
+  "intent": "提额降息咨询类",
+  "question": "我想把额度提到5万元",
+  "expected_answer": "提额后的具体额度由系统根据您的信用状况综合评估，目前无法承诺一定能提升到5万元。建议您保持良好的还款记录，系统会定期评估。",
+  "questions": [
+    "我想把额度提到5万元"
+  ],
+  "expected_answers": [
+    "提额后的具体额度由系统根据您的信用状况综合评估，目前无法承诺一定能提升到5万元。建议您保持良好的还款记录，系统会定期评估。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "提升额度到5万元的具体结果是由系统根据您的信用状况综合评估的，目前无法保证一定能达到这个数额。建议您保持良好的还款记录，系统会定期进行评估。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

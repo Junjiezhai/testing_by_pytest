@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0052
+【测试场景】：提额降息咨询类-有没有免息券可以降息？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：有没有免息券可以降息？
+【断言话术-标准答案】：平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。平台会不定时发放免息券或降息券，请关注APP内活动通知和卡券中心，领取后可在借款时使用。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528222104789363", "sessionId": "chat_pre_20260528222104789363"}, "type": "TEXT", "value": "平台会不定时发放免息券或降息券，您可以关注APP内活动通知和卡券中心领取，领取后在借款时使用。", "bizVariableMap": {}}]
+【TEXT输出】：["平台会不定时发放免息券或降息券，您可以关注APP内活动通知和卡券中心领取，领取后在借款时使用。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "有没有免息券可以降息？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528222104789363", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528222104789363", "content": "有没有免息券可以降息？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528222104789363", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528222104789363", "sessionId": "chat_pre_20260528222104789363"}, "type": "TEXT", "value": "平台会不定时发放免息券或降息券，您可以关注APP内活动通知和卡券中心领取，领取后在借款时使用。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：平台会不定时发放免息券或降息券，您可以关注APP内活动通知和卡券中心领取，领取后在借款时使用。
+【外部模型相似度评分】：90.0
+【外部模型评估原因】：标准答案评分=98.0；参考答案评分=82.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.002s
+【相似度断言】：实际=90.0，阈值=70.0，结果=True
+【最终结果】：True

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183711384952",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183711384952",
+          "sessionId": "chat_pre_20260528183711384952"
+        },
+        "type": "TEXT",
+        "value": "有逾期记录的用户暂时无法申请降息，建议您先结清欠款并保持连续6个月良好记录后再尝试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

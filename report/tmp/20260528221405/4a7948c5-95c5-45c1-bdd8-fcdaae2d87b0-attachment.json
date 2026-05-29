@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222553630987",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222553630987",
+          "sessionId": "chat_pre_20260528222553630987"
+        },
+        "type": "TEXT",
+        "value": "同一时间段内提额和降息都有次数限制。如果页面显示可操作，您可以继续提交；如暂无入口，建议间隔1-3个月再试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

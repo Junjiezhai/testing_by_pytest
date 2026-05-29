@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0314",
+  "case_type": "single_turn",
+  "case_desc": "非业务相关意图-你会唱歌吗",
+  "intent": "非业务相关意图",
+  "question": "你会唱歌吗",
+  "expected_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，无法为您唱歌。",
+  "questions": [
+    "你会唱歌吗"
+  ],
+  "expected_answers": [
+    "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，无法为您唱歌。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "抱歉，我是信贷助手，主要负责借款、提额、降息等业务咨询，没法为您唱歌。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

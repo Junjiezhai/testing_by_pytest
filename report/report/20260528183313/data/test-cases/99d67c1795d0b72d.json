@@ -1,0 +1,208 @@
+{
+  "uid" : "99d67c1795d0b72d",
+  "name" : "test_model_summary_report",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_model_summary_report",
+  "historyId" : "93f216f0d68e79c7ec58e71d2fe6d548",
+  "time" : {
+    "start" : 1779967806226,
+    "stop" : 1779967809395,
+    "duration" : 3169
+  },
+  "description" : "\n        【信贷大模型--汇总报告】\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--汇总报告】\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--汇总报告】\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "49f7b4233fca54e7",
+      "name" : "模型测试汇总",
+      "source" : "49f7b4233fca54e7.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "2a1a85c071be5674",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "2a1a85c071be5674.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "9dc8c70b350af95c",
+      "name" : "模型测试明细Excel路径",
+      "source" : "9dc8c70b350af95c.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "8699bac379d5a43d",
+      "name" : "模型测试汇总JSON",
+      "source" : "8699bac379d5a43d.json",
+      "type" : "application/json",
+      "size" : 21169
+    }, {
+      "uid" : "c11033d8b65d2313",
+      "name" : "log",
+      "source" : "c11033d8b65d2313.txt",
+      "type" : "text/plain",
+      "size" : 107211
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967809396,
+      "stop" : 1779967810358,
+      "duration" : 962
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fbde1d619b55fad",
+      "name" : "模型测试汇总",
+      "source" : "9fbde1d619b55fad.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "96f4dbb4fc1f71f2",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "96f4dbb4fc1f71f2.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "fd894783606413a1",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fd894783606413a1.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "6277f00e85cc72d3",
+      "name" : "模型测试汇总JSON",
+      "source" : "6277f00e85cc72d3.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "模型测试汇总报告"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_summary"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30752-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 5,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "6d8862d947a5c4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779960861639,
+          "stop" : 1779960861716,
+          "duration" : 77
+        }
+      }, {
+        "uid" : "7844450024cdf755",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779884881985,
+          "stop" : 1779884884739,
+          "duration" : 2754
+        }
+      }, {
+        "uid" : "83a172aac614ec5e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779875429400,
+          "stop" : 1779875429454,
+          "duration" : 54
+        }
+      }, {
+        "uid" : "9a7ab7f747d8c251",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779871358965,
+          "stop" : 1779871359029,
+          "duration" : 64
+        }
+      } ]
+    },
+    "tags" : [ "model_summary", "model_intent_recognition" ]
+  },
+  "source" : "99d67c1795d0b72d.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0165",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-为什么我收到了提额成功通知，但额度没变",
+  "intent": "提额降息咨询类",
+  "question": "为什么我收到了提额成功通知，但额度没变",
+  "expected_answer": "可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。如仍未显示，请联系专属坐席提供截图核对。",
+  "questions": [
+    "为什么我收到了提额成功通知，但额度没变"
+  ],
+  "expected_answers": [
+    "可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。如仍未显示，请联系专属坐席提供截图核对。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "出现这种情况通常与系统综合评估结果有关。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。如仍未显示，请联系专属坐席提供截图核对。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

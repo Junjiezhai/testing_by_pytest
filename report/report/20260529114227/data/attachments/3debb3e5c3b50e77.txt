@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0348
+【测试场景】：借款下单类-我要借款10000元
+【意图分类】：借款下单类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我要借款10000元
+【断言话术-标准答案】：您可以进入借款页面申请1万元借款，系统会根据您的可用额度和信用状况进行审核。审核通过后，款项将尽快到账。
+【断言话术-外部模型参考答案】：您可以登录借款页面申请1万元的借款，系统会根据您的可用额度和信用状况进行审核。审核通过后，资金将尽快到账。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_202605291213582842194", "sessionId": "chat_pre_202605291213582842193"}, "type": "TEXT", "value": "我理解您想办理借款，这边暂不能直接替您操作。建议您登录分期乐 APP 查看借款下单入口和具体规则。", "bizVariableMap": {}}]
+【TEXT输出】：["我理解您想办理借款，这边暂不能直接替您操作。建议您登录分期乐 APP 查看借款下单入口和具体规则。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "我要借款10000元"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_202605291213582842193", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_202605291213582842194", "content": "我要借款10000元", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_202605291213582842193", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_202605291213582842194", "sessionId": "chat_pre_202605291213582842193"}, "type": "TEXT", "value": "我理解您想办理借款，这边暂不能直接替您操作。建议您登录分期乐 APP 查看借款下单入口和具体规则。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：我理解您想办理借款，这边暂不能直接替您操作。建议您登录分期乐 APP 查看借款下单入口和具体规则。
+【外部模型相似度评分】：82.0
+【外部模型评估原因】：标准答案评分=82.0；参考答案评分=82.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：2.993s
+【相似度断言】：实际=82.0，阈值=70.0，结果=True
+【最终结果】：True

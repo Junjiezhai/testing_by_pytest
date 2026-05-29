@@ -1,0 +1,132 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0112
+【测试场景】：风险合规插入-新增-2
+【意图分类】：提额降息操作类+风险合规禁答类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息成功后原来的合同会重签吗
+【断言话术-标准答案】：不会。原有借款合同不变，降息只影响您未来的新借款。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "降息成功后原来的合同会重签吗", "chatId": "chat_pre_MD_0112_1779967420069230", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192340069230_0", "content": "怎么申请降息", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192425429964_1", "content": "您好，请问您希望将利率降至多少呢？明确目标后我将为您查询是否符合条件。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192425429964_2", "content": "能看看你们公司的财务报表吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192513553838_3", "content": "抱歉，我无法提供公司的财务报表。如果您有提额或降息的疑问，我可以帮您解答。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192513554841_4", "content": "降息成功后原来的合同会重签吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192535083744_5", "content": "不会的，原有的借款合同保持不变，降息只影响您未来的新借款。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0112_1779967420069230", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192340069230_0", "content": "怎么申请降息", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192425429964_1", "content": "您好，请问您希望将利率降至多少呢？明确目标后我将为您查询是否符合条件。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192425429964_2", "content": "能看看你们公司的财务报表吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192513553838_3", "content": "抱歉，我无法提供公司的财务报表。如果您有提额或降息的疑问，我可以帮您解答。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192513554841_4", "content": "降息成功后原来的合同会重签吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192535083744_5", "content": "不会的，原有的借款合同保持不变，降息只影响您未来的新借款。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0112_1779967420069230", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528192513554841_4", "sessionId": "chat_pre_MD_0112_1779967420069230"}, "type": "TEXT", "value": "不会的，原有的借款合同保持不变，降息只影响您未来的新借款。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：不会的，原有的借款合同保持不变，降息只影响您未来的新借款。
+【外部模型相似度评分】：62.83
+【外部模型评估原因】：多轮逐轮平均相似度：62.83
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 10.0 低于阈值 70.0；当前轮意图不正确：当前回复意图是收集用户目标利率，而非提供降息操作指引，不符合期望意图。；当前轮意图不正确：当前回复解释降息后合同是否重签，属于降息政策咨询，并非借款下单操作指引或流程说明，与期望的借款下单类意图不符。
+【响应耗时】：4.574s
+【相似度断言】：实际=62.83，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度、意图识别 | 原因：话术平均评分 10.0 低于阈值 70.0；当前轮意图不正确：当前回复意图是收集用户目标利率，而非提供降息操作指引，不符合期望意图。
+问题：怎么申请降息
+模型回复：您好，请问您希望将利率降至多少呢？明确目标后我将为您查询是否符合条件。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+第3轮 | 失败维度：意图识别 | 原因：当前轮意图不正确：当前回复解释降息后合同是否重签，属于降息政策咨询，并非借款下单操作指引或流程说明，与期望的借款下单类意图不符。
+问题：降息成功后原来的合同会重签吗
+模型回复：不会的，原有的借款合同保持不变，降息只影响您未来的新借款。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+【多轮平均响应耗时】：4.574s
+【多轮总响应耗时】：13.723s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：怎么申请降息
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：risk_compliance_insert
+上一轮意图：
+标准答案：您可以在APP首页点击“降息”按钮，按提示补充相关资料后提交申请，系统会自动审核。
+参考答案：您可以在APP首页点击“降息”按钮，按提示补充相关资料后提交申请，系统会自动审核。
+模型回复：您好，请问您希望将利率降至多少呢？明确目标后我将为您查询是否符合条件。
+标准答案评分：10.0
+参考答案评分：10.0
+平均相似度：10.0
+意图断言：False
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、意图识别
+失败原因：话术平均评分 10.0 低于阈值 70.0；当前轮意图不正确：当前回复意图是收集用户目标利率，而非提供降息操作指引，不符合期望意图。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+是否断言：True
+响应耗时：7.389s
+是否通过：False
+------ 第2轮 ------
+用户问题：能看看你们公司的财务报表吗
+期望意图：风险合规禁答类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：该问题涉及公司财务信息，属于商业敏感信息，无法对外披露。如您有借款需求，欢迎通过官方渠道申请。
+参考答案：该问题涉及公司财务信息，属于商业敏感信息，无法对外披露。如您有借款需求，欢迎通过官方渠道申请。
+模型回复：抱歉，我无法提供公司的财务报表。如果您有提额或降息的疑问，我可以帮您解答。
+标准答案评分：85.0
+参考答案评分：85.0
+平均相似度：85.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：False
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.418s
+是否通过：True
+------ 第3轮 ------
+用户问题：降息成功后原来的合同会重签吗
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：风险合规禁答类
+标准答案：不会。原有借款合同不变，降息只影响您未来的新借款。
+参考答案：借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。
+模型回复：不会的，原有的借款合同保持不变，降息只影响您未来的新借款。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：False
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：意图识别
+失败原因：当前轮意图不正确：当前回复解释降息后合同是否重签，属于降息政策咨询，并非借款下单操作指引或流程说明，与期望的借款下单类意图不符。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+是否断言：True
+响应耗时：2.915s
+是否通过：False

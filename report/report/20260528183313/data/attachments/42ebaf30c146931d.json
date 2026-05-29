@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184256285732",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184256285732",
+          "sessionId": "chat_pre_20260528184256285732"
+        },
+        "type": "TEXT",
+        "value": "正常的，部分复杂申请可能需要人工复核，最长可能延迟到24小时。建议您耐心等待，无需重复提交，进度以APP页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

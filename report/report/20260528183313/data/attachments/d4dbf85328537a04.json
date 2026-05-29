@@ -1,0 +1,27 @@
+{
+  "data": {
+    "chatType": "NORMAL",
+    "handoffReason": "",
+    "replyContents": [
+      {
+        "type": "TEXT",
+        "value": "当前暂未满足直接提额条件，为您推荐征信提额，可通过下方卡片继续查看。"
+      },
+      {
+        "type": "ASSET",
+        "value": "AS2605191421518676",
+        "bizParamInfo": {
+          "biz_ref_id": [
+            "credit_report"
+          ]
+        }
+      }
+    ],
+    "intent": "",
+    "intentCode": "",
+    "intentName": ""
+  },
+  "code": "0",
+  "success": true,
+  "message": "success"
+}

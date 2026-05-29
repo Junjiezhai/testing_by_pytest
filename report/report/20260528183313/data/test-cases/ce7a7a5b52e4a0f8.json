@@ -1,0 +1,226 @@
+{
+  "uid" : "ce7a7a5b52e4a0f8",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-我换了手机号，提额功能还能用吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "fac7c3be27967b3326028fe03ba6f1cb",
+  "time" : {
+    "start" : 1779964503649,
+    "stop" : 1779964513804,
+    "duration" : 10155
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403827,
+      "stop" : 1779964403827,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "26b9e9ed60986ff",
+      "name" : "用例信息",
+      "source" : "26b9e9ed60986ff.json",
+      "type" : "application/json",
+      "size" : 1016
+    }, {
+      "uid" : "88a7bdd9848760ff",
+      "name" : "执行日志",
+      "source" : "88a7bdd9848760ff.txt",
+      "type" : "text/plain",
+      "size" : 3318
+    }, {
+      "uid" : "b7c272f6949010e9",
+      "name" : "信贷大模型请求入参",
+      "source" : "b7c272f6949010e9.json",
+      "type" : "application/json",
+      "size" : 957
+    }, {
+      "uid" : "cb3e3f7e0b4bce6c",
+      "name" : "信贷大模型完整返回",
+      "source" : "cb3e3f7e0b4bce6c.json",
+      "type" : "application/json",
+      "size" : 567
+    }, {
+      "uid" : "71f5af6d257ea4b9",
+      "name" : "模型评估明细",
+      "source" : "71f5af6d257ea4b9.json",
+      "type" : "application/json",
+      "size" : 3303
+    }, {
+      "uid" : "f36556df51a9b005",
+      "name" : "断言明细",
+      "source" : "f36556df51a9b005.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "1f9b9d13b5a9f5c8",
+      "name" : "失败原因",
+      "source" : "1f9b9d13b5a9f5c8.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "6f6ad601f2bbc494",
+      "name" : "信贷大模型实际话术",
+      "source" : "6f6ad601f2bbc494.txt",
+      "type" : "text/plain",
+      "size" : 132
+    }, {
+      "uid" : "f27ed9c7fc0d780c",
+      "name" : "断言话术",
+      "source" : "f27ed9c7fc0d780c.txt",
+      "type" : "text/plain",
+      "size" : 382
+    }, {
+      "uid" : "535fbef205ddff94",
+      "name" : "log",
+      "source" : "535fbef205ddff94.txt",
+      "type" : "text/plain",
+      "size" : 15054
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967870986,
+      "stop" : 1779967871920,
+      "duration" : 934
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aa1520d6e0884b75",
+      "name" : "模型测试汇总",
+      "source" : "aa1520d6e0884b75.txt",
+      "type" : "text/plain",
+      "size" : 54493
+    }, {
+      "uid" : "116d1396fa636e40",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "116d1396fa636e40.csv",
+      "type" : "text/csv",
+      "size" : 329652
+    }, {
+      "uid" : "c3309cf3809c0dd4",
+      "name" : "模型测试明细Excel路径",
+      "source" : "c3309cf3809c0dd4.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "2bf9a9992b5e81e",
+      "name" : "模型测试汇总JSON",
+      "source" : "2bf9a9992b5e81e.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "25176-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0030', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我换了手机号，提额功能还能用吗？', 'intent': '提额降息咨询类', 'question': '我换了手机号，提额功能还能用吗？', 'expected_answer': '更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。', 'questions': ['我换了手机号，提额功能还能用吗？'], 'expected_answers': ['更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "5fb7bec470392f36",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877665420,
+          "stop" : 1779877702841,
+          "duration" : 37421
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "ce7a7a5b52e4a0f8.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0030', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我换了手机号，提额功能还能用吗？', 'intent': '提额降息咨询类', 'question': '我换了手机号，提额功能还能用吗？', 'expected_answer': '更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。', 'questions': ['我换了手机号，提额功能还能用吗？'], 'expected_answers': ['更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

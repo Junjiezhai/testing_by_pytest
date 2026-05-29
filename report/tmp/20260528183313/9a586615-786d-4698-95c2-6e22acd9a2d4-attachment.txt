@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0045
+【测试场景】：咨询到操作递进-5
+【意图分类】：提额降息咨询类+提额降息操作类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息申请多久能出结果？
+【断言话术-标准答案】：自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "降息申请多久能出结果？", "chatId": "chat_pre_MD_0045_1779966330944166", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190530944166_0", "content": "提额成功后会立即生效吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190555779075_1", "content": "提额成功后额度会实时更新，您可以在借款页面查看最新额度。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190555780049_2", "content": "我刚借了一笔款，还能申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190623887952_3", "content": "已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190623888952_4", "content": "降息申请多久能出结果？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190649645430_5", "content": "降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0045_1779966330944166", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190530944166_0", "content": "提额成功后会立即生效吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190555779075_1", "content": "提额成功后额度会实时更新，您可以在借款页面查看最新额度。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190555780049_2", "content": "我刚借了一笔款，还能申请降息吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190623887952_3", "content": "已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190623888952_4", "content": "降息申请多久能出结果？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190649645430_5", "content": "降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0045_1779966330944166", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528190623888952_4", "sessionId": "chat_pre_MD_0045_1779966330944166"}, "type": "TEXT", "value": "降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。
+【外部模型相似度评分】：74.17
+【外部模型评估原因】：多轮逐轮平均相似度：74.17
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 37.5 低于阈值 70.0
+【响应耗时】：4.536s
+【相似度断言】：实际=74.17，阈值=70.0，结果=True
+【最终结果】：False
+【多轮失败定位摘要】：
+第3轮 | 失败维度：话术相似度 | 原因：话术平均评分 37.5 低于阈值 70.0
+问题：降息申请多久能出结果？
+模型回复：降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：4.536s
+【多轮总响应耗时】：13.608s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额成功后会立即生效吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。
+参考答案：这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。
+模型回复：提额成功后额度会实时更新，您可以在借款页面查看最新额度。
+标准答案评分：85.0
+参考答案评分：90.0
+平均相似度：87.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.62s
+是否通过：True
+------ 第2轮 ------
+用户问题：我刚借了一笔款，还能申请降息吗？
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。
+参考答案：您可以根据页面提示完成操作。已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。
+模型回复：已放款的订单利率无法更改。您可以选择提前结清后重新借款，届时系统会根据最新资质重新定价。
+标准答案评分：100.0
+参考答案评分：95.0
+平均相似度：97.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：7.6s
+是否通过：True
+------ 第3轮 ------
+用户问题：降息申请多久能出结果？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+参考答案：相关信息建议以 APP 页面展示为准。自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。
+模型回复：降息审核进度和结果请以 APP 页面提示为准，这边无法承诺固定时长。建议您留意页面更新或消息通知。
+标准答案评分：25.0
+参考答案评分：50.0
+平均相似度：37.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 37.5 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：3.387s
+是否通过：False

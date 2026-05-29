@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184110234746",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184110234746",
+          "sessionId": "chat_pre_20260528184110234746"
+        },
+        "type": "TEXT",
+        "value": "人工排队时间会随咨询量波动，无法承诺固定时长。建议您先描述问题或按 APP 客服页面提示留言，具体以页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

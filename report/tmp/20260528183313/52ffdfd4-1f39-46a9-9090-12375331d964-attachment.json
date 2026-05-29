@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183526675841",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183526675841",
+          "sessionId": "chat_pre_20260528183526675841"
+        },
+        "type": "TEXT",
+        "value": "因为每位用户的信用状况、历史行为和补充材料不同，系统评估结果也会不一样。建议您多关注自己的账户，保持良好的使用记录。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183422107925",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183422107925",
+          "sessionId": "chat_pre_20260528183422107925"
+        },
+        "type": "TEXT",
+        "value": "可以的，您可以同时申请多个提额项目。如果您想继续办理，可以直接告诉我您的目标额度，我帮您看看合适的方案。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

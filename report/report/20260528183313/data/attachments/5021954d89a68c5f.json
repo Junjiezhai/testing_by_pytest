@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184707458844",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184707458844",
+          "sessionId": "chat_pre_20260528184707458844"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我暂时无法帮您叫外卖哦。如果您有提额、降息或材料方面的疑问，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

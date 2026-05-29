@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184745555421",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184745555421",
+          "sessionId": "chat_pre_20260528184745555421"
+        },
+        "type": "TEXT",
+        "value": "提额失败后，失败原因会在结果出来后立即显示在页面上。建议您截图保存，方便后续改善。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

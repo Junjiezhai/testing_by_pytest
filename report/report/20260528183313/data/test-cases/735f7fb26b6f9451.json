@@ -1,0 +1,226 @@
+{
+  "uid" : "735f7fb26b6f9451",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-提额成功了，但是额度没有实时更新，怎么查最新额度？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "b2412869b6b7e96eaa3502110f9fbb5b",
+  "time" : {
+    "start" : 1779965189556,
+    "stop" : 1779965210836,
+    "duration" : 21280
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403827,
+      "stop" : 1779964403827,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "886612cbd8651399",
+      "name" : "用例信息",
+      "source" : "886612cbd8651399.json",
+      "type" : "application/json",
+      "size" : 1160
+    }, {
+      "uid" : "f0c7f9ec1f3a7add",
+      "name" : "执行日志",
+      "source" : "f0c7f9ec1f3a7add.txt",
+      "type" : "text/plain",
+      "size" : 3346
+    }, {
+      "uid" : "fb5a3d7912cc7a89",
+      "name" : "信贷大模型请求入参",
+      "source" : "fb5a3d7912cc7a89.json",
+      "type" : "application/json",
+      "size" : 984
+    }, {
+      "uid" : "4b5cc7b5340b4655",
+      "name" : "信贷大模型完整返回",
+      "source" : "4b5cc7b5340b4655.json",
+      "type" : "application/json",
+      "size" : 445
+    }, {
+      "uid" : "a48c89c00a59cf2b",
+      "name" : "模型评估明细",
+      "source" : "a48c89c00a59cf2b.json",
+      "type" : "application/json",
+      "size" : 3313
+    }, {
+      "uid" : "95a14eeac074a73b",
+      "name" : "断言明细",
+      "source" : "95a14eeac074a73b.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "4b0c63b6ffed63a0",
+      "name" : "失败原因",
+      "source" : "4b0c63b6ffed63a0.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "3c063bfe925ab45a",
+      "name" : "信贷大模型实际话术",
+      "source" : "3c063bfe925ab45a.txt",
+      "type" : "text/plain",
+      "size" : 166
+    }, {
+      "uid" : "4b7f095d2a628afe",
+      "name" : "断言话术",
+      "source" : "4b7f095d2a628afe.txt",
+      "type" : "text/plain",
+      "size" : 417
+    }, {
+      "uid" : "97db5098c241fd24",
+      "name" : "log",
+      "source" : "97db5098c241fd24.txt",
+      "type" : "text/plain",
+      "size" : 27815
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967870986,
+      "stop" : 1779967871920,
+      "duration" : 934
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aa1520d6e0884b75",
+      "name" : "模型测试汇总",
+      "source" : "aa1520d6e0884b75.txt",
+      "type" : "text/plain",
+      "size" : 54493
+    }, {
+      "uid" : "116d1396fa636e40",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "116d1396fa636e40.csv",
+      "type" : "text/csv",
+      "size" : 329652
+    }, {
+      "uid" : "c3309cf3809c0dd4",
+      "name" : "模型测试明细Excel路径",
+      "source" : "c3309cf3809c0dd4.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "2bf9a9992b5e81e",
+      "name" : "模型测试汇总JSON",
+      "source" : "2bf9a9992b5e81e.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "25176-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0147', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-提额成功了，但是额度没有实时更新，怎么查最新额度？', 'intent': '提额降息操作类', 'question': '提额成功了，但是额度没有实时更新，怎么查最新额度？', 'expected_answer': '您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。', 'questions': ['提额成功了，但是额度没有实时更新，怎么查最新额度？'], 'expected_answers': ['您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "683d32eb0d22dc8b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879837169,
+          "stop" : 1779879900618,
+          "duration" : 63449
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "735f7fb26b6f9451.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0147', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-提额成功了，但是额度没有实时更新，怎么查最新额度？', 'intent': '提额降息操作类', 'question': '提额成功了，但是额度没有实时更新，怎么查最新额度？', 'expected_answer': '您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。', 'questions': ['提额成功了，但是额度没有实时更新，怎么查最新额度？'], 'expected_answers': ['您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。您可以尝试退出账号重新登录，或在“首页-额度”页面下拉刷新，查看最新额度。如仍未更新，联系客服提供成功截图。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

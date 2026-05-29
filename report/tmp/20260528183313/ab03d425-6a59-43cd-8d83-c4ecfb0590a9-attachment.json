@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184744670089",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184744670089",
+          "sessionId": "chat_pre_20260528184744670089"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我更擅长帮您看提额和降息规则。您想聊聊额度提升或利息调整吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

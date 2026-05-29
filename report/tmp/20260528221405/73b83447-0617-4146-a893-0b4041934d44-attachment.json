@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0035",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额和“临时额度”有什么区别？",
+  "intent": "提额降息咨询类",
+  "question": "提额和“临时额度”有什么区别？",
+  "expected_answer": "提额一般是永久增加可用额度，而临时额度有时效性（如7天或30天）。我们的提额成功后长期有效。",
+  "questions": [
+    "提额和“临时额度”有什么区别？"
+  ],
+  "expected_answers": [
+    "提额一般是永久增加可用额度，而临时额度有时效性（如7天或30天）。我们的提额成功后长期有效。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。提额一般是永久增加可用额度，而临时额度有时效性（如7天或30天）。我们的提额成功后长期有效。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

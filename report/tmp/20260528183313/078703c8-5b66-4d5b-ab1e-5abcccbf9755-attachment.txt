@@ -1,0 +1,136 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0122
+【测试场景】：同一意图连续追问-降息明确利率诉求-2
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：降息到月息0.5%有可能吗
+【断言话术-标准答案】：月息0.5%即年化约6%，属于较低利率水平，能否达到取决于您的综合信用评估。具体利率以系统评估结果为准。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "降息到月息0.5%有可能吗", "chatId": "chat_pre_MD_0122_1779967605957867", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192645957867_0", "content": "我想把利率降到年化10%", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192727243568_1", "content": "本次暂未获得更低利率，您可以后续再关注页面入口。为您推荐了征信提额，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192727243568_2", "content": "那降到年化8%呢", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192817945811_3", "content": "降息前请确保您的预留手机号与平台一致，否则可能导致授权失败。建议先更新联系方式。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192817945811_4", "content": "降息到月息0.5%有可能吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192850898347_5", "content": "这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0122_1779967605957867", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192645957867_0", "content": "我想把利率降到年化10%", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192727243568_1", "content": "本次暂未获得更低利率，您可以后续再关注页面入口。为您推荐了征信提额，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192727243568_2", "content": "那降到年化8%呢", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192817945811_3", "content": "降息前请确保您的预留手机号与平台一致，否则可能导致授权失败。建议先更新联系方式。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192817945811_4", "content": "降息到月息0.5%有可能吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192850898347_5", "content": "这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0122_1779967605957867", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528192817945811_4", "sessionId": "chat_pre_MD_0122_1779967605957867"}, "type": "TEXT", "value": "这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。
+【外部模型相似度评分】：18.33
+【外部模型评估原因】：多轮逐轮平均相似度：18.33
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 25.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内；话术平均评分 20.0 低于阈值 70.0；上下文断言失败：前一轮询问能否降至10%未获直接回复，当前追问8%时模型应继续说明利率调整可能性，却转向提醒更新联系方式，未正确承接前文关于利率降低的连续追问，上下文承接失败。无意图污染、改口、风险或拒答回归问题。；话术平均评分 10.0 低于阈值 70.0；上下文断言失败：前两轮用户连续追问降息至10%、8%，本轮继续追问月息0.5%，模型应承接降息可行性讨论，却直接表示无法处理并转向提额，上下文承接失败；无意图污染、改口、风险拒答及回归业务场景。
+【响应耗时】：11.348s
+【相似度断言】：实际=18.33，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度、ASSET卡片 | 原因：话术平均评分 25.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+问题：我想把利率降到年化10%
+模型回复：本次暂未获得更低利率，您可以后续再关注页面入口。为您推荐了征信提额，可通过下方卡片查看。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+第2轮 | 失败维度：话术相似度、上下文承接 | 原因：话术平均评分 20.0 低于阈值 70.0；上下文断言失败：前一轮询问能否降至10%未获直接回复，当前追问8%时模型应继续说明利率调整可能性，却转向提醒更新联系方式，未正确承接前文关于利率降低的连续追问，上下文承接失败。无意图污染、改口、风险或拒答回归问题。
+问题：那降到年化8%呢
+模型回复：降息前请确保您的预留手机号与平台一致，否则可能导致授权失败。建议先更新联系方式。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+第3轮 | 失败维度：话术相似度、上下文承接 | 原因：话术平均评分 10.0 低于阈值 70.0；上下文断言失败：前两轮用户连续追问降息至10%、8%，本轮继续追问月息0.5%，模型应承接降息可行性讨论，却直接表示无法处理并转向提额，上下文承接失败；无意图污染、改口、风险拒答及回归业务场景。
+问题：降息到月息0.5%有可能吗
+模型回复：这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+【多轮平均响应耗时】：11.348s
+【多轮总响应耗时】：34.045s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：我想把利率降到年化10%
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：利率调整需要系统综合评估，能否降到年化10%取决于您的信用状况、还款记录等因素。具体利率以系统评估后页面展示为准。
+参考答案：您好，利率调整需要系统综合评估您的信用状况、还款记录等因素，具体能否降至年化10%以评估后页面显示的利率为准。
+模型回复：本次暂未获得更低利率，您可以后续再关注页面入口。为您推荐了征信提额，可通过下方卡片查看。
+标准答案评分：25.0
+参考答案评分：25.0
+平均相似度：25.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、ASSET卡片
+失败原因：话术平均评分 25.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：12.731s
+是否通过：False
+------ 第2轮 ------
+用户问题：那降到年化8%呢
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：降息到年化8%需要系统综合评估您的信用状况。建议您保持良好的还款记录，系统会定期评估并可能为您调整利率。
+参考答案：年化8%的利率需要系统综合评估您的信用情况。建议您维持良好的还款记录，系统会定期评估，有机会为您调整利率。
+模型回复：降息前请确保您的预留手机号与平台一致，否则可能导致授权失败。建议先更新联系方式。
+标准答案评分：20.0
+参考答案评分：20.0
+平均相似度：20.0
+意图断言：True
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、上下文承接
+失败原因：话术平均评分 20.0 低于阈值 70.0；上下文断言失败：前一轮询问能否降至10%未获直接回复，当前追问8%时模型应继续说明利率调整可能性，却转向提醒更新联系方式，未正确承接前文关于利率降低的连续追问，上下文承接失败。无意图污染、改口、风险或拒答回归问题。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：18.18s
+是否通过：False
+------ 第3轮 ------
+用户问题：降息到月息0.5%有可能吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：月息0.5%即年化约6%，属于较低利率水平，能否达到取决于您的综合信用评估。具体利率以系统评估结果为准。
+参考答案：月息0.5%折算成年化利率大约在6%左右，这个利率水平是比较低的。您能否申请到该利率，还是要看系统对您综合信用状况的评估结果，最终以实际审批为准。
+模型回复：这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。
+标准答案评分：10.0
+参考答案评分：10.0
+平均相似度：10.0
+意图断言：True
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、上下文承接
+失败原因：话术平均评分 10.0 低于阈值 70.0；上下文断言失败：前两轮用户连续追问降息至10%、8%，本轮继续追问月息0.5%，模型应承接降息可行性讨论，却直接表示无法处理并转向提额，上下文承接失败；无意图污染、改口、风险拒答及回归业务场景。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：3.134s
+是否通过：False

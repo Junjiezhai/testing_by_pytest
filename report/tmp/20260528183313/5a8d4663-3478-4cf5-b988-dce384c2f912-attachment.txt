@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0146
+【测试场景】：转人工类-审核中显示“人工复核中”，需要我做什么？
+【意图分类】：转人工类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：审核中显示“人工复核中”，需要我做什么？
+【断言话术-标准答案】：您无需做任何操作，系统会尽快完成复核。请保持账户正常，不要重复提交。
+【断言话术-外部模型参考答案】：如果自助说明无法解决您的问题，建议联系在线客服继续处理。您无需做任何操作，系统会尽快完成复核。请保持账户正常，不要重复提交。
+【replyContents】：[{"type": "TEXT", "value": "您无需操作，系统正在处理。本次提额5000元已生效，当前总额度10000元。具体借款方案可点击下方卡片查看。"}, {"type": "ASSET", "value": "AS2605191420142236", "bizParamInfo": {"biz_ref_id": ["borrow_entry"]}}]
+【TEXT输出】：["您无需操作，系统正在处理。本次提额5000元已生效，当前总额度10000元。具体借款方案可点击下方卡片查看。"]
+【ASSET输出】：["AS2605191420142236"]
+【biz_ref_id】：["borrow_entry"]
+【模型请求msg_info】：{"uid": "4130759", "content": "审核中显示“人工复核中”，需要我做什么？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184610817682", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184610817682", "content": "审核中显示“人工复核中”，需要我做什么？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "您无需操作，系统正在处理。本次提额5000元已生效，当前总额度10000元。具体借款方案可点击下方卡片查看。"}, {"type": "ASSET", "value": "AS2605191420142236", "bizParamInfo": {"biz_ref_id": ["borrow_entry"]}}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：您无需操作，系统正在处理。本次提额5000元已生效，当前总额度10000元。具体借款方案可点击下方卡片查看。
+【外部模型相似度评分】：30.0
+【外部模型评估原因】：标准答案评分=30.0；参考答案评分=30.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：False
+【ASSET value断言】：False (AS2605191420142236)
+【biz_ref_id断言】：True (borrow_entry)
+【失败原因】：当前意图[转人工类]不允许输出ASSET，但实际返回了ASSET；当前意图[转人工类]未配置ASSET.value允许范围；TEXT评分 30.0 未达到阈值 70.0(gte)
+【响应耗时】：7.719s
+【相似度断言】：实际=30.0，阈值=70.0，结果=False
+【最终结果】：False

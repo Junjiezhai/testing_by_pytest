@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0071",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我在境外能申请降息吗？",
+  "intent": "提额降息操作类",
+  "question": "我在境外能申请降息吗？",
+  "expected_answer": "部分降息项目可能受网络区域限制，建议返回境内稳定网络下操作。如有异常可联系客服。",
+  "questions": [
+    "我在境外能申请降息吗？"
+  ],
+  "expected_answers": [
+    "部分降息项目可能受网络区域限制，建议返回境内稳定网络下操作。如有异常可联系客服。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。部分降息项目可能受网络区域限制，建议返回境内稳定网络下操作。如有异常可联系客服。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

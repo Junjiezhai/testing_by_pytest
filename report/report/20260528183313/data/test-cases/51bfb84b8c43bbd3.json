@@ -1,0 +1,226 @@
+{
+  "uid" : "51bfb84b8c43bbd3",
+  "name" : "test_single_turn_intent_recognition[转人工类-我要投诉你们机器人太蠢了]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "685bf3524c3d9fa0091c2149fa67374e",
+  "time" : {
+    "start" : 1779965048582,
+    "stop" : 1779965049333,
+    "duration" : 751
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7d538810fbfb9f28",
+      "name" : "用例信息",
+      "source" : "7d538810fbfb9f28.json",
+      "type" : "application/json",
+      "size" : 983
+    }, {
+      "uid" : "39e4757e8364d6ec",
+      "name" : "执行日志",
+      "source" : "39e4757e8364d6ec.txt",
+      "type" : "text/plain",
+      "size" : 2464
+    }, {
+      "uid" : "e5fcb4e2c9b0a2c",
+      "name" : "信贷大模型请求入参",
+      "source" : "e5fcb4e2c9b0a2c.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "8c4d6d8f9ba3803e",
+      "name" : "信贷大模型完整返回",
+      "source" : "8c4d6d8f9ba3803e.json",
+      "type" : "application/json",
+      "size" : 214
+    }, {
+      "uid" : "f3f9232abcd605c9",
+      "name" : "模型评估明细",
+      "source" : "f3f9232abcd605c9.json",
+      "type" : "application/json",
+      "size" : 2321
+    }, {
+      "uid" : "bfa8222887a00603",
+      "name" : "断言明细",
+      "source" : "bfa8222887a00603.json",
+      "type" : "application/json",
+      "size" : 447
+    }, {
+      "uid" : "c24a6c52e1712c96",
+      "name" : "失败原因",
+      "source" : "c24a6c52e1712c96.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "5a1af19dba1ad987",
+      "name" : "信贷大模型实际话术",
+      "source" : "5a1af19dba1ad987.txt",
+      "type" : "text/plain",
+      "size" : 7
+    }, {
+      "uid" : "eb8d30ad000ab856",
+      "name" : "断言话术",
+      "source" : "eb8d30ad000ab856.txt",
+      "type" : "text/plain",
+      "size" : 397
+    }, {
+      "uid" : "2faa32541a5204a3",
+      "name" : "log",
+      "source" : "2faa32541a5204a3.txt",
+      "type" : "text/plain",
+      "size" : 10282
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967874166,
+      "stop" : 1779967875104,
+      "duration" : 938
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9104c1e7ef66daf",
+      "name" : "模型测试汇总",
+      "source" : "a9104c1e7ef66daf.txt",
+      "type" : "text/plain",
+      "size" : 55481
+    }, {
+      "uid" : "47dd0bb111065d63",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "47dd0bb111065d63.csv",
+      "type" : "text/csv",
+      "size" : 334311
+    }, {
+      "uid" : "b0d59e5fd9c12ce5",
+      "name" : "模型测试明细Excel路径",
+      "source" : "b0d59e5fd9c12ce5.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "d52de8cd70fef80c",
+      "name" : "模型测试汇总JSON",
+      "source" : "d52de8cd70fef80c.json",
+      "type" : "application/json",
+      "size" : 21171
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "5500-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0184', 'case_type': 'single_turn', 'case_desc': '转人工类-我要投诉你们机器人太蠢了', 'intent': '转人工类', 'question': '我要投诉你们机器人太蠢了', 'expected_answer': '您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。', 'questions': ['我要投诉你们机器人太蠢了'], 'expected_answers': ['您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。'], 'round_assert_flags': [True], 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "809a61f20c3675c3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878777477,
+          "stop" : 1779878780821,
+          "duration" : 3344
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "51bfb84b8c43bbd3.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0184', 'case_type': 'single_turn', 'case_desc': '转人工类-我要投诉你们机器人太蠢了', 'intent': '转人工类', 'question': '我要投诉你们机器人太蠢了', 'expected_answer': '您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。', 'questions': ['我要投诉你们机器人太蠢了'], 'expected_answers': ['您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。'], 'round_assert_flags': [True], 'reference_answer': '如需进一步核实，您可以联系在线客服反馈问题。您的反馈我们已记录。为了更快解决您的问题，我为您转接人工客服，您可以直接向人工说明投诉内容。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

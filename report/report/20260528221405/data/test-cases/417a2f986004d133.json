@@ -1,0 +1,235 @@
+{
+  "uid" : "417a2f986004d133",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "ccd9507c12dc3682a03ac415c7bed421",
+  "time" : {
+    "start" : 1779979389787,
+    "stop" : 1779979397776,
+    "duration" : 7989
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779977653046,
+      "stop" : 1779977653046,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3d568f7560c203cf",
+      "name" : "用例信息",
+      "source" : "3d568f7560c203cf.json",
+      "type" : "application/json",
+      "size" : 1151
+    }, {
+      "uid" : "48d75c335061b2be",
+      "name" : "执行日志",
+      "source" : "48d75c335061b2be.txt",
+      "type" : "text/plain",
+      "size" : 3513
+    }, {
+      "uid" : "579e61ecb6cdec7",
+      "name" : "信贷大模型请求入参",
+      "source" : "579e61ecb6cdec7.json",
+      "type" : "application/json",
+      "size" : 996
+    }, {
+      "uid" : "808e27aef219fffc",
+      "name" : "信贷大模型完整返回",
+      "source" : "808e27aef219fffc.json",
+      "type" : "application/json",
+      "size" : 573
+    }, {
+      "uid" : "f0eba9ef91e040f4",
+      "name" : "模型评估明细",
+      "source" : "f0eba9ef91e040f4.json",
+      "type" : "application/json",
+      "size" : 3359
+    }, {
+      "uid" : "beb242c88dbe880b",
+      "name" : "断言明细",
+      "source" : "beb242c88dbe880b.json",
+      "type" : "application/json",
+      "size" : 431
+    }, {
+      "uid" : "101bc02f59c75996",
+      "name" : "失败原因",
+      "source" : "101bc02f59c75996.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "6cb52ad409cd04ca",
+      "name" : "信贷大模型实际话术",
+      "source" : "6cb52ad409cd04ca.txt",
+      "type" : "text/plain",
+      "size" : 138
+    }, {
+      "uid" : "28ee315fd3e26849",
+      "name" : "断言话术",
+      "source" : "28ee315fd3e26849.txt",
+      "type" : "text/plain",
+      "size" : 394
+    }, {
+      "uid" : "da5c823a83fe19bc",
+      "name" : "log",
+      "source" : "da5c823a83fe19bc.txt",
+      "type" : "text/plain",
+      "size" : 15156
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779986817037,
+      "stop" : 1779986818176,
+      "duration" : 1139
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5a46d07061cb9eb4",
+      "name" : "模型测试汇总",
+      "source" : "5a46d07061cb9eb4.txt",
+      "type" : "text/plain",
+      "size" : 45910
+    }, {
+      "uid" : "509469f27199e04d",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "509469f27199e04d.csv",
+      "type" : "text/csv",
+      "size" : 320174
+    }, {
+      "uid" : "3200e4b11312d538",
+      "name" : "模型测试明细Excel路径",
+      "source" : "3200e4b11312d538.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "760ab812f6ac760f",
+      "name" : "模型测试汇总JSON",
+      "source" : "760ab812f6ac760f.json",
+      "type" : "application/json",
+      "size" : 16609
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "26512-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0259', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？', 'intent': '提额降息咨询类', 'question': '我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？', 'expected_answer': '审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。', 'questions': ['我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？'], 'expected_answers': ['审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "ed5589cc80ce8f1e",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：ASSET.value=AS2605191420142236 不在允许范围内；biz_ref_id=borrow_entry 不在允许范围内；TEXT评分 0.0 未达到阈值 70.0(gte)",
+        "time" : {
+          "start" : 1779965063044,
+          "stop" : 1779965076764,
+          "duration" : 13720
+        }
+      }, {
+        "uid" : "5e8563566fc71a5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880182336,
+          "stop" : 1779880265344,
+          "duration" : 83008
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "417a2f986004d133.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0259', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？', 'intent': '提额降息咨询类', 'question': '我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？', 'expected_answer': '审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。', 'questions': ['我的审核还没通过，你们是不是故意卡我？信不信我找人刷差评？'], 'expected_answers': ['审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。审核由系统自动完成，不存在人为卡顿。恶意刷差评无助于解决问题，建议您耐心等待或查询具体原因。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

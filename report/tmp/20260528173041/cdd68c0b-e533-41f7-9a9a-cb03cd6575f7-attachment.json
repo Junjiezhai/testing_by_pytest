@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528173051737491",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528173051737491",
+          "sessionId": "chat_pre_20260528173051737491"
+        },
+        "type": "TEXT",
+        "value": "提额是提升您在平台的可用借款额度，系统会结合您的信用材料和还款记录综合评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

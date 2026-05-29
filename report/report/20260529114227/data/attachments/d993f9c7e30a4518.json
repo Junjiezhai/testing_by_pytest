@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291148442918663",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291148442918665",
+          "sessionId": "chat_pre_202605291148442918663"
+        },
+        "type": "TEXT",
+        "value": "降息前需确保预留手机号与平台一致，否则可能授权失败。建议您先在APP更新联系方式，以免影响降息功能。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

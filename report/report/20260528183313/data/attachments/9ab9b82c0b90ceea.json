@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184347535363",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184347535363",
+          "sessionId": "chat_pre_20260528184347535363"
+        },
+        "type": "TEXT",
+        "value": "我理解您的心情，但威胁并不能改变评估结果。如果您有真实投诉需求，建议通过银保监会官网等正规渠道反映。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

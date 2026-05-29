@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0135",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-提额结果会保存多久",
+  "intent": "信息查询类",
+  "question": "提额结果会保存多久",
+  "expected_answer": "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。",
+  "questions": [
+    "提额结果会保存多久"
+  ],
+  "expected_answers": [
+    "提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

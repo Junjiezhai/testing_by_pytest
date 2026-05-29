@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0098",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-个税认证的收入要求是多少",
+  "intent": "提额降息操作类",
+  "question": "个税认证的收入要求是多少",
+  "expected_answer": "个税认证没有固定的最低收入要求，系统会根据您的年度纳税金额和收入水平综合评估。只要您有正常的纳税记录，都可以尝试认证。",
+  "questions": [
+    "个税认证的收入要求是多少"
+  ],
+  "expected_answers": [
+    "个税认证没有固定的最低收入要求，系统会根据您的年度纳税金额和收入水平综合评估。只要您有正常的纳税记录，都可以尝试认证。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。个税认证没有固定的最低收入要求，系统会根据您的年度纳税金额和收入水平综合评估。只要您有正常的纳税记录，都可以尝试认证。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

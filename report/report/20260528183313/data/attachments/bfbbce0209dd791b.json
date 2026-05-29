@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184414175844",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184414175844",
+          "sessionId": "chat_pre_20260528184414175844"
+        },
+        "type": "TEXT",
+        "value": "请检查APP内消息通知设置是否开启，以及手机是否拦截了平台短信；您也可以直接进提额页面查看结果。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

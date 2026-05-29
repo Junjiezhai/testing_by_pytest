@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0037",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-为什么我朋友的提额项比我的多？",
+  "intent": "提额降息咨询类",
+  "question": "为什么我朋友的提额项比我的多？",
+  "expected_answer": "提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。",
+  "questions": [
+    "为什么我朋友的提额项比我的多？"
+  ],
+  "expected_answers": [
+    "提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "出现这种情况通常与系统综合评估结果有关。提额项是根据每个用户的信用状况、历史行为、补充材料不同而个性化开放的，您的朋友资质可能更优，后续您也会陆续开放更多。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

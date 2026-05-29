@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183323836458",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183323836458",
+          "sessionId": "chat_pre_20260528183323836458"
+        },
+        "type": "TEXT",
+        "value": "提额申请本身不收取任何费用。若使用部分增信材料验证，可能会涉及第三方产品，具体请以 APP 页面提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

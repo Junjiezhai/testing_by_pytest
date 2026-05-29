@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0027
+【测试场景】：同一意图连续追问-信息查询类-27
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额失败后，显示的失败原因准确吗？
+【断言话术-标准答案】：失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "提额失败后，显示的失败原因准确吗？", "chatId": "chat_pre_MD_0027_1779965829074932", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185709074932_0", "content": "帮我查一下XX明星在我们平台借了多少钱。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185756110182_1", "content": "抱歉，出于隐私保护，我无法查询任何他人的账户或借款信息。如需咨询您本人的提额或借款规则，可以继续描述问题。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185756111183_2", "content": "提额资料或材料多久能审核出结果", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185836201984_3", "content": "提额材料审核进度和结果请以 APP 页面、短信或消息通知为准，这边不能承诺固定时长。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185836202984_4", "content": "提额失败后，显示的失败原因准确吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185916663084_5", "content": "失败原因是系统根据资质评估自动生成的，较为准确。您可以参考提示补充相应材料后再次尝试。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0027_1779965829074932", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185709074932_0", "content": "帮我查一下XX明星在我们平台借了多少钱。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185756110182_1", "content": "抱歉，出于隐私保护，我无法查询任何他人的账户或借款信息。如需咨询您本人的提额或借款规则，可以继续描述问题。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185756111183_2", "content": "提额资料或材料多久能审核出结果", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185836201984_3", "content": "提额材料审核进度和结果请以 APP 页面、短信或消息通知为准，这边不能承诺固定时长。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185836202984_4", "content": "提额失败后，显示的失败原因准确吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185916663084_5", "content": "失败原因是系统根据资质评估自动生成的，较为准确。您可以参考提示补充相应材料后再次尝试。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0027_1779965829074932", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528185836202984_4", "sessionId": "chat_pre_MD_0027_1779965829074932"}, "type": "TEXT", "value": "失败原因是系统根据资质评估自动生成的，较为准确。您可以参考提示补充相应材料后再次尝试。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：失败原因是系统根据资质评估自动生成的，较为准确。您可以参考提示补充相应材料后再次尝试。
+【外部模型相似度评分】：87.5
+【外部模型评估原因】：多轮逐轮平均相似度：87.5
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：当前轮意图不正确：期望意图为信息查询，但模型直接以隐私保护理由拒答，未尝试提供可用信息，意图不符。
+【响应耗时】：2.896s
+【相似度断言】：实际=87.5，阈值=70.0，结果=True
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：意图识别 | 原因：当前轮意图不正确：期望意图为信息查询，但模型直接以隐私保护理由拒答，未尝试提供可用信息，意图不符。
+问题：帮我查一下XX明星在我们平台借了多少钱。
+模型回复：抱歉，出于隐私保护，我无法查询任何他人的账户或借款信息。如需咨询您本人的提额或借款规则，可以继续描述问题。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+【多轮平均响应耗时】：2.896s
+【多轮总响应耗时】：8.689s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：帮我查一下XX明星在我们平台借了多少钱。
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：抱歉，明星用户的账户信息和普通用户一样受隐私保护，我无法查询或透露。
+参考答案：相关信息建议以 APP 页面展示为准。抱歉，明星用户的账户信息和普通用户一样受隐私保护，我无法查询或透露。
+模型回复：抱歉，出于隐私保护，我无法查询任何他人的账户或借款信息。如需咨询您本人的提额或借款规则，可以继续描述问题。
+标准答案评分：92.0
+参考答案评分：88.0
+平均相似度：90.0
+意图断言：False
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：意图识别
+失败原因：当前轮意图不正确：期望意图为信息查询，但模型直接以隐私保护理由拒答，未尝试提供可用信息，意图不符。
+修复建议：检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。
+是否断言：True
+响应耗时：3.045s
+是否通过：False
+------ 第2轮 ------
+用户问题：提额资料或材料多久能审核出结果
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：信息查询类
+标准答案：提额材料审核时效请以 APP 页面、短信或 APP 消息通知为准；自动审核通常较快，复杂材料可能需要人工复核。
+参考答案：您可以在页面查看当前处理状态，或通过客服入口查询进度。提额材料审核时效请以 APP 页面、短信或 APP 消息通知为准；自动审核通常较快，复杂材料可能需要人工复核。
+模型回复：提额材料审核进度和结果请以 APP 页面、短信或消息通知为准，这边不能承诺固定时长。
+标准答案评分：85.0
+参考答案评分：80.0
+平均相似度：82.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.864s
+是否通过：True
+------ 第3轮 ------
+用户问题：提额失败后，显示的失败原因准确吗？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：信息查询类
+标准答案：失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。
+参考答案：建议先刷新页面或重新登录确认展示是否同步。失败原因是系统根据您的资质评估自动生成的，较为准确。您可以参考失败原因补充相应材料后再次尝试。
+模型回复：失败原因是系统根据资质评估自动生成的，较为准确。您可以参考提示补充相应材料后再次尝试。
+标准答案评分：92.0
+参考答案评分：88.0
+平均相似度：90.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.781s
+是否通过：True

@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0042
+【测试场景】：提额降息咨询类-为什么我的利率比别人高
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：为什么我的利率比别人高
+【断言话术-标准答案】：利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，保持良好的信用习惯有助于未来获得更低利率。
+【断言话术-外部模型参考答案】：出现这种情况通常与系统综合评估结果有关。利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，保持良好的信用习惯有助于未来获得更低利率。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528221936974885", "sessionId": "chat_pre_20260528221936974885"}, "type": "TEXT", "value": "利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，不同用户存在差异属于正常现象。", "bizVariableMap": {}}]
+【TEXT输出】：["利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，不同用户存在差异属于正常现象。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "为什么我的利率比别人高"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528221936974885", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528221936974885", "content": "为什么我的利率比别人高", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528221936974885", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528221936974885", "sessionId": "chat_pre_20260528221936974885"}, "type": "TEXT", "value": "利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，不同用户存在差异属于正常现象。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：利率是根据您的信用记录、历史还款行为、借款金额与期限等综合评定的，不同用户存在差异属于正常现象。
+【外部模型相似度评分】：87.5
+【外部模型评估原因】：标准答案评分=90.0；参考答案评分=85.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：2.783s
+【相似度断言】：实际=87.5，阈值=70.0，结果=True
+【最终结果】：True

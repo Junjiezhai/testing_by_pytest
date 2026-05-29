@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0153",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-我朋友和我同时提交，他出结果了我还没有，为什么？",
+  "intent": "信息查询类",
+  "question": "我朋友和我同时提交，他出结果了我还没有，为什么？",
+  "expected_answer": "审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。",
+  "questions": [
+    "我朋友和我同时提交，他出结果了我还没有，为什么？"
+  ],
+  "expected_answers": [
+    "审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "相关信息建议以 APP 页面展示为准。审核顺序可能因材料类型不同而有差异（自动审核快于人工复核），请您再耐心等待。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

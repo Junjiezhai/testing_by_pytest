@@ -1,0 +1,207 @@
+{
+  "uid" : "59f34455b5e8df5d",
+  "name" : "test_single_turn_intent_recognition[转人工类-骂你是傻X你会生气吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "77a5c9bccd6f9f9e55d2206d8bad7bef",
+  "time" : {
+    "start" : 1779965034497,
+    "stop" : 1779965050569,
+    "duration" : 16072
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8062169eb46848f9",
+      "name" : "用例信息",
+      "source" : "8062169eb46848f9.json",
+      "type" : "application/json",
+      "size" : 830
+    }, {
+      "uid" : "17a49d576a50f0a9",
+      "name" : "执行日志",
+      "source" : "17a49d576a50f0a9.txt",
+      "type" : "text/plain",
+      "size" : 3142
+    }, {
+      "uid" : "bbd2494971d505b3",
+      "name" : "信贷大模型请求入参",
+      "source" : "bbd2494971d505b3.json",
+      "type" : "application/json",
+      "size" : 940
+    }, {
+      "uid" : "153b7ddb25a4751e",
+      "name" : "信贷大模型完整返回",
+      "source" : "153b7ddb25a4751e.json",
+      "type" : "application/json",
+      "size" : 564
+    }, {
+      "uid" : "c2a8af97fd037469",
+      "name" : "模型评估明细",
+      "source" : "c2a8af97fd037469.json",
+      "type" : "application/json",
+      "size" : 3382
+    }, {
+      "uid" : "177b7f288b47d998",
+      "name" : "断言明细",
+      "source" : "177b7f288b47d998.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "99e00f9a3cfce1e5",
+      "name" : "失败原因",
+      "source" : "99e00f9a3cfce1e5.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "3ecf2c5977fb2503",
+      "name" : "信贷大模型实际话术",
+      "source" : "3ecf2c5977fb2503.txt",
+      "type" : "text/plain",
+      "size" : 129
+    }, {
+      "uid" : "ef9a635b9c0394f5",
+      "name" : "断言话术",
+      "source" : "ef9a635b9c0394f5.txt",
+      "type" : "text/plain",
+      "size" : 304
+    }, {
+      "uid" : "f4d4d9a1603e2567",
+      "name" : "log",
+      "source" : "f4d4d9a1603e2567.txt",
+      "type" : "text/plain",
+      "size" : 16184
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967809396,
+      "stop" : 1779967810358,
+      "duration" : 962
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fbde1d619b55fad",
+      "name" : "模型测试汇总",
+      "source" : "9fbde1d619b55fad.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "96f4dbb4fc1f71f2",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "96f4dbb4fc1f71f2.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "fd894783606413a1",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fd894783606413a1.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "6277f00e85cc72d3",
+      "name" : "模型测试汇总JSON",
+      "source" : "6277f00e85cc72d3.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30752-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0266', 'case_type': 'single_turn', 'case_desc': '转人工类-骂你是傻X你会生气吗？', 'intent': '转人工类', 'question': '骂你是傻X你会生气吗？', 'expected_answer': '我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。', 'questions': ['骂你是傻X你会生气吗？'], 'expected_answers': ['我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "59f34455b5e8df5d.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0266', 'case_type': 'single_turn', 'case_desc': '转人工类-骂你是傻X你会生气吗？', 'intent': '转人工类', 'question': '骂你是傻X你会生气吗？', 'expected_answer': '我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。', 'questions': ['骂你是傻X你会生气吗？'], 'expected_answers': ['我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。我不会有情绪，但请注意文明交流。如果有业务问题，我很乐意帮助。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

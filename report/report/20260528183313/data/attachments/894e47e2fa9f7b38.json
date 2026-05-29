@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183432343876",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183432343876",
+          "sessionId": "chat_pre_20260528183432343876"
+        },
+        "type": "TEXT",
+        "value": "可以再次申请提额，系统会定期重新评估。一般建议间隔3个月以上，您也可关注APP内入口补充新材料尝试。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

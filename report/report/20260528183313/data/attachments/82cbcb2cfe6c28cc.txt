@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0130
+【测试场景】：提额降息操作类-我上次上传过材料，这次还要重新传吗
+【意图分类】：提额降息操作类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我上次上传过材料，这次还要重新传吗
+【断言话术-标准答案】：如您已上传过材料并且提交过提额，在一定时间内不可再重新操作。具体以页面提示为准。
+【断言话术-外部模型参考答案】：请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。如您已上传过材料并且提交过提额，在一定时间内不可再重新操作。具体以页面提示为准。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184147869642", "sessionId": "chat_pre_20260528184147869642"}, "type": "TEXT", "value": "这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。", "bizVariableMap": {}}]
+【TEXT输出】：["这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "我上次上传过材料，这次还要重新传吗"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184147869642", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184147869642", "content": "我上次上传过材料，这次还要重新传吗", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528184147869642", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184147869642", "sessionId": "chat_pre_20260528184147869642"}, "type": "TEXT", "value": "这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：这个问题我不能这样处理。我这边可以先帮您看提额相关问题，您也可以补充说明具体诉求。
+【外部模型相似度评分】：30.0
+【外部模型评估原因】：标准答案评分=30.0；参考答案评分=30.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 30.0 未达到阈值 70.0(gte)
+【响应耗时】：3.197s
+【相似度断言】：实际=30.0，阈值=70.0，结果=False
+【最终结果】：False

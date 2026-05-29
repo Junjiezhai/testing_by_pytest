@@ -1,0 +1,132 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0124
+【测试场景】：跨意图切换-提额到借款-4
+【意图分类】：提额降息咨询类+借款下单类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：借款50000元多久能到账
+【断言话术-标准答案】：借款5万元审核通过后，款项通常会在1-3个工作日内到账，具体到账时间以银行处理速度为准。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "借款50000元多久能到账", "chatId": "chat_pre_MD_0124_1779967656732984", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192736732984_0", "content": "我想把额度提到10万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192822513001_1", "content": "当前暂未满足直接提额条件，为您推荐了征信提额，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192822514000_2", "content": "那我先借50000元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192851545754_3", "content": "我理解您想借款50000元，这边暂不能直接为您办理借款下单。建议您前往 APP 借款页面查看可用额度并按流程操作。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192851545754_4", "content": "借款50000元多久能到账", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192917004207_5", "content": "借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0124_1779967656732984", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192736732984_0", "content": "我想把额度提到10万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192822513001_1", "content": "当前暂未满足直接提额条件，为您推荐了征信提额，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192822514000_2", "content": "那我先借50000元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192851545754_3", "content": "我理解您想借款50000元，这边暂不能直接为您办理借款下单。建议您前往 APP 借款页面查看可用额度并按流程操作。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192851545754_4", "content": "借款50000元多久能到账", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192917004207_5", "content": "借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0124_1779967656732984", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528192851545754_4", "sessionId": "chat_pre_MD_0124_1779967656732984"}, "type": "TEXT", "value": "借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。
+【外部模型相似度评分】：54.17
+【外部模型评估原因】：多轮逐轮平均相似度：54.17
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 30.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内；话术平均评分 45.0 低于阈值 70.0
+【响应耗时】：6.525s
+【相似度断言】：实际=54.17，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度、ASSET卡片 | 原因：话术平均评分 30.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+问题：我想把额度提到10万元
+模型回复：当前暂未满足直接提额条件，为您推荐了征信提额，可通过下方卡片查看。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+第3轮 | 失败维度：话术相似度 | 原因：话术平均评分 45.0 低于阈值 70.0
+问题：借款50000元多久能到账
+模型回复：借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+【多轮平均响应耗时】：6.525s
+【多轮总响应耗时】：19.574s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：我想把额度提到10万元
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：
+标准答案：额度提升需要系统综合评估，10万元属于较高额度，能否达到取决于您的信用评分、还款记录等因素。
+参考答案：您好，额度提升需要由系统进行综合评估。10万元属于较高额度，具体能否达到主要取决于您的信用评分、还款记录等多方面因素。
+模型回复：当前暂未满足直接提额条件，为您推荐了征信提额，可通过下方卡片查看。
+标准答案评分：30.0
+参考答案评分：30.0
+平均相似度：30.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、ASSET卡片
+失败原因：话术平均评分 30.0 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：12.893s
+是否通过：False
+------ 第2轮 ------
+用户问题：那我先借50000元
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：您可以进入借款页面申请5万元借款，系统会根据您的可用额度和信用状况进行审核。
+参考答案：您可以前往借款页面提交5万元的借款申请，系统会根据您的可用额度和信用状况进行审核。
+模型回复：我理解您想借款50000元，这边暂不能直接为您办理借款下单。建议您前往 APP 借款页面查看可用额度并按流程操作。
+标准答案评分：85.0
+参考答案评分：90.0
+平均相似度：87.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.183s
+是否通过：True
+------ 第3轮 ------
+用户问题：借款50000元多久能到账
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：借款下单类
+标准答案：借款5万元审核通过后，款项通常会在1-3个工作日内到账，具体到账时间以银行处理速度为准。
+参考答案：审核通过后，您的5万元借款一般会在1到3个工作日内到账，实际到账时间取决于银行的处理速度。
+模型回复：借款下单和放款时效请以 APP 借款页面展示为准，这边暂不能直接为您办理或承诺具体到账时间。
+标准答案评分：45.0
+参考答案评分：45.0
+平均相似度：45.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度
+失败原因：话术平均评分 45.0 低于阈值 70.0
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。
+是否断言：True
+响应耗时：3.498s
+是否通过：False

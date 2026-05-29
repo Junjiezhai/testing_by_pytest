@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183953996288",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183953996288",
+          "sessionId": "chat_pre_20260528183953996288"
+        },
+        "type": "TEXT",
+        "value": "建议上传本人名下收入入账频率高、余额稳定的储蓄卡流水，评估会更有效；具体支持的银行列表请以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

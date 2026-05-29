@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183546758730",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183546758730",
+          "sessionId": "chat_pre_20260528183546758730"
+        },
+        "type": "TEXT",
+        "value": "可以同时申请。部分增信材料可复用，系统会综合评估两个维度，但结果分别以页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

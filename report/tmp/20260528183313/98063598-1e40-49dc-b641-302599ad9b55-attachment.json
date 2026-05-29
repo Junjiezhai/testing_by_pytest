@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0090",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-公积金认证会查缴费明细吗",
+  "intent": "提额降息操作类",
+  "question": "公积金认证会查缴费明细吗",
+  "expected_answer": "是的，公积金认证会查询您的缴费基数、连续缴费时长等信息，用于评估您的收入稳定性。该查询仅用于本次提额，不会影响您的公积金账户。",
+  "questions": [
+    "公积金认证会查缴费明细吗"
+  ],
+  "expected_answers": [
+    "是的，公积金认证会查询您的缴费基数、连续缴费时长等信息，用于评估您的收入稳定性。该查询仅用于本次提额，不会影响您的公积金账户。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。是的，公积金认证会查询您的缴费基数、连续缴费时长等信息，用于评估您的收入稳定性。该查询仅用于本次提额，不会影响您的公积金账户。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184107303714",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184107303714",
+          "sessionId": "chat_pre_20260528184107303714"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供逃避还款的方法。逃废债会影响您的征信并可能面临法律诉讼，建议您按时还款或联系官方客服沟通困难。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

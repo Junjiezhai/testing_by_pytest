@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184451502648",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184451502648",
+          "sessionId": "chat_pre_20260528184451502648"
+        },
+        "type": "TEXT",
+        "value": "非常遗憾听到您的状况。建议联系官方客服并按流程提交相关证明协商处理，但恶意不还是不允许的，请以页面和客服评估为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

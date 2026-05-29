@@ -1,0 +1,180 @@
+{
+  "uid" : "31fd8e9047de3f6d",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-注销账户后，之前的提额记录还在吗]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "b449976f274ef464eebd9f195e2fc855",
+  "time" : {
+    "start" : 1779965031498,
+    "stop" : 1779965034361,
+    "duration" : 2863
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "broken",
+  "statusMessage" : "Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:44:54 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}",
+  "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x00000210697A4F28>\ncase_info = {'case_desc': '提额降息咨询类-注销账户后，之前的提额记录还在吗', 'case_id': 'MIR_0216', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': '4130759',\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n>           response_time=response_time\n        )\n\ntest_cases\\test_model_intent_recognition.py:244: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nassert_code\\model_intent_assert.py:237: in evaluate_single_turn\n    reference_answer=reference_answer\ncommon\\modelHttpAction.py:474: in get_dual_sentence_similarity\n    raise e\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <common.modelHttpAction.ModelHttpAction object at 0x00000210692DDF28>\nactual_answer = '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\nexpected_answer = '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\nreference_answer = '这个问题主要以页面展示和系统评估结果为准。注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\ndesc = '【模型双话术语义相似度评估】'\n\n    def get_dual_sentence_similarity(self, actual_answer: str, expected_answer: str, reference_answer: str = '', desc='【模型双话术语义相似度评估】') -> dict:\n        \"\"\"\n        请求模型一次性评估实际话术分别与标准话术、参考话术的语义相似度\n        :param actual_answer: 信贷模型实际话术\n        :param expected_answer: 标准话术\n        :param reference_answer: 外部模型参考话术，可为空\n        :param desc: 请求描述\n        :return:\n        \"\"\"\n        self._check_auth_token()\n        if not actual_answer or not expected_answer:\n            raise Exception('actual_answer和expected_answer不能为空')\n    \n        data = {\n            'model': self.model,\n            'max_tokens': 2048,\n            'thinking': {'type': 'adaptive'},\n            'cache_control': {'type': 'ephemeral'},\n            'output_config': {\n                'effort': 'low',\n                'format': {\n                    'type': 'json_schema',\n                    'schema': {\n                        'type': 'object',\n                        'properties': {\n                            'standard': {\n                                'type': 'object',\n                                'properties': {\n                                    'is_same_meaning': {'type': 'boolean'},\n                                    'similarity_score': {'type': 'number'},\n                                    'reason': {'type': 'string'}\n                                },\n                                'required': ['is_same_meaning', 'similarity_score', 'reason'],\n                                'additionalProperties': False\n                            },\n                            'reference': {\n                                'type': 'object',\n                                'properties': {\n                                    'is_same_meaning': {'type': 'boolean'},\n                                    'similarity_score': {'type': 'number'},\n                                    'reason': {'type': 'string'}\n                                },\n                                'required': ['is_same_meaning', 'similarity_score', 'reason'],\n                                'additionalProperties': False\n                            }\n                        },\n                        'required': ['standard', 'reference'],\n                        'additionalProperties': False\n                    }\n                }\n            },\n            'messages': [\n                {\n                    'role': 'user',\n                    'content': self._get_dual_sentence_similarity_prompt(\n                        actual_answer=actual_answer,\n                        expected_answer=expected_answer,\n                        reference_answer=reference_answer\n                    )\n                }\n            ]\n        }\n        req = {\n            'url': self.url,\n            'model': self.model,\n            'actual_answer': actual_answer,\n            'expected_answer': expected_answer,\n            'reference_answer': reference_answer\n        }\n        log.info(f\"{desc}请求的入参为:{req}\")\n    \n        try:\n            response = requests.post(self.url, headers=self.headers, data=json.dumps(data), timeout=self.timeout, verify=True)\n            log.info(f\"{desc}响应结果为：{response.status_code}, 出参为: {response.text}\")\n            if response.status_code != 200:\n>               raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')\nE               Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:44:54 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}\n\ncommon\\modelHttpAction.py:458: Exception",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "broken",
+    "statusMessage" : "Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:44:54 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}",
+    "statusTrace" : "self = <test_model_intent_recognition.TestModelIntentRecognition object at 0x00000210697A4F28>\ncase_info = {'case_desc': '提额降息咨询类-注销账户后，之前的提额记录还在吗', 'case_id': 'MIR_0216', 'case_type': 'single_turn', 'env': 'pre', ...}\n\n    @allure.story('单轮意图识别与话术应答')\n    @pytest.mark.model_single_turn\n    @pytest.mark.parametrize(*(assemble_model_case_params(case_type='single_turn')),\n                             ids=get_model_case_desc(case_type='single_turn'))\n    def test_single_turn_intent_recognition(self, case_info: dict) -> None:\n        \"\"\"\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        \"\"\"\n        if not case_info:\n            pytest.skip('当前未配置single_turn类型用例')\n        allure.dynamic.parent_suite('单轮意图识别与话术应答')\n        allure.dynamic.suite(case_info['intent'])\n        allure.dynamic.label('intent', case_info['intent'])\n    \n        log.info(f\"\\n==============【当前环境：env={case_info['env']}, group={case_info['group']}】信贷大模型单轮测试 =============\\n\")\n        model = ModelIntentRecognition(env=case_info['env'], group=case_info['group'])\n        msg_info = {\n            'uid': '4130759',\n            'content': case_info['question']\n        }\n    \n        start_time = time.time()\n        exec_res = model.send_msg_to_model(msg_info=msg_info)\n        response_time = time.time() - start_time\n    \n        report_row = ModelIntentAssert.evaluate_single_turn(\n            case_info=case_info,\n            output_data=exec_res.get('output_data'),\n>           response_time=response_time\n        )\n\ntest_cases\\test_model_intent_recognition.py:244: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nassert_code\\model_intent_assert.py:237: in evaluate_single_turn\n    reference_answer=reference_answer\ncommon\\modelHttpAction.py:474: in get_dual_sentence_similarity\n    raise e\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <common.modelHttpAction.ModelHttpAction object at 0x00000210692DDF28>\nactual_answer = '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\nexpected_answer = '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\nreference_answer = '这个问题主要以页面展示和系统评估结果为准。注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'\ndesc = '【模型双话术语义相似度评估】'\n\n    def get_dual_sentence_similarity(self, actual_answer: str, expected_answer: str, reference_answer: str = '', desc='【模型双话术语义相似度评估】') -> dict:\n        \"\"\"\n        请求模型一次性评估实际话术分别与标准话术、参考话术的语义相似度\n        :param actual_answer: 信贷模型实际话术\n        :param expected_answer: 标准话术\n        :param reference_answer: 外部模型参考话术，可为空\n        :param desc: 请求描述\n        :return:\n        \"\"\"\n        self._check_auth_token()\n        if not actual_answer or not expected_answer:\n            raise Exception('actual_answer和expected_answer不能为空')\n    \n        data = {\n            'model': self.model,\n            'max_tokens': 2048,\n            'thinking': {'type': 'adaptive'},\n            'cache_control': {'type': 'ephemeral'},\n            'output_config': {\n                'effort': 'low',\n                'format': {\n                    'type': 'json_schema',\n                    'schema': {\n                        'type': 'object',\n                        'properties': {\n                            'standard': {\n                                'type': 'object',\n                                'properties': {\n                                    'is_same_meaning': {'type': 'boolean'},\n                                    'similarity_score': {'type': 'number'},\n                                    'reason': {'type': 'string'}\n                                },\n                                'required': ['is_same_meaning', 'similarity_score', 'reason'],\n                                'additionalProperties': False\n                            },\n                            'reference': {\n                                'type': 'object',\n                                'properties': {\n                                    'is_same_meaning': {'type': 'boolean'},\n                                    'similarity_score': {'type': 'number'},\n                                    'reason': {'type': 'string'}\n                                },\n                                'required': ['is_same_meaning', 'similarity_score', 'reason'],\n                                'additionalProperties': False\n                            }\n                        },\n                        'required': ['standard', 'reference'],\n                        'additionalProperties': False\n                    }\n                }\n            },\n            'messages': [\n                {\n                    'role': 'user',\n                    'content': self._get_dual_sentence_similarity_prompt(\n                        actual_answer=actual_answer,\n                        expected_answer=expected_answer,\n                        reference_answer=reference_answer\n                    )\n                }\n            ]\n        }\n        req = {\n            'url': self.url,\n            'model': self.model,\n            'actual_answer': actual_answer,\n            'expected_answer': expected_answer,\n            'reference_answer': reference_answer\n        }\n        log.info(f\"{desc}请求的入参为:{req}\")\n    \n        try:\n            response = requests.post(self.url, headers=self.headers, data=json.dumps(data), timeout=self.timeout, verify=True)\n            log.info(f\"{desc}响应结果为：{response.status_code}, 出参为: {response.text}\")\n            if response.status_code != 200:\n>               raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')\nE               Exception: 【模型双话术语义相似度评估】请求失败，状态码：429，出参：{\"error\":{\"message\":\"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:44:54 UTC\",\"type\":\"None\",\"param\":\"None\",\"code\":\"429\"}}\n\ncommon\\modelHttpAction.py:458: Exception",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7e0e52129ba213a5",
+      "name" : "log",
+      "source" : "7e0e52129ba213a5.txt",
+      "type" : "text/plain",
+      "size" : 33604
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967809396,
+      "stop" : 1779967810358,
+      "duration" : 962
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fbde1d619b55fad",
+      "name" : "模型测试汇总",
+      "source" : "9fbde1d619b55fad.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "96f4dbb4fc1f71f2",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "96f4dbb4fc1f71f2.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "fd894783606413a1",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fd894783606413a1.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "6277f00e85cc72d3",
+      "name" : "模型测试汇总JSON",
+      "source" : "6277f00e85cc72d3.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30752-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0216', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-注销账户后，之前的提额记录还在吗', 'intent': '提额降息咨询类', 'question': '注销账户后，之前的提额记录还在吗', 'expected_answer': '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。', 'questions': ['注销账户后，之前的提额记录还在吗'], 'expected_answers': ['注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "3cde74cd11f59120",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879119752,
+          "stop" : 1779879171813,
+          "duration" : 52061
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "31fd8e9047de3f6d.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0216', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-注销账户后，之前的提额记录还在吗', 'intent': '提额降息咨询类', 'question': '注销账户后，之前的提额记录还在吗', 'expected_answer': '注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。', 'questions': ['注销账户后，之前的提额记录还在吗'], 'expected_answers': ['注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。注销账户后所有数据将被清除，无法恢复。如果未来重新注册，需重新进行信用评估和提额申请。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

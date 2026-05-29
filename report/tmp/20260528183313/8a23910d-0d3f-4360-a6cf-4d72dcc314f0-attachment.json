@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183426431337",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183426431337",
+          "sessionId": "chat_pre_20260528183426431337"
+        },
+        "type": "TEXT",
+        "value": "提额后的额度可用于申请新借款用于日常消费，但不能直接用来偿还本平台旧订单。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

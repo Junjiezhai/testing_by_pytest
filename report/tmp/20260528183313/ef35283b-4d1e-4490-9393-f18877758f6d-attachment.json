@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184436798806",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184436798806",
+          "sessionId": "chat_pre_20260528184436798806"
+        },
+        "type": "TEXT",
+        "value": "如果借款人确实身故，家属可凭相关证明联系官方客服协商处理。这边无法直接代办或指导非真实材料，请以官方客服和页面提示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184952078763",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184952078763",
+          "sessionId": "chat_pre_20260528184952078763"
+        },
+        "type": "TEXT",
+        "value": "提额成功不代表借款一定通过，每笔借款仍会单独评估，具体结果请以 APP 借款页展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

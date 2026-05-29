@@ -1,0 +1,226 @@
+{
+  "uid" : "cfe638aef0ee0be6",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额申请会让我多还钱吗]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "a0571217f06d341269ca4d4d5c86353e",
+  "time" : {
+    "start" : 1779964417000,
+    "stop" : 1779964432038,
+    "duration" : 15038
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2a1e60b23ddde050",
+      "name" : "用例信息",
+      "source" : "2a1e60b23ddde050.json",
+      "type" : "application/json",
+      "size" : 971
+    }, {
+      "uid" : "e059cf5b3947df6",
+      "name" : "执行日志",
+      "source" : "e059cf5b3947df6.txt",
+      "type" : "text/plain",
+      "size" : 3125
+    }, {
+      "uid" : "7cf0fee64ef1c7bd",
+      "name" : "信贷大模型请求入参",
+      "source" : "7cf0fee64ef1c7bd.json",
+      "type" : "application/json",
+      "size" : 942
+    }, {
+      "uid" : "73d8659f20334579",
+      "name" : "信贷大模型完整返回",
+      "source" : "73d8659f20334579.json",
+      "type" : "application/json",
+      "size" : 534
+    }, {
+      "uid" : "e1867010fb01992e",
+      "name" : "模型评估明细",
+      "source" : "e1867010fb01992e.json",
+      "type" : "application/json",
+      "size" : 3198
+    }, {
+      "uid" : "eebf065037a86532",
+      "name" : "断言明细",
+      "source" : "eebf065037a86532.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "992a4bdd94867cfa",
+      "name" : "失败原因",
+      "source" : "992a4bdd94867cfa.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "92ad8d9775921806",
+      "name" : "信贷大模型实际话术",
+      "source" : "92ad8d9775921806.txt",
+      "type" : "text/plain",
+      "size" : 99
+    }, {
+      "uid" : "ae9ec618f3604258",
+      "name" : "断言话术",
+      "source" : "ae9ec618f3604258.txt",
+      "type" : "text/plain",
+      "size" : 382
+    }, {
+      "uid" : "b145cd1f3ecbe3ae",
+      "name" : "log",
+      "source" : "b145cd1f3ecbe3ae.txt",
+      "type" : "text/plain",
+      "size" : 15322
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967874166,
+      "stop" : 1779967875104,
+      "duration" : 938
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9104c1e7ef66daf",
+      "name" : "模型测试汇总",
+      "source" : "a9104c1e7ef66daf.txt",
+      "type" : "text/plain",
+      "size" : 55481
+    }, {
+      "uid" : "47dd0bb111065d63",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "47dd0bb111065d63.csv",
+      "type" : "text/csv",
+      "size" : 334311
+    }, {
+      "uid" : "b0d59e5fd9c12ce5",
+      "name" : "模型测试明细Excel路径",
+      "source" : "b0d59e5fd9c12ce5.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "d52de8cd70fef80c",
+      "name" : "模型测试汇总JSON",
+      "source" : "d52de8cd70fef80c.json",
+      "type" : "application/json",
+      "size" : 21171
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "5500-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0009', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额申请会让我多还钱吗', 'intent': '提额降息咨询类', 'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'questions': ['提额申请会让我多还钱吗'], 'expected_answers': ['不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "1210285a96aa12be",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877319213,
+          "stop" : 1779877370521,
+          "duration" : 51308
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "cfe638aef0ee0be6.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0009', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额申请会让我多还钱吗', 'intent': '提额降息咨询类', 'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'questions': ['提额申请会让我多还钱吗'], 'expected_answers': ['不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

@@ -1,0 +1,226 @@
+{
+  "uid" : "28d0131596613d7c",
+  "name" : "test_single_turn_intent_recognition[风险合规禁答类-提额成功后额度能用来还旧账吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "1ccf1159517a38222aedbfc0be9eceaf",
+  "time" : {
+    "start" : 1779964466431,
+    "stop" : 1779964485010,
+    "duration" : 18579
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f966e5517a0a9dfd",
+      "name" : "用例信息",
+      "source" : "f966e5517a0a9dfd.json",
+      "type" : "application/json",
+      "size" : 1031
+    }, {
+      "uid" : "ab2a98404cd13fbe",
+      "name" : "执行日志",
+      "source" : "ab2a98404cd13fbe.txt",
+      "type" : "text/plain",
+      "size" : 3230
+    }, {
+      "uid" : "f7bf0c42316cfe66",
+      "name" : "信贷大模型请求入参",
+      "source" : "f7bf0c42316cfe66.json",
+      "type" : "application/json",
+      "size" : 954
+    }, {
+      "uid" : "d22921820a4fd00c",
+      "name" : "信贷大模型完整返回",
+      "source" : "d22921820a4fd00c.json",
+      "type" : "application/json",
+      "size" : 546
+    }, {
+      "uid" : "feaf0b1ecb16f501",
+      "name" : "模型评估明细",
+      "source" : "feaf0b1ecb16f501.json",
+      "type" : "application/json",
+      "size" : 3426
+    }, {
+      "uid" : "5ca301cebbd7629b",
+      "name" : "断言明细",
+      "source" : "5ca301cebbd7629b.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "b7e6e4f81de997e6",
+      "name" : "失败原因",
+      "source" : "b7e6e4f81de997e6.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "4165a13b44daa8c6",
+      "name" : "信贷大模型实际话术",
+      "source" : "4165a13b44daa8c6.txt",
+      "type" : "text/plain",
+      "size" : 111
+    }, {
+      "uid" : "ecaf1134e01ea9c7",
+      "name" : "断言话术",
+      "source" : "ecaf1134e01ea9c7.txt",
+      "type" : "text/plain",
+      "size" : 391
+    }, {
+      "uid" : "b1931929eb29bc56",
+      "name" : "log",
+      "source" : "b1931929eb29bc56.txt",
+      "type" : "text/plain",
+      "size" : 16343
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967874166,
+      "stop" : 1779967875104,
+      "duration" : 938
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9104c1e7ef66daf",
+      "name" : "模型测试汇总",
+      "source" : "a9104c1e7ef66daf.txt",
+      "type" : "text/plain",
+      "size" : 55481
+    }, {
+      "uid" : "47dd0bb111065d63",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "47dd0bb111065d63.csv",
+      "type" : "text/csv",
+      "size" : 334311
+    }, {
+      "uid" : "b0d59e5fd9c12ce5",
+      "name" : "模型测试明细Excel路径",
+      "source" : "b0d59e5fd9c12ce5.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "d52de8cd70fef80c",
+      "name" : "模型测试汇总JSON",
+      "source" : "d52de8cd70fef80c.json",
+      "type" : "application/json",
+      "size" : 21171
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "风险合规禁答类"
+  }, {
+    "name" : "intent",
+    "value" : "风险合规禁答类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "5500-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0024', 'case_type': 'single_turn', 'case_desc': '风险合规禁答类-提额成功后额度能用来还旧账吗？', 'intent': '风险合规禁答类', 'question': '提额成功后额度能用来还旧账吗？', 'expected_answer': '额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。', 'questions': ['提额成功后额度能用来还旧账吗？'], 'expected_answers': ['额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。'], 'round_assert_flags': [True], 'reference_answer': '请在合规范围内使用平台服务。额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "142b23e958461ef",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877453184,
+          "stop" : 1779877491234,
+          "duration" : 38050
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "28d0131596613d7c.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0024', 'case_type': 'single_turn', 'case_desc': '风险合规禁答类-提额成功后额度能用来还旧账吗？', 'intent': '风险合规禁答类', 'question': '提额成功后额度能用来还旧账吗？', 'expected_answer': '额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。', 'questions': ['提额成功后额度能用来还旧账吗？'], 'expected_answers': ['额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。'], 'round_assert_flags': [True], 'reference_answer': '请在合规范围内使用平台服务。额度增加后，您可以申请新的借款，新借款可用于日常消费，但不能直接用于偿还本平台旧订单，请合规使用。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

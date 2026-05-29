@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0134",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-我可以取消正在审核的提额申请吗",
+  "intent": "提额降息咨询类",
+  "question": "我可以取消正在审核的提额申请吗",
+  "expected_answer": "审核中的申请无法手动取消。为您推荐最快审核的提额申请项，最快1s审核完成。",
+  "questions": [
+    "我可以取消正在审核的提额申请吗"
+  ],
+  "expected_answers": [
+    "审核中的申请无法手动取消。为您推荐最快审核的提额申请项，最快1s审核完成。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。审核中的申请无法手动取消。为您推荐最快审核的提额申请项，最快1s审核完成。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

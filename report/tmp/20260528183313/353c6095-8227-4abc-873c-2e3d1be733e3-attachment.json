@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184427692106",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184427692106",
+          "sessionId": "chat_pre_20260528184427692106"
+        },
+        "type": "TEXT",
+        "value": "如果问题里没有说明具体业务或事项，请先补充想咨询的是提额、降息、材料、还款还是人工客服，我再按对应规则说明。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

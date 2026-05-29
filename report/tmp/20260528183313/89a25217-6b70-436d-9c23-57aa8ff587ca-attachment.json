@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183352043714",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183352044749",
+          "sessionId": "chat_pre_20260528183352043714"
+        },
+        "type": "TEXT",
+        "value": "建议间隔1到3个月再申请，期间保持良好的还款记录和信用行为，有助于提高下次通过率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

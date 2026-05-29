@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184010432418",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184010432418",
+          "sessionId": "chat_pre_20260528184010432418"
+        },
+        "type": "TEXT",
+        "value": "抱歉给您带来不便，我这就为您转接人工客服，稍后会有专业坐席为您处理账户冻结问题。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

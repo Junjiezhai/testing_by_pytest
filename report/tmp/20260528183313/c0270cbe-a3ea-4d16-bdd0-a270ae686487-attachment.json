@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184738018118",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184738018118",
+          "sessionId": "chat_pre_20260528184738018118"
+        },
+        "type": "TEXT",
+        "value": "资料齐全不代表一定提额成功，系统会结合账户状态、信用表现和材料综合评估，最终结果以 APP 页面为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

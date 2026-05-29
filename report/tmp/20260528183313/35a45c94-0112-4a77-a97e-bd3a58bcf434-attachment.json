@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0186",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-这个问题你解决不了，叫个能解决的人来",
+  "intent": "提额降息咨询类",
+  "question": "这个问题你解决不了，叫个能解决的人来",
+  "expected_answer": "明白，我这就将您的问题升级转接给高级人工客服，请保持在线。",
+  "questions": [
+    "这个问题你解决不了，叫个能解决的人来"
+  ],
+  "expected_answers": [
+    "明白，我这就将您的问题升级转接给高级人工客服，请保持在线。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。明白，我这就将您的问题升级转接给高级人工客服，请保持在线。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183535314260",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183535314260",
+          "sessionId": "chat_pre_20260528183535314260"
+        },
+        "type": "TEXT",
+        "value": "您的利率是根据信用记录、还款行为等综合评定的，不同用户存在差异属正常现象；保持良好记录有助于未来获得更低利率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

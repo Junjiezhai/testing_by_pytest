@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0303",
+  "case_type": "single_turn",
+  "case_desc": "非业务相关意图-你好",
+  "intent": "非业务相关意图",
+  "question": "你好",
+  "expected_answer": "您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？",
+  "questions": [
+    "你好"
+  ],
+  "expected_answers": [
+    "您好！我是信贷助手，很高兴为您服务，请问有什么可以帮您？"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您好，我是信贷助手，很高兴为您服务，请问需要什么帮助？",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184931356649",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184931356649",
+          "sessionId": "chat_pre_20260528184931356649"
+        },
+        "type": "TEXT",
+        "value": "具体利率和利息需以您借款页面展示的年化利率及合同为准。您可以打开 APP 查看实际可借额度与对应费率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,132 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0121
+【测试场景】：同一意图连续追问-提额明确金额诉求-1
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额到10万需要什么条件
+【断言话术-标准答案】：提额到10万元需要系统综合评估您的信用记录、还款情况、收入证明等。具体条件以页面展示为准。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "提额到10万需要什么条件", "chatId": "chat_pre_MD_0121_1779967566659145", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192606659145_0", "content": "我想把额度提到5万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192632895071_1", "content": "当前暂未满足直接提额条件，为您推荐征信提额权益，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192632895071_2", "content": "那提额到8万呢", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192722894131_3", "content": "提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192722894131_4", "content": "提额到10万需要什么条件", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192810621606_5", "content": "提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万，但具体结果无法提前承诺，请以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0121_1779967566659145", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192606659145_0", "content": "我想把额度提到5万元", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192632895071_1", "content": "当前暂未满足直接提额条件，为您推荐征信提额权益，可通过下方卡片查看。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192632895071_2", "content": "那提额到8万呢", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192722894131_3", "content": "提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528192722894131_4", "content": "提额到10万需要什么条件", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528192810621606_5", "content": "提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万，但具体结果无法提前承诺，请以APP页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0121_1779967566659145", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528192722894131_4", "sessionId": "chat_pre_MD_0121_1779967566659145"}, "type": "TEXT", "value": "提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万，但具体结果无法提前承诺，请以APP页面展示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万，但具体结果无法提前承诺，请以APP页面展示为准。
+【外部模型相似度评分】：44.17
+【外部模型评估原因】：多轮逐轮平均相似度：44.17
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 32.5 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内；话术平均评分 15.0 低于阈值 70.0；上下文断言失败：用户当前问题“那提额到8万呢”是对上一个提额额度的延伸追问，模型应说明8万额度的评估条件；但实际回答直接假设提额失败并给出再次申请间隔建议，未正确回应额度咨询，上下文承接错误。意图无污染，无改口、风险插入或拒答后回归场景，相关断言默认通过。
+【响应耗时】：9.554s
+【相似度断言】：实际=44.17，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第1轮 | 失败维度：话术相似度、ASSET卡片 | 原因：话术平均评分 32.5 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+问题：我想把额度提到5万元
+模型回复：当前暂未满足直接提额条件，为您推荐征信提额权益，可通过下方卡片查看。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+第2轮 | 失败维度：话术相似度、上下文承接 | 原因：话术平均评分 15.0 低于阈值 70.0；上下文断言失败：用户当前问题“那提额到8万呢”是对上一个提额额度的延伸追问，模型应说明8万额度的评估条件；但实际回答直接假设提额失败并给出再次申请间隔建议，未正确回应额度咨询，上下文承接错误。意图无污染，无改口、风险插入或拒答后回归场景，相关断言默认通过。
+问题：那提额到8万呢
+模型回复：提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+【多轮平均响应耗时】：9.554s
+【多轮总响应耗时】：28.661s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：我想把额度提到5万元
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：
+标准答案：提额后的具体额度由系统根据您的信用状况综合评估，目前无法承诺一定能提升到5万元。建议您保持良好的还款记录，系统会定期评估。
+参考答案：提额的具体额度由系统根据您的信用情况综合评估，目前无法保证一定能提升到5万元。建议您保持好的还款记录，系统会定期进行评估调整。
+模型回复：当前暂未满足直接提额条件，为您推荐征信提额权益，可通过下方卡片查看。
+标准答案评分：30.0
+参考答案评分：35.0
+平均相似度：32.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、ASSET卡片
+失败原因：话术平均评分 32.5 低于阈值 70.0；ASSET.value=AS2605191421518676 不在允许范围内；biz_ref_id=credit_report 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：12.695s
+是否通过：False
+------ 第2轮 ------
+用户问题：那提额到8万呢
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：额度提升需要系统综合评估，8万元属于较高额度，能否达到取决于您的信用评分、还款记录、收入证明等因素。
+参考答案：提额到8万元需要经过系统综合评估。8万属于较高额度，具体能否达到要看您的信用评分、还款记录、收入证明等多方面因素。
+模型回复：提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。
+标准答案评分：15.0
+参考答案评分：15.0
+平均相似度：15.0
+意图断言：True
+上下文承接：False
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：话术相似度、上下文承接
+失败原因：话术平均评分 15.0 低于阈值 70.0；上下文断言失败：用户当前问题“那提额到8万呢”是对上一个提额额度的延伸追问，模型应说明8万额度的评估条件；但实际回答直接假设提额失败并给出再次申请间隔建议，未正确回应额度咨询，上下文承接错误。意图无污染，无改口、风险插入或拒答后回归场景，相关断言默认通过。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。
+是否断言：True
+响应耗时：12.98s
+是否通过：False
+------ 第3轮 ------
+用户问题：提额到10万需要什么条件
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：single_intent_followup
+上一轮意图：提额降息咨询类
+标准答案：提额到10万元需要系统综合评估您的信用记录、还款情况、收入证明等。具体条件以页面展示为准。
+参考答案：提升额度至10万元需要系统综合评估您的信用记录、还款情况、收入证明等因素，具体条件以申请页面展示为准。
+模型回复：提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万，但具体结果无法提前承诺，请以APP页面展示为准。
+标准答案评分：85.0
+参考答案评分：85.0
+平均相似度：85.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.987s
+是否通过：True

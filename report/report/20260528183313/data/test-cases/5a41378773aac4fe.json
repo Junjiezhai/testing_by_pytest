@@ -1,0 +1,226 @@
+{
+  "uid" : "5a41378773aac4fe",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-为什么我没有提额的入口？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "64a4fb1df46403150c15cc0987515645",
+  "time" : {
+    "start" : 1779964460600,
+    "stop" : 1779964480596,
+    "duration" : 19996
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403829,
+      "stop" : 1779964403829,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f07d26b2485b9c0f",
+      "name" : "用例信息",
+      "source" : "f07d26b2485b9c0f.json",
+      "type" : "application/json",
+      "size" : 1004
+    }, {
+      "uid" : "5f03d0eefe896408",
+      "name" : "执行日志",
+      "source" : "5f03d0eefe896408.txt",
+      "type" : "text/plain",
+      "size" : 3090
+    }, {
+      "uid" : "4b5684c7dd820eb",
+      "name" : "信贷大模型请求入参",
+      "source" : "4b5684c7dd820eb.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "9020e84c04c008b",
+      "name" : "信贷大模型完整返回",
+      "source" : "9020e84c04c008b.json",
+      "type" : "application/json",
+      "size" : 426
+    }, {
+      "uid" : "c56a6b8c9838fdea",
+      "name" : "模型评估明细",
+      "source" : "c56a6b8c9838fdea.json",
+      "type" : "application/json",
+      "size" : 3038
+    }, {
+      "uid" : "e9b01ac5e14629cb",
+      "name" : "断言明细",
+      "source" : "e9b01ac5e14629cb.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "4b23dbe5f1c862f5",
+      "name" : "失败原因",
+      "source" : "4b23dbe5f1c862f5.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "1ee9e82b45444c69",
+      "name" : "信贷大模型实际话术",
+      "source" : "1ee9e82b45444c69.txt",
+      "type" : "text/plain",
+      "size" : 147
+    }, {
+      "uid" : "381d4898a37166aa",
+      "name" : "断言话术",
+      "source" : "381d4898a37166aa.txt",
+      "type" : "text/plain",
+      "size" : 391
+    }, {
+      "uid" : "c705ac36bd74d72c",
+      "name" : "log",
+      "source" : "c705ac36bd74d72c.txt",
+      "type" : "text/plain",
+      "size" : 25886
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967888777,
+      "stop" : 1779967889750,
+      "duration" : 973
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8dfde8a3d1a77429",
+      "name" : "模型测试汇总",
+      "source" : "8dfde8a3d1a77429.txt",
+      "type" : "text/plain",
+      "size" : 55685
+    }, {
+      "uid" : "7a391009ce75eace",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "7a391009ce75eace.csv",
+      "type" : "text/csv",
+      "size" : 336714
+    }, {
+      "uid" : "9763619a7b920fdd",
+      "name" : "模型测试明细Excel路径",
+      "source" : "9763619a7b920fdd.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "56c41697807702d4",
+      "name" : "模型测试汇总JSON",
+      "source" : "56c41697807702d4.json",
+      "type" : "application/json",
+      "size" : 21170
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30648-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0016', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-为什么我没有提额的入口？', 'intent': '提额降息操作类', 'question': '为什么我没有提额的入口？', 'expected_answer': '提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。', 'questions': ['为什么我没有提额的入口？'], 'expected_answers': ['提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "7b4b0b52b67c6676",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779877456977,
+          "stop" : 1779877486003,
+          "duration" : 29026
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "5a41378773aac4fe.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0016', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-为什么我没有提额的入口？', 'intent': '提额降息操作类', 'question': '为什么我没有提额的入口？', 'expected_answer': '提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。', 'questions': ['为什么我没有提额的入口？'], 'expected_answers': ['提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。'], 'round_assert_flags': [True], 'reference_answer': '您可以根据页面提示完成操作。提额入口是根据您的综合信用状况逐步开放的。建议您保持良好还款记录，后续会为您开放，请关注APP内提示。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

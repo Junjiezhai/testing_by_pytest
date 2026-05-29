@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0273",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-我把我老婆的征信报告传上去，算我的提额材料行吗？",
+  "intent": "提额降息操作类",
+  "question": "我把我老婆的征信报告传上去，算我的提额材料行吗？",
+  "expected_answer": "不可以。所有材料必须为本人信息，使用他人材料属于欺诈行为。",
+  "questions": [
+    "我把我老婆的征信报告传上去，算我的提额材料行吗？"
+  ],
+  "expected_answers": [
+    "不可以。所有材料必须为本人信息，使用他人材料属于欺诈行为。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。不可以。所有材料必须为本人信息，使用他人材料属于欺诈行为。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

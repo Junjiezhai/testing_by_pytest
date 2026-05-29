@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184450509902",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184450509902",
+          "sessionId": "chat_pre_20260528184450509902"
+        },
+        "type": "TEXT",
+        "value": "我们严禁任何形式的人为干预或利益输送，提额由系统自动评估，请勿相信“找关系”。请警惕付费包过等诈骗风险，以 APP 官方页面为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

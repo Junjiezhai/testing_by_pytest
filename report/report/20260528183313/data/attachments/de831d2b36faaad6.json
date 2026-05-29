@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184846473725",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184846473725",
+          "sessionId": "chat_pre_20260528184846473725"
+        },
+        "type": "TEXT",
+        "value": "我主要提供分期乐提额、降息及相关规则咨询。您是想了解提额入口、材料准备，还是其他信贷问题？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184928324383",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184928324383",
+          "sessionId": "chat_pre_20260528184928324383"
+        },
+        "type": "TEXT",
+        "value": "额度调整会结合您的信用表现、还款记录和账户状态进行综合评估，具体以 APP 页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

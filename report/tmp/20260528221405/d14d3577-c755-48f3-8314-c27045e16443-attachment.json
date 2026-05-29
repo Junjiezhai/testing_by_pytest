@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528222350745028",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528222350745028",
+          "sessionId": "chat_pre_20260528222350745028"
+        },
+        "type": "TEXT",
+        "value": "降息成功后，未来的新借款因利率降低总利息会减少；但已存在的借款不受影响，请以合同和页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

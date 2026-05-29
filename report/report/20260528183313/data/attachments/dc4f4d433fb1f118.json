@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183847633932",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183847633932",
+          "sessionId": "chat_pre_20260528183847633932"
+        },
+        "type": "TEXT",
+        "value": "没有工作也可以尝试提额。您可以提交微信/支付宝账单或银行流水展示消费能力；如果想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183601914211",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183601914211",
+          "sessionId": "chat_pre_20260528183601914211"
+        },
+        "type": "TEXT",
+        "value": "平台会不定时发放免息券或降息券，您可以关注APP内的活动通知和卡券中心领取，借款时可用。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

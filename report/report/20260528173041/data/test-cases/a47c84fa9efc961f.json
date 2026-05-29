@@ -1,0 +1,224 @@
+{
+  "uid" : "a47c84fa9efc961f",
+  "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息咨询类-5]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "a5afc817baa01d107816c45ae75d9362",
+  "time" : {
+    "start" : 1779960677196,
+    "stop" : 1779960861632,
+    "duration" : 184436
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779960651736,
+      "stop" : 1779960651736,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "65e9cdb368785fc1",
+      "name" : "信贷大模型实际话术",
+      "source" : "65e9cdb368785fc1.txt",
+      "type" : "text/plain",
+      "size" : 740
+    }, {
+      "uid" : "1a0002d0fa7b9b6b",
+      "name" : "断言话术",
+      "source" : "1a0002d0fa7b9b6b.txt",
+      "type" : "text/plain",
+      "size" : 1418
+    }, {
+      "uid" : "8fc6037c9c1c6ad7",
+      "name" : "多轮失败定位摘要",
+      "source" : "8fc6037c9c1c6ad7.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "25e373bf8774ad9f",
+      "name" : "执行日志",
+      "source" : "25e373bf8774ad9f.txt",
+      "type" : "text/plain",
+      "size" : 8792
+    }, {
+      "uid" : "1cfd90b5dc43fbd0",
+      "name" : "模型评估明细CSV",
+      "source" : "1cfd90b5dc43fbd0.csv",
+      "type" : "text/csv",
+      "size" : 2536
+    }, {
+      "uid" : "75e371761ce39178",
+      "name" : "多轮逐轮评估明细",
+      "source" : "75e371761ce39178.json",
+      "type" : "application/json",
+      "size" : 24758
+    }, {
+      "uid" : "78d4615d6eeb2854",
+      "name" : "log",
+      "source" : "78d4615d6eeb2854.txt",
+      "type" : "text/plain",
+      "size" : 66210
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779960861717,
+      "stop" : 1779960861770,
+      "duration" : 53
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ee72cb3c206c0320",
+      "name" : "模型测试汇总",
+      "source" : "ee72cb3c206c0320.txt",
+      "type" : "text/plain",
+      "size" : 595
+    }, {
+      "uid" : "9f424491f5af9279",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "9f424491f5af9279.csv",
+      "type" : "text/csv",
+      "size" : 1892
+    }, {
+      "uid" : "671459b6fc3b9009",
+      "name" : "模型测试明细Excel路径",
+      "source" : "671459b6fc3b9009.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "202d14761acd176a",
+      "name" : "模型测试汇总JSON",
+      "source" : "202d14761acd176a.json",
+      "type" : "application/json",
+      "size" : 629
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "33064-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0005', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-5', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'questions': ['提额成功后会立即生效吗', '我可以主动要求提额到具体数字吗', '提额申请会让我多还钱吗'], 'expected_answers': ['提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额成功后会立即生效吗', 'expected_answer': '提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '我可以主动要求提额到具体数字吗', 'expected_answer': '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'reference_answer': '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "2175a7f7d7c5ecc0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 35.0 低于阈值 70.0",
+        "time" : {
+          "start" : 1779881009548,
+          "stop" : 1779881216097,
+          "duration" : 206549
+        }
+      }, {
+        "uid" : "b8f412b9c72d4828",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 40.0 低于阈值 70.0",
+        "time" : {
+          "start" : 1779871204904,
+          "stop" : 1779871434771,
+          "duration" : 229867
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "a47c84fa9efc961f.json",
+  "parameterValues" : [ "{'case_id': 'MD_0005', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-5', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'questions': ['提额成功后会立即生效吗', '我可以主动要求提额到具体数字吗', '提额申请会让我多还钱吗'], 'expected_answers': ['提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额成功后会立即生效吗', 'expected_answer': '提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '我可以主动要求提额到具体数字吗', 'expected_answer': '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'reference_answer': '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

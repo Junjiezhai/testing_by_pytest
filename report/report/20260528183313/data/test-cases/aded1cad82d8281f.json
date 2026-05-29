@@ -1,0 +1,207 @@
+{
+  "uid" : "aded1cad82d8281f",
+  "name" : "test_single_turn_intent_recognition[非业务相关意图-NBA总决赛结果]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "6e6c09367c84fe7497fe88faa878b5f4",
+  "time" : {
+    "start" : 1779965202382,
+    "stop" : 1779965216445,
+    "duration" : 14063
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "552d6dec0152dfdd",
+      "name" : "用例信息",
+      "source" : "552d6dec0152dfdd.json",
+      "type" : "application/json",
+      "size" : 863
+    }, {
+      "uid" : "2a4e11d524b1e2b8",
+      "name" : "执行日志",
+      "source" : "2a4e11d524b1e2b8.txt",
+      "type" : "text/plain",
+      "size" : 3108
+    }, {
+      "uid" : "5733b9a4d9059a42",
+      "name" : "信贷大模型请求入参",
+      "source" : "5733b9a4d9059a42.json",
+      "type" : "application/json",
+      "size" : 927
+    }, {
+      "uid" : "50a6b4983c33f8f8",
+      "name" : "信贷大模型完整返回",
+      "source" : "50a6b4983c33f8f8.json",
+      "type" : "application/json",
+      "size" : 561
+    }, {
+      "uid" : "1ba73f4e7d7e9db2",
+      "name" : "模型评估明细",
+      "source" : "1ba73f4e7d7e9db2.json",
+      "type" : "application/json",
+      "size" : 3355
+    }, {
+      "uid" : "10d6a3273bc564fd",
+      "name" : "断言明细",
+      "source" : "10d6a3273bc564fd.json",
+      "type" : "application/json",
+      "size" : 429
+    }, {
+      "uid" : "f5a77528803c1cc4",
+      "name" : "失败原因",
+      "source" : "f5a77528803c1cc4.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "bcb6f644ce6bd985",
+      "name" : "信贷大模型实际话术",
+      "source" : "bcb6f644ce6bd985.txt",
+      "type" : "text/plain",
+      "size" : 126
+    }, {
+      "uid" : "8dff29a68cf7eb82",
+      "name" : "断言话术",
+      "source" : "8dff29a68cf7eb82.txt",
+      "type" : "text/plain",
+      "size" : 316
+    }, {
+      "uid" : "4236d48e610030dd",
+      "name" : "log",
+      "source" : "4236d48e610030dd.txt",
+      "type" : "text/plain",
+      "size" : 15726
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967874166,
+      "stop" : 1779967875104,
+      "duration" : 938
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9104c1e7ef66daf",
+      "name" : "模型测试汇总",
+      "source" : "a9104c1e7ef66daf.txt",
+      "type" : "text/plain",
+      "size" : 55481
+    }, {
+      "uid" : "47dd0bb111065d63",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "47dd0bb111065d63.csv",
+      "type" : "text/csv",
+      "size" : 334311
+    }, {
+      "uid" : "b0d59e5fd9c12ce5",
+      "name" : "模型测试明细Excel路径",
+      "source" : "b0d59e5fd9c12ce5.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "d52de8cd70fef80c",
+      "name" : "模型测试汇总JSON",
+      "source" : "d52de8cd70fef80c.json",
+      "type" : "application/json",
+      "size" : 21171
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "intent",
+    "value" : "非业务相关意图"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "5500-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0295', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-NBA总决赛结果', 'intent': '非业务相关意图', 'question': 'NBA总决赛结果', 'expected_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'questions': ['NBA总决赛结果'], 'expected_answers': ['抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，作为信贷助手，我主要提供借款、提额、降息等咨询服务，无法回答体育赛事相关问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "aded1cad82d8281f.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0295', 'case_type': 'single_turn', 'case_desc': '非业务相关意图-NBA总决赛结果', 'intent': '非业务相关意图', 'question': 'NBA总决赛结果', 'expected_answer': '抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。', 'questions': ['NBA总决赛结果'], 'expected_answers': ['抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。'], 'round_assert_flags': [True], 'reference_answer': '抱歉，作为信贷助手，我主要提供借款、提额、降息等咨询服务，无法回答体育赛事相关问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

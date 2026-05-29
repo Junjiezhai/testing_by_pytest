@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184549536208",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184549536208",
+          "sessionId": "chat_pre_20260528184549536208"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法满足您的要求。提额和降息等业务需通过正规渠道申请，我会尽力为您解答相关问题。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

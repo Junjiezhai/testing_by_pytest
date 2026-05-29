@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184155107387",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184155107387",
+          "sessionId": "chat_pre_20260528184155107387"
+        },
+        "type": "TEXT",
+        "value": "可能是系统延迟，建议您退出重登或在首页下拉刷新查看。若仍未更新，可联系客服提供截图帮您核对。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

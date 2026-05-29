@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183741012447",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183741012447",
+          "sessionId": "chat_pre_20260528183741012447"
+        },
+        "type": "TEXT",
+        "value": "是的，公积金认证会查询您的缴费基数、连续缴费时长等信息来评估收入稳定性，仅用于本次提额，不会影响您的账户。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

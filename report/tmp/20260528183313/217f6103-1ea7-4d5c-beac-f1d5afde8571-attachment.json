@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0123",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-微信账单提额需要提供什么",
+  "intent": "提额降息咨询类",
+  "question": "微信账单提额需要提供什么",
+  "expected_answer": "你需要按操作指引提交微信年度账单或交易流水，用于评估您的消费能力和收入稳定性。快点击下方“微信账单流水”提额降息项进行提额降息吧~",
+  "questions": [
+    "微信账单提额需要提供什么"
+  ],
+  "expected_answers": [
+    "你需要按操作指引提交微信年度账单或交易流水，用于评估您的消费能力和收入稳定性。快点击下方“微信账单流水”提额降息项进行提额降息吧~"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。你需要按操作指引提交微信年度账单或交易流水，用于评估您的消费能力和收入稳定性。快点击下方“微信账单流水”提额降息项进行提额降息吧~",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

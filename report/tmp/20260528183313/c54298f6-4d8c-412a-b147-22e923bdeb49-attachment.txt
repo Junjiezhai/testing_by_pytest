@@ -1,0 +1,155 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0067
+【测试场景】：跨意图切换-7
+【意图分类】：提额降息咨询类+提额降息操作类+信息查询类+借款下单类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：我可以去哪里下单借钱
+【断言话术-标准答案】：您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "我可以去哪里下单借钱", "chatId": "chat_pre_MD_0067_1779966521470954", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190841470954_0", "content": "提额申请会让我多还钱吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190912184039_1", "content": "不会。提额只是增加您的可用借款上限，不会改变已借订单的还款金额和期限，也不会因此多还钱。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190912184039_2", "content": "降息后如果我再申请提额，利率会变吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190942163232_3", "content": "提额一般不直接影响利率，但补充优质材料可能触发系统重新评估，有机会进一步降息，具体结果以 APP 展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190942163232_4", "content": "提额结果会保存多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528191003692765_5", "content": "提额成功后新额度长期有效，不会主动降低；系统会根据您的信用表现和使用情况动态调整，具体以APP页面为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528191003693765_6", "content": "我可以去哪里下单借钱", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528191031634713_7", "content": "借款下单请在分期乐 APP 的借款页面操作，这边暂不能直接为您办理。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0067_1779966521470954", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190841470954_0", "content": "提额申请会让我多还钱吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190912184039_1", "content": "不会。提额只是增加您的可用借款上限，不会改变已借订单的还款金额和期限，也不会因此多还钱。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190912184039_2", "content": "降息后如果我再申请提额，利率会变吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190942163232_3", "content": "提额一般不直接影响利率，但补充优质材料可能触发系统重新评估，有机会进一步降息，具体结果以 APP 展示为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190942163232_4", "content": "提额结果会保存多久", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528191003692765_5", "content": "提额成功后新额度长期有效，不会主动降低；系统会根据您的信用表现和使用情况动态调整，具体以APP页面为准。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528191003693765_6", "content": "我可以去哪里下单借钱", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528191031634713_7", "content": "借款下单请在分期乐 APP 的借款页面操作，这边暂不能直接为您办理。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_MD_0067_1779966521470954", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_model_customer_20260528191003693765_6", "sessionId": "chat_pre_MD_0067_1779966521470954"}, "type": "TEXT", "value": "借款下单请在分期乐 APP 的借款页面操作，这边暂不能直接为您办理。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：借款下单请在分期乐 APP 的借款页面操作，这边暂不能直接为您办理。
+【外部模型相似度评分】：89.0
+【外部模型评估原因】：多轮逐轮平均相似度：89.0
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：
+【响应耗时】：2.927s
+【相似度断言】：实际=89.0，阈值=70.0，结果=True
+【最终结果】：True
+【多轮失败定位摘要】：
+无失败轮次
+【多轮平均响应耗时】：2.927s
+【多轮总响应耗时】：11.707s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额申请会让我多还钱吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：
+标准答案：不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。
+参考答案：这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。
+模型回复：不会。提额只是增加您的可用借款上限，不会改变已借订单的还款金额和期限，也不会因此多还钱。
+标准答案评分：90.0
+参考答案评分：85.0
+平均相似度：87.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.712s
+是否通过：True
+------ 第2轮 ------
+用户问题：降息后如果我再申请提额，利率会变吗？
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。
+参考答案：您可以根据页面提示完成操作。提额一般不直接影响利率，但如果您在提额时补充了优质材料，系统可能重新评估利率并给予进一步降息。
+模型回复：提额一般不直接影响利率，但补充优质材料可能触发系统重新评估，有机会进一步降息，具体结果以 APP 展示为准。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.871s
+是否通过：True
+------ 第3轮 ------
+用户问题：提额结果会保存多久
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+参考答案：相关信息建议以 APP 页面展示为准。提额成功后，新额度长期有效，除非您的信用状况发生重大变化（如逾期），否则额度不会主动降低。
+模型回复：提额成功后新额度长期有效，不会主动降低；系统会根据您的信用表现和使用情况动态调整，具体以APP页面为准。
+标准答案评分：92.0
+参考答案评分：93.0
+平均相似度：92.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.146s
+是否通过：True
+------ 第4轮 ------
+用户问题：我可以去哪里下单借钱
+期望意图：借款下单类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：信息查询类
+标准答案：您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+参考答案：只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。您当前的可用额度XXX，可点此【lexfi.cn/XJiI】立即借款。
+模型回复：借款下单请在分期乐 APP 的借款页面操作，这边暂不能直接为您办理。
+标准答案评分：85.0
+参考答案评分：80.0
+平均相似度：82.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：2.977s
+是否通过：True

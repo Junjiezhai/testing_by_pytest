@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183607598684",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183607598684",
+          "sessionId": "chat_pre_20260528183607598684"
+        },
+        "type": "TEXT",
+        "value": "可以上传其他借款APP的额度及利率截图作为辅助材料，系统会参考评估。如果您想继续办理，可以直接说“我要降息”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

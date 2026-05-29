@@ -1,0 +1,226 @@
+{
+  "uid" : "3f9f11909a570319",
+  "name" : "test_single_turn_intent_recognition[信息查询类-我可以打电话查询审核进度吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "2be4b12be814b5630b792de080d98cf3",
+  "time" : {
+    "start" : 1779965149196,
+    "stop" : 1779965170811,
+    "duration" : 21615
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403827,
+      "stop" : 1779964403827,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2d9b7f7ff3101c76",
+      "name" : "用例信息",
+      "source" : "2d9b7f7ff3101c76.json",
+      "type" : "application/json",
+      "size" : 887
+    }, {
+      "uid" : "c57f7680fa5e2368",
+      "name" : "执行日志",
+      "source" : "c57f7680fa5e2368.txt",
+      "type" : "text/plain",
+      "size" : 3337
+    }, {
+      "uid" : "82292596293028a8",
+      "name" : "信贷大模型请求入参",
+      "source" : "82292596293028a8.json",
+      "type" : "application/json",
+      "size" : 951
+    }, {
+      "uid" : "758d767b6e63b76e",
+      "name" : "信贷大模型完整返回",
+      "source" : "758d767b6e63b76e.json",
+      "type" : "application/json",
+      "size" : 596
+    }, {
+      "uid" : "47525ca7693cba61",
+      "name" : "模型评估明细",
+      "source" : "47525ca7693cba61.json",
+      "type" : "application/json",
+      "size" : 3664
+    }, {
+      "uid" : "ed0f4035e242926b",
+      "name" : "断言明细",
+      "source" : "ed0f4035e242926b.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "d55f7f1928dec1c1",
+      "name" : "失败原因",
+      "source" : "d55f7f1928dec1c1.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "161d01e55185330e",
+      "name" : "信贷大模型实际话术",
+      "source" : "161d01e55185330e.txt",
+      "type" : "text/plain",
+      "size" : 161
+    }, {
+      "uid" : "1095443812a40ee6",
+      "name" : "断言话术",
+      "source" : "1095443812a40ee6.txt",
+      "type" : "text/plain",
+      "size" : 322
+    }, {
+      "uid" : "9c014b79bc25481",
+      "name" : "log",
+      "source" : "9c014b79bc25481.txt",
+      "type" : "text/plain",
+      "size" : 18305
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967870986,
+      "stop" : 1779967871920,
+      "duration" : 934
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aa1520d6e0884b75",
+      "name" : "模型测试汇总",
+      "source" : "aa1520d6e0884b75.txt",
+      "type" : "text/plain",
+      "size" : 54493
+    }, {
+      "uid" : "116d1396fa636e40",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "116d1396fa636e40.csv",
+      "type" : "text/csv",
+      "size" : 329652
+    }, {
+      "uid" : "c3309cf3809c0dd4",
+      "name" : "模型测试明细Excel路径",
+      "source" : "c3309cf3809c0dd4.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "2bf9a9992b5e81e",
+      "name" : "模型测试汇总JSON",
+      "source" : "2bf9a9992b5e81e.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "信息查询类"
+  }, {
+    "name" : "intent",
+    "value" : "信息查询类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "25176-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0145', 'case_type': 'single_turn', 'case_desc': '信息查询类-我可以打电话查询审核进度吗？', 'intent': '信息查询类', 'question': '我可以打电话查询审核进度吗？', 'expected_answer': '暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。', 'questions': ['我可以打电话查询审核进度吗？'], 'expected_answers': ['暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "a5c40446628f5d86",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879651955,
+          "stop" : 1779879757244,
+          "duration" : 105289
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "3f9f11909a570319.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0145', 'case_type': 'single_turn', 'case_desc': '信息查询类-我可以打电话查询审核进度吗？', 'intent': '信息查询类', 'question': '我可以打电话查询审核进度吗？', 'expected_answer': '暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。', 'questions': ['我可以打电话查询审核进度吗？'], 'expected_answers': ['暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。'], 'round_assert_flags': [True], 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。暂不可以电话查询，您可在此页面输出查询进度，我来问您查询进度。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

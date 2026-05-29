@@ -1,0 +1,226 @@
+{
+  "uid" : "b7caf436b5b4cbfe",
+  "name" : "test_single_turn_intent_recognition[转人工类-语音验证码收不到，帮我转人工]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "17db6b046feafda2ca606a06dd87b17d",
+  "time" : {
+    "start" : 1779964809696,
+    "stop" : 1779964810426,
+    "duration" : 730
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "702dc5bef29acf34",
+      "name" : "用例信息",
+      "source" : "702dc5bef29acf34.json",
+      "type" : "application/json",
+      "size" : 848
+    }, {
+      "uid" : "efe67c0aeba1f795",
+      "name" : "执行日志",
+      "source" : "efe67c0aeba1f795.txt",
+      "type" : "text/plain",
+      "size" : 2392
+    }, {
+      "uid" : "4f6a55d02a9bf0ce",
+      "name" : "信贷大模型请求入参",
+      "source" : "4f6a55d02a9bf0ce.json",
+      "type" : "application/json",
+      "size" : 951
+    }, {
+      "uid" : "966cbccb13239af2",
+      "name" : "信贷大模型完整返回",
+      "source" : "966cbccb13239af2.json",
+      "type" : "application/json",
+      "size" : 214
+    }, {
+      "uid" : "2fe76d3fe45ea049",
+      "name" : "模型评估明细",
+      "source" : "2fe76d3fe45ea049.json",
+      "type" : "application/json",
+      "size" : 2237
+    }, {
+      "uid" : "b6a7d1c8bc378353",
+      "name" : "断言明细",
+      "source" : "b6a7d1c8bc378353.json",
+      "type" : "application/json",
+      "size" : 447
+    }, {
+      "uid" : "138381da4b1a6e1e",
+      "name" : "失败原因",
+      "source" : "138381da4b1a6e1e.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "746255425bc3155f",
+      "name" : "信贷大模型实际话术",
+      "source" : "746255425bc3155f.txt",
+      "type" : "text/plain",
+      "size" : 7
+    }, {
+      "uid" : "4c260419d6a0eb94",
+      "name" : "断言话术",
+      "source" : "4c260419d6a0eb94.txt",
+      "type" : "text/plain",
+      "size" : 301
+    }, {
+      "uid" : "20e93444b9de1e90",
+      "name" : "log",
+      "source" : "20e93444b9de1e90.txt",
+      "type" : "text/plain",
+      "size" : 10152
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967809396,
+      "stop" : 1779967810358,
+      "duration" : 962
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fbde1d619b55fad",
+      "name" : "模型测试汇总",
+      "source" : "9fbde1d619b55fad.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "96f4dbb4fc1f71f2",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "96f4dbb4fc1f71f2.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "fd894783606413a1",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fd894783606413a1.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "6277f00e85cc72d3",
+      "name" : "模型测试汇总JSON",
+      "source" : "6277f00e85cc72d3.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "转人工类"
+  }, {
+    "name" : "intent",
+    "value" : "转人工类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30752-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0193', 'case_type': 'single_turn', 'case_desc': '转人工类-语音验证码收不到，帮我转人工', 'intent': '转人工类', 'question': '语音验证码收不到，帮我转人工', 'expected_answer': '好的，我为您转接人工客服，人工会协助您解决验证码问题。', 'questions': ['语音验证码收不到，帮我转人工'], 'expected_answers': ['好的，我为您转接人工客服，人工会协助您解决验证码问题。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。好的，我为您转接人工客服，人工会协助您解决验证码问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "b5b678bdc6c29de1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878935092,
+          "stop" : 1779878936939,
+          "duration" : 1847
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "b7caf436b5b4cbfe.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0193', 'case_type': 'single_turn', 'case_desc': '转人工类-语音验证码收不到，帮我转人工', 'intent': '转人工类', 'question': '语音验证码收不到，帮我转人工', 'expected_answer': '好的，我为您转接人工客服，人工会协助您解决验证码问题。', 'questions': ['语音验证码收不到，帮我转人工'], 'expected_answers': ['好的，我为您转接人工客服，人工会协助您解决验证码问题。'], 'round_assert_flags': [True], 'reference_answer': '如果自助说明无法解决您的问题，建议联系在线客服继续处理。好的，我为您转接人工客服，人工会协助您解决验证码问题。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

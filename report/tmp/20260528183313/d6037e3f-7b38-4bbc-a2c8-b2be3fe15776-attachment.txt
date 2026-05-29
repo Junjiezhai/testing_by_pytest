@@ -1,0 +1,377 @@
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:286 2026-05-28 at 18:59:40 | 
+==============【当前环境：env=pre, group=default】信贷大模型多轮测试 =============
+
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:40 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:40 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:59:40 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:40 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0007_1779965980126108", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185940126108_0", "content": "\\u964d\\u606f\\u5ba1\\u6838\\u8d85\\u65f6\\u4e86\\u600e\\u4e48\\u529e\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:42 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661779965980421380904056","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0007_1779965980126108","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"poll_after_ms":300,"max_poll_seconds":120,"lastMsgId":"msg_model_customer_20260528185940126108_0","payload":{"poll_after_ms":300,"max_poll_seconds":120,"plan_id":"6ac96288e2cc46df92c0f075357f5cbd"},"biz_ref_id":[],"sessionId":"chat_pre_MD_0007_1779965980126108","biz_ref_type":"","card_type":"","plan_id":"6ac96288e2cc46df92c0f075357f5cbd"},"type":"ASSET","value":"AS2605261028460912","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"1577ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:59:42 | 【模型意图识别】接口返回traceId: 0A0A28661779965980421380904056, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0007_1779965980126108', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'poll_after_ms': 300, 'max_poll_seconds': 120, 'lastMsgId': 'msg_model_customer_20260528185940126108_0', 'payload': {'poll_after_ms': 300, 'max_poll_seconds': 120, 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd'}, 'biz_ref_id': [], 'sessionId': 'chat_pre_MD_0007_1779965980126108', 'biz_ref_type': '', 'card_type': '', 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd'}, 'type': 'ASSET', 'value': 'AS2605261028460912', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:113 2026-05-28 at 18:59:42 | 【模型意图识别】检测到异步模式触发条件，开始异步查询...
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:202 2026-05-28 at 18:59:42 | 【异步模式】开始异步查询，参数：{'uid': '4130759', 'biz_scene_key': 'BSK2605181039042973', 'session_id': 'chat_pre_MD_0007_1779965980126108', 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd'}
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:42 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:42 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:59:42 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:42 | 【【模型结果异步查询】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'queryPlan', 'params': '[{"planId": "6ac96288e2cc46df92c0f075357f5cbd", "userId": "4130759", "sessionId": "chat_pre_MD_0007_1779965980126108", "bizSceneKey": "BSK2605181039042973"}]', 'comment': '【模型结果异步查询】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:42 | 【【模型结果异步查询】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9177996598233889880056B","data":{"errcode":0,"result":{"phase":"pending","poll_after_ms":1000,"poll_status":"pending","final_turn_written":false,"final_message_pushed":false,"final_result":null,"error":null,"plan_id":"6ac96288e2cc46df92c0f075357f5cbd","should_continue":true,"tasks":[{"phase":"pending","result":null,"updated_at":"2026-05-28 18:59:41.689611+08","task_id":"068792a3b2b54af69648ee2ea1625cd5","error":null,"status":"pending"}],"status":"pending"},"environment":"pre","method":"queryPlan","costTime":"33ms","service":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:59:42 | 【模型结果异步查询】接口返回traceId: 0A0A2BC9177996598233889880056B, 结果为:{'phase': 'pending', 'poll_after_ms': 1000, 'poll_status': 'pending', 'final_turn_written': False, 'final_message_pushed': False, 'final_result': None, 'error': None, 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd', 'should_continue': True, 'tasks': [{'phase': 'pending', 'result': None, 'updated_at': '2026-05-28 18:59:41.689611+08', 'task_id': '068792a3b2b54af69648ee2ea1625cd5', 'error': None, 'status': 'pending'}], 'status': 'pending'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:312 2026-05-28 at 18:59:42 | 当前if_need_continue：True, 模型结果参数为：[]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:41 2026-05-28 at 18:59:42 | 【异步轮询】第 1 次轮询，等待 5s 后重试...
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:47 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:47 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:59:47 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:47 | 【【模型结果异步查询】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'queryPlan', 'params': '[{"planId": "6ac96288e2cc46df92c0f075357f5cbd", "userId": "4130759", "sessionId": "chat_pre_MD_0007_1779965980126108", "bizSceneKey": "BSK2605181039042973"}]', 'comment': '【模型结果异步查询】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:47 | 【【模型结果异步查询】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9177996598766489950056B","data":{"errcode":0,"result":{"phase":"running","poll_after_ms":1000,"poll_status":"running","final_turn_written":false,"final_message_pushed":false,"final_result":null,"error":null,"plan_id":"6ac96288e2cc46df92c0f075357f5cbd","should_continue":true,"tasks":[{"phase":"running","result":null,"updated_at":"2026-05-28 18:59:42.721998+08","task_id":"068792a3b2b54af69648ee2ea1625cd5","error":null,"status":"running"}],"status":"running"},"environment":"pre","method":"queryPlan","costTime":"16ms","service":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:59:47 | 【模型结果异步查询】接口返回traceId: 0A0A2BC9177996598766489950056B, 结果为:{'phase': 'running', 'poll_after_ms': 1000, 'poll_status': 'running', 'final_turn_written': False, 'final_message_pushed': False, 'final_result': None, 'error': None, 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd', 'should_continue': True, 'tasks': [{'phase': 'running', 'result': None, 'updated_at': '2026-05-28 18:59:42.721998+08', 'task_id': '068792a3b2b54af69648ee2ea1625cd5', 'error': None, 'status': 'running'}], 'status': 'running'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:312 2026-05-28 at 18:59:47 | 当前if_need_continue：True, 模型结果参数为：[]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:41 2026-05-28 at 18:59:47 | 【异步轮询】第 2 次轮询，等待 5s 后重试...
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:52 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:52 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:59:52 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:59:52 | 【【模型结果异步查询】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'queryPlan', 'params': '[{"planId": "6ac96288e2cc46df92c0f075357f5cbd", "userId": "4130759", "sessionId": "chat_pre_MD_0007_1779965980126108", "bizSceneKey": "BSK2605181039042973"}]', 'comment': '【模型结果异步查询】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:59:53 | 【【模型结果异步查询】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9177996599298789990056B","data":{"errcode":0,"result":{"phase":"completed","poll_after_ms":0,"poll_status":"success","final_turn_written":false,"final_message_pushed":true,"final_result":{"async_task":{"phase":"completed","poll_after_ms":300,"task_id":"068792a3b2b54af69648ee2ea1625cd5","plan_id":"6ac96288e2cc46df92c0f075357f5cbd","status":"completed"},"action":"reply","session_id":"chat_pre_MD_0007_1779965980126108","handoff":null,"error":null,"message":[{"cards":[{"payload":{"target_domain":"order"},"biz_ref_id":["borrow_entry"],"card_type":"cash_order_card","biz_ref_type":"cash_order","tracking_key":"limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow","card_id":"AS2605191420142236"}],"text":"查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。"}],"request_id":"msg_model_customer_20260528185940126108_0","status":"ok"},"error":null,"plan_id":"6ac96288e2cc46df92c0f075357f5cbd","should_continue":false,"tasks":[{"phase":"completed","result":{"async_task":{"phase":"completed","poll_after_ms":300,"task_id":"068792a3b2b54af69648ee2ea1625cd5","plan_id":"6ac96288e2cc46df92c0f075357f5cbd","status":"completed"},"session_id":"chat_pre_MD_0007_1779965980126108","action":"reply","message":[{"cards":[{"payload":{"target_domain":"order"},"biz_ref_id":["borrow_entry"],"card_type":"cash_order_card","biz_ref_type":"cash_order","tracking_key":"limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow","card_id":"AS2605191420142236"}],"text":"查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。"}],"request_id":"msg_model_customer_20260528185940126108_0","status":"ok"},"updated_at":"2026-05-28 18:59:47.718956+08","task_id":"068792a3b2b54af69648ee2ea1625cd5","error":null,"status":"success"}],"status":"success"},"environment":"pre","method":"queryPlan","costTime":"41ms","service":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:59:53 | 【模型结果异步查询】接口返回traceId: 0A0A2BC9177996599298789990056B, 结果为:{'phase': 'completed', 'poll_after_ms': 0, 'poll_status': 'success', 'final_turn_written': False, 'final_message_pushed': True, 'final_result': {'async_task': {'phase': 'completed', 'poll_after_ms': 300, 'task_id': '068792a3b2b54af69648ee2ea1625cd5', 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd', 'status': 'completed'}, 'action': 'reply', 'session_id': 'chat_pre_MD_0007_1779965980126108', 'handoff': None, 'error': None, 'message': [{'cards': [{'payload': {'target_domain': 'order'}, 'biz_ref_id': ['borrow_entry'], 'card_type': 'cash_order_card', 'biz_ref_type': 'cash_order', 'tracking_key': 'limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow', 'card_id': 'AS2605191420142236'}], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。'}], 'request_id': 'msg_model_customer_20260528185940126108_0', 'status': 'ok'}, 'error': None, 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd', 'should_continue': False, 'tasks': [{'phase': 'completed', 'result': {'async_task': {'phase': 'completed', 'poll_after_ms': 300, 'task_id': '068792a3b2b54af69648ee2ea1625cd5', 'plan_id': '6ac96288e2cc46df92c0f075357f5cbd', 'status': 'completed'}, 'session_id': 'chat_pre_MD_0007_1779965980126108', 'action': 'reply', 'message': [{'cards': [{'payload': {'target_domain': 'order'}, 'biz_ref_id': ['borrow_entry'], 'card_type': 'cash_order_card', 'biz_ref_type': 'cash_order', 'tracking_key': 'limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow', 'card_id': 'AS2605191420142236'}], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。'}], 'request_id': 'msg_model_customer_20260528185940126108_0', 'status': 'ok'}, 'updated_at': '2026-05-28 18:59:47.718956+08', 'task_id': '068792a3b2b54af69648ee2ea1625cd5', 'error': None, 'status': 'success'}], 'status': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:312 2026-05-28 at 18:59:53 | 当前if_need_continue：False, 模型结果参数为：[{'cards': [{'payload': {'target_domain': 'order'}, 'biz_ref_id': ['borrow_entry'], 'card_type': 'cash_order_card', 'biz_ref_type': 'cash_order', 'tracking_key': 'limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow', 'card_id': 'AS2605191420142236'}], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。'}]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:204 2026-05-28 at 18:59:53 | 【异步模式】异步查询结果：[{'cards': [{'payload': {'target_domain': 'order'}, 'biz_ref_id': ['borrow_entry'], 'card_type': 'cash_order_card', 'biz_ref_type': 'cash_order', 'tracking_key': 'limit_increase:limit_increase:result:4130759:O20260522874538900759:1779436424000:borrow', 'card_id': 'AS2605191420142236'}], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。'}]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-28 at 18:59:53 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0007_1779965980126108', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185940126108_0', 'content': '降息审核超时了怎么办？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0007_1779965980126108', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185940126108_0', 'content': '降息审核超时了怎么办？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'data': {'chatType': 'NORMAL', 'handoffReason': '', 'replyContents': [{'type': 'TEXT', 'value': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。'}, {'type': 'ASSET', 'value': 'AS2605191420142236', 'bizParamInfo': {'biz_ref_id': ['borrow_entry']}}], 'intent': '', 'intentCode': '', 'intentName': ''}, 'code': '0', 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-28 at 18:59:53 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '降息审核超时了怎么办？', 'expected_intent': '信息查询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-28 at 19:00:09 | 【模型多轮逐轮多维度评估】响应结果为：200, 出参为: {"content":[{"signature":"","thinking":"我们被要求输出JSON，基于给定信息。当前轮用户问题：降息审核超时了怎么办？模型实际话术：查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。标准答案和参考模型答案都提供了关于查询进度的回答。模型实际话术没有回应超时问题，而是说审批已通过并引导下单。所以语义不相似。意图：用户问超时怎么办，期望是信息查询，但模型回答的是引导下单，意图不符。上下文断言是single_intent_followup，表示同一意图连续追问，但实际并不相关。污染检查：上一轮意图为空，不需要检查。用户改口：否。风险拒答：否。返回业务：否。需要给出评分。相似度：对标准答案，实际话术完全没回应超时问题，相似度低，比如20分。参考模型也类似。intent不符，pass false。context承上？可能没有正确承接，因为用户说超时，模型没处理，所以context_carry_pass false。因为没有上一轮意图，intent_pollution可能pass。user_correction pass。risk_refusal pass。return_to_business pass。reason要解释。输出JSON。","type":"thinking"},{"text":"{\n  \"standard\": {\"is_same_meaning\": false, \"similarity_score\": 10, \"reason\": \"标准答案核心是解释正常审核时长并引导用户主动查询进度或提供协助，而实际话术直接告知审批通过并引导下单，完全未回应用户关于降息审核超时的疑问，属于答非所问。\"},\n  \"reference\": {\"is_same_meaning\": false, \"similarity_score\": 10, \"reason\": \"外部模型参考答案延续了标准答案的语义，核心在于说明正常审核时长、提供进度查询指引及主动协助，实际话术却转向已审批通过和引导借款下单，无视超时问题，语义完全不同。\"},\n  \"intent\": {\"actual_intent\": \"引导下单/推销借款\", \"expected_intent\": \"信息查询类\", \"intent_pass\": false, \"reason\": \"用户询问降息审核超时的处理办法，期望获得查询方式或解释，模型实际话术却偏离为通知审批通过并推销借款下单，意图严重不符。\"},\n  \"context\": {\n    \"context_carry_pass\": false,\n    \"intent_pollution_pass\": true,\n    \"user_correction_pass\": true,\n    \"risk_refusal_pass\": true,\n    \"return_to_business_pass\": true,\n    \"reason\": \"没有正确承接前文关于审核超时的疑问，直接忽略并转向无关内容；无上一轮意图污染风险；非用户改口、风险拒答及回归业务场景。\"\n  }\n}","type":"text"}],"id":"msg_0884ffae-4e1b-44ea-9cf0-1336645799f2","model":"deepseek-v4-pro","role":"assistant","stop_reason":"end_turn","type":"message","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":642,"output_tokens":607,"total_tokens":1249}}
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:438 2026-05-28 at 19:00:10 | 【多轮第1轮】用户问题：降息审核超时了怎么办？，模型回复：查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。，相似度：10.0，意图：引导下单/推销借款，耗时：12.916s
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:10 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:10 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 19:00:10 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:10 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0007_1779965980126108", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185940126108_0", "content": "\\u964d\\u606f\\u5ba1\\u6838\\u8d85\\u65f6\\u4e86\\u600e\\u4e48\\u529e\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190010005876_1", "content": "\\u67e5\\u5f97\\u60a8\\u6700\\u8fd1\\u4e8e2026-05-22\\u63d0\\u4ea4\\u7684\\u501f\\u6b3eAPP\\u622a\\u56fe\\uff0c\\u5df2\\u5ba1\\u6279\\u901a\\u8fc7\\u3002\\u73b0\\u5728\\u53ef\\u4ee5\\u4f53\\u9a8c\\u501f\\u94b1\\u4e00\\u952e\\u4e0b\\u5355\\uff0c\\u5177\\u4f53\\u501f\\u6b3e\\u65b9\\u6848\\u4ee5\\u4e0b\\u65b9\\u5361\\u7247\\u548c\\u9875\\u9762\\u5c55\\u793a\\u4e3a\\u51c6\\u3002", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190010006876_2", "content": "\\u63d0\\u989d\\u7533\\u8bf7\\u63d0\\u4ea4\\u540e\\uff0c\\u600e\\u4e48\\u67e5\\u770b\\u8fdb\\u5ea6", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:11 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9177996601029690030056B","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0007_1779965980126108","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"poll_after_ms":300,"max_poll_seconds":120,"lastMsgId":"msg_model_customer_20260528190010006876_2","payload":{"poll_after_ms":300,"max_poll_seconds":120,"plan_id":"44af8566e06e48b6badcbc1d316bff67"},"biz_ref_id":[],"sessionId":"chat_pre_MD_0007_1779965980126108","biz_ref_type":"","card_type":"","plan_id":"44af8566e06e48b6badcbc1d316bff67"},"type":"ASSET","value":"AS2605261028460912","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"1304ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 19:00:11 | 【模型意图识别】接口返回traceId: 0A0A2BC9177996601029690030056B, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0007_1779965980126108', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'poll_after_ms': 300, 'max_poll_seconds': 120, 'lastMsgId': 'msg_model_customer_20260528190010006876_2', 'payload': {'poll_after_ms': 300, 'max_poll_seconds': 120, 'plan_id': '44af8566e06e48b6badcbc1d316bff67'}, 'biz_ref_id': [], 'sessionId': 'chat_pre_MD_0007_1779965980126108', 'biz_ref_type': '', 'card_type': '', 'plan_id': '44af8566e06e48b6badcbc1d316bff67'}, 'type': 'ASSET', 'value': 'AS2605261028460912', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:113 2026-05-28 at 19:00:11 | 【模型意图识别】检测到异步模式触发条件，开始异步查询...
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:202 2026-05-28 at 19:00:11 | 【异步模式】开始异步查询，参数：{'uid': '4130759', 'biz_scene_key': 'BSK2605181039042973', 'session_id': 'chat_pre_MD_0007_1779965980126108', 'plan_id': '44af8566e06e48b6badcbc1d316bff67'}
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:11 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:11 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 19:00:11 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:11 | 【【模型结果异步查询】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'queryPlan', 'params': '[{"planId": "44af8566e06e48b6badcbc1d316bff67", "userId": "4130759", "sessionId": "chat_pre_MD_0007_1779965980126108", "bizSceneKey": "BSK2605181039042973"}]', 'comment': '【模型结果异步查询】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:11 | 【【模型结果异步查询】】响应结果为：200, 出参为: {"status":0,"message":"0A0A2BC9177996601195690070056B","data":{"errcode":0,"result":{"phase":"running","poll_after_ms":1000,"poll_status":"running","final_turn_written":false,"final_message_pushed":false,"final_result":null,"error":null,"plan_id":"44af8566e06e48b6badcbc1d316bff67","should_continue":true,"tasks":[{"phase":"running","result":null,"updated_at":"2026-05-28 19:00:11.322866+08","task_id":"baafb6d9e1f5480396b2b8f37ec99981","error":null,"status":"running"}],"status":"running"},"environment":"pre","method":"queryPlan","costTime":"22ms","service":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 19:00:11 | 【模型结果异步查询】接口返回traceId: 0A0A2BC9177996601195690070056B, 结果为:{'phase': 'running', 'poll_after_ms': 1000, 'poll_status': 'running', 'final_turn_written': False, 'final_message_pushed': False, 'final_result': None, 'error': None, 'plan_id': '44af8566e06e48b6badcbc1d316bff67', 'should_continue': True, 'tasks': [{'phase': 'running', 'result': None, 'updated_at': '2026-05-28 19:00:11.322866+08', 'task_id': 'baafb6d9e1f5480396b2b8f37ec99981', 'error': None, 'status': 'running'}], 'status': 'running'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:312 2026-05-28 at 19:00:11 | 当前if_need_continue：True, 模型结果参数为：[]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:41 2026-05-28 at 19:00:11 | 【异步轮询】第 1 次轮询，等待 5s 后重试...
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:16 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:17 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 19:00:17 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 19:00:17 | 【【模型结果异步查询】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'queryPlan', 'params': '[{"planId": "44af8566e06e48b6badcbc1d316bff67", "userId": "4130759", "sessionId": "chat_pre_MD_0007_1779965980126108", "bizSceneKey": "BSK2605181039042973"}]', 'comment': '【模型结果异步查询】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 19:00:17 | 【【模型结果异步查询】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661779966017278385004056","data":{"errcode":0,"result":{"phase":"completed","poll_after_ms":0,"poll_status":"success","final_turn_written":true,"final_message_pushed":true,"final_result":{"async_task":{"phase":"completed","poll_after_ms":300,"task_id":"baafb6d9e1f5480396b2b8f37ec99981","plan_id":"44af8566e06e48b6badcbc1d316bff67","status":"completed"},"action":"reply","session_id":"chat_pre_MD_0007_1779965980126108","handoff":null,"error":null,"message":[{"cards":[],"text":"查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。"}],"request_id":"msg_model_customer_20260528190010006876_2","status":"ok"},"error":null,"plan_id":"44af8566e06e48b6badcbc1d316bff67","should_continue":false,"tasks":[{"phase":"completed","result":{"async_task":{"phase":"completed","poll_after_ms":300,"task_id":"baafb6d9e1f5480396b2b8f37ec99981","plan_id":"44af8566e06e48b6badcbc1d316bff67","status":"completed"},"session_id":"chat_pre_MD_0007_1779965980126108","action":"reply","message":[{"cards":[],"text":"查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。"}],"request_id":"msg_model_customer_20260528190010006876_2","status":"ok"},"updated_at":"2026-05-28 19:00:16.601518+08","task_id":"baafb6d9e1f5480396b2b8f37ec99981","error":null,"status":"success"}],"status":"success"},"environment":"pre","method":"queryPlan","costTime":"125ms","service":"com.fenqile.rc.agent.adapter.service.FrontAsyncPlanService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 19:00:17 | 【模型结果异步查询】接口返回traceId: 0A0A28661779966017278385004056, 结果为:{'phase': 'completed', 'poll_after_ms': 0, 'poll_status': 'success', 'final_turn_written': True, 'final_message_pushed': True, 'final_result': {'async_task': {'phase': 'completed', 'poll_after_ms': 300, 'task_id': 'baafb6d9e1f5480396b2b8f37ec99981', 'plan_id': '44af8566e06e48b6badcbc1d316bff67', 'status': 'completed'}, 'action': 'reply', 'session_id': 'chat_pre_MD_0007_1779965980126108', 'handoff': None, 'error': None, 'message': [{'cards': [], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。'}], 'request_id': 'msg_model_customer_20260528190010006876_2', 'status': 'ok'}, 'error': None, 'plan_id': '44af8566e06e48b6badcbc1d316bff67', 'should_continue': False, 'tasks': [{'phase': 'completed', 'result': {'async_task': {'phase': 'completed', 'poll_after_ms': 300, 'task_id': 'baafb6d9e1f5480396b2b8f37ec99981', 'plan_id': '44af8566e06e48b6badcbc1d316bff67', 'status': 'completed'}, 'session_id': 'chat_pre_MD_0007_1779965980126108', 'action': 'reply', 'message': [{'cards': [], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。'}], 'request_id': 'msg_model_customer_20260528190010006876_2', 'status': 'ok'}, 'updated_at': '2026-05-28 19:00:16.601518+08', 'task_id': 'baafb6d9e1f5480396b2b8f37ec99981', 'error': None, 'status': 'success'}], 'status': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:312 2026-05-28 at 19:00:17 | 当前if_need_continue：False, 模型结果参数为：[{'cards': [], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。'}]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:204 2026-05-28 at 19:00:17 | 【异步模式】异步查询结果：[{'cards': [], 'text': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。'}]
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-28 at 19:00:17 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0007_1779965980126108', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185940126108_0', 'content': '降息审核超时了怎么办？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260528190010005876_1', 'content': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528190010006876_2', 'content': '提额申请提交后，怎么查看进度', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0007_1779965980126108', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185940126108_0', 'content': '降息审核超时了怎么办？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260528190010005876_1', 'content': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528190010006876_2', 'content': '提额申请提交后，怎么查看进度', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'data': {'chatType': 'NORMAL', 'handoffReason': '', 'replyContents': [{'type': 'TEXT', 'value': '查得您最近于2026-05-22提交的借款APP截图，已审批通过。本次提额幅度5000元，提额后额度10000元。'}], 'intent': '', 'intentCode': '', 'intentName': ''}, 'code': '0', 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-28 at 19:00:17 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '提额申请提交后，怎么查看进度', 'expected_intent': '信息查询类', 'previous_intent': '信息查询类', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-28 at 19:00:17 | 【模型多轮逐轮多维度评估】响应结果为：429, 出参为: {"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 11:01:17 UTC","type":"None","param":"None","code":"429"}}
+[31m[1mERROR   [0m common.modelHttpAction:modelHttpAction.py:597 2026-05-28 at 19:00:17 | 发生的错误为：Traceback (most recent call last):
+  File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 11:01:17 UTC","type":"None","param":"None","code":"429"}}
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "<string>", line 8, in <module>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1554, in serve
+    WorkerGateway(io=io, id=id, _startcount=2).serve()
+    |                |      -> 'gw0-worker'
+    |                -> <execnet.gateway_base.Popen2IO object at 0x0000022831FE5160>
+    -> <class 'execnet.gateway_base.WorkerGateway'>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1060, in serve
+    self._execpool.integrate_as_primary_thread()
+    |    |         -> <function WorkerPool.integrate_as_primary_thread at 0x0000022832086EA0>
+    |    -> <execnet.gateway_base.WorkerPool object at 0x0000022832127668>
+    -> <execnet.gateway_base.WorkerGateway object at 0x0000022831FE5588>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 267, in integrate_as_primary_thread
+    self._perform_spawn(reply)
+    |    |              -> <execnet.gateway_base.Reply object at 0x00000228321279B0>
+    |    -> <function WorkerPool._perform_spawn at 0x000002283208A0D0>
+    -> <execnet.gateway_base.WorkerPool object at 0x0000022832127668>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 285, in _perform_spawn
+    reply.run()
+    |     -> <function Reply.run at 0x0000022832086D08>
+    -> <execnet.gateway_base.Reply object at 0x00000228321279B0>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 220, in run
+    self._result = func(*args, **kwargs)
+    |              |     |       -> {}
+    |              |     -> ((<Channel id=1 open>, ('"""\n    This module is executed in remote subprocesses and helps to\n    control a remote testing s...
+    |              -> <bound method WorkerGateway.executetask of <execnet.gateway_base.WorkerGateway object at 0x0000022831FE5588>>
+    -> <execnet.gateway_base.Reply object at 0x00000228321279B0>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1084, in executetask
+    do_exec(co, loc)  # noqa
+    |       |   -> {'channel': <Channel id=1 open>, '__name__': '__channelexec__', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in...
+    |       -> <code object <module> at 0x0000022832154540, file "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\re...
+    -> <built-in function exec>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 291, in <module>
+    config.hook.pytest_cmdline_main(config=config)
+    |      |    |                          -> <_pytest.config.Config object at 0x0000022832E1A978>
+    |      |    -> <_HookCaller 'pytest_cmdline_main'>
+    |      -> <pluggy.hooks._HookRelay object at 0x000002283216F908>
+    -> <_pytest.config.Config object at 0x0000022832E1A978>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'config': <_pytest.config.Config object at 0x0000022832E1A978>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000002283268FBF8>
+           |    |         |     -> <_HookCaller 'pytest_cmdline_main'>
+           |    |         -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000002283214BD30>>
+           -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'config': <_pytest.config.Config object at 0x0000022832E1A978>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000022832E10BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000002283214BD30>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000022832E0F320>
+                |    |    |    |                     -> <_HookCaller 'pytest_cmdline_main'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000022832E0F320>
+                -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<_pytest.config.Config object at 0x0000022832E1A978>]
+          |         -> <function pytest_cmdline_main at 0x0000022832C43F28>
+          -> <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\Py...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 316, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           |            |       -> <function _main at 0x0000022832C20048>
+           |            -> <_pytest.config.Config object at 0x0000022832E1A978>
+           -> <function wrap_session at 0x0000022832C43EA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 269, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    |       |            |    |       -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>
+    |       |            |    -> <_pytest.config.Config object at 0x0000022832E1A978>
+    |       |            -> <function _main at 0x0000022832C20048>
+    |       -> <ExitCode.OK: 0>
+    -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 323, in _main
+    config.hook.pytest_runtestloop(session=session)
+    |      |    |                          -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>
+    |      |    -> <_HookCaller 'pytest_runtestloop'>
+    |      -> <pluggy.hooks._HookRelay object at 0x000002283216F908>
+    -> <_pytest.config.Config object at 0x0000022832E1A978>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000002283268FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtestloop'>
+           |    |         -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000002283214BD30>>
+           -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000022832E10BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000002283214BD30>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A5C0>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtestloop'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A5C0>
+                -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=33 testscollected=486>]
+          |         -> <bound method WorkerInteractor.pytest_runtestloop of <__channelexec__.WorkerInteractor object at 0x0000022832E1AA58>>
+          -> <HookImpl plugin_name='2371675597400', plugin=<__channelexec__.WorkerInteractor object at 0x0000022832E1AA58>>
+
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 91, in pytest_runtestloop
+    self.run_one_test(torun)
+    |    |            -> [413, 414, 415, 416, 417, 418]
+    |    -> <function WorkerInteractor.run_one_test at 0x0000022832E10620>
+    -> <__channelexec__.WorkerInteractor object at 0x0000022832E1AA58>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 110, in run_one_test
+    self.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    |    |      |    |                            |              -> <Function test_multi_turn_dialog_consistency[\u54a8\u8be2\u5230\u64cd\u4f5c\u9012\u8fdb-19]>
+    |    |      |    |                            -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    |    |      |    -> <_HookCaller 'pytest_runtest_protocol'>
+    |    |      -> <pluggy.hooks._HookRelay object at 0x000002283216F908>
+    |    -> <_pytest.config.Config object at 0x0000022832E1A978>
+    -> <__channelexec__.WorkerInteractor object at 0x0000022832E1AA58>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8b...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000002283268FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_protocol'>
+           |    |         -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000002283214BD30>>
+           -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8b...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000022832E10BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000002283214BD30>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A470>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_protocol'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A470>
+                -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b...
+          |         -> <function pytest_runtest_protocol at 0x0000022832C40B70>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 109, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    |               |              -> <Function test_multi_turn_dialog_consistency[\u54a8\u8be2\u5230\u64cd\u4f5c\u9012\u8fdb-19]>
+    |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    -> <function runtestprotocol at 0x0000022832C40BF8>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 126, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    |       |      |               |             -> True
+    |       |      |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    |       |      -> <function call_and_report at 0x0000022832C43048>
+    |       -> <method 'append' of 'list' objects>
+    -> [<TestReport 'test_cases/test_model_intent_recognition.py::TestModelIntentRecognition::test_multi_turn_dialog_consistency[\\u...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 215, in call_and_report
+    call = call_runtest_hook(item, when, **kwds)
+           |                 |     |       -> {}
+           |                 |     -> 'call'
+           |                 -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+           -> <function call_runtest_hook at 0x0000022832C43158>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in call_runtest_hook
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       |           |             -> (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+            |          |       |           -> 'call'
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 311, in from_call
+    result: Optional[TResult] = func()
+            |        |          -> <function call_runtest_hook.<locals>.<lambda> at 0x000002283D54C598>
+            |        -> +TResult
+            -> typing.Optional
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8b...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000002283268FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_call'>
+           |    |         -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000002283214BD30>>
+           -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8b...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000022832E10BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000002283214BD30>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A240>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': False, 'historic': False}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000022832E1A240>
+                -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b...
+          |         -> <function pytest_runtest_call at 0x0000022832C40D90>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 162, in pytest_runtest_call
+    item.runtest()
+    |    -> <function Function.runtest at 0x0000022832CE7730>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 1641, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |    |                                   -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+    |    -> <property object at 0x00000228327A29A8>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-7]>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000002283268FBF8>
+           |    |         |     -> <_HookCaller 'pytest_pyfunc_call'>
+           |    |         -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000002283214BD30>>
+           -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67...
+           |    |               |     -> [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x0000022832E10BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000002283214BD30>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x0000022832E0FF60>
+                |    |    |    |                     -> <_HookCaller 'pytest_pyfunc_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x0000022832E0FF60>
+                -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b...
+          |         -> <function pytest_pyfunc_call at 0x0000022832CB3F28>
+          -> <HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 183, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             |              -> {'case_info': {'case_id': 'MD_0007', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-信息查询类-7', 'remark': '同一意图连续追问', 'inten...
+             -> <bound method TestModelIntentRecognition.test_multi_turn_dialog_consistency of <test_model_intent_recognition.TestModelIntent...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\test_cases\test_model_intent_recognition.py", line 349, in test_multi_turn_dialog_consistency
+    similarity_threshold=case_info['similarity_threshold']
+                         -> {'case_id': 'MD_0007', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-信息查询类-7', 'remark': '同一意图连续追问', 'intent': '信息查询类', '...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\assert_code\model_intent_assert.py", line 410, in evaluate_multi_turn_round
+    expect_refuse=bool(round_info.get('expect_refuse'))
+                       |          -> <method 'get' of 'dict' objects>
+                       -> {'round': 2, 'question': '提额申请提交后，怎么查看进度', 'expected_answer': '正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：', 'reference_answer...
+
+> File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 11:01:17 UTC","type":"None","param":"None","code":"429"}}

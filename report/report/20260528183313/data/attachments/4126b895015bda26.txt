@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0088
+【测试场景】：提额降息咨询类-为什么我找不到某些提额选项
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：为什么我找不到某些提额选项
+【断言话术-标准答案】：提额项是根据您的信用状况逐步开放的，不同用户看到的选项可能不同。建议您保持良好的借款和还款记录，后续会为您开放更多提额方式。
+【断言话术-外部模型参考答案】：出现这种情况通常与系统综合评估结果有关。提额项是根据您的信用状况逐步开放的，不同用户看到的选项可能不同。建议您保持良好的借款和还款记录，后续会为您开放更多提额方式。
+【replyContents】：[{"type": "TEXT", "value": "提额选项是根据您的综合信用状况逐步开放的，不同用户看到的入口可能不同。建议您保持良好还款记录，后续系统评估后可能会为您开放更多方式。"}]
+【TEXT输出】：["提额选项是根据您的综合信用状况逐步开放的，不同用户看到的入口可能不同。建议您保持良好还款记录，后续系统评估后可能会为您开放更多方式。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "为什么我找不到某些提额选项"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528183848518638", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528183848518638", "content": "为什么我找不到某些提额选项", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "提额选项是根据您的综合信用状况逐步开放的，不同用户看到的入口可能不同。建议您保持良好还款记录，后续系统评估后可能会为您开放更多方式。"}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：提额选项是根据您的综合信用状况逐步开放的，不同用户看到的入口可能不同。建议您保持良好还款记录，后续系统评估后可能会为您开放更多方式。
+【外部模型相似度评分】：85.0
+【外部模型评估原因】：标准答案评分=85.0；参考答案评分=85.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：7.722s
+【相似度断言】：实际=85.0，阈值=70.0，结果=True
+【最终结果】：True

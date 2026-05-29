@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184716974789",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184716974789",
+          "sessionId": "chat_pre_20260528184716974789"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供内部资料或任何非公开信息。如果您有提额、降息等个人信贷问题，欢迎随时咨询。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

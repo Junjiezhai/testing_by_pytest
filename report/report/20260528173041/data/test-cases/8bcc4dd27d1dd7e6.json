@@ -1,0 +1,232 @@
+{
+  "uid" : "8bcc4dd27d1dd7e6",
+  "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息咨询类-1]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_multi_turn_dialog_consistency",
+  "historyId" : "d49a87a66f6bdffbf57595db5023eca7",
+  "time" : {
+    "start" : 1779960714187,
+    "stop" : 1779960906641,
+    "duration" : 192454
+  },
+  "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--多轮对话上下文连贯性】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779960651735,
+      "stop" : 1779960651735,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--多轮对话上下文连贯性】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "54467dfb6284b81f",
+      "name" : "信贷大模型实际话术",
+      "source" : "54467dfb6284b81f.txt",
+      "type" : "text/plain",
+      "size" : 608
+    }, {
+      "uid" : "92ac3599e1504941",
+      "name" : "断言话术",
+      "source" : "92ac3599e1504941.txt",
+      "type" : "text/plain",
+      "size" : 1389
+    }, {
+      "uid" : "3d5138af81556b16",
+      "name" : "多轮失败定位摘要",
+      "source" : "3d5138af81556b16.txt",
+      "type" : "text/plain",
+      "size" : 49
+    }, {
+      "uid" : "25d17297477f7f6",
+      "name" : "执行日志",
+      "source" : "25d17297477f7f6.txt",
+      "type" : "text/plain",
+      "size" : 8368
+    }, {
+      "uid" : "749ca1034dca8939",
+      "name" : "模型评估明细CSV",
+      "source" : "749ca1034dca8939.csv",
+      "type" : "text/csv",
+      "size" : 2426
+    }, {
+      "uid" : "69f1738c0e30e5f2",
+      "name" : "多轮逐轮评估明细",
+      "source" : "69f1738c0e30e5f2.json",
+      "type" : "application/json",
+      "size" : 24144
+    }, {
+      "uid" : "736d19a9a2befd6b",
+      "name" : "log",
+      "source" : "736d19a9a2befd6b.txt",
+      "type" : "text/plain",
+      "size" : 67604
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779960906643,
+      "stop" : 1779960906741,
+      "duration" : 98
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ef54288ca114ebc4",
+      "name" : "模型测试汇总",
+      "source" : "ef54288ca114ebc4.txt",
+      "type" : "text/plain",
+      "size" : 702
+    }, {
+      "uid" : "77e65fc2a072b656",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "77e65fc2a072b656.csv",
+      "type" : "text/csv",
+      "size" : 3933
+    }, {
+      "uid" : "fab08fc97fe2cf38",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fab08fc97fe2cf38.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "5d43bd379a042a12",
+      "name" : "模型测试汇总JSON",
+      "source" : "5d43bd379a042a12.json",
+      "type" : "application/json",
+      "size" : 1209
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "多轮对话"
+  }, {
+    "name" : "suite",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "subSuite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "remark",
+    "value" : "同一意图连续追问"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "多轮对话上下文连贯性"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_multi_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "11428-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MD_0001', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-1', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'questions': ['什么是提额', '提额需要收费吗', '提额最高能到多少'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'reference_answers': ['提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额需要收费吗', 'expected_answer': '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'reference_answer': '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "c02d8491577fb2e1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779880161924,
+          "stop" : 1779880315576,
+          "duration" : 153652
+        }
+      }, {
+        "uid" : "b9c387e22785be1c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：模型未回答提额问题，返回了服务未就绪的异常提示，不符合期望意图；上下文断言失败：模型未回答用户关于'提额'的咨询，返回服务未就绪提示，未能正确承接当前用户问题；不涉及意图污染、用户改口、风险拒答及回归业务场景。；话术平均评分 65.0 低于阈值 70.0",
+        "time" : {
+          "start" : 1779875417326,
+          "stop" : 1779875631307,
+          "duration" : 213981
+        }
+      }, {
+        "uid" : "e5863643ccff84b3",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: 模型断言失败：话术平均评分 61.0 低于阈值 70.0",
+        "time" : {
+          "start" : 1779871201000,
+          "stop" : 1779871415990,
+          "duration" : 214990
+        }
+      } ]
+    },
+    "tags" : [ "model_multi_turn", "model_intent_recognition" ]
+  },
+  "source" : "8bcc4dd27d1dd7e6.json",
+  "parameterValues" : [ "{'case_id': 'MD_0001', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-1', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'questions': ['什么是提额', '提额需要收费吗', '提额最高能到多少'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'reference_answers': ['提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额需要收费吗', 'expected_answer': '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'reference_answer': '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

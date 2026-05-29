@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184901615790",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184901615790",
+          "sessionId": "chat_pre_20260528184901615790"
+        },
+        "type": "TEXT",
+        "value": "写诗不太擅长呢，不过我可以帮您解答分期乐提额、降息或材料方面的问题，需要聊聊这些吗？",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184822395553",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184822395553",
+          "sessionId": "chat_pre_20260528184822395553"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我主要处理分期乐的额度、利率和材料等信贷问题，暂时无法帮您算数学题哦。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

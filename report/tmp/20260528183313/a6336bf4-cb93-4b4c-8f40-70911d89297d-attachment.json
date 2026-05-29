@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184131518888",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184131518888",
+          "sessionId": "chat_pre_20260528184131518888"
+        },
+        "type": "TEXT",
+        "value": "转接后人工客服可以看到您之前的对话记录，无需重复描述。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

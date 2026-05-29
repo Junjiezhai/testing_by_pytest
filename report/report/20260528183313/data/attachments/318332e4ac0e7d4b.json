@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183509031979",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183509031979",
+          "sessionId": "chat_pre_20260528183509031979"
+        },
+        "type": "TEXT",
+        "value": "频繁申请提额不会直接扣分或影响征信，但短期内多次失败比较耗费精力。建议您间隔1到3个月，等有实质资质改善后再申请。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

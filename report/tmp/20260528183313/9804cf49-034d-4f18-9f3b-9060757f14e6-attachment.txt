@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0132
+【测试场景】：信息查询类-提额申请提交后，怎么查看进度
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：提额申请提交后，怎么查看进度
+【断言话术-标准答案】：正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：
+【断言话术-外部模型参考答案】：您可以在页面查看当前处理状态，或通过客服入口查询进度。正常情况下我们会通过短信或消息推送通知您结果。为您查询到最近提交的提额申请进度如下：
+【replyContents】：[{"type": "TEXT", "value": "提额申请提交后，系统会通过短信或消息推送通知结果。您也可以在“首页-额度-成长”中查看最近的提额降息记录。"}]
+【TEXT输出】：["提额申请提交后，系统会通过短信或消息推送通知结果。您也可以在“首页-额度-成长”中查看最近的提额降息记录。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "提额申请提交后，怎么查看进度"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184217474113", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184217474113", "content": "提额申请提交后，怎么查看进度", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "提额申请提交后，系统会通过短信或消息推送通知结果。您也可以在“首页-额度-成长”中查看最近的提额降息记录。"}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：提额申请提交后，系统会通过短信或消息推送通知结果。您也可以在“首页-额度-成长”中查看最近的提额降息记录。
+【外部模型相似度评分】：65.0
+【外部模型评估原因】：标准答案评分=65.0；参考答案评分=65.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 65.0 未达到阈值 70.0(gte)
+【响应耗时】：7.505s
+【相似度断言】：实际=65.0，阈值=70.0，结果=False
+【最终结果】：False

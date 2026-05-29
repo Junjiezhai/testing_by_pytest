@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0072",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-降息审核超时了怎么办？",
+  "intent": "信息查询类",
+  "question": "降息审核超时了怎么办？",
+  "expected_answer": "正常审核不会超过1小时，您可以点击下方查询进度。我也可以帮您查询进度，请问您需要吗？",
+  "questions": [
+    "降息审核超时了怎么办？"
+  ],
+  "expected_answers": [
+    "正常审核不会超过1小时，您可以点击下方查询进度。我也可以帮您查询进度，请问您需要吗？"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。正常审核不会超过1小时，您可以点击下方查询进度。我也可以帮您查询进度，请问您需要吗？",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

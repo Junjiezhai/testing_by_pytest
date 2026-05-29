@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184634383016",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184634383016",
+          "sessionId": "chat_pre_20260528184634383016"
+        },
+        "type": "TEXT",
+        "value": "火车票购买不在我的服务范围，如果您有提额、降息或材料相关问题，随时告诉我。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

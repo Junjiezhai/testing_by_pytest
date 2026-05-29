@@ -1,0 +1,539 @@
+[
+  {
+    "round": 1,
+    "question": "昨晚足球赛谁赢了",
+    "expected_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。",
+    "reference_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。",
+    "actual_answer": "这个我不太了解呢，不过如果您有提额、降息或账单相关的问题，随时可以问我。",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 85.0,
+    "reference_similarity_score": 85.0,
+    "similarity_score": 85.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=85.0；参考答案评分=85.0",
+    "intent_pass": true,
+    "intent_reason": "实际意图为询问足球赛结果，属于非信贷业务意图，与期望意图一致。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=85.0，阈值=70.0；标准答案分=85.0；参考答案分=85.0",
+        "reason": "核心语义均为拒绝回答体育赛事并引导回信贷业务，但实际话术未明确声明『信贷助手』身份，且口径略显随意，遗漏了身份说明，因此略有扣分。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=非业务相关意图",
+        "reason": "实际意图为询问足球赛结果，属于非信贷业务意图，与期望意图一致。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "无历史对话，无上一轮意图污染；无用户改口；非风险合规场景；非拒答后回归业务场景；上下文断言类型为single_intent_followup但无历史参考，默认通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "无历史对话，无上一轮意图污染；无用户改口；非风险合规场景；非拒答后回归业务场景；上下文断言类型为single_intent_followup但无历史参考，默认通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.837,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0102_1779967280560520",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130759",
+          "externalUserId": "4130759",
+          "userId": "4130759",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192120560520_0",
+              "content": "昨晚足球赛谁赢了",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192140121687_1",
+              "content": "这个我不太了解呢，不过如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192140121687_2",
+              "content": "那NBA呢",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192225589021_3",
+              "content": "体育比赛我不太了解呢。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192225590021_4",
+              "content": "最近有什么体育新闻",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192253583456_5",
+              "content": "体育新闻我不太了解哦。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0102_1779967280560520",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528192120560520_0",
+              "sessionId": "chat_pre_MD_0102_1779967280560520"
+            },
+            "type": "TEXT",
+            "value": "这个我不太了解呢，不过如果您有提额、降息或账单相关的问题，随时可以问我。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 2,
+    "question": "那NBA呢",
+    "expected_answer": "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。",
+    "reference_answer": "抱歉，我是信贷助手，主要为您提供借款、提额、降息等相关咨询服务，无法回答体育赛事相关问题。",
+    "actual_answer": "体育比赛我不太了解呢。如果您有提额、降息或账单相关的问题，随时可以问我。",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "非业务相关意图",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 85.0,
+    "reference_similarity_score": 85.0,
+    "similarity_score": 85.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=85.0；参考答案评分=85.0",
+    "intent_pass": true,
+    "intent_reason": "实际意图为拒绝体育比赛问题并引导回信贷，属于非业务相关意图，与期望意图一致。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=85.0，阈值=70.0；标准答案分=85.0；参考答案分=85.0",
+        "reason": "实际话术与标准答案均拒绝了体育赛事相关询问并引导回信贷业务，核心语义一致；但实际话术未明确声明‘我是信贷助手’，且拒绝语气较随意，遗漏了身份说明，因此扣分。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=非业务相关意图",
+        "reason": "实际意图为拒绝体育比赛问题并引导回信贷，属于非业务相关意图，与期望意图一致。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=非业务相关意图，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "当前轮是上一轮问足球被拒绝后继续追问NBA，属于同一非业务意图的连续追问，模型正确识别并再次拒绝，上下文承接合理；上一轮意图为非业务拒绝，本轮仍保持一致，无意图污染；无用户改口；未要求风险拒答；非拒答后回归业务场景，所有断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前轮是上一轮问足球被拒绝后继续追问NBA，属于同一非业务意图的连续追问，模型正确识别并再次拒绝，上下文承接合理；上一轮意图为非业务拒绝，本轮仍保持一致，无意图污染；无用户改口；未要求风险拒答；非拒答后回归业务场景，所有断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.656,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0102_1779967280560520",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130759",
+          "externalUserId": "4130759",
+          "userId": "4130759",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192120560520_0",
+              "content": "昨晚足球赛谁赢了",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192140121687_1",
+              "content": "这个我不太了解呢，不过如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192140121687_2",
+              "content": "那NBA呢",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192225589021_3",
+              "content": "体育比赛我不太了解呢。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192225590021_4",
+              "content": "最近有什么体育新闻",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192253583456_5",
+              "content": "体育新闻我不太了解哦。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0102_1779967280560520",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528192140121687_2",
+              "sessionId": "chat_pre_MD_0102_1779967280560520"
+            },
+            "type": "TEXT",
+            "value": "体育比赛我不太了解呢。如果您有提额、降息或账单相关的问题，随时可以问我。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  },
+  {
+    "round": 3,
+    "question": "最近有什么体育新闻",
+    "expected_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。",
+    "reference_answer": "抱歉，我是信贷助手，专注于借款、提额、降息等业务咨询，体育赛事不在我的服务范围内。",
+    "actual_answer": "体育新闻我不太了解哦。如果您有提额、降息或账单相关的问题，随时可以问我。",
+    "round_intent": "非业务相关意图",
+    "chat_type": "NORMAL",
+    "handoff_reason": "",
+    "chat_type_pass": true,
+    "previous_intent": "非业务相关意图",
+    "context_assert_type": "single_intent_followup",
+    "expect_refuse": false,
+    "standard_similarity_score": 85.0,
+    "reference_similarity_score": 85.0,
+    "similarity_score": 85.0,
+    "similarity_pass": true,
+    "similarity_reason": "标准答案评分=85.0；参考答案评分=85.0",
+    "intent_pass": true,
+    "intent_reason": "实际回复为拒绝体育新闻并引导回信贷业务，意图与期望的非业务相关意图一致。",
+    "context_carry_pass": true,
+    "intent_pollution_pass": true,
+    "user_correction_pass": true,
+    "risk_refusal_pass": true,
+    "return_to_business_pass": true,
+    "asset_present": false,
+    "asset_allowed": false,
+    "asset_value": "",
+    "asset_value_pass": true,
+    "biz_ref_id": "",
+    "biz_ref_id_pass": true,
+    "asset_pass": true,
+    "assert_items": [
+      {
+        "dimension": "会话类型",
+        "enabled": true,
+        "pass": true,
+        "evidence": "chatType=NORMAL，handoffReason=，期望意图=非业务相关意图",
+        "reason": "会话类型符合预期",
+        "suggestion": "chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。"
+      },
+      {
+        "dimension": "话术相似度",
+        "enabled": true,
+        "pass": true,
+        "evidence": "平均分=85.0，阈值=70.0；标准答案分=85.0；参考答案分=85.0",
+        "reason": "核心语义均为拒绝回答体育新闻并引导回信贷业务，但实际话术未明确声明‘我是信贷助手’，且拒绝语气较随意，遗漏身份说明，因此扣分。",
+        "suggestion": "优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。"
+      },
+      {
+        "dimension": "意图识别",
+        "enabled": true,
+        "pass": true,
+        "evidence": "期望意图=非业务相关意图，实际意图=非业务相关意图",
+        "reason": "实际回复为拒绝体育新闻并引导回信贷业务，意图与期望的非业务相关意图一致。",
+        "suggestion": "检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。"
+      },
+      {
+        "dimension": "上下文承接",
+        "enabled": true,
+        "pass": true,
+        "evidence": "上下文类型=single_intent_followup，上一轮意图=非业务相关意图，承接=True，污染=True，改口=True，回归业务=True",
+        "reason": "当前轮是用户连续第三次询问体育类问题，上下文属于同一非业务意图的连续追问（single_intent_followup），模型正确拒绝并引导回信贷，承接合理；上一轮意图也为非业务相关，无意图污染；无用户改口；未涉及风险合规拒答；非拒答后回归业务场景，所有上下文断言均通过。",
+        "suggestion": "重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。"
+      },
+      {
+        "dimension": "风险拒答",
+        "enabled": false,
+        "pass": true,
+        "evidence": "是否期望拒答=False，拒答断言=True",
+        "reason": "当前轮是用户连续第三次询问体育类问题，上下文属于同一非业务意图的连续追问（single_intent_followup），模型正确拒绝并引导回信贷，承接合理；上一轮意图也为非业务相关，无意图污染；无用户改口；未涉及风险合规拒答；非拒答后回归业务场景，所有上下文断言均通过。",
+        "suggestion": "风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。"
+      },
+      {
+        "dimension": "ASSET卡片",
+        "enabled": true,
+        "pass": true,
+        "evidence": "ASSET存在=False，允许=False，value=，biz_ref_id=",
+        "reason": "",
+        "suggestion": "检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。"
+      }
+    ],
+    "failed_assert_items": [],
+    "failure_suggestions": [],
+    "round_pass": true,
+    "failure_reason": "",
+    "should_assert": true,
+    "response_time": 2.572,
+    "request_data": {
+      "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+      "method": "chat",
+      "env": "pre",
+      "group": "default",
+      "params": [
+        {
+          "chatId": "chat_pre_MD_0102_1779967280560520",
+          "bizLineId": "BL001",
+          "bizSceneKey": "BSK2605181039042973",
+          "bizSceneTypeKey": "BSK2605181039042973",
+          "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+          "entityId": "entity_pre_001",
+          "uid": "4130759",
+          "externalUserId": "4130759",
+          "userId": "4130759",
+          "userName": "预发测试用户",
+          "url": "",
+          "chatType": "NORMAL",
+          "isRetry": 0,
+          "messageExtend": "",
+          "external": "",
+          "msgContextList": [
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192120560520_0",
+              "content": "昨晚足球赛谁赢了",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192140121687_1",
+              "content": "这个我不太了解呢，不过如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192140121687_2",
+              "content": "那NBA呢",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192225589021_3",
+              "content": "体育比赛我不太了解呢。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "CUSTOMER_2_STAFF",
+              "msgId": "msg_model_customer_20260528192225590021_4",
+              "content": "最近有什么体育新闻",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            },
+            {
+              "direction": "STAFF_2_CUSTOMER",
+              "msgId": "msg_model_staff_20260528192253583456_5",
+              "content": "体育新闻我不太了解哦。如果您有提额、降息或账单相关的问题，随时可以问我。",
+              "msgType": "TEXT",
+              "mediaFileMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    "output_data": {
+      "code": "0",
+      "data": {
+        "chatId": "chat_pre_MD_0102_1779967280560520",
+        "content": "",
+        "chatType": "NORMAL",
+        "replyContents": [
+          {
+            "bizParamInfo": {
+              "lastMsgId": "msg_model_customer_20260528192225590021_4",
+              "sessionId": "chat_pre_MD_0102_1779967280560520"
+            },
+            "type": "TEXT",
+            "value": "体育新闻我不太了解哦。如果您有提额、降息或账单相关的问题，随时可以问我。",
+            "bizVariableMap": {}
+          }
+        ]
+      },
+      "success": true,
+      "message": "success"
+    }
+  }
+]

@@ -1,0 +1,226 @@
+{
+  "uid" : "9d893608f962eba2",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-我换了新设备，还能提额吗]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "a330e7b1d8a5f3b15b8c7da5d5d58555",
+  "time" : {
+    "start" : 1779964760119,
+    "stop" : 1779964782803,
+    "duration" : 22684
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a89bc648104c438a",
+      "name" : "用例信息",
+      "source" : "a89bc648104c438a.json",
+      "type" : "application/json",
+      "size" : 1052
+    }, {
+      "uid" : "5c810dbcef4a8b77",
+      "name" : "执行日志",
+      "source" : "5c810dbcef4a8b77.txt",
+      "type" : "text/plain",
+      "size" : 3185
+    }, {
+      "uid" : "8f8a26be07f4a63b",
+      "name" : "信贷大模型请求入参",
+      "source" : "8f8a26be07f4a63b.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "ad378192ee1abf22",
+      "name" : "信贷大模型完整返回",
+      "source" : "ad378192ee1abf22.json",
+      "type" : "application/json",
+      "size" : 534
+    }, {
+      "uid" : "106937c77cc855d",
+      "name" : "模型评估明细",
+      "source" : "106937c77cc855d.json",
+      "type" : "application/json",
+      "size" : 3544
+    }, {
+      "uid" : "2daf1ff68fb5f3e0",
+      "name" : "断言明细",
+      "source" : "2daf1ff68fb5f3e0.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "293174f118a63c6b",
+      "name" : "失败原因",
+      "source" : "293174f118a63c6b.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "bd3a6a82a144b7a6",
+      "name" : "信贷大模型实际话术",
+      "source" : "bd3a6a82a144b7a6.txt",
+      "type" : "text/plain",
+      "size" : 99
+    }, {
+      "uid" : "e6f64f05dd690c67",
+      "name" : "断言话术",
+      "source" : "e6f64f05dd690c67.txt",
+      "type" : "text/plain",
+      "size" : 430
+    }, {
+      "uid" : "43b607344c58e200",
+      "name" : "log",
+      "source" : "43b607344c58e200.txt",
+      "type" : "text/plain",
+      "size" : 17369
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967874166,
+      "stop" : 1779967875104,
+      "duration" : 938
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a9104c1e7ef66daf",
+      "name" : "模型测试汇总",
+      "source" : "a9104c1e7ef66daf.txt",
+      "type" : "text/plain",
+      "size" : 55481
+    }, {
+      "uid" : "47dd0bb111065d63",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "47dd0bb111065d63.csv",
+      "type" : "text/csv",
+      "size" : 334311
+    }, {
+      "uid" : "b0d59e5fd9c12ce5",
+      "name" : "模型测试明细Excel路径",
+      "source" : "b0d59e5fd9c12ce5.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "d52de8cd70fef80c",
+      "name" : "模型测试汇总JSON",
+      "source" : "d52de8cd70fef80c.json",
+      "type" : "application/json",
+      "size" : 21171
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "5500-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0109', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我换了新设备，还能提额吗', 'intent': '提额降息咨询类', 'question': '我换了新设备，还能提额吗', 'expected_answer': '可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。', 'questions': ['我换了新设备，还能提额吗'], 'expected_answers': ['可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "3f6aae3dbee45548",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879041444,
+          "stop" : 1779879114225,
+          "duration" : 72781
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "9d893608f962eba2.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0109', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-我换了新设备，还能提额吗', 'intent': '提额降息咨询类', 'question': '我换了新设备，还能提额吗', 'expected_answer': '可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。', 'questions': ['我换了新设备，还能提额吗'], 'expected_answers': ['可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。可以。但为了账户安全，新设备登录可能需要进行身份验证（如短信验证码或人脸识别），验证通过后即可正常提额。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

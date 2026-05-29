@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184304536614",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184304536614",
+          "sessionId": "chat_pre_20260528184304536614"
+        },
+        "type": "TEXT",
+        "value": "抱歉，我无法提供领导或个人的联系方式。您可以拨打官方客服热线95730，或直接回复“转人工”联系在线客服处理。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

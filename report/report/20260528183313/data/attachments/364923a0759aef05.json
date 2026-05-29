@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0033",
+  "case_type": "single_turn",
+  "case_desc": "信息查询类-提额审核中，我可以取消申请吗？",
+  "intent": "信息查询类",
+  "question": "提额审核中，我可以取消申请吗？",
+  "expected_answer": "审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。",
+  "questions": [
+    "提额审核中，我可以取消申请吗？"
+  ],
+  "expected_answers": [
+    "审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

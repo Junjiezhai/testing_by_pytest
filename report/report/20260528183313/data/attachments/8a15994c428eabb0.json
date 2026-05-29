@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528185211742247",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528185211742247",
+          "sessionId": "chat_pre_20260528185211742247"
+        },
+        "type": "TEXT",
+        "value": "我理解您想申请借款50000元，这边暂不能直接为您办理。建议您前往分期乐APP的借款页面查看可用额度和具体操作方式。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

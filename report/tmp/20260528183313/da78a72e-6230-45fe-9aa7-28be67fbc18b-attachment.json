@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184856688674",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184856688674",
+          "sessionId": "chat_pre_20260528184856688674"
+        },
+        "type": "TEXT",
+        "value": "借款下单功能建议您直接在分期乐 APP 内操作。请确保本人真实合规使用，严禁套现或伪造材料。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,128 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MD_0044
+【测试场景】：咨询到操作递进-4
+【意图分类】：提额降息咨询类+提额降息操作类
+【实际意图】：
+【chatType】：None
+【handoffReason】：None
+【chatType断言】：None
+【用户问题】：提额审核中，我可以取消申请吗？
+【断言话术-标准答案】：审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。
+【断言话术-外部模型参考答案】：None
+【replyContents】：None
+【TEXT输出】：None
+【ASSET输出】：None
+【biz_ref_id】：None
+【模型请求msg_info】：{"uid": "4130759", "content": "提额审核中，我可以取消申请吗？", "chatId": "chat_pre_MD_0044_1779966251545190", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190411545190_0", "content": "提额失败后还能再申请吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190435487209_1", "content": "可以再次申请，建议间隔1-3个月，期间保持良好的还款记录和信用行为；如果您想继续办理，可以直接说“我要提额”。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190435488210_2", "content": "我已经借了款，还能申请降息吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190453827031_3", "content": "已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190453828027_4", "content": "提额审核中，我可以取消申请吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190530876163_5", "content": "查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_MD_0044_1779966251545190", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190411545190_0", "content": "提额失败后还能再申请吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190435487209_1", "content": "可以再次申请，建议间隔1-3个月，期间保持良好的还款记录和信用行为；如果您想继续办理，可以直接说“我要提额”。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190435488210_2", "content": "我已经借了款，还能申请降息吗", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190453827031_3", "content": "已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528190453828027_4", "content": "提额审核中，我可以取消申请吗？", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528190530876163_5", "content": "查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。"}, {"type": "ASSET", "value": "AS2605191420142236", "bizParamInfo": {"biz_ref_id": ["borrow_entry"]}}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。
+【外部模型相似度评分】：64.17
+【外部模型评估原因】：多轮逐轮平均相似度：64.17
+【TEXT阈值】：None None
+【TEXT断言】：None
+【ASSET是否允许】：None
+【ASSET value断言】：None (None)
+【biz_ref_id断言】：None (None)
+【失败原因】：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户询问能否取消提额申请，模型回复了借款审批状态，虽然同属信息查询大类，但内容完全偏离用户具体咨询点，未提供取消相关指引，不符合期望的信息查询要求。；上下文断言失败：回复未能直接回应‘提额审核中取消申请’的提问，上下文承接失败；模型输出借款审批信息，疑似受到上一轮‘提额降息操作类’中借款相关概念的污染；无用户改口、风险拒答或拒答后回归场景，相关断言默认通过。；ASSET.value=AS2605191420142236 不在允许范围内；biz_ref_id=borrow_entry 不在允许范围内
+【响应耗时】：4.578s
+【相似度断言】：实际=64.17，阈值=70.0，结果=False
+【最终结果】：False
+【多轮失败定位摘要】：
+第3轮 | 失败维度：话术相似度、意图识别、上下文承接、ASSET卡片 | 原因：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户询问能否取消提额申请，模型回复了借款审批状态，虽然同属信息查询大类，但内容完全偏离用户具体咨询点，未提供取消相关指引，不符合期望的信息查询要求。；上下文断言失败：回复未能直接回应‘提额审核中取消申请’的提问，上下文承接失败；模型输出借款审批信息，疑似受到上一轮‘提额降息操作类’中借款相关概念的污染；无用户改口、风险拒答或拒答后回归场景，相关断言默认通过。；ASSET.value=AS2605191420142236 不在允许范围内；biz_ref_id=borrow_entry 不在允许范围内
+问题：提额审核中，我可以取消申请吗？
+模型回复：查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+【多轮平均响应耗时】：4.578s
+【多轮总响应耗时】：13.733s
+【多轮逐轮评分明细】：
+------ 第1轮 ------
+用户问题：提额失败后还能再申请吗
+期望意图：提额降息咨询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：what_to_how
+上一轮意图：
+标准答案：提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。
+参考答案：这个问题主要以页面展示和系统评估结果为准。提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。
+模型回复：可以再次申请，建议间隔1-3个月，期间保持良好的还款记录和信用行为；如果您想继续办理，可以直接说“我要提额”。
+标准答案评分：95.0
+参考答案评分：92.0
+平均相似度：93.5
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.07s
+是否通过：True
+------ 第2轮 ------
+用户问题：我已经借了款，还能申请降息吗
+期望意图：提额降息操作类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息咨询类
+标准答案：已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。
+参考答案：您可以根据页面提示完成操作。已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。
+模型回复：已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。
+标准答案评分：100.0
+参考答案评分：98.0
+平均相似度：99.0
+意图断言：True
+上下文承接：True
+意图污染：True
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：False
+ASSET允许：True
+ASSET校验：True
+失败维度：无
+失败原因：无
+修复建议：无
+是否断言：True
+响应耗时：3.47s
+是否通过：True
+------ 第3轮 ------
+用户问题：提额审核中，我可以取消申请吗？
+期望意图：信息查询类
+实际意图：None
+chatType：NORMAL
+handoffReason：
+chatType断言：True
+上下文类型：cross_intent_switch
+上一轮意图：提额降息操作类
+标准答案：审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。
+参考答案：您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。
+模型回复：查得您最近于2026-05-22 15:53:44提交的借款APP截图，已审批通过。现在可以体验借钱一键下单，具体借款方案以下方卡片和页面展示为准。
+标准答案评分：0.0
+参考答案评分：0.0
+平均相似度：0.0
+意图断言：False
+上下文承接：False
+意图污染：False
+改口更新：True
+风险拒答：True
+回归业务：True
+ASSET存在：True
+ASSET允许：True
+ASSET校验：False
+失败维度：话术相似度、意图识别、上下文承接、ASSET卡片
+失败原因：话术平均评分 0.0 低于阈值 70.0；当前轮意图不正确：用户询问能否取消提额申请，模型回复了借款审批状态，虽然同属信息查询大类，但内容完全偏离用户具体咨询点，未提供取消相关指引，不符合期望的信息查询要求。；上下文断言失败：回复未能直接回应‘提额审核中取消申请’的提问，上下文承接失败；模型输出借款审批信息，疑似受到上一轮‘提额降息操作类’中借款相关概念的污染；无用户改口、风险拒答或拒答后回归场景，相关断言默认通过。；ASSET.value=AS2605191420142236 不在允许范围内；biz_ref_id=borrow_entry 不在允许范围内
+修复建议：优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。；检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。；重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。；检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。
+是否断言：True
+响应耗时：7.193s
+是否通过：False

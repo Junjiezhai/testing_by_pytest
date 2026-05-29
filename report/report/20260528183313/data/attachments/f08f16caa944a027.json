@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0287",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-问题太模糊时应该怎么补充说明",
+  "intent": "提额降息操作类",
+  "question": "问题太模糊时应该怎么补充说明",
+  "expected_answer": "如果问题里没有说明具体业务或事项，请先补充想咨询的是提额、降息、材料、还款还是人工客服，我再按对应规则说明。",
+  "questions": [
+    "问题太模糊时应该怎么补充说明"
+  ],
+  "expected_answers": [
+    "如果问题里没有说明具体业务或事项，请先补充想咨询的是提额、降息、材料、还款还是人工客服，我再按对应规则说明。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "您可以根据页面提示完成操作。如果问题里没有说明具体业务或事项，请先补充想咨询的是提额、降息、材料、还款还是人工客服，我再按对应规则说明。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

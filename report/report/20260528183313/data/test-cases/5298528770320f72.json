@@ -1,0 +1,226 @@
+{
+  "uid" : "5298528770320f72",
+  "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额能保证100%成功吗]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "9ecc62d1babea0bf2cd30e6bf2b1ab7e",
+  "time" : {
+    "start" : 1779964830404,
+    "stop" : 1779964843286,
+    "duration" : 12882
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403829,
+      "stop" : 1779964403829,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1810d220c15c615d",
+      "name" : "用例信息",
+      "source" : "1810d220c15c615d.json",
+      "type" : "application/json",
+      "size" : 1040
+    }, {
+      "uid" : "fcc756fb3f9eb66a",
+      "name" : "执行日志",
+      "source" : "fcc756fb3f9eb66a.txt",
+      "type" : "text/plain",
+      "size" : 3153
+    }, {
+      "uid" : "89a5ec81c487e57a",
+      "name" : "信贷大模型请求入参",
+      "source" : "89a5ec81c487e57a.json",
+      "type" : "application/json",
+      "size" : 937
+    }, {
+      "uid" : "e29937e981cfa7ef",
+      "name" : "信贷大模型完整返回",
+      "source" : "e29937e981cfa7ef.json",
+      "type" : "application/json",
+      "size" : 532
+    }, {
+      "uid" : "51d5e459ffb349f8",
+      "name" : "模型评估明细",
+      "source" : "51d5e459ffb349f8.json",
+      "type" : "application/json",
+      "size" : 3333
+    }, {
+      "uid" : "f75709cdf349e728",
+      "name" : "断言明细",
+      "source" : "f75709cdf349e728.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "b538725b46d0d6e6",
+      "name" : "失败原因",
+      "source" : "b538725b46d0d6e6.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "9946b92b4162f615",
+      "name" : "信贷大模型实际话术",
+      "source" : "9946b92b4162f615.txt",
+      "type" : "text/plain",
+      "size" : 97
+    }, {
+      "uid" : "fdb720f9e724876c",
+      "name" : "断言话术",
+      "source" : "fdb720f9e724876c.txt",
+      "type" : "text/plain",
+      "size" : 438
+    }, {
+      "uid" : "ba9d1e1e8ff14275",
+      "name" : "log",
+      "source" : "ba9d1e1e8ff14275.txt",
+      "type" : "text/plain",
+      "size" : 15530
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967888777,
+      "stop" : 1779967889750,
+      "duration" : 973
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8dfde8a3d1a77429",
+      "name" : "模型测试汇总",
+      "source" : "8dfde8a3d1a77429.txt",
+      "type" : "text/plain",
+      "size" : 55685
+    }, {
+      "uid" : "7a391009ce75eace",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "7a391009ce75eace.csv",
+      "type" : "text/csv",
+      "size" : 336714
+    }, {
+      "uid" : "9763619a7b920fdd",
+      "name" : "模型测试明细Excel路径",
+      "source" : "9763619a7b920fdd.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "56c41697807702d4",
+      "name" : "模型测试汇总JSON",
+      "source" : "56c41697807702d4.json",
+      "type" : "application/json",
+      "size" : 21170
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息咨询类"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30648-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0217', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额能保证100%成功吗', 'intent': '提额降息咨询类', 'question': '提额能保证100%成功吗', 'expected_answer': '任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。', 'questions': ['提额能保证100%成功吗'], 'expected_answers': ['任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "a149a3709695ba47",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779879171819,
+          "stop" : 1779879233722,
+          "duration" : 61903
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "5298528770320f72.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0217', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额能保证100%成功吗', 'intent': '提额降息咨询类', 'question': '提额能保证100%成功吗', 'expected_answer': '任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。', 'questions': ['提额能保证100%成功吗'], 'expected_answers': ['任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。任何提额申请都无法保证100%成功，最终结果由系统综合评估决定。我们会尽力协助您提高通过率，但无法做出绝对承诺。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183604457432",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183604457432",
+          "sessionId": "chat_pre_20260528183604457432"
+        },
+        "type": "TEXT",
+        "value": "可以提出诉求，我们会为您匹配最优的降息方案，但不能保证一定降到10%以下，最终结果以页面为准。如果您想继续办理，可以直接说“我要降息”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

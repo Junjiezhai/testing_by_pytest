@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183451360181",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183451360181",
+          "sessionId": "chat_pre_20260528183451360181"
+        },
+        "type": "TEXT",
+        "value": "部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

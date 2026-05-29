@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0127
+【测试场景】：提额降息咨询类-我没有公积金，还能提额吗
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我没有公积金，还能提额吗
+【断言话术-标准答案】：没有公积金也可以提额，您可以尝试其他方式如银行流水账单、微信账单、其他借钱APP截图等，同样有助于提升额度。
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。没有公积金也可以提额，您可以尝试其他方式如银行流水账单、微信账单、其他借钱APP截图等，同样有助于提升额度。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184112643114", "sessionId": "chat_pre_20260528184112643114"}, "type": "TEXT", "value": "没有公积金也可以提额。您可以尝试提供银行流水、微信账单等补充材料来帮助综合评估，结果以 APP 页面为准。", "bizVariableMap": {}}]
+【TEXT输出】：["没有公积金也可以提额。您可以尝试提供银行流水、微信账单等补充材料来帮助综合评估，结果以 APP 页面为准。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "我没有公积金，还能提额吗"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184112643114", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184112643114", "content": "我没有公积金，还能提额吗", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528184112643114", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184112643114", "sessionId": "chat_pre_20260528184112643114"}, "type": "TEXT", "value": "没有公积金也可以提额。您可以尝试提供银行流水、微信账单等补充材料来帮助综合评估，结果以 APP 页面为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：没有公积金也可以提额。您可以尝试提供银行流水、微信账单等补充材料来帮助综合评估，结果以 APP 页面为准。
+【外部模型相似度评分】：93.5
+【外部模型评估原因】：标准答案评分=95.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：2.911s
+【相似度断言】：实际=93.5，阈值=70.0，结果=True
+【最终结果】：True

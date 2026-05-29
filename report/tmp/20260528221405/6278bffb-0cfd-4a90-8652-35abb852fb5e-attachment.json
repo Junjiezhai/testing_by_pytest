@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0087",
+  "case_type": "single_turn",
+  "case_desc": "风险合规禁答类-提额降息需要付费吗",
+  "intent": "风险合规禁答类",
+  "question": "提额降息需要付费吗",
+  "expected_answer": "提额降息认证完全免费，请您放心操作。任何以“付费提额”为由向您收费的行为都可能是诈骗，请勿轻信。",
+  "questions": [
+    "提额降息需要付费吗"
+  ],
+  "expected_answers": [
+    "提额降息认证完全免费，请您放心操作。任何以“付费提额”为由向您收费的行为都可能是诈骗，请勿轻信。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请在合规范围内使用平台服务。提额降息认证完全免费，请您放心操作。任何以“付费提额”为由向您收费的行为都可能是诈骗，请勿轻信。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

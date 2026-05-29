@@ -1,0 +1,226 @@
+{
+  "uid" : "a88a074959a7a035",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-微信账单的操作步骤是什么]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "a46c97466f709b8d34070e184823ea40",
+  "time" : {
+    "start" : 1779964656896,
+    "stop" : 1779964680267,
+    "duration" : 23371
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403828,
+      "stop" : 1779964403828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2a4d4757dd0c3d6f",
+      "name" : "用例信息",
+      "source" : "2a4d4757dd0c3d6f.json",
+      "type" : "application/json",
+      "size" : 1526
+    }, {
+      "uid" : "b63ec5ba0fa09ed9",
+      "name" : "执行日志",
+      "source" : "b63ec5ba0fa09ed9.txt",
+      "type" : "text/plain",
+      "size" : 4101
+    }, {
+      "uid" : "218a8752cdd0957",
+      "name" : "信贷大模型请求入参",
+      "source" : "218a8752cdd0957.json",
+      "type" : "application/json",
+      "size" : 945
+    }, {
+      "uid" : "8cdf7f527df03731",
+      "name" : "信贷大模型完整返回",
+      "source" : "8cdf7f527df03731.json",
+      "type" : "application/json",
+      "size" : 682
+    }, {
+      "uid" : "61c8db18c112d65",
+      "name" : "模型评估明细",
+      "source" : "61c8db18c112d65.json",
+      "type" : "application/json",
+      "size" : 4420
+    }, {
+      "uid" : "78aa8bd4e6c96703",
+      "name" : "断言明细",
+      "source" : "78aa8bd4e6c96703.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "a52ae2dfac892d1a",
+      "name" : "失败原因",
+      "source" : "a52ae2dfac892d1a.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "c205de6b9e68d6e",
+      "name" : "信贷大模型实际话术",
+      "source" : "c205de6b9e68d6e.txt",
+      "type" : "text/plain",
+      "size" : 247
+    }, {
+      "uid" : "4391b22468eb7aff",
+      "name" : "断言话术",
+      "source" : "4391b22468eb7aff.txt",
+      "type" : "text/plain",
+      "size" : 754
+    }, {
+      "uid" : "d047f21970cec9a2",
+      "name" : "log",
+      "source" : "d047f21970cec9a2.txt",
+      "type" : "text/plain",
+      "size" : 20286
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967809396,
+      "stop" : 1779967810358,
+      "duration" : 962
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9fbde1d619b55fad",
+      "name" : "模型测试汇总",
+      "source" : "9fbde1d619b55fad.txt",
+      "type" : "text/plain",
+      "size" : 52628
+    }, {
+      "uid" : "96f4dbb4fc1f71f2",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "96f4dbb4fc1f71f2.csv",
+      "type" : "text/csv",
+      "size" : 320770
+    }, {
+      "uid" : "fd894783606413a1",
+      "name" : "模型测试明细Excel路径",
+      "source" : "fd894783606413a1.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "6277f00e85cc72d3",
+      "name" : "模型测试汇总JSON",
+      "source" : "6277f00e85cc72d3.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "30752-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0077', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-微信账单的操作步骤是什么', 'intent': '提额降息操作类', 'question': '微信账单的操作步骤是什么', 'expected_answer': '您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。', 'questions': ['微信账单的操作步骤是什么'], 'expected_answers': ['您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "8d45504869a55e6f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878401150,
+          "stop" : 1779878471532,
+          "duration" : 70382
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "a88a074959a7a035.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0077', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-微信账单的操作步骤是什么', 'intent': '提额降息操作类', 'question': '微信账单的操作步骤是什么', 'expected_answer': '您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。', 'questions': ['微信账单的操作步骤是什么'], 'expected_answers': ['您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。您需要按指引将微信账单发送至指定邮箱。具体步骤：复制我们提供的邮箱地址 → 打开微信搜索“账单” → 粘贴邮箱并选择“1年的账单” → 验证身份后即可发送。邮件发送后预计30分钟左右完成认证，我们会严格保密您的信息。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

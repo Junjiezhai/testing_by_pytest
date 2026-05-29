@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183343190806",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183343190806",
+          "sessionId": "chat_pre_20260528183343190806"
+        },
+        "type": "TEXT",
+        "value": "通常需年满18周岁、完成实名认证且账户状态正常。具体是否开放提额入口以系统综合评估为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

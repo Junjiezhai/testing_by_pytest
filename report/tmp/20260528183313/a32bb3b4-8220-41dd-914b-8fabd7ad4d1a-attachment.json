@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184713639887",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184713639887",
+          "sessionId": "chat_pre_20260528184713639887"
+        },
+        "type": "TEXT",
+        "value": "提额材料审核进度和结果请以 APP 页面、短信或消息通知为准；自动审核较快，复杂材料可能需人工复核。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0343",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-把利率降到12%需要什么条件",
+  "intent": "提额降息咨询类",
+  "question": "把利率降到12%需要什么条件",
+  "expected_answer": "利率降至年化12%需要系统综合评估您的信用记录、还款情况等因素。具体能否达到该利率水平，以系统评估后页面展示为准。",
+  "questions": [
+    "把利率降到12%需要什么条件"
+  ],
+  "expected_answers": [
+    "利率降至年化12%需要系统综合评估您的信用记录、还款情况等因素。具体能否达到该利率水平，以系统评估后页面展示为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "能否将利率调整为年化12%，需要系统根据您的信用记录、还款情况等因素进行综合评估。具体能否达到该利率水平，请以系统评估后页面显示的结果为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

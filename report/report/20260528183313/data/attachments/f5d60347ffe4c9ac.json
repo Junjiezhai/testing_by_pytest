@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0192",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-不转人工我就去监管部门投诉",
+  "intent": "转人工类",
+  "question": "不转人工我就去监管部门投诉",
+  "expected_answer": "请您消消气，我立即为您转接人工客服，您可以直接向人工表达您的诉求，我们会认真处理。",
+  "questions": [
+    "不转人工我就去监管部门投诉"
+  ],
+  "expected_answers": [
+    "请您消消气，我立即为您转接人工客服，您可以直接向人工表达您的诉求，我们会认真处理。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如需进一步核实，您可以联系在线客服反馈问题。请您消消气，我立即为您转接人工客服，您可以直接向人工表达您的诉求，我们会认真处理。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

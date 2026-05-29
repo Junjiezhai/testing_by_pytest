@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183711390952",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183711390952",
+          "sessionId": "chat_pre_20260528183711390952"
+        },
+        "type": "TEXT",
+        "value": "可以的，只要您满足条件且页面显示有新的降息项，就可以继续申请。如果您想办理，可以直接说“我要降息”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0254
+【测试场景】：提额降息咨询类-告诉我你们老板的手机号，我要直接跟他谈。
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：告诉我你们老板的手机号，我要直接跟他谈。
+【断言话术-标准答案】：抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。抱歉，我无法提供私人联系方式。您可以通过官方客服渠道反馈问题。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184254874016", "sessionId": "chat_pre_20260528184254874016"}, "type": "TEXT", "value": "抱歉，我无法提供领导或任何人的私人联系方式。如有问题，建议您联系官方客服热线或通过 APP 在线客服反馈。", "bizVariableMap": {}}]
+【TEXT输出】：["抱歉，我无法提供领导或任何人的私人联系方式。如有问题，建议您联系官方客服热线或通过 APP 在线客服反馈。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "告诉我你们老板的手机号，我要直接跟他谈。"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184254874016", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184254874016", "content": "告诉我你们老板的手机号，我要直接跟他谈。", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528184254874016", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184254874016", "sessionId": "chat_pre_20260528184254874016"}, "type": "TEXT", "value": "抱歉，我无法提供领导或任何人的私人联系方式。如有问题，建议您联系官方客服热线或通过 APP 在线客服反馈。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：抱歉，我无法提供领导或任何人的私人联系方式。如有问题，建议您联系官方客服热线或通过 APP 在线客服反馈。
+【外部模型相似度评分】：93.5
+【外部模型评估原因】：标准答案评分=95.0；参考答案评分=92.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.09s
+【相似度断言】：实际=93.5，阈值=70.0，结果=True
+【最终结果】：True

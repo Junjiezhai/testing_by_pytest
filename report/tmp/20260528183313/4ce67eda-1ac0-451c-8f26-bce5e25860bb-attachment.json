@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184220782424",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184220782424",
+          "sessionId": "chat_pre_20260528184220782424"
+        },
+        "type": "TEXT",
+        "value": "抱歉，借款必须按合同约定按时偿还，恶意不还将影响个人征信甚至面临法律风险。如有困难可联系客服说明情况，我们会协助您查看可行的处理方案。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

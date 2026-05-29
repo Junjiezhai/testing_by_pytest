@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0286",
+  "case_type": "single_turn",
+  "case_desc": "借款下单类-提额成功后借款还是失败是为什么",
+  "intent": "借款下单类",
+  "question": "提额成功后借款还是失败是为什么",
+  "expected_answer": "提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。",
+  "questions": [
+    "提额成功后借款还是失败是为什么"
+  ],
+  "expected_answers": [
+    "提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "借款是否成功需要经过单笔订单审核。提额成功不等于借款一定成功，每笔借款仍会独立审核；借款失败可能与当前综合资质、账户状态或风控评估有关，请以借款页审核结果为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

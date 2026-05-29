@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0355
+【测试场景】：转人工类-为什么我不能借款50000元
+【意图分类】：转人工类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：为什么我不能借款50000元
+【断言话术-标准答案】：借款额度取决于您的可用额度和信用审核结果，具体原因可能涉及信用评分、还款记录等因素。如需人工帮助，我可以帮您转接人工客服。
+【断言话术-外部模型参考答案】：借款金额的审批主要取决于您的可用额度和信用审核情况，无法借款50000元可能与您的信用评分、历史还款记录等因素有关。如需了解具体原因，我可以为您转接人工客服进行详细查询。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184952078763", "sessionId": "chat_pre_20260528184952078763"}, "type": "TEXT", "value": "提额成功不代表借款一定通过，每笔借款仍会单独评估，具体结果请以 APP 借款页展示为准。", "bizVariableMap": {}}]
+【TEXT输出】：["提额成功不代表借款一定通过，每笔借款仍会单独评估，具体结果请以 APP 借款页展示为准。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "为什么我不能借款50000元"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184952078763", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184952078763", "content": "为什么我不能借款50000元", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528184952078763", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184952078763", "sessionId": "chat_pre_20260528184952078763"}, "type": "TEXT", "value": "提额成功不代表借款一定通过，每笔借款仍会单独评估，具体结果请以 APP 借款页展示为准。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：提额成功不代表借款一定通过，每笔借款仍会单独评估，具体结果请以 APP 借款页展示为准。
+【外部模型相似度评分】：62.5
+【外部模型评估原因】：标准答案评分=65.0；参考答案评分=60.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：False
+【ASSET是否允许】：False
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：TEXT评分 62.5 未达到阈值 70.0(gte)
+【响应耗时】：3.331s
+【相似度断言】：实际=62.5，阈值=70.0，结果=False
+【最终结果】：False

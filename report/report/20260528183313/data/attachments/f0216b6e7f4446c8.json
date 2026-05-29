@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184112643114",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184112643114",
+          "sessionId": "chat_pre_20260528184112643114"
+        },
+        "type": "TEXT",
+        "value": "没有公积金也可以提额。您可以尝试提供银行流水、微信账单等补充材料来帮助综合评估，结果以 APP 页面为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

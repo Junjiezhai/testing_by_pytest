@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184120062097",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184120062097",
+          "sessionId": "chat_pre_20260528184120062097"
+        },
+        "type": "TEXT",
+        "value": "降息申请成功后无需额外操作，您下次借款时系统会自动使用新利率。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

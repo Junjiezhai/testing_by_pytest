@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0263
+【测试场景】：提额降息咨询类-我信佛，能不能免了我的利息？
+【意图分类】：提额降息咨询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：我信佛，能不能免了我的利息？
+【断言话术-标准答案】：抱歉，利息根据合同约定和法律监管设定，无法因信仰免除。
+【断言话术-外部模型参考答案】：这个问题主要以页面展示和系统评估结果为准。抱歉，利息根据合同约定和法律监管设定，无法因信仰免除。
+【replyContents】：[{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184524258094", "sessionId": "chat_pre_20260528184524258094"}, "type": "TEXT", "value": "抱歉，利息是根据合同约定和法律监管设定的，无法因信仰免除。如果您有其他合规的信贷问题，我可以继续为您解答。", "bizVariableMap": {}}]
+【TEXT输出】：["抱歉，利息是根据合同约定和法律监管设定的，无法因信仰免除。如果您有其他合规的信贷问题，我可以继续为您解答。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "我信佛，能不能免了我的利息？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528184524258094", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528184524258094", "content": "我信佛，能不能免了我的利息？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"code": "0", "data": {"chatId": "chat_pre_20260528184524258094", "content": "", "chatType": "NORMAL", "replyContents": [{"bizParamInfo": {"lastMsgId": "msg_pre_20260528184524258094", "sessionId": "chat_pre_20260528184524258094"}, "type": "TEXT", "value": "抱歉，利息是根据合同约定和法律监管设定的，无法因信仰免除。如果您有其他合规的信贷问题，我可以继续为您解答。", "bizVariableMap": {}}]}, "success": true, "message": "success"}
+【模型有效出参value】：抱歉，利息是根据合同约定和法律监管设定的，无法因信仰免除。如果您有其他合规的信贷问题，我可以继续为您解答。
+【外部模型相似度评分】：97.5
+【外部模型评估原因】：标准答案评分=100.0；参考答案评分=95.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：3.019s
+【相似度断言】：实际=97.5，阈值=70.0，结果=True
+【最终结果】：True

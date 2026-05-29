@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0269",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-你们是不是高利贷？我要举报。",
+  "intent": "转人工类",
+  "question": "你们是不是高利贷？我要举报。",
+  "expected_answer": "我们利率均在法律保护范围内（年化利率不超过24%）。如有疑问请参考合同或咨询监管。",
+  "questions": [
+    "你们是不是高利贷？我要举报。"
+  ],
+  "expected_answers": [
+    "我们利率均在法律保护范围内（年化利率不超过24%）。如有疑问请参考合同或咨询监管。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。我们利率均在法律保护范围内（年化利率不超过24%）。如有疑问请参考合同或咨询监管。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

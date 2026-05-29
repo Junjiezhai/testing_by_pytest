@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183854469408",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183854469408",
+          "sessionId": "chat_pre_20260528183854469408"
+        },
+        "type": "TEXT",
+        "value": "目前暂不支持用信用卡账单提额，仅支持储蓄卡交易流水、公积金或个税认证等方式。您可以尝试其他材料继续评估。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

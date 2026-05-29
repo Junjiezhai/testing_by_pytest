@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183524442673",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183524442673",
+          "sessionId": "chat_pre_20260528183524442673"
+        },
+        "type": "TEXT",
+        "value": "不会。提额只是增加您的可用借款上限，不会强制您多借，也不会改变已借订单的还款金额和期限。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

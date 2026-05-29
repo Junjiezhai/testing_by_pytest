@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184122164825",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184122164825",
+          "sessionId": "chat_pre_20260528184122164825"
+        },
+        "type": "TEXT",
+        "value": "我们尊重用户反馈，但威胁上门闹事无助于解决问题。如有业务需求请通过官方渠道联系。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

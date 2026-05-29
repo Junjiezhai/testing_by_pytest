@@ -1,0 +1,11 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184411042948",
+    "handoffReason": "AGENT_HANDOFF",
+    "chatType": "TRANSFER",
+    "replyContents": []
+  },
+  "success": true,
+  "message": "success"
+}

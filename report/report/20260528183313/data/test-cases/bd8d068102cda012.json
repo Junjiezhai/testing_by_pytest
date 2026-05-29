@@ -1,0 +1,226 @@
+{
+  "uid" : "bd8d068102cda012",
+  "name" : "test_single_turn_intent_recognition[提额降息操作类-提额申请提交后，我可以撤销并重新上传材料吗？]",
+  "fullName" : "test_cases.test_model_intent_recognition.TestModelIntentRecognition#test_single_turn_intent_recognition",
+  "historyId" : "dd4e16a93d0fe01eb00b530225b1e974",
+  "time" : {
+    "start" : 1779965352405,
+    "stop" : 1779965360332,
+    "duration" : 7927
+  },
+  "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+  "descriptionHtml" : "<pre><code>    【信贷大模型--单轮意图识别与话术应答】\n    :param case_info: 用例信息\n    :return: None\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition",
+    "time" : {
+      "start" : 1779964403827,
+      "stop" : 1779964403827,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        【信贷大模型--单轮意图识别与话术应答】\n        :param case_info: 用例信息\n        :return: None\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1209a0e36a1d1f",
+      "name" : "用例信息",
+      "source" : "1209a0e36a1d1f.json",
+      "type" : "application/json",
+      "size" : 995
+    }, {
+      "uid" : "6e892c59106a5129",
+      "name" : "执行日志",
+      "source" : "6e892c59106a5129.txt",
+      "type" : "text/plain",
+      "size" : 3347
+    }, {
+      "uid" : "15cae9563be88c32",
+      "name" : "信贷大模型请求入参",
+      "source" : "15cae9563be88c32.json",
+      "type" : "application/json",
+      "size" : 975
+    }, {
+      "uid" : "aecc1fd0ac9814f3",
+      "name" : "信贷大模型完整返回",
+      "source" : "aecc1fd0ac9814f3.json",
+      "type" : "application/json",
+      "size" : 567
+    }, {
+      "uid" : "66daf6685a203984",
+      "name" : "模型评估明细",
+      "source" : "66daf6685a203984.json",
+      "type" : "application/json",
+      "size" : 3388
+    }, {
+      "uid" : "d871e98a072ed7c9",
+      "name" : "断言明细",
+      "source" : "d871e98a072ed7c9.json",
+      "type" : "application/json",
+      "size" : 428
+    }, {
+      "uid" : "8ba1f259338b6e3a",
+      "name" : "失败原因",
+      "source" : "8ba1f259338b6e3a.txt",
+      "type" : "text/plain",
+      "size" : 3
+    }, {
+      "uid" : "7dbd0f11412bcc1b",
+      "name" : "信贷大模型实际话术",
+      "source" : "7dbd0f11412bcc1b.txt",
+      "type" : "text/plain",
+      "size" : 132
+    }, {
+      "uid" : "29605a9eb79fd210",
+      "name" : "断言话术",
+      "source" : "29605a9eb79fd210.txt",
+      "type" : "text/plain",
+      "size" : 340
+    }, {
+      "uid" : "b0205dee274f696d",
+      "name" : "log",
+      "source" : "b0205dee274f696d.txt",
+      "type" : "text/plain",
+      "size" : 15151
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "xunit_setup_module_fixture_test_model_intent_recognition::0",
+    "time" : {
+      "start" : 1779967870986,
+      "stop" : 1779967871920,
+      "duration" : 934
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aa1520d6e0884b75",
+      "name" : "模型测试汇总",
+      "source" : "aa1520d6e0884b75.txt",
+      "type" : "text/plain",
+      "size" : 54493
+    }, {
+      "uid" : "116d1396fa636e40",
+      "name" : "失败测试用例明细报表CSV",
+      "source" : "116d1396fa636e40.csv",
+      "type" : "text/csv",
+      "size" : 329652
+    }, {
+      "uid" : "c3309cf3809c0dd4",
+      "name" : "模型测试明细Excel路径",
+      "source" : "c3309cf3809c0dd4.txt",
+      "type" : "text/plain",
+      "size" : 177
+    }, {
+      "uid" : "2bf9a9992b5e81e",
+      "name" : "模型测试汇总JSON",
+      "source" : "2bf9a9992b5e81e.json",
+      "type" : "application/json",
+      "size" : 21169
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "suite",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "intent",
+    "value" : "提额降息操作类"
+  }, {
+    "name" : "feature",
+    "value" : "信贷大模型"
+  }, {
+    "name" : "story",
+    "value" : "单轮意图识别与话术应答"
+  }, {
+    "name" : "tag",
+    "value" : "model_single_turn"
+  }, {
+    "name" : "tag",
+    "value" : "model_intent_recognition"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_cases"
+  }, {
+    "name" : "suite",
+    "value" : "test_model_intent_recognition"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestModelIntentRecognition"
+  }, {
+    "name" : "host",
+    "value" : "jeremyzhai-Pc1"
+  }, {
+    "name" : "thread",
+    "value" : "25176-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_cases.test_model_intent_recognition"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_info",
+    "value" : "{'case_id': 'MIR_0155', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-提额申请提交后，我可以撤销并重新上传材料吗？', 'intent': '提额降息操作类', 'question': '提额申请提交后，我可以撤销并重新上传材料吗？', 'expected_answer': '审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。', 'questions': ['提额申请提交后，我可以撤销并重新上传材料吗？'], 'expected_answers': ['审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "24a4069a1a6e8cad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1779878729142,
+          "stop" : 1779878787054,
+          "duration" : 57912
+        }
+      } ]
+    },
+    "tags" : [ "model_single_turn", "model_intent_recognition" ]
+  },
+  "source" : "bd8d068102cda012.json",
+  "parameterValues" : [ "{'case_id': 'MIR_0155', 'case_type': 'single_turn', 'case_desc': '提额降息操作类-提额申请提交后，我可以撤销并重新上传材料吗？', 'intent': '提额降息操作类', 'question': '提额申请提交后，我可以撤销并重新上传材料吗？', 'expected_answer': '审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。', 'questions': ['提额申请提交后，我可以撤销并重新上传材料吗？'], 'expected_answers': ['审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。'], 'round_assert_flags': [True], 'reference_answer': '请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。审核中无法撤销。如需紧急修改，请立即联系客服，但不保证能成功拦截。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+}

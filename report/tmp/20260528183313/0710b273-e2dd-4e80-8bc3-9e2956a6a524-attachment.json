@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183949624542",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183949624542",
+          "sessionId": "chat_pre_20260528183949624542"
+        },
+        "type": "TEXT",
+        "value": "更换手机号后建议先在APP更新预留号码，保持一致再操作提额，否则可能授权失败。如果您想继续办理，可以直接说“我要提额”。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

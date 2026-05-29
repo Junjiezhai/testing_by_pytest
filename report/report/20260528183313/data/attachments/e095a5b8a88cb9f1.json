@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184516707305",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184516707305",
+          "sessionId": "chat_pre_20260528184516707305"
+        },
+        "type": "TEXT",
+        "value": "平台经营稳健，恶意不还款仍会被追偿，请理性对待借贷。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183920119929",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183920119929",
+          "sessionId": "chat_pre_20260528183920119929"
+        },
+        "type": "TEXT",
+        "value": "可以。但新设备登录可能需进行身份验证，验证通过后即可正常申请提额。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

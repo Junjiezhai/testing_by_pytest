@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184917444482",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184917444482",
+          "sessionId": "chat_pre_20260528184917444482"
+        },
+        "type": "TEXT",
+        "value": "人工智能是模拟人类智能的技术领域；如果您有分期乐额度或利率相关疑问，我可以直接帮您看。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

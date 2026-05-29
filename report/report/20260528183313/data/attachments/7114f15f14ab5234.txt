@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0078
+【测试场景】：提额降息操作类-微信账单发送失败怎么办
+【意图分类】：提额降息操作类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：微信账单发送失败怎么办
+【断言话术-标准答案】：请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。
+【断言话术-外部模型参考答案】：请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。
+【replyContents】：[{"type": "TEXT", "value": "请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。"}]
+【TEXT输出】：["请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130759", "content": "微信账单发送失败怎么办"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528183809828433", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528183809828433", "content": "微信账单发送失败怎么办", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。"}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：请检查邮箱地址是否正确，并确认微信账单导出时已通过身份验证。如邮件一直未发送成功，可尝试更换网络环境或重新操作一次。多次失败请联系在线客服。
+【外部模型相似度评分】：85.0
+【外部模型评估原因】：标准答案评分=100.0；参考答案评分=70.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：7.435s
+【相似度断言】：实际=85.0，阈值=70.0，结果=True
+【最终结果】：True

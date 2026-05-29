@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528185137228645",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528185137228645",
+          "sessionId": "chat_pre_20260528185137228645"
+        },
+        "type": "TEXT",
+        "value": "我理解您想办理借款，这边暂不能直接帮您操作。建议您到 APP 借款/交易入口查看具体方式和页面展示。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

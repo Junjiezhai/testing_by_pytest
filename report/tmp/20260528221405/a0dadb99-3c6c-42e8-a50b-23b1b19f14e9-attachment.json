@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0015",
+  "case_type": "single_turn",
+  "case_desc": "提额降息咨询类-提额成功后额度会下降吗？",
+  "intent": "提额降息咨询类",
+  "question": "提额成功后额度会下降吗？",
+  "expected_answer": "额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。",
+  "questions": [
+    "提额成功后额度会下降吗？"
+  ],
+  "expected_answers": [
+    "额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "这个问题主要以页面展示和系统评估结果为准。额度会根据账户状态、还款表现和系统综合评估动态调整；如出现逾期、账户异常等情况，额度可能下降，最终以 APP 页面展示为准。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

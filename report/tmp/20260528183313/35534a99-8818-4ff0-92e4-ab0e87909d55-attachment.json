@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528184010331469",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528184010331469",
+          "sessionId": "chat_pre_20260528184010331469"
+        },
+        "type": "TEXT",
+        "value": "您的材料仅用于本次提额审核，采用加密传输和存储，不会泄露给第三方。您可以查看《隐私政策》了解详细信息。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

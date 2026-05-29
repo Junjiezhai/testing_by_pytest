@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0200",
+  "case_type": "single_turn",
+  "case_desc": "转人工类-转人工要排队多久？",
+  "intent": "转人工类",
+  "question": "转人工要排队多久？",
+  "expected_answer": "当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。",
+  "questions": [
+    "转人工要排队多久？"
+  ],
+  "expected_answers": [
+    "当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "如果自助说明无法解决您的问题，建议联系在线客服继续处理。当前咨询量较大，预计排队2-5分钟。您可以继续等待，或留下联系方式，人工会尽快回拨。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

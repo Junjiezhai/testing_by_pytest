@@ -1,0 +1,22 @@
+{
+  "case_id": "MIR_0125",
+  "case_type": "single_turn",
+  "case_desc": "提额降息操作类-材料上传后多久能审核完",
+  "intent": "提额降息操作类",
+  "question": "材料上传后多久能审核完",
+  "expected_answer": "材料上传后通常会在1-2分钟内完成自动审核，部分复杂材料可能需要人工复核，最迟一小时内出结果。",
+  "questions": [
+    "材料上传后多久能审核完"
+  ],
+  "expected_answers": [
+    "材料上传后通常会在1-2分钟内完成自动审核，部分复杂材料可能需要人工复核，最迟一小时内出结果。"
+  ],
+  "round_assert_flags": [
+    true
+  ],
+  "reference_answer": "请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。材料上传后通常会在1-2分钟内完成自动审核，部分复杂材料可能需要人工复核，最迟一小时内出结果。",
+  "similarity_threshold": 70.0,
+  "response_time_threshold": 5.0,
+  "env": "pre",
+  "group": "default"
+}

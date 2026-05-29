@@ -1,0 +1,333 @@
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:286 2026-05-28 at 18:51:57 | 
+==============【当前环境：env=pre, group=default】信贷大模型多轮测试 =============
+
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:51:57 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:51:58 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:51:58 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:51:58 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0022_1779965517920011", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185157920011_0", "content": "\\u4e0a\\u4f20\\u7684\\u6750\\u6599\\u91cc\\uff0c\\u6536\\u5165\\u8d8a\\u9ad8\\u63d0\\u989d\\u8d8a\\u591a\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:52:00 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661779965518228360604056","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0022_1779965517920011","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"lastMsgId":"msg_model_customer_20260528185157920011_0","sessionId":"chat_pre_MD_0022_1779965517920011"},"type":"TEXT","value":"系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"2715ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:52:00 | 【模型意图识别】接口返回traceId: 0A0A28661779965518228360604056, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0022_1779965517920011', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260528185157920011_0', 'sessionId': 'chat_pre_MD_0022_1779965517920011'}, 'type': 'TEXT', 'value': '系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-28 at 18:52:00 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0022_1779965517920011', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185157920011_0', 'content': '上传的材料里，收入越高提额越多吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0022_1779965517920011', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185157920011_0', 'content': '上传的材料里，收入越高提额越多吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'code': '0', 'data': {'chatId': 'chat_pre_MD_0022_1779965517920011', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260528185157920011_0', 'sessionId': 'chat_pre_MD_0022_1779965517920011'}, 'type': 'TEXT', 'value': '系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-28 at 18:52:00 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '上传的材料里，收入越高提额越多吗？', 'expected_intent': '提额降息操作类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-28 at 18:52:38 | 【模型多轮逐轮多维度评估】响应结果为：200, 出参为: {"content":[{"signature":"","thinking":"我们被要求输出结构化评估。输入是历史对话为空，当前轮用户问题、模型实际话术、标准答案、参考模型输出、期望意图、上一轮意图为空、上下文断言类型：\"single_intent_followup\"，是否期望拒答: False。需要评估。\n\n首先，评估标准答案和实际话术的语义相似度。标准答案说系统评估会参考收入的稳定性和可持续性，不是单纯金额，稳定记录比单次高收入更有助于提额。实际话术说：系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。意思基本一致，但实际话术多了“结果会综合评估，以APP页面为准”，标准答案没有“以APP页面为准”这个具体指引，但语义相似。标准答案有“稳定的收入记录比单次高收入更有助于额度提升”，实际话术没有明确提这一点，但说了更看重稳定性，这点是一致的。所以语义相似。可以给高分。但缺少了一点具体比较，可以扣一点分。similarity_score 95合适。reason: 实际话术表达了核心语义，强调了稳定性而非金额，并补充了综合评估和以APP为准，但省略了“稳定记录比单次高收入更有助于提额”的具体说明，因此扣减少许分。\n\n参考模型输出：请按页面指引完成材料提交，重点是保证资料真实、清晰、完整。系统评估会参考收入的稳定性和可持续性，并非单纯以收入金额判定，稳定的收入记录比单次高收入更有助于额度提升。实际话术没有提及材料提交和真实性等，只有系统评估的解释。用户问题“上传的材料里，收入越高提额越多吗？” 参考模型多了一段关于上传材料的要求，标准答案没有。但用户问的是基于上传的材料，收入高是否提额多，解释评估逻辑是合适的。参考模型也解释了评估逻辑，并添加了上传指引。实际话术没有上传指引，核心语义部分是一致的。比较参考模型和实际：参考模型的核心回答也包含稳定性和可持续性，以及不是单纯金额高，稳定的记录更有帮助。实际话术有“系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。” 与参考模型的解释部分一致，但没有材料提交提醒。参考模型有前半部分，强调按页面指引提交，保证真实清晰完整。这个是否算遗漏关键信息？在single_intent_followup场景下，用户追问上传材料中的问题，模型如果只解释评估逻辑，不提醒提交要求，不一定算遗漏。因为用户问的是“收入越高提额越多吗”，模型解释是合理的。但参考模型多加了提交指引，可能作为加分项。未包含并不影响核心语义相同。判断is_same_meaning为true，similarity_score可以稍低92，因为缺少了材料真实性提醒。reason：核心语义一致，但遗漏了参考模型中的材料提交引导和真实性要求，因此扣分。\n\n意图：实际意图是什么？根据用户问题“上传的材料里，收入越高提额越多吗？” 意图是询问额度提升与收入的关系，属于咨询类，可能属于提额降息类的咨询。期望意图：\"提额降息操作类\"，但问题是询问规则，不是操作，可能是咨询。但期望意图是提额降息操作类，实际话术是解释评估逻辑，没有给出操作指引，只是解释。这可能不符合期望意图。但是否intent_pass？期望意图是操作类，用户意图是咨询规则。应该按期望意图来评估。如果期望意图是操作类，实际模型回复未涉及操作，而是解释，那就是不符合期望意图。intent_pass应为false。reason：用户问题是咨询收入与提额关系，实际回答为规则解释，无操作引导，期望意图为提额降息操作类，因此不符合。\n\n上下文评估：历史对话为空，当前轮上下文断言类型是single_intent_followup，即同一意图连续追问。但没有历史对话，怎么有single_intent_followup？可能是指用户在当前对话中，上一轮没有，但断言类型定为single_intent_followup，不合理。但既然给定，可能认为这是关于提额降息的连续追问。context_carry_pass：需要判断是否正确承接前文上下文。没有历史对话，不需要承接，所以context_carry_pass可以设为true。intent_pollution_pass：判断是否被上一轮意图污染。上一轮意图为空，没有污染，true。user_correction_pass：用户改口，这里没有改口，true。risk_refusal_pass：是否期望拒答，为False，实际也没有拒答，true。return_to_business_pass：无，true。故context部分都true。reason可写“无历史对话，无需承接；无污染等”。\n\n因此输出JSON。","type":"thinking"},{"text":"{\n  \"standard\": {\n    \"is_same_meaning\": true,\n    \"similarity_score\": 95,\n    \"reason\": \"实际话术表达了系统更看重稳定性和可持续性而非金额，与标准答案核心语义一致，但缺少了‘稳定记录比单次高收入更有助于提额’的具体说明，扣减5分。\"\n  },\n  \"reference\": {\n    \"is_same_meaning\": true,\n    \"similarity_score\": 92,\n    \"reason\": \"实际话术与参考答案均解释了收入稳定性和非单纯金额的评估逻辑，但遗漏了参考答案中关于材料提交指引和真实性要求的提醒，扣减8分。\"\n  },\n  \"intent\": {\n    \"actual_intent\": \"提额降息咨询类\",\n    \"expected_intent\": \"提额降息操作类\",\n    \"intent_pass\": false,\n    \"reason\": \"用户问题为咨询收入与提额的关系，期望意图为操作类，实际回答仅做规则解释，未提供操作引导，故不符合期望意图。\"\n  },\n  \"context\": {\n    \"context_carry_pass\": true,\n    \"intent_pollution_pass\": true,\n    \"user_correction_pass\": true,\n    \"risk_refusal_pass\": true,\n    \"return_to_business_pass\": true,\n    \"reason\": \"无历史对话，无需承接；上一轮意图为空，无污染；无用户改口；非风险问题；未发生拒答回归。\"\n  }\n}","type":"text"}],"id":"msg_0eccc7d6-432b-48a0-bcb1-a898637383ba","model":"deepseek-v4-pro","role":"assistant","stop_reason":"end_turn","type":"message","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":645,"output_tokens":1343,"total_tokens":1988}}
+[32mINFO    [0m test_model_intent_recognition:test_model_intent_recognition.py:438 2026-05-28 at 18:52:38 | 【多轮第1轮】用户问题：上传的材料里，收入越高提额越多吗？，模型回复：系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。，相似度：93.5，意图：提额降息咨询类，耗时：3.035s
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:52:38 | 【接口信息查询】请求的入参为:{'req_type': 'get', 'url': 'https://bianque.lexinfintech.com/governance/services/list', 'data': {'name': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '', 'port': '', 'appName': '', 'version': '', 'group': '', 'catogory': 'provider', 'pageIndex': 1, 'pageSize': 10}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:52:38 | 【接口信息查询】响应结果为：200, 出参为: {"status":0,"message":"ok","data":{"pageNum":1,"pageSize":10,"size":1,"orderBy":null,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"application":"server-rc-agent-adapter-java","catogory":"provider","ip":"10.16.63.67:25373","serviceName":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}}
+[32mINFO    [0m common.httpAction:httpAction.py:186 2026-05-28 at 18:52:38 | 【接口详细信息】：环境：pre，group:default, 接口名：com.fenqile.rc.agent.adapter.service.FrontImChatService, ip：10.16.63.67, 端口号：25373，版本号：2.0.0,工程名:server-rc-agent-adapter-java
+[32mINFO    [0m common.httpAction:httpAction.py:59 2026-05-28 at 18:52:38 | 【【模型意图识别】】请求的入参为:{'req_type': 'post', 'url': 'https://bianque.lexinfintech.com/serviceEmulator/request', 'data': {'env': 'pre', 'service': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'ip': '10.16.63.67', 'port': '25373', 'group': 'default', 'version': '2.0.0', 'method': 'chat', 'params': '[{"chatId": "chat_pre_MD_0022_1779965517920011", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130759", "externalUserId": "4130759", "userId": "4130759", "userName": "\\u9884\\u53d1\\u6d4b\\u8bd5\\u7528\\u6237", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185157920011_0", "content": "\\u4e0a\\u4f20\\u7684\\u6750\\u6599\\u91cc\\uff0c\\u6536\\u5165\\u8d8a\\u9ad8\\u63d0\\u989d\\u8d8a\\u591a\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "STAFF_2_CUSTOMER", "msgId": "msg_model_staff_20260528185238664497_1", "content": "\\u7cfb\\u7edf\\u66f4\\u770b\\u91cd\\u6536\\u5165\\u7684\\u7a33\\u5b9a\\u6027\\u548c\\u53ef\\u6301\\u7eed\\u6027\\uff0c\\u800c\\u4e0d\\u662f\\u5355\\u7eaf\\u91d1\\u989d\\u9ad8\\uff1b\\u7ed3\\u679c\\u4f1a\\u7efc\\u5408\\u8bc4\\u4f30\\uff0c\\u4ee5APP\\u9875\\u9762\\u4e3a\\u51c6\\u3002", "msgType": "TEXT", "mediaFileMap": {}}, {"direction": "CUSTOMER_2_STAFF", "msgId": "msg_model_customer_20260528185238664497_2", "content": "\\u6750\\u6599\\u91cc\\u7684\\u654f\\u611f\\u4fe1\\u606f\\u53ef\\u4ee5\\u6253\\u7801\\u5417\\uff1f", "msgType": "TEXT", "mediaFileMap": {}}]}]', 'comment': '【模型意图识别】', 'stringFlag': 'false'}}
+[32mINFO    [0m common.httpAction:httpAction.py:73 2026-05-28 at 18:52:41 | 【【模型意图识别】】响应结果为：200, 出参为: {"status":0,"message":"0A0A28661779965558946363304056","data":{"errcode":0,"result":{"code":"0","data":{"chatId":"chat_pre_MD_0022_1779965517920011","content":"","chatType":"NORMAL","replyContents":[{"bizParamInfo":{"lastMsgId":"msg_model_customer_20260528185238664497_2","sessionId":"chat_pre_MD_0022_1779965517920011"},"type":"TEXT","value":"关键信息不能打码，否则会导致审核失败；请按页面提示完整上传，具体以操作指南为准。","bizVariableMap":{}}]},"success":true,"message":"success"},"environment":"pre","method":"chat","costTime":"2540ms","service":"com.fenqile.rc.agent.adapter.service.FrontImChatService","version":"2.0.0","group":"default"}}
+[32mINFO    [0m common.httpAction:httpAction.py:252 2026-05-28 at 18:52:41 | 【模型意图识别】接口返回traceId: 0A0A28661779965558946363304056, 结果为:{'code': '0', 'data': {'chatId': 'chat_pre_MD_0022_1779965517920011', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260528185238664497_2', 'sessionId': 'chat_pre_MD_0022_1779965517920011'}, 'type': 'TEXT', 'value': '关键信息不能打码，否则会导致审核失败；请按页面提示完整上传，具体以操作指南为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}
+[32mINFO    [0m script_code.model_intent_recognition_exec:model_intent_recognition_exec.py:118 2026-05-28 at 18:52:41 | 【模型意图识别】完整执行结果：{'env': 'pre', 'group': 'default', 'input_data': [{'chatId': 'chat_pre_MD_0022_1779965517920011', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185157920011_0', 'content': '上传的材料里，收入越高提额越多吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260528185238664497_1', 'content': '系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185238664497_2', 'content': '材料里的敏感信息可以打码吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}], 'request_data': {'interface': 'com.fenqile.rc.agent.adapter.service.FrontImChatService', 'method': 'chat', 'env': 'pre', 'group': 'default', 'params': [{'chatId': 'chat_pre_MD_0022_1779965517920011', 'bizLineId': 'BL001', 'bizSceneKey': 'BSK2605181039042973', 'bizSceneTypeKey': 'BSK2605181039042973', 'customerSourceType': 'LOGGED_IN_INSTANT_MESSAGING_CUSTOMER', 'entityId': 'entity_pre_001', 'uid': '4130759', 'externalUserId': '4130759', 'userId': '4130759', 'userName': '预发测试用户', 'url': '', 'chatType': 'NORMAL', 'isRetry': 0, 'messageExtend': '', 'external': '', 'msgContextList': [{'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185157920011_0', 'content': '上传的材料里，收入越高提额越多吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'STAFF_2_CUSTOMER', 'msgId': 'msg_model_staff_20260528185238664497_1', 'content': '系统更看重收入的稳定性和可持续性，而不是单纯金额高；结果会综合评估，以APP页面为准。', 'msgType': 'TEXT', 'mediaFileMap': {}}, {'direction': 'CUSTOMER_2_STAFF', 'msgId': 'msg_model_customer_20260528185238664497_2', 'content': '材料里的敏感信息可以打码吗？', 'msgType': 'TEXT', 'mediaFileMap': {}}]}]}, 'output_data': {'code': '0', 'data': {'chatId': 'chat_pre_MD_0022_1779965517920011', 'content': '', 'chatType': 'NORMAL', 'replyContents': [{'bizParamInfo': {'lastMsgId': 'msg_model_customer_20260528185238664497_2', 'sessionId': 'chat_pre_MD_0022_1779965517920011'}, 'type': 'TEXT', 'value': '关键信息不能打码，否则会导致审核失败；请按页面提示完整上传，具体以操作指南为准。', 'bizVariableMap': {}}]}, 'success': True, 'message': 'success'}}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:576 2026-05-28 at 18:52:41 | 【模型多轮逐轮多维度评估】请求的入参为:{'url': 'https://ai-gateway-oa.lexincloud.com/litellm/v1/messages', 'model': 'deepseek-v4-pro', 'current_question': '材料里的敏感信息可以打码吗？', 'expected_intent': '提额降息操作类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'single_intent_followup', 'expect_refuse': False}
+[32mINFO    [0m common.modelHttpAction:modelHttpAction.py:580 2026-05-28 at 18:52:41 | 【模型多轮逐轮多维度评估】响应结果为：429, 出参为: {"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:53:41 UTC","type":"None","param":"None","code":"429"}}
+[1m[31mERROR   [0m common.modelHttpAction:modelHttpAction.py:597 2026-05-28 at 18:52:41 | 发生的错误为：Traceback (most recent call last):
+  File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:53:41 UTC","type":"None","param":"None","code":"429"}}
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "<string>", line 8, in <module>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1554, in serve
+    WorkerGateway(io=io, id=id, _startcount=2).serve()
+    |                |      -> 'gw4-worker'
+    |                -> <execnet.gateway_base.Popen2IO object at 0x000001F8D7C85160>
+    -> <class 'execnet.gateway_base.WorkerGateway'>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1060, in serve
+    self._execpool.integrate_as_primary_thread()
+    |    |         -> <function WorkerPool.integrate_as_primary_thread at 0x000001F8D7D26EA0>
+    |    -> <execnet.gateway_base.WorkerPool object at 0x000001F8D7DC7668>
+    -> <execnet.gateway_base.WorkerGateway object at 0x000001F8D7C85588>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 267, in integrate_as_primary_thread
+    self._perform_spawn(reply)
+    |    |              -> <execnet.gateway_base.Reply object at 0x000001F8D79E2630>
+    |    -> <function WorkerPool._perform_spawn at 0x000001F8D7D2A0D0>
+    -> <execnet.gateway_base.WorkerPool object at 0x000001F8D7DC7668>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 285, in _perform_spawn
+    reply.run()
+    |     -> <function Reply.run at 0x000001F8D7D26D08>
+    -> <execnet.gateway_base.Reply object at 0x000001F8D79E2630>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 220, in run
+    self._result = func(*args, **kwargs)
+    |              |     |       -> {}
+    |              |     -> ((<Channel id=1 open>, ('"""\n    This module is executed in remote subprocesses and helps to\n    control a remote testing s...
+    |              -> <bound method WorkerGateway.executetask of <execnet.gateway_base.WorkerGateway object at 0x000001F8D7C85588>>
+    -> <execnet.gateway_base.Reply object at 0x000001F8D79E2630>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\execnet\gateway_base.py", line 1084, in executetask
+    do_exec(co, loc)  # noqa
+    |       |   -> {'channel': <Channel id=1 open>, '__name__': '__channelexec__', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in...
+    |       -> <code object <module> at 0x000001F8D7DFA540, file "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\re...
+    -> <built-in function exec>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 291, in <module>
+    config.hook.pytest_cmdline_main(config=config)
+    |      |    |                          -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+    |      |    -> <_HookCaller 'pytest_cmdline_main'>
+    |      -> <pluggy.hooks._HookRelay object at 0x000001F8D7E0F8D0>
+    -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'config': <_pytest.config.Config object at 0x000001F8D8AEA9E8>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000001F8D835FBF8>
+           |    |         |     -> <_HookCaller 'pytest_cmdline_main'>
+           |    |         -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>>
+           -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'config': <_pytest.config.Config object at 0x000001F8D8AEA9E8>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_cmdline_main'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x000001F8D8AE0BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8ADF390>
+                |    |    |    |                     -> <_HookCaller 'pytest_cmdline_main'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8ADF390>
+                -> <_HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<_pytest.config.Config object at 0x000001F8D8AEA9E8>]
+          |         -> <function pytest_cmdline_main at 0x000001F8D8913F28>
+          -> <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\Py...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 316, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           |            |       -> <function _main at 0x000001F8D84F0048>
+           |            -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+           -> <function wrap_session at 0x000001F8D8913EA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 269, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    |       |            |    |       -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+    |       |            |    -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+    |       |            -> <function _main at 0x000001F8D84F0048>
+    |       -> <ExitCode.OK: 0>
+    -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\main.py", line 323, in _main
+    config.hook.pytest_runtestloop(session=session)
+    |      |    |                          -> <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>
+    |      |    -> <_HookCaller 'pytest_runtestloop'>
+    |      -> <pluggy.hooks._HookRelay object at 0x000001F8D7E0F8D0>
+    -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>}
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000001F8D835FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtestloop'>
+           |    |         -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>>
+           -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'session': <Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>}
+           |    |               |     -> [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python\\P...
+           |    |               -> <_HookCaller 'pytest_runtestloop'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x000001F8D8AE0BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA5F8>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtestloop'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA5F8>
+                -> <_HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Session making_decison_test exitstatus=<ExitCode.OK: 0> testsfailed=22 testscollected=486>]
+          |         -> <bound method WorkerInteractor.pytest_runtestloop of <__channelexec__.WorkerInteractor object at 0x000001F8D9421B38>>
+          -> <HookImpl plugin_name='2168308505400', plugin=<__channelexec__.WorkerInteractor object at 0x000001F8D9421B38>>
+
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 91, in pytest_runtestloop
+    self.run_one_test(torun)
+    |    |            -> [377, 378, 379, 380, 381, 382]
+    |    -> <function WorkerInteractor.run_one_test at 0x000001F8D8AE0620>
+    -> <__channelexec__.WorkerInteractor object at 0x000001F8D9421B38>
+  File "C:\Users\jeremyzhai\AppData\Roaming\Python\Python37\site-packages\xdist\remote.py", line 110, in run_one_test
+    self.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    |    |      |    |                            |              -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-...
+    |    |      |    |                            -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+    |    |      |    -> <_HookCaller 'pytest_runtest_protocol'>
+    |    |      -> <pluggy.hooks._HookRelay object at 0x000001F8D7E0F8D0>
+    |    -> <_pytest.config.Config object at 0x000001F8D8AEA9E8>
+    -> <__channelexec__.WorkerInteractor object at 0x000001F8D9421B38>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000001F8D835FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_protocol'>
+           |    |         -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>>
+           -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_protocol'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x000001F8D8AE0BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA4A8>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_protocol'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA4A8>
+                -> <_HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd...
+          |         -> <function pytest_runtest_protocol at 0x000001F8D8910B70>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 109, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    |               |              -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u4fe1\u606f\u67e5\u8be2\u7c7b-...
+    |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+    -> <function runtestprotocol at 0x000001F8D8910BF8>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 126, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    |       |      |               |             -> True
+    |       |      |               -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+    |       |      -> <function call_and_report at 0x000001F8D8913048>
+    |       -> <method 'append' of 'list' objects>
+    -> [<TestReport 'test_cases/test_model_intent_recognition.py::TestModelIntentRecognition::test_multi_turn_dialog_consistency[\\u...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 215, in call_and_report
+    call = call_runtest_hook(item, when, **kwds)
+           |                 |     |       -> {}
+           |                 |     -> 'call'
+           |                 -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+           -> <function call_runtest_hook at 0x000001F8D8913158>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in call_runtest_hook
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       |           |             -> (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+            |          |       |           -> 'call'
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 311, in from_call
+    result: Optional[TResult] = func()
+            |        |          -> <function call_runtest_hook.<locals>.<lambda> at 0x000001F8E317B400>
+            |        -> +TResult
+            -> typing.Optional
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 255, in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            |          |       -> {}
+            |          -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+            -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000001F8D835FBF8>
+           |    |         |     -> <_HookCaller 'pytest_runtest_call'>
+           |    |         -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>>
+           -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'item': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u60...
+           |    |               |     -> [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_runtest_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x000001F8D8AE0BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA278>
+                |    |    |    |                     -> <_HookCaller 'pytest_runtest_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': False, 'historic': False}
+                |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8AEA278>
+                -> <_HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd...
+          |         -> <function pytest_runtest_call at 0x000001F8D8910D90>
+          -> <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\runner.py", line 162, in pytest_runtest_call
+    item.runtest()
+    |    -> <function Function.runtest at 0x000001F8D89B7730>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 1641, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |    |                                   -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+    |    -> <property object at 0x000001F8D84729A8>
+    -> <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd\...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+           |    |         |     |    |                -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u96...
+           |    |         |     |    -> <function _HookCaller.get_hookimpls at 0x000001F8D835FBF8>
+           |    |         |     -> <_HookCaller 'pytest_pyfunc_call'>
+           |    |         -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>>
+           -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+           |    |               |     |        -> {'pyfuncitem': <Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u96...
+           |    |               |     -> [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Pytho...
+           |    |               -> <_HookCaller 'pytest_pyfunc_call'>
+           |    -> <function PluginManager.__init__.<locals>.<lambda> at 0x000001F8D8AE0BF8>
+           -> <_pytest.config.PytestPluginManager object at 0x000001F8D7DECDA0>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\manager.py", line 87, in <lambda>
+    firstresult=hook.spec.opts.get("firstresult") if hook.spec else False,
+                |    |    |    |                     |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8ADFF98>
+                |    |    |    |                     -> <_HookCaller 'pytest_pyfunc_call'>
+                |    |    |    -> <method 'get' of 'dict' objects>
+                |    |    -> {'firstresult': True, 'historic': False, 'warn_on_impl': None}
+                |    -> <pluggy.hooks.HookSpec object at 0x000001F8D8ADFF98>
+                -> <_HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+          |         |         -> [<Function test_multi_turn_dialog_consistency[\u540c\u4e00\u610f\u56fe\u8fde\u7eed\u8ffd\u95ee-\u63d0\u989d\u964d\u606f\u64cd...
+          |         -> <function pytest_pyfunc_call at 0x000001F8D8983F28>
+          -> <HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\jeremyzhai\\AppData\\Local\\Programs\\Python...
+
+  File "C:\Users\jeremyzhai\AppData\Local\Programs\Python\Python37\lib\site-packages\_pytest\python.py", line 183, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             |              -> {'case_info': {'case_id': 'MD_0022', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息操作类-22', 'remark': '同一意图连续追问', 'in...
+             -> <bound method TestModelIntentRecognition.test_multi_turn_dialog_consistency of <test_model_intent_recognition.TestModelIntent...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\test_cases\test_model_intent_recognition.py", line 349, in test_multi_turn_dialog_consistency
+    similarity_threshold=case_info['similarity_threshold']
+                         -> {'case_id': 'MD_0022', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息操作类-22', 'remark': '同一意图连续追问', 'intent': '提额降息操作...
+
+  File "E:\code_resource\process_logic_test\making_decison_test\assert_code\model_intent_assert.py", line 410, in evaluate_multi_turn_round
+    expect_refuse=bool(round_info.get('expect_refuse'))
+                       |          -> <method 'get' of 'dict' objects>
+                       -> {'round': 2, 'question': '材料里的敏感信息可以打码吗？', 'expected_answer': '关键信息不能打码，否则会导致审核失败，具体请参考操作指南进行上传。', 'reference_answer': '您可以根据...
+
+> File "E:\code_resource\process_logic_test\making_decison_test\common\modelHttpAction.py", line 582, in get_multi_turn_round_evaluation
+    raise Exception(f'{desc}请求失败，状态码：{response.status_code}，出参：{response.text}')
+
+Exception: 【模型多轮逐轮多维度评估】请求失败，状态码：429，出参：{"error":{"message":"429: Rate limit exceeded for api_key: 35429df62f1950a33ff113694f398a5621db639039fde4851342d84e88f2a9b4. Limit type: requests. Current limit: 5, Remaining: 0. Limit resets at: 2026-05-28 10:53:41 UTC","type":"None","param":"None","code":"429"}}

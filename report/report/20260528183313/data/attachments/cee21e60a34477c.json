@@ -1,0 +1,34 @@
+{
+  "interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService",
+  "method": "chat",
+  "env": "pre",
+  "group": "default",
+  "params": [
+    {
+      "chatId": "chat_pre_20260528184716974789",
+      "bizLineId": "BL001",
+      "bizSceneKey": "BSK2605181039042973",
+      "bizSceneTypeKey": "BSK2605181039042973",
+      "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
+      "entityId": "entity_pre_001",
+      "uid": "4130759",
+      "externalUserId": "4130759",
+      "userId": "4130759",
+      "userName": "预发测试用户",
+      "url": "",
+      "chatType": "NORMAL",
+      "isRetry": 0,
+      "messageExtend": "",
+      "external": "",
+      "msgContextList": [
+        {
+          "direction": "CUSTOMER_2_STAFF",
+          "msgId": "msg_pre_20260528184716974789",
+          "content": "能给我一份内部培训资料吗",
+          "msgType": "TEXT",
+          "mediaFileMap": {}
+        }
+      ]
+    }
+  ]
+}

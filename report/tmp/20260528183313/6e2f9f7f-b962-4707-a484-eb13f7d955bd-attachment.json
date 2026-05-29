@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183620345125",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183620345125",
+          "sessionId": "chat_pre_20260528183620345125"
+        },
+        "type": "TEXT",
+        "value": "审核中的降息申请无法取消。建议您留意页面进度，后续以 APP 展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,152 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test_cases.test_model_intent_recognition",
+    "children" : [ {
+      "name" : "test_single_turn_intent_recognition[提额降息咨询类-什么是提额]",
+      "uid" : "f2a73a86bed65563",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960651736,
+        "stop" : 1779960714180,
+        "duration" : 62444
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MIR_0001', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-什么是提额', 'intent': '提额降息咨询类', 'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'questions': ['什么是提额'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。'], 'round_assert_flags': [True], 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额失败后还能再申请吗]",
+      "uid" : "5bdb030fab92ed7c",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960651736,
+        "stop" : 1779960705110,
+        "duration" : 53374
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MIR_0004', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额失败后还能再申请吗', 'intent': '提额降息咨询类', 'question': '提额失败后还能再申请吗', 'expected_answer': '提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'questions': ['提额失败后还能再申请吗'], 'expected_answers': ['提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额失败后可以再次申请，建议您间隔1-3个月，期间保持良好的还款记录和信用行为，提高下次通过率。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额最高能到多少]",
+      "uid" : "6fdbd2005cebbc81",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "failed",
+      "time" : {
+        "start" : 1779960651737,
+        "stop" : 1779960678546,
+        "duration" : 26809
+      },
+      "flaky" : false,
+      "newFailed" : true,
+      "parameters" : [ "{'case_id': 'MIR_0003', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额最高能到多少', 'intent': '提额降息咨询类', 'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'questions': ['提额最高能到多少'], 'expected_answers': ['提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额成功后会立即生效吗]",
+      "uid" : "750a0297c7054b94",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "failed",
+      "time" : {
+        "start" : 1779960651737,
+        "stop" : 1779960676929,
+        "duration" : 25192
+      },
+      "flaky" : false,
+      "newFailed" : true,
+      "parameters" : [ "{'case_id': 'MIR_0005', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额成功后会立即生效吗', 'intent': '提额降息咨询类', 'question': '提额成功后会立即生效吗', 'expected_answer': '提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'questions': ['提额成功后会立即生效吗'], 'expected_answers': ['提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。'], 'round_assert_flags': [True], 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_single_turn_intent_recognition[提额降息咨询类-提额需要收费吗]",
+      "uid" : "8b8909cfb6f997da",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960651739,
+        "stop" : 1779960704726,
+        "duration" : 52987
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MIR_0002', 'case_type': 'single_turn', 'case_desc': '提额降息咨询类-提额需要收费吗', 'intent': '提额降息咨询类', 'question': '提额需要收费吗', 'expected_answer': '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'questions': ['提额需要收费吗'], 'expected_answers': ['提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。'], 'round_assert_flags': [True], 'reference_answer': '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息咨询类-5]",
+      "uid" : "a47c84fa9efc961f",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960677196,
+        "stop" : 1779960861632,
+        "duration" : 184436
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MD_0005', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-5', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'questions': ['提额成功后会立即生效吗', '我可以主动要求提额到具体数字吗', '提额申请会让我多还钱吗'], 'expected_answers': ['提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'reference_answers': ['这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额成功后会立即生效吗', 'expected_answer': '提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额成功后额度会实时更新，您可以在借款页面查看最新额度，生效后的额度可用于新的借款申请。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '我可以主动要求提额到具体数字吗', 'expected_answer': '请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'reference_answer': '是否满足条件需要以页面和系统评估为准。请问您具体需要提高到多少额度，我来为您筛选最适合您的提额项。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额申请会让我多还钱吗', 'expected_answer': '不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。不会。提额只增加您的可用借款上限，不改变已借订单的还款金额和期限。请合理借贷，量力而行。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-信息查询类-3]",
+      "uid" : "8d4f67a6c8f90fa6",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "failed",
+      "time" : {
+        "start" : 1779960678820,
+        "stop" : 1779960894395,
+        "duration" : 215575
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MD_0003', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-信息查询类-3', 'remark': '同一意图连续追问', 'intent': '信息查询类', 'question': '降息申请多久能出结果？', 'expected_answer': '自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。', 'reference_answer': '相关信息建议以 APP 页面展示为准。自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。', 'questions': ['提额短信通知说通过了，但APP没变化怎么办？', '提额审核中，我可以取消申请吗？', '降息申请多久能出结果？'], 'expected_answers': ['可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', '自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。'], 'reference_answers': ['建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', '您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', '相关信息建议以 APP 页面展示为准。自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。'], 'round_assert_flags': [True, True, True], 'round_intents': ['信息查询类', '信息查询类', '信息查询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '信息查询类', '信息查询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额短信通知说通过了，但APP没变化怎么办？', 'expected_answer': '可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'reference_answer': '建议先刷新页面或重新登录确认展示是否同步。可能是系统延迟，请尝试退出账号重新登录或清理APP缓存。若仍未显示，请联系在线客服提供短信截图核对。', 'round_intent': '信息查询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额审核中，我可以取消申请吗？', 'expected_answer': '审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'reference_answer': '您可以在页面查看当前处理状态，或通过客服入口查询进度。审核中的申请一般无法手动取消。如需紧急取消，请联系在线客服尝试处理，但不保证成功。', 'round_intent': '信息查询类', 'previous_intent': '信息查询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '降息申请多久能出结果？', 'expected_answer': '自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。', 'reference_answer': '相关信息建议以 APP 页面展示为准。自动审核一般1-2分钟，人工复核最长1小时。审核通过后利率实时更新。', 'round_intent': '信息查询类', 'previous_intent': '信息查询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息操作类-2]",
+      "uid" : "1e59233df3079fab",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "broken",
+      "time" : {
+        "start" : 1779960704733,
+        "stop" : 1779960867901,
+        "duration" : 163168
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MD_0002', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息操作类-2', 'remark': '同一意图连续追问', 'intent': '提额降息操作类', 'question': '我已经借了款，还能申请降息吗', 'expected_answer': '已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。', 'reference_answer': '您可以根据页面提示完成操作。已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。', 'questions': ['提额时需要人脸识别吗？', '怎么申请降息', '我已经借了款，还能申请降息吗'], 'expected_answers': ['部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入', '已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。'], 'reference_answers': ['您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', '您可以先进入对应功能入口，再按照页面提示逐步提交申请。1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入', '您可以根据页面提示完成操作。已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息操作类', '提额降息操作类', '提额降息操作类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息操作类', '提额降息操作类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '提额时需要人脸识别吗？', 'expected_answer': '部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'reference_answer': '您可以根据页面提示完成操作。部分提额项目为了账户安全可能会要求人脸识别验证，按提示操作即可，识别通过后继续提额流程。', 'round_intent': '提额降息操作类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '怎么申请降息', 'expected_answer': '1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入', 'reference_answer': '您可以先进入对应功能入口，再按照页面提示逐步提交申请。1、好的，请问您要降息到多少？-静默降息准入2、为您推荐其他借款app截图提额降息项，最快可1s降息成功-静默降息不准入', 'round_intent': '提额降息操作类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '我已经借了款，还能申请降息吗', 'expected_answer': '已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。', 'reference_answer': '您可以根据页面提示完成操作。已放款的订单利率无法更改，但您可以提前结清后重新借款，届时系统会根据您的最新资质重新定价。', 'round_intent': '提额降息操作类', 'previous_intent': '提额降息操作类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-借款下单类-4]",
+      "uid" : "dd618d64002e7a05",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960705117,
+        "stop" : 1779960879963,
+        "duration" : 174846
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MD_0004', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-借款下单类-4', 'remark': '同一意图连续追问', 'intent': '借款下单类', 'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'questions': ['降息成功后，原来的借款合同会重签吗？', '降息审核中，我能正常借款吗？', '借款APP截图有什么要求'], 'expected_answers': ['不会。原有借款合同不变，降息只影响您未来的新借款。', '可以。降息审核不影响您现有额度的正常使用和借款。', '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'reference_answers': ['借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。'], 'round_assert_flags': [True, True, True], 'round_intents': ['借款下单类', '借款下单类', '借款下单类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '借款下单类', '借款下单类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '降息成功后，原来的借款合同会重签吗？', 'expected_answer': '不会。原有借款合同不变，降息只影响您未来的新借款。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。不会。原有借款合同不变，降息只影响您未来的新借款。', 'round_intent': '借款下单类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '降息审核中，我能正常借款吗？', 'expected_answer': '可以。降息审核不影响您现有额度的正常使用和借款。', 'reference_answer': '只要账户状态和可用额度满足要求，可以按页面流程提交借款申请。可以。降息审核不影响您现有额度的正常使用和借款。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}, {'question': '借款APP截图有什么要求', 'expected_answer': '请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'reference_answer': '借款下单请以页面可操作入口和审核结果为准。请截图您在其它借款APP中的额度页、利率页等页面进行上传，为不影响审批结果，请勿涂抹或裁减图片。', 'round_intent': '借款下单类', 'previous_intent': '借款下单类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': True}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_multi_turn_dialog_consistency[同一意图连续追问-提额降息咨询类-1]",
+      "uid" : "8bcc4dd27d1dd7e6",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960714187,
+        "stop" : 1779960906641,
+        "duration" : 192454
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_id': 'MD_0001', 'case_type': 'multi_turn', 'case_desc': '同一意图连续追问-提额降息咨询类-1', 'remark': '同一意图连续追问', 'intent': '提额降息咨询类', 'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'questions': ['什么是提额', '提额需要收费吗', '提额最高能到多少'], 'expected_answers': ['提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'reference_answers': ['提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万'], 'round_assert_flags': [True, True, True], 'round_intents': ['提额降息咨询类', '提额降息咨询类', '提额降息咨询类'], 'context_assert_types': ['single_intent_followup', 'single_intent_followup', 'single_intent_followup'], 'previous_intents': ['', '提额降息咨询类', '提额降息咨询类'], 'expect_refuses': [False, False, False], 'expect_assets': [False, False, False], 'enriched_rounds': [{'question': '什么是提额', 'expected_answer': '提额是指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，系统会定期评估并可能为您提升额度。', 'reference_answer': '提额通常指提升您在平台的可用借款额度，通过补充更多信用材料或保持良好还款记录，平台系统会定期评估并可能为您提升额度。', 'round_intent': '提额降息咨询类', 'previous_intent': '', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额需要收费吗', 'expected_answer': '提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'reference_answer': '正常情况下不建议相信任何额外收费说法。提额申请本身不收取任何费用，但部分增信材料验证可能购买第三方产品后提额，具体以页面提示为准。', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}, {'question': '提额最高能到多少', 'expected_answer': '提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'reference_answer': '这个问题主要以页面展示和系统评估结果为准。提额后的额度由系统根据您的信用状况综合评定，最高可提高到20万', 'round_intent': '提额降息咨询类', 'previous_intent': '提额降息咨询类', 'context_assert_type': 'single_intent_followup', 'should_assert': True, 'expect_refuse': False, 'expect_asset': False}], 'similarity_threshold': 70.0, 'response_time_threshold': 5.0, 'env': 'pre', 'group': 'default'}" ]
+    }, {
+      "name" : "test_model_summary_report",
+      "uid" : "6d8862d947a5c4f",
+      "parentUid" : "71a47b96355f5c3bf175f3db947459fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1779960861639,
+        "stop" : 1779960861716,
+        "duration" : 77
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test_cases.test_model_intent_recognition"
+  } ]
+}

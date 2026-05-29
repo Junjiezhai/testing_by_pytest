@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528221525481195",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528221525481195",
+          "sessionId": "chat_pre_20260528221525481195"
+        },
+        "type": "TEXT",
+        "value": "提额失败后再次申请的间隔建议以 APP 页面提示为准。建议您保持良好的还款记录，具体进度和结果请以页面展示为准。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

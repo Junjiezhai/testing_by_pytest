@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_202605291201208536017",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_202605291201208536014",
+          "sessionId": "chat_pre_202605291201208536017"
+        },
+        "type": "TEXT",
+        "value": "我无法协助任何逃避还款的行为。平台经营稳健，请务必理性对待借贷并按约履行还款义务。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

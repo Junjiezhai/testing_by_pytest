@@ -1,0 +1,21 @@
+{
+  "code": "0",
+  "data": {
+    "chatId": "chat_pre_20260528183503648885",
+    "content": "",
+    "chatType": "NORMAL",
+    "replyContents": [
+      {
+        "bizParamInfo": {
+          "lastMsgId": "msg_pre_20260528183503648885",
+          "sessionId": "chat_pre_20260528183503648885"
+        },
+        "type": "TEXT",
+        "value": "更换手机号后，请先在APP内更新预留手机号，确保信息一致后再操作提额，否则可能导致授权失败。",
+        "bizVariableMap": {}
+      }
+    ]
+  },
+  "success": true,
+  "message": "success"
+}

@@ -1,0 +1,30 @@
+==============【当前环境：env=pre, group=default】信贷大模型测试 =============
+【用例编号】：MIR_0059
+【测试场景】：信息查询类-为什么我降息成功了，但显示的利率还是原来的？
+【意图分类】：信息查询类
+【实际意图】：
+【chatType】：NORMAL
+【handoffReason】：
+【chatType断言】：True
+【用户问题】：为什么我降息成功了，但显示的利率还是原来的？
+【断言话术-标准答案】：降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。
+【断言话术-外部模型参考答案】：建议先刷新页面或重新登录确认展示是否同步。降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。
+【replyContents】：[{"type": "TEXT", "value": "降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。"}]
+【TEXT输出】：["降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。"]
+【ASSET输出】：[]
+【biz_ref_id】：[]
+【模型请求msg_info】：{"uid": "4130948", "content": "为什么我降息成功了，但显示的利率还是原来的？"}
+【模型请求request_data】：{"interface": "com.fenqile.rc.agent.adapter.service.FrontImChatService", "method": "chat", "env": "pre", "group": "default", "params": [{"chatId": "chat_pre_20260528222207230596", "bizLineId": "BL001", "bizSceneKey": "BSK2605181039042973", "bizSceneTypeKey": "BSK2605181039042973", "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER", "entityId": "entity_pre_001", "uid": "4130948", "externalUserId": "4130948", "userId": "4130948", "userName": "预发测试用户", "url": "", "chatType": "NORMAL", "isRetry": 0, "messageExtend": "", "external": "", "msgContextList": [{"direction": "CUSTOMER_2_STAFF", "msgId": "msg_pre_20260528222207230596", "content": "为什么我降息成功了，但显示的利率还是原来的？", "msgType": "TEXT", "mediaFileMap": {}}]}]}
+【模型完整返回】：{"data": {"chatType": "NORMAL", "handoffReason": "", "replyContents": [{"type": "TEXT", "value": "降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。"}], "intent": "", "intentCode": "", "intentName": ""}, "code": "0", "success": true, "message": "success"}
+【模型有效出参value】：降息结果仅对降息成功之后的新借款申请生效，您当前页面的展示利率可能需要退出重登才会更新。
+【外部模型相似度评分】：97.5
+【外部模型评估原因】：标准答案评分=100.0；参考答案评分=95.0
+【TEXT阈值】：gte 70.0
+【TEXT断言】：True
+【ASSET是否允许】：True
+【ASSET value断言】：True ()
+【biz_ref_id断言】：True ()
+【失败原因】：
+【响应耗时】：7.447s
+【相似度断言】：实际=97.5，阈值=70.0，结果=True
+【最终结果】：True
