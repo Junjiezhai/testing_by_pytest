@@ -13,11 +13,127 @@ import socket
 import subprocess
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 import requests
 
 from utils.handle_log import log
 
+
+# ============================================================
+# Allure 报告内容挂载封装（与断言模式联动）
+# ============================================================
+
+def _get_assert_mode_label(assert_mode: str) -> str:
+    """根据断言模式返回中文标签"""
+    label_map = {
+        'intent_similarity': '一致性评分',
+        'intent_checklist': '细粒度清单',
+        'intent_with_post': '意图+后置操作',
+    }
+    return label_map.get(assert_mode, assert_mode)
+
+
+def attach_single_turn_report(report_row: dict, case_info: dict, assert_mode: str = 'intent_similarity') -> None:
+    """
+    挂载单轮测试 allure 报告内容（根据断言模式联动展示）
+
+    Args:
+        report_row: 评估结果行
+        case_info: 用例信息
+        assert_mode: 当前断言模式
+    """
+    import allure
+
+    mode_label = _get_assert_mode_label(assert_mode)
+    allure.attach(f"断言模式：{mode_label}", '断言模式', allure.attachment_type.TEXT)
+
+    # 根据断言模式挂载不同的断言明细
+    if assert_mode == 'intent_checklist' and 'checklist_result' in report_row:
+        checklist = report_row.get('checklist_result', {})
+        allure.attach(json.dumps(checklist, ensure_ascii=False, indent=2), '检查清单评估结果', allure.attachment_type.JSON)
+    elif assert_mode == 'intent_with_post' and 'post_assert' in report_row:
+        post = report_row.get('post_assert', {})
+        allure.attach(json.dumps(post, ensure_ascii=False, indent=2), '后置操作断言结果', allure.attachment_type.JSON)
+
+
+def attach_multi_turn_report(round_rows: list, report_row: dict, case_info: dict, assert_mode: str = 'intent_similarity') -> None:
+    """
+    挂载多轮测试 allure 报告内容（根据断言模式联动展示）
+
+    Args:
+        round_rows: 逐轮评估结果
+        report_row: 汇总结果行
+        case_info: 用例信息
+        assert_mode: 当前断言模式
+    """
+    import allure
+
+    mode_label = _get_assert_mode_label(assert_mode)
+    allure.attach(f"断言模式：{mode_label}", '断言模式', allure.attachment_type.TEXT)
+
+    # 挂载逐轮断言明细
+    for i, row in enumerate(round_rows):
+        if assert_mode == 'intent_checklist' and 'checklist_result' in row:
+            checklist = row.get('checklist_result', {})
+            allure.attach(json.dumps(checklist, ensure_ascii=False, indent=2), f'第{i+1}轮检查清单结果', allure.attachment_type.JSON)
+
+
+def attach_model_assert_detail(report_row: dict, assert_mode: str = 'intent_similarity') -> None:
+    """
+    根据断言模式挂载对应的断言明细
+
+    Args:
+        report_row: 评估结果行
+        assert_mode: 当前断言模式
+    """
+    import allure
+    # 模式特定的断言明细
+    if assert_mode == 'intent_checklist':
+        checklist = report_row.get('checklist_result', {})
+        items = checklist.get('items', [])
+
+        # 1. 展示所有检查项明细
+        detail_lines = [f"{'✅' if item.get('status') == '是' else '❌'} [{item.get('dimension', '')}] {item.get('name', '')}" for item in items]
+        allure.attach('\n'.join(detail_lines) if detail_lines else '无检查项', '检查清单明细', allure.attachment_type.TEXT)
+
+        # 2. 单独展示失败的检查项（只展示失败的，方便查看）
+        failed_items = [item for item in items if item.get('status') != '是']
+        if failed_items:
+            failed_lines = []
+            for item in failed_items:
+                failed_lines.append(f"❌ [{item.get('dimension', '')}] {item.get('name', '')}")
+                reason = item.get('reason', '')
+                if reason:
+                    failed_lines.append(f"   原因：{reason}")
+            allure.attach('\n'.join(failed_lines), '检查清单失败项', allure.attachment_type.TEXT)
+        else:
+            allure.attach('所有检查项均通过 ✅', '检查清单失败项', allure.attachment_type.TEXT)
+
+    elif assert_mode == 'intent_with_post':
+        post = report_row.get('post_assert', {})
+        detail_lines = [
+            f"后置操作通过：{post.get('post_pass', 'N/A')}",
+            f"会话类型通过：{post.get('chat_type_pass', 'N/A')}",
+            f"ASSET通过：{post.get('asset_pass', 'N/A')}",
+        ]
+        allure.attach('\n'.join(detail_lines), '后置操作断言明细', allure.attachment_type.TEXT)
+    else:
+        # 默认模式：一致性评分，展示评分 + 理由
+        score = report_row.get('similarity_score', 'N/A')
+        reason = report_row.get('similarity_reason', 'N/A')
+        threshold = report_row.get('similarity_threshold', 'N/A')
+        detail_lines = [
+            f"相似度评分：{score}",
+            f"评分阈值：{threshold}",
+            f"评分理由：{reason}",
+        ]
+        allure.attach('\n'.join(detail_lines), '相似度评分明细', allure.attachment_type.TEXT)
+
+
+# ============================================================
+# 企微通知相关（原有逻辑保留）
+# ============================================================
 
 WEHOOK_URL = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4f5df1d2-d679-4782-b25f-63e534b4a376'
 

@@ -8,7 +8,11 @@ defaults:
     biz_ref_id_allowlist: []
 
 intents:
-  提额降息咨询类:
+  # ============================================================
+  # P1 级意图
+  # ============================================================
+
+  提额降息:
     text:
       threshold: 70
       comparator: gte
@@ -49,7 +53,7 @@ intents:
           - insurance
           - credit_report
 
-  信息查询类:
+  常规咨询:
     text:
       threshold: 70
       comparator: gte
@@ -81,16 +85,19 @@ intents:
         - '210'
         - '122'
 
-  转人工类:
+  复合意图:
     text:
       threshold: 70
       comparator: gte
     asset:
-      allowed: false
-      value_allowlist: []
+      allowed: true
+      value_allowlist:
+        - AS2605191424571850
+        - AS2605191421518676
+        - AS2605191420142236
       biz_ref_id_allowlist: []
 
-  借款下单类:
+  借款下单:
     text:
       threshold: 70
       comparator: gte
@@ -100,7 +107,33 @@ intents:
         - AS2605191420142236
       biz_ref_id_allowlist: []
 
-  风险合规禁答类:
+  # ============================================================
+  # P0 级意图
+  # ============================================================
+
+  转人工:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  风险合规禁答:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  # ============================================================
+  # P2 / P3 级意图
+  # ============================================================
+
+  模糊意图:
     text:
       threshold: 70
       comparator: gte

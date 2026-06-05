@@ -19,10 +19,15 @@ sys.path.append(Base_Path)
 import allure
 import pytest
 
-from assert_code.model_intent_assert import ModelIntentAssert
+from assert_code.model_intent_assert import ModelIntentAssert, AssertMode
 from script_code.model_intent_recognition_exec import ModelIntentRecognition
 from utils.handle_log import log
 from utils.handle_model_cases import assemble_model_case_params, get_model_case_desc, ModelCaseHandler
+from utils.handle_allure_report import (
+    attach_single_turn_report,
+    attach_multi_turn_report,
+    attach_model_assert_detail,
+)
 
 
 MODEL_REPORT_ROWS = []
@@ -273,26 +278,33 @@ class TestModelIntentRecognition:
         report_row = ModelIntentAssert.evaluate_single_turn(
             case_info=case_info,
             output_data=exec_res.get('output_data'),
-            response_time=response_time
+            response_time=response_time,
+            assert_mode=ModelIntentAssert.get_assert_mode(),
         )
         MODEL_REPORT_ROWS.append(report_row)
         ModelCaseHandler.save_model_rows([report_row])
 
         exec_log = build_exec_log(case_info=case_info, msg_info=msg_info, exec_res=exec_res, report_row=report_row, response_time=response_time)
         log.info(f"\n{exec_log}")
-        allure.attach(json.dumps(case_info, ensure_ascii=False, indent=2), '用例信息', allure.attachment_type.JSON)
-        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)
-        allure.attach(json.dumps(exec_res.get('request_data'), ensure_ascii=False, indent=2), '信贷大模型请求入参', allure.attachment_type.JSON)
-        allure.attach(json.dumps(exec_res.get('output_data'), ensure_ascii=False, indent=2), '信贷大模型完整返回', allure.attachment_type.JSON)
-        allure.attach(json.dumps(report_row, ensure_ascii=False, indent=2), '模型评估明细', allure.attachment_type.JSON)
-        allure.attach(json.dumps(report_row.get('assert_detail'), ensure_ascii=False, indent=2), '断言明细', allure.attachment_type.JSON)
-        allure.attach(report_row.get('failure_reason') or '无', '失败原因', allure.attachment_type.TEXT)
+
+        # 使用封装函数挂载 allure 报告（与断言模式联动）
+        assert_mode = ModelIntentAssert.get_assert_mode()
+        attach_single_turn_report(report_row=report_row, case_info=case_info, assert_mode=assert_mode.value)
+        attach_model_assert_detail(report_row=report_row, assert_mode=assert_mode.value)
+
         assert_answer_text = '\n'.join([
             f"【标准答案】：{report_row['expected_answer']}",
-            f"【外部模型参考答案】：{report_row.get('reference_answer') or ''}"
         ])
         allure.attach(report_row['actual_answer'], '信贷大模型实际话术', allure.attachment_type.TEXT)
         allure.attach(assert_answer_text, '断言话术', allure.attachment_type.TEXT)
+        # 挂载模型完整返参
+        output_data = exec_res.get('output_data')
+        if output_data:
+            allure.attach(
+                json.dumps(output_data, ensure_ascii=False, indent=2),
+                '信贷大模型完整返参',
+                allure.attachment_type.JSON,
+            )
 
         ModelIntentAssert.assert_model_result(report_row=report_row)
 
@@ -378,7 +390,8 @@ class TestModelIntentRecognition:
                     output_data=exec_res.get('output_data'),
                     context_rounds=round_rows,
                     response_time=round_response_time,
-                    similarity_threshold=case_info['similarity_threshold']
+                    similarity_threshold=case_info['similarity_threshold'],
+                    assert_mode=ModelIntentAssert.get_assert_mode(),
                 )
             else:
                 round_eval = {
@@ -569,12 +582,15 @@ class TestModelIntentRecognition:
         assert_dialog_text = build_multi_turn_assert_dialog(round_rows=round_rows)
         eval_body = build_multi_turn_eval_body(round_rows=round_rows, report_row=report_row)
         log.info(f"\n{exec_log}")
+
+        # 使用封装函数挂载 allure 报告（与断言模式联动）
+        assert_mode = ModelIntentAssert.get_assert_mode()
+        attach_multi_turn_report(round_rows=round_rows, report_row=report_row, case_info=case_info, assert_mode=assert_mode.value)
+
         allure.attach(actual_dialog_text, '信贷大模型实际话术', allure.attachment_type.TEXT)
         allure.attach(assert_dialog_text, '断言话术', allure.attachment_type.TEXT)
         allure.attach('\n'.join(failure_summary_lines), '多轮失败定位摘要', allure.attachment_type.TEXT)
-        allure.attach(exec_log, '执行日志', allure.attachment_type.TEXT)
         allure.attach(eval_body, '模型评估明细CSV', allure.attachment_type.CSV)
-        allure.attach(json.dumps(round_rows, ensure_ascii=False, indent=2), '多轮逐轮评估明细', allure.attachment_type.JSON)
 
         ModelIntentAssert.assert_model_result(report_row=report_row)
 

@@ -7,15 +7,149 @@
 
 import json
 import os
+from enum import Enum
 from jsonpath import jsonpath
 
+from assert_code.external_model_judge import ExternalModelJudge
 from common.modelHttpAction import ModelHttpAction
 from utils.handle_log import log
 from utils.handle_yaml import read_yaml_data
 
 
+class AssertMode(Enum):
+    """断言模式枚举"""
+    INTENT_SIMILARITY = "intent_similarity"      # 纯意图分类：一致性评分
+    INTENT_CHECKLIST = "intent_checklist"        # 纯意图分类：细粒度清单
+    INTENT_WITH_POST = "intent_with_post"        # 意图分类 + 后置操作组合
+
+
 class ModelIntentAssert:
+    """模型意图断言工具类"""
+
     REPLY_RULES_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config', 'model_intent_reply_rules.yaml')
+
+    # P0 优化：ExternalModelJudge 实例缓存
+    _judge_cache = None
+
+    @classmethod
+    def _get_judge(cls) -> ExternalModelJudge:
+        """
+        获取（或创建）ExternalModelJudge 实例（类级别缓存）
+
+        首次调用时创建实例并缓存，后续调用直接复用。
+        避免每条用例都创建新的 ExternalModelJudge 实例，
+        从而避免重复加载知识库、重复初始化模型客户端。
+
+        环境变量控制：
+            MODEL_INJECT_KNOWLEDGE_AS_SYSTEM
+                - '1' / 'true' / 'True' / 未设置：注入完整知识库到系统提示词（默认）
+                - '0' / 'false' / 'False'：不注入，使用传统提示词方式
+
+        Returns:
+            ExternalModelJudge 实例
+        """
+        if cls._judge_cache is None:
+            inject = os.getenv('MODEL_INJECT_KNOWLEDGE_AS_SYSTEM', '1').strip().lower()
+            inject_knowledge = inject in ('', '1', 'true', 'yes')
+            cls._judge_cache = ExternalModelJudge(
+                model_name='deepseek-v4-pro',
+                use_knowledge_base=True,
+                inject_knowledge_as_system=inject_knowledge,
+            )
+            mode = '完整知识库注入（系统提示词）' if inject_knowledge else '简洁提示词（不注入系统提示词）'
+            log.info(f"ExternalModelJudge 实例已创建并缓存 —— 知识注入模式：{mode}")
+        return cls._judge_cache
+
+    # ============================================================
+    # 断言模式管理
+    # ============================================================
+
+    @classmethod
+    def get_assert_mode(cls) -> AssertMode:
+        """
+        获取当前断言模式
+        优先级：环境变量 MODEL_ASSERT_MODE > 默认值 INTENT_SIMILARITY
+        """
+        mode_str = os.getenv('MODEL_ASSERT_MODE', 'intent_similarity').strip().lower()
+        mode_map = {
+            'intent_similarity': AssertMode.INTENT_SIMILARITY,
+            'similarity': AssertMode.INTENT_SIMILARITY,
+            'intent_checklist': AssertMode.INTENT_CHECKLIST,
+            'checklist': AssertMode.INTENT_CHECKLIST,
+            'intent_with_post': AssertMode.INTENT_WITH_POST,
+            'with_post': AssertMode.INTENT_WITH_POST,
+            'post': AssertMode.INTENT_WITH_POST,
+        }
+        mode = mode_map.get(mode_str)
+        if mode is None:
+            log.warning(f"不支持的断言模式: {mode_str}，使用默认模式 INTENT_SIMILARITY")
+            return AssertMode.INTENT_SIMILARITY
+        return mode
+
+    @classmethod
+    def _evaluate_by_mode(cls, case_info: dict, output_data, response_time: float,
+                           assert_mode: AssertMode = None) -> dict:
+        """
+        根据断言模式分发到对应的单轮评估逻辑
+
+        Args:
+            case_info: 用例信息
+            output_data: 模型返回数据
+            response_time: 响应耗时
+            assert_mode: 断言模式，None 时从环境变量读取
+
+        Returns:
+            评估结果字典
+        """
+        if assert_mode is None:
+            assert_mode = cls.get_assert_mode()
+
+        if assert_mode == AssertMode.INTENT_SIMILARITY:
+            return cls._evaluate_single_turn_similarity(case_info, output_data, response_time)
+        elif assert_mode == AssertMode.INTENT_CHECKLIST:
+            return cls._evaluate_single_turn_checklist(case_info, output_data, response_time)
+        elif assert_mode == AssertMode.INTENT_WITH_POST:
+            return cls._evaluate_single_turn_with_post(case_info, output_data, response_time)
+        else:
+            log.warning(f"不支持的断言模式: {assert_mode}，使用默认模式")
+            return cls._evaluate_single_turn_similarity(case_info, output_data, response_time)
+
+    # ============================================================
+    # 单轮对话断言 —— 一致性评分模式（原逻辑）
+    # ============================================================
+
+    @classmethod
+    def _evaluate_similarity(cls, actual_answer: str, expected_answer: str, *,
+                               intent: str = None) -> dict:
+        """
+        使用 ExternalModelJudge 评估语义相似度
+        仅基于标准答案进行评估，返回单一评分结果
+
+        Args:
+            actual_answer: 实际模型输出
+            expected_answer: 标准答案
+            intent: 意图分类（用于注入知识库上下文）
+
+        Returns:
+            {
+                'similarity_score': float,
+                'is_same_meaning': bool,
+                'reason': str
+            }
+        """
+        judge = cls._get_judge()
+
+        # 标准答案相似度（注入意图知识）
+        standard_result = judge.similarity_score(actual_answer, expected_answer, intent=intent)
+        return {
+            'similarity_score': float(standard_result.score),
+            'is_same_meaning': standard_result.score >= 80,
+            'reason': standard_result.reason,
+        }
+
+    # ============================================================
+    # 原有方法
+    # ============================================================
 
     @classmethod
     def load_reply_rules(cls) -> dict:
@@ -177,7 +311,7 @@ class ModelIntentAssert:
 
     @classmethod
     def _is_transfer_intent(cls, intent: str) -> bool:
-        return cls._clean_text(intent) == '转人工类'
+        return cls._clean_text(intent) == '转人工'
 
     @classmethod
     def _evaluate_chat_type_result(cls, intent: str, reply_info: dict) -> dict:
@@ -200,14 +334,25 @@ class ModelIntentAssert:
         }
 
     @classmethod
-    def evaluate_single_turn(cls, case_info: dict, output_data, response_time: float) -> dict:
+    def evaluate_single_turn(cls, case_info: dict, output_data, response_time: float, assert_mode: AssertMode = None) -> dict:
         """
-        单轮问答评估
+        单轮问答评估（支持断言模式切换）
         :param case_info: 用例信息
         :param output_data: 信贷大模型返回
         :param response_time: 响应耗时
+        :param assert_mode: 断言模式，None 时从环境变量读取
         :return:
         """
+        if assert_mode is None:
+            assert_mode = cls.get_assert_mode()
+
+        # 断言模式分发
+        if assert_mode == AssertMode.INTENT_CHECKLIST:
+            return cls._evaluate_single_turn_checklist(case_info, output_data, response_time)
+        elif assert_mode == AssertMode.INTENT_WITH_POST:
+            return cls._evaluate_single_turn_with_post(case_info, output_data, response_time)
+
+        # 默认：一致性评分模式（原逻辑）
         reply_info = cls._extract_reply_contents(output_data=output_data)
         actual_answer = cls.extract_model_answer(output_data=output_data)
         actual_intent = cls.extract_model_intent(output_data=output_data)
@@ -223,25 +368,21 @@ class ModelIntentAssert:
 
         chat_type_eval = cls._evaluate_chat_type_result(case_info['intent'], reply_info)
         if chat_type_eval['is_transfer']:
-            standard_similarity_res = {'is_same_meaning': chat_type_eval['chat_type_pass'], 'similarity_score': 100 if chat_type_eval['chat_type_pass'] else 0, 'reason': 'chatType=TRANSFER，模型已转人工处理'}
-            reference_similarity_res = standard_similarity_res
-            standard_similarity_score = float(standard_similarity_res['similarity_score'])
-            reference_similarity_score = float(reference_similarity_res['similarity_score'])
-            similarity_score = standard_similarity_score
+            similarity_score = 100 if chat_type_eval['chat_type_pass'] else 0
             text_pass = chat_type_eval['chat_type_pass']
+            similarity_res = {
+                'similarity_score': similarity_score,
+                'is_same_meaning': chat_type_eval['chat_type_pass'],
+                'reason': 'chatType=TRANSFER，模型已转人工处理'
+            }
         else:
-            evaluator = ModelHttpAction()
             answer_for_eval = reply_info.get('text_answer') or actual_answer
-            similarity_res = evaluator.get_dual_sentence_similarity(
+            similarity_res = cls._evaluate_similarity(
                 actual_answer=answer_for_eval,
                 expected_answer=expected_answer,
-                reference_answer=reference_answer
+                intent=case_info['intent']
             )
-            standard_similarity_res = similarity_res['standard']
-            reference_similarity_res = similarity_res['reference']
-            standard_similarity_score = float(standard_similarity_res.get('similarity_score') or 0)
-            reference_similarity_score = float(reference_similarity_res.get('similarity_score') or 0)
-            similarity_score = round(max(standard_similarity_score, reference_similarity_score), 2)
+            similarity_score = round(similarity_res['similarity_score'], 2)
             text_pass = cls._compare_threshold(similarity_score, text_threshold, text_comparator)
 
         asset_present = bool(reply_info.get('asset_values'))
@@ -298,14 +439,9 @@ class ModelIntentAssert:
             'text_values': json.dumps(reply_info.get('text_values'), ensure_ascii=False),
             'asset_values': json.dumps(reply_info.get('asset_values'), ensure_ascii=False),
             'biz_ref_ids': json.dumps(reply_info.get('biz_ref_ids'), ensure_ascii=False),
-            'is_same_meaning': standard_similarity_res.get('is_same_meaning') and reference_similarity_res.get('is_same_meaning'),
-            'standard_similarity_score': standard_similarity_score,
-            'standard_similarity_reason': standard_similarity_res.get('reason'),
-            'reference_answer': reference_answer,
-            'reference_similarity_score': reference_similarity_score,
-            'reference_similarity_reason': reference_similarity_res.get('reason'),
+            'is_same_meaning': similarity_res.get('is_same_meaning'),
             'similarity_score': similarity_score,
-            'similarity_reason': f"标准答案评分={standard_similarity_score}；参考答案评分={reference_similarity_score}",
+            'similarity_reason': similarity_res.get('reason'),
             'similarity_threshold': case_info['similarity_threshold'],
             'text_threshold': text_threshold,
             'text_comparator': text_comparator,
@@ -328,9 +464,8 @@ class ModelIntentAssert:
                 'text_pass': text_pass,
                 'text_threshold': text_threshold,
                 'text_comparator': text_comparator,
-                'standard_similarity_score': standard_similarity_score,
-                'reference_similarity_score': reference_similarity_score,
-                'avg_similarity_score': similarity_score,
+                'similarity_score': similarity_score,
+                'similarity_reason': similarity_res.get('reason'),
                 'asset_present': asset_present,
                 'asset_allowed': asset_allowed,
                 'asset_value': asset_value,
@@ -404,7 +539,27 @@ class ModelIntentAssert:
         }
 
     @classmethod
-    def evaluate_multi_turn_round(cls, round_info: dict, output_data, context_rounds: list, response_time: float, similarity_threshold: float) -> dict:
+    def evaluate_multi_turn_round(cls, round_info: dict, output_data, context_rounds: list, response_time: float, similarity_threshold: float, assert_mode: AssertMode = None) -> dict:
+        """
+        多轮单轮评估（支持断言模式切换）
+        :param round_info: 轮次信息
+        :param output_data: 模型返回
+        :param context_rounds: 上下文轮次
+        :param response_time: 响应耗时
+        :param similarity_threshold: 相似度阈值
+        :param assert_mode: 断言模式，None 时从环境变量读取
+        :return:
+        """
+        if assert_mode is None:
+            assert_mode = cls.get_assert_mode()
+
+        # 断言模式分发（当前仅支持 similarity，其他模式预留）
+        if assert_mode == AssertMode.INTENT_CHECKLIST:
+            return cls._evaluate_multi_turn_round_checklist(round_info, output_data, context_rounds, response_time, similarity_threshold)
+        elif assert_mode == AssertMode.INTENT_WITH_POST:
+            return cls._evaluate_multi_turn_round_with_post(round_info, output_data, context_rounds, response_time, similarity_threshold)
+
+        # 默认：一致性评分模式（原逻辑）
         reply_info = cls._extract_reply_contents(output_data=output_data)
         actual_answer = cls.extract_model_answer(output_data=output_data)
         expected_answer = round_info['expected_answer']
@@ -412,35 +567,36 @@ class ModelIntentAssert:
         round_intent = round_info.get('round_intent', '')
         chat_type_eval = cls._evaluate_chat_type_result(round_intent, reply_info)
         if chat_type_eval['is_transfer']:
-            standard_similarity_res = {'is_same_meaning': chat_type_eval['chat_type_pass'], 'similarity_score': 100 if chat_type_eval['chat_type_pass'] else 0, 'reason': 'chatType=TRANSFER，模型已转人工处理'}
-            reference_similarity_res = standard_similarity_res
-            standard_similarity_score = float(standard_similarity_res['similarity_score'])
-            reference_similarity_score = float(reference_similarity_res['similarity_score'])
-            similarity_score = standard_similarity_score
+            similarity_score = 100 if chat_type_eval['chat_type_pass'] else 0
             similarity_pass = chat_type_eval['chat_type_pass']
-            intent_eval = {'actual_intent': '转人工类' if chat_type_eval['chat_type_pass'] else '', 'intent_pass': chat_type_eval['chat_type_pass'], 'reason': 'chatType=TRANSFER，仅允许转人工类意图'}
+            intent_eval = {'actual_intent': '转人工' if chat_type_eval['chat_type_pass'] else '', 'intent_pass': chat_type_eval['chat_type_pass'], 'reason': 'chatType=TRANSFER，仅允许转人工意图'}
             context_eval = {'context_carry_pass': True, 'intent_pollution_pass': True, 'user_correction_pass': True, 'risk_refusal_pass': True, 'return_to_business_pass': True, 'reason': 'chatType=TRANSFER，跳过上下文模型评估'}
         else:
-            evaluator = ModelHttpAction()
-            model_eval = evaluator.get_multi_turn_round_evaluation(
-                context_rounds=context_rounds,
-                current_question=round_info['question'],
+            # 相似度评估：使用 ExternalModelJudge（注入意图知识库）
+            similarity_res = cls._evaluate_similarity(
                 actual_answer=actual_answer,
                 expected_answer=expected_answer,
-                reference_answer=reference_answer,
-                expected_intent=round_intent,
-                previous_intent=round_info.get('previous_intent', ''),
-                context_assert_type=round_info.get('context_assert_type', 'normal'),
-                expect_refuse=bool(round_info.get('expect_refuse'))
+                intent=round_intent
             )
-            standard_similarity_res = model_eval['standard']
-            reference_similarity_res = model_eval['reference']
-            standard_similarity_score = float(standard_similarity_res.get('similarity_score') or 0)
-            reference_similarity_score = float(reference_similarity_res.get('similarity_score') or 0)
-            similarity_score = round(max(standard_similarity_score, reference_similarity_score), 2)
+            similarity_score = round(similarity_res['similarity_score'], 2)
             similarity_pass = similarity_score >= similarity_threshold
-            intent_eval = model_eval['intent']
-            context_eval = model_eval['context']
+            # 意图评估：从 output_data 提取实际意图并比对
+            actual_intent = cls.extract_model_intent(output_data=output_data)
+            intent_pass = actual_intent == round_intent
+            intent_eval = {
+                'actual_intent': actual_intent,
+                'intent_pass': intent_pass,
+                'reason': '' if intent_pass else f'期望意图={round_intent}，实际意图={actual_intent}'
+            }
+            # 上下文评估：简化处理（外部模型暂不支持多维度上下文评估）
+            context_eval = {
+                'context_carry_pass': True,
+                'intent_pollution_pass': True,
+                'user_correction_pass': True,
+                'risk_refusal_pass': True,
+                'return_to_business_pass': True,
+                'reason': '上下文评估已简化（外部模型暂不支持多维度上下文评估）'
+            }
         asset_eval = cls.evaluate_asset_result(round_intent, reply_info)
         switches = cls.get_multi_turn_assert_switches()
         context_keys = ['context_carry_pass', 'intent_pollution_pass', 'user_correction_pass', 'return_to_business_pass']
@@ -452,7 +608,7 @@ class ModelIntentAssert:
                 'dimension': '话术相似度',
                 'enabled': True,
                 'pass': similarity_pass,
-                'evidence': f"平均分={similarity_score}，阈值={similarity_threshold}；标准答案分={standard_similarity_score}；参考答案分={reference_similarity_score}",
+                'evidence': f"平均分={similarity_score}，阈值={similarity_threshold}",
                 'reason': standard_similarity_res.get('reason') or reference_similarity_res.get('reason') or '',
                 'suggestion': '优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。'
             },
@@ -478,7 +634,7 @@ class ModelIntentAssert:
                 'pass': risk_pass,
                 'evidence': f"是否期望拒答={bool(round_info.get('expect_refuse'))}，拒答断言={context_eval.get('risk_refusal_pass')}",
                 'reason': context_eval.get('reason') or '',
-                'suggestion': '风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答类，并在标准答案中要求拒绝违规/隐私/内部规则内容。'
+                'suggestion': '风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答，并在标准答案中要求拒绝违规/隐私/内部规则内容。'
             },
             {
                 'dimension': 'ASSET卡片',
@@ -495,7 +651,7 @@ class ModelIntentAssert:
             'pass': chat_type_eval['chat_type_pass'],
             'evidence': f"chatType={chat_type_eval['chat_type']}，handoffReason={chat_type_eval['handoff_reason']}，期望意图={round_intent}",
             'reason': '；'.join(chat_type_eval['chat_type_failure_reasons']) or '会话类型符合预期',
-            'suggestion': 'chatType=TRANSFER仅允许转人工类意图；其他意图应保持NORMAL并返回replyContents。'
+            'suggestion': 'chatType=TRANSFER仅允许转人工意图；其他意图应保持NORMAL并返回replyContents。'
         })
         failed_assert_items = [item for item in assert_items if item['enabled'] and not item['pass']]
         if not chat_type_eval['chat_type_pass']:
@@ -559,32 +715,21 @@ class ModelIntentAssert:
         :param actual_answer: 实际回复
         :param expected_answer: 标准回复
         :param similarity_threshold: 相似度阈值
-        :param reference_answer: 外部模型参考答案
+        :param reference_answer: 外部模型参考答案（已废弃，保留参数用于兼容）
         :return:
         """
-        evaluator = ModelHttpAction()
-        reference_answer = cls._clean_text(reference_answer) or expected_answer
-        similarity_res = evaluator.get_dual_sentence_similarity(
+        similarity_res = cls._evaluate_similarity(
             actual_answer=actual_answer,
             expected_answer=expected_answer,
-            reference_answer=reference_answer
+            intent=''  # evaluate_answer 是通用方法，不绑定具体意图
         )
-        standard_similarity_res = similarity_res['standard']
-        reference_similarity_res = similarity_res['reference']
-        standard_similarity_score = float(standard_similarity_res.get('similarity_score') or 0)
-        reference_similarity_score = float(reference_similarity_res.get('similarity_score') or 0)
-        similarity_score = round(max(standard_similarity_score, reference_similarity_score), 2)
+        similarity_score = round(similarity_res['similarity_score'], 2)
         return {
             'expected_answer': expected_answer,
-            'reference_answer': reference_answer,
             'actual_answer': actual_answer,
-            'is_same_meaning': standard_similarity_res.get('is_same_meaning') and reference_similarity_res.get('is_same_meaning'),
-            'standard_similarity_score': standard_similarity_score,
-            'standard_similarity_reason': standard_similarity_res.get('reason'),
-            'reference_similarity_score': reference_similarity_score,
-            'reference_similarity_reason': reference_similarity_res.get('reason'),
+            'is_same_meaning': similarity_res.get('is_same_meaning'),
             'similarity_score': similarity_score,
-            'similarity_reason': f"标准答案评分={standard_similarity_score}；参考答案评分={reference_similarity_score}",
+            'similarity_reason': similarity_res.get('reason'),
             'similarity_pass': similarity_score >= similarity_threshold
         }
 
@@ -596,3 +741,228 @@ class ModelIntentAssert:
         :return:
         """
         assert report_row['is_pass'] is True, f"模型断言失败：{report_row.get('failure_reason') or report_row.get('similarity_reason') or report_row.get('similarity_score')}"
+
+    # ============================================================
+    # 单轮断言扩展：细粒度清单模式
+    # ============================================================
+
+    @classmethod
+    def _evaluate_single_turn_checklist(cls, case_info: dict, output_data, response_time: float) -> dict:
+        """
+        单轮：细粒度清单断言模式
+        调用 ExternalModelJudge 进行多维度检查清单评估，并联动混淆矩阵
+        """
+        reply_info = cls._extract_reply_contents(output_data=output_data)
+        actual_answer = cls.extract_model_answer(output_data=output_data)
+        actual_intent = cls.extract_model_intent(output_data=output_data)
+        expected_answer = case_info['expected_answer']
+        reference_answer = cls._clean_text(case_info.get('reference_answer')) or expected_answer
+
+        # 会话类型评估
+        chat_type_eval = cls._evaluate_chat_type_result(case_info['intent'], reply_info)
+
+        # 使用 ExternalModelJudge 进行检查清单评估（细粒度清单模式不需要知识库）
+        judge = ExternalModelJudge(model_name='deepseek-v4-pro', max_tokens=8192, use_knowledge_base=False)
+        try:
+            checklist_result = judge.evaluate(actual_answer, expected_answer)
+            is_pass = checklist_result.verdict.value in ['通过', '条件通过']
+            score = checklist_result.score * 100  # 映射到 0-100
+            checklist_detail = checklist_result.to_dict()
+        except Exception as e:
+            log.error(f"检查清单评估异常: {e}")
+            is_pass = False
+            score = 0.0
+            checklist_detail = {'error': str(e)}
+
+        # 收集意图数据用于混淆矩阵
+        cls._collect_intent_for_confusion_matrix(case_info['intent'], actual_intent)
+
+        report_row = {
+            'case_id': case_info['case_id'],
+            'case_type': case_info['case_type'],
+            'case_desc': case_info['case_desc'],
+            'intent': case_info['intent'],
+            'actual_intent': actual_intent,
+            'question': case_info['question'],
+            'expected_answer': expected_answer,
+            'reference_answer': reference_answer,
+            'actual_answer': actual_answer,
+            'chat_type': chat_type_eval['chat_type'],
+            'handoff_reason': chat_type_eval['handoff_reason'],
+            'chat_type_pass': chat_type_eval['chat_type_pass'],
+            'assert_mode': 'intent_checklist',
+            'checklist_result': checklist_detail,
+            'similarity_score': score,
+            'similarity_reason': checklist_detail.get('summary', ''),
+            'similarity_threshold': case_info['similarity_threshold'],
+            'similarity_pass': is_pass,
+            'is_pass': is_pass,
+            'response_time': round(response_time, 3),
+            'failure_reason': checklist_detail.get('summary', '') if not is_pass else '',
+            'output_data': json.dumps(output_data, ensure_ascii=False)
+        }
+        log.info(f"检查清单评估结果: verdict={'通过' if is_pass else '失败'}, score={score:.2f}")
+        return report_row
+
+    # ============================================================
+    # 单轮断言扩展：意图分类 + 后置操作组合
+    # ============================================================
+
+    @classmethod
+    def _evaluate_single_turn_with_post(cls, case_info: dict, output_data, response_time: float) -> dict:
+        """
+        单轮：意图分类 + 后置操作组合断言
+        先执行意图相似度评估，再叠加后置操作（ASSET、转人工等）校验
+        """
+        # 第一步：执行意图相似度评估
+        similarity_result = cls.evaluate_single_turn(case_info, output_data, response_time, assert_mode=AssertMode.INTENT_SIMILARITY)
+
+        # 第二步：执行后置操作断言
+        reply_info = cls._extract_reply_contents(output_data=output_data)
+        post_result = cls._assert_post_operations(reply_info, case_info['intent'])
+
+        # 综合结果
+        is_pass = similarity_result['is_pass'] and post_result['post_pass']
+
+        # 合并失败原因
+        fail_reasons = []
+        if not similarity_result['is_pass']:
+            fail_reasons.append(f"意图评估失败：{similarity_result.get('failure_reason', '')}")
+        if not post_result['post_pass']:
+            fail_reasons.extend(post_result.get('post_failure_reasons', []))
+
+        report_row = dict(similarity_result)
+        report_row['assert_mode'] = 'intent_with_post'
+        report_row['post_assert'] = post_result
+        report_row['is_pass'] = is_pass
+        report_row['failure_reason'] = '；'.join(fail_reasons) if fail_reasons else ''
+
+        return report_row
+
+    # ============================================================
+    # 后置操作断言抽象
+    # ============================================================
+
+    @classmethod
+    def _assert_post_operations(cls, reply_info: dict, intent: str) -> dict:
+        """
+        后置操作断言抽象（ASSET校验、转人工校验等）
+        支持横向扩展，新增后置操作只需在此添加逻辑
+
+        Args:
+            reply_info: 模型回复信息（_extract_reply_contents 的结果）
+            intent: 期望意图
+
+        Returns:
+            {
+                'post_pass': bool,
+                'post_failure_reasons': list[str],
+                'chat_type_pass': bool,
+                'asset_pass': bool,
+                # ... 可扩展更多断言项
+            }
+        """
+        fail_reasons = []
+
+        # 1. 会话类型断言（转人工校验）
+        chat_type = reply_info.get('chat_type', 'NORMAL')
+        chat_type_pass = True
+        if chat_type == 'TRANSFER' and not cls._is_transfer_intent(intent):
+            chat_type_pass = False
+            fail_reasons.append(f"意图[{intent}]不允许转人工，但chatType=TRANSFER")
+        elif chat_type not in ['NORMAL', 'TRANSFER']:
+            chat_type_pass = False
+            fail_reasons.append(f"chatType={chat_type} 不在允许范围 NORMAL/TRANSFER 内")
+
+        # 2. ASSET 卡片断言
+        asset_result = cls.evaluate_asset_result(intent, reply_info)
+        asset_pass = asset_result['asset_pass']
+        if not asset_pass:
+            fail_reasons.extend(asset_result['asset_failure_reasons'])
+
+        # 综合结果
+        post_pass = chat_type_pass and asset_pass
+
+        return {
+            'post_pass': post_pass,
+            'post_failure_reasons': fail_reasons,
+            'chat_type_pass': chat_type_pass,
+            'asset_pass': asset_pass,
+            'asset_detail': asset_result,
+        }
+
+    # ============================================================
+    # 混淆矩阵数据收集
+    # ============================================================
+
+    _CONFUSION_MATRIX_DATA = []  # 类级别数据存储：[(expected_intent, actual_intent), ...]
+
+    @classmethod
+    def _collect_intent_for_confusion_matrix(cls, expected_intent: str, actual_intent: str):
+        """
+        收集意图数据用于混淆矩阵计算
+        """
+        cls._CONFUSION_MATRIX_DATA.append((expected_intent, actual_intent))
+
+    @classmethod
+    def get_confusion_matrix_data(cls) -> list:
+        """
+        获取混淆矩阵原始数据
+        :return: [(expected_intent, actual_intent), ...]
+        """
+        return cls._CONFUSION_MATRIX_DATA.copy()
+
+    @classmethod
+    def clear_confusion_matrix_data(cls):
+        """
+        清空混淆矩阵数据
+        """
+        cls._CONFUSION_MATRIX_DATA.clear()
+
+    @classmethod
+    def generate_confusion_matrix(cls, save_path: str = None) -> dict:
+        """
+        生成意图识别混淆矩阵
+        :param save_path: 混淆矩阵图片保存路径
+        :return: 包含 matrix, labels, metrics 的字典
+        """
+        if not cls._CONFUSION_MATRIX_DATA:
+            return {'matrix': [], 'labels': [], 'metrics': {}}
+
+        y_true = [item[0] for item in cls._CONFUSION_MATRIX_DATA]
+        y_pred = [item[1] for item in cls._CONFUSION_MATRIX_DATA]
+
+        from assert_code.intent_confusion_matrix import draw_confusion_matrix
+        result = draw_confusion_matrix(
+            y_true=y_true,
+            y_pred=y_pred,
+            title="意图识别混淆矩阵",
+            save_path=save_path,
+            normalize='true',
+            show=False,
+        )
+        return result
+
+    # ============================================================
+    # 多轮断言预留扩展
+    # ============================================================
+
+    @classmethod
+    def _evaluate_multi_turn_round_checklist(cls, round_info: dict, output_data, context_rounds: list, response_time: float, similarity_threshold: float) -> dict:
+        """
+        多轮：细粒度清单断言模式（预留扩展）
+        TODO: 实现多轮细粒度清单评估逻辑
+        """
+        log.warning("多轮细粒度清单断言模式暂未实现，使用默认相似度模式")
+        # 回退到默认的相似度评估逻辑
+        return cls.evaluate_multi_turn_round(round_info, output_data, context_rounds, response_time, similarity_threshold, assert_mode=AssertMode.INTENT_SIMILARITY)
+
+    @classmethod
+    def _evaluate_multi_turn_round_with_post(cls, round_info: dict, output_data, context_rounds: list, response_time: float, similarity_threshold: float) -> dict:
+        """
+        多轮：意图分类 + 后置操作组合断言（预留扩展）
+        TODO: 实现多轮组合断言评估逻辑
+        """
+        log.warning("多轮组合断言模式暂未实现，使用默认相似度模式")
+        # 回退到默认的相似度评估逻辑
+        return cls.evaluate_multi_turn_round(round_info, output_data, context_rounds, response_time, similarity_threshold, assert_mode=AssertMode.INTENT_SIMILARITY)

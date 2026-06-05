@@ -6,100 +6,125 @@
 # @Description : 信贷大模型 pytest 调试入口文件
 
 使用方式：
-在 main 函数中直接修改调试参数，然后在 IDE 内直接运行本文件。
+在 main 函数中直接修改 TestConfig 参数，然后在 IDE 内直接运行本文件。
 """
 
 import json
 import os
 import sys
 import time
+from dataclasses import dataclass, field
 from datetime import datetime
-from pathlib import Path
-
-import requests
+from typing import Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from utils.handle_allure_report import build_allure_run_dirs, generate_allure_report, get_case_count, open_allure_report, report_summary
+from utils.handle_allure_report import build_allure_run_dirs, generate_allure_report, get_case_count, open_allure_report
 from utils.handle_log import log
+from utils.handle_wechat_notify import send_start_notice, send_end_notice
 from utils.handle_yaml import get_test_config, update_test_config
-
-
 from utils.handle_model_cases import ModelCaseHandler
 
+import pytest
 
-MODEL_WEHOOK_URL = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=33b27e52-f5ab-4690-a62c-e8d1e3ce1a67'
+
+# ============================================================
+# 测试配置（用户可修改的参数区域）
+# ============================================================
+
+@dataclass
+class TestConfig:
+    """测试配置（直接修改参数后运行本文件）"""
+    # ---- 基础环境配置 ----
+    env: str = 'pre'                          # 测试环境：'pre' / 'pro'
+    group: str = 'default'                     # 测试分组
+
+    # ---- 运行模式配置 ----
+    # 可选值：'single_turn'（单轮）、'multi_turn'（多轮）、'summary'（汇总）、'all'（全部）
+    case_type: str = 'single_turn'
+
+    # ---- 用例文件配置 ----
+    single_turn_case_file: str = './case_data/model_single_intent_cases.xlsx'
+    multi_turn_case_file: str = './case_data/model_dialog_cases.xlsx'
+
+    # ---- 断言模式配置 ----
+    # 可选值：'intent_similarity'（一致性评分）、'intent_checklist'（细粒度清单）、'intent_with_post'（组合断言）
+    assert_mode: str = 'intent_checklist'
+
+    # ---- 知识库注入配置 ----
+    # 是否将完整知识库注入系统提示词（评估更精准但 Token 消耗高）
+    # True  : 注入完整知识库到系统提示词（默认，推荐正式测试）
+    # False : 不注入系统提示词，使用传统简洁提示词（推荐调试，执行更快）
+    inject_knowledge_as_system: bool = False
+
+    # ---- 并发配置 ----
+    # pytest-xdist 并发工作进程数；IDE 调试建议设为 1，避免并行断点混乱
+    parallel_workers: int = 1
+
+    # ---- 用例数量限制 ----
+    # None 表示全部；调试时建议先跑 1 条
+    single_turn_limit: Optional[int] = 2
+    multi_turn_limit: Optional[int] = None
+
+    # ---- pytest 过滤 ----
+    # 指定 pytest -k 过滤，例如 'MIR_0001'；None 表示不过滤
+    keyword: Optional[str] = None
+
+    # ---- Allure 配置 ----
+    # 是否在测试结束后启动 allure serve；IDE 调试建议 False，避免进程阻塞
+    serve_allure: bool = True
+
+    # ---- 企微通知配置 ----
+    # 是否发送企微测试报告通知（调试时可设为 False，避免频繁打扰）
+    send_wechat_notice: bool = False
+    # 企微 Webhook 地址（默认使用测试群，可替换为业务群）
+    wechat_webhook_url: str = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=33b27e52-f5ab-4690-a62c-e8d1e3ce1a67'
+
+    # ---- 多轮断言安全阀 ----
+    enable_intent_assert: bool = True
+    enable_context_assert: bool = True
+    enable_risk_assert: bool = True
+    enable_asset_assert: bool = True
+    require_all_assert_rounds_pass: bool = True
+    require_last_round_pass: bool = True
+
+    def to_env_dict(self) -> dict:
+        """将配置转换为环境变量字典"""
+        return {
+            'MODEL_SINGLE_TURN_LIMIT': 'None' if self.single_turn_limit is None else str(self.single_turn_limit),
+            'MODEL_MULTI_TURN_LIMIT': 'None' if self.multi_turn_limit is None else str(self.multi_turn_limit),
+            'MODEL_ASSERT_MODE': self.assert_mode,
+            'MODEL_INJECT_KNOWLEDGE_AS_SYSTEM': '1' if self.inject_knowledge_as_system else '0',
+            'MODEL_ENABLE_INTENT_ASSERT': '1' if self.enable_intent_assert else '0',
+            'MODEL_ENABLE_CONTEXT_ASSERT': '1' if self.enable_context_assert else '0',
+            'MODEL_ENABLE_RISK_ASSERT': '1' if self.enable_risk_assert else '0',
+            'MODEL_ENABLE_ASSET_ASSERT': '1' if self.enable_asset_assert else '0',
+            'MODEL_REQUIRE_ALL_ASSERT_ROUNDS_PASS': '1' if self.require_all_assert_rounds_pass else '0',
+            'MODEL_REQUIRE_LAST_ROUND_PASS': '1' if self.require_last_round_pass else '0',
+        }
+
+    def apply_env(self):
+        """将配置应用到环境变量"""
+        for key, value in self.to_env_dict().items():
+            os.environ[key] = value
+
+    def __str__(self) -> str:
+        return (
+            f"环境: {self.env}, 分组: {self.group}, "
+            f"用例类型: {self.case_type}, 断言模式: {self.assert_mode}, "
+            f"并发数: {self.parallel_workers}, "
+            f"单轮限制: {self.single_turn_limit if self.single_turn_limit is not None else '全部'}, "
+            f"多轮限制: {self.multi_turn_limit if self.multi_turn_limit is not None else '全部'}"
+        )
+
+
+# ============================================================
+# 内部辅助函数
+# ============================================================
+
 TEST_FILE = './test_cases/test_model_intent_recognition.py'
 
 
-def send_start_notice(wehook_url=MODEL_WEHOOK_URL):
-    """
-    测试执行前发送企微通知
-    """
-    content_text = (
-        "执行自动化测试中，请勿发版，如果必须发版，请通知jeremyzhai !!!@joelwu(吴荣洲) @haganzhou(周汉耿)\n"
-        f"操作人：jeremyzhai\n"
-        f"操作时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-    )
-    content = {
-        "msgtype": "text",
-        "text": {
-            "content": content_text,
-        }
-    }
-    try:
-        response = requests.post(wehook_url, json=content, timeout=10)
-        response.raise_for_status()
-        result = response.json()
-        if result.get('errcode') != 0:
-            log.error(f"企微通知发送失败：{result}")
-            return False
-        log.info("企微通知发送成功")
-        return True
-    except Exception as e:
-        log.error(f"企微通知发送异常：{e}")
-        return False
-
-
-def load_latest_model_summary():
-    """读取本轮汇总结果"""
-    run_dir = ModelCaseHandler.get_current_run_dir()
-    latest_summary_path = os.path.join(run_dir, 'latest_summary_path.txt')
-    if os.path.exists(latest_summary_path):
-        with open(latest_summary_path, encoding='utf-8') as f:
-            summary_file = f.read().strip()
-        if summary_file and os.path.exists(summary_file):
-            with open(summary_file, encoding='utf-8') as f:
-                summary = json.load(f)
-            return summary[0] if summary else None
-    return None
-
-
-def report_model_summary(num_successd, num_failed, allure_report_url, env=None, group=None, elapsed_minutes=0.0):
-    model_summary = load_latest_model_summary()
-    extra_lines = []
-    if model_summary:
-        failure_dimensions = model_summary.get('多轮失败维度统计') or {}
-        extra_lines.extend([
-            '类型 | 通过用例数 | 失败用例数 | 总用例数 | 通过率',
-            f"单轮 | {model_summary.get('单轮通过数', 0)} | {model_summary.get('单轮失败数', 0)} | {model_summary.get('单轮用例数', 0)} | {model_summary.get('单轮通过率', 0)}%",
-            f"多轮 | {model_summary.get('多轮通过数', 0)} | {model_summary.get('多轮失败数', 0)} | {model_summary.get('多轮用例数', 0)} | {model_summary.get('多轮通过率', 0)}%",
-            '耗时 | 平均 | P90 | P95 | 最大',
-            f"响应 | {model_summary.get('平均响应耗时', 0)}s | {model_summary.get('P90响应耗时', 0)}s | {model_summary.get('P95响应耗时', 0)}s | {model_summary.get('最大响应耗时', 0)}s",
-            f"多轮失败维度统计：{failure_dimensions if failure_dimensions else '无'}"
-        ])
-    report_summary(
-        num_successd,
-        num_failed,
-        allure_report_url,
-        env,
-        group,
-        wehook_url=MODEL_WEHOOK_URL,
-        extra_content='\n'.join(extra_lines),
-        elapsed_minutes=elapsed_minutes
-    )
-
-
-def set_test_config(env='pre', group='default'):
+def _set_test_config(env='pre', group='default'):
     if env or group:
         log.info('正在更新配置文件...')
         log.info(f"  env: {env if env else '(保持不变)'}")
@@ -108,61 +133,50 @@ def set_test_config(env='pre', group='default'):
     return get_test_config()
 
 
-def build_pytest_args(case_type: str, keyword: str = None, parallel_workers: int = 5):
+def _build_pytest_args(config: TestConfig) -> list:
+    """
+    构建 pytest 执行参数
+
+    Args:
+        config: 测试配置对象
+
+    Returns:
+        pytest 命令行参数列表
+    """
     keyword_map = {
         'single_turn': 'test_single_turn_intent_recognition',
         'multi_turn': 'test_multi_turn_dialog_consistency',
         'summary': 'test_model_summary_report'
     }
-    selected_keyword = keyword or keyword_map.get(case_type)
+    selected_keyword = config.keyword or keyword_map.get(config.case_type)
     pytest_args = [TEST_FILE]
     if selected_keyword:
         pytest_args.extend(['-k', selected_keyword])
-    pytest_args.extend(['-n', str(parallel_workers)])
+    pytest_args.extend(['-n', str(config.parallel_workers)])
     pytest_args.extend(['-s'])
     return pytest_args
 
 
+# ============================================================
+# 主入口
+# ============================================================
+
 def main():
-    # ========================================================================
-    # 【IDE 调试参数：直接改这里】
-    # ========================================================================
-    env = 'pre'
-    group = 'default'
-
-    # 可选值：'single_turn'、'multi_turn'、'summary'、'all'
-    case_type = 'all'
-
-    # pytest-xdist 并发工作进程数；IDE 调试建议设为 1，避免并行断点混乱
-    parallel_workers = 3
-
-    # None 表示全部；调试时建议先跑 1 条
-    single_turn_limit = None
-    multi_turn_limit = None
-
-    # 可选：指定 pytest -k 过滤，例如 'MIR_0001'
-    # 不需要指定时保持 None，会根据 case_type 自动选择单轮/多轮测试函数
-    keyword = None
-
-    # 是否在测试结束后启动 allure serve；IDE 调试建议 False，避免进程阻塞
-    serve_allure = False
-
-    # 多轮断言安全阀：
-    # 1. 是否启用意图断言
-    enable_intent_assert = True
-    # 2. 是否启用上下文断言
-    enable_context_assert = True
-    # 3. 是否启用风险拒答断言
-    enable_risk_assert = True
-    # 4. 是否启用 ASSET 断言
-    enable_asset_assert = True
-    # 5. 是否要求所有参与断言轮次都通过，而不是只看平均分
-    require_all_assert_rounds_pass = True
-    # 6. 是否要求最后一轮必须通过
-    require_last_round_pass = True
-    # ========================================================================
-
-    import pytest
+    """
+    信贷大模型 pytest 调试执行器主入口
+    使用方式：直接修改 TestConfig 参数后运行本文件
+    """
+    # ===================================================================
+    # 【IDE 调试参数：直接修改 TestConfig 即可】
+    # ===================================================================
+    config = TestConfig(
+        # 示例：只跑单轮，一致性评分模式
+        # case_type='single_turn',
+        # assert_mode='intent_similarity',
+        # single_turn_limit=5,
+        # parallel_workers=1,
+    )
+    # ===================================================================
 
     os.environ['PYTHONIOENCODING'] = 'utf-8'
 
@@ -170,47 +184,45 @@ def main():
 
     log.info('=' * 80)
     log.info('信贷大模型 pytest 调试执行器')
+    log.info(f'配置: {config}')
     log.info('=' * 80)
 
-    config = set_test_config(env, group)
+    # 设置环境和分组
+    _set_test_config(config.env, config.group)
     run_id = datetime.now().strftime('%Y%m%d%H%M%S')
     os.environ['MODEL_REPORT_RUN_ID'] = run_id
 
-    os.environ['MODEL_SINGLE_TURN_LIMIT'] = 'None' if single_turn_limit is None else str(single_turn_limit)
-    os.environ['MODEL_MULTI_TURN_LIMIT'] = 'None' if multi_turn_limit is None else str(multi_turn_limit)
-    os.environ['MODEL_ENABLE_INTENT_ASSERT'] = '1' if enable_intent_assert else '0'
-    os.environ['MODEL_ENABLE_CONTEXT_ASSERT'] = '1' if enable_context_assert else '0'
-    os.environ['MODEL_ENABLE_RISK_ASSERT'] = '1' if enable_risk_assert else '0'
-    os.environ['MODEL_ENABLE_ASSET_ASSERT'] = '1' if enable_asset_assert else '0'
-    os.environ['MODEL_REQUIRE_ALL_ASSERT_ROUNDS_PASS'] = '1' if require_all_assert_rounds_pass else '0'
-    os.environ['MODEL_REQUIRE_LAST_ROUND_PASS'] = '1' if require_last_round_pass else '0'
+    # 应用断言模式等环境变量
+    config.apply_env()
 
     result_dir, report_dir = build_allure_run_dirs()
-    pytest_args = build_pytest_args(case_type=case_type, keyword=keyword, parallel_workers=parallel_workers)
+    pytest_args = _build_pytest_args(config)
     pytest_args.extend(['--alluredir', result_dir])
-    # 清理模式：如需每次覆盖历史报告，解除下面一行注释，并配合下方 allure generate --clean 命令使用
-    # pytest_args.append('--clean-alluredir')
+    # 清理模式：如需每次覆盖历史报告，解除下面一行注释
+    pytest_args.append('--clean-alluredir')
 
     log.info('-' * 80)
     log.info('当前测试配置:')
-    log.info(f"  环境 (env)  : {config['env']}")
-    log.info(f"  分组 (group): {config['group']}")
-    log.info(f"  用例类型    : {case_type}")
-    log.info(f"  并发工作数  : {parallel_workers}")
-    log.info(f"  单轮限制    : {single_turn_limit if single_turn_limit is not None else '全部'}")
-    log.info(f"  多轮限制    : {multi_turn_limit if multi_turn_limit is not None else '全部'}")
-    log.info(f"  keyword     : {keyword if keyword else '(按用例类型自动选择)'}")
+    log.info(f"  环境 (env)  : {config.env}")
+    log.info(f"  分组 (group) : {config.group}")
+    log.info(f"  用例类型    : {config.case_type}")
+    log.info(f"  断言模式    : {config.assert_mode}")
+    log.info(f"  并发工作数  : {config.parallel_workers}")
+    log.info(f"  单轮限制    : {config.single_turn_limit if config.single_turn_limit is not None else '全部'}")
+    log.info(f"  多轮限制    : {config.multi_turn_limit if config.multi_turn_limit is not None else '全部'}")
+    log.info(f"  keyword     : {config.keyword if config.keyword else '(按用例类型自动选择)'}")
     log.info(f"  pytest参数  : {pytest_args}")
     log.info('-' * 80)
 
-    # 发送测试开始通知
-    send_start_notice()
+    # 根据配置决定是否发送企微通知
+    if config.send_wechat_notice:
+        send_start_notice(webhook_url=config.wechat_webhook_url)
+    else:
+        log.info('已跳过企微开始通知（send_wechat_notice=False）')
 
     pytest.main(pytest_args)
 
     generate_allure_report(result_dir, report_dir)
-    # 清理模式：如需每次覆盖历史报告，解除下面一行注释，并注释上面的 generate_allure_report
-    # os.system('allure generate ./report/tmp -o ./report/report --clean')
     allure_report_url = open_allure_report(report_dir)
     num_successd, num_failed = get_case_count(os.path.join(report_dir, 'widgets', 'summary.json'))
     elapsed_minutes = (time.time() - start_time) / 60
@@ -224,10 +236,24 @@ def main():
     else:
         log.info('本轮无模型测试结果')
 
-    report_model_summary(num_successd, num_failed, allure_report_url, config['env'], config['group'], elapsed_minutes=elapsed_minutes)
+    # 根据配置决定是否发送企微通知
+    if config.send_wechat_notice:
+        send_end_notice(
+            env=config.env,
+            group=config.group,
+            assert_mode=config.assert_mode,
+            case_type=config.case_type,
+            num_successd=num_successd,
+            num_failed=num_failed,
+            allure_report_url=allure_report_url,
+            elapsed_minutes=elapsed_minutes,
+            webhook_url=config.wechat_webhook_url,
+        )
+    else:
+        log.info('已跳过企微结束通知（send_wechat_notice=False）')
 
-    if serve_allure:
-        os.system(f'allure serve {result_dir}')
+    if config.serve_allure:
+        log.info(f'Allure 报告已生成并打开: {allure_report_url}')
 
 
 if __name__ == '__main__':

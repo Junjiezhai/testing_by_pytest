@@ -1,0 +1,3 @@
+# Report directory - keep folder structure but ignore all contents
+report/*
+!report/.gitkeep
