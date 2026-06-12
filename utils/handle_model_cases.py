@@ -17,11 +17,14 @@ sys.path.append(Base_Path)
 
 from common.modelHttpAction import ModelHttpAction
 from utils.handle_yaml import get_test_config
+from utils.handle_log import log
 
 
-MODEL_CASE_SOURCE = r'C:\Users\jeremyzhai\Downloads\标准QA话术扩充版-0430.xlsx'
-MODEL_SINGLE_TURN_CASE_FILE = os.path.join(Base_Path, r'case_data\model_intent_recognition_cases.xlsx')
-MODEL_DIALOG_CASE_FILE = os.path.join(Base_Path, r'case_data\model_dialog_cases.xlsx')
+# 支持的新格式多轮case_type值（新Excel格式，13列）
+_NEW_FORMAT_MULTI_TURN_TYPES = {
+    'single_intent_followup', 'cross_intent_switch', 'risk_compliance_insert',
+    'complaint_escalation', 'multi_intent', 'return_to_business'
+}
 MODEL_DIALOG_CASE_COLUMNS = [
     'case_id', 'case_type', 'is_run', 'case_desc', 'round_no', 'user_question', 'expected_answer',
     'reference_answer', 'intent', 'round_intent', 'context_assert_type', 'previous_intent', 'expect_refuse',
@@ -32,8 +35,44 @@ MODEL_RUN_DIR = os.path.join(MODEL_REPORT_DIR, 'runs')
 MODEL_SINGLE_TURN_LIMIT_ENV = 'MODEL_SINGLE_TURN_LIMIT'
 MODEL_MULTI_TURN_LIMIT_ENV = 'MODEL_MULTI_TURN_LIMIT'
 
+# 模块级用例缓存，避免 pytest 收集阶段重复读取 Excel 导致日志重复打印
+# 键: (case_type, limit, case_file), 值: (case_list, mtime)
+_CASE_CACHE = {}
+
 
 class ModelCaseHandler:
+    # 用例缓存，避免 pytest 收集阶段重复读取 Excel
+    _case_cache = {}
+
+    @classmethod
+    def _get_case_cache_key(cls, case_type, limit, case_file):
+        """生成缓存键"""
+        return (case_type, limit, case_file)
+
+    @classmethod
+    def _get_cached_cases(cls, case_type, limit, case_file):
+        """从缓存获取用例列表（缓存有效期：5秒内，文件未修改时命中）"""
+        key = cls._get_case_cache_key(case_type, limit, case_file)
+        if key in cls._case_cache:
+            case_list, cached_mtime = cls._case_cache[key]
+            try:
+                current_mtime = os.path.getmtime(case_file)
+                if current_mtime <= cached_mtime:
+                    return case_list
+            except (OSError, TypeError):
+                pass
+        return None
+
+    @classmethod
+    def _set_case_cache(cls, case_type, limit, case_file, case_list):
+        """设置用例缓存"""
+        key = cls._get_case_cache_key(case_type, limit, case_file)
+        try:
+            mtime = os.path.getmtime(case_file)
+        except (OSError, TypeError):
+            mtime = 0
+        cls._case_cache[key] = (case_list, mtime)
+
     @classmethod
     def get_env_limit(cls, env_name: str, default=5):
         value = os.getenv(env_name)
@@ -76,16 +115,18 @@ class ModelCaseHandler:
         return float(text)
 
     @classmethod
-    def prepare_model_cases(cls, source_file=MODEL_CASE_SOURCE, target_file=MODEL_DIALOG_CASE_FILE) -> str:
+    def prepare_model_cases(cls, source_file=None, target_file=None) -> str:
         """
         将外部标准QA训练数据转换为项目内模型测试用例
-        :param source_file: 外部训练数据文件
-        :param target_file: 项目内用例文件
+        :param source_file: 外部训练数据文件（不指定则返回空模板）
+        :param target_file: 项目内用例文件（默认从环境变量读取）
         :return:
         """
+        if target_file is None:
+            target_file = os.getenv('MODEL_MULTI_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_multi_intent_test_cases.xlsx'))
         if os.path.exists(target_file):
             return target_file
-        if not os.path.exists(source_file):
+        if not source_file or not os.path.exists(source_file):
             return cls.prepare_dialog_template(target_file=target_file)
 
         df = pd.read_excel(source_file, sheet_name=0, header=1, dtype=str, engine='openpyxl')
@@ -128,12 +169,14 @@ class ModelCaseHandler:
         return target_file
 
     @classmethod
-    def prepare_dialog_template(cls, target_file=MODEL_DIALOG_CASE_FILE) -> str:
+    def prepare_dialog_template(cls, target_file=None) -> str:
         """
         创建模型对话用例模板，每一轮一行
-        :param target_file: 对话用例文件
+        :param target_file: 对话用例文件（默认从环境变量读取）
         :return:
         """
+        if target_file is None:
+            target_file = os.getenv('MODEL_MULTI_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_multi_intent_test_cases.xlsx'))
         if os.path.exists(target_file):
             return target_file
 
@@ -142,7 +185,10 @@ class ModelCaseHandler:
         return target_file
 
     @classmethod
-    def get_single_turn_seed_cases(cls, source_file=os.path.join(Base_Path, r'case_data\model_intent_recognition_cases.xlsx'), per_intent_limit=8) -> list:
+    def get_single_turn_seed_cases(cls, source_file=None, per_intent_limit=8) -> list:
+        if source_file is None:
+            # 优先使用 TestConfig 中配置的用例文件路径
+            source_file = os.getenv('MODEL_SINGLE_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_single_intent_test_cases.xlsx'))
         df = pd.read_excel(source_file, engine='openpyxl', dtype=str)
         df = df[df.iloc[:, 1].astype(str).str.strip().eq('single_turn')].copy()
         df = df.replace(r'[\r\n\t]', '', regex=True)
@@ -263,7 +309,9 @@ class ModelCaseHandler:
         return rows
 
     @classmethod
-    def generate_dialog_cases_from_single_turn(cls, target_file=MODEL_DIALOG_CASE_FILE) -> str:
+    def generate_dialog_cases_from_single_turn(cls, target_file=None) -> str:
+        if target_file is None:
+            target_file = os.getenv('MODEL_MULTI_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_multi_intent_test_cases.xlsx'))
         seed_cases = cls.get_single_turn_seed_cases()
         try:
             model_action = ModelHttpAction(timeout=180)
@@ -276,43 +324,122 @@ class ModelCaseHandler:
         return target_file
 
     @classmethod
-    def generate_multi_turn_cases(cls, case_count=10, sample_limit=20, target_file=MODEL_DIALOG_CASE_FILE) -> str:
+    def generate_multi_turn_cases(cls, case_count=10, sample_limit=20, target_file=None) -> str:
+        if target_file is None:
+            target_file = os.getenv('MODEL_MULTI_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_multi_intent_test_cases.xlsx'))
         return cls.generate_dialog_cases_from_single_turn(target_file=target_file)
 
     @classmethod
-    def get_single_turn_cases(cls, limit=None, case_file=MODEL_SINGLE_TURN_CASE_FILE) -> list:
+    def get_single_turn_cases(cls, limit=None, case_file=None) -> list:
+        # 从环境变量获取单轮用例文件路径，如果没有设置则使用与 TestConfig 一致的默认值
+        if case_file is None:
+            case_file = os.getenv('MODEL_SINGLE_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_single_intent_test_cases.xlsx'))
+        # 优先从缓存获取
+        cached = cls._get_cached_cases('single_turn', limit, case_file)
+        if cached is not None:
+            return cached
         df = pd.read_excel(case_file, engine='openpyxl', dtype=str)
-        df = df[df.iloc[:, 1].astype(str).str.strip().eq('single_turn')].copy()
         df = df.replace(r'[\r\n\t]', '', regex=True)
         config = get_test_config()
         case_list = []
+
+        # 检测文件格式：通过列名判断是新格式（model_single_intent_test_cases.xlsx）
+        # 还是旧格式（model_intent_recognition_cases.xlsx）
+        columns = [str(c).strip() for c in df.columns.tolist()]
+
+        # 新格式列名映射（model_single_intent_test_cases.xlsx，400条）
+        new_format_map = {
+            'case_id_col': '用例ID',
+            'case_type_col': '类型',
+            'intent_col': '测试意图',
+            'case_desc_col': '场景',
+            'question_col': '标准问题',
+            'expected_answer_col': '标准答案',
+            'remark_col': '备注',
+        }
+        # 旧格式列名映射（model_intent_recognition_cases.xlsx，355条）
+        old_format_map = {
+            'case_id_col': '用例编号',
+            'case_type_col': '类型',
+            'intent_col': '意图分类',
+            'case_desc_col': '场景',
+            'question_col': '标准问题',
+            'expected_answer_col': '标准答案',
+            'reference_answer_col': '外部模型参考答案',
+            'is_run_col': '是否执行',
+            'similarity_threshold_col': '相似度阈值',
+            'response_time_threshold_col': '响应耗时阈值',
+            'remark_col': '备注',
+        }
+
+        # 判断文件格式
+        is_new_format = all(col in columns for col in ['用例ID', '测试意图', '测试维度'])
+        col_map = new_format_map if is_new_format else old_format_map
+
         for _, row in df.iterrows():
-            question = cls.clean_cell(row.iloc[4])
-            expected_answer = cls.clean_cell(row.iloc[5])
+            # 根据格式获取字段
+            if is_new_format:
+                case_id = cls.clean_cell(row.get('用例ID', ''))
+                case_type = cls.clean_cell(row.get('类型', ''))
+                intent = cls.clean_cell(row.get('测试意图', ''))
+                case_desc = cls.clean_cell(row.get('场景', ''))
+                question = cls.clean_cell(row.get('标准问题', ''))
+                expected_answer = cls.clean_cell(row.get('标准答案', ''))
+                reference_answer = ''  # 新格式无此列
+                remark = cls.clean_cell(row.get('备注', ''))
+                similarity_threshold = 70  # 新格式无此列，使用默认值
+                response_time_threshold = 5  # 新格式无此列，使用默认值
+                is_run = True  # 新格式无此列，默认全部执行
+            else:
+                case_id = cls.clean_cell(row.get('用例编号', ''))
+                case_type = cls.clean_cell(row.get('类型', ''))
+                intent = cls.clean_cell(row.get('意图分类', ''))
+                case_desc = cls.clean_cell(row.get('场景', ''))
+                question = cls.clean_cell(row.get('标准问题', ''))
+                expected_answer = cls.clean_cell(row.get('标准答案', ''))
+                reference_answer = cls.clean_cell(row.get('外部模型参考答案', ''))
+                remark = cls.clean_cell(row.get('备注', ''))
+                similarity_threshold = cls.to_float(row.get('相似度阈值', ''), 70)
+                response_time_threshold = cls.to_float(row.get('响应耗时阈值', ''), 5)
+                is_run_value = str(row.get('是否执行', '')).strip()
+                is_run = is_run_value not in ['', 'N', 'n', 'no', 'No', 'FALSE', 'False', 'false', '0']
+
+            # 只处理 single_turn 类型的用例
+            if case_type != 'single_turn':
+                continue
+            # 跳过未标记执行的用例（旧格式）
+            if not is_run:
+                continue
+            # 跳过缺少必要字段的用例
             if not question or not expected_answer:
                 continue
+
             case_list.append({
-                'case_id': cls.clean_cell(row.iloc[0]),
+                'case_id': case_id,
                 'case_type': 'single_turn',
-                'case_desc': cls.clean_cell(row.iloc[2]),
-                'intent': cls.clean_cell(row.iloc[3]),
+                'case_desc': case_desc,
+                'intent': intent,
                 'question': question,
                 'expected_answer': expected_answer,
                 'questions': [question],
                 'expected_answers': [expected_answer],
                 'round_assert_flags': [True],
-                'reference_answer': cls.clean_cell(row.iloc[6] if len(row) > 6 else ''),
-                'similarity_threshold': cls.to_float(row.iloc[9] if len(row) > 9 else '', 70),
-                'response_time_threshold': cls.to_float(row.iloc[10] if len(row) > 10 else '', 5),
+                'reference_answer': reference_answer,
+                'similarity_threshold': similarity_threshold,
+                'response_time_threshold': response_time_threshold,
+                'remark': remark,
                 'env': config['env'],
                 'group': config['group']
             })
+
         if limit:
             case_list = case_list[:limit]
+        # 缓存结果
+        cls._set_case_cache('single_turn', limit, case_file, case_list)
         return case_list
 
     @classmethod
-    def get_model_cases(cls, case_type='multi_turn', limit=None, case_file=MODEL_DIALOG_CASE_FILE) -> list:
+    def get_model_cases(cls, case_type='multi_turn', limit=None, case_file=None) -> list:
         """
         获取模型测试用例
         :param case_type: 用例类型
@@ -320,11 +447,33 @@ class ModelCaseHandler:
         :param case_file: 模型对话用例文件
         :return:
         """
+        # 从环境变量获取多轮用例文件路径，如果没有设置则使用与 TestConfig 一致的默认值
+        if case_file is None:
+            case_file = os.getenv('MODEL_MULTI_TURN_CASE_FILE', os.path.join(Base_Path, r'case_data\model_multi_intent_test_cases.xlsx'))
         if case_type == 'single_turn':
+            # 单轮用例分支：不传递 case_file，让 get_single_turn_cases 自己从环境变量读取单轮用例文件路径
             return cls.get_single_turn_cases(limit=limit)
         case_file = cls.prepare_model_cases(target_file=case_file)
+        # 优先从缓存获取
+        cached = cls._get_cached_cases(case_type, limit, case_file)
+        if cached is not None:
+            return cached
         df = pd.read_excel(case_file, engine='openpyxl', dtype=str)
         df = df.replace(r'[\r\n\t]', '', regex=True)
+
+        # 检测是否是新格式（13列新Excel）
+        # 新格式特征：有 expect_refuse 列但没有 is_run 列
+        actual_columns = set(df.columns.tolist())
+        is_new_format = 'expect_refuse' in actual_columns and 'is_run' not in actual_columns
+
+        if is_new_format:
+            # 为新格式填充缺失的列
+            df['is_run'] = 'Y'
+            df['reference_answer'] = df['expected_answer']
+            df['should_assert'] = 'Y'
+            df['similarity_threshold'] = '70'
+            df['response_time_threshold'] = '5'
+
         missing_columns = [column for column in MODEL_DIALOG_CASE_COLUMNS if column not in df.columns]
         if missing_columns:
             raise ValueError(f'模型对话用例Excel缺少字段：{missing_columns}')
@@ -338,7 +487,40 @@ class ModelCaseHandler:
 
         config = get_test_config()
         case_list = []
+
+        # 按 case_id 和 round_no 排序，确保轮次顺序正确
         grouped_df = df.sort_values(['case_id', 'round_no'], key=lambda col: pd.to_numeric(col, errors='coerce') if col.name == 'round_no' else col)
+
+        # 获取唯一的 case_id 列表（按顺序）
+        unique_case_ids = grouped_df['case_id'].unique().tolist()
+
+        # 应用 limit：限制用例数量（不是轮次数量）
+        # limit 为 None 表示全部；limit >= 0 表示取前 N 个用例
+        if limit is not None:
+            # 确保 limit 是整数
+            try:
+                limit = int(limit)
+            except (ValueError, TypeError):
+                limit = None
+
+            if limit is not None and limit >= 0:
+                # limit == 0 时返回空列表（表示不取任何用例）
+                if limit == 0:
+                    log.info(f"【多轮取数】limit=0，不取任何用例")
+                    return []
+                # 截取前 limit 个用例
+                filtered_case_ids = unique_case_ids[:limit]
+                log.info(f"【多轮取数】共 {len(unique_case_ids)} 个用例，限制取前 {limit} 个")
+            else:
+                filtered_case_ids = unique_case_ids
+                log.info(f"【多轮取数】共 {len(unique_case_ids)} 个用例，取全部")
+        else:
+            filtered_case_ids = unique_case_ids
+            log.info(f"【多轮取数】共 {len(unique_case_ids)} 个用例，取全部")
+
+        # 只处理在 filtered_case_ids 中的用例
+        grouped_df = grouped_df[grouped_df['case_id'].isin(filtered_case_ids)]
+
         for case_id, case_df in grouped_df.groupby('case_id', sort=False):
             case_df = case_df.sort_values('round_no', key=lambda col: pd.to_numeric(col, errors='coerce'))
             rows = case_df.to_dict('records')
@@ -360,6 +542,11 @@ class ModelCaseHandler:
             last_eval_row = eval_rows[-1]
             detected_case_type = cls.clean_cell(first_row.get('case_type')) or ('multi_turn' if len(questions) > 1 else 'single_turn')
             normalized_case_type = 'multi_turn' if len(questions) > 1 and detected_case_type != 'single_turn' else detected_case_type
+
+            # 兼容新旧格式：新格式的 case_type (single_intent_followup/cross_intent_switch 等) 视为多轮
+            if case_type == 'multi_turn' and detected_case_type in _NEW_FORMAT_MULTI_TURN_TYPES:
+                normalized_case_type = 'multi_turn'
+
             if case_type and normalized_case_type != case_type:
                 continue
 
@@ -413,8 +600,12 @@ class ModelCaseHandler:
                 'group': config['group']
             })
 
-        if limit:
-            case_list = case_list[:limit]
+        # limit 已在上游提前应用，这里不再重复截取
+        # 记录最终取到的用例数和轮次数
+        total_rounds = sum(len(c['questions']) for c in case_list)
+        log.info(f"【多轮取数】最终取到 {len(case_list)} 个用例，共 {total_rounds} 轮")
+        # 缓存结果
+        cls._set_case_cache(case_type, limit, case_file, case_list)
         return case_list
 
     @classmethod
@@ -463,7 +654,32 @@ class ModelCaseHandler:
     @classmethod
     def get_current_run_id(cls) -> str:
         run_id = os.getenv('MODEL_REPORT_RUN_ID', '')
-        return run_id or datetime.now().strftime('%Y%m%d%H%M%S')
+        if run_id:
+            return run_id
+        # 如果没有环境变量，查找最近5秒内的 run 目录（多进程场景下共享）
+        return cls._get_or_create_run_id()
+
+    @classmethod
+    def _get_or_create_run_id(cls) -> str:
+        """获取或创建 run_id（多进程安全，查找最近5秒内的目录）"""
+        if not os.path.exists(MODEL_RUN_DIR):
+            os.makedirs(MODEL_RUN_DIR, exist_ok=True)
+            return datetime.now().strftime('%Y%m%d%H%M%S')
+
+        now = datetime.now().timestamp()
+        run_dirs = []
+        for d in os.listdir(MODEL_RUN_DIR):
+            dir_path = os.path.join(MODEL_RUN_DIR, d)
+            if os.path.isdir(dir_path):
+                mtime = os.path.getmtime(dir_path)
+                if now - mtime <= 5:  # 5秒内
+                    run_dirs.append((d, mtime))
+
+        if run_dirs:
+            # 返回最近修改的目录
+            return max(run_dirs, key=lambda x: x[1])[0]
+
+        return datetime.now().strftime('%Y%m%d%H%M%S')
 
     @classmethod
     def get_current_run_dir(cls) -> str:
@@ -499,7 +715,33 @@ class ModelCaseHandler:
 
     @classmethod
     def load_model_rows_from_run(cls, run_dir: str = '') -> list:
-        run_dir = run_dir or cls.get_current_run_dir()
+        """
+        从运行目录加载模型测试数据（支持多进程）
+
+        如果指定了 run_dir，只加载该目录下的数据。
+        否则，加载所有最近5秒内的 run_dir 下的数据（多进程场景）。
+        """
+        if run_dir:
+            return cls._load_rows_from_single_dir(run_dir)
+
+        # 先尝试从环境变量获取 run_id
+        run_id = os.getenv('MODEL_REPORT_RUN_ID', '')
+        if run_id:
+            run_dir = os.path.join(MODEL_RUN_DIR, run_id)
+            if os.path.exists(run_dir):
+                return cls._load_rows_from_single_dir(run_dir)
+
+        # 回退：加载最近5秒内的所有 run_dir 下的数据（多进程安全）
+        all_rows = []
+        recent_dirs = cls._get_recent_run_dirs(seconds=5)
+        for recent_dir in recent_dirs:
+            all_rows.extend(cls._load_rows_from_single_dir(recent_dir))
+        return all_rows
+
+    @classmethod
+    def _load_rows_from_single_dir(cls, run_dir: str) -> list:
+        """从单个 run_dir 加载数据"""
+        from utils.handle_log import log
         rows_dir = os.path.join(run_dir, 'rows')
         if not os.path.exists(rows_dir):
             return []
@@ -508,19 +750,44 @@ class ModelCaseHandler:
             if not file_name.endswith('.json'):
                 continue
             file_path = os.path.join(rows_dir, file_name)
-            with open(file_path, encoding='utf-8') as f:
-                rows = json.load(f)
-            if isinstance(rows, list):
-                report_rows.extend(rows)
-            elif isinstance(rows, dict):
-                report_rows.append(rows)
+            try:
+                with open(file_path, encoding='utf-8') as f:
+                    rows = json.load(f)
+                if isinstance(rows, list):
+                    report_rows.extend(rows)
+                elif isinstance(rows, dict):
+                    report_rows.append(rows)
+            except Exception as e:
+                log.warning(f"加载文件失败 {file_path}: {e}")
+                continue
+        # 去重（按 case_type + case_id）
         unique_rows = {}
         for row in report_rows:
             if not isinstance(row, dict):
                 continue
             row_key = f"{row.get('case_type')}::{row.get('case_id')}"
             unique_rows[row_key] = row
-        return list(unique_rows.values())
+        result = list(unique_rows.values())
+        log.info(f"【load_model_rows_from_run】从 {run_dir} 加载了 {len(result)} 条数据（去重前 {len(report_rows)} 条）")
+        return result
+
+    @classmethod
+    def _get_recent_run_dirs(cls, seconds: int = 5) -> list:
+        """获取最近 N 秒内修改的 run_dir 列表"""
+        if not os.path.exists(MODEL_RUN_DIR):
+            return []
+        now = datetime.now().timestamp()
+        recent_dirs = []
+        for d in os.listdir(MODEL_RUN_DIR):
+            dir_path = os.path.join(MODEL_RUN_DIR, d)
+            if os.path.isdir(dir_path):
+                try:
+                    mtime = os.path.getmtime(dir_path)
+                    if now - mtime <= seconds:
+                        recent_dirs.append(dir_path)
+                except OSError:
+                    continue
+        return recent_dirs
 
     @classmethod
     def save_model_run_reports(cls, report_rows: list, run_dir: str = '') -> dict:

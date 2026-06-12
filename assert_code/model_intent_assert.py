@@ -480,17 +480,6 @@ class ModelIntentAssert:
         return report_row
 
     @classmethod
-    def get_multi_turn_assert_switches(cls) -> dict:
-        return {
-            'enable_intent_assert': os.getenv('MODEL_ENABLE_INTENT_ASSERT', '1') == '1',
-            'enable_context_assert': os.getenv('MODEL_ENABLE_CONTEXT_ASSERT', '1') == '1',
-            'enable_risk_assert': os.getenv('MODEL_ENABLE_RISK_ASSERT', '1') == '1',
-            'enable_asset_assert': os.getenv('MODEL_ENABLE_ASSET_ASSERT', '1') == '1',
-            'require_all_assert_rounds_pass': os.getenv('MODEL_REQUIRE_ALL_ASSERT_ROUNDS_PASS', '1') == '1',
-            'require_last_round_pass': os.getenv('MODEL_REQUIRE_LAST_ROUND_PASS', '1') == '1',
-        }
-
-    @classmethod
     def evaluate_asset_result(cls, intent: str, reply_info: dict) -> dict:
         intent_rule = cls.get_intent_rule(intent)
         asset_allowed = bool(intent_rule['asset'].get('allowed', False))
@@ -541,169 +530,72 @@ class ModelIntentAssert:
     @classmethod
     def evaluate_multi_turn_round(cls, round_info: dict, output_data, context_rounds: list, response_time: float, similarity_threshold: float, assert_mode: AssertMode = None) -> dict:
         """
-        多轮单轮评估（支持断言模式切换）
+        多轮单轮评估（已统一为一次性多维度评分）
+
+        注意：此方法现在返回占位结果，实际的多维度评估在 test_multi_turn_dialog_consistency 中
+        通过 MultiTurnEvaluator.evaluate_single 统一进行。
+
         :param round_info: 轮次信息
         :param output_data: 模型返回
         :param context_rounds: 上下文轮次
         :param response_time: 响应耗时
         :param similarity_threshold: 相似度阈值
         :param assert_mode: 断言模式，None 时从环境变量读取
-        :return:
+        :return: 占位结果
         """
-        if assert_mode is None:
-            assert_mode = cls.get_assert_mode()
-
-        # 断言模式分发（当前仅支持 similarity，其他模式预留）
-        if assert_mode == AssertMode.INTENT_CHECKLIST:
-            return cls._evaluate_multi_turn_round_checklist(round_info, output_data, context_rounds, response_time, similarity_threshold)
-        elif assert_mode == AssertMode.INTENT_WITH_POST:
-            return cls._evaluate_multi_turn_round_with_post(round_info, output_data, context_rounds, response_time, similarity_threshold)
-
-        # 默认：一致性评分模式（原逻辑）
-        reply_info = cls._extract_reply_contents(output_data=output_data)
-        actual_answer = cls.extract_model_answer(output_data=output_data)
-        expected_answer = round_info['expected_answer']
-        reference_answer = cls._clean_text(round_info.get('reference_answer')) or expected_answer
+        # 提取基本信息
+        actual_answer = cls.extract_model_answer(output_data=output_data) if output_data else ''
+        expected_answer = round_info.get('expected_answer', '')
         round_intent = round_info.get('round_intent', '')
-        chat_type_eval = cls._evaluate_chat_type_result(round_intent, reply_info)
-        if chat_type_eval['is_transfer']:
-            similarity_score = 100 if chat_type_eval['chat_type_pass'] else 0
-            similarity_pass = chat_type_eval['chat_type_pass']
-            intent_eval = {'actual_intent': '转人工' if chat_type_eval['chat_type_pass'] else '', 'intent_pass': chat_type_eval['chat_type_pass'], 'reason': 'chatType=TRANSFER，仅允许转人工意图'}
-            context_eval = {'context_carry_pass': True, 'intent_pollution_pass': True, 'user_correction_pass': True, 'risk_refusal_pass': True, 'return_to_business_pass': True, 'reason': 'chatType=TRANSFER，跳过上下文模型评估'}
-        else:
-            # 相似度评估：使用 ExternalModelJudge（注入意图知识库）
-            similarity_res = cls._evaluate_similarity(
-                actual_answer=actual_answer,
-                expected_answer=expected_answer,
-                intent=round_intent
-            )
-            similarity_score = round(similarity_res['similarity_score'], 2)
-            similarity_pass = similarity_score >= similarity_threshold
-            # 意图评估：从 output_data 提取实际意图并比对
-            actual_intent = cls.extract_model_intent(output_data=output_data)
-            intent_pass = actual_intent == round_intent
-            intent_eval = {
-                'actual_intent': actual_intent,
-                'intent_pass': intent_pass,
-                'reason': '' if intent_pass else f'期望意图={round_intent}，实际意图={actual_intent}'
-            }
-            # 上下文评估：简化处理（外部模型暂不支持多维度上下文评估）
-            context_eval = {
-                'context_carry_pass': True,
-                'intent_pollution_pass': True,
-                'user_correction_pass': True,
-                'risk_refusal_pass': True,
-                'return_to_business_pass': True,
-                'reason': '上下文评估已简化（外部模型暂不支持多维度上下文评估）'
-            }
-        asset_eval = cls.evaluate_asset_result(round_intent, reply_info)
-        switches = cls.get_multi_turn_assert_switches()
-        context_keys = ['context_carry_pass', 'intent_pollution_pass', 'user_correction_pass', 'return_to_business_pass']
-        context_pass = all(context_eval.get(key) for key in context_keys)
-        risk_pass = (not round_info.get('expect_refuse')) or bool(context_eval.get('risk_refusal_pass'))
-        fail_reasons = []
-        assert_items = [
-            {
-                'dimension': '话术相似度',
-                'enabled': True,
-                'pass': similarity_pass,
-                'evidence': f"平均分={similarity_score}，阈值={similarity_threshold}",
-                'reason': standard_similarity_res.get('reason') or reference_similarity_res.get('reason') or '',
-                'suggestion': '优先检查标准答案/参考答案是否覆盖当前轮关键条件；若模型回复业务正确但表达差异大，可补充reference_answer。'
-            },
-            {
-                'dimension': '意图识别',
-                'enabled': switches['enable_intent_assert'],
-                'pass': bool(intent_eval.get('intent_pass')),
-                'evidence': f"期望意图={round_intent}，实际意图={intent_eval.get('actual_intent')}",
-                'reason': intent_eval.get('reason') or '',
-                'suggestion': '检查round_intent是否配置准确；如果实际意图应被接受，需要补充意图规则或调整用例期望。'
-            },
-            {
-                'dimension': '上下文承接',
-                'enabled': switches['enable_context_assert'],
-                'pass': context_pass,
-                'evidence': f"上下文类型={round_info.get('context_assert_type', 'normal')}，上一轮意图={round_info.get('previous_intent', '')}，承接={context_eval.get('context_carry_pass')}，污染={context_eval.get('intent_pollution_pass')}，改口={context_eval.get('user_correction_pass')}，回归业务={context_eval.get('return_to_business_pass')}",
-                'reason': context_eval.get('reason') or '',
-                'suggestion': '重点检查当前轮问题是否依赖上一轮、省略主语或跨意图切换；必要时把上一轮关键槽位写进标准答案。'
-            },
-            {
-                'dimension': '风险拒答',
-                'enabled': switches['enable_risk_assert'] and bool(round_info.get('expect_refuse')),
-                'pass': risk_pass,
-                'evidence': f"是否期望拒答={bool(round_info.get('expect_refuse'))}，拒答断言={context_eval.get('risk_refusal_pass')}",
-                'reason': context_eval.get('reason') or '',
-                'suggestion': '风险合规轮应明确配置expect_refuse=Y、round_intent=风险合规禁答，并在标准答案中要求拒绝违规/隐私/内部规则内容。'
-            },
-            {
-                'dimension': 'ASSET卡片',
-                'enabled': switches['enable_asset_assert'],
-                'pass': bool(asset_eval['asset_pass']),
-                'evidence': f"ASSET存在={asset_eval.get('asset_present')}，允许={asset_eval.get('asset_allowed')}，value={asset_eval.get('asset_value')}，biz_ref_id={asset_eval.get('biz_ref_id')}",
-                'reason': '；'.join(asset_eval.get('asset_failure_reasons') or []),
-                'suggestion': '检查config/model_intent_reply_rules.yaml中该意图是否允许ASSET，以及value_allowlist/biz_ref_id_allowlist是否包含实际返回值。'
-            }
-        ]
-        assert_items.insert(0, {
-            'dimension': '会话类型',
-            'enabled': True,
-            'pass': chat_type_eval['chat_type_pass'],
-            'evidence': f"chatType={chat_type_eval['chat_type']}，handoffReason={chat_type_eval['handoff_reason']}，期望意图={round_intent}",
-            'reason': '；'.join(chat_type_eval['chat_type_failure_reasons']) or '会话类型符合预期',
-            'suggestion': 'chatType=TRANSFER仅允许转人工意图；其他意图应保持NORMAL并返回replyContents。'
-        })
-        failed_assert_items = [item for item in assert_items if item['enabled'] and not item['pass']]
-        if not chat_type_eval['chat_type_pass']:
-            fail_reasons.extend(chat_type_eval['chat_type_failure_reasons'])
-        if not similarity_pass:
-            fail_reasons.append(f"话术平均评分 {similarity_score} 低于阈值 {similarity_threshold}")
-        if switches['enable_intent_assert'] and not intent_eval.get('intent_pass'):
-            fail_reasons.append(f"当前轮意图不正确：{intent_eval.get('reason')}")
-        if switches['enable_context_assert'] and not context_pass:
-            fail_reasons.append(f"上下文断言失败：{context_eval.get('reason')}")
-        if switches['enable_risk_assert'] and round_info.get('expect_refuse') and not context_eval.get('risk_refusal_pass'):
-            fail_reasons.append(f"风险问题未正确拒答：{context_eval.get('reason')}")
-        if switches['enable_asset_assert'] and not asset_eval['asset_pass']:
-            fail_reasons.extend(asset_eval['asset_failure_reasons'])
-        round_pass = not fail_reasons
+
+        # 提取回复信息（用于展示，chatType/ASSET断言在汇总阶段统一进行）
+        reply_info = cls._extract_reply_contents(output_data=output_data) if output_data else {}
+        chat_type = reply_info.get('chat_type', 'NORMAL') if reply_info else 'NORMAL'
+        handoff_reason = reply_info.get('handoff_reason', '') if reply_info else ''
+
         return {
-            'round': round_info['round'],
-            'question': round_info['question'],
+            'round': round_info.get('round', 0),
+            'question': round_info.get('question', ''),
             'expected_answer': expected_answer,
-            'reference_answer': reference_answer,
+            'reference_answer': cls._clean_text(round_info.get('reference_answer')) or expected_answer,
             'actual_answer': actual_answer,
             'round_intent': round_intent,
-            'actual_intent': intent_eval.get('actual_intent'),
-            'chat_type': chat_type_eval['chat_type'],
-            'handoff_reason': chat_type_eval['handoff_reason'],
-            'chat_type_pass': chat_type_eval['chat_type_pass'],
+            'actual_intent': '',
+            'chat_type': chat_type,
+            'handoff_reason': handoff_reason,
+            'chat_type_pass': True,  # 占位：汇总阶段统一断言
             'previous_intent': round_info.get('previous_intent', ''),
             'context_assert_type': round_info.get('context_assert_type', 'normal'),
             'expect_refuse': bool(round_info.get('expect_refuse')),
-            'standard_similarity_score': standard_similarity_score,
-            'standard_similarity_reason': standard_similarity_res.get('reason'),
-            'reference_similarity_score': reference_similarity_score,
-            'reference_similarity_reason': reference_similarity_res.get('reason'),
-            'similarity_score': similarity_score,
-            'similarity_pass': similarity_pass,
-            'similarity_reason': f"标准答案评分={standard_similarity_score}；参考答案评分={reference_similarity_score}",
-            'intent_pass': intent_eval.get('intent_pass'),
-            'intent_reason': intent_eval.get('reason'),
-            'context_carry_pass': context_eval.get('context_carry_pass'),
-            'intent_pollution_pass': context_eval.get('intent_pollution_pass'),
-            'user_correction_pass': context_eval.get('user_correction_pass'),
-            'risk_refusal_pass': context_eval.get('risk_refusal_pass'),
-            'return_to_business_pass': context_eval.get('return_to_business_pass'),
-            'context_reason': context_eval.get('reason'),
-            **asset_eval,
-            'assert_items': assert_items,
-            'failed_assert_items': failed_assert_items,
-            'failure_suggestions': [item['suggestion'] for item in failed_assert_items],
+            'standard_similarity_score': 0,
+            'reference_similarity_score': 0,
+            'similarity_score': 0,
+            'similarity_pass': True,
+            'similarity_reason': '等待一次性多维度评估',
+            'intent_pass': True,
+            'intent_reason': '',
+            'context_carry_pass': True,
+            'intent_pollution_pass': True,
+            'user_correction_pass': True,
+            'risk_refusal_pass': True,
+            'return_to_business_pass': True,
+            'context_reason': '等待一次性多维度评估',
+            'asset_present': False,  # 占位：汇总阶段统一断言
+            'asset_allowed': False,
+            'asset_value': '',
+            'asset_value_pass': True,
+            'biz_ref_id': '',
+            'biz_ref_id_pass': True,
+            'asset_allow_pass': True,
+            'asset_pass': True,  # 占位：汇总阶段统一断言
+            'asset_failure_reasons': [],
+            'assert_items': [],
+            'failed_assert_items': [],
+            'failure_suggestions': [],
             'should_assert': round_info.get('should_assert', True),
             'response_time': round(response_time, 3),
-            'round_pass': round_pass,
-            'failure_reason': '；'.join(fail_reasons),
+            'round_pass': True,
+            'failure_reason': '等待一次性多维度评估',
             'request_data': round_info.get('request_data'),
             'output_data': output_data,
         }
@@ -732,6 +624,51 @@ class ModelIntentAssert:
             'similarity_reason': similarity_res.get('reason'),
             'similarity_pass': similarity_score >= similarity_threshold
         }
+
+    @classmethod
+    def evaluate_multi_turn_enhanced(cls, case_info: dict, round_rows: list,
+                                     round_eval_results: list = None,
+                                     enable_llm_judge: bool = True,
+                                     enable_state_validation: bool = True,
+                                     enable_consistency_check: bool = True,
+                                     llm_judge_model: str = None,
+                                     state_validation_mode: str = 'strict') -> dict:
+        """
+        多轮增强评估
+
+        在 evaluate_multi_turn_round 基础上增加：
+        - LLM Judge 评估（G1/G2/Q1-Q5）
+        - 会话状态转移合规性验证
+        - 信息一致性自动检查
+
+        Args:
+            case_info: 用例信息
+            round_rows: 多轮对话数据
+            round_eval_results: 逐轮评估结果（来自 evaluate_multi_turn_round），可选
+            enable_llm_judge: 是否启用 LLM Judge
+            enable_state_validation: 是否启用状态转移验证
+            enable_consistency_check: 是否启用信息一致性检查
+            llm_judge_model: LLM Judge 使用的模型名称
+            state_validation_mode: 状态转移验证模式
+
+        Returns:
+            增强评估结果字典
+        """
+        try:
+            from assert_code.multi_turn_enhanced_evaluator import MultiTurnEnhancedEvaluator
+            evaluator = MultiTurnEnhancedEvaluator(
+                enable_llm_judge=enable_llm_judge,
+                enable_state_validation=enable_state_validation,
+                enable_consistency_check=enable_consistency_check,
+                llm_judge_model=llm_judge_model,
+                state_validation_mode=state_validation_mode,
+            )
+            return evaluator.evaluate(case_info, round_rows)
+        except Exception as e:
+            log.warning(f"【增强评估】初始化失败：{e}")
+            import traceback
+            log.warning(traceback.format_exc())
+            return None
 
     @classmethod
     def assert_model_result(cls, report_row: dict) -> None:

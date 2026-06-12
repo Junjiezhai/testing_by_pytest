@@ -13,6 +13,7 @@ from common.rpcAction import BaseRpc
 from utils.handle_log import log
 from utils.handle_yaml import read_yaml_data
 from utils.handle_path import Base_Path
+from utils.rate_limiter import global_rate_limiter
 import random
 from typing import Union
 from datetime import datetime
@@ -95,6 +96,9 @@ class ModelIntentRecognition:
         :param msg_info: dict，用户msg信息
         :return: 返回结果和相关信息
         """
+        # 请求前获取令牌（如启用了限流则阻塞等待）
+        global_rate_limiter.acquire()
+
         reformed_data = self._generate_params(msg_info=msg_info)
 
         data = {

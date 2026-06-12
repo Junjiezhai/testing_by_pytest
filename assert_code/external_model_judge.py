@@ -603,15 +603,28 @@ JSON格式如下：
             # 使用系统提示词注入知识库（评估更精准，但 Token 消耗高）
             system_prompt = self._get_system_prompt(intent)
             user_prompt = self._build_user_prompt(actual_answer, expected_answer)
-            text = self.model.chat(user_prompt, system_prompt=system_prompt, desc="【语义相似度评估-知识注入】")
+            text = self.model.chat(
+                user_prompt,
+                system_prompt=system_prompt,
+                desc="【语义相似度评估-知识注入】",
+                max_tokens=self.max_tokens,
+            )
         elif intent and self.knowledge_base:
             # 知识库可用但不注入系统提示词，使用传统方式构建完整提示词
             prompt = self._build_knowledge_prompt(intent, actual_answer, expected_answer)
-            text = self.model.chat(prompt, desc="【语义相似度评估-知识传统】")
+            text = self.model.chat(
+                prompt,
+                desc="【语义相似度评估-知识传统】",
+                max_tokens=self.max_tokens,
+            )
         else:
             # 无知识库，使用传统相似度评估
             prompt = self._build_similarity_prompt(actual_answer, expected_answer)
-            text = self.model.chat(prompt, desc="【语义相似度评估】")
+            text = self.model.chat(
+                prompt,
+                desc="【语义相似度评估】",
+                max_tokens=self.max_tokens,
+            )
 
         # 解析JSON响应
         result = {}

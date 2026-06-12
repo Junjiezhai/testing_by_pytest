@@ -7,7 +7,7 @@
 > 关联文件：
 > - `model_skills/gen_single_round_cases.md` — 测试用例生成 Skill 定义
 > - `config/model_knowledge_base.yaml` — 外部模型评估知识库
-> - `docs/standard_QA_intent.xlsx` — 标准问答库（355条用例）
+> - `docs/standard_QA_intent.md` — 标准问答库（355条用例）
 
 ---
 
@@ -180,6 +180,6 @@
 - 修改后需同步更新：
   - `model_skills/gen_single_round_cases.md` — 确保 Skill 定义一致
   - `config/model_knowledge_base.yaml` — 确保评估知识库一致
-  - `docs/standard_QA_intent.xlsx` — 确保用例数据一致
+  - `docs/standard_QA_intent.md` — 确保用例数据一致
 - 版本记录：
   - v1.0 (2026-06-05) — 初始版本，覆盖8大意图分类

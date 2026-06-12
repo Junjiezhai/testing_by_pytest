@@ -23,7 +23,7 @@ description: &gt;
 ## Workflow
 
 1. **明确意图体系**：确认标准意图分类体系（见Reference Resources）
-2. **信贷领域标准会话问答知识学习**：标准知识文档详见making_decison_test/docs/standard_QA_intent.xlsx
+2. **信贷领域标准会话问答知识学习**：标准知识文档详见making_decison_test/docs/standard_QA_intent.md
 3. **确定测试维度**：没割标准意图的核心拆分均需包含如下维度测试用例：
    - 标准表达（清晰明确的意图表述）
    - 同义变换（同义词、口语化、方言化表达）

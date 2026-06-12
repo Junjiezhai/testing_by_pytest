@@ -15,6 +15,7 @@
 import json
 import os
 import sys
+import time
 import traceback
 from typing import Any, Dict, List, Optional, Union
 
@@ -31,7 +32,7 @@ from utils.handle_log import log
 # ============================================================
 DEFAULT_AUTH_TOKEN = 'sk-PI-hmdzRFDgccN2sdAhVmQ'
 DEFAULT_BASE_URL = 'https://ai-gateway-oa.lexincloud.com/litellm'
-DEFAULT_TIMEOUT = 180
+DEFAULT_TIMEOUT = 240
 
 # 支持的模型名称映射（可扩展）
 SUPPORTED_MODELS = {
@@ -96,6 +97,8 @@ class ModelHttpAction:
         thinking_type: str = 'adaptive',
         json_schema: Optional[Dict] = None,
         desc: str = '【模型调用】',
+        max_retries: int = 3,
+        retry_backoff: float = 2.0,
     ) -> str:
         """
         发送单条用户消息并获取模型回复
@@ -108,6 +111,8 @@ class ModelHttpAction:
             thinking_type: 思考模式，默认 'adaptive'
             json_schema: 结构化输出 JSON Schema（可选）
             desc: 日志描述前缀
+            max_retries: 最大重试次数（默认3次）
+            retry_backoff: 重试退避基数（默认2.0秒）
 
         Returns:
             模型返回的文本内容
@@ -131,6 +136,8 @@ class ModelHttpAction:
             thinking_type=thinking_type,
             json_schema=json_schema,
             desc=desc,
+            max_retries=max_retries,
+            retry_backoff=retry_backoff,
         )
 
     def chat_messages(
@@ -142,6 +149,8 @@ class ModelHttpAction:
         thinking_type: str = 'adaptive',
         json_schema: Optional[Dict] = None,
         desc: str = '【模型调用】',
+        max_retries: int = 3,
+        retry_backoff: float = 2.0,
     ) -> str:
         """
         发送多轮对话消息并获取模型回复
@@ -153,6 +162,8 @@ class ModelHttpAction:
             thinking_type: 思考模式
             json_schema: 结构化输出 JSON Schema
             desc: 日志描述前缀
+            max_retries: 最大重试次数（默认3次）
+            retry_backoff: 重试退避基数（默认2.0秒）
 
         Returns:
             模型返回的文本内容
@@ -189,34 +200,66 @@ class ModelHttpAction:
 
         log.info(f"{desc}请求入参: model={self.model_name}, messages_count={len(messages)}")
 
-        try:
-            response = requests.post(
-                self.url,
-                headers=self.headers,
-                data=json.dumps(data),
-                timeout=self.timeout,
-                verify=True,
-            )
-            log.info(f"{desc}响应状态: {response.status_code}")
+        last_exception = None
+        for attempt in range(max_retries + 1):
+            try:
+                response = requests.post(
+                    self.url,
+                    headers=self.headers,
+                    data=json.dumps(data),
+                    timeout=self.timeout,
+                    verify=True,
+                )
+                log.info(f"{desc}响应状态: {response.status_code}")
 
-            if response.status_code != 200:
-                raise RuntimeError(f'{desc}请求失败，状态码: {response.status_code}，响应: {response.text}')
+                if response.status_code == 200:
+                    resp = json.loads(response.text)
+                    text = ''
+                    for block in resp.get('content', []):
+                        if block.get('type') == 'text':
+                            text = block.get('text', '')
+                            break
 
-            resp = json.loads(response.text)
-            text = ''
-            for block in resp.get('content', []):
-                if block.get('type') == 'text':
-                    text = block.get('text', '')
-                    break
+                    if not text:
+                        raise RuntimeError(f'{desc}模型返回内容为空，响应: {resp}')
 
-            if not text:
-                raise RuntimeError(f'{desc}模型返回内容为空，响应: {resp}')
+                    return text
 
-            return text
+                # 非200状态码处理
+                if response.status_code in (429, 502, 503, 504):
+                    # 需要重试的状态码
+                    if attempt < max_retries:
+                        wait_time = retry_backoff ** attempt
+                        log.warning(
+                            f"{desc}请求失败，状态码: {response.status_code}，"
+                            f"{wait_time}秒后重试（第{attempt + 1}/{max_retries}次）"
+                        )
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        raise RuntimeError(
+                            f'{desc}请求失败，状态码: {response.status_code}，响应: {response.text}')
+                else:
+                    raise RuntimeError(
+                        f'{desc}请求失败，状态码: {response.status_code}，响应: {response.text}')
 
-        except Exception as e:
-            log.error(f'{desc}请求异常: {traceback.format_exc()}')
-            raise
+            except requests.exceptions.RequestException as e:
+                last_exception = e
+                if attempt < max_retries:
+                    wait_time = retry_backoff ** attempt
+                    log.warning(
+                        f"{desc}请求异常，{wait_time}秒后重试（第{attempt + 1}/{max_retries}次）: {e}"
+                    )
+                    time.sleep(wait_time)
+                    continue
+                else:
+                    log.error(f'{desc}请求异常: {traceback.format_exc()}')
+                    raise RuntimeError(f'{desc}请求异常（已重试{max_retries}次）: {e}') from e
+
+        # 理论上不会到达这里，但保险起见
+        if last_exception:
+            raise RuntimeError(f'{desc}请求最终失败: {last_exception}')
+        raise RuntimeError(f'{desc}请求未知错误')
 
     def chat_with_json_output(
         self,

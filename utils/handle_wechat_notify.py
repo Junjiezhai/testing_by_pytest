@@ -417,9 +417,11 @@ def send_end_notice(
     allure_report_url: str,
     elapsed_minutes: float = 0.0,
     webhook_url: str = DEFAULT_WEBHOOK_URL,
+    type_stats: dict = None,
+    response_stats: dict = None,
 ) -> bool:
     """
-    测试执行后发送企微通知（结束通知，带汇总信息）
+    测试执行后发送企微通知（非批量模式，保持原模板）
 
     Args:
         env: 测试环境
@@ -431,24 +433,142 @@ def send_end_notice(
         allure_report_url: Allure 报告 URL
         elapsed_minutes: 执行耗时（分钟）
         webhook_url: 企微 webhook 地址
+        type_stats: 按类型统计 {'single': {...}, 'multi': {...}}
+        response_stats: 响应耗时统计 {'avg': str, 'p90': str, 'p95': str, 'max': str}
 
     Returns:
         发送是否成功
     """
-    extra_lines = [
-        f"断言模式：{assert_mode}",
-        f"用例类型：{case_type}",
-    ]
-    return report_summary(
-        num_successd,
-        num_failed,
-        allure_report_url,
-        env=env,
-        group=group,
-        webhook_url=webhook_url,
-        extra_content='\n'.join(extra_lines),
-        elapsed_minutes=elapsed_minutes,
+    execute_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    total_count = num_successd + num_failed
+    pass_rate = f'{num_successd / total_count * 100:.2f}%' if total_count else '0.00%'
+    elapsed_text = f'执行耗时：{elapsed_minutes:.2f}分钟\n' if elapsed_minutes is not None else ''
+
+    # 构建按类型统计表格
+    type_stats_text = ''
+    if type_stats:
+        single = type_stats.get('single', {})
+        multi = type_stats.get('multi', {})
+        type_stats_text = (
+            f"\n"
+            f"类型 | 通过用例数 | 失败用例数 | 总用例数 | 通过率\n"
+            f"单轮 | {single.get('pass', 0)} | {single.get('fail', 0)} | {single.get('total', 0)} | {single.get('rate', '0.00%')}\n"
+            f"多轮 | {multi.get('pass', 0)} | {multi.get('fail', 0)} | {multi.get('total', 0)} | {multi.get('rate', '0.00%')}\n"
+        )
+
+    # 构建响应耗时统计表格
+    response_stats_text = ''
+    if response_stats:
+        response_stats_text = (
+            f"\n"
+            f"耗时 | 平均 | P90 | P95 | 最大\n"
+            f"响应 | {response_stats.get('avg', 'N/A')} | {response_stats.get('p90', 'N/A')} | {response_stats.get('p95', 'N/A')} | {response_stats.get('max', 'N/A')}\n"
+        )
+
+    content_text = (
+        f"自动化测试执行完成\n"
+        f"时间：{execute_date}\n"
+        f"{elapsed_text}"
+        f"环境：{env} / {group}\n"
+        f"模式：非批量断言\n"
+        f"总览：通过 {num_successd}，失败 {num_failed}，通过率 {pass_rate}\n"
+        f"{type_stats_text}"
+        f"{response_stats_text}"
+        f"\n"
+        f"断言模式：{assert_mode}\n"
+        f"用例类型：{case_type}\n"
+        f"Allure：{allure_report_url}"
     )
+
+    payload = {
+        "msgtype": "text",
+        "text": {
+            "content": content_text,
+        }
+    }
+    return _send(webhook_url, payload)
+
+
+def send_end_notice_batch(
+    env: str,
+    group: str,
+    assert_mode: str,
+    case_type: str,
+    num_successd: int,
+    num_failed: int,
+    allure_report_url: str,
+    elapsed_minutes: float = 0.0,
+    webhook_url: str = DEFAULT_WEBHOOK_URL,
+    batch_summary: dict = None,
+    response_stats: dict = None,
+) -> bool:
+    """
+    测试执行后发送企微通知（批量断言模式专用模板）
+
+    Args:
+        env: 测试环境
+        group: 测试分组
+        assert_mode: 断言模式
+        case_type: 用例类型
+        num_successd: pytest 通过用例数
+        num_failed: pytest 失败用例数
+        allure_report_url: Allure 报告 URL
+        elapsed_minutes: 执行耗时（分钟）
+        webhook_url: 企微 webhook 地址
+        batch_summary: 批量断言结果摘要
+            {'total': int, 'pass_count': int, 'failed_count': int, 'pass_rate': str}
+        response_stats: 响应耗时统计
+            {'avg': str, 'p90': str, 'p95': str, 'max': str}
+
+    Returns:
+        发送是否成功
+    """
+    execute_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    elapsed_text = f'执行耗时：{elapsed_minutes:.2f}分钟\n' if elapsed_minutes is not None else ''
+
+    # 构建批量断言统计文本
+    batch_text = ''
+    if batch_summary:
+        batch_total = batch_summary.get('total', 0)
+        batch_pass = batch_summary.get('pass_count', 0)
+        batch_fail = batch_summary.get('failed_count', 0)
+        batch_rate = batch_summary.get('pass_rate', '0.00%')
+        batch_text = (
+            f"\n"
+            f"【批量断言统计】\n"
+            f"总条数：{batch_total}，通过：{batch_pass}，失败：{batch_fail}，通过率：{batch_rate}\n"
+        )
+
+    # 构建响应耗时统计文本
+    response_stats_text = ''
+    if response_stats:
+        response_stats_text = (
+            f"\n"
+            f"耗时 | 平均 | P90 | P95 | 最大\n"
+            f"响应 | {response_stats.get('avg', 'N/A')} | {response_stats.get('p90', 'N/A')} | {response_stats.get('p95', 'N/A')} | {response_stats.get('max', 'N/A')}\n"
+        )
+
+    content_text = (
+        f"自动化测试执行完成\n"
+        f"时间：{execute_date}\n"
+        f"{elapsed_text}"
+        f"环境：{env} / {group}\n"
+        f"模式：批量断言\n"
+        f"{batch_text}"
+        f"{response_stats_text}"
+        f"\n"
+        f"断言模式：{assert_mode}\n"
+        f"用例类型：{case_type}\n"
+        f"Allure：{allure_report_url}"
+    )
+
+    payload = {
+        "msgtype": "text",
+        "text": {
+            "content": content_text,
+        }
+    }
+    return _send(webhook_url, payload)
 
 
 # ==================== 使用示例 ====================

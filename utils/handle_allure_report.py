@@ -221,18 +221,51 @@ def generate_allure_report(result_dir, report_dir):
     subprocess.run([allure_command, 'generate', result_dir, '-o', report_dir], check=True)
 
 
-def report_summary(num_successd, num_failed, allure_report_url, env=None, group=None, wehook_url=WEHOOK_URL, extra_content='', elapsed_minutes=None):
+def report_summary(num_successd, num_failed, allure_report_url, env=None, group=None, wehook_url=WEHOOK_URL, extra_content='', elapsed_minutes=None, batch_summary=None):
+    """
+    发送企微通知
+
+    :param num_successd: pytest 通过数
+    :param num_failed: pytest 失败数
+    :param allure_report_url: Allure 报告地址
+    :param env: 环境
+    :param group: 分组
+    :param wehook_url: 企微 webhook 地址
+    :param extra_content: 额外内容
+    :param elapsed_minutes: 执行耗时（分钟）
+    :param batch_summary: 批量断言结果摘要（可选）
+        格式：{
+            'total': 总条数,
+            'pass_count': 通过数,
+            'failed_count': 失败数,
+            'pass_rate': 'xx.xx%',
+        }
+    """
     execute_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     total_count = num_successd + num_failed
     pass_rate = f'{num_successd / total_count * 100:.2f}%' if total_count else '0.00%'
     extra_text = f'\n{extra_content}' if extra_content else ''
     elapsed_text = f'执行耗时：{elapsed_minutes:.2f}分钟\n' if elapsed_minutes is not None else ''
+
+    # 构建批量断言统计文本
+    batch_text = ''
+    if batch_summary:
+        batch_total = batch_summary.get('total', 0)
+        batch_pass = batch_summary.get('pass_count', 0)
+        batch_fail = batch_summary.get('failed_count', 0)
+        batch_rate = batch_summary.get('pass_rate', '0.00%')
+        batch_text = (
+            f"\n"
+            f"【批量断言统计】\n"
+            f"总条数：{batch_total}，通过：{batch_pass}，失败：{batch_fail}，通过率：{batch_rate}\n"
+        )
+
     content_text = (
         f"自动化测试执行完成\n"
         f"时间：{execute_date}\n"
         f"{elapsed_text}"
         f"环境：{env} / {group}\n"
-        f"总览：通过 {num_successd}，失败 {num_failed}，通过率 {pass_rate}"
+        f"{batch_text}"
         f"{extra_text}\n"
         f"Allure：{allure_report_url}"
     )
