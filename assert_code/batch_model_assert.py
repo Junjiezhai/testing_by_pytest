@@ -35,13 +35,43 @@
 
 import json
 import os
+import re
 from typing import List, Dict, Optional
 from collections import defaultdict
 
 from assert_code.external_model_judge import ExternalModelJudge
 from assert_code.model_intent_assert import ModelIntentAssert
-from assert_code.batch_assert_strategies import SingleTurnBatchStrategy, MultiTurnBatchStrategy
+from assert_code.batch_assert_strategies import (SingleTurnBatchStrategy, MultiTurnBatchStrategy,
+                                                   PostloanSingleTurnBatchStrategy)
 from utils.handle_log import log
+
+
+def _extract_error_summary(exception: Exception) -> str:
+    """
+    从异常中提取简短的错误摘要，避免将完整的模型响应存入报告。
+
+    规则：
+    1. 网络异常 → 保留状态码和简要描述
+    2. JSON 解析异常 → 保留类型信息
+    3. 其他异常 → 截取前 100 个字符
+    """
+    error_msg = str(exception)
+
+    # 网络异常：提取状态码
+    status_match = re.search(r'状态码[\s:]*(\d+)', error_msg)
+    if status_match:
+        status_code = status_match.group(1)
+        return f"外部模型请求失败（状态码：{status_code}）"
+
+    # JSON 解析异常
+    if 'JSON"""DecodeError' in error_msg or 'json' in error_msg.lower() or '解析' in error_msg:
+        return "外部模型返回结果解析失败"
+
+    # 通用截断（最多 100 字符）
+    if len(error_msg) > 100:
+        return f"{error_msg[:100]}..."
+
+    return error_msg
 
 
 class BatchModelAssert:
@@ -50,23 +80,53 @@ class BatchModelAssert:
     """
 
     def __init__(self, model_name: str = 'deepseek-v4-pro', max_group_size: int = 10,
-                 max_group_size_multi: int = 2):
+                 max_group_size_multi: int = 2, assert_mode: str = 'intent_checklist'):
         """
         初始化批量断言器（一次性注入知识库）
 
         :param model_name: 外部模型名称
         :param max_group_size: 单轮每组最大用例数（控制 prompt 长度）
         :param max_group_size_multi: 多轮每组最大用例数（多轮 prompt 较长，建议设小）
+        :param assert_mode: 断言模式（intent_similarity / intent_checklist / intent_with_post）
         """
+        self.model_name = model_name
         self.max_group_size = max_group_size
         self.max_group_size_multi = max_group_size_multi
-        # 初始化 ExternalModelJudge（注入知识库，只注入一次）
+        self.assert_mode = assert_mode
+        # 初始化默认场景 ExternalModelJudge（信贷知识库，默认配置）
         self.judge = ExternalModelJudge(
             model_name=model_name,
             use_knowledge_base=True,
             inject_knowledge_as_system=True,
         )
-        log.info("【批量断言】BatchModelAssert 初始化完成，知识库已注入")
+        log.info(f"【批量断言】BatchModelAssert 初始化完成（默认配置），assert_mode={assert_mode}")
+
+    def _get_judge(self, is_postloan: bool = False) -> ExternalModelJudge:
+        """
+        获取对应场景的 ExternalModelJudge
+
+        :param is_postloan: 是否为贷后场景
+        :return: ExternalModelJudge 实例
+        """
+        if is_postloan:
+            config_path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                'config', 'postloan_intent_checklist.yaml'
+            )
+            kb_path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                'config', 'postloan_knowledge_base.yaml'
+            )
+            log.info(f"【批量断言】使用贷后专用检查清单配置: {config_path}")
+            log.info(f"【批量断言】使用贷后专用知识库: {kb_path}")
+            return ExternalModelJudge(
+                model_name=self.model_name,
+                config_path=config_path,
+                use_knowledge_base=True,
+                knowledge_file=kb_path,
+                max_tokens=32768,
+            )
+        return self.judge
 
     def batch_evaluate(self, items: List[dict]) -> List[dict]:
         """
@@ -85,25 +145,57 @@ class BatchModelAssert:
 
         log.info(f"【批量断言】开始批量评估，共 {len(items)} 条数据")
 
-        # 按 case_type 分组
-        single_turn_items = [item for item in items if item.get('case_type') == 'single_turn']
-        multi_turn_items = [item for item in items if item.get('case_type') == 'multi_turn']
+        from debug_model_by_pytest import TestConfig
+        # 按 case_type 分组（兼容贷后场景）
+        single_turn_items = [item for item in items if TestConfig.is_single_turn(item.get('case_type', ''))]
+        multi_turn_items = [item for item in items if TestConfig.is_multi_turn(item.get('case_type', ''))]
 
         results = []
 
-        # 单轮：使用 SingleTurnBatchStrategy
+        # 单轮：按场景选择策略（信贷/贷后）
         if single_turn_items:
-            log.info(f"【批量断言】单轮数据 {len(single_turn_items)} 条，使用 SingleTurnBatchStrategy")
-            single_strategy = SingleTurnBatchStrategy(self.judge, self.max_group_size)
+            # 判断场景（信贷 vs 贷后）
+            is_postloan = any(
+                item.get('case_type', '').startswith('postloan')
+                for item in single_turn_items
+            )
+
+            if is_postloan:
+                strategy_class = PostloanSingleTurnBatchStrategy
+                strategy_name = "PostloanSingleTurnBatchStrategy"
+            else:
+                strategy_class = SingleTurnBatchStrategy
+                strategy_name = "SingleTurnBatchStrategy"
+
+            log.info(f"【批量断言】单轮数据 {len(single_turn_items)} 条，使用 {strategy_name}，assert_mode={self.assert_mode}")
+            single_strategy = strategy_class(
+                self._get_judge(is_postloan=is_postloan), self.max_group_size, self.assert_mode
+            )
             # 按意图分组（单轮策略内部处理）
             single_results = single_strategy.evaluate(single_turn_items)
             results.extend(single_results)
             log.info(f"【批量断言】单轮评估完成：{len(single_results)} 条结果")
 
-        # 多轮：使用 MultiTurnBatchStrategy（使用单独的多轮组大小）
+        # 多轮：使用 MultiTurnBatchStrategy / PostloanMultiTurnBatchStrategy（使用单独的多轮组大小）
         if multi_turn_items:
-            log.info(f"【批量断言】多轮数据 {len(multi_turn_items)} 条，使用 MultiTurnBatchStrategy，每组大小 {self.max_group_size_multi}")
-            multi_strategy = MultiTurnBatchStrategy(self.judge, self.max_group_size_multi)
+            # 判断场景：信贷 vs 贷后
+            is_postloan = any(
+                item.get('case_type', '').startswith('postloan')
+                for item in multi_turn_items
+            )
+
+            if is_postloan:
+                from assert_code.postloan_multi_turn_assert import PostloanMultiTurnBatchStrategy
+                strategy_class = PostloanMultiTurnBatchStrategy
+                strategy_name = "PostloanMultiTurnBatchStrategy"
+            else:
+                strategy_class = MultiTurnBatchStrategy
+                strategy_name = "MultiTurnBatchStrategy"
+
+            log.info(f"【批量断言】多轮数据 {len(multi_turn_items)} 条，使用 {strategy_name}，每组大小 {self.max_group_size_multi}")
+            # 多轮策略使用对应场景的 judge（贷后场景不使用信贷知识库）
+            multi_judge = self._get_judge(is_postloan=is_postloan)
+            multi_strategy = strategy_class(multi_judge, self.max_group_size_multi)
             multi_results = multi_strategy.evaluate(multi_turn_items)
             results.extend(multi_results)
             log.info(f"【批量断言】多轮评估完成：{len(multi_results)} 条结果")
@@ -145,17 +237,19 @@ class BatchModelAssert:
             results = self._parse_batch_result(text, chunk_items)
             return results
         except Exception as e:
-            log.error(f"【批量断言】批量评估失败（意图[{intent}]）：{e}")
-            # 返回失败结果
+            error_msg = str(e)
+            # 完整异常信息只记录日志，不保存到报告
+            log.error(f"【批量断言】批量评估失败（意图[{intent}]）：{error_msg}")
+            short_reason = _extract_error_summary(e)
             return [
                 {
                     'case_id': item.get('case_id', ''),
                     'intent': intent,
                     'similarity_score': 0,
                     'is_pass': False,
-                    'reason': f"批量评估失败：{e}",
+                    'reason': short_reason,
                     'evaluated': True,
-                    'error': str(e),
+                    'error': short_reason,
                 }
                 for item in chunk_items
             ]
@@ -312,7 +406,11 @@ JSON 格式如下：
             return parsed_results
 
         except Exception as e:
-            log.error(f"【批量断言】解析批量评估结果失败：{e}，原始文本：{text[:500]}")
+            error_msg = str(e)
+            # 完整异常信息只记录日志，不保存到报告
+            log.error(f"【批量断言】解析批量评估结果失败：{error_msg}")
+            log.debug(f"【批量断言】解析失败的原始文本：{text[:500]}")
+            short_reason = _extract_error_summary(e)
             # 返回失败结果
             return [
                 {
@@ -326,9 +424,9 @@ JSON 格式如下：
                     'similarity_score': 0,
                     'similarity_threshold': item.get('similarity_threshold', 70),
                     'is_pass': False,
-                    'reason': f"解析结果失败：{e}",
+                    'reason': short_reason,
                     'evaluated': True,
-                    'error': str(e),
+                    'error': short_reason,
                 }
                 for item in items
             ]
@@ -1271,18 +1369,62 @@ JSON 格式如下：
 
         # 检查是否有逐轮信息
         if not per_round_asserts:
-            # 兼容旧逻辑：没有逐轮信息时
-            transfer_pass = result.get('transfer_pass', True)
-            asset_pass = result.get('asset_pass', True)
+            # 兼容逻辑：同时支持单轮字段（chat_type_pass/asset_value_pass/biz_ref_id_pass）和多轮字段（transfer_pass/asset_pass）
+            transfer_pass = result.get('transfer_pass')
+            asset_pass = result.get('asset_pass')
+            if transfer_pass is None:
+                # 单轮场景：尝试 chat_type_pass 或 local_chat_type_pass（默认 True）
+                transfer_pass = result.get('chat_type_pass') or result.get('local_chat_type_pass', True)
+            if asset_pass is None:
+                # 单轮场景：尝试 asset_value_pass 或 local_asset_value_pass（默认 True）
+                asset_pass = result.get('asset_value_pass') or result.get('local_asset_value_pass', True)
+                # 同时兼容 biz_ref_id_pass 或 local_biz_ref_id_pass（单轮特有）
+                biz_ref_id_pass = result.get('biz_ref_id_pass') or result.get('local_biz_ref_id_pass', True)
+                # biz_ref_id_pass 也是 asset 断言的一部分
+                asset_pass = asset_pass and biz_ref_id_pass
+
+            # 始终显示本地断言状态（不再隐藏通过的断言）
+            lines = []
+
+            # 判断是否有转人工断言（chatType 不是 NORMAL 才算有转人工断言）
+            chat_type = result.get('chat_type', 'NORMAL')
+            has_transfer_assert = chat_type == 'TRANSFER'
+
+            # 判断是否有 ASSET（优先用 asset_present 字段，没有则根据 asset_value 推断）
+            has_asset = bool(
+                result.get('asset_present', False) or result.get('asset_value', '')
+            )
+
             if transfer_pass and asset_pass:
-                return '<span style="color:#999;">结论：success（无断言）</span>'
-            conclusion = 'fail' if not (transfer_pass and asset_pass) else 'success'
-            conclusion_color = '#f5222d' if conclusion == 'fail' else '#52c41a'
-            lines = [f'<div style="font-weight:bold; color:{conclusion_color};">结论：{conclusion}</div>']
-            if not transfer_pass:
-                lines.append(f'<div>转人工：❌</div>')
-            if not asset_pass:
-                lines.append(f'<div>ASSET：❌</div>')
+                # 全部通过
+                lines.append('<div style="font-weight:bold; color:#52c41a;">结论：success</div>')
+                # 转人工：只有 chatType=TRANSFER 时才展示（NORMAL 是默认状态，不需要展示）
+                if has_transfer_assert:
+                    lines.append(f'<div>转人工：✅</div>')
+                # ASSET：只有模型真的返回了 ASSET 才展示
+                if has_asset:
+                    lines.append(f'<div>ASSET：✅</div>')
+            else:
+                # 有失败
+                lines.append('<div style="font-weight:bold; color:#f5222d;">结论：fail</div>')
+                # 转人工：只有 chatType=TRANSFER 时才展示
+                if has_transfer_assert:
+                    if not transfer_pass:
+                        lines.append(f'<div>转人工：❌</div>')
+                    else:
+                        lines.append(f'<div>转人工：✅</div>')
+                # ASSET：只有模型真的返回了 ASSET 才展示
+                if has_asset:
+                    if not asset_pass:
+                        lines.append(f'<div>ASSET：❌</div>')
+                    else:
+                        lines.append(f'<div>ASSET：✅</div>')
+
+            # 添加失败原因（如果有）
+            failure_reason = result.get('failure_reason', '') or result.get('asset_reason', '')
+            if failure_reason:
+                lines.append(f'<div style="color:#f5222d; font-size:12px;">{failure_reason}</div>')
+
             return '\n'.join(lines)
 
         # 检查是否有任何一轮有断言（转人工或ASSET）

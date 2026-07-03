@@ -63,7 +63,7 @@ class ModelIntentRecognition:
             "input_data": [{
                 "chatId": msg_info.get('chatId') or f"chat_{self.env}_{datetime.now().strftime('%Y%m%d%H%M%S%f')}{random.randint(1, 9)}",
                 "bizLineId": "BL001",
-                "bizSceneKey": "BSK2605181039042973",
+                "bizSceneKey": msg_info.get('biz_scene_key',"BSK2605181039042973"),
                 "bizSceneTypeKey": "BSK2605181039042973",
                 "customerSourceType": "LOGGED_IN_INSTANT_MESSAGING_CUSTOMER",
                 "entityId": "entity_pre_001",

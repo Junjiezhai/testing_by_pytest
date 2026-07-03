@@ -14,15 +14,46 @@ from abc import ABC, abstractmethod
 from typing import List, Dict
 
 from assert_code.external_model_judge import ExternalModelJudge
+from debug_model_by_pytest import TestConfig
 from utils.handle_log import log
+
+
+def _extract_error_summary(exception: Exception) -> str:
+    """
+    从异常中提取简短的错误摘要，避免将完整的模型响应存入报告。
+
+    规则：
+    1. 网络异常 → 保留状态码和简要描述
+    2. JSON 解析异常 → 保留类型信息
+    3. 其他异常 → 截取前 100 个字符
+    """
+    error_msg = str(exception)
+
+    # 网络异常：提取状态码
+    status_match = re.search(r'状态码[\s:]+(\d+)', error_msg)
+    if status_match:
+        status_code = status_match.group(1)
+        return f"外部模型请求失败（状态码：{status_code}）"
+
+    # JSON 解析异常
+    if 'JSON"""DecodeError' in error_msg or 'json' in error_msg.lower() or '解析' in error_msg:
+        return "外部模型返回结果解析失败"
+
+    # 通用截断（最多 100 字符）
+    if len(error_msg) > 100:
+        return f"{error_msg[:100]}..."
+
+    return error_msg
 
 
 class BaseBatchAssertStrategy(ABC):
     """批量断言策略基类"""
 
-    def __init__(self, judge: ExternalModelJudge, max_group_size: int = 10):
+    def __init__(self, judge: ExternalModelJudge, max_group_size: int = 10,
+                 assert_mode: str = 'intent_checklist'):
         self.judge = judge
         self.max_group_size = max_group_size
+        self.assert_mode = assert_mode  # 新增：断言模式
 
     @abstractmethod
     def build_prompt(self, data: List[dict]) -> str:
@@ -64,6 +95,13 @@ class BaseBatchAssertStrategy(ABC):
                 result['transfer_reason'] = local_assert['transfer_reason']
                 result['asset_pass'] = local_assert['asset_pass']
                 result['asset_reason'] = local_assert['asset_reason']
+                # 同步更新 local_assert_detail（用于HTML报告展示）
+                local_assert_detail = result.get('local_assert_detail', {})
+                local_assert_detail['transfer_pass'] = local_assert['transfer_pass']
+                local_assert_detail['asset_pass'] = local_assert['asset_pass']
+                local_assert_detail['transfer_reason'] = local_assert['transfer_reason']
+                local_assert_detail['asset_reason'] = local_assert['asset_reason']
+                result['local_assert_detail'] = local_assert_detail
                 # 最终通过条件 = 外部模型通过 AND 本地断言通过
                 # 注意：单轮使用 'is_pass'，多轮使用 'overall_pass'
                 external_pass = result.get('overall_pass') or result.get('is_pass', False)
@@ -88,8 +126,21 @@ class BaseBatchAssertStrategy(ABC):
         }
         """
         from assert_code.model_intent_assert import ModelIntentAssert
+        from assert_code.postloan_intent_assert import PostloanIntentAssert
 
-        last_output_data = item.get('last_output_data')
+        # 根据场景选择正确的断言类
+        case_type = item.get('case_type', '')
+        is_postloan = case_type.startswith('postloan')
+        IntentAssert = PostloanIntentAssert if is_postloan else ModelIntentAssert
+
+        last_output_data = item.get('last_output_data') or item.get('output_data')
+        # 兼容持久化文件中的 JSON 字符串格式
+        if isinstance(last_output_data, str) and last_output_data:
+            try:
+                import json
+                last_output_data = json.loads(last_output_data)
+            except json.JSONDecodeError:
+                pass
         intent = item.get('intent', '')
 
         if not last_output_data:
@@ -102,27 +153,31 @@ class BaseBatchAssertStrategy(ABC):
 
         # 提取 reply_info（复用非批量模式的逻辑）
         try:
-            reply_info = ModelIntentAssert._extract_reply_contents(output_data=last_output_data)
+            reply_info = IntentAssert._extract_reply_contents(output_data=last_output_data)
         except Exception:
             reply_info = {}
 
-        # 1. 转人工断言
+        # 1. 转人工断言（所有用例都执行）
         try:
-            chat_type_eval = ModelIntentAssert._evaluate_chat_type_result(intent, reply_info)
+            chat_type_eval = IntentAssert._evaluate_chat_type_result(intent, reply_info)
             transfer_pass = chat_type_eval['chat_type_pass']
-            transfer_reason = 'chatType符合预期' if transfer_pass else f"chatType={chat_type_eval['chat_type']}，期望{NORMAL if not chat_type_eval['is_transfer'] else TRANSFER}"
+            transfer_reason = 'chatType符合预期' if transfer_pass else f"chatType={chat_type_eval['chat_type']}，期望{'TRANSFER' if chat_type_eval['is_transfer'] else 'NORMAL'}"
         except Exception as e:
             transfer_pass = True
             transfer_reason = f'转人工断言执行异常：{e}'
 
-        # 2. ASSET断言
-        try:
-            asset_eval = ModelIntentAssert.evaluate_asset_result(intent, reply_info)
-            asset_pass = asset_eval['asset_pass']
-            asset_reason = 'ASSET符合预期' if asset_pass else f"ASSET断言失败：{', '.join(asset_eval.get('asset_failure_reasons', []))}"
-        except Exception as e:
+        # 2. ASSET断言（转人工用例跳过）
+        if chat_type_eval.get('chat_type') != 'TRANSFER':
+            try:
+                asset_eval = IntentAssert.evaluate_asset_result(intent, reply_info)
+                asset_pass = asset_eval['asset_pass']
+                asset_reason = 'ASSET符合预期' if asset_pass else f"ASSET断言失败：{', '.join(asset_eval.get('asset_failure_reasons', []))}"
+            except Exception as e:
+                asset_pass = True
+                asset_reason = f'ASSET断言执行异常：{e}'
+        else:
             asset_pass = True
-            asset_reason = f'ASSET断言执行异常：{e}'
+            asset_reason = '转人工用例跳过ASSET断言'
 
         return {
             'transfer_pass': transfer_pass,
@@ -146,8 +201,11 @@ class BaseBatchAssertStrategy(ABC):
             )
             return self.parse_result(text, chunk)
         except Exception as e:
-            log.error(f"【{self.__class__.__name__}】批量评估失败：{e}")
-            return self._build_fallback_results(chunk, str(e))
+            error_msg = str(e)
+            log.error(f"【{self.__class__.__name__}】批量评估失败：{error_msg}")
+            # 直接从异常提取简短摘要（避免依赖模块级别函数）
+            short_error = _extract_error_summary(e) if '_extract_error_summary' in globals() else error_msg[:100]
+            return self._build_fallback_results(chunk, short_error)
 
     @abstractmethod
     def _build_fallback_results(self, chunk: List[dict], error: str) -> List[dict]:
@@ -157,7 +215,7 @@ class BaseBatchAssertStrategy(ABC):
 
 class SingleTurnBatchStrategy(BaseBatchAssertStrategy):
     """
-    单轮批量评估策略
+    单轮批量评估策略 —— 支持三种模式切换（信贷场景）
 
     评估维度：语义相似度（与现有逻辑保持一致）
     评估方式：逐条评估（按意图分组）
@@ -165,7 +223,19 @@ class SingleTurnBatchStrategy(BaseBatchAssertStrategy):
     """
 
     def build_prompt(self, data: List[dict]) -> str:
-        """构建单轮批量评估 prompt"""
+        """构建单轮批量评估 prompt（根据 assert_mode 分发）"""
+        if self.assert_mode == 'intent_similarity':
+            return self._build_similarity_prompt(data)
+        elif self.assert_mode == 'intent_checklist':
+            return self._build_checklist_prompt(data)
+        elif self.assert_mode == 'intent_with_post':
+            return self._build_with_post_prompt(data)
+        else:
+            log.warning(f"【SingleTurnBatchStrategy】不支持的批量断言模式: {self.assert_mode}，使用默认检查清单模式")
+            return self._build_checklist_prompt(data)
+
+    def _build_similarity_prompt(self, data: List[dict]) -> str:
+        """信贷场景：一致性评分 prompt"""
         # 获取各条数据的知识库内容
         knowledge = ""
         for item in data:
@@ -229,6 +299,77 @@ JSON 格式如下：
 {json.dumps(json_example, ensure_ascii=False, indent=2)}
 """
 
+    def _build_checklist_prompt(self, data: List[dict]) -> str:
+        """信贷场景：细粒度清单 prompt"""
+        # 获取各条数据的知识库内容
+        knowledge = ""
+        for item in data:
+            intent = item.get('intent', 'unknown')
+            if hasattr(self.judge, 'knowledge_base') and self.judge.knowledge_base:
+                intent_rules = self.judge.knowledge_base.get_intent_rules(intent)
+                if intent_rules:
+                    knowledge += f"\n【{intent}】\n{intent_rules}\n"
+
+        # 构建数据条目
+        data_lines = []
+        for idx, item in enumerate(data):
+            data_lines.append(f"### 数据 {idx + 1}")
+            data_lines.append(f"- case_id: {item.get('case_id', '')}")
+            data_lines.append(f"- 用户问题: {item.get('question', '')}")
+            data_lines.append(f"- 标准答案: {item.get('expected_answer', '')}")
+            data_lines.append(f"- 实际回复: {item.get('actual_answer', '')}")
+            data_lines.append(f"- 相似度阈值: {item.get('similarity_threshold', 70)}")
+            data_lines.append(f"- 意图: {item.get('intent', '')}")
+            data_lines.append("")
+
+        # 构建 JSON 示例
+        json_example = {
+            "results": [
+                {
+                    "case_id": item.get('case_id', ''),
+                    "score": 85,
+                    "is_pass": True,
+                    "reason": "语义高度相似，核心信息一致"
+                }
+                for item in data
+            ]
+        }
+
+        return f"""你是一个信贷客服话术质量评估专家。请基于以下领域知识，逐条评估每组数据的语义相似度。
+
+【领域知识】
+{knowledge}
+
+【评分标准】
+- 100 分：语义完全一致，核心信息、结论、意图完全匹配
+- 80-99 分：语义高度相似，核心信息一致，仅在措辞、格式、细节描述上存在微小差异
+- 60-79 分：语义基本相似，核心结论大体一致，但存在部分信息遗漏或偏差
+- 40-59 分：语义部分相似，有部分重叠信息，但核心结论存在明显差异
+- 20-39 分：语义相似度较低，仅有少量相关信息
+- 0-19 分：语义基本不相关或完全无关
+
+注意：
+1. 评分应关注"语义"而非"字面"，即使措辞不同，只要意思一致就应给高分
+2. 必须同时满足领域知识中的结构要求和语气要求
+3. 每条数据独立评估，不受其他数据影响
+
+【待评估数据】
+共 {len(data)} 条：
+
+{chr(10).join(data_lines)}
+
+【返回要求】
+只返回 JSON，不要返回 markdown，不要返回额外解释。
+JSON 格式如下：
+{json.dumps(json_example, ensure_ascii=False, indent=2)}
+"""
+
+    def _build_with_post_prompt(self, data: List[dict]) -> str:
+        """信贷场景：意图+后置操作 prompt"""
+        # 组合模式：先进行语义相似度评估，再叠加后置操作检查
+        # 实际实现中，复用相似度评估 prompt，后置操作在 parse_result 后通过本地规则断言完成
+        return self._build_similarity_prompt(data)
+
     def parse_result(self, text: str, data: List[dict]) -> List[dict]:
         """解析单轮批量评估结果"""
         try:
@@ -289,8 +430,10 @@ JSON 格式如下：
             return parsed_results
 
         except Exception as e:
-            log.error(f"【SingleTurnBatchStrategy】解析结果失败：{e}")
-            return self._build_fallback_results(data, str(e))
+            error_msg = str(e)
+            log.error(f"【SingleTurnBatchStrategy】解析结果失败：{error_msg}")
+            short_error = _extract_error_summary(e)
+            return self._build_fallback_results(data, short_error)
 
     def _build_fallback_results(self, chunk: List[dict], error: str) -> List[dict]:
         """构建单轮失败回退结果"""
@@ -312,6 +455,155 @@ JSON 格式如下：
             }
             for item in chunk
         ]
+
+
+class PostloanSingleTurnBatchStrategy(SingleTurnBatchStrategy):
+    """
+    贷后单轮批量评估策略 —— 支持三种模式切换
+
+    与信贷场景的差异：
+    - 使用贷后专用知识库（postloan_knowledge_base.yaml）
+    - 评分规则更关注催收合规、禁用词、情绪安抚
+    - 细粒度清单包含贷后特有的检查维度（如催收合规性）
+    """
+
+    def _build_similarity_prompt(self, data: List[dict]) -> str:
+        """贷后场景：一致性评分 prompt"""
+        # 获取各条数据的贷后知识库内容
+        knowledge = ""
+        for item in data:
+            intent = item.get('intent', 'unknown')
+            if hasattr(self.judge, 'knowledge_base') and self.judge.knowledge_base:
+                intent_rules = self.judge.knowledge_base.get_intent_rules(intent)
+                if intent_rules:
+                    knowledge += f"\n【{intent}】\n{intent_rules}\n"
+
+        # 构建数据条目
+        data_lines = []
+        for idx, item in enumerate(data):
+            data_lines.append(f"### 数据 {idx + 1}")
+            data_lines.append(f"- case_id: {item.get('case_id', '')}")
+            data_lines.append(f"- 用户问题: {item.get('question', '')}")
+            data_lines.append(f"- 标准答案: {item.get('expected_answer', '')}")
+            data_lines.append(f"- 实际回复: {item.get('actual_answer', '')}")
+            data_lines.append(f"- 相似度阈值: {item.get('similarity_threshold', 70)}")
+            data_lines.append(f"- 意图: {item.get('intent', '')}")
+            data_lines.append("")
+
+        # 构建 JSON 示例
+        json_example = {
+            "results": [
+                {
+                    "case_id": item.get('case_id', ''),
+                    "score": 85,
+                    "is_pass": True,
+                    "reason": "语义高度相似，核心信息一致，催收话术合规"
+                }
+                for item in data
+            ]
+        }
+
+        return f"""你是一个贷后催收话术质量评估专家。请基于以下领域知识，逐条评估每组数据的语义相似度。
+
+【领域知识】
+{knowledge}
+
+【评分标准】（重点关注催收合规性、禁用词、情绪安抚）
+- 100 分：语义完全一致，核心信息、结论、意图完全匹配，且催收话术合规，无禁用词
+- 80-99 分：语义高度相似，核心信息一致，催收话术基本合规
+- 60-79 分：语义基本相似，核心结论大体一致，但存在部分信息遗漏或催收话术合规性问题
+- 40-59 分：语义部分相似，有部分重叠信息，但核心结论存在明显差异或催收话术不合规
+- 20-39 分：语义相似度较低，仅有少量相关信息
+- 0-19 分：语义基本不相关或完全无关
+
+注意：
+1. 评分应关注"语义"而非"字面"，即使措辞不同，只要意思一致就应给高分
+2. 必须同时满足领域知识中的结构要求和语气要求
+3. 催收场景中禁止使用威胁、恐吓、辱骂、泄露、承诺减免、起诉、上门等用语
+4. 每条数据独立评估，不受其他数据影响
+
+【待评估数据】
+共 {len(data)} 条：
+
+{chr(10).join(data_lines)}
+
+【返回要求】
+只返回 JSON，不要返回 markdown，不要返回额外解释。
+JSON 格式如下：
+{json.dumps(json_example, ensure_ascii=False, indent=2)}
+"""
+
+    def _build_checklist_prompt(self, data: List[dict]) -> str:
+        """贷后场景：细粒度清单 prompt"""
+        # 获取各条数据的贷后知识库内容
+        knowledge = ""
+        for item in data:
+            intent = item.get('intent', 'unknown')
+            if hasattr(self.judge, 'knowledge_base') and self.judge.knowledge_base:
+                intent_rules = self.judge.knowledge_base.get_intent_rules(intent)
+                if intent_rules:
+                    knowledge += f"\n【{intent}】\n{intent_rules}\n"
+
+        # 构建数据条目
+        data_lines = []
+        for idx, item in enumerate(data):
+            data_lines.append(f"### 数据 {idx + 1}")
+            data_lines.append(f"- case_id: {item.get('case_id', '')}")
+            data_lines.append(f"- 用户问题: {item.get('question', '')}")
+            data_lines.append(f"- 标准答案: {item.get('expected_answer', '')}")
+            data_lines.append(f"- 实际回复: {item.get('actual_answer', '')}")
+            data_lines.append(f"- 相似度阈值: {item.get('similarity_threshold', 70)}")
+            data_lines.append(f"- 意图: {item.get('intent', '')}")
+            data_lines.append("")
+
+        # 构建 JSON 示例
+        json_example = {
+            "results": [
+                {
+                    "case_id": item.get('case_id', ''),
+                    "score": 85,
+                    "is_pass": True,
+                    "reason": "语义高度相似，核心信息一致，催收话术合规"
+                }
+                for item in data
+            ]
+        }
+
+        return f"""你是一个贷后催收话术质量评估专家。请基于以下领域知识，逐条评估每组数据的语义相似度。
+
+【领域知识】
+{knowledge}
+
+【评分标准】（重点关注催收合规性、禁用词、情绪安抚）
+- 100 分：语义完全一致，核心信息、结论、意图完全匹配，且催收话术合规，无禁用词
+- 80-99 分：语义高度相似，核心信息一致，催收话术基本合规
+- 60-79 分：语义基本相似，核心结论大体一致，但存在部分信息遗漏或催收话术合规性问题
+- 40-59 分：语义部分相似，有部分重叠信息，但核心结论存在明显差异或催收话术不合规
+- 20-39 分：语义相似度较低，仅有少量相关信息
+- 0-19 分：语义基本不相关或完全无关
+
+注意：
+1. 评分应关注"语义"而非"字面"，即使措辞不同，只要意思一致就应给高分
+2. 必须同时满足领域知识中的结构要求和语气要求
+3. 催收场景中禁止使用威胁、恐吓、辱骂、泄露、承诺减免、起诉、上门等用语
+4. 每条数据独立评估，不受其他数据影响
+
+【待评估数据】
+共 {len(data)} 条：
+
+{chr(10).join(data_lines)}
+
+【返回要求】
+只返回 JSON，不要返回 markdown，不要返回额外解释。
+JSON 格式如下：
+{json.dumps(json_example, ensure_ascii=False, indent=2)}
+"""
+
+    def _build_with_post_prompt(self, data: List[dict]) -> str:
+        """贷后场景：意图+后置操作 prompt"""
+        # 组合模式：先进行语义相似度评估，再叠加后置操作检查
+        # 实际实现中，复用相似度评估 prompt，后置操作在 parse_result 后通过本地规则断言完成
+        return self._build_similarity_prompt(data)
 
 
 class MultiTurnBatchStrategy(BaseBatchAssertStrategy):
@@ -612,7 +904,7 @@ JSON 格式如下：
 
                 parsed_results.append({
                     'case_id': case_id,
-                    'case_type': 'multi_turn',
+                    'case_type': TestConfig.CASE_TYPE_MULTI_TURN,
                     'case_desc': case.get('case_desc', ''),
                     'intent': case.get('intent', ''),
                     'overall_score': overall_score,
@@ -629,8 +921,10 @@ JSON 格式如下：
             return parsed_results
 
         except Exception as e:
-            log.error(f"【MultiTurnBatchStrategy】解析结果失败：{e}")
-            return self._build_fallback_results(data, str(e))
+            error_msg = str(e)
+            log.error(f"【MultiTurnBatchStrategy】解析结果失败：{error_msg}")
+            short_error = _extract_error_summary(e)
+            return self._build_fallback_results(data, short_error)
 
     def _build_fallback_results(self, chunk: List[dict], error: str) -> List[dict]:
         """构建多轮失败回退结果"""
@@ -738,6 +1032,7 @@ class MultiTurnEvaluator:
         - 宽松模式：失败比例 <= max_fail_ratio → 整体通过
         """
         from assert_code.model_intent_assert import ModelIntentAssert
+        from assert_code.postloan_intent_assert import PostloanIntentAssert
 
         # 读取配置
         strict_mode = os.getenv('MODEL_LOCAL_ASSERT_STRICT_MODE', '1') == '1'
@@ -748,6 +1043,11 @@ class MultiTurnEvaluator:
         round_outputs = case.get('round_outputs', [])
         last_output_data = case.get('last_output_data')
         case_intent = case.get('intent', '')
+
+        # 根据场景选择正确的断言类
+        case_type = case.get('case_type', '')
+        is_postloan = case_type.startswith('postloan')
+        IntentAssert = PostloanIntentAssert if is_postloan else ModelIntentAssert
 
         # 如果没有逐轮数据，回退到旧逻辑（只检查最后一轮）
         if not round_outputs or not per_round:
@@ -769,12 +1069,12 @@ class MultiTurnEvaluator:
 
             # 提取 reply_info
             try:
-                reply_info = ModelIntentAssert._extract_reply_contents(output_data=output_data)
+                reply_info = IntentAssert._extract_reply_contents(output_data=output_data)
             except Exception:
                 reply_info = {}
 
             # 使用每轮的实际意图，如果提取不到则回退到用例意图
-            actual_intent = ModelIntentAssert.extract_model_intent(output_data=output_data)
+            actual_intent = IntentAssert.extract_model_intent(output_data=output_data)
             intent = actual_intent if actual_intent else case_intent
 
             round_assert = {
@@ -787,9 +1087,9 @@ class MultiTurnEvaluator:
                 'has_asset_assert': False,   # 该轮是否有ASSET断言
             }
 
-            # 1. 转人工断言
+            # 1. 转人工断言（所有用例都执行）
             try:
-                chat_type_eval = ModelIntentAssert._evaluate_chat_type_result(intent, reply_info)
+                chat_type_eval = IntentAssert._evaluate_chat_type_result(intent, reply_info)
                 chat_type = chat_type_eval.get('chat_type', 'NORMAL')
                 if chat_type == 'TRANSFER':
                     # 该轮触发了转人工，记录有断言
@@ -807,24 +1107,25 @@ class MultiTurnEvaluator:
                 # 执行异常时，该轮不记为失败（宽容处理）
                 pass
 
-            # 2. ASSET断言
-            try:
-                asset_eval = ModelIntentAssert.evaluate_asset_result(intent, reply_info)
-                if asset_eval.get('asset_present'):
-                    # 该轮有ASSET数据，记录有断言
-                    round_assert['has_asset_assert'] = True
-                    if not asset_eval['asset_pass']:
-                        failures = asset_eval.get('asset_failure_reasons', [])
-                        reason = ', '.join(failures) if failures else 'ASSET断言失败'
-                        asset_round_results.append({
-                            'round': round_no,
-                            'reason': reason
-                        })
-                        round_assert['asset_pass'] = False
-                        round_assert['asset_reason'] = reason
-            except Exception:
-                # 执行异常时，该轮不记为失败（宽容处理）
-                pass
+            # 2. ASSET断言（转人工用例跳过）
+            if chat_type != 'TRANSFER':
+                try:
+                    asset_eval = IntentAssert.evaluate_asset_result(intent, reply_info)
+                    if asset_eval.get('asset_present'):
+                        # 该轮有ASSET数据，记录有断言
+                        round_assert['has_asset_assert'] = True
+                        if not asset_eval['asset_pass']:
+                            failures = asset_eval.get('asset_failure_reasons', [])
+                            reason = ', '.join(failures) if failures else 'ASSET断言失败'
+                            asset_round_results.append({
+                                'round': round_no,
+                                'reason': reason
+                            })
+                            round_assert['asset_pass'] = False
+                            round_assert['asset_reason'] = reason
+                except Exception:
+                    # 执行异常时，该轮不记为失败（宽容处理）
+                    pass
 
             per_round_asserts.append(round_assert)
 
@@ -868,6 +1169,11 @@ class MultiTurnEvaluator:
     def _evaluate_single_round(cls, case_intent: str, last_output_data) -> dict:
         """旧逻辑：只检查最后一轮（兼容模式）"""
         from assert_code.model_intent_assert import ModelIntentAssert
+        from assert_code.postloan_intent_assert import PostloanIntentAssert
+
+        # 根据 case_intent 判断场景
+        is_postloan = case_intent in PostloanIntentAssert.INTENT_MAP or case_intent in ['贷后协商', '贷后咨询', '非贷后咨询']
+        IntentAssert = PostloanIntentAssert if is_postloan else ModelIntentAssert
 
         if not last_output_data:
             return {
@@ -879,17 +1185,17 @@ class MultiTurnEvaluator:
 
         # 提取 reply_info
         try:
-            reply_info = ModelIntentAssert._extract_reply_contents(output_data=last_output_data)
+            reply_info = IntentAssert._extract_reply_contents(output_data=last_output_data)
         except Exception:
             reply_info = {}
 
         # 从最后一轮实际返回中提取意图
-        actual_intent = ModelIntentAssert.extract_model_intent(output_data=last_output_data)
+        actual_intent = IntentAssert.extract_model_intent(output_data=last_output_data)
         intent = actual_intent if actual_intent else case_intent
 
         # 1. 转人工断言
         try:
-            chat_type_eval = ModelIntentAssert._evaluate_chat_type_result(intent, reply_info)
+            chat_type_eval = IntentAssert._evaluate_chat_type_result(intent, reply_info)
             transfer_pass = chat_type_eval['chat_type_pass']
             if transfer_pass:
                 transfer_reason = 'chatType符合预期'
@@ -902,7 +1208,7 @@ class MultiTurnEvaluator:
 
         # 2. ASSET断言
         try:
-            asset_eval = ModelIntentAssert.evaluate_asset_result(intent, reply_info)
+            asset_eval = IntentAssert.evaluate_asset_result(intent, reply_info)
             asset_pass = asset_eval['asset_pass']
             if asset_pass:
                 asset_reason = 'ASSET符合预期'
@@ -1135,7 +1441,7 @@ JSON 格式如下：
 
                 parsed_results.append({
                     'case_id': case_id,
-                    'case_type': 'multi_turn',
+                    'case_type': TestConfig.CASE_TYPE_MULTI_TURN,
                     'case_desc': case.get('case_desc', ''),
                     'intent': case.get('intent', ''),
                     'overall_score': overall_score,

@@ -453,6 +453,7 @@ class ModelCaseHandler:
         if case_type == 'single_turn':
             # 单轮用例分支：不传递 case_file，让 get_single_turn_cases 自己从环境变量读取单轮用例文件路径
             return cls.get_single_turn_cases(limit=limit)
+
         case_file = cls.prepare_model_cases(target_file=case_file)
         # 优先从缓存获取
         cached = cls._get_cached_cases(case_type, limit, case_file)
@@ -611,13 +612,15 @@ class ModelCaseHandler:
     @classmethod
     def get_case_desc(cls, case_type='multi_turn', limit=None) -> list:
         """
-        获取用例标题列表
+        获取用例ID列表（用于 pytest parametrize 的 ids 参数）
         :param case_type: 用例类型
         :param limit: 限制用例数量
-        :return:
+        :return: 用例ID列表（case_id）
         """
-        case_desc_list = [case['case_desc'] for case in cls.get_model_cases(case_type=case_type, limit=limit)]
-        return case_desc_list if case_desc_list else ['无可执行用例']
+        case_list = cls.get_model_cases(case_type=case_type, limit=limit)
+        if not case_list:
+            return ['无可执行用例']
+        return [case.get('case_id', f'用例-{i}') for i, case in enumerate(case_list)]
 
     @classmethod
     def build_customer_msg(cls, content: str, index: int) -> dict:
@@ -888,8 +891,9 @@ class ModelCaseHandler:
         pass_rows = [row for row in report_rows if row.get('is_pass') is True]
         failed_rows = [row for row in report_rows if row.get('is_pass') is False]
         response_time_list = sorted([float(row.get('response_time', 0)) for row in report_rows])
-        single_rows = [row for row in report_rows if row.get('case_type') == 'single_turn']
-        multi_rows = [row for row in report_rows if row.get('case_type') != 'single_turn']
+        from debug_model_by_pytest import TestConfig
+        single_rows = [row for row in report_rows if TestConfig.is_single_turn(row.get('case_type', ''))]
+        multi_rows = [row for row in report_rows if TestConfig.is_multi_turn(row.get('case_type', ''))]
         multi_failure_dimensions = {}
         multi_failed_cases = []
         for row in multi_rows:

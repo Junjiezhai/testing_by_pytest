@@ -21,9 +21,12 @@ import allure
 import pytest
 
 from assert_code.model_intent_assert import ModelIntentAssert, AssertMode
+from assert_code.postloan_intent_assert import PostloanIntentAssert
+from debug_model_by_pytest import TestConfig
 from script_code.model_intent_recognition_exec import ModelIntentRecognition
 from utils.handle_log import log
 from utils.handle_model_cases import assemble_model_case_params, get_model_case_desc, ModelCaseHandler
+from utils.postloan_model_cases import assemble_postloan_case_params, get_postloan_case_desc
 from utils.handle_allure_report import (
     attach_single_turn_report,
     attach_multi_turn_report,
@@ -37,35 +40,49 @@ from utils.batch_assert_collector import batch_collector
 MODEL_REPORT_ROWS = []
 _MODEL_REPORT_ROWS_LOCK = threading.Lock()
 
-# uid 池加载与分配
-_UID_POOL = None
+# uid 池加载与分配（支持多池子缓存）
+_UID_POOLS = {}
 
 
-def _load_uid_pool() -> list:
-    """从 case_data/credited_uids_pool.csv 加载 uid 池"""
-    global _UID_POOL
-    if _UID_POOL is not None:
-        return _UID_POOL
-    uid_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'case_data', 'credited_uids_pool.csv')
+def _load_uid_pool(pool_name: str = 'credit') -> list:
+    """
+    从 uid 池文件加载 uid
+    :param pool_name: 'credit' 表示信贷池，'postloan' 表示贷后池
+    """
+    if pool_name in _UID_POOLS:
+        return _UID_POOLS[pool_name]
+
+    if pool_name == 'postloan':
+        filename = 'postloan_uids_pool.csv'
+    else:
+        filename = 'credited_uids_pool.csv'
+
+    uid_file = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        'case_data', filename
+    )
     if not os.path.exists(uid_file):
         raise FileNotFoundError(
             f"uid 池文件不存在: {uid_file}\n"
-            f"请确保 case_data/credited_uids_pool.csv 存在且至少包含一行 uid 数据。"
+            f"请确保 case_data/{filename} 存在且至少包含一行 uid 数据。"
         )
     with open(uid_file, 'r', encoding='utf-8-sig') as f:  # utf-8-sig 自动处理 BOM
         reader = csv.DictReader(f)
-        _UID_POOL = [row['uid'].strip() for row in reader if row.get('uid', '').strip()]
-    if not _UID_POOL:
+        _UID_POOLS[pool_name] = [
+            row['uid'].strip() for row in reader
+            if row.get('uid', '').strip()
+        ]
+    if not _UID_POOLS[pool_name]:
         raise ValueError(
             f"uid 池文件内容为空: {uid_file}\n"
             f"请确保 CSV 文件包含至少一个有效的 uid 值。"
         )
-    return _UID_POOL
+    return _UID_POOLS[pool_name]
 
 
-def get_random_uid() -> str:
+def get_random_uid(pool_name: str = 'credit') -> str:
     """从 uid 池中纯随机获取一个 uid（不记录已使用状态）"""
-    pool = _load_uid_pool()
+    pool = _load_uid_pool(pool_name)
     return random.choice(pool)
 
 
@@ -336,7 +353,7 @@ class TestModelIntentRecognition:
             # 收集数据时，同时记录 chat_type 信息（用于批量评估阶段判断是否跳过语义评分）
             batch_collector.add({
                 'case_id': case_info['case_id'],
-                'case_type': 'single_turn',
+                'case_type': TestConfig.CASE_TYPE_SINGLE_TURN,
                 'case_desc': case_info['case_desc'],
                 'intent': case_info['intent'],
                 'question': case_info['question'],
@@ -372,7 +389,7 @@ class TestModelIntentRecognition:
             # 保存完整报告数据到持久化文件（用于后续 Allure 报告和企微通知统计）
             report_row = {
                 'case_id': case_info['case_id'],
-                'case_type': 'single_turn',
+                'case_type': TestConfig.CASE_TYPE_SINGLE_TURN,
                 'case_desc': case_info['case_desc'],
                 'intent': case_info['intent'],
                 'actual_intent': local_eval.get('actual_intent', ''),
@@ -639,7 +656,7 @@ class TestModelIntentRecognition:
 
             batch_collector.add({
                 'case_id': case_info['case_id'],
-                'case_type': 'multi_turn',
+                'case_type': TestConfig.CASE_TYPE_MULTI_TURN,
                 'case_desc': case_info['case_desc'],
                 'intent': case_info['intent'],
                 'similarity_threshold': case_info['similarity_threshold'],
@@ -723,7 +740,7 @@ class TestModelIntentRecognition:
             avg_round_response_time = round(sum_round_response_time / len(round_rows), 3) if round_rows else 0
             report_row = {
                 'case_id': case_info['case_id'],
-                'case_type': 'multi_turn',
+                'case_type': TestConfig.CASE_TYPE_MULTI_TURN,
                 'case_desc': case_info['case_desc'],
                 'intent': case_info['intent'],
                 'actual_intent': '',
@@ -781,7 +798,7 @@ class TestModelIntentRecognition:
 
             case_data = {
                 'case_id': case_info['case_id'],
-                'case_type': 'multi_turn',
+                'case_type': TestConfig.CASE_TYPE_MULTI_TURN,
                 'case_desc': case_info['case_desc'],
                 'intent': case_info['intent'],
                 'similarity_threshold': case_info['similarity_threshold'],
@@ -990,7 +1007,10 @@ class TestModelIntentRecognition:
 
         assert True
 
-    def _run_batch_assert_and_attach(self) -> None:
+    # ============================================================
+    # 原有方法保持不变（信贷场景）
+    # ============================================================
+    def _run_batch_assert_and_attach(self):
         """
         执行批量断言并将结果挂载到 Allure 报告
 
@@ -1011,6 +1031,15 @@ class TestModelIntentRecognition:
                 report_rows = ModelCaseHandler.load_model_rows_from_run()
                 # 将 report_rows 转换为 batch_collector 格式
                 for row in report_rows:
+                    # 多轮数据需要保留 rounds 字段
+                    round_detail = row.get('round_detail')
+                    rounds = []
+                    if round_detail:
+                        try:
+                            import json
+                            rounds = json.loads(round_detail) if isinstance(round_detail, str) else round_detail
+                        except Exception:
+                            rounds = []
                     items.append({
                         'case_id': row.get('case_id', ''),
                         'case_type': row.get('case_type', ''),
@@ -1021,6 +1050,18 @@ class TestModelIntentRecognition:
                         'expected_answer': row.get('expected_answer', ''),
                         'similarity_threshold': row.get('similarity_threshold', 70),
                         'response_time': row.get('response_time', 0),
+                        # 本地断言字段（用于批量断言后合并展示）
+                        'local_chat_type_pass': row.get('chat_type_pass', True),
+                        'local_asset_value_pass': row.get('asset_value_pass', True),
+                        'local_biz_ref_id_pass': row.get('biz_ref_id_pass', True),
+                        'chat_type': row.get('chat_type', 'NORMAL'),
+                        # ASSET 相关字段（用于本地断言展示）
+                        'asset_present': row.get('asset_present', False),
+                        'asset_value': row.get('asset_value', ''),
+                        # 模型返回数据（用于本地断言）
+                        'output_data': row.get('output_data'),
+                        # 多轮特有字段
+                        'rounds': rounds,
                     })
                 log.info(f"【批量断言】从持久化文件加载了 {len(items)} 条数据")
             except Exception as e:
@@ -1034,15 +1075,17 @@ class TestModelIntentRecognition:
 
         try:
             # 初始化批量断言器（一次性注入知识库）
+            assert_mode = os.getenv('MODEL_ASSERT_MODE', 'intent_checklist')
             batch = BatchModelAssert(
                 model_name=os.getenv('MODEL_BATCH_JUDGE_MODEL', 'deepseek-v4-pro'),
                 max_group_size=int(os.getenv('MODEL_BATCH_MAX_GROUP_SIZE', '10')),
                 max_group_size_multi=int(os.getenv('MODEL_BATCH_MAX_GROUP_SIZE_MULTI', '2')),
+                assert_mode=assert_mode,  # 新增：传入断言模式
             )
 
-            # 按 case_type 分组：单轮和多轮分开处理
-            single_turn_items = [item for item in items if item.get('case_type') == 'single_turn']
-            multi_turn_items = [item for item in items if item.get('case_type') == 'multi_turn']
+            # 按 case_type 分组：单轮和多轮分开处理（兼容贷后场景）
+            single_turn_items = [item for item in items if TestConfig.is_single_turn(item.get('case_type', ''))]
+            multi_turn_items = [item for item in items if TestConfig.is_multi_turn(item.get('case_type', ''))]
 
             log.info(f"【批量断言】共 {len(items)} 条数据，单轮 {len(single_turn_items)} 条，多轮 {len(multi_turn_items)} 条")
 
@@ -1126,6 +1169,10 @@ class TestModelIntentRecognition:
 
                     if not final_pass:
                         failure_parts = []
+                        # 保留外部模型返回的详细原因（失败的用例也需要原因）
+                        external_reason = result.get('reason', '')
+                        if external_reason:
+                            failure_parts.append(f"外部模型评估：{external_reason}")
                         if not is_transfer and not result.get('is_pass', False):
                             failure_parts.append(f"语义相似度未通过（评分：{result.get('similarity_score', 0)}）")
                         if not local_chat_type_pass:

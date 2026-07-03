@@ -684,10 +684,16 @@ class ModelIntentAssert:
     # ============================================================
 
     @classmethod
-    def _evaluate_single_turn_checklist(cls, case_info: dict, output_data, response_time: float) -> dict:
+    def _evaluate_single_turn_checklist(cls, case_info: dict, output_data, response_time: float,
+                                        config_path: str = None) -> dict:
         """
         单轮：细粒度清单断言模式
         调用 ExternalModelJudge 进行多维度检查清单评估，并联动混淆矩阵
+
+        :param case_info: 用例信息
+        :param output_data: 模型返回数据
+        :param response_time: 响应耗时
+        :param config_path: 检查清单配置文件路径（None 时使用默认配置）
         """
         reply_info = cls._extract_reply_contents(output_data=output_data)
         actual_answer = cls.extract_model_answer(output_data=output_data)
@@ -699,7 +705,15 @@ class ModelIntentAssert:
         chat_type_eval = cls._evaluate_chat_type_result(case_info['intent'], reply_info)
 
         # 使用 ExternalModelJudge 进行检查清单评估（细粒度清单模式不需要知识库）
-        judge = ExternalModelJudge(model_name='deepseek-v4-pro', max_tokens=8192, use_knowledge_base=False)
+        judge_kwargs = {
+            'model_name': 'deepseek-v4-pro',
+            'max_tokens': 8192,
+            'use_knowledge_base': False,
+        }
+        if config_path:
+            judge_kwargs['config_path'] = config_path
+
+        judge = ExternalModelJudge(**judge_kwargs)
         try:
             checklist_result = judge.evaluate(actual_answer, expected_answer)
             is_pass = checklist_result.verdict.value in ['通过', '条件通过']

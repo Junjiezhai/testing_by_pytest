@@ -371,6 +371,7 @@ class ExternalModelJudge:
         inject_knowledge_as_system: bool = True,
         config_path: Optional[str] = None,
         max_tokens: int = 8192,
+        knowledge_file: Optional[str] = None,
     ):
         """
         初始化检查清单评分器
@@ -387,6 +388,7 @@ class ExternalModelJudge:
                 False: 使用传统方式，提示词更简洁（评估较快，适合调试）
             config_path: YAML 配置文件路径，默认从项目 config/model_intent_checklist.yaml 加载
             max_tokens: 模型最大输出 token 数（默认 8192，防止检查项过多时思考耗尽）
+            knowledge_file: 自定义知识库文件路径（可选，默认加载 config/model_knowledge_base.yaml）
         """
         # 尝试从 YAML 加载配置
         yaml_config = None
@@ -426,7 +428,7 @@ class ExternalModelJudge:
         if use_knowledge_base:
             try:
                 from assert_code.knowledge_base import KnowledgeBase
-                self.knowledge_base = KnowledgeBase()
+                self.knowledge_base = KnowledgeBase(knowledge_file=knowledge_file)
             except Exception as e:
                 log.warning(f"知识库初始化失败，将不使用知识库增强: {e}")
 

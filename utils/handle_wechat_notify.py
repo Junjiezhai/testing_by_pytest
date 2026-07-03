@@ -400,7 +400,7 @@ def send_start_notice(webhook_url: str = DEFAULT_WEBHOOK_URL) -> bool:
     """
     from datetime import datetime
     content_text = (
-        "执行自动化测试中，请勿发版，如果必须发版，请通知jeremyzhai !!!@joelwu(吴荣洲) @haganzhou(周汉耿)\n"
+        "执行自动化测试中，请勿发版，如果必须发版，请通知jeremyzhai !!!\n"
         f"操作人：jeremyzhai\n"
         f"操作时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     )

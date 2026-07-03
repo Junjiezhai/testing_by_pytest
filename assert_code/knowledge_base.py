@@ -42,13 +42,19 @@ class KnowledgeBase:
         return cls._instance
 
     def __init__(self, knowledge_file: str = None):
-        if KnowledgeBase._initialized:
+        # 支持传入不同的知识库路径时重新加载（非单例行为）
+        if knowledge_file and knowledge_file != getattr(self, 'knowledge_file', None):
+            self.knowledge_file = knowledge_file
+            self._knowledge = {}
+            self._load()
+            KnowledgeBase._initialized = True
+        elif KnowledgeBase._initialized:
             return
-
-        self.knowledge_file = knowledge_file or self._default_knowledge_file()
-        self._knowledge = {}
-        self._load()
-        KnowledgeBase._initialized = True
+        else:
+            self.knowledge_file = knowledge_file or self._default_knowledge_file()
+            self._knowledge = {}
+            self._load()
+            KnowledgeBase._initialized = True
 
     @classmethod
     def _default_knowledge_file(cls) -> str:

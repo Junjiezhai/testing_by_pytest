@@ -3,10 +3,11 @@
 # @File    : debug_model_by_pytest.py
 # @Date    : 2026-05-20
 # @Author  : jeremyzhai
-# @Description : 信贷大模型 pytest 调试入口文件
+# @Description : 信贷/贷后大模型 pytest 调试入口文件
 
 使用方式：
-在 main 函数中直接修改 TestConfig 参数，然后在 IDE 内直接运行本文件。
+在 TestConfig 中通过 scene 参数切换场景（'credit' 或 'postloan'），
+参数名通过 credit_ / postloan_ 前缀区分场景，直接修改后运行本文件。
 """
 
 import json
@@ -15,7 +16,7 @@ import sys
 import time
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
+from typing import ClassVar, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.handle_allure_report import build_allure_run_dirs, generate_allure_report, get_case_count, open_allure_report
@@ -26,153 +27,181 @@ from utils.handle_model_cases import ModelCaseHandler
 
 import pytest
 
+# 脚本所在目录（用于计算绝对路径，避免受当前工作目录影响）
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 # ============================================================
-# 测试配置（用户可修改的参数区域）
+# 测试配置（统一配置类，通过参数名和注释区分信贷/贷后）
 # ============================================================
 
 @dataclass
 class TestConfig:
-    """测试配置（直接修改参数后运行本文件）"""
-    # ---- 基础环境配置 ----
+    """统一测试配置 —— 通过 scene 参数切换信贷/贷后场景
+
+    参数命名约定：
+    - credit_xxx  : 仅信贷场景生效的配置
+    - postloan_xxx: 仅贷后场景生效的配置
+    - 无前缀      : 两个场景通用的公共配置
+    """
+
+    # 告诉 pytest 不要收集这个类（避免 PytestCollectionWarning）
+    __test__ = False
+
+    # ---- 场景选择（公共） ----
+    # 'credit'   : 信贷模型意图识别
+    # 'postloan' : 贷后模型意图识别
+    scene: str = 'postloan'
+
+    # ---- 基础环境配置（公共） ----
     env: str = 'pre'                          # 测试环境：'pre' / 'pro'
     group: str = 'default'                     # 测试分组
 
-    # ---- 运行模式配置 ----
-    # 可选值：'single_turn'（单轮）、'multi_turn'（多轮）、'summary'（汇总）、'all'（全部）
-    case_type: str = 'multi_turn'
+    # ---- 运行模式配置（公共） ----
+    # 信贷可选值：'single_turn'（单轮）、'multi_turn'（多轮）、'summary'（汇总）
+    # 贷后固定值：'postloan_single_turn', 'postloan_multi_turn'
+    case_type: str = 'postloan_multi_turn'
 
-    # ---- 用例文件配置 ----
-    single_turn_case_file: str = './case_data/model_single_intent_test_cases.xlsx'
-    multi_turn_case_file: str = './case_data/model_multi_intent_test_cases.xlsx'
+    # ---- case_type 枚举值（新增场景时只需修改这里）----
+    CASE_TYPE_SINGLE_TURN: str = 'single_turn'
+    CASE_TYPE_MULTI_TURN: str = 'multi_turn'
+    CASE_TYPE_POSTLOAN_SINGLE_TURN: str = 'postloan_single_turn'
+    CASE_TYPE_POSTLOAN_MULTI_TURN: str = 'postloan_multi_turn'
 
-    # ---- 断言模式配置 ----
+    # 单轮/多轮分类集合（新增场景时只需修改这里）
+    SINGLE_TURN_TYPES: ClassVar[set] = {'single_turn', 'postloan_single_turn'}
+    MULTI_TURN_TYPES: ClassVar[set] = {'multi_turn', 'postloan_multi_turn'}
+
+    @classmethod
+    def is_single_turn(cls, case_type: str) -> bool:
+        return case_type in cls.SINGLE_TURN_TYPES
+
+    @classmethod
+    def is_multi_turn(cls, case_type: str) -> bool:
+        return case_type in cls.MULTI_TURN_TYPES
+
+    # ==== 信贷：用例文件配置 ====
+    credit_single_turn_case_file: str = './case_data/model_single_intent_test_cases.xlsx'
+    credit_multi_turn_case_file: str = './case_data/model_multi_intent_test_cases.xlsx'
+
+    # ==== 贷后：用例文件配置（目前仅支持单轮） ====
+    postloan_single_turn_case_file: str = './case_data/postloan_single_intent_test_cases.xlsx'
+    postloan_multi_turn_case_file: str = './case_data/postloan_multi_intent_test_cases.xlsx'
+
+    # ---- 用例数量限制（公共） ----
+    # None 表示全部；调试时建议先跑 1 条
+    single_turn_limit: Optional[int] = None  # 单轮用例限制（信贷/贷后通用）
+    multi_turn_limit: Optional[int] = 1  # 信贷多轮：多轮用例限制（仅信贷场景生效）
+    postloan_multi_turn_limit: Optional[int] = None  # 贷后多轮：多轮用例限制（仅贷后场景生效）
+
+    # ==== 信贷：多轮对话批量评估通过阈值 ====
+    multi_turn_pass_threshold: int = 70  # 信贷多轮对话外部模型评估的通过分数线（0~100）
+
+    # ==== 贷后：多轮对话批量评估通过阈值 ====
+    postloan_multi_turn_pass_threshold: int = 70  # 贷后多轮对话外部模型评估的通过分数线（0~100）
+
+    # ---- 断言模式配置（公共） ----
     # 可选值：'intent_similarity'（一致性评分）、'intent_checklist'（细粒度清单）、'intent_with_post'（组合断言）
     assert_mode: str = 'intent_checklist'
 
-    # ---- 知识库注入配置 ----
-    # 是否将完整知识库注入系统提示词（评估更精准但 Token 消耗高）
+    # ---- 知识库注入配置（公共） ----
     # True  : 注入完整知识库到系统提示词（默认，推荐正式测试）
     # False : 不注入系统提示词，使用传统简洁提示词（推荐调试，执行更快）
     inject_knowledge_as_system: bool = True
 
-    # ---- 批量断言配置 ----
-    # 批量断言：跑完全部用例后汇总结果，一次性注入知识库做批量评估（大幅降低 Token 消耗）
-    # True  : 启用批量断言模式（测试阶段只调用信贷模型，断言在 session finish 中批量执行）
-    # False : 逐条断言模式（默认，当前行为，每条用例执行后实时调用外部模型断言）
-    # 注意：批量模式下，pytest 的通过/失败只反映接口调用结果，真实语义断言结果在 Allure 报告中查看
+    # ---- 批量断言配置（公共） ----
+    # True  : 启用批量断言模式（测试阶段只调用模型，断言在 session finish 中批量执行）
+    # False : 逐条断言模式（默认，每条用例执行后实时调用外部模型断言）
     enable_batch_assert: bool = True
+    batch_max_group_size: int = 5              # 单轮每组最大用例数（控制单次 prompt 长度）
+    batch_max_group_size_multi: int = 1         # 信贷多轮：每组最大用例数（多轮 prompt 较长，建议设小）
+    batch_judge_model: str = 'deepseek-v4-pro'  # 批量断言使用的外部模型名称
 
-    # 批量模式下，每组最大用例数（控制单次 prompt 长度，防止超出模型 token 限制）
-    # 建议值：5~15；值越小单次请求越快，但总请求次数会增加
-    batch_max_group_size: int = 5
+    # ---- 并发配置（公共） ----
+    parallel_workers: int = 1                  # pytest-xdist 并发工作进程数
 
-    # 多轮对话批量模式下，每组最大用例数（多轮 prompt 较长，建议设小一些）
-    # 建议值：1~3；值越小单次请求越快，但总请求次数会增加
-    batch_max_group_size_multi: int = 1
+    # ---- 限流配置（公共） ----
+    enable_rate_limiter: bool = True             # True: 保护下游服务；False: 调试时关闭加速
+    model_rpm: float = 15                        # 每分钟请求数（RPM）
+    model_burst: int = 3                         # 突发令牌数
 
-    # 批量断言使用的外部模型名称（用于语义相似度评估）
-    # 可选值：'deepseek-v4-pro'（默认，推荐）
-    batch_judge_model: str = 'deepseek-v4-pro'#'deepseek-v4-pro'
+    # ==== 信贷：多轮本地断言配置 ====
+    local_assert_strict_mode: bool = True          # True=一票否决；False=宽松模式
+    local_assert_max_fail_ratio: float = 0.0      # 宽松模式下允许的最大失败轮次比例
+    local_assert_per_round: bool = True            # True=逐轮检查；False=只检查最后一轮
 
-    # ---- 并发配置 ----
-    # pytest-xdist 并发工作进程数；IDE 调试建议设为 1，避免并行断点混乱
-    parallel_workers: int = 1
-
-    # ---- 限流配置 ----
-    # 是否启用模型请求限流（保护下游信贷模型服务）
-    # True  : 启用限流（推荐正式测试或模型负载较高时启用）
-    # False : 关闭限流（默认，调试时关闭可加速执行）
-    enable_rate_limiter: bool = True
-    # 模型请求限流速率（每分钟请求数，RPM），enable_rate_limiter=True 时生效
-    # 建议值：30 ~ 120；值越小对模型保护越强，但执行总时长会增加
-    model_rpm: float = 15
-    # 突发令牌数（允许短时的突发请求数），建议值：2 ~ 10
-    model_burst: int = 3
-
-    # ---- 用例数量限制 ----
-    # None 表示全部；调试时建议先跑 1 条
-    single_turn_limit: Optional[int] = None
-    multi_turn_limit: Optional[int] = 1
-
-    # ---- pytest 过滤 ----
-    # 指定 pytest -k 过滤，例如 'MIR_0001'；None 表示不过滤
-    keyword: Optional[str] = None
-
-    # ---- Allure 配置 ----
-    # 是否在测试结束后启动 allure serve；IDE 调试建议 False，避免进程阻塞
-    serve_allure: bool = True
-
-    # ---- 企微通知配置 ----
-    # 是否发送企微测试报告通知（调试时可设为 False，避免频繁打扰）
-    send_wechat_notice: bool = False
-    # 企微 Webhook 地址（默认使用测试群，可替换为业务群）
-    wechat_webhook_url: str = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=33b27e52-f5ab-4690-a62c-e8d1e3ce1a67'
-
-    # ---- 多轮对话批量评估通过阈值 ----
-    # 多轮对话外部模型评估的通过分数线（0~100），默认70分
-    # 低于此分数视为评估未通过
-    multi_turn_pass_threshold: int = 70
-
-    # ---- 多轮本地断言配置 ----
-    # 本地断言严格模式：
-    # True  : 一票否决（任意一轮 ASSET/转人工失败，整体失败）—— 推荐生产环境
-    # False : 宽松模式（允许部分轮次失败，整体仍算通过）
-    local_assert_strict_mode: bool = True
-    # 宽松模式下，允许的最大失败轮次比例（0.0 ~ 1.0，仅在 strict_mode=False 时生效）
-    local_assert_max_fail_ratio: float = 0.0
-    # 是否启用逐轮本地断言（True=逐轮检查，False=只检查最后一轮）
-    local_assert_per_round: bool = True
-
-    # ---- 多轮增强评估配置 ----
-    # 是否启用多轮增强评估（LLM Judge + 状态转移验证 + 信息一致性检查）
+    # ==== 信贷：多轮增强评估配置 ====
     # True  : 启用增强评估（增加 Token 消耗，但评估维度更完整）
     # False : 关闭增强评估（默认，不影响主流程断言）
     enable_enhanced_multi_turn_eval: bool = False
-    # 增强评估使用的 LLM Judge 模型名称
     enhanced_eval_llm_judge_model: str = 'kimi-k2.6'
-    # 增强评估 LLM Judge 开关
     enhanced_eval_enable_llm_judge: bool = True
-    # 增强评估状态转移验证开关
     enhanced_eval_enable_state_validation: bool = True
-    # 增强评估信息一致性检查开关
     enhanced_eval_enable_consistency_check: bool = True
-    # 状态转移验证模式：'strict'（严格）/ 'lenient'（宽松）/ 'category'（分类）
-    enhanced_eval_state_validation_mode: str = 'strict'
+    enhanced_eval_state_validation_mode: str = 'strict'  # 'strict'（严格）/ 'lenient'（宽松）/ 'category'（分类）
+
+    # ---- pytest 指定用例（公共） ----
+    keyword: Optional[str] = None #'INTENT-RC-'               # 指定用例 ，例如 'MIR_0001'
+
+    # ---- Allure 配置（公共） ----
+    serve_allure: bool = True                      # False: IDE 调试避免进程阻塞
+
+    # ---- 企微通知开关（公共） ----
+    send_wechat_notice: bool = True
+
+    # ==== 信贷：企微通知配置 ====
+    credit_wechat_webhook_url: str = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=33b27e52-f5ab-4690-a62c-e8d1e3ce1a67'
+
+    # ==== 贷后：企微通知配置 ====
+    postloan_wechat_webhook_url: str = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=3e5af0ab-360b-4007-aed1-fd42263147b3'
+
+    @property
+    def current_webhook_url(self) -> str:
+        """根据当前场景返回对应的企微 Webhook URL"""
+        return self.credit_wechat_webhook_url if self.scene == 'credit' else self.postloan_wechat_webhook_url
 
     def to_env_dict(self) -> dict:
-        """将配置转换为环境变量字典"""
-        return {
-            'MODEL_SINGLE_TURN_LIMIT': 'None' if self.single_turn_limit is None else str(self.single_turn_limit),
-            'MODEL_MULTI_TURN_LIMIT': 'None' if self.multi_turn_limit is None else str(self.multi_turn_limit),
+        """将配置转换为环境变量字典（根据 scene 自动切换环境变量名）"""
+        env = {
+            'MODEL_SCENE': self.scene,
             'MODEL_ASSERT_MODE': self.assert_mode,
-    'MODEL_INJECT_KNOWLEDGE_AS_SYSTEM': '1' if self.inject_knowledge_as_system else '0',
-            # 多轮增强评估配置
-            'MODEL_ENHANCED_MULTI_TURN_EVAL': '1' if self.enable_enhanced_multi_turn_eval else '0',
-            'MODEL_ENHANCED_LLM_JUDGE_MODEL': self.enhanced_eval_llm_judge_model,
-            'MODEL_ENHANCED_ENABLE_LLM_JUDGE': '1' if self.enhanced_eval_enable_llm_judge else '0',
-            'MODEL_ENHANCED_ENABLE_STATE_VALIDATION': '1' if self.enhanced_eval_enable_state_validation else '0',
-            'MODEL_ENHANCED_ENABLE_CONSISTENCY_CHECK': '1' if self.enhanced_eval_enable_consistency_check else '0',
-            'MODEL_ENHANCED_STATE_VALIDATION_MODE': self.enhanced_eval_state_validation_mode,
-            # 批量断言配置
+            'MODEL_INJECT_KNOWLEDGE_AS_SYSTEM': '1' if self.inject_knowledge_as_system else '0',
             'MODEL_BATCH_ASSERT': '1' if self.enable_batch_assert else '0',
             'MODEL_BATCH_MAX_GROUP_SIZE': str(self.batch_max_group_size),
-            'MODEL_BATCH_MAX_GROUP_SIZE_MULTI': str(self.batch_max_group_size_multi),
             'MODEL_BATCH_JUDGE_MODEL': self.batch_judge_model,
-            # 多轮对话评估阈值配置
-            'MODEL_MULTI_TURN_PASS_THRESHOLD': str(self.multi_turn_pass_threshold),
-            # 多轮本地断言配置
-            'MODEL_LOCAL_ASSERT_STRICT_MODE': '1' if self.local_assert_strict_mode else '0',
-            'MODEL_LOCAL_ASSERT_MAX_FAIL_RATIO': str(self.local_assert_max_fail_ratio),
-            'MODEL_LOCAL_ASSERT_PER_ROUND': '1' if self.local_assert_per_round else '0',
-            # 限流配置
             'MODEL_RPM_ENABLE': '1' if self.enable_rate_limiter else '0',
             'MODEL_RPM': str(self.model_rpm),
             'MODEL_BURST': str(self.model_burst),
-            # 用例文件路径配置
-            'MODEL_SINGLE_TURN_CASE_FILE': os.path.abspath(self.single_turn_case_file),
-            'MODEL_MULTI_TURN_CASE_FILE': os.path.abspath(self.multi_turn_case_file),
         }
+
+        if self.scene == 'credit':
+            env.update({
+                'MODEL_SINGLE_TURN_LIMIT': 'None' if self.single_turn_limit is None else str(self.single_turn_limit),
+                'MODEL_MULTI_TURN_LIMIT': 'None' if self.multi_turn_limit is None else str(self.multi_turn_limit),
+                'MODEL_BATCH_MAX_GROUP_SIZE_MULTI': str(self.batch_max_group_size_multi),
+                'MODEL_MULTI_TURN_PASS_THRESHOLD': str(self.multi_turn_pass_threshold),
+                'MODEL_LOCAL_ASSERT_STRICT_MODE': '1' if self.local_assert_strict_mode else '0',
+                'MODEL_LOCAL_ASSERT_MAX_FAIL_RATIO': str(self.local_assert_max_fail_ratio),
+                'MODEL_LOCAL_ASSERT_PER_ROUND': '1' if self.local_assert_per_round else '0',
+                'MODEL_ENHANCED_MULTI_TURN_EVAL': '1' if self.enable_enhanced_multi_turn_eval else '0',
+                'MODEL_ENHANCED_LLM_JUDGE_MODEL': self.enhanced_eval_llm_judge_model,
+                'MODEL_ENHANCED_ENABLE_LLM_JUDGE': '1' if self.enhanced_eval_enable_llm_judge else '0',
+                'MODEL_ENHANCED_ENABLE_STATE_VALIDATION': '1' if self.enhanced_eval_enable_state_validation else '0',
+                'MODEL_ENHANCED_ENABLE_CONSISTENCY_CHECK': '1' if self.enhanced_eval_enable_consistency_check else '0',
+                'MODEL_ENHANCED_STATE_VALIDATION_MODE': self.enhanced_eval_state_validation_mode,
+                'MODEL_SINGLE_TURN_CASE_FILE': os.path.normpath(os.path.join(_SCRIPT_DIR, self.credit_single_turn_case_file)),
+                'MODEL_MULTI_TURN_CASE_FILE': os.path.normpath(os.path.join(_SCRIPT_DIR, self.credit_multi_turn_case_file)),
+            })
+        else:  # postloan
+            env.update({
+                'POSTLOAN_SINGLE_TURN_LIMIT': 'None' if self.single_turn_limit is None else str(self.single_turn_limit),
+                'POSTLOAN_MULTI_TURN_LIMIT': 'None' if self.postloan_multi_turn_limit is None else str(self.postloan_multi_turn_limit),
+                'MODEL_POSTLOAN_MULTI_TURN_PASS_THRESHOLD': str(self.postloan_multi_turn_pass_threshold),
+                'MODEL_SINGLE_TURN_CASE_FILE': os.path.normpath(os.path.join(_SCRIPT_DIR, self.postloan_single_turn_case_file)),
+                'MODEL_MULTI_TURN_CASE_FILE': os.path.normpath(os.path.join(_SCRIPT_DIR, self.postloan_multi_turn_case_file)),
+            })
+
+        return env
 
     def apply_env(self):
         """将配置应用到环境变量"""
@@ -180,18 +209,25 @@ class TestConfig:
             os.environ[key] = value
 
     def __str__(self) -> str:
-        return (
-            f"环境: {self.env}, 分组: {self.group}, "
-            f"用例类型: {self.case_type}, 断言模式: {self.assert_mode}, "
+        parts = [
+            f"场景: {self.scene}",
+            f"环境: {self.env}",
+            f"分组: {self.group}",
+            f"用例类型: {self.case_type}",
+            f"断言模式: {self.assert_mode}",
             f"批量断言: {'开启' if self.enable_batch_assert else '关闭'} "
-            f"(单轮组大小={self.batch_max_group_size}, 多轮组大小={self.batch_max_group_size_multi}), "
+            f"(单轮组大小={self.batch_max_group_size}, 模型: {self.batch_judge_model})",
             f"限流: {'开启' if self.enable_rate_limiter else '关闭'} "
-            f"({self.model_rpm}RPM/{self.model_burst}burst), "
-            f"并发数: {self.parallel_workers}, "
-            f"单轮限制: {self.single_turn_limit if self.single_turn_limit is not None else '全部'}, "
-            f"多轮限制: {self.multi_turn_limit if self.multi_turn_limit is not None else '全部'}, "
-            f"增强评估: {'开启' if self.enable_enhanced_multi_turn_eval else '关闭'}"
-        )
+            f"({self.model_rpm}RPM/{self.model_burst}burst)",
+            f"并发数: {self.parallel_workers}",
+            f"单轮限制: {self.single_turn_limit if self.single_turn_limit is not None else '全部'}",
+        ]
+
+        if self.scene == 'credit':
+            parts.append(f"多轮限制: {self.multi_turn_limit if self.multi_turn_limit is not None else '全部'}")
+            parts.append(f"增强评估: {'开启' if self.enable_enhanced_multi_turn_eval else '关闭'}")
+
+        return ", ".join(parts)
 
 
 # ============================================================
@@ -199,6 +235,14 @@ class TestConfig:
 # ============================================================
 
 TEST_FILE = './test_cases/test_model_intent_recognition.py'
+TEST_FILE_POSTLOAN = './test_cases/test_postloan.py'
+
+
+def _get_test_file(config: TestConfig) -> str:
+    """根据场景选择对应的测试文件"""
+    if config.scene == 'postloan':
+        return TEST_FILE_POSTLOAN
+    return TEST_FILE
 
 
 def _set_test_config(env='pre', group='default'):
@@ -213,20 +257,26 @@ def _set_test_config(env='pre', group='default'):
 def _build_pytest_args(config: TestConfig) -> list:
     """
     构建 pytest 执行参数
-
-    Args:
-        config: 测试配置对象
-
-    Returns:
-        pytest 命令行参数列表
     """
     keyword_map = {
         'single_turn': 'test_single_turn_intent_recognition or test_model_summary_report',
         'multi_turn': 'test_multi_turn_dialog_consistency or test_model_summary_report',
-        'summary': 'test_model_summary_report'
+        'summary': 'test_model_summary_report',
+        'postloan_single_turn': 'test_postloan_single_turn_intent_recognition or test_postloan_summary_report',
+        'postloan_multi_turn': 'test_postloan_multi_turn_dialog_consistency or test_postloan_summary_report',
     }
     selected_keyword = config.keyword or keyword_map.get(config.case_type)
-    pytest_args = [TEST_FILE]
+
+    # 当用户自定义 keyword 时，需要确保 summary 方法也能被收集（用于触发批量断言和挂载报告）
+    if config.keyword and config.case_type:
+        if config.case_type == 'postloan_single_turn':
+            selected_keyword = f"({config.keyword}) or test_postloan_summary_report"
+        elif config.case_type == 'summary':
+            selected_keyword = config.keyword
+        else:
+            selected_keyword = f"({config.keyword}) or test_model_summary_report"
+
+    pytest_args = [_get_test_file(config)]
     if selected_keyword:
         pytest_args.extend(['-k', selected_keyword])
     pytest_args.extend(['-n', str(config.parallel_workers)])
@@ -237,19 +287,13 @@ def _build_pytest_args(config: TestConfig) -> list:
 def _calc_type_stats(report_rows: list) -> dict:
     """
     计算按类型统计（单轮/多轮）
-
-    :param report_rows: 报告行列表
-    :return: {
-        'single': {'pass': int, 'fail': int, 'total': int, 'rate': str},
-        'multi': {'pass': int, 'fail': int, 'total': int, 'rate': str},
-    }
     """
     if not report_rows:
         return {'single': {'pass': 0, 'fail': 0, 'total': 0, 'rate': '0.00%'},
                 'multi': {'pass': 0, 'fail': 0, 'total': 0, 'rate': '0.00%'}}
 
-    single_rows = [r for r in report_rows if r.get('case_type') == 'single_turn']
-    multi_rows = [r for r in report_rows if r.get('case_type') == 'multi_turn']
+    single_rows = [r for r in report_rows if TestConfig.is_single_turn(r.get('case_type', ''))]
+    multi_rows = [r for r in report_rows if TestConfig.is_multi_turn(r.get('case_type', ''))]
 
     single_pass = sum(1 for r in single_rows if r.get('is_pass') is True)
     single_fail = len(single_rows) - single_pass
@@ -270,14 +314,6 @@ def _calc_type_stats(report_rows: list) -> dict:
 def _calc_response_stats(report_rows: list) -> dict:
     """
     计算响应耗时统计
-
-    :param report_rows: 报告行列表
-    :return: {
-        'avg': str,   # 平均耗时
-        'p90': str,   # P90
-        'p95': str,   # P95
-        'max': str,   # 最大耗时
-    }
     """
     if not report_rows:
         return {'avg': 'N/A', 'p90': 'N/A', 'p95': 'N/A', 'max': 'N/A'}
@@ -302,32 +338,19 @@ def _calc_response_stats(report_rows: list) -> dict:
 
 
 # ============================================================
-# 主入口
+# 公共运行逻辑（根据 scene 自动适配场景）
 # ============================================================
 
-def main():
+def _run_tests(config: TestConfig, title: str):
     """
-    信贷大模型 pytest 调试执行器主入口
-    使用方式：直接修改 TestConfig 参数后运行本文件
+    公共测试运行逻辑 — 根据 config.scene 自动适配信贷/贷后场景
     """
-    # ===================================================================
-    # 【IDE 调试参数：直接修改 TestConfig 即可】
-    # ===================================================================
-    config = TestConfig(
-        # 示例：只跑单轮，一致性评分模式
-        # case_type='single_turn',
-        # assert_mode='intent_similarity',
-        # single_turn_limit=5,
-        # parallel_workers=1,
-    )
-    # ===================================================================
-
     os.environ['PYTHONIOENCODING'] = 'utf-8'
 
     start_time = time.time()
 
     log.info('=' * 80)
-    log.info('信贷大模型 pytest 调试执行器')
+    log.info(f'{title} pytest 调试执行器')
     log.info(f'配置: {config}')
     log.info('=' * 80)
 
@@ -342,11 +365,11 @@ def main():
     result_dir, report_dir = build_allure_run_dirs()
     pytest_args = _build_pytest_args(config)
     pytest_args.extend(['--alluredir', result_dir])
-    # 清理模式：如需每次覆盖历史报告，解除下面一行注释
     pytest_args.append('--clean-alluredir')
 
     log.info('-' * 80)
     log.info('当前测试配置:')
+    log.info(f"  场景        : {config.scene}")
     log.info(f"  环境 (env)  : {config.env}")
     log.info(f"  分组 (group) : {config.group}")
     log.info(f"  用例类型    : {config.case_type}")
@@ -354,16 +377,50 @@ def main():
     log.info(f"  批量断言    : {'开启' if config.enable_batch_assert else '关闭'} (每组 {config.batch_max_group_size} 条, 模型: {config.batch_judge_model})")
     log.info(f"  限流控制    : {'开启' if config.enable_rate_limiter else '关闭'} (RPM={config.model_rpm}, burst={config.model_burst})")
     log.info(f"  并发工作数  : {config.parallel_workers}")
-    log.info(f"  单轮限制    : {config.single_turn_limit if config.single_turn_limit is not None else '全部'}")
-    log.info(f"  多轮限制    : {config.multi_turn_limit if config.multi_turn_limit is not None else '全部'}")
+
+    # ---- 用例文件配置（根据 case_type 针对性打印） ----
+    is_single_turn = TestConfig.is_single_turn(config.case_type)
+    is_multi_turn = TestConfig.is_multi_turn(config.case_type)
+
+    if config.scene == 'credit':
+        if is_single_turn:
+            log.info(f"  单轮用例文件: {config.credit_single_turn_case_file}")
+        elif is_multi_turn:
+            log.info(f"  多轮用例文件: {config.credit_multi_turn_case_file}")
+        else:
+            log.info(f"  单轮用例文件: {config.credit_single_turn_case_file}")
+            log.info(f"  多轮用例文件: {config.credit_multi_turn_case_file}")
+    else:
+        if is_single_turn:
+            log.info(f"  单轮用例文件: {config.postloan_single_turn_case_file}")
+        elif is_multi_turn:
+            log.info(f"  多轮用例文件: {config.postloan_multi_turn_case_file}")
+        else:
+            log.info(f"  单轮用例文件: {config.postloan_single_turn_case_file}")
+            log.info(f"  多轮用例文件: {config.postloan_multi_turn_case_file}")
+
+    # ---- 用例数量限制配置 ----
+    if is_single_turn:
+        log.info(f"  单轮限制    : {config.single_turn_limit if config.single_turn_limit is not None else '全部'}")
+    elif is_multi_turn:
+        if config.scene == 'credit':
+            log.info(f"  多轮限制    : {config.multi_turn_limit if config.multi_turn_limit is not None else '全部'}")
+        else:
+            log.info(f"  多轮限制    : {config.postloan_multi_turn_limit if config.postloan_multi_turn_limit is not None else '全部'}")
+    else:
+        log.info(f"  单轮限制    : {config.single_turn_limit if config.single_turn_limit is not None else '全部'}")
+        if config.scene == 'credit':
+            log.info(f"  多轮限制    : {config.multi_turn_limit if config.multi_turn_limit is not None else '全部'}")
+        else:
+            log.info(f"  多轮限制    : {config.postloan_multi_turn_limit if config.postloan_multi_turn_limit is not None else '全部'}")
+
     log.info(f"  keyword     : {config.keyword if config.keyword else '(按用例类型自动选择)'}")
     log.info(f"  pytest参数  : {pytest_args}")
     log.info('-' * 80)
 
     # 根据配置决定是否发送企微通知
     if config.send_wechat_notice:
-        send_start_notice(webhook_url=config.wechat_webhook_url)
-        pass
+        send_start_notice(webhook_url=config.current_webhook_url)
     else:
         log.info('已跳过企微开始通知（send_wechat_notice=False）')
 
@@ -378,24 +435,30 @@ def main():
     log.info('正在聚合本轮模型测试结果...')
     report_rows = ModelCaseHandler.load_model_rows_from_run()
     if report_rows:
-        ModelCaseHandler.save_model_run_reports(report_rows)
-        log.info(f'本轮聚合完成：{len(report_rows)} 条用例')
+        # 根据场景筛选报告行
+        if config.scene == 'postloan':
+            postloan_rows = [r for r in report_rows if TestConfig.is_single_turn(r.get('case_type', ''))]
+            if postloan_rows:
+                ModelCaseHandler.save_model_run_reports(postloan_rows)
+                log.info(f'本轮贷后聚合完成：{len(postloan_rows)} 条用例')
+            else:
+                log.info('本轮无贷后模型测试结果')
+        else:
+            ModelCaseHandler.save_model_run_reports(report_rows)
+            log.info(f'本轮聚合完成：{len(report_rows)} 条用例')
     else:
         log.info('本轮无模型测试结果')
 
     # 根据配置决定是否发送企微通知
     if config.send_wechat_notice:
-        # 批量模式：使用批量断言专用模板
+        # 批量模式：使用批量断言专用通知（信贷 + 贷后场景通用）
         if config.enable_batch_assert:
-            # 批量模式下，读取所有进程生成的批量断言结果文件
             batch_summary = None
             try:
-                import json
                 import glob
                 batch_result_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'report', 'model_intent_recognition', 'batch_assert')
                 batch_result_files = glob.glob(os.path.join(batch_result_dir, 'batch_assert_result_*.json'))
                 if batch_result_files:
-                    # 合并所有进程的结果
                     total = 0
                     pass_count = 0
                     failed_count = 0
@@ -417,27 +480,34 @@ def main():
             except Exception as e:
                 log.warning(f"【批量断言】读取批量断言结果失败：{e}")
 
-            # 计算响应耗时统计（从持久化的 report_rows 中提取，支持多进程）
             response_stats = _calc_response_stats(report_rows)
             if response_stats:
                 log.info(f"【批量断言】响应耗时统计：平均={response_stats['avg']}, P90={response_stats['p90']}, P95={response_stats['p95']}, 最大={response_stats['max']}")
+
+            # 批量断言模式下，用批量断言的实际结果替换 Allure 的 pytest 结果
+            # （pytest 在批量模式下都是通过的，真实结果来自批量评估）
+            if batch_summary:
+                batch_num_successd = batch_summary['pass_count']
+                batch_num_failed = batch_summary['failed_count']
+            else:
+                batch_num_successd = num_successd
+                batch_num_failed = num_failed
 
             send_end_notice_batch(
                 env=config.env,
                 group=config.group,
                 assert_mode=config.assert_mode,
                 case_type=config.case_type,
-                num_successd=num_successd,
-                num_failed=num_failed,
+                num_successd=batch_num_successd,
+                num_failed=batch_num_failed,
                 allure_report_url=allure_report_url,
                 elapsed_minutes=elapsed_minutes,
-                webhook_url=config.wechat_webhook_url,
+                webhook_url=config.current_webhook_url,
                 batch_summary=batch_summary,
                 response_stats=response_stats,
             )
-        # 非批量模式：使用原有模板（恢复原来的报告格式）
         else:
-            # 计算按类型统计和响应耗时统计
+            # 信贷非批量 / 贷后场景：使用普通通知
             type_stats = _calc_type_stats(report_rows)
             response_stats = _calc_response_stats(report_rows)
 
@@ -450,7 +520,7 @@ def main():
                 num_failed=num_failed,
                 allure_report_url=allure_report_url,
                 elapsed_minutes=elapsed_minutes,
-                webhook_url=config.wechat_webhook_url,
+                webhook_url=config.current_webhook_url,
                 type_stats=type_stats,
                 response_stats=response_stats,
             )
@@ -459,6 +529,36 @@ def main():
 
     if config.serve_allure:
         log.info(f'Allure 报告已生成并打开: {allure_report_url}')
+
+
+# ============================================================
+# 主入口
+# ============================================================
+
+def main():
+    """
+    大模型 pytest 调试执行器主入口
+    使用方式：直接修改 TestConfig 参数（scene='credit' 或 scene='postloan'）后运行本文件
+    """
+    # ===================================================================
+    # 【IDE 调试参数：直接修改 TestConfig 即可，通过 scene 切换信贷/贷后】
+    # ===================================================================
+    config = TestConfig(
+        # scene='credit',   # 信贷场景（默认）
+        # scene='postloan', # 贷后场景
+        # case_type='single_turn',
+        # assert_mode='intent_similarity',
+        # single_turn_limit=5,
+        # parallel_workers=1,
+    )
+    # ===================================================================
+
+    scene_title_map = {
+        'credit': '信贷大模型',
+        'postloan': '贷后催收大模型',
+    }
+    title = scene_title_map.get(config.scene, '大模型')
+    _run_tests(config, title)
 
 
 if __name__ == '__main__':
