@@ -1,1 +1,0 @@
-当前意图[提额降息咨询类]不允许转人工，但chatType=TRANSFER；TEXT评分 0.0 未达到阈值 70.0(gte)
