@@ -1,0 +1,240 @@
+# ============================================================
+# 贷后催收意图回复规则配置
+#
+# 作用：定义贷后场景各意图的断言阈值和 ASSET 卡片规则
+# 注意：此配置完全独立于信贷场景（model_intent_reply_rules.yaml）
+#
+# 意图分类体系（6大意图，16个核心拆分）：
+#   P0 - 风险合规禁答（违规操作、信息探知）
+#   P0 - 转人工（标准诉求、投诉类）
+#   P1 - 贷后协商（还款减免、还款减压、协商还、泛协商）
+#   P1 - 贷后咨询（还款咨询、征信咨询）
+#   P2 - 非贷后咨询（退款咨询、借款额度咨询、账户咨询、其他咨询）
+#   P3 - 未知意图（模糊意图、闲聊）
+# ============================================================
+
+defaults:
+  text:
+    threshold: 70
+    comparator: gte
+  asset:
+    allowed: false
+    value_allowlist: []
+    biz_ref_id_allowlist: []
+
+intents:
+  # ============================================================
+  # P0 级意图（高风险，需严格把控）
+  # ============================================================
+
+  风险合规禁答:
+    text:
+      threshold: 80  # 高风险场景，要求更高
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  违规操作:
+    text:
+      threshold: 80
+      comparator: gte
+    asset:
+      allowed: false
+
+  信息探知:
+    text:
+      threshold: 80
+      comparator: gte
+    asset:
+      allowed: false
+
+  转人工:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  标准诉求:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  投诉类:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  # ============================================================
+  # P1 级意图（核心业务）
+  # ============================================================
+
+  贷后协商:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268   # 协商还款方案卡片
+        - AS2606171432548062       # 减免申请卡片
+        - AS2606171433454852  # 停催卡片
+      biz_ref_id_allowlist: []
+
+  还款减免:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268
+        - AS2606171432548062
+        - AS2606171433454852
+      biz_ref_id_allowlist: []
+
+  还款减压:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268
+        - AS2606171432548062
+        - AS2606171433454852
+      biz_ref_id_allowlist: []
+
+  协商还:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268
+        - AS2606171432548062
+        - AS2606171433454852
+      biz_ref_id_allowlist: []
+
+  泛协商:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268
+        - AS2606171432548062
+        - AS2606171433454852
+      biz_ref_id_allowlist: []
+
+  贷后咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS2606171431534268       # 还款指引卡片
+      biz_ref_id_allowlist: []
+
+  还款咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS_POSTLOAN_REPAY_001
+      biz_ref_id_allowlist: []
+
+  征信咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: true
+      value_allowlist:
+        - AS_POSTLOAN_CREDIT_001
+      biz_ref_id_allowlist: []
+
+  # ============================================================
+  # P2 级意图（辅助业务）
+  # ============================================================
+
+  非贷后咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  退款咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  借款额度咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  账户咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  其他咨询:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  # ============================================================
+  # P3 级意图（低优先级）
+  # ============================================================
+
+  未知意图:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+      value_allowlist: []
+      biz_ref_id_allowlist: []
+
+  模糊意图:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+  闲聊:
+    text:
+      threshold: 70
+      comparator: gte
+    asset:
+      allowed: false
+
+# 异步业务类型配置
+biz_types:
+  AS_POSTLOAN_ASYNC_001: {}

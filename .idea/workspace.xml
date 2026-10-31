@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ff27d8-f4f2-4c92-ad00-21c4238ed2e1" name="Default Changelist" comment="优化模型意图识别自动化测试脚本和allure报告">
-      <change afterPath="$PROJECT_DIR$/model_skills/gen_multi_rounds_cases.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assert_code/postloan_multi_turn_assert.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case_data/postloan_multi_intent_test_cases.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/postloan_multi_turn_knowledge_base.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/postloan_session_state_transition.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_skills/gen_postloan_multi_rounds_cases.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/test_postloan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assert_code/external_model_judge.py" beforeDir="false" afterPath="$PROJECT_DIR$/assert_code/external_model_judge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assert_code/model_intent_assert.py" beforeDir="false" afterPath="$PROJECT_DIR$/assert_code/model_intent_assert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_data/model_dialog_cases.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_data/model_intent_recognition_cases.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modelHttpAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/modelHttpAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug_model_by_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug_model_by_pytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/intent_taxonomy.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/intent_taxonomy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/standard_QA_intent.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_skills/gen_single_round_cases.md" beforeDir="false" afterPath="$PROJECT_DIR$/model_skills/gen_single_round_cases.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/model_intent_recognition/model_intent_recognition_failed_report_20260528173421691167.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report/model_intent_recognition/model_intent_recognition_failed_report_20260528173421755186.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report/model_intent_recognition/model_intent_recognition_failed_report_20260528173429027174.csv" beforeDir="false" />
@@ -31964,11 +31958,6 @@
       <change beforePath="$PROJECT_DIR$/report/tmp/20260529114227/history/history-trend.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report/tmp/20260529114227/history/history.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report/tmp/20260529114227/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_code/model_intent_recognition_exec.py" beforeDir="false" afterPath="$PROJECT_DIR$/script_code/model_intent_recognition_exec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cases/test_model_intent_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases/test_model_intent_recognition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/handle_allure_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/handle_allure_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/handle_model_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/handle_model_cases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/handle_wechat_notify.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/handle_wechat_notify.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31989,7 +31978,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2k5tVYIhbojUOUXNl53P6pZ0g6A" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -32009,8 +31998,12 @@
     "Python.model_intent_recogntion_exec.executor": "Run",
     "Python.regenerate_allure_report.executor": "Run",
     "Python.riskMock.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/code_resource/process_logic_test/making_decison_test/assert_code"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/工作/process_logic_test/making_decison_test"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -32032,6 +32025,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/debug_model_by_pytest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -32054,6 +32048,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/modelHttpAction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -32068,11 +32063,15 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/regenerate_allure_report.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -32092,6 +32091,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -32109,6 +32109,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -32120,8 +32121,6 @@
       <list>
         <item itemvalue="Python.debug_model_by_pytest" />
         <item itemvalue="Python.regenerate_allure_report" />
-        <item itemvalue="Python tests.pytest for regenerate_allure_report.TestRegenerateAllureReport.test_regenerate_multi_turn_report" />
-        <item itemvalue="Python tests.pytest in regenerate_allure_report.py" />
         <item itemvalue="Python.modelHttpAction" />
       </list>
     </recent_temporary>
@@ -32129,7 +32128,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
       </set>
     </attachedChunks>
   </component>
@@ -32175,7 +32174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780043386731</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="新增贷后机器人模型测试脚本">
+      <option name="closed" value="true" />
+      <created>1783061915514</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1783061915520</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -32197,8 +32204,10 @@
     <MESSAGE value="优化BianquePlat类的初始化，避免多次重复调用切换环境，增加耗时" />
     <MESSAGE value="优化自动化执行脚本，新增执行通过后发送企微通知" />
     <MESSAGE value="新增模型意图识别自动化测试脚本，执行后发送企微通知" />
+    <MESSAGE value="重构模型意图识别多轮会话测试，新增多轮对话用例skills和批量断言模式架构调整" />
     <MESSAGE value="优化模型意图识别自动化测试脚本和allure报告" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化模型意图识别自动化测试脚本和allure报告" />
+    <MESSAGE value="新增贷后机器人模型测试脚本" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增贷后机器人模型测试脚本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

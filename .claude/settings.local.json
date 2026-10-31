@@ -88,7 +88,10 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(python3 *)",
       "Bash(chcp *)",
-      "Bash(set PYTHONIOENCODING=utf-8)"
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(find . -maxdepth 2 -not -path '*/\\\\.*' -not -path '*/__pycache__/*' -not -path '*/venv/*' -not -path '*/.idea/*')",
+      "Bash(pip install *)",
+      "Bash(Get-ChildItem *)"
     ]
   }
 }
