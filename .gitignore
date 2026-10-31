@@ -1,3 +1,12 @@
 # Report directory - keep folder structure but ignore all contents
 report/*
 !report/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE local state
+.idea/sonarlint/
+.idea/inspectionProfiles/
